@@ -1,7 +1,5 @@
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-// Import PrimeNG icons
 import { ButtonModule } from 'primeng/button';
 
 interface MemoryPlace {
@@ -10,7 +8,6 @@ interface MemoryPlace {
   image: string;
   description: string;
   emotions: string[];
-  icon: string;
 }
 
 @Component({
@@ -20,45 +17,87 @@ interface MemoryPlace {
   templateUrl: './memory-places.component.html',
   styleUrls: ['./memory-places.component.scss']
 })
-export class MemoryPlacesComponent implements OnInit, OnDestroy {
-  @Input() places: MemoryPlace[] = [];
-
+export class MemoryPlacesComponent implements OnInit {
+  @Input() places: MemoryPlace[] = [
+    {
+      name: 'Đà Nẵng',
+      date: 'Tháng 5, 2024',
+      image: 'assets/images/dia-diem/da-nang.png',
+      description: 'Chuyến đi đầu tiên của chúng ta tới Đà Nẵng, nơi có những bãi biển đẹp và cầu Rồng lung linh.',
+      emotions: ['Hạnh phúc', 'Thư giãn', 'Lãng mạn']
+    },
+    {
+      name: 'Đà Lạt',
+      date: 'Tháng 6, 2024',
+      image: 'assets/images/dia-diem/da-lat.png',
+      description: 'Thành phố ngàn hoa với không khí se lạnh, nơi chúng ta đã có những khoảnh khắc ngọt ngào.',
+      emotions: ['Lãng mạn', 'Bình yên', 'Ấm áp']
+    },
+    {
+      name: 'Hạ Long',
+      date: 'Tháng 7, 2024',
+      image: 'assets/images/dia-diem/vung-tau.png',
+      description: 'Vịnh Hạ Long tuyệt đẹp với những hòn đảo đá vôi và mặt nước xanh biếc.',
+      emotions: ['Phiêu lưu', 'Thích thú', 'Hạnh phúc']
+    },
+    {
+      name: 'Sapa',
+      date: 'Tháng 8, 2024',
+      image: 'assets/images/dia-diem/sapa.png',
+      description: 'Những ruộng bậc thang tuyệt đẹp và không khí trong lành của vùng núi Tây Bắc.',
+      emotions: ['Yên bình', 'Thư thái', 'Gần gũi']
+    }
+  ];
+  
   currentSlide = 0;
-  currentTranslate = 0;
-  private autoSlideInterval: any;
 
   ngOnInit() {
-    this.startAutoSlide();
+    // Auto-play slides
+    this.startAutoPlay();
   }
 
   ngOnDestroy() {
-    if (this.autoSlideInterval) {
-      clearInterval(this.autoSlideInterval);
+    this.stopAutoPlay();
+  }
+
+  private autoPlayInterval: any;
+  private readonly AUTO_PLAY_INTERVAL = 5000; // 5 seconds
+
+  private startAutoPlay() {
+    this.autoPlayInterval = setInterval(() => {
+      this.nextSlide();
+    }, this.AUTO_PLAY_INTERVAL);
+  }
+
+  private stopAutoPlay() {
+    if (this.autoPlayInterval) {
+      clearInterval(this.autoPlayInterval);
     }
   }
 
   prevSlide() {
+    this.stopAutoPlay();
     if (this.currentSlide > 0) {
-      this.goToSlide(this.currentSlide - 1);
+      this.currentSlide--;
+    } else {
+      this.currentSlide = this.places.length - 1; // Loop to last slide
     }
+    this.startAutoPlay();
   }
 
   nextSlide() {
+    this.stopAutoPlay();
     if (this.currentSlide < this.places.length - 1) {
-      this.goToSlide(this.currentSlide + 1);
+      this.currentSlide++;
     } else {
-      this.goToSlide(0);
+      this.currentSlide = 0; // Loop to first slide
     }
+    this.startAutoPlay();
   }
 
   goToSlide(index: number) {
+    this.stopAutoPlay();
     this.currentSlide = index;
-    this.currentTranslate = -index * 100;
-  }
-
-  private startAutoSlide() {
-    this.autoSlideInterval = setInterval(() => {
-      this.nextSlide();
-    }, 5000);
+    this.startAutoPlay();
   }
 } 

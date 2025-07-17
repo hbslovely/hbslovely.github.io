@@ -1,3 +1,8 @@
+/* Letter Frame Variables */
+$letter-bg: #fff6e5;
+$letter-border: #e2d5bc;
+$letter-shadow: rgba(0, 0, 0, 0.1);
+
 .gratitude-section {
   padding: 4rem 0;
   background-color: var(--surface-card);
@@ -13,25 +18,58 @@
     font-size: 2rem;
     margin-bottom: 3rem;
     color: var(--text-color);
+    font-weight: 600;
   }
 
   .gratitude-content {
     max-width: 800px;
     margin: 0 auto;
+    perspective: 1000px;
   }
 
   .gratitude-letter {
-    background: var(--surface-ground);
-    border-radius: 1rem;
+    background: $letter-bg;
+    border: 1px solid $letter-border;
+    border-radius: 8px;
     padding: 3rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: justify;
+    position: relative;
+    transform: rotate(-1deg);
+    transition: transform 0.3s ease;
+    box-shadow: 
+      0 4px 15px $letter-shadow,
+      0 1px 3px rgba(0, 0, 0, 0.05);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, transparent 48%, $letter-border 49%, $letter-border 51%, transparent 52%);
+      opacity: 0.1;
+      pointer-events: none;
+    }
+
+    &:hover {
+      transform: rotate(0deg) translateY(-5px);
+    }
 
     .gratitude-paragraph {
       font-size: 1.1rem;
       line-height: 1.8;
       color: var(--text-color);
       margin-bottom: 1.5rem;
+      font-family: 'Crimson Text', serif;
+      font-style: italic;
+      text-align: justify;
+      position: relative;
+
+      &::first-letter {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: var(--primary-color);
+      }
 
       &:last-of-type {
         margin-bottom: 2rem;
@@ -42,14 +80,20 @@
       text-align: right;
       font-style: italic;
       color: var(--primary-color);
+      transform: rotate(-2deg);
+      margin-top: 3rem;
+      padding-right: 2rem;
 
       p {
         margin: 0.5rem 0;
         font-size: 1.1rem;
+        font-family: 'Dancing Script', cursive;
 
         &:last-child {
           font-weight: bold;
-          font-size: 1.2rem;
+          font-size: 1.4rem;
+          color: var(--primary-color);
+          text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
         }
       }
     }
@@ -60,17 +104,22 @@
   .gratitude-section {
     .gratitude-letter {
       padding: 2rem;
+      transform: rotate(-0.5deg);
 
       .gratitude-paragraph {
         font-size: 1rem;
         line-height: 1.6;
       }
 
-      .gratitude-signature p {
-        font-size: 1rem;
+      .gratitude-signature {
+        padding-right: 1rem;
+        
+        p {
+          font-size: 1rem;
 
-        &:last-child {
-          font-size: 1.1rem;
+          &:last-child {
+            font-size: 1.2rem;
+          }
         }
       }
     }

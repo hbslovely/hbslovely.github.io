@@ -11,10 +11,15 @@ interface Song {
 @Component({
   selector: 'app-our-songs',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CommonModule
+  ],
   templateUrl: './our-songs.component.html',
   styleUrls: ['./our-songs.component.scss']
 })
 export class OurSongsComponent {
   @Input() songs: Song[] = [];
+  
+  // Array for ngFor loops in template
+  numbers = Array(8).fill(0).map((_, i) => i + 1);
 } 

@@ -206,23 +206,16 @@
             <p class="text-lg text-muted">Những điều đặc biệt về em mà anh yêu thích</p>
           </div>
 
-          <div class="glass-card fun-facts-container p-6">
-            <div class="fun-facts-header mb-4 text-center">
-              <h2 class="card-heading">💝 Special Things About Her</h2>
-              <p class="text-muted">Heo Bỉm Sửa</p>
-            </div>
-
-            <div class="grid">
-              <div *ngFor="let fact of wifeFunFacts; let i = index" class="col-12 md:col-6">
-                <div class="fun-fact-frame">
-                  <div class="fun-fact-content">
-                    <div class="fun-fact-image">
-                      <img [src]="fact.image" [alt]="fact.title" class="fun-fact-icon">
-                    </div>
-                    <div class="fun-fact-text">
-                      <h4 class="fun-fact-title">{{ fact.title }}</h4>
-                      <p class="fun-fact-description">{{ fact.description }}</p>
-                    </div>
+          <div class="grid">
+            <div *ngFor="let fact of wifeFunFacts; let i = index" class="col-12 md:col-6">
+              <div class="fun-fact-frame">
+                <div class="fun-fact-content">
+                  <div class="fun-fact-image">
+                    <img [src]="fact.image" [alt]="fact.title" class="fun-fact-icon">
+                  </div>
+                  <div class="fun-fact-text">
+                    <h4 class="fun-fact-title">{{ fact.title }}</h4>
+                    <p class="fun-fact-description">{{ fact.description }}</p>
                   </div>
                 </div>
               </div>

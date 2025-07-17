@@ -10,12 +10,12 @@ import { CommonModule } from '@angular/common';
 })
 export class ParallaxHeaderComponent implements OnInit, OnDestroy {
   @Input() welcomeTexts: string[] = [
-    'Chào Mừng Đến Với Trang Kỷ Niệm Của Chúng Mình 💑',
+    'Welcome To Our Memories 💑',
     'Nơi Lưu Giữ Những Khoảnh Khắc Đẹp 💕',
     'Hành Trình Yêu Thương Của Hai Đứa 💝'
   ];
 
-  @Input() startDate: Date = new Date('2021-05-09T00:00:00');
+  @Input() startDate: Date = new Date('2021-05-09T19:30:02');
 
   currentText: string = '';
   textIndex: number = 0;
@@ -75,4 +75,4 @@ export class ParallaxHeaderComponent implements OnInit, OnDestroy {
       }
     }, 100);
   }
-} 
+}

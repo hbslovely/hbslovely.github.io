@@ -1,11 +1,107 @@
 <!-- Gallery Section -->
-<div class="gallery-section">
-  <div class="container">
-    <h2 class="section-title">📸 Album Kỷ Niệm</h2>
-    <div class="gallery-grid">
-      <div class="gallery-item" *ngFor="let memory of memories">
-        <img [src]="memory.src" [alt]="memory.description">
-        <div class="gallery-caption">{{ memory.description }}</div>
+<div class="gallery-background">
+  <div class="background-icons">
+    <i class="pi pi-camera"></i>
+    <i class="pi pi-image"></i>
+    <i class="pi pi-heart"></i>
+    <i class="pi pi-images"></i>
+    <i class="pi pi-camera"></i>
+    <i class="pi pi-heart-fill"></i>
+  </div>
+  <div class="gallery-section">
+    <div class="container">
+      <h2 class="section-title">📸 Album Kỷ Niệm</h2>
+
+      <!-- Filter Controls -->
+      <div class="gallery-controls">
+        <div class="filter-buttons">
+          <button class="filter-btn" 
+                  [class.active]="currentFilter === 'all'"
+                  (click)="filterImages('all')">
+            Tất cả
+          </button>
+          <button class="filter-btn" 
+                  [class.active]="currentFilter === 'couple'"
+                  (click)="filterImages('couple')">
+            Đôi ta
+          </button>
+          <button class="filter-btn" 
+                  [class.active]="currentFilter === 'travel'"
+                  (click)="filterImages('travel')">
+            Du lịch
+          </button>
+          <button class="filter-btn" 
+                  [class.active]="currentFilter === 'daily'"
+                  (click)="filterImages('daily')">
+            Đời thường
+          </button>
+        </div>
+        
+        <div class="view-controls">
+          <button class="view-btn" 
+                  [class.active]="viewMode === 'grid'"
+                  (click)="changeView('grid')">
+            <i class="pi pi-th-large"></i>
+          </button>
+          <button class="view-btn" 
+                  [class.active]="viewMode === 'masonry'"
+                  (click)="changeView('masonry')">
+            <i class="pi pi-images"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery-grid" [class]="viewMode">
+        <ng-container *ngFor="let memory of displayedMemories">
+          <div class="gallery-item" 
+               [attr.data-category]="memory.category"
+               (click)="openLightbox(memory)">
+            <div class="image-wrapper">
+              <img [src]="memory.thumbnail" 
+                   [alt]="memory.description"
+                   loading="lazy"
+                   (load)="onImageLoad($event)">
+              <div class="hover-overlay">
+                <span class="memory-date">{{ memory.date | date:'dd/MM/yyyy' }}</span>
+                <p class="memory-description">{{ memory.description }}</p>
+                <span class="zoom-icon">
+                  <i class="pi pi-search-plus"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+
+      <!-- Load More Button -->
+      <div class="load-more" *ngIf="hasMoreImages">
+        <button class="load-more-btn" 
+                (click)="loadMore()"
+                [disabled]="loading">
+          <i class="pi pi-spinner pi-spin" *ngIf="loading"></i>
+          <span>{{ loading ? 'Đang tải...' : 'Xem thêm' }}</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" *ngIf="selectedImage" (click)="closeLightbox()">
+      <div class="lightbox-content" (click)="$event.stopPropagation()">
+        <button class="close-btn" (click)="closeLightbox()">
+          <i class="pi pi-times"></i>
+        </button>
+        <button class="nav-btn prev" *ngIf="hasPrevImage" (click)="showPrevImage()">
+          <i class="pi pi-chevron-left"></i>
+        </button>
+        <button class="nav-btn next" *ngIf="hasNextImage" (click)="showNextImage()">
+          <i class="pi pi-chevron-right"></i>
+        </button>
+        <img [src]="selectedImage.src" [alt]="selectedImage.description">
+        <div class="lightbox-caption">
+          <p class="caption-date">{{ selectedImage.date | date:'dd/MM/yyyy' }}</p>
+          <p class="caption-text">{{ selectedImage.description }}</p>
+        </div>
       </div>
     </div>
   </div>

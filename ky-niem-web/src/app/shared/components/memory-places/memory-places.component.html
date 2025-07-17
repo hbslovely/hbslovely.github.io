@@ -1,48 +1,102 @@
 <!-- Memory Places Section -->
 <div class="places-section">
-  <div class="container">
-    <h2 class="section-title">🌍 Những Địa Điểm Kỷ Niệm</h2>
+  <div class="travel-watermark">
+    <i class="pi pi-globe"></i>
+    <i class="pi pi-camera"></i>
+    <i class="pi pi-map"></i>
+    <i class="pi pi-compass"></i>
+    <i class="pi pi-plane"></i>
+    <i class="pi pi-car"></i>
+    <i class="pi pi-heart"></i>
+    <i class="pi pi-camera"></i>
+    <i class="pi pi-map-marker"></i>
+    <i class="pi pi-compass"></i>
+    <i class="pi pi-globe"></i>
+    <i class="pi pi-camera"></i>
+    <i class="pi pi-plane"></i>
+    <i class="pi pi-map"></i>
+    <i class="pi pi-heart"></i>
+    <i class="pi pi-compass"></i>
+    <i class="pi pi-car"></i>
+    <i class="pi pi-map-marker"></i>
+    <i class="pi pi-camera"></i>
+    <i class="pi pi-globe"></i>
+    <i class="pi pi-map"></i>
+    <i class="pi pi-heart"></i>
+    <i class="pi pi-plane"></i>
+    <i class="pi pi-compass"></i>
+    <i class="pi pi-map-marker"></i>
+    <i class="pi pi-camera"></i>
+    <i class="pi pi-car"></i>
+    <i class="pi pi-globe"></i>
+    <i class="pi pi-map"></i>
+    <i class="pi pi-heart"></i>
+    <i class="pi pi-compass"></i>
+    <i class="pi pi-plane"></i>
+  </div>
 
-    <div class="places-carousel">
-      <div class="carousel-container" [style.transform]="'translateX(' + currentTranslate + '%)'">
-        <div class="place-card" *ngFor="let place of places">
-          <div class="place-image">
-            <img [src]="place.image" [alt]="place.name">
-            <div class="place-overlay">
-              <div class="place-header">
-                <h3 class="place-name">{{ place.name }}</h3>
-                <div class="place-date">{{ place.date }}</div>
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="pi pi-map-marker"></i>
+        Những Địa Điểm Kỷ Niệm
+      </h2>
+      <p class="section-subtitle">Mỗi nơi chúng ta đến là một kỷ niệm đáng nhớ</p>
+    </div>
+
+    <div class="places-slider">
+      <!-- Current Slide -->
+      <div class="slide-container">
+        <div class="slide" *ngFor="let place of places; let i = index" [class.active]="i === currentSlide">
+          <div class="slide-content">
+            <div class="image-wrapper">
+              <img [src]="place.image" [alt]="place.name">
+              <div class="location-tag">
+                <i class="pi pi-map-marker"></i>
+                {{ place.name }}
               </div>
-              <div class="place-content">
-                <p class="place-description">{{ place.description }}</p>
-                <div class="place-emotions">
-                  <span class="emotion-tag" *ngFor="let emotion of place.emotions">{{ emotion }}</span>
-                </div>
+            </div>
+            <div class="slide-info">
+              <div class="info-header">
+                <h3>{{ place.name }}</h3>
+                <span class="date">
+                  <i class="pi pi-calendar"></i>
+                  {{ place.date }}
+                </span>
+              </div>
+              <p class="description">{{ place.description }}</p>
+              <div class="emotions">
+                <span class="emotion" *ngFor="let emotion of place.emotions">
+                  <i class="pi pi-heart-fill"></i>
+                  {{ emotion }}
+                </span>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Navigation Buttons -->
-      <div class="carousel-nav-buttons">
-        <button class="control-btn prev" (click)="prevSlide()">
+      <!-- Navigation -->
+      <div class="slider-navigation">
+        <button class="nav-btn prev" (click)="prevSlide()" [class.disabled]="currentSlide === 0">
           <i class="pi pi-chevron-left"></i>
         </button>
-        <button class="control-btn next" (click)="nextSlide()">
+        
+        <!-- Thumbnails -->
+        <div class="thumbnails">
+          <div class="thumb" 
+               *ngFor="let place of places; let i = index"
+               [class.active]="i === currentSlide"
+               (click)="goToSlide(i)">
+            <img [src]="place.image" [alt]="place.name">
+            <span class="thumb-name">{{ place.name }}</span>
+          </div>
+        </div>
+
+        <button class="nav-btn next" (click)="nextSlide()" [class.disabled]="currentSlide === places.length - 1">
           <i class="pi pi-chevron-right"></i>
         </button>
       </div>
-    </div>
-
-    <!-- Indicators moved outside -->
-    <div class="carousel-indicators">
-      <span
-        *ngFor="let place of places; let i = index"
-        class="indicator"
-        [class.active]="currentSlide === i"
-        (click)="goToSlide(i)">
-      </span>
     </div>
   </div>
 </div> 

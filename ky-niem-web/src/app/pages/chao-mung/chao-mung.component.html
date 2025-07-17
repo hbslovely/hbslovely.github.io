@@ -14,12 +14,15 @@
 
 <app-favorite-foods [foods]="favoriteFoods"></app-favorite-foods>
 
-<app-memory-gallery [memories]="memories"></app-memory-gallery>
+<app-memory-gallery></app-memory-gallery>
 
 <app-gratitude-messages></app-gratitude-messages>
 
 <!-- Timeline Section -->
 <div class="timeline-section">
+  <div class="floating-hearts">
+    <div class="heart" *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]">❤</div>
+  </div>
   <div class="container">
     <h2 class="section-title">💑 Câu Chuyện Của Chúng Ta</h2>
 

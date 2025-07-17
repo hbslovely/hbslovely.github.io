@@ -1,83 +1,220 @@
 .quotes-section {
-  padding: 4rem 0;
-  background-color: var(--surface-ground);
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+
+  .quotes-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.1;
+    background:
+      repeating-linear-gradient(45deg,
+        var(--primary-color) 0px,
+        var(--primary-color) 2px,
+        transparent 2px,
+        transparent 8px
+      ),
+      repeating-linear-gradient(-45deg,
+        var(--primary-color) 0px,
+        var(--primary-color) 2px,
+        transparent 2px,
+        transparent 8px
+      );
+    animation: moveBackground 30s linear infinite;
+  }
 
   .container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
   }
 
   .section-title {
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 3rem;
-    color: var(--text-color);
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 4rem;
+    color: var(--text-primary);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   }
 
-  .quotes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+  .quotes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
   }
 
-  .quote-card {
-    background: var(--surface-card);
-    border-radius: 1rem;
-    padding: 2rem;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+  .quote-item {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
 
-    &:hover {
-      transform: translateY(-5px);
-    }
-
-    .quote-icon {
-      margin-bottom: 1.5rem;
-
-      i {
-        font-size: 2rem;
-        color: var(--primary-color);
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{$i * 0.2}s;
       }
     }
+  }
 
-    .quote-text {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: var(--text-color);
-      margin-bottom: 1.5rem;
-      font-style: italic;
-    }
+  .quote-content {
+    position: relative;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
 
-    .quote-author {
-      font-size: 1rem;
+    &::before {
+      content: '"';
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      font-size: 8rem;
+      font-family: Georgia, serif;
       color: var(--primary-color);
-      font-weight: 600;
+      opacity: 0.2;
+      line-height: 1;
     }
+
+    &::after {
+      content: '"';
+      position: absolute;
+      bottom: -60px;
+      right: -20px;
+      font-size: 8rem;
+      font-family: Georgia, serif;
+      color: var(--primary-color);
+      opacity: 0.2;
+      line-height: 1;
+    }
+  }
+
+  .quote-icon {
+    margin-bottom: 1.5rem;
+
+    i {
+      font-size: 2rem;
+      color: var(--primary-color);
+      opacity: 0.8;
+      transform: rotate(-10deg);
+    }
+  }
+
+  .quote-text {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    font-style: italic;
+    margin: 0;
+    position: relative;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+  }
+
+  .quote-author {
+    margin-top: 1.5rem;
+
+    .author-name {
+      display: inline-block;
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+      position: relative;
+      padding: 0.5rem 2rem;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 1.5rem;
+        height: 2px;
+        background: var(--primary-color);
+        opacity: 0.6;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 1.5rem;
+        height: 2px;
+        background: var(--primary-color);
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100px 100px;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @media (max-width: 768px) {
   .quotes-section {
-    .quotes-grid {
-      grid-template-columns: 1fr;
+    padding: 4rem 0;
+
+    .container {
+      padding: 0 1.5rem;
     }
 
-    .quote-card {
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .quotes-list {
+      gap: 3rem;
+    }
+
+    .quote-content {
       padding: 1.5rem;
 
-      .quote-icon i {
-        font-size: 1.5rem;
+      &::before,
+      &::after {
+        font-size: 6rem;
       }
+    }
 
-      .quote-text {
-        font-size: 1rem;
-      }
+    .quote-icon i {
+      font-size: 1.5rem;
+    }
 
-      .quote-author {
-        font-size: 0.9rem;
+    .quote-text {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .quote-author .author-name {
+      font-size: 1rem;
+      padding: 0.4rem 1.5rem;
+
+      &::before,
+      &::after {
+        width: 1rem;
       }
     }
   }
-} 
+}

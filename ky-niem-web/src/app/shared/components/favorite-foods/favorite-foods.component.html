@@ -1,16 +1,33 @@
 <!-- Favorite Foods Section -->
 <div class="foods-section">
+  <!-- Animated Background Pattern -->
+  <div class="animated-bg">
+    <div class="pattern pattern-1"></div>
+    <div class="pattern pattern-2"></div>
+    <div class="pattern pattern-3"></div>
+  </div>
+
   <div class="container">
     <h2 class="section-title">🍜 Món Ăn Yêu Thích</h2>
     <div class="foods-container">
-      <div class="foods-timeline">
-        <div class="food-item" *ngFor="let food of foods">
-          <div class="food-icon">{{ food.person === 'Chồng' ? '👨' : '👩' }}</div>
-          <div class="food-content">
-            <h3 class="food-name">{{ food.dish }}</h3>
-            <p class="food-story">{{ food.story }}</p>
-            <div class="food-feeling">
-              <span class="feeling-tag">{{ food.feeling }}</span>
+      <!-- Food Frame -->
+      <div class="food-frame">
+        <!-- Corner Decorations -->
+        <div class="corner-decor top-left"></div>
+        <div class="corner-decor top-right"></div>
+        <div class="corner-decor bottom-left"></div>
+        <div class="corner-decor bottom-right"></div>
+        
+        <!-- Content -->
+        <div class="foods-timeline">
+          <div class="food-item" *ngFor="let food of foods">
+            <div class="food-icon">{{ food.person === 'Chồng' ? '👨' : '👩' }}</div>
+            <div class="food-content">
+              <h3 class="food-name">{{ food.dish }}</h3>
+              <p class="food-story">{{ food.story }}</p>
+              <div class="food-feeling">
+                <span class="feeling-tag">{{ food.feeling }}</span>
+              </div>
             </div>
           </div>
         </div>

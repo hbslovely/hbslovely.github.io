@@ -1,19 +1,57 @@
 <!-- Meaningful Gifts Section -->
 <div class="gifts-section">
   <div class="container">
-    <h2 class="section-title">🎁 Những Món Quà Ý Nghĩa</h2>
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="pi pi-gift"></i>
+        Những Món Quà Yêu Thương
+      </h2>
+      <p class="section-subtitle">Mỗi món quà là một kỷ niệm, một câu chuyện về tình yêu của chúng ta</p>
+    </div>
+
     <div class="gifts-grid">
-      <div class="gift-card" *ngFor="let gift of gifts">
+      <div class="gift-box" *ngFor="let gift of gifts">
         <div class="gift-content">
-          <div class="gift-icon">🎁</div>
-          <h3 class="gift-title">{{ gift.gift }}</h3>
-          <div class="gift-occasion">{{ gift.occasion }}</div>
-          <p class="gift-meaning">{{ gift.meaning }}</p>
-          <div class="gift-emotion">
-            <span class="emotion-tag">{{ gift.emotion }}</span>
+          <!-- Gift Box Decorations -->
+          <div class="gift-decorations">
+            <div class="gift-ribbon-vertical"></div>
+            <div class="gift-ribbon-horizontal"></div>
+            <div class="gift-bow"></div>
+          </div>
+
+          <!-- Gift Content -->
+          <div class="gift-info">
+            <span class="gift-occasion-tag">{{ gift.occasion }}</span>
+            <h3 class="gift-title">{{ gift.gift }}</h3>
+            
+            <div class="gift-description">
+              <i class="pi pi-heart gift-icon"></i>
+              <p class="gift-meaning">{{ gift.meaning }}</p>
+            </div>
+
+            <div class="gift-footer">
+              <span class="emotion-tag">
+                <i class="pi pi-star"></i>
+                {{ gift.emotion }}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hover Effects -->
+        <div class="gift-hover-content">
+          <div class="hover-message">
+            <i class="pi pi-heart-fill"></i>
+            <p>Món quà của tình yêu</p>
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- Section Footer -->
+    <div class="section-footer">
+      <p class="love-quote">"Món quà lớn nhất trong tình yêu không phải là những món đồ đắt tiền, 
+        mà là những khoảnh khắc ý nghĩa ta dành cho nhau"</p>
     </div>
   </div>
 </div> 

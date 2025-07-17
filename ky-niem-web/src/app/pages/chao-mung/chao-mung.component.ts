@@ -44,6 +44,9 @@ export class ChaoMungComponent implements OnInit {
   meaningfulGifts: any[] = [];
   favoriteFoods: any[] = [];
   
+  // Array for floating hearts
+  floatingHearts = Array(15).fill(0).map((_, i) => i + 1);
+
   constructor(private http: HttpClient) {}
 
   ngOnInit() {

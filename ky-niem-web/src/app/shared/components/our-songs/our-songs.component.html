@@ -1,13 +1,52 @@
 <!-- Our Songs Section -->
 <div class="songs-section">
+  <!-- Musical Background Elements -->
+  <div class="music-bg">
+    <div class="music-note" *ngFor="let i of numbers">♪</div>
+    <div class="music-note alt" *ngFor="let i of numbers">♫</div>
+  </div>
+
   <div class="container">
-    <h2 class="section-title">🎵 Những Bài Hát Của Chúng Ta</h2>
-    <div class="songs-grid">
-      <div class="song-card" *ngFor="let song of songs">
-        <h3 class="song-title">{{ song.title }}</h3>
-        <div class="song-artist">{{ song.artist }}</div>
-        <p class="song-moment">{{ song.moment }}</p>
-        <p class="song-description">{{ song.description }}</p>
+    <h2 class="section-title">
+      <i class="pi pi-music"></i>
+      Những Bài Hát Của Chúng Ta
+    </h2>
+    
+    <div class="songs-list">
+      <div class="song-item" *ngFor="let song of songs; let i = index">
+        <div class="vinyl-record" [class.playing]="i === 0">
+          <div class="vinyl-disc">
+            <div class="vinyl-label">
+              <span class="song-number">{{ i + 1 }}</span>
+            </div>
+          </div>
+          <div class="vinyl-arm"></div>
+        </div>
+        
+        <div class="song-details">
+          <div class="song-header">
+            <h3 class="song-title">
+              <i class="pi pi-play"></i>
+              {{ song.title }}
+            </h3>
+            <div class="song-artist">
+              <i class="pi pi-user"></i>
+              {{ song.artist }}
+            </div>
+          </div>
+          
+          <div class="song-info">
+            <div class="song-moment">
+              <i class="pi pi-clock"></i>
+              {{ song.moment }}
+            </div>
+            <p class="song-description">{{ song.description }}</p>
+          </div>
+          
+          <div class="music-visualizer">
+            <div class="bar" *ngFor="let n of [1,2,3,4,5,6,7,8,9,10]"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
