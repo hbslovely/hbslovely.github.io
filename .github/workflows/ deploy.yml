@@ -32,8 +32,7 @@ jobs:
 
       - name: Push to GitHub Pages
         run: |
-          git config --global user.email "you@example.com"
-          git config --global user.name "Your Name"
+          git config --global user.name "Hbs"
           git remote set-url origin https://$token@github.com/hbslovely/hbslovely.github.io.git
           git push origin main
         env:
