@@ -31,6 +31,7 @@ jobs:
         run: |
           git config --global user.name "Hbs"
           git add .
+          git commit -a -m "Deploy changes"
           git remote set-url origin https://$token@github.com/hbslovely/hbslovely.github.io.git
           git push origin main
         env:
