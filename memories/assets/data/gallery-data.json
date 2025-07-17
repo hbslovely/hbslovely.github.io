@@ -1,0 +1,132 @@
+{
+  "gallery": [
+    {
+      "id": 1,
+      "src": "assets/images/ki-niem/lan-dau-gap-nhau.png",
+      "thumbnail": "assets/images/ki-niem/lan-dau-gap-nhau.png",
+      "description": "Lần đầu gặp nhau - Khoảnh khắc định mệnh",
+      "date": "2020-01-15",
+      "category": "couple"
+    },
+    {
+      "id": 2,
+      "src": "assets/images/ki-niem/trao-duyen.png",
+      "thumbnail": "assets/images/ki-niem/trao-duyen.png",
+      "description": "Trao duyên - Những ngày đầu yêu nhau",
+      "date": "2020-02-14",
+      "category": "couple"
+    },
+    {
+      "id": 3,
+      "src": "assets/images/ki-niem/ky-niem-quen-nhau.png",
+      "thumbnail": "assets/images/ki-niem/ky-niem-quen-nhau.png",
+      "description": "Kỷ niệm ngày quen nhau",
+      "date": "2020-03-01",
+      "category": "couple"
+    },
+    {
+      "id": 4,
+      "src": "assets/images/ki-niem/cuoi-hoi.png",
+      "thumbnail": "assets/images/ki-niem/cuoi-hoi.png",
+      "description": "Cưới hỏi - Ngày trọng đại",
+      "date": "2022-12-25",
+      "category": "couple"
+    },
+    {
+      "id": 5,
+      "src": "assets/images/hinh-cuoi/mang-thai.png",
+      "thumbnail": "assets/images/hinh-cuoi/mang-thai.png",
+      "description": "Mang thai - Chờ đón thiên thần nhỏ",
+      "date": "2023-06-10",
+      "category": "daily"
+    },
+    {
+      "id": 6,
+      "src": "assets/images/hinh-cuoi/cung-nhau.png",
+      "thumbnail": "assets/images/hinh-cuoi/cung-nhau.png",
+      "description": "Cùng nhau - Hạnh phúc mỗi ngày",
+      "date": "2023-08-15",
+      "category": "daily"
+    },
+    {
+      "id": 7,
+      "src": "assets/images/bucket/DongHuyenKhong_DaNang_Thang5-2024.png",
+      "thumbnail": "assets/images/bucket/DongHuyenKhong_DaNang_Thang5-2024.png",
+      "description": "Du lịch Đà Nẵng - Động Huyền Không",
+      "date": "2024-05-15",
+      "category": "travel"
+    },
+    {
+      "id": 8,
+      "src": "assets/images/bucket/dapxedap_Thang8-2024.jpg",
+      "thumbnail": "assets/images/bucket/dapxedap_Thang8-2024.jpg",
+      "description": "Đạp xe cùng nhau - Quận 1",
+      "date": "2024-08-01",
+      "category": "daily"
+    },
+    {
+      "id": 9,
+      "src": "assets/images/gallery/ben-nhau.png",
+      "thumbnail": "assets/images/gallery/ben-nhau.png",
+      "description": "Những phút giây bên nhau",
+      "date": "2023-09-20",
+      "category": "couple"
+    },
+    {
+      "id": 10,
+      "src": "assets/images/gallery/cai-om.png",
+      "thumbnail": "assets/images/gallery/cai-om.png",
+      "description": "Cái ôm ấm áp",
+      "date": "2023-10-05",
+      "category": "couple"
+    },
+    {
+      "id": 11,
+      "src": "assets/images/gallery/chuyen-di.png",
+      "thumbnail": "assets/images/gallery/chuyen-di.png",
+      "description": "Chuyến đi đáng nhớ",
+      "date": "2023-11-15",
+      "category": "travel"
+    },
+    {
+      "id": 12,
+      "src": "assets/images/gallery/giot-nuoc-mat-hanh-phuc.png",
+      "thumbnail": "assets/images/gallery/giot-nuoc-mat-hanh-phuc.png",
+      "description": "Giọt nước mắt hạnh phúc",
+      "date": "2023-12-25",
+      "category": "couple"
+    },
+    {
+      "id": 13,
+      "src": "assets/images/gallery/ngay-ben-nhau.png",
+      "thumbnail": "assets/images/gallery/ngay-ben-nhau.png",
+      "description": "Ngày bên nhau",
+      "date": "2024-01-01",
+      "category": "daily"
+    },
+    {
+      "id": 14,
+      "src": "assets/images/gallery/nu-cuoi.png",
+      "thumbnail": "assets/images/gallery/nu-cuoi.png",
+      "description": "Nụ cười rạng rỡ",
+      "date": "2024-02-14",
+      "category": "daily"
+    },
+    {
+      "id": 15,
+      "src": "assets/images/gallery/so-anh-da-chup.png",
+      "thumbnail": "assets/images/gallery/so-anh-da-chup.png",
+      "description": "Sổ ảnh đã chụp",
+      "date": "2024-03-01",
+      "category": "daily"
+    },
+    {
+      "id": 16,
+      "src": "assets/images/gallery/su-an-ui.png",
+      "thumbnail": "assets/images/gallery/su-an-ui.png",
+      "description": "Sự an ủi",
+      "date": "2024-03-15",
+      "category": "couple"
+    }
+  ]
+} 
