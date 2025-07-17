@@ -1,0 +1,5 @@
+<div class="tag-cloud">
+  <span *ngFor="let tag of tags" [style.font-size.px]="tag.size" class="tag">
+    {{tag.text}}
+  </span>
+</div>

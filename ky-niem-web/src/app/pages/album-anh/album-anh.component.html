@@ -1,0 +1,17 @@
+<div class="grid justify-content-center mt-4">
+  <div *ngFor="let img of images" class="col-12 md:col-3 px-2 mb-3">
+    <div class="card">
+      <img [src]="img.src" [alt]="img.title" style="width: 100%; height: 150px; object-fit: cover;">
+      <div class="flex justify-content-between align-items-center mt-2">
+        <div>{{ img.title }}</div>
+        <p-button 
+          [icon]="img.favorite ? 'pi pi-heart-fill' : 'pi pi-heart'"
+          [text]="true"
+          [rounded]="true"
+          severity="secondary"
+          (onClick)="toggleFavorite(img)">
+        </p-button>
+      </div>
+    </div>
+  </div>
+</div>

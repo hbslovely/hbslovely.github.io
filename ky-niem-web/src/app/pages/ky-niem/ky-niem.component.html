@@ -1,0 +1,8 @@
+<div class="grid justify-content-center mt-4">
+  <div *ngFor="let mem of memories" class="col-12 md:col-4 px-3 mb-4">
+    <div class="card">
+      <img [src]="mem.src" alt="" style="width: 100%; height: 250px; object-fit: cover;">
+      <div class="mt-2 text-center">{{mem.description}}</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<p-timeline [value]="events" layout="vertical" styleClass="custom-timeline">
+  <ng-template let-event pTemplate="marker">
+    <i [class]="event.icon" class="text-primary"></i>
+  </ng-template>
+  <ng-template let-event pTemplate="content">
+    <h3>{{event.status}}</h3>
+    <p>{{event.date}}</p>
+  </ng-template>
+</p-timeline>

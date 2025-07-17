@@ -1,0 +1,11 @@
+<div class="flex flex-column align-items-center mt-4">
+  <p-textarea [(ngModel)]="message" placeholder="Viết lời nhắn..." rows="4" cols="40"></p-textarea>
+  <p-button label="Gửi" class="mt-2" (onClick)="sendMessage()"></p-button>
+
+  <div class="mt-4" style="width: 80%;">
+    <h3>Thông điệp của bạn</h3>
+    <ul>
+      <li *ngFor="let msg of messages">{{ msg }}</li>
+    </ul>
+  </div>
+</div>
