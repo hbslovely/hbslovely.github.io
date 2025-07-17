@@ -28,7 +28,7 @@ jobs:
         run: rm -rf ky-niem-web/*
 
       - name: 📁 Copy build to ky-niem-web/
-        run: cp -r dist/* ky-niem-web/
+        run: cd ./ky-niem-web && cp -r dist/* ../memories
 
       - name: 💾 Commit and push changes
         run: |
