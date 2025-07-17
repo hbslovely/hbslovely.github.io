@@ -1,0 +1,212 @@
+.places-section {
+  padding: 4rem 0;
+  background-color: var(--surface-card);
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: white;
+    background: var(--primary-color);
+    padding: 1rem;
+    border-radius: 1rem;
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .places-carousel {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 900px;
+
+    .carousel-container {
+      display: flex;
+      transition: transform 0.5s ease;
+      width: 100%;
+    }
+
+    .place-card {
+      flex: 0 0 100%;
+      padding: 0 1rem;
+
+      .place-image {
+        position: relative;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+        img {
+          width: 100%;
+          height: 400px;
+          object-fit: cover;
+        }
+
+        .place-overlay {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          padding: 2rem;
+          background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+          color: white;
+
+          .place-header {
+            margin-bottom: 1rem;
+
+            .place-name {
+              font-size: 1.8rem;
+              font-weight: bold;
+              margin-bottom: 0.5rem;
+            }
+
+            .place-date {
+              font-size: 1rem;
+              opacity: 0.8;
+            }
+          }
+
+          .place-content {
+            .place-description {
+              font-size: 1rem;
+              line-height: 1.6;
+              margin-bottom: 1rem;
+            }
+
+            .place-emotions {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 0.5rem;
+
+              .emotion-tag {
+                background: rgba(255, 255, 255, 0.2);
+                padding: 0.3rem 0.8rem;
+                border-radius: 1rem;
+                font-size: 0.9rem;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .carousel-nav-buttons {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+      display: flex;
+      justify-content: space-between;
+      padding: 0 1rem;
+      z-index: 10;
+
+      .control-btn {
+        background: rgba(0, 0, 0, 0.6);
+        border: 2px solid white;
+        color: white;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+        &:hover {
+          background: var(--primary-color);
+          transform: scale(1.1);
+        }
+
+        i {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+
+  .carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 2rem;
+
+    .indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.2);
+      border: 2px solid var(--primary-color);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+      &.active {
+        background: var(--primary-color);
+        transform: scale(1.2);
+      }
+
+      &:hover {
+        background: var(--primary-color);
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .places-section {
+    .places-carousel {
+      .place-card {
+        .place-image {
+          height: 300px;
+
+          img {
+            height: 300px;
+          }
+
+          .place-overlay {
+            padding: 1.5rem;
+
+            .place-header {
+              .place-name {
+                font-size: 1.4rem;
+              }
+            }
+
+            .place-content {
+              .place-description {
+                font-size: 0.9rem;
+              }
+            }
+          }
+        }
+      }
+
+      .carousel-nav-buttons {
+        .control-btn {
+          width: 35px;
+          height: 35px;
+
+          i {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+
+    .carousel-indicators {
+      margin-top: 1.5rem;
+    }
+  }
+} 

@@ -1,0 +1,20 @@
+<!-- Favorite Foods Section -->
+<div class="foods-section">
+  <div class="container">
+    <h2 class="section-title">🍜 Món Ăn Yêu Thích</h2>
+    <div class="foods-container">
+      <div class="foods-timeline">
+        <div class="food-item" *ngFor="let food of foods">
+          <div class="food-icon">{{ food.person === 'Chồng' ? '👨' : '👩' }}</div>
+          <div class="food-content">
+            <h3 class="food-name">{{ food.dish }}</h3>
+            <p class="food-story">{{ food.story }}</p>
+            <div class="food-feeling">
+              <span class="feeling-tag">{{ food.feeling }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 

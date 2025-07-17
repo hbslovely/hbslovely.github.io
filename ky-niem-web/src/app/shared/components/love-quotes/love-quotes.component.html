@@ -1,0 +1,15 @@
+<!-- Love Quotes Section -->
+<div class="quotes-section">
+  <div class="container">
+    <h2 class="section-title">💌 Những Câu Nói Yêu Thương</h2>
+    <div class="quotes-grid">
+      <div class="quote-card" *ngFor="let quote of quotes">
+        <div class="quote-icon">
+          <i [class]="quote.icon"></i>
+        </div>
+        <blockquote class="quote-text">"{{ quote.quote }}"</blockquote>
+        <div class="quote-author">- {{ quote.author }}</div>
+      </div>
+    </div>
+  </div>
+</div> 

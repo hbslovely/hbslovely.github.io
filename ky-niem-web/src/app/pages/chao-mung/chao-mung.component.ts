@@ -1,36 +1,41 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { CarouselModule } from 'primeng/carousel';
+import { ParallaxHeaderComponent } from '../../shared/components/parallax-header/parallax-header.component';
+import { LoveStatisticsComponent } from '../../shared/components/love-statistics/love-statistics.component';
+import { SpecialMomentsComponent } from '../../shared/components/special-moments/special-moments.component';
+import { OurSongsComponent } from '../../shared/components/our-songs/our-songs.component';
+import { MemoryPlacesComponent } from '../../shared/components/memory-places/memory-places.component';
+import { LoveQuotesComponent } from '../../shared/components/love-quotes/love-quotes.component';
+import { MeaningfulGiftsComponent } from '../../shared/components/meaningful-gifts/meaningful-gifts.component';
+import { FavoriteFoodsComponent } from '../../shared/components/favorite-foods/favorite-foods.component';
+import { MemoryGalleryComponent } from '../../shared/components/memory-gallery/memory-gallery.component';
+import { GratitudeMessagesComponent } from '../../shared/components/gratitude-messages/gratitude-messages.component';
 
 @Component({
   selector: 'app-chao-mung',
   standalone: true,
-  imports: [CommonModule, CarouselModule],
+  imports: [
+    CommonModule,
+    CarouselModule,
+    ParallaxHeaderComponent,
+    LoveStatisticsComponent,
+    SpecialMomentsComponent,
+    OurSongsComponent,
+    MemoryPlacesComponent,
+    LoveQuotesComponent,
+    MeaningfulGiftsComponent,
+    FavoriteFoodsComponent,
+    MemoryGalleryComponent,
+    GratitudeMessagesComponent
+  ],
   templateUrl: './chao-mung.component.html',
   styleUrls: ['./chao-mung.component.scss']
 })
-export class ChaoMungComponent implements OnInit, OnDestroy {
+export class ChaoMungComponent implements OnInit {
   memories: any[] = [];
   timeline: any[] = [];
-  currentText: string = '';
-  textIndex: number = 0;
-  charIndex: number = 0;
-  Object = Object;
-
-  welcomeTexts: string[] = [
-    'Chào Mừng Đến Với Trang Kỷ Niệm Của Chúng Mình 💑',
-    'Nơi Lưu Giữ Những Khoảnh Khắc Đẹp 💕',
-    'Hành Trình Yêu Thương Của Hai Đứa 💝'
-  ];
-
-  liveCounter = {
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0
-  };
-
   loveStatistics: any = {};
   specialMoments: any[] = [];
   ourSongs: any[] = [];
@@ -38,76 +43,11 @@ export class ChaoMungComponent implements OnInit, OnDestroy {
   loveQuotes: any[] = [];
   meaningfulGifts: any[] = [];
   favoriteFoods: any[] = [];
-  futureDreams: any[] = [];
   
-  private counterInterval: any;
-  private startDate = new Date('2021-05-09T00:00:00');
-
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
     this.loadMemoriesData();
-    this.startLiveCounter();
-    this.typeText();
-  }
-
-  ngOnDestroy() {
-    if (this.counterInterval) {
-      clearInterval(this.counterInterval);
-    }
-  }
-
-  getStatLabel(key: string): string {
-    const labels: { [key: string]: string } = {
-      daysTogether: 'Ngày Bên Nhau',
-      photosShared: 'Ảnh Đã Chụp',
-      tripsTaken: 'Chuyến Đi',
-      smilesShared: 'Nụ Cười',
-      hugsTight: 'Cái Ôm',
-      laughsLoud: 'Tiếng Cười',
-      tearsOfJoy: 'Giọt Nước Mắt Hạnh Phúc',
-      dreamsShared: 'Ước Mơ Chung'
-    };
-    return labels[key] || key;
-  }
-
-  private startLiveCounter() {
-    this.updateCounter();
-    this.counterInterval = setInterval(() => {
-      this.updateCounter();
-    }, 1000);
-  }
-
-  private updateCounter() {
-    const now = new Date();
-    const diff = now.getTime() - this.startDate.getTime();
-    
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-    
-    this.liveCounter = {
-      days,
-      hours,
-      minutes,
-      seconds
-    };
-  }
-
-  typeText() {
-    if (this.charIndex < this.welcomeTexts[this.textIndex].length) {
-      this.currentText = this.welcomeTexts[this.textIndex].slice(0, this.charIndex + 1);
-      this.charIndex++;
-      setTimeout(() => this.typeText(), 100);
-    } else {
-      setTimeout(() => {
-        this.charIndex = 0;
-        this.textIndex = (this.textIndex + 1) % this.welcomeTexts.length;
-        this.currentText = '';
-        this.typeText();
-      }, 3000);
-    }
   }
 
   private loadMemoriesData() {
@@ -122,7 +62,6 @@ export class ChaoMungComponent implements OnInit, OnDestroy {
         this.loveQuotes = data.loveQuotes;
         this.meaningfulGifts = data.meaningfulGifts;
         this.favoriteFoods = data.favoriteFoods;
-        this.futureDreams = data.futureDreams;
       },
       error: (error) => {
         console.error('Error loading memories data:', error);
@@ -141,25 +80,6 @@ export class ChaoMungComponent implements OnInit, OnDestroy {
       { id: 6, src: 'assets/images/hinh-cuoi/cung-nhau.png', description: 'Cùng nhau - Hạnh phúc mỗi ngày' }
     ];
 
-    this.timeline = [
-      {
-        phase: "Lần đầu gặp nhau",
-        date: "01/2020",
-        title: "Khoảnh khắc định mệnh 💫",
-        description: "Lần đầu tiên anh và em gặp nhau, đó là một khoảnh khắc diệu kỳ mà cả hai sẽ không bao giờ quên.",
-        image: "assets/images/ki-niem/lan-dau-gap-nhau.png",
-        icon: "pi pi-eye"
-      },
-      {
-        phase: "Trao duyên",
-        date: "02/2020",
-        title: "Những ngày đầu yêu nhau 💕",
-        description: "Từ những cuộc nói chuyện ban đầu, chúng ta đã dần hiểu và yêu thương nhau.",
-        image: "assets/images/ki-niem/trao-duyen.png",
-        icon: "pi pi-heart"
-      }
-    ];
-
     this.loveStatistics = {
       daysTogether: '1,531',
       photosShared: '12,457',
@@ -168,7 +88,7 @@ export class ChaoMungComponent implements OnInit, OnDestroy {
       hugsTight: '6,000+',
       laughsLoud: 'Vô số',
       tearsOfJoy: 'Rất nhiều',
-      dreamsShared: 'Tất cả'
+      comfortMoments: 'Mỗi ngày'
     };
 
     this.specialMoments = [
@@ -205,11 +125,11 @@ export class ChaoMungComponent implements OnInit, OnDestroy {
 
     this.memoryPlaces = [
       {
-        name: 'Vũng Tàu',
-        description: 'Bãi biển đầu tiên chúng ta cùng nhau đến',
-        significance: 'Chuyến đi biển đầu tiên',
-        icon: 'pi pi-sun',
-        image: 'assets/images/dia-diem/vung-tau.jpg'
+        name: 'Đồng Huyền Không - Đà Nẵng',
+        date: 'Tháng 5, 2024',
+        image: '/assets/images/bucket/DongHuyenKhong_DaNang_Thang5-2024.png',
+        description: 'Chuyến đi Đà Nẵng đầu tiên của chúng ta',
+        emotions: ['Bình yên', 'Hạnh phúc', 'Lãng mạn']
       }
     ];
 
@@ -232,19 +152,53 @@ export class ChaoMungComponent implements OnInit, OnDestroy {
 
     this.favoriteFoods = [
       {
-        dish: 'Phở bò',
-        story: 'Món ăn đầu tiên anh nấu cho em khi em ốm',
-        feeling: 'Ấm lòng'
+        dish: 'Cơm tấm',
+        person: 'Chồng',
+        story: 'Món ăn truyền thống mà anh yêu thích nhất, đặc biệt là vào buổi sáng',
+        feeling: 'Hạnh phúc'
       }
     ];
+  }
 
-    this.futureDreams = [
-      {
-        dream: 'Du lịch khắp thế giới',
-        description: 'Cùng nhau khám phá 50 quốc gia',
-        timeline: '10 năm tới',
-        icon: 'pi pi-globe'
-      }
-    ];
+  // Carousel properties
+  currentSlide = 0;
+  currentTranslate = 0;
+  autoSlideInterval: any;
+
+  startAutoSlide() {
+    this.autoSlideInterval = setInterval(() => {
+      this.nextSlide();
+    }, 5000); // Change slide every 5 seconds
+  }
+
+  resetAutoSlide() {
+    if (this.autoSlideInterval) {
+      clearInterval(this.autoSlideInterval);
+    }
+    this.startAutoSlide();
+  }
+
+  nextSlide() {
+    this.currentSlide = (this.currentSlide + 1) % this.memoryPlaces.length;
+    this.updateTranslate();
+    this.resetAutoSlide();
+  }
+
+  prevSlide() {
+    this.currentSlide = (this.currentSlide - 1 + this.memoryPlaces.length) % this.memoryPlaces.length;
+    this.updateTranslate();
+    this.resetAutoSlide();
+  }
+
+  goToSlide(index: number) {
+    this.currentSlide = index;
+    this.updateTranslate();
+    this.resetAutoSlide();
+  }
+
+  private updateTranslate() {
+    // Calculate the translation percentage based on the current slide
+    const slideWidth = 100; // 100%
+    this.currentTranslate = -this.currentSlide * slideWidth;
   }
 } 

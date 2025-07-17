@@ -1,0 +1,30 @@
+<!-- Statistics Section -->
+<div class="statistics-section">
+  <div class="text-center mb-5">
+    <h1 class="card-title">💝 Những Con Số Yêu Thương</h1>
+    <p class="text-lg text-muted">Những con số đánh dấu hành trình yêu thương của chúng em</p>
+  </div>
+
+  <div class="container">
+    <div class="glass-card stats-container p-6">
+      <div class="stats-header mb-4 text-center">
+        <h2 class="card-heading">💕 Our Love Journey</h2>
+        <p class="text-muted">Ba Heo & Heo Bỉm</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card" *ngFor="let stat of Object.entries(statistics)">
+          <div class="stat-frame">
+            <div class="stat-image" *ngIf="getStatImage(stat[0])">
+              <img [src]="getStatImage(stat[0])" [alt]="getStatLabel(stat[0])" class="stat-icon">
+            </div>
+            <div class="stat-content">
+              <div class="stat-value">{{ stat[1] }}</div>
+              <div class="stat-label">{{ getStatLabel(stat[0]) }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 

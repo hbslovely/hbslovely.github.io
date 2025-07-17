@@ -1,0 +1,12 @@
+<!-- Gallery Section -->
+<div class="gallery-section">
+  <div class="container">
+    <h2 class="section-title">📸 Album Kỷ Niệm</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item" *ngFor="let memory of memories">
+        <img [src]="memory.src" [alt]="memory.description">
+        <div class="gallery-caption">{{ memory.description }}</div>
+      </div>
+    </div>
+  </div>
+</div> 

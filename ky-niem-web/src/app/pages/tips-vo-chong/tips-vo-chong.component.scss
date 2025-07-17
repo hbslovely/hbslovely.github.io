@@ -1,0 +1,295 @@
+/* Variables */
+$primary: #f59e0b;
+$secondary: #10b981;
+$text: #374151;
+$bg: #fef3e2;
+
+.tips-container {
+  background: linear-gradient(135deg, $bg 0%, darken($bg, 3%) 100%);
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+/* Header */
+.header-section {
+  text-align: center;
+  margin-bottom: 3rem;
+  
+  h1 {
+    font-size: 2rem;
+    color: $text;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  
+  p {
+    color: lighten($text, 20%);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+/* Categories */
+.categories-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.category-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  background: white;
+  color: $text;
+  border: none;
+  transition: all 0.3s ease;
+  
+  i {
+    margin-right: 0.5rem;
+  }
+  
+  &:hover {
+    background: rgba($primary, 0.1);
+  }
+  
+  &.active {
+    background: $primary;
+    color: white;
+  }
+}
+
+/* Tips Grid */
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.tip-card {
+  background: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+
+.tip-header {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  
+  .category-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    i {
+      color: white;
+      font-size: 1.2rem;
+    }
+  }
+  
+  h3 {
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  span {
+    font-size: 0.875rem;
+    color: lighten($text, 30%);
+  }
+}
+
+.tip-content {
+  padding: 1rem;
+  color: $text;
+  line-height: 1.6;
+}
+
+.tip-meta {
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.02);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.meta-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  color: lighten($text, 30%);
+  
+  .author, .rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .rating i {
+    color: $primary;
+  }
+}
+
+.fun-level {
+  .level-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .level-bar {
+    height: 4px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    
+    .progress {
+      height: 100%;
+      background: linear-gradient(90deg, $primary, $secondary);
+      transition: width 0.6s ease;
+    }
+  }
+}
+
+/* Add Tip Form */
+.add-tip-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  
+  h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    
+    i {
+      margin-right: 0.5rem;
+      color: $secondary;
+    }
+  }
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  input, select, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.25rem;
+    
+    &:focus {
+      outline: none;
+      border-color: $primary;
+    }
+  }
+  
+  textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+}
+
+.submit-button {
+  display: block;
+  width: fit-content;
+  margin: 1.5rem auto 0;
+  padding: 0.75rem 2rem;
+  background: $secondary;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  
+  i {
+    margin-right: 0.5rem;
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  &:not(:disabled):hover {
+    background: darken($secondary, 5%);
+  }
+}
+
+/* Statistics */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  
+  .stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(45deg, $primary, $secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .stat-label {
+    color: lighten($text, 30%);
+    font-size: 0.875rem;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header-section {
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  .category-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+

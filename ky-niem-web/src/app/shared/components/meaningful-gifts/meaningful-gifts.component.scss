@@ -1,0 +1,101 @@
+.gifts-section {
+  padding: 4rem 0;
+  background-color: var(--surface-card);
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+  }
+
+  .gifts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .gift-card {
+    background: var(--surface-ground);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .gift-content {
+      .gift-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .gift-title {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: var(--text-color);
+        margin-bottom: 0.5rem;
+      }
+
+      .gift-occasion {
+        font-size: 1rem;
+        color: var(--text-color-secondary);
+        margin-bottom: 1rem;
+      }
+
+      .gift-meaning {
+        font-size: 1rem;
+        color: var(--text-color-secondary);
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+
+      .gift-emotion {
+        .emotion-tag {
+          display: inline-block;
+          padding: 0.5rem 1rem;
+          background: var(--primary-color);
+          color: white;
+          border-radius: 1rem;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .gifts-section {
+    .gifts-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .gift-card {
+      padding: 1.5rem;
+
+      .gift-content {
+        .gift-icon {
+          font-size: 2.5rem;
+        }
+
+        .gift-title {
+          font-size: 1.2rem;
+        }
+
+        .gift-occasion,
+        .gift-meaning {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+} 

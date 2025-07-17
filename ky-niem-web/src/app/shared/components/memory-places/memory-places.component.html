@@ -1,0 +1,48 @@
+<!-- Memory Places Section -->
+<div class="places-section">
+  <div class="container">
+    <h2 class="section-title">🌍 Những Địa Điểm Kỷ Niệm</h2>
+
+    <div class="places-carousel">
+      <div class="carousel-container" [style.transform]="'translateX(' + currentTranslate + '%)'">
+        <div class="place-card" *ngFor="let place of places">
+          <div class="place-image">
+            <img [src]="place.image" [alt]="place.name">
+            <div class="place-overlay">
+              <div class="place-header">
+                <h3 class="place-name">{{ place.name }}</h3>
+                <div class="place-date">{{ place.date }}</div>
+              </div>
+              <div class="place-content">
+                <p class="place-description">{{ place.description }}</p>
+                <div class="place-emotions">
+                  <span class="emotion-tag" *ngFor="let emotion of place.emotions">{{ emotion }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div class="carousel-nav-buttons">
+        <button class="control-btn prev" (click)="prevSlide()">
+          <i class="pi pi-chevron-left"></i>
+        </button>
+        <button class="control-btn next" (click)="nextSlide()">
+          <i class="pi pi-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Indicators moved outside -->
+    <div class="carousel-indicators">
+      <span
+        *ngFor="let place of places; let i = index"
+        class="indicator"
+        [class.active]="currentSlide === i"
+        (click)="goToSlide(i)">
+      </span>
+    </div>
+  </div>
+</div> 

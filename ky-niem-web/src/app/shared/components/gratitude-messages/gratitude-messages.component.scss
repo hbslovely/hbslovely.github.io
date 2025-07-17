@@ -1,0 +1,78 @@
+.gratitude-section {
+  padding: 4rem 0;
+  background-color: var(--surface-card);
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+  }
+
+  .gratitude-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .gratitude-letter {
+    background: var(--surface-ground);
+    border-radius: 1rem;
+    padding: 3rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+
+    .gratitude-paragraph {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-color);
+      margin-bottom: 1.5rem;
+
+      &:last-of-type {
+        margin-bottom: 2rem;
+      }
+    }
+
+    .gratitude-signature {
+      text-align: right;
+      font-style: italic;
+      color: var(--primary-color);
+
+      p {
+        margin: 0.5rem 0;
+        font-size: 1.1rem;
+
+        &:last-child {
+          font-weight: bold;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .gratitude-section {
+    .gratitude-letter {
+      padding: 2rem;
+
+      .gratitude-paragraph {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .gratitude-signature p {
+        font-size: 1rem;
+
+        &:last-child {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+} 

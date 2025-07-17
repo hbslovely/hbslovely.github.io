@@ -1,0 +1,19 @@
+<!-- Meaningful Gifts Section -->
+<div class="gifts-section">
+  <div class="container">
+    <h2 class="section-title">🎁 Những Món Quà Ý Nghĩa</h2>
+    <div class="gifts-grid">
+      <div class="gift-card" *ngFor="let gift of gifts">
+        <div class="gift-content">
+          <div class="gift-icon">🎁</div>
+          <h3 class="gift-title">{{ gift.gift }}</h3>
+          <div class="gift-occasion">{{ gift.occasion }}</div>
+          <p class="gift-meaning">{{ gift.meaning }}</p>
+          <div class="gift-emotion">
+            <span class="emotion-tag">{{ gift.emotion }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 

@@ -1,0 +1,14 @@
+<!-- Our Songs Section -->
+<div class="songs-section">
+  <div class="container">
+    <h2 class="section-title">🎵 Những Bài Hát Của Chúng Ta</h2>
+    <div class="songs-grid">
+      <div class="song-card" *ngFor="let song of songs">
+        <h3 class="song-title">{{ song.title }}</h3>
+        <div class="song-artist">{{ song.artist }}</div>
+        <p class="song-moment">{{ song.moment }}</p>
+        <p class="song-description">{{ song.description }}</p>
+      </div>
+    </div>
+  </div>
+</div> 

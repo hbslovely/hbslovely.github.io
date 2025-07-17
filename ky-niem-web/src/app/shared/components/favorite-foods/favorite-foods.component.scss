@@ -1,0 +1,144 @@
+.foods-section {
+  padding: 4rem 0;
+  background-color: var(--surface-ground);
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+  }
+
+  .foods-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .foods-timeline {
+    position: relative;
+    padding: 2rem 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 100%;
+      background: var(--primary-color);
+      opacity: 0.3;
+    }
+
+    .food-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+      position: relative;
+
+      &:nth-child(odd) {
+        padding-right: 50%;
+        .food-content {
+          margin-right: 2rem;
+        }
+      }
+
+      &:nth-child(even) {
+        padding-left: 50%;
+        flex-direction: row-reverse;
+        .food-content {
+          margin-left: 2rem;
+        }
+      }
+
+      .food-icon {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 3rem;
+        height: 3rem;
+        background: var(--surface-card);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+      }
+
+      .food-content {
+        background: var(--surface-card);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+
+        .food-name {
+          font-size: 1.4rem;
+          font-weight: bold;
+          color: var(--text-color);
+          margin-bottom: 0.5rem;
+        }
+
+        .food-story {
+          font-size: 1rem;
+          color: var(--text-color-secondary);
+          line-height: 1.6;
+          margin-bottom: 1rem;
+        }
+
+        .food-feeling {
+          .feeling-tag {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 1rem;
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .foods-section {
+    .foods-timeline {
+      &::before {
+        left: 2rem;
+      }
+
+      .food-item {
+        padding-left: 4rem !important;
+        padding-right: 0 !important;
+        flex-direction: row !important;
+
+        .food-icon {
+          left: 2rem;
+          width: 2.5rem;
+          height: 2.5rem;
+          font-size: 1.2rem;
+        }
+
+        .food-content {
+          margin: 0 !important;
+
+          .food-name {
+            font-size: 1.2rem;
+          }
+
+          .food-story {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+} 

@@ -165,51 +165,50 @@ $gradient-dark: #dcfce7; // Light green gradient
 // Statistics Section
 .statistics-section {
   padding: 4rem 0;
-  background: linear-gradient(135deg, $gradient-light, $gradient-dark);
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-
-  .section-title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 3rem;
-    color: $primary-dark;
-  }
+  background-color: var(--surface-ground);
 
   .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
+    padding: 2rem 0;
   }
 
   .stat-card {
-    background: white;
+    background: var(--surface-card);
+    border-radius: 1rem;
     padding: 2rem;
-    border-radius: 15px;
     text-align: center;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    border: 1px solid rgba($primary-color, 0.1);
 
     &:hover {
       transform: translateY(-5px);
-      border-color: $primary-color;
+    }
+
+    .stat-image {
+      margin-bottom: 1rem;
+      
+      .stat-icon {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin: 0 auto;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
     }
 
     .stat-value {
-      font-size: 2rem;
+      font-size: 2.5rem;
       font-weight: bold;
-      color: $primary-color;
-      margin-bottom: 1rem;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
     }
 
     .stat-label {
       font-size: 1.1rem;
-      color: $primary-dark;
+      color: var(--text-color-secondary);
     }
   }
 }
@@ -513,141 +512,333 @@ $gradient-dark: #dcfce7; // Light green gradient
   }
 }
 
-// Memory Places Section
+// Places Section
 .places-section {
   padding: 4rem 0;
-  background: #ffffff;
+  background: linear-gradient(135deg, $gradient-light, $gradient-dark);
+  overflow: hidden;
 
-  .places-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 0 2rem;
   }
 
+  .places-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .places-carousel {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 15px;
+  }
+
+  .carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 2rem;
+    padding: 0.5rem;
+  }
+
   .place-card {
+    min-width: 100%;
+    flex: 0 0 100%;
     background: white;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    border: 1px solid rgba($primary-color, 0.1);
 
-    &:hover {
-      transform: translateY(-5px);
-      border-color: $primary-color;
+    @media (min-width: 768px) {
+      min-width: calc(50% - 1rem);
+      flex: 0 0 calc(50% - 1rem);
+    }
 
-      .place-image img {
-        transform: scale(1.1);
-      }
+    @media (min-width: 1024px) {
+      min-width: calc(33.333% - 1.333rem);
+      flex: 0 0 calc(33.333% - 1.333rem);
     }
 
     .place-image {
-      height: 200px;
+      position: relative;
+      height: 400px;
       overflow: hidden;
 
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.3s ease;
+        transition: transform 0.5s ease;
+      }
+
+      .place-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, 
+          rgba(0, 0, 0, 0.2),
+          rgba(0, 0, 0, 0.8)
+        );
+        color: white;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+
+        .place-header {
+          text-align: center;
+
+          .place-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+          }
+
+          .place-date {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-style: italic;
+          }
+        }
+
+        .place-content {
+          .place-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+          }
+
+          .place-emotions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+
+            .emotion-tag {
+              background: rgba(255, 255, 255, 0.2);
+              padding: 0.5rem 1rem;
+              border-radius: 20px;
+              font-size: 0.9rem;
+              backdrop-filter: blur(5px);
+            }
+          }
+        }
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+
+        .place-overlay {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .carousel-controls {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 0 2rem;
+
+    .control-btn {
+      background: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      z-index: 2;
+
+      i {
+        color: $primary-color;
+        font-size: 1.2rem;
+      }
+
+      &:hover {
+        background: $primary-color;
+        transform: translateY(-2px);
+
+        i {
+          color: white;
+        }
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+
+      &.prev {
+        position: absolute;
+        left: 0;
+      }
+
+      &.next {
+        position: absolute;
+        right: 0;
       }
     }
 
-    .place-content {
-      padding: 1.5rem;
+    .carousel-indicators {
+      display: flex;
+      gap: 0.5rem;
+      z-index: 1;
+
+      .indicator {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba($primary-color, 0.3);
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &.active {
+          background: $primary-color;
+          transform: scale(1.2);
+        }
+
+        &:hover {
+          background: $primary-color;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .places-carousel-wrapper {
+      padding: 0 1rem;
     }
 
-    .place-name {
-      font-size: 1.3rem;
-      color: $primary-dark;
-      margin-bottom: 0.5rem;
+    .carousel-controls {
+      padding: 0 1rem;
     }
 
-    .place-significance {
-      color: $primary-color;
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
-    }
-
-    .place-description {
-      color: #666;
-      line-height: 1.6;
+    .place-card {
+      .place-image {
+        height: 300px;
+      }
     }
   }
 }
 
-// Love Quotes Section
+// Quotes Section
 .quotes-section {
   padding: 4rem 0;
-  background: linear-gradient(135deg, $gradient-light 0%, $gradient-dark 100%);
+  background: #ffffff;
 
-  .quotes-carousel {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 0 2rem;
   }
 
+  .quotes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
   .quote-card {
-    background: white;
+    background: linear-gradient(135deg, $gradient-light, $gradient-dark);
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    border: 1px solid rgba($primary-color, 0.1);
 
     &:hover {
       transform: translateY(-5px);
-      border-color: $primary-color;
     }
 
-    i {
-      font-size: 2rem;
-      color: $primary-color;
-      margin-bottom: 1rem;
+    .quote-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 1.5rem;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      i {
+        font-size: 1.5rem;
+        color: $primary-color;
+      }
     }
 
     .quote-text {
       font-size: 1.1rem;
-      color: #666;
+      color: $primary-dark;
+      margin: 0 0 1.5rem;
       line-height: 1.6;
-      margin: 1rem 0;
       font-style: italic;
     }
 
     .quote-author {
-      color: $primary-dark;
-      font-weight: 600;
+      color: $primary-color;
+      font-weight: bold;
     }
   }
 }
 
-// Meaningful Gifts Section
+// Gifts Section
 .gifts-section {
   padding: 4rem 0;
-  background: #ffffff;
+  background: linear-gradient(135deg, $gradient-light, $gradient-dark);
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
 
   .gifts-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    padding: 0 2rem;
   }
 
   .gift-card {
     background: white;
-    padding: 2rem;
     border-radius: 15px;
-    text-align: center;
+    overflow: hidden;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    border: 1px solid rgba($primary-color, 0.1);
 
     &:hover {
       transform: translateY(-5px);
-      border-color: $primary-color;
+    }
+
+    .gift-content {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .gift-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
     }
 
     .gift-title {
@@ -658,7 +849,7 @@ $gradient-dark: #dcfce7; // Light green gradient
 
     .gift-occasion {
       color: $primary-color;
-      font-size: 1.1rem;
+      font-style: italic;
       margin-bottom: 1rem;
     }
 
@@ -668,43 +859,98 @@ $gradient-dark: #dcfce7; // Light green gradient
       margin-bottom: 1rem;
     }
 
-    .gift-emotion {
-      color: $primary-color;
-      font-style: italic;
+    .emotion-tag {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: $gradient-light;
+      color: $primary-dark;
+      border-radius: 20px;
+      font-size: 0.9rem;
     }
   }
 }
 
-// Favorite Foods Section
+// Foods Section
 .foods-section {
   padding: 4rem 0;
-  background: linear-gradient(135deg, $gradient-light 0%, $gradient-dark 100%);
+  background: #ffffff;
 
-  .foods-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 0 2rem;
   }
 
-  .food-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    border: 1px solid rgba($primary-color, 0.1);
+  .foods-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
 
-    &:hover {
-      transform: translateY(-5px);
-      border-color: $primary-color;
+  .foods-timeline {
+    position: relative;
+    padding: 2rem 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 100%;
+      background: $primary-color;
+      top: 0;
     }
+  }
+
+  .food-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+    position: relative;
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+
+      .food-icon {
+        margin: 0 0 0 2rem;
+      }
+
+      .food-content {
+        text-align: right;
+      }
+    }
+
+    &:nth-child(odd) {
+      .food-icon {
+        margin: 0 2rem 0 0;
+      }
+    }
+  }
+
+  .food-icon {
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+
+  .food-content {
+    flex: 1;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 
     .food-name {
       font-size: 1.3rem;
       color: $primary-dark;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
 
     .food-story {
@@ -713,30 +959,130 @@ $gradient-dark: #dcfce7; // Light green gradient
       margin-bottom: 1rem;
     }
 
-    .food-feeling {
-      color: $primary-color;
-      font-style: italic;
+    .feeling-tag {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: $gradient-light;
+      color: $primary-dark;
+      border-radius: 20px;
+      font-size: 0.9rem;
     }
   }
 }
 
-// Future Dreams Section
-.dreams-section {
+// Gratitude Section
+.gratitude-section {
   padding: 4rem 0;
-  background: #ffffff;
+  background: linear-gradient(135deg, $gradient-light, $gradient-dark);
 
-  .dreams-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 0 2rem;
   }
 
-  .dream-card {
+  .gratitude-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .gratitude-letter {
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    position: relative;
+
+    &::before {
+      content: '💌';
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2.5rem;
+      background: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .gratitude-paragraph {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    text-align: justify;
+
+    &:last-of-type {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .gratitude-signature {
+    text-align: right;
+    color: $primary-dark;
+    font-style: italic;
+
+    p {
+      margin: 0.5rem 0;
+
+      &:last-child {
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+// Common Section Styles
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  color: $primary-dark;
+  padding: 1rem 0;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: $primary-color;
+    border-radius: 2px;
+  }
+}
+
+// Moments Section
+.moments-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, $gradient-light, $gradient-dark);
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .moments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .moment-card {
     background: white;
     padding: 2rem;
     border-radius: 15px;
-    text-align: center;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     border: 1px solid rgba($primary-color, 0.1);
@@ -746,16 +1092,157 @@ $gradient-dark: #dcfce7; // Light green gradient
       border-color: $primary-color;
     }
 
+    .moment-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+
+      i {
+        font-size: 1.5rem;
+        color: white;
+      }
+    }
+
+    .moment-title {
+      font-size: 1.5rem;
+      color: $primary-dark;
+      margin-bottom: 0.5rem;
+    }
+
+    .moment-date {
+      font-size: 1rem;
+      color: $primary-color;
+      margin-bottom: 1rem;
+    }
+
+    .moment-description {
+      color: #666;
+      line-height: 1.6;
+    }
+  }
+}
+
+// Songs Section
+.songs-section {
+  padding: 4rem 0;
+  background: #ffffff;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .songs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .song-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba($primary-color, 0.1);
+
+    &:hover {
+      transform: translateY(-5px);
+      border-color: $primary-color;
+    }
+
+    .song-title {
+      font-size: 1.5rem;
+      color: $primary-dark;
+      margin-bottom: 0.5rem;
+    }
+
+    .song-artist {
+      font-size: 1.1rem;
+      color: $primary-color;
+      margin-bottom: 1rem;
+    }
+
+    .song-moment {
+      font-style: italic;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    .song-description {
+      color: #666;
+      line-height: 1.6;
+    }
+  }
+}
+
+// Dreams Section
+.dreams-section {
+  padding: 4rem 0;
+  background: #ffffff;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .dreams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .dream-card {
+    background: linear-gradient(135deg, $gradient-light, $gradient-dark);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba($primary-color, 0.1);
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      transform: translateY(-5px);
+      border-color: $primary-color;
+
+      &::before {
+        transform: rotate(45deg) translate(-50%, -50%);
+        opacity: 0.1;
+      }
+    }
+
+    &::before {
+      content: '🌈';
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      font-size: 100px;
+      opacity: 0.05;
+      transform: rotate(0deg) translate(0, 0);
+      transition: all 0.5s ease;
+      pointer-events: none;
+    }
+
     i {
       font-size: 2rem;
       color: $primary-color;
       margin-bottom: 1rem;
+      display: block;
     }
 
     .dream-title {
       font-size: 1.3rem;
       color: $primary-dark;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      font-weight: bold;
     }
 
     .dream-description {
@@ -765,8 +1252,14 @@ $gradient-dark: #dcfce7; // Light green gradient
     }
 
     .dream-timeline {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: white;
       color: $primary-color;
-      font-style: italic;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
   }
 }
@@ -774,22 +1267,28 @@ $gradient-dark: #dcfce7; // Light green gradient
 // Gallery Section
 .gallery-section {
   padding: 4rem 0;
-  background: linear-gradient(135deg, $gradient-light 0%, $gradient-dark 100%);
+  background: linear-gradient(135deg, $gradient-light, $gradient-dark);
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
 
   .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    padding: 0 2rem;
   }
 
   .gallery-item {
     position: relative;
     border-radius: 15px;
     overflow: hidden;
-    aspect-ratio: 4/3;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    aspect-ratio: 3/2;
+    cursor: pointer;
+    transition: all 0.3s ease;
 
     &:hover {
       transform: translateY(-5px);
@@ -800,6 +1299,7 @@ $gradient-dark: #dcfce7; // Light green gradient
 
       .gallery-caption {
         opacity: 1;
+        transform: translateY(0);
       }
     }
 
@@ -807,7 +1307,7 @@ $gradient-dark: #dcfce7; // Light green gradient
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.3s ease;
+      transition: transform 0.5s ease;
     }
 
     .gallery-caption {
@@ -815,36 +1315,15 @@ $gradient-dark: #dcfce7; // Light green gradient
       bottom: 0;
       left: 0;
       right: 0;
-      padding: 1rem;
-      background: rgba($primary-dark, 0.8);
+      padding: 1.5rem;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
       color: white;
       opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-  }
-}
-
-// Gratitude Section
-.gratitude-section {
-  padding: 4rem 0;
-  background: #ffffff;
-
-  .gratitude-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
-  }
-
-  .gratitude-message {
-    font-size: 1.2rem;
-    color: $primary-dark;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-    font-style: italic;
-
-    &:last-child {
-      margin-bottom: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      font-size: 1rem;
+      text-align: center;
+      pointer-events: none;
     }
   }
 }

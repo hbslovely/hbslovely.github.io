@@ -209,11 +209,10 @@
           </h3>
           <div class="grid">
             <div *ngFor="let photo of husbandPhotos" class="col-12 sm:col-6 md:col-4">
-              <div class="photo-item border-round overflow-hidden mb-3 relative">
-                <img [src]="photo.url" [alt]="photo.caption" 
-                     class="w-full h-15rem object-cover">
-                <div class="absolute inset-0 bg-black-alpha-50 hidden">
-                  <div class="flex flex-column align-items-center justify-content-center h-full text-white">
+              <div class="photo-item">
+                <img [src]="photo.url" [alt]="photo.caption">
+                <div class="photo-overlay">
+                  <div class="flex flex-column align-items-center justify-content-center text-white">
                     <i class="pi pi-search text-4xl mb-3"></i>
                     <p class="text-center font-medium m-0 px-3">{{ photo.caption }}</p>
                   </div>
@@ -245,24 +244,27 @@
 
         <!-- Fun Facts -->
         <div class="card p-4 mb-4">
-          <h3 class="text-2xl font-bold text-900 mb-4 flex align-items-center">
-            <i class="pi pi-lightbulb text-primary mr-2"></i>
-            Những Điều Thú Vị
-            <span class="text-primary text-sm font-normal ml-auto">Về Anh</span>
-          </h3>
-          <div class="grid justify-content-center">
-            <div class="col-12 lg:col-10">
-              <div class="grid">
-                <div *ngFor="let fact of husbandFunFacts; let i = index" class="col-12 md:col-6 mb-4">
-                  <div class="surface-50 border-round p-4 h-full">
-                    <div class="flex align-items-start">
-                      <div class="flex-shrink-0 bg-primary text-white w-3rem h-3rem border-circle flex align-items-center justify-content-center font-bold mr-3">
-                        {{ i + 1 }}
-                      </div>
-                      <div>
-                        <h5 class="font-medium text-900 mb-2">{{ fact.title }}</h5>
-                        <p class="text-600 m-0 line-height-3">{{ fact.description }}</p>
-                      </div>
+          <div class="text-center mb-5">
+            <h1 class="card-title">✨ Những Điều Thú Vị</h1>
+            <p class="text-lg text-muted">Những điều đặc biệt về anh mà em yêu thích</p>
+          </div>
+
+          <div class="glass-card fun-facts-container p-6">
+            <div class="fun-facts-header mb-4 text-center">
+              <h2 class="card-heading">💝 Special Things About Him</h2>
+              <p class="text-muted">Ba Heo Nhỏ</p>
+            </div>
+
+            <div class="grid">
+              <div *ngFor="let fact of husbandFunFacts; let i = index" class="col-12 md:col-6">
+                <div class="fun-fact-frame">
+                  <div class="fun-fact-content">
+                    <div class="fun-fact-image">
+                      <img [src]="fact.image" [alt]="fact.title" class="fun-fact-icon">
+                    </div>
+                    <div class="fun-fact-text">
+                      <h4 class="fun-fact-title">{{ fact.title }}</h4>
+                      <p class="fun-fact-description">{{ fact.description }}</p>
                     </div>
                   </div>
                 </div>

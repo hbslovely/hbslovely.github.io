@@ -1,0 +1,16 @@
+<!-- Special Moments Section -->
+<div class="moments-section">
+  <div class="container">
+    <h2 class="section-title">✨ Những Khoảnh Khắc Đặc Biệt</h2>
+    <div class="moments-grid">
+      <div class="moment-card" *ngFor="let moment of moments">
+        <div class="moment-icon" [style.background-color]="moment.color">
+          <i [class]="moment.icon"></i>
+        </div>
+        <h3 class="moment-title">{{ moment.title }}</h3>
+        <div class="moment-date">{{ moment.date }}</div>
+        <p class="moment-description">{{ moment.description }}</p>
+      </div>
+    </div>
+  </div>
+</div> 

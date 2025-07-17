@@ -1,142 +1,124 @@
-<div class="container-fluid py-5" style="background: linear-gradient(135deg, #fef3e2 0%, #fdf2e9 100%); min-height: 100vh;">
+<div class="tips-container">
   <div class="max-w-6xl mx-auto px-4">
-    <!-- Header Section -->
-    <div class="text-center mb-10">
-      <h1 class="text-4xl font-bold text-gray-800 mb-4">
-        <i class="pi pi-lightbulb text-yellow-500 mr-3"></i>
-        Tips Vui Của Đôi Vợ Chồng
-      </h1>
-      <p class="text-xl text-gray-600">Những bí kíp và kinh nghiệm thú vị từ cuộc sống hôn nhân của Ba Heo & Heo Bỉm</p>
-      <div class="w-20 h-1 bg-yellow-500 mx-auto mt-4 rounded-full"></div>
+    <!-- Header -->
+    <div class="header-section">
+      <h1>Tips Vui Của Đôi Vợ Chồng</h1>
+      <p>Những bí kíp và kinh nghiệm thú vị từ cuộc sống hôn nhân của Ba Heo & Heo Bỉm</p>
     </div>
 
-    <!-- Categories Filter -->
-    <div class="flex flex-wrap justify-center gap-4 mb-8">
-      <button 
-        *ngFor="let category of categories"
-        (click)="selectedCategory = category.value"
-        [class]="'px-6 py-3 rounded-full font-semibold transition-all ' + (selectedCategory === category.value ? 'bg-yellow-500 text-white transform scale-105' : 'bg-white text-gray-700 hover:bg-yellow-100')">
-        <i [class]="category.icon + ' mr-2'"></i>
+    <!-- Categories -->
+    <div class="categories-section">
+      <button *ngFor="let category of categories"
+              (click)="selectedCategory = category.value; filterTips()"
+              [class.active]="selectedCategory === category.value"
+              class="category-button">
+        <i [class]="category.icon"></i>
         {{ category.label }}
       </button>
     </div>
 
     <!-- Tips Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-      <div *ngFor="let tip of filteredTips; let i = index" 
-           class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition-all duration-300">
-        
-        <div class="p-6">
-          <!-- Tip Header -->
-          <div class="flex items-center mb-4">
-            <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4"
-                 [style.background]="getTipCategoryColor(tip.category)">
-              <i [class]="getTipCategoryIcon(tip.category) + ' text-white text-xl'"></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-bold text-gray-800">{{ tip.title }}</h3>
-              <span class="text-sm text-gray-500">{{ getTipCategoryLabel(tip.category) }}</span>
-            </div>
+    <div class="tips-grid">
+      <div *ngFor="let tip of filteredTips" class="tip-card">
+        <div class="tip-header">
+          <div class="category-icon" [style.background]="getTipCategoryColor(tip.category)">
+            <i [class]="getTipCategoryIcon(tip.category)"></i>
           </div>
+          <div>
+            <h3>{{ tip.title }}</h3>
+            <span>{{ getTipCategoryLabel(tip.category) }}</span>
+          </div>
+        </div>
 
-          <!-- Tip Content -->
-          <p class="text-gray-700 mb-4 leading-relaxed">{{ tip.content }}</p>
+        <div class="tip-content">
+          <p>{{ tip.content }}</p>
+        </div>
 
-          <!-- Tip Meta -->
-          <div class="flex items-center justify-between">
-            <div class="flex items-center text-sm text-gray-500">
-              <i class="pi pi-user mr-1"></i>
+        <div class="tip-meta">
+          <div class="meta-info">
+            <div class="author">
+              <i class="pi pi-user"></i>
               <span>{{ tip.author }}</span>
             </div>
-            <div class="flex items-center text-sm text-gray-500">
-              <i class="pi pi-star-fill text-yellow-400 mr-1"></i>
+            <div class="rating">
+              <i class="pi pi-star-fill"></i>
               <span>{{ tip.rating }}/5</span>
             </div>
           </div>
 
-          <!-- Fun Level -->
-          <div class="mt-4">
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-sm font-semibold text-gray-600">Độ vui:</span>
-              <span class="text-sm text-gray-500">{{ tip.funLevel }}/5</span>
+          <div class="fun-level">
+            <div class="level-header">
+              <span>Độ vui:</span>
+              <span>{{ tip.funLevel }}/5</span>
             </div>
-            <div class="w-full bg-gray-200 rounded-full h-2">
-              <div class="bg-yellow-400 h-2 rounded-full transition-all duration-500"
-                   [style.width]="(tip.funLevel / 5 * 100) + '%'"></div>
+            <div class="level-bar">
+              <div class="progress" [style.width]="(tip.funLevel / 5 * 100) + '%'"></div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Add Your Tip Section -->
-    <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
-      <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">
-        <i class="pi pi-plus mr-2 text-green-500"></i>
+    <!-- Add Tip Form -->
+    <div class="add-tip-form">
+      <h3>
+        <i class="pi pi-plus"></i>
         Chia Sẻ Tip Của Bạn
       </h3>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <label class="block text-gray-700 font-semibold mb-3">Tiêu đề tip</label>
-          <input 
-            type="text"
-            [(ngModel)]="newTip.title"
-            placeholder="VD: Bí quyết giữ lửa tình yêu"
-            class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-yellow-500 focus:outline-none">
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Tiêu đề tip</label>
+          <input type="text"
+                 [(ngModel)]="newTip.title"
+                 placeholder="VD: Bí quyết giữ lửa tình yêu">
         </div>
         
-        <div>
-          <label class="block text-gray-700 font-semibold mb-3">Danh mục</label>
-          <select 
-            [(ngModel)]="newTip.category"
-            class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-yellow-500 focus:outline-none">
-            <option *ngFor="let cat of categories.slice(1)" [value]="cat.value">{{ cat.label }}</option>
+        <div class="form-group">
+          <label>Danh mục</label>
+          <select [(ngModel)]="newTip.category">
+            <option *ngFor="let cat of categories.slice(1)" [value]="cat.value">
+              {{ cat.label }}
+            </option>
           </select>
         </div>
       </div>
 
-      <div class="mt-6">
-        <label class="block text-gray-700 font-semibold mb-3">Nội dung tip</label>
-        <textarea 
-          [(ngModel)]="newTip.content"
-          placeholder="Chia sẻ những kinh nghiệm, bí kíp thú vị của bạn..."
-          rows="4"
-          class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-yellow-500 focus:outline-none resize-none">
+      <div class="form-group">
+        <label>Nội dung tip</label>
+        <textarea [(ngModel)]="newTip.content"
+                  placeholder="Chia sẻ những kinh nghiệm, bí kíp thú vị của bạn...">
         </textarea>
       </div>
 
-      <div class="text-center mt-6">
-        <button 
-          (click)="submitTip()"
-          [disabled]="!canSubmitTip()"
-          [class]="'px-8 py-3 rounded-lg font-semibold text-white transition-all ' + (canSubmitTip() ? 'bg-green-500 hover:bg-green-600 transform hover:scale-105' : 'bg-gray-400 cursor-not-allowed')">
-          <i class="pi pi-send mr-2"></i>
-          Chia Sẻ Tip
-        </button>
-      </div>
+      <button class="submit-button"
+              (click)="submitTip()"
+              [disabled]="!canSubmitTip()">
+        <i class="pi pi-send"></i>
+        Chia Sẻ Tip
+      </button>
     </div>
 
     <!-- Statistics -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <div class="bg-white rounded-xl p-6 text-center shadow-lg">
-        <div class="text-3xl font-bold text-blue-600 mb-2">{{ getTotalTips() }}</div>
-        <div class="text-gray-600">Tổng Tips</div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value">{{ getTotalTips() }}</div>
+        <div class="stat-label">Tổng Tips</div>
       </div>
       
-      <div class="bg-white rounded-xl p-6 text-center shadow-lg">
-        <div class="text-3xl font-bold text-green-600 mb-2">{{ getAverageRating() }}</div>
-        <div class="text-gray-600">Đánh giá TB</div>
+      <div class="stat-card">
+        <div class="stat-value">{{ getAverageRating() }}</div>
+        <div class="stat-label">Đánh giá TB</div>
       </div>
       
-      <div class="bg-white rounded-xl p-6 text-center shadow-lg">
-        <div class="text-3xl font-bold text-yellow-600 mb-2">{{ getMostPopularCategory() }}</div>
-        <div class="text-gray-600">Danh mục phổ biến</div>
+      <div class="stat-card">
+        <div class="stat-value">{{ getMostPopularCategory() }}</div>
+        <div class="stat-label">Danh mục phổ biến</div>
       </div>
       
-      <div class="bg-white rounded-xl p-6 text-center shadow-lg">
-        <div class="text-3xl font-bold text-purple-600 mb-2">{{ getTopContributor() }}</div>
-        <div class="text-gray-600">Người đóng góp nhiều</div>
+      <div class="stat-card">
+        <div class="stat-value">{{ getTopContributor() }}</div>
+        <div class="stat-label">Người đóng góp nhiều</div>
       </div>
     </div>
   </div>

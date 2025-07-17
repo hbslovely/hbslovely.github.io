@@ -1,211 +1,28 @@
-<!-- Enhanced Header with Parallax and Blurred Avatar Backdrop -->
-<div class="parallax-header">
-  <div class="avatar-backdrop"></div>
-  
-  <div class="header-content">
-    <div class="floating-hearts">
-      <span class="heart">❤️</span>
-      <span class="heart">💕</span>
-      <span class="heart">💖</span>
-      <span class="heart">💗</span>
-      <span class="heart">💓</span>
-      <span class="heart">💝</span>
-      <span class="heart">💘</span>
-      <span class="heart">💞</span>
-      <span class="heart">💟</span>
-      <span class="heart">💌</span>
-    </div>
-    
-    <div class="title-wrapper">
-      <h1 class="typewriter">{{ currentText }}</h1>
-    </div>
-    
-    <div class="time-counter">
-      <h2 class="subtitle">⏰ Thời Gian Bên Nhau</h2>
-      <div class="counter-grid grid">
-        <!-- Days -->
-        <div class="counter-card">
-          <div class="number">{{ liveCounter.days }}</div>
-          <div class="label">NGÀY</div>
-        </div>
-        
-        <!-- Hours -->
-        <div class="counter-card">
-          <div class="number">{{ liveCounter.hours.toString().padStart(2, '0') }}</div>
-          <div class="label">GIỜ</div>
-        </div>
-        
-        <!-- Minutes -->
-        <div class="counter-card">
-          <div class="number">{{ liveCounter.minutes.toString().padStart(2, '0') }}</div>
-          <div class="label">PHÚT</div>
-        </div>
-        
-        <!-- Seconds -->
-        <div class="counter-card">
-          <div class="number">{{ liveCounter.seconds.toString().padStart(2, '0') }}</div>
-          <div class="label">GIÂY</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<app-parallax-header></app-parallax-header>
 
-<!-- Statistics Section -->
-<div class="statistics-section">
-  <div class="container">
-    <h2 class="section-title">💝 Những Con Số Yêu Thương</h2>
-    <div class="stats-grid">
-      <div class="stat-card" *ngFor="let stat of Object.entries(loveStatistics)">
-        <div class="stat-value">{{ stat[1] }}</div>
-        <div class="stat-label">{{ getStatLabel(stat[0]) }}</div>
-      </div>
-    </div>
-  </div>
-</div>
+<app-love-statistics [statistics]="loveStatistics"></app-love-statistics>
 
-<!-- Special Moments & Songs Section -->
-<div class="dual-section">
-  <div class="container">
-    <div class="section-grid">
-      <!-- Special Moments Column -->
-      <div class="section-column">
-        <h2 class="section-title">✨ Những Khoảnh Khắc Đặc Biệt</h2>
-        <div class="moments-list">
-          <div class="moment-card" *ngFor="let moment of specialMoments">
-            <div class="moment-icon" [style.background-color]="moment.color">
-              <i [class]="moment.icon"></i>
-            </div>
-            <h3 class="moment-title">{{ moment.title }}</h3>
-            <div class="moment-date">{{ moment.date }}</div>
-            <p class="moment-description">{{ moment.description }}</p>
-          </div>
-        </div>
-      </div>
+<app-special-moments [moments]="specialMoments"></app-special-moments>
 
-      <!-- Our Songs Column -->
-      <div class="section-column">
-        <h2 class="section-title">🎵 Những Bài Hát Của Chúng Ta</h2>
-        <div class="songs-list">
-          <div class="song-card" *ngFor="let song of ourSongs">
-            <h3 class="song-title">{{ song.title }}</h3>
-            <div class="song-artist">{{ song.artist }}</div>
-            <p class="song-moment">{{ song.moment }}</p>
-            <p class="song-description">{{ song.description }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<app-our-songs [songs]="ourSongs"></app-our-songs>
 
-<!-- Memory Places Section -->
-<div class="places-section">
-  <div class="container">
-    <h2 class="section-title">🌍 Những Địa Điểm Kỷ Niệm</h2>
-    <div class="places-grid">
-      <div class="place-card" *ngFor="let place of memoryPlaces">
-        <div class="place-image">
-          <img [src]="place.image" [alt]="place.name">
-        </div>
-        <div class="place-content">
-          <h3 class="place-name">{{ place.name }}</h3>
-          <div class="place-significance">{{ place.significance }}</div>
-          <p class="place-description">{{ place.description }}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<app-memory-places [places]="memoryPlaces"></app-memory-places>
 
-<!-- Love Quotes Section -->
-<div class="quotes-section">
-  <div class="container">
-    <h2 class="section-title">💝 Những Câu Nói Yêu Thương</h2>
-    <div class="quotes-carousel">
-      <div class="quote-card" *ngFor="let quote of loveQuotes">
-        <i [class]="quote.icon"></i>
-        <blockquote class="quote-text">{{ quote.quote }}</blockquote>
-        <div class="quote-author">- {{ quote.author }}</div>
-      </div>
-    </div>
-  </div>
-</div>
+<app-love-quotes [quotes]="loveQuotes"></app-love-quotes>
 
-<!-- Meaningful Gifts Section -->
-<div class="gifts-section">
-  <div class="container">
-    <h2 class="section-title">🎁 Những Món Quà Ý Nghĩa</h2>
-    <div class="gifts-grid">
-      <div class="gift-card" *ngFor="let gift of meaningfulGifts">
-        <h3 class="gift-title">{{ gift.gift }}</h3>
-        <div class="gift-occasion">{{ gift.occasion }}</div>
-        <p class="gift-meaning">{{ gift.meaning }}</p>
-        <div class="gift-emotion">{{ gift.emotion }}</div>
-      </div>
-    </div>
-  </div>
-</div>
+<app-meaningful-gifts [gifts]="meaningfulGifts"></app-meaningful-gifts>
 
-<!-- Favorite Foods Section -->
-<div class="foods-section">
-  <div class="container">
-    <h2 class="section-title">🍜 Món Ăn Yêu Thích</h2>
-    <div class="foods-grid">
-      <div class="food-card" *ngFor="let food of favoriteFoods">
-        <h3 class="food-name">{{ food.dish }}</h3>
-        <p class="food-story">{{ food.story }}</p>
-        <div class="food-feeling">{{ food.feeling }}</div>
-      </div>
-    </div>
-  </div>
-</div>
+<app-favorite-foods [foods]="favoriteFoods"></app-favorite-foods>
 
-<!-- Future Dreams Section -->
-<div class="dreams-section">
-  <div class="container">
-    <h2 class="section-title">🌈 Ước Mơ Tương Lai</h2>
-    <div class="dreams-grid">
-      <div class="dream-card" *ngFor="let dream of futureDreams">
-        <i [class]="dream.icon"></i>
-        <h3 class="dream-title">{{ dream.dream }}</h3>
-        <p class="dream-description">{{ dream.description }}</p>
-        <div class="dream-timeline">{{ dream.timeline }}</div>
-      </div>
-    </div>
-  </div>
-</div>
+<app-memory-gallery [memories]="memories"></app-memory-gallery>
 
-<!-- Gallery Section -->
-<div class="gallery-section">
-  <div class="container">
-    <h2 class="section-title">📸 Album Kỷ Niệm</h2>
-    <div class="gallery-grid">
-      <div class="gallery-item" *ngFor="let memory of memories">
-        <img [src]="memory.src" [alt]="memory.description">
-        <div class="gallery-caption">{{ memory.description }}</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Enhanced Gratitude Messages Section -->
-<div class="gratitude-section">
-  <div class="container">
-    <h2 class="section-title">💌 Lời Cảm Ơn</h2>
-    <div class="gratitude-content">
-      <p class="gratitude-message">Cảm ơn em đã luôn ở bên anh, cùng anh trải qua những thăng trầm của cuộc sống.</p>
-      <p class="gratitude-message">Cảm ơn em đã cho anh một gia đình hạnh phúc, một mái ấm để về.</p>
-      <p class="gratitude-message">Cảm ơn em vì tất cả những điều tuyệt vời em đã mang đến cho cuộc đời anh.</p>
-    </div>
-  </div>
-</div>
+<app-gratitude-messages></app-gratitude-messages>
 
 <!-- Timeline Section -->
 <div class="timeline-section">
   <div class="container">
-    <h2 class="section-title">💝 Câu Chuyện Của Chúng Tôi</h2>
-    
+    <h2 class="section-title">💑 Câu Chuyện Của Chúng Ta</h2>
+
     <div class="timeline-container">
       <div class="timeline-item" *ngFor="let item of timeline">
         <div class="timeline-content">
@@ -219,4 +36,4 @@
       </div>
     </div>
   </div>
-</div> 
+</div>

@@ -1,0 +1,159 @@
+.parallax-header {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-light) 100%);
+
+  .avatar-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/assets/images/anh-chu-dao/avatar-couple.png');
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px) brightness(0.7);
+    transform: scale(1.1);
+    z-index: 1;
+  }
+
+  .header-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+    max-width: 800px;
+    width: 100%;
+  }
+
+  .floating-hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    .heart {
+      position: absolute;
+      animation: float 6s ease-in-out infinite;
+      opacity: 0.6;
+      font-size: 1.5rem;
+
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+          left: random(100) * 1%;
+          animation-delay: random(5) * -1s;
+          animation-duration: (random(3) + 4) * 1s;
+        }
+      }
+    }
+  }
+
+  .title-wrapper {
+    margin-bottom: 3rem;
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      margin: 0;
+
+      &.typewriter {
+        display: inline-block;
+        border-right: 3px solid white;
+        padding-right: 5px;
+        animation: blink 0.7s step-end infinite;
+      }
+    }
+  }
+
+  .time-counter {
+    .subtitle {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    .counter-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      max-width: 600px;
+      margin: 0 auto;
+
+      .counter-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        padding: 1rem;
+        border-radius: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+        }
+
+        .number {
+          font-size: 2.5rem;
+          font-weight: bold;
+          margin-bottom: 0.5rem;
+        }
+
+        .label {
+          font-size: 0.9rem;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes blink {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+
+@media (max-width: 768px) {
+  .parallax-header {
+    .title-wrapper h1 {
+      font-size: 1.8rem;
+    }
+
+    .time-counter {
+      .subtitle {
+        font-size: 1.4rem;
+      }
+
+      .counter-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        .counter-card {
+          .number {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+} 
