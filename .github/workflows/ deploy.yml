@@ -25,7 +25,7 @@ jobs:
         run: cd ./ky-niem-web && npm run build -- --output-path=dist --base-href=/ky-niem-web/
 
       - name: 📁 Copy build to ky-niem-web/
-        run: cd ./ky-niem-web && cp -r dist/* ../memories
+        run: mkdir memories && cd ./ky-niem-web && cp -r dist/* ../memories
 
       - name: 🧹 Remove old files in ky-niem-web/
         run: rm -rf ky-niem-web/*
