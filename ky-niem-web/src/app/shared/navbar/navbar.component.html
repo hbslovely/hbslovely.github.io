@@ -1,11 +1,13 @@
 <!-- Main Navigation -->
 <div class="navbar-container">
-  <p-menubar [model]="menuItems" styleClass="custom-menubar">
+  <p-menubar [model]="menuItems">
     <ng-template pTemplate="start">
-      <div class="navbar-brand">
-        <img src="assets/images/anh-chu-dao/avatar-couple.png" alt="Avatar Couple" class="navbar-avatar">
+      <a routerLink="/ky-niem" class="navbar-brand">
+        <img src="assets/images/anh-chu-dao/avatar-couple.png" 
+             alt="Ba Heo & Heo Bỉm" 
+             class="navbar-avatar">
         <span class="navbar-title">Kỷ Niệm Yêu Thương</span>
-      </div>
+      </a>
     </ng-template>
   </p-menubar>
 </div>

@@ -46,6 +46,28 @@ export class KyNiemComponent implements OnInit, OnDestroy {
     }
   }
 
+  // Enhanced mouse interaction for 3D effects
+  onCardMouseMove(event: MouseEvent, element: HTMLElement) {
+    if (!element) return;
+    
+    const rect = element.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    
+    const rotateX = (y - centerY) / 10;
+    const rotateY = (centerX - x) / 10;
+    
+    element.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+  }
+
+  onCardMouseLeave(element: HTMLElement) {
+    if (!element) return;
+    element.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
+  }
+
   private startLiveCounter() {
     // Update immediately
     this.updateCounter();

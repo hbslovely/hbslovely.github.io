@@ -3,18 +3,75 @@
   <p class="text-lg text-muted">Bộ sưu tập những khoảnh khắc đẹp nhất của chúng em</p>
 </div>
 
-<div class="grid justify-content-center">
-  <div *ngFor="let photo of albumPhotos; let i = index" class="col-12 md:col-6 lg:col-4 px-3 mb-5">
-    <div class="glass-card animate-fadeInScale" [style.animation-delay]="(i * 0.15) + 's'">
-      <img [src]="photo.src" [alt]="photo.caption" 
-           class="w-full border-round-top-lg memory-image" 
-           style="height: 280px; object-fit: cover;">
-      <div class="p-4 text-center">
-        <div class="card-subheading text-lg mb-2">{{ photo.caption }}</div>
-        <div class="text-muted">
-          <i class="pi pi-calendar mr-2"></i>
-          <small>Ảnh {{ i + 1 }} / {{ albumPhotos.length }}</small>
-        </div>
+<!-- Album Cover -->
+<div class="album-cover-container mb-6">
+  <div class="glass-card album-cover p-6 text-center">
+    <div class="album-title mb-4">
+      <h2 class="card-heading">💕 Our Love Story</h2>
+      <p class="text-muted">Ba Heo & Heo Bỉm</p>
+      <div class="album-date">{{ albumPhotos.length }} photos • 2020 - 2025</div>
+    </div>
+    <div class="album-preview-grid">
+      <div *ngFor="let photo of albumPhotos.slice(0, 4); let i = index" 
+           class="preview-photo"
+           [style.transform]="'rotate(' + (i % 2 === 0 ? -2 : 2) + 'deg)'">
+        <img [src]="photo.src" [alt]="photo.caption" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Photo Grid -->
+<div class="photo-album-grid">
+  <div *ngFor="let photo of albumPhotos; let i = index" 
+       class="photo-item animate-fadeInScale" 
+       [style.animation-delay]="(i * 0.1) + 's'"
+       (click)="openLightbox(i)">
+    <div class="photo-frame">
+      <img [src]="photo.src" [alt]="photo.caption" class="album-photo">
+      <div class="photo-caption">
+        <h4>{{ photo.caption }}</h4>
+        <small>Photo {{ i + 1 }}</small>
+      </div>
+      <div class="photo-overlay">
+        <i class="pi pi-search-plus text-white text-2xl"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Lightbox Modal -->
+<div *ngIf="showLightbox" class="lightbox-overlay" (click)="closeLightbox()">
+  <div class="lightbox-content" (click)="$event.stopPropagation()">
+    <div class="lightbox-header">
+      <h3>{{ albumPhotos[currentImageIndex]?.caption }}</h3>
+      <button class="lightbox-close" (click)="closeLightbox()">
+        <i class="pi pi-times"></i>
+      </button>
+    </div>
+    
+    <div class="lightbox-image-container">
+      <button class="lightbox-nav lightbox-prev" 
+              (click)="previousImage()" 
+              [disabled]="currentImageIndex === 0">
+        <i class="pi pi-chevron-left"></i>
+      </button>
+      
+      <img [src]="albumPhotos[currentImageIndex]?.src" 
+           [alt]="albumPhotos[currentImageIndex]?.caption"
+           class="lightbox-image">
+      
+      <button class="lightbox-nav lightbox-next" 
+              (click)="nextImage()" 
+              [disabled]="currentImageIndex === albumPhotos.length - 1">
+        <i class="pi pi-chevron-right"></i>
+      </button>
+    </div>
+    
+    <div class="lightbox-footer">
+      <p>{{ albumPhotos[currentImageIndex]?.caption }}</p>
+      <div class="lightbox-counter">
+        {{ currentImageIndex + 1 }} / {{ albumPhotos.length }}
       </div>
     </div>
   </div>

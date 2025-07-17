@@ -8,7 +8,9 @@
   <h2 class="card-heading text-center mb-5">⏰ Thời Gian Bên Nhau</h2>
   <div class="grid justify-content-center">
     <div class="col-12 lg:col-10">
-      <div class="glass-card p-6 text-center animate-heartbeat">
+      <div #mainCard class="glass-card p-6 text-center animate-heartbeat"
+           (mousemove)="onCardMouseMove($event, mainCard)"
+           (mouseleave)="onCardMouseLeave(mainCard)">
         <div class="mb-4">
           <h3 class="card-subheading mb-2">💕 Kể từ ngày 09/05/2021</h3>
           <p class="text-muted">Chúng ta đã bên nhau được...</p>
@@ -17,7 +19,9 @@
         <div class="grid">
           <!-- Days -->
           <div class="col-6 md:col-3 px-2 mb-4">
-            <div class="glass-card p-4 animate-float">
+            <div #daysCard class="glass-card p-4 animate-float"
+                 (mousemove)="onCardMouseMove($event, daysCard)"
+                 (mouseleave)="onCardMouseLeave(daysCard)">
               <div class="text-5xl font-bold text-primary mb-2 animate-sparkle">
                 {{ liveCounter.days }}
               </div>
@@ -28,7 +32,9 @@
           
           <!-- Hours -->
           <div class="col-6 md:col-3 px-2 mb-4">
-            <div class="glass-card p-4 animate-float" style="animation-delay: 0.1s">
+            <div #hoursCard class="glass-card p-4 animate-float" style="animation-delay: 0.1s"
+                 (mousemove)="onCardMouseMove($event, hoursCard)"
+                 (mouseleave)="onCardMouseLeave(hoursCard)">
               <div class="text-5xl font-bold text-primary mb-2 animate-sparkle" style="animation-delay: 0.1s">
                 {{ liveCounter.hours.toString().padStart(2, '0') }}
               </div>
@@ -39,7 +45,9 @@
           
           <!-- Minutes -->
           <div class="col-6 md:col-3 px-2 mb-4">
-            <div class="glass-card p-4 animate-float" style="animation-delay: 0.2s">
+            <div #minutesCard class="glass-card p-4 animate-float" style="animation-delay: 0.2s"
+                 (mousemove)="onCardMouseMove($event, minutesCard)"
+                 (mouseleave)="onCardMouseLeave(minutesCard)">
               <div class="text-5xl font-bold text-primary mb-2 animate-sparkle" style="animation-delay: 0.2s">
                 {{ liveCounter.minutes.toString().padStart(2, '0') }}
               </div>
@@ -50,7 +58,9 @@
           
           <!-- Seconds -->
           <div class="col-6 md:col-3 px-2 mb-4">
-            <div class="glass-card p-4 animate-float" style="animation-delay: 0.3s">
+            <div #secondsCard class="glass-card p-4 animate-float" style="animation-delay: 0.3s"
+                 (mousemove)="onCardMouseMove($event, secondsCard)"
+                 (mouseleave)="onCardMouseLeave(secondsCard)">
               <div class="text-5xl font-bold text-primary mb-2 animate-sparkle" style="animation-delay: 0.3s">
                 {{ liveCounter.seconds.toString().padStart(2, '0') }}
               </div>
@@ -89,7 +99,9 @@
         <div class="timeline-marker animate-heartbeat">
           <i [class]="item.icon" style="color: white; font-size: 0.8rem;"></i>
         </div>
-        <div class="glass-card p-4">
+        <div #timelineCard class="glass-card p-4"
+             (mousemove)="onCardMouseMove($event, timelineCard)"
+             (mouseleave)="onCardMouseLeave(timelineCard)">
           <div class="grid align-items-center">
             <div class="col-12 md:col-8">
               <h3 class="card-subheading mb-2">{{ item.title }}</h3>

@@ -1,7 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
-
-// Import PrimeNG CSS - Updated for v20
-@import 'primeicons/primeicons.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import 'primeflex/primeflex.css';
 
 // Golden Memories - Mint Green Theme
@@ -17,7 +14,7 @@
   --primary-700: #0f766e;
   --primary-800: #115e59;
   --primary-900: #134e4a;
-  
+
   // Secondary colors - Warm gold accents
   --accent-50: #fffbeb;
   --accent-100: #fef3c7;
@@ -29,26 +26,350 @@
   --accent-700: #b45309;
   --accent-800: #92400e;
   --accent-900: #78350f;
-  
+
   // Text colors - Updated for better readability
   --text-primary: #134e4a; // Dark teal for primary text
   --text-secondary: #0f766e; // Medium teal for secondary text
   --text-light: #5eead4; // Light teal for light text
   --text-white: #ffffff;
-  
+
   // Card heading colors - Much more readable
   --card-heading: #065f46; // Very dark green for excellent contrast
   --card-subheading: #047857; // Dark green for good contrast
-  
+
   // Background colors
   --bg-primary: linear-gradient(135deg, var(--primary-50) 0%, var(--accent-50) 100%);
   --bg-card: rgba(255, 255, 255, 0.9);
   --bg-glass: rgba(255, 255, 255, 0.15);
-  
+
   // Effects
   --shadow-soft: 0 4px 20px rgba(20, 184, 166, 0.15);
   --shadow-strong: 0 8px 40px rgba(20, 184, 166, 0.25);
   --border-glass: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Base 3D Effects - Parallax Removed */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-attachment: fixed;
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  min-height: 100vh;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Background Animation */
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Enhanced 3D Glass Card Effects */
+.glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  
+  /* Enhanced 3D Box Shadow */
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    0 4px 16px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+  
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateZ(0);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.6s;
+  z-index: 1;
+}
+
+.glass-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.15),
+    0 10px 20px rgba(0, 0, 0, 0.12),
+    0 5px 10px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.2),
+    0 0 30px rgba(20, 184, 166, 0.3);
+}
+
+.glass-card:hover::before {
+  left: 100%;
+}
+
+/* Enhanced Memory Decoration */
+.memory-decoration {
+  position: relative;
+  overflow: hidden;
+}
+
+.memory-decoration::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, transparent, rgba(20, 184, 166, 0.1), transparent);
+  animation: rotate 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.memory-decoration:hover::after {
+  opacity: 1;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Enhanced Timeline Marker - Reduced Rotation */
+.timeline-marker {
+  background: linear-gradient(145deg, #14b8a6, #0d9488);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  
+  box-shadow: 
+    0 8px 16px rgba(20, 184, 166, 0.3),
+    0 4px 8px rgba(20, 184, 166, 0.2),
+    inset 0 2px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+  
+  transition: all 0.3s ease;
+}
+
+.timeline-marker:hover {
+  transform: scale(1.05) rotate(5deg); /* Reduced rotation from 10deg to 5deg */
+  box-shadow: 
+    0 12px 24px rgba(20, 184, 166, 0.4),
+    0 6px 12px rgba(20, 184, 166, 0.3),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Advanced 3D Button Effects */
+.btn-3d {
+  background: linear-gradient(145deg, #14b8a6, #0d9488);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  
+  box-shadow: 
+    0 6px 20px rgba(20, 184, 166, 0.3),
+    0 3px 10px rgba(20, 184, 166, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-3d:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 10px 30px rgba(20, 184, 166, 0.4),
+    0 5px 15px rgba(20, 184, 166, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.btn-3d:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 4px 15px rgba(20, 184, 166, 0.3),
+    0 2px 8px rgba(20, 184, 166, 0.2),
+    inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Floating Animation */
+@keyframes heartbeat {
+  0%, 100% { 
+    transform: scale(1); 
+  }
+  50% { 
+    transform: scale(1.1); 
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+.animate-fadeInScale {
+  animation: fadeInScale 0.8s ease-out forwards;
+}
+
+.animate-slideInUp {
+  animation: slideInUp 0.8s ease-out forwards;
+}
+
+/* Color Theme Enhancements */
+:root {
+  --primary-50: #f0fdfa;
+  --primary-100: #ccfbf1;
+  --primary-200: #99f6e4;
+  --primary-300: #5eead4;
+  --primary-400: #2dd4bf;
+  --primary-500: #14b8a6;
+  --primary-600: #0d9488;
+  --primary-700: #0f766e;
+  --primary-800: #115e59;
+  --primary-900: #134e4a;
+  
+  --accent-50: #fffbeb;
+  --accent-100: #fef3c7;
+  --accent-200: #fde68a;
+  --accent-300: #fcd34d;
+  --accent-400: #fbbf24;
+  --accent-500: #f59e0b;
+  --accent-600: #d97706;
+  --accent-700: #b45309;
+  --accent-800: #92400e;
+  --accent-900: #78350f;
+}
+
+/* Text and Content Styling with Inter Font */
+.card-title {
+  color: var(--primary-800);
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.card-heading {
+  color: #065f46;
+  font-size: 2.2rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.card-subheading {
+  color: #047857;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+  font-family: 'Inter', sans-serif;
+}
+
+.text-contrast {
+  color: #1f2937;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Enhanced Profile Avatar */
+.profile-avatar {
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.1),
+    inset 0 2px 4px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.profile-avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.25),
+    0 8px 15px rgba(0, 0, 0, 0.15),
+    inset 0 2px 4px rgba(255, 255, 255, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card-title {
+    font-size: 2.2rem;
+  }
+  
+  .card-heading {
+    font-size: 1.8rem;
+  }
+  
+  .glass-card:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+}
+
+@media (max-width: 576px) {
+  .card-title {
+    font-size: 1.8rem;
+  }
+  
+  .card-heading {
+    font-size: 1.5rem;
+  }
 }
 
 * {
@@ -74,7 +395,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
+  background:
     radial-gradient(circle at 20% 20%, rgba(20, 184, 166, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 40% 60%, rgba(94, 234, 212, 0.05) 0%, transparent 50%);
@@ -346,50 +667,50 @@ h1, h2, h3, h4, h5, h6 {
   .page-container {
     padding: 1rem;
   }
-  
+
   .glass-card {
     margin: 10px 0;
     border-radius: 15px;
   }
-  
+
   .timeline-item {
     padding-left: 30px;
   }
-  
+
   .timeline-marker {
     width: 15px;
     height: 15px;
     left: 2px;
   }
-  
+
   .timeline-item::before {
     left: 9px;
   }
-  
+
   .love-birds {
     top: 15px;
     right: 15px;
     font-size: 1.5rem;
   }
-  
+
   .favorite-badge {
     width: 30px;
     height: 30px;
   }
-  
+
   .favorite-badge i {
     font-size: 0.9rem;
   }
-  
+
   // Typography responsive
   h1 {
     font-size: 2rem !important;
   }
-  
+
   h2 {
     font-size: 1.5rem !important;
   }
-  
+
   h3 {
     font-size: 1.25rem !important;
   }
@@ -399,44 +720,44 @@ h1, h2, h3, h4, h5, h6 {
   .page-container {
     padding: 0.75rem;
   }
-  
+
   .glass-card {
     margin: 8px 0;
     border-radius: 12px;
     padding: 1rem !important;
   }
-  
+
   .love-birds {
     top: 10px;
     right: 10px;
     font-size: 1.2rem;
   }
-  
+
   .favorite-badge {
     width: 25px;
     height: 25px;
   }
-  
+
   .favorite-badge i {
     font-size: 0.8rem;
   }
-  
+
   // Typography mobile
   h1 {
     font-size: 1.75rem !important;
     line-height: 1.3 !important;
   }
-  
+
   h2 {
     font-size: 1.35rem !important;
     line-height: 1.3 !important;
   }
-  
+
   h3 {
     font-size: 1.15rem !important;
     line-height: 1.3 !important;
   }
-  
+
   p {
     font-size: 0.9rem !important;
     line-height: 1.5 !important;
@@ -540,12 +861,12 @@ h1, h2, h3, h4, h5, h6 {
     flex: 0 0 100% !important;
     max-width: 100% !important;
   }
-  
+
   .col-lg-4 {
     flex: 0 0 100% !important;
     max-width: 100% !important;
   }
-  
+
   .col-lg-3 {
     flex: 0 0 50% !important;
     max-width: 50% !important;
