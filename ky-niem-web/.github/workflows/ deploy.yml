@@ -1,15 +1,12 @@
-name: Deploy Angular to GitHub Pages
+name: Build Angular and copy to ky-niem-web
 
 on:
   push:
     branches:
-      - main  # Trigger deployment only when pushing to main branch
-
-permissions:
-  contents: write  # Needed for pushing to gh-pages branch
+      - main
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,9 +24,16 @@ jobs:
       - name: 🔨 Build Angular
         run: npm run build -- --output-path=dist --base-href=/ky-niem-web/
 
-      - name: 🚀 Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages            # Target branch
-          folder: dist                # Output folder (should match Angular's build output)
-          clean: true                 # Optional: clean the branch before deploy
+      - name: 🧹 Remove old files in ky-niem-web/
+        run: rm -rf ky-niem-web/*
+
+      - name: 📁 Copy build to ky-niem-web/
+        run: cp -r dist/* ky-niem-web/
+
+      - name: 💾 Commit and push changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add ky-niem-web
+          git commit -m "Deploy Angular site to ky-niem-web" || echo "No changes to commit"
+          git push
