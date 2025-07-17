@@ -34,6 +34,6 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add ky-niem-web
+          git add memories
           git commit -m "Deploy Angular site to ky-niem-web" || echo "No changes to commit"
           git push
