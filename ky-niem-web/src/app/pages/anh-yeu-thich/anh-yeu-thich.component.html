@@ -1,11 +1,24 @@
-<div *ngIf="favoriteImages.length === 0" class="mt-4 text-center">
-  <h3>Chưa có ảnh yêu thích nào.</h3>
+<div class="text-center mb-5">
+  <h1>💖 Ảnh Yêu Thích</h1>
+  <p class="text-lg text-secondary">Những bức ảnh đặc biệt trong tim chúng ta</p>
 </div>
-<div class="grid justify-content-center mt-2" *ngIf="favoriteImages.length > 0">
-  <div *ngFor="let img of favoriteImages" class="col-12 md:col-3 px-2 mb-3">
-    <div class="card">
-      <img [src]="img.src" [alt]="img.title" style="width: 100%; height: 150px; object-fit: cover;">
-      <div class="text-center mt-1">{{img.title}}</div>
+
+<div *ngIf="favoriteImages.length === 0" class="text-center mt-8">
+  <div class="card p-6 inline-block">
+    <i class="pi pi-heart text-6xl text-pink-300 mb-3"></i>
+    <h3 class="text-xl mb-2">Chưa có ảnh yêu thích nào</h3>
+    <p class="text-secondary">Hãy đi đến Album Ảnh và chọn những khoảnh khắc yêu thích nhé! 💕</p>
+  </div>
+</div>
+
+<div class="grid justify-content-center" *ngIf="favoriteImages.length > 0">
+  <div *ngFor="let img of favoriteImages" class="col-12 md:col-4 lg:col-3 px-3 mb-4">
+    <div class="card memory-decoration">
+      <img [src]="img.src" [alt]="img.title" style="width: 100%; height: 200px; object-fit: cover;">
+      <div class="text-center p-3">
+        <div class="font-semibold text-primary">{{img.title}}</div>
+        <small class="text-secondary">💕 Yêu thích</small>
+      </div>
     </div>
   </div>
 </div>

@@ -1,5 +1,33 @@
-<div class="tag-cloud">
-  <span *ngFor="let tag of tags" [style.font-size.px]="tag.size" class="tag">
-    {{tag.text}}
-  </span>
+<div class="text-center mb-6">
+  <h1>☁️ Đám Mây Từ Khóa</h1>
+  <p class="text-lg text-secondary">Những từ ngữ đại diện cho tình yêu của chúng ta</p>
+</div>
+
+<div class="max-w-4xl mx-auto">
+  <div class="card p-8">
+    <div class="tag-cloud-container text-center">
+      <span *ngFor="let tag of tags; let i = index" 
+            [style.font-size.px]="tag.size" 
+            [style.animation-delay]="(i * 0.1) + 's'"
+            class="love-tag memory-decoration"
+            [title]="'Từ khóa về ' + tag.text">
+        {{tag.text}}
+      </span>
+    </div>
+  </div>
+
+  <div class="card p-6 mt-4">
+    <h3 class="text-center text-primary mb-4">
+      <i class="pi pi-info-circle mr-2"></i>
+      Ý Nghĩa Những Từ Khóa
+    </h3>
+    <div class="grid">
+      <div class="col-12 md:col-6 lg:col-4 mb-3" *ngFor="let tag of tags">
+        <div class="text-center p-3 border-round-lg bg-gradient-to-r">
+          <div class="font-semibold text-primary">{{tag.text}}</div>
+          <small class="text-secondary">Kích thước: {{tag.size}}px</small>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

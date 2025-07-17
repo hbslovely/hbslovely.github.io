@@ -1,3 +1,465 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "primeicons/primeicons.css";
+
+/* ===============================================
+   GOLDEN MEMORIES THEME - Romantic & Elegant
+   =============================================== */
+
+:root {
+  --primary-color: #d4af37;
+  --primary-light: #f4e8a6;
+  --secondary-color: #f8b4c6;
+  --accent-color: #e8cbc0;
+  --warm-white: #faf8f2;
+  --soft-gray: #f5f5f5;
+  --text-primary: #4a4a4a;
+  --text-secondary: #7a7a7a;
+  --gold-gradient: linear-gradient(135deg, #d4af37 0%, #f4e8a6 100%);
+  --rose-gradient: linear-gradient(135deg, #f8b4c6 0%, #e8cbc0 100%);
+  --memory-shadow: 0 8px 32px rgba(212, 175, 55, 0.15);
+}
+
+/* Global Body Styling */
+body {
+  background: linear-gradient(45deg, 
+    var(--warm-white) 0%, 
+    #fff9f0 25%, 
+    #fdf5f0 50%, 
+    var(--warm-white) 75%, 
+    #fff9f0 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Beautiful Cards for Memories */
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: var(--memory-shadow);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gold-gradient);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3);
+}
+
+.card:hover::before {
+  opacity: 0.1;
+}
+
+/* Memory Photo Styling */
+.card img {
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  filter: sepia(10%) contrast(1.1) brightness(1.05);
+}
+
+.card:hover img {
+  filter: sepia(20%) contrast(1.2) brightness(1.1);
+  transform: scale(1.05);
+}
+
+/* Beautiful Headers */
+h1, h2, h3 {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+h1::after, h2::after {
+  content: '💕';
+  position: absolute;
+  right: -2rem;
+  top: 0;
+  font-size: 0.8em;
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* Custom Buttons */
+.p-button {
+  background: var(--gold-gradient) !important;
+  border: none !important;
+  border-radius: 25px !important;
+  padding: 0.75rem 1.5rem !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3) !important;
+  transition: all 0.3s ease !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.p-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.5s;
+}
+
+.p-button:hover::before {
+  left: 100%;
+}
+
+.p-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4) !important;
+}
+
+/* Heart Button Special Styling */
+.p-button[aria-label*="heart"], .p-button .pi-heart, .p-button .pi-heart-fill {
+  color: #ff6b8a !important;
+  animation: heartPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes heartPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* Navigation Menu Styling */
+.p-menubar {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(15px) !important;
+  border: none !important;
+  border-bottom: 3px solid var(--primary-color) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1) !important;
+}
+
+.p-menubar .p-menubar-start a {
+  color: var(--text-primary) !important;
+  font-weight: 600 !important;
+  padding: 1rem 1.5rem !important;
+  margin: 0 0.5rem !important;
+  border-radius: 20px !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+  position: relative;
+}
+
+.p-menubar .p-menubar-start a:hover,
+.p-menubar .p-menubar-start a.active {
+  background: var(--rose-gradient) !important;
+  color: white !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 15px rgba(248, 180, 198, 0.4) !important;
+}
+
+/* Timeline Styling */
+.p-timeline .p-timeline-event-content {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 15px !important;
+  padding: 1.5rem !important;
+  box-shadow: var(--memory-shadow) !important;
+  border-left: 4px solid var(--primary-color) !important;
+}
+
+.p-timeline .p-timeline-event-marker {
+  background: var(--gold-gradient) !important;
+  border: 3px solid white !important;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3) !important;
+  width: 2rem !important;
+  height: 2rem !important;
+}
+
+/* Form Elements */
+.p-textarea, .p-inputtext {
+  border-radius: 15px !important;
+  border: 2px solid var(--accent-color) !important;
+  padding: 1rem !important;
+  font-family: inherit !important;
+  transition: all 0.3s ease !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+.p-textarea:focus, .p-inputtext:focus {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.2) !important;
+}
+
+/* Page Containers */
+.page-container {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  margin: 1rem;
+  backdrop-filter: blur(5px);
+  box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.1);
+}
+
+/* Decorative Elements */
+.memory-decoration {
+  position: relative;
+}
+
+.memory-decoration::before {
+  content: '✨';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 1.5rem;
+  animation: sparkle 3s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0.5; transform: rotate(0deg) scale(1); }
+  50% { opacity: 1; transform: rotate(180deg) scale(1.2); }
+}
+
+/* Love Birds Animation */
+.love-birds {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-size: 2rem;
+  z-index: 1000;
+  animation: fly 20s linear infinite;
+}
+
+@keyframes fly {
+  0% { transform: translateX(100vw); }
+  100% { transform: translateX(-100px); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    margin: 0.5rem;
+    border-radius: 15px;
+  }
+  
+  .page-container {
+    margin: 0.5rem;
+    padding: 1rem;
+    border-radius: 20px;
+  }
+  
+  h1, h2, h3 {
+    font-size: calc(1.5rem + 1vw);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--warm-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold-gradient);
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--rose-gradient);
+}
+
+/* Enhanced Timeline Styling */
+.timeline-marker {
+  width: 3rem !important;
+  height: 3rem !important;
+  border-radius: 50% !important;
+  background: var(--gold-gradient) !important;
+  border: 4px solid white !important;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+}
+
+.timeline-marker::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--rose-gradient);
+  opacity: 0;
+  transform: scale(0.8);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+.timeline-content {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-radius: 20px !important;
+  box-shadow: var(--memory-shadow) !important;
+  border-left: 5px solid var(--primary-color) !important;
+  position: relative !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid var(--primary-color);
+}
+
+/* Message Item Styling */
+.message-item {
+  background: rgba(255, 255, 255, 0.9) !important;
+  transition: all 0.3s ease !important;
+  backdrop-filter: blur(5px) !important;
+}
+
+.message-item:hover {
+  transform: translateX(10px) !important;
+  box-shadow: var(--memory-shadow) !important;
+}
+
+/* Enhanced Card Animation */
+@keyframes cardSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card.memory-decoration {
+  animation: cardSlideIn 0.6s ease-out both;
+}
+
+/* Page Transition Effects */
+.page-container {
+  animation: pageSlideIn 0.8s ease-out;
+}
+
+@keyframes pageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Floating Hearts Animation */
+.floating-hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.floating-heart {
+  position: absolute;
+  color: rgba(248, 180, 198, 0.3);
+  font-size: 1.5rem;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Romantic Text Effects */
+.romantic-text {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.romantic-text::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--rose-gradient);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.romantic-text:hover::after {
+  transform: scaleX(1);
+}

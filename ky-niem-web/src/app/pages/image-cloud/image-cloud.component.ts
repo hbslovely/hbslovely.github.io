@@ -9,12 +9,17 @@ import { CommonModule } from '@angular/common';
 })
 export class ImageCloudComponent {
   tags = [
-    { text: 'Kỷ niệm', size: 24 },
-    { text: 'Tình yêu', size: 18 },
-    { text: 'Hạnh phúc', size: 20 },
-    { text: 'Bạn bè', size: 16 },
-    { text: 'Du lịch', size: 22 },
-    { text: 'Gia đình', size: 18 },
-    { text: 'Khoảnh khắc', size: 20 },
+    { text: 'Tình Yêu', size: 28 },
+    { text: 'Kỷ Niệm', size: 24 },
+    { text: 'Hạnh Phúc', size: 26 },
+    { text: 'Lãng Mạn', size: 22 },
+    { text: 'Ngọt Ngào', size: 20 },
+    { text: 'Gắn Bó', size: 18 },
+    { text: 'Ước Mơ', size: 24 },
+    { text: 'Tương Lai', size: 22 },
+    { text: 'Cùng Nhau', size: 20 },
+    { text: 'Mãi Mãi', size: 26 },
+    { text: 'Trân Trọng', size: 18 },
+    { text: 'Yêu Thương', size: 24 }
   ];
 }
