@@ -1,6 +1,7 @@
 # Angular specific
 /out-tsc/
 /tmp/
+/memories/
 /coverage/
 /e2e/test-output/
 /.angular/

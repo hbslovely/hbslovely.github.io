@@ -30,12 +30,7 @@
     { "icon": "pi pi-home", "name": "Gia đình", "description": "Xây dựng tổ ấm hạnh phúc bên chồng" }
   ],
   "wifePhotos": [
-    { "url": "assets/images/quyen/img.png", "caption": "Heo Bỉm Sửa tại nơi làm việc" },
-    { "url": "assets/images/quyen/img1.png", "caption": "Em trong một chuyến du lịch" },
-    { "url": "assets/images/quyen/img2.png", "caption": "Heo Bỉm Sửa và công việc kế toán" },
-    { "url": "assets/images/quyen/img3.png", "caption": "Em thư giãn cuối tuần" },
-    { "url": "assets/images/quyen/img4.png", "caption": "Heo Bỉm Sửa khám phá địa điểm mới" },
-    { "url": "assets/images/quyen/img5.png", "caption": "Em trong khoảnh khắc hạnh phúc" }
+    { "url": "assets/images/quyen/img.png", "caption": "Heo Bỉm Sửa tại nơi làm việc" }
   ],
   "wifeBeautyStyles": [
     { "emoji": "💄", "title": "Makeup", "description": "Luôn biết cách trang điểm để tôn lên vẻ đẹp tự nhiên" },
