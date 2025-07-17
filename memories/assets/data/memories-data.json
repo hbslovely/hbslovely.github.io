@@ -5,7 +5,9 @@
     { "id": 3, "src": "assets/images/ki-niem/ky-niem-quen-nhau.png", "description": "Kỷ niệm ngày quen nhau" },
     { "id": 4, "src": "assets/images/ki-niem/cuoi-hoi.png", "description": "Cưới hỏi - Ngày trọng đại" },
     { "id": 5, "src": "assets/images/hinh-cuoi/mang-thai.png", "description": "Mang thai - Chờ đón thiên thần nhỏ" },
-    { "id": 6, "src": "assets/images/hinh-cuoi/cung-nhau.png", "description": "Cùng nhau - Hạnh phúc mỗi ngày" }
+    { "id": 6, "src": "assets/images/hinh-cuoi/cung-nhau.png", "description": "Cùng nhau - Hạnh phúc mỗi ngày" },
+    { "id": 7, "src": "assets/images/bucket/DongHuyenKhong_DaNang_Thang5-2024.png", "description": "Du lịch Đà Nẵng - Tháng 5/2024" },
+    { "id": 8, "src": "assets/images/bucket/dapxedap_Thang8-2024.jpg", "description": "Đạp xe cùng nhau - Tháng 8/2024" }
   ],
   "timeline": [
     {
@@ -55,6 +57,22 @@
       "description": "Ngày nào cũng là một kỷ niệm đẹp khi được ở bên nhau. Chúng ta cùng nhau xây dựng tổ ấm hạnh phúc và tạo ra những kỷ niệm không thể nào quên.",
       "image": "assets/images/hinh-cuoi/cung-nhau.png",
       "icon": "pi pi-sun"
+    },
+    {
+      "phase": "Du lịch Đà Nẵng",
+      "date": "05/2024",
+      "title": "Khám phá Đà Nẵng cùng nhau 🌊",
+      "description": "Chuyến du lịch đến Đà Nẵng, nơi chúng ta cùng nhau khám phá Động Huyền Không và những địa điểm tuyệt đẹp khác.",
+      "image": "assets/images/bucket/DongHuyenKhong_DaNang_Thang5-2024.png",
+      "icon": "pi pi-map-marker"
+    },
+    {
+      "phase": "Đạp xe cùng nhau",
+      "date": "08/2024",
+      "title": "Hành trình đạp xe 🚲",
+      "description": "Kỷ niệm đáng nhớ khi hai vợ chồng cùng nhau đạp xe từ nhà ra quận 1, tận hưởng không khí trong lành và cảnh đẹp thành phố.",
+      "image": "assets/images/bucket/dapxedap_Thang8-2024.jpg",
+      "icon": "pi pi-heart"
     }
   ],
   "loveQuotes": [
@@ -87,7 +105,7 @@
     "hugsTight": "6,000+",
     "laughsLoud": "Vô số",
     "tearsOfJoy": "Rất nhiều",
-    "dreamsShared": "Tất cả"
+    "comfortMoments": "Mỗi ngày"
   },
   "specialMoments": [
     {
@@ -153,39 +171,60 @@
   ],
   "memoryPlaces": [
     {
-      "name": "Vũng Tàu",
-      "description": "Bãi biển đầu tiên chúng ta cùng nhau đến, nơi có biển xanh, cát trắng và những kỷ niệm ngọt ngào",
-      "significance": "Chuyến đi biển đầu tiên",
-      "icon": "pi pi-sun",
-      "image": "assets/images/dia-diem/vung-tau.jpg"
+      "name": "Đà Nẵng",
+      "description": "Thành phố biển xinh đẹp với cầu Rồng, Bà Nà Hills và Động Huyền Không tuyệt đẹp",
+      "significance": "Chuyến du lịch đáng nhớ tháng 5/2024",
+      "icon": "pi pi-map-marker",
+      "image": "assets/images/dia-diem/da-nang.png"
     },
     {
-      "name": "Singapore",
-      "description": "Đất nước sư tử xinh đẹp, nơi chúng ta có chuyến du lịch nước ngoài đầu tiên cùng nhau",
-      "significance": "Du lịch quốc tế đầu tiên",
-      "icon": "pi pi-globe",
-      "image": "assets/images/dia-diem/singapore.jpg"
+      "name": "Sapa",
+      "description": "Thành phố trong sương với những thửa ruộng bậc thang và văn hóa dân tộc độc đáo",
+      "significance": "Khám phá vẻ đẹp Tây Bắc",
+      "icon": "pi pi-mountain",
+      "image": "assets/images/dia-diem/sapa.png"
     },
     {
       "name": "Thái Lan",
       "description": "Xứ sở chùa vàng với văn hóa độc đáo, món ăn ngon và những kỷ niệm tuyệt vời",
-      "significance": "Khám phá văn hóa mới",
-      "icon": "pi pi-heart",
-      "image": "assets/images/dia-diem/thai-lan.jpg"
-    },
-    {
-      "name": "Nha Trang",
-      "description": "Thành phố biển xinh đẹp với những bãi tắm tuyệt vời và hải sản tươi ngon",
-      "significance": "Kỳ nghỉ lãng mạn",
-      "icon": "pi pi-camera",
-      "image": "assets/images/dia-diem/nha-trang.jpg"
+      "significance": "Du lịch nước ngoài cùng nhau",
+      "icon": "pi pi-globe",
+      "image": "assets/images/dia-diem/thai-lan.png"
     },
     {
       "name": "Đà Lạt",
       "description": "Thành phố ngàn hoa với khí hậu mát mẻ, những con đường hoa và café ấm cúng",
       "significance": "Tháng mật ngọt ngào",
-      "icon": "pi pi-star",
-      "image": "assets/images/dia-diem/da-lat.jpg"
+      "icon": "pi pi-heart",
+      "image": "assets/images/dia-diem/da-lat.png"
+    },
+    {
+      "name": "Vũng Tàu",
+      "description": "Bãi biển đầu tiên chúng ta cùng nhau đến, nơi có biển xanh, cát trắng và những kỷ niệm ngọt ngào",
+      "significance": "Chuyến đi biển đầu tiên",
+      "icon": "pi pi-sun",
+      "image": "assets/images/dia-diem/vung-tau.png"
+    },
+    {
+      "name": "Campuchia",
+      "description": "Đất nước của những ngôi đền Angkor huyền bí và văn hóa Khmer độc đáo",
+      "significance": "Khám phá di sản thế giới",
+      "icon": "pi pi-globe",
+      "image": "assets/images/dia-diem/campuchia.png"
+    },
+    {
+      "name": "Huế",
+      "description": "Cố đô với những di tích lịch sử, ẩm thực cung đình và dòng sông Hương thơ mộng",
+      "significance": "Hành trình về miền di sản",
+      "icon": "pi pi-building",
+      "image": "assets/images/dia-diem/hue.png"
+    },
+    {
+      "name": "Nha Trang",
+      "description": "Thành phố biển với bãi cát trắng mịn, những hòn đảo xinh đẹp và ẩm thực hải sản phong phú",
+      "significance": "Thiên đường biển đảo",
+      "icon": "pi pi-sun",
+      "image": "assets/images/dia-diem/nha-trang.png"
     }
   ],
   "meaningfulGifts": [
@@ -216,24 +255,40 @@
   ],
   "favoriteFoods": [
     {
-      "dish": "Phở bò",
-      "story": "Món ăn đầu tiên anh nấu cho em khi em ốm, tuy hơi mặn nhưng em vẫn ăn hết",
-      "feeling": "Ấm lòng"
+      "dish": "Cơm tấm",
+      "person": "Chồng",
+      "story": "Món ăn truyền thống mà anh yêu thích nhất, đặc biệt là vào buổi sáng",
+      "feeling": "Hạnh phúc"
     },
     {
-      "dish": "Bánh kem sinh nhật",
-      "story": "Em tự tay làm bánh cho anh, hơi cháy một chút nhưng anh nói ngon nhất thế giới",
+      "dish": "Bún bò Huế",
+      "person": "Vợ",
+      "story": "Hương vị quê hương mà em không thể quên, nhất là vị sả và ớt cay nồng",
+      "feeling": "Nhớ nhà"
+    },
+    {
+      "dish": "Canh chua",
+      "person": "Chồng",
+      "story": "Món canh ngon tuyệt mà anh thích nhất, đặc biệt là khi ăn cùng cá kho",
+      "feeling": "Ngon miệng"
+    },
+    {
+      "dish": "Canh cua rau đay",
+      "person": "Vợ",
+      "story": "Món canh thanh mát mà em yêu thích, nhất là trong những ngày hè nóng bức",
+      "feeling": "Mát lành"
+    },
+    {
+      "dish": "Chè tươi",
+      "person": "Vợ",
+      "story": "Món tráng miệng em thích nhất, đặc biệt là sau những bữa ăn ngon",
       "feeling": "Ngọt ngào"
     },
     {
-      "dish": "Lẩu thái",
-      "story": "Món ăn chúng ta hay ăn khi xem phim, luôn tranh nhau miếng thịt cuối cùng",
-      "feeling": "Vui vẻ"
-    },
-    {
-      "dish": "Trà sữa",
-      "story": "Đồ uống em yêu thích, anh luôn nhớ độ ngọt và topping em thích",
-      "feeling": "Quan tâm"
+      "dish": "Sầu riêng",
+      "person": "Chồng",
+      "story": "Món trái cây vua mà anh không thể cưỡng lại được, dù em không thích mùi",
+      "feeling": "Thích thú"
     }
   ],
   "futureDreams": [
@@ -284,4 +339,4 @@
       "icon": "pi pi-star"
     }
   ]
-} 
+}
