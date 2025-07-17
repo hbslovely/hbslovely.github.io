@@ -19,7 +19,7 @@ jobs:
           node-version: 18
 
       - name: 📥 Install dependencies
-        run: cd ./ky-niem-web && npm install
+        run: cd ./ky-niem-web && npm install --force
 
       - name: 🔨 Build Angular
         run: npm run build -- --output-path=dist --base-href=/ky-niem-web/
