@@ -1,0 +1,12 @@
+{
+  "albumPhotos": [
+    { "id": 1, "src": "assets/images/ki-niem/img.png", "caption": "Khoảnh khắc đầu tiên bên nhau" },
+    { "id": 2, "src": "assets/images/ki-niem/img_1.png", "caption": "Những ngày đầu hẹn hò" },
+    { "id": 3, "src": "assets/images/ki-niem/img_2.png", "caption": "Chuyến du lịch đáng nhớ" },
+    { "id": 4, "src": "assets/images/ki-niem/img_3.png", "caption": "Lễ cưới hạnh phúc" },
+    { "id": 5, "src": "assets/images/hinh-cuoi/img1.png", "caption": "Ảnh cưới lãng mạn" },
+    { "id": 6, "src": "assets/images/hinh-cuoi/img2.png", "caption": "Hạnh phúc bên nhau" },
+    { "id": 7, "src": "assets/images/phat/img.png", "caption": "Chồng yêu ở nơi làm việc" },
+    { "id": 8, "src": "assets/images/quyen/img.png", "caption": "Vợ yêu xinh đẹp" }
+  ]
+} 

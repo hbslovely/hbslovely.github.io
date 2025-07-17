@@ -1,0 +1,10 @@
+{
+  "favoritePhotos": [
+    { "id": 1, "src": "assets/images/ki-niem/img.png", "title": "Lần đầu gặp nhau", "reason": "Khoảnh khắc định mệnh khiến chúng em yêu nhau" },
+    { "id": 2, "src": "assets/images/ki-niem/img_1.png", "title": "Ngày đầu hẹn hò", "reason": "Cảm giác tim đập thình thịch khi bên nhau" },
+    { "id": 3, "src": "assets/images/ki-niem/img_2.png", "title": "Chuyến đi đầu tiên", "reason": "Khám phá thế giới cùng nhau thật tuyệt vời" },
+    { "id": 4, "src": "assets/images/ki-niem/img_3.png", "title": "Ngày cưới", "reason": "Ngày hạnh phúc nhất trong đời chúng em" },
+    { "id": 5, "src": "assets/images/hinh-cuoi/img1.png", "title": "Ảnh cưới", "reason": "Ghi lại khoảnh khắc thiêng liêng nhất" },
+    { "id": 6, "src": "assets/images/hinh-cuoi/img2.png", "title": "Hôn lễ", "reason": "Lời thề ước trước mặt mọi người" }
+  ]
+} 
