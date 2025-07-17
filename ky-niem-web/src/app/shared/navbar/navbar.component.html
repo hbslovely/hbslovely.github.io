@@ -24,12 +24,30 @@
 
 <!-- Mobile Menu -->
 <div class="mobile-menu" [class.show]="isMenuOpen">
-  <div class="mobile-nav-links">
-    <div class="mobile-nav-item" *ngFor="let item of menuItems">
-      <a [routerLink]="item.link" routerLinkActive="active" class="mobile-nav-link" (click)="toggleMenu()">
-        <i [class]="item.icon"></i>
-        <span>{{ item.text }}</span>
-      </a>
+  <div class="mobile-menu-content">
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+      <div class="mobile-brand">
+        <div class="avatar-container">
+          <img src="assets/images/anh-chu-dao/avatar-couple.png" alt="Avatar đôi" class="couple-avatar" />
+        </div>
+        <div class="brand-text">Kỷ Niệm</div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav-links">
+      <div class="mobile-nav-item" *ngFor="let item of menuItems">
+        <a [routerLink]="item.link" routerLinkActive="active" class="mobile-nav-link" (click)="toggleMenu()">
+          <i [class]="item.icon"></i>
+          <span>{{ item.text }}</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Mobile Footer -->
+    <div class="mobile-footer">
+      <p>💕 Hạnh phúc là khi có nhau</p>
     </div>
   </div>
 </div>
