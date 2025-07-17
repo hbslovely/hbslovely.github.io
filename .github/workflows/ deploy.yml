@@ -27,12 +27,10 @@ jobs:
       - name: 📁 Copy build to ky-niem-web/
         run: mkdir memories && cd ./ky-niem-web && cp -r dist/* ../memories
 
-      - name: 🧹 Remove old files in ky-niem-web/
-        run: rm -rf ky-niem-web/*
-
       - name: Push to GitHub Pages
         run: |
           git config --global user.name "Hbs"
+          git add .
           git remote set-url origin https://$token@github.com/hbslovely/hbslovely.github.io.git
           git push origin main
         env:
