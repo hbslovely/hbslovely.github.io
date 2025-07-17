@@ -1,0 +1,46 @@
+{
+  "husbandInfo": {
+    "name": "Ba Heo Nhỏ",
+    "title": "Người chồng tuyệt vời 💖",
+    "description": "Ba Heo Nhỏ - một anh chàng IT tài năng với tấm lòng vàng và linh hồn nghệ sĩ. Không chỉ là một chuyên gia công nghệ giỏi giang, anh còn là người bạn đời hoàn hảo với khả năng biến những ngày bình thường thành những kỷ niệm đặc biệt. Với đôi mắt luôn tràn đầy yêu thương và đôi tay khéo léo có thể 'fix' mọi thứ từ code lỗi đến trái tim tan vỡ, anh chính là định nghĩa sống động của tình yêu đích thực.",
+    "loveMessage": "Em yêu anh Ba Heo Nhỏ không chỉ vì những gì anh làm, mà vì chính con người anh - một người đàn ông biết cách yêu thương bằng cả trái tim lẫn lý trí. Anh là nhà phát minh của hạnh phúc trong cuộc đời em, là kiến trúc sư của những giấc mơ đẹp, và là tác giả của câu chuyện tình yêu đẹp nhất em từng được sống."
+  },
+  "husbandBasicInfo": [
+    { "icon": "pi pi-calendar", "label": "Ngày sinh", "value": "10/10/1992" },
+    { "icon": "pi pi-star", "label": "Cung hoàng đạo", "value": "Thiên Bình ♎" },
+    { "icon": "pi pi-map-marker", "label": "Nơi sinh", "value": "TP. Hồ Chí Minh, Việt Nam" },
+    { "icon": "pi pi-briefcase", "label": "Nghề nghiệp", "value": "IT Specialist" },
+    { "icon": "pi pi-home", "label": "Sinh sống", "value": "TP. Hồ Chí Minh" },
+    { "icon": "pi pi-heart", "label": "Tình trạng", "value": "Đã có vợ yêu 💕" }
+  ],
+  "husbandTraits": [
+    { "icon": "pi pi-heart-fill", "title": "Tình cảm", "description": "Luôn quan tâm và chăm sóc" },
+    { "icon": "pi pi-users", "title": "Hòa đồng", "description": "Dễ gần, thân thiện với mọi người" },
+    { "icon": "pi pi-lightbulb", "title": "Thông minh", "description": "Giải quyết vấn đề một cách sáng tạo" },
+    { "icon": "pi pi-smile", "title": "Hài hước", "description": "Luôn biết cách làm em cười" },
+    { "icon": "pi pi-shield", "title": "Đáng tin cậy", "description": "Là chỗ dựa vững chắc cho gia đình" },
+    { "icon": "pi pi-star", "title": "Tài năng", "description": "Giỏi nhiều lĩnh vực khác nhau" }
+  ],
+  "husbandHobbies": [
+    { "icon": "pi pi-car", "name": "Du lịch", "description": "Đam mê khám phá những địa điểm mới cùng vợ yêu" },
+    { "icon": "pi pi-heart-fill", "name": "Yêu vợ", "description": "Sở thích lớn nhất là chăm sóc và yêu thương vợ" },
+    { "icon": "pi pi-desktop", "name": "Công nghệ", "description": "Làm việc với IT và tìm hiểu công nghệ mới" },
+    { "icon": "pi pi-camera", "name": "Chụp ảnh", "description": "Ghi lại những khoảnh khắc đẹp trong chuyến du lịch" },
+    { "icon": "pi pi-map", "name": "Khám phá", "description": "Tìm hiểu văn hóa và ẩm thực các vùng miền" },
+    { "icon": "pi pi-home", "name": "Gia đình", "description": "Dành thời gian bên vợ và xây dựng tổ ấm" }
+  ],
+  "husbandPhotos": [
+    { "url": "assets/images/phat/phat-portrait.png", "caption": "Ba Heo Nhỏ - Ảnh chân dung đẹp trai" },
+    { "url": "assets/images/phat/phat-travel.png", "caption": "Anh trong chuyến du lịch khám phá" },
+    { "url": "assets/images/phat/phat-work.png", "caption": "Ba Heo Nhỏ tại nơi làm việc" },
+    { "url": "assets/images/phat/phat-hobby.png", "caption": "Anh với những sở thích yêu thích" }
+  ],
+  "husbandFunFacts": [
+    { "title": "Món ăn yêu thích", "description": "Phở bò và bánh mì - những món ăn Việt Nam truyền thống" },
+    { "title": "Thói quen buổi sáng", "description": "Luôn dậy sớm để pha cà phê và chuẩn bị bữa sáng cho em" },
+    { "title": "Bài hát yêu thích", "description": "All of Me - Ed Sheeran (bài hát mà anh hay hát cho em nghe)" },
+    { "title": "Ước mơ lớn nhất", "description": "Xây dựng một gia đình hạnh phúc và du lịch khắp thế giới cùng em" },
+    { "title": "Điều anh sợ nhất", "description": "Mất em và không thể bảo vệ được những người anh yêu thương" },
+    { "title": "Tài năng đặc biệt", "description": "Có thể sửa được hầu hết mọi thứ hỏng trong nhà" }
+  ]
+} 
