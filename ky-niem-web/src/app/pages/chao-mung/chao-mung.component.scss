@@ -1,0 +1,447 @@
+// Color Variables
+$primary-color: #2f855a; // Main green
+$primary-light: #48bb78; // Light green
+$primary-lighter: #9ae6b4; // Lighter green
+$primary-dark: #276749; // Dark green
+$gradient-light: #f0fdf4; // Very light green gradient
+$gradient-dark: #dcfce7; // Light green gradient
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.parallax-header {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.avatar-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/assets/images/phat/phat-portrait.png');
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px) brightness(0.7);
+  transform: scale(1.1);
+  z-index: 0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba($primary-dark, 0.4), rgba($primary-color, 0.4));
+  }
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.floating-hearts {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  overflow: hidden;
+
+  .heart {
+    position: absolute;
+    font-size: 24px;
+    animation: float-up 8s linear infinite;
+    opacity: 0;
+
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        left: random(100) * 1%;
+        animation-delay: random(8000) * 1ms;
+        animation-duration: (6 + random(4)) * 1s;
+      }
+    }
+  }
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.title-wrapper {
+  margin-bottom: 3rem;
+
+  .typewriter {
+    font-size: 2.5rem;
+    font-weight: bold;
+    min-height: 3.5rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.time-counter {
+  .subtitle {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  .counter-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .counter-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba($primary-lighter, 0.3);
+
+    &:hover {
+      transform: translateY(-5px);
+      border-color: $primary-lighter;
+    }
+
+    .number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: $primary-lighter;
+    }
+
+    .label {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+// Statistics Section
+.statistics-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, $gradient-light, $gradient-dark);
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: $primary-dark;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .stat-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba($primary-color, 0.1);
+
+    &:hover {
+      transform: translateY(-5px);
+      border-color: $primary-color;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: bold;
+      color: $primary-color;
+      margin-bottom: 1rem;
+    }
+
+    .stat-label {
+      font-size: 1.1rem;
+      color: $primary-dark;
+    }
+  }
+}
+
+// Timeline Section
+.timeline-section {
+  padding: 4rem 0;
+  background: #ffffff;
+
+  .timeline-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: $primary-color;
+      transform: translateX(-50%);
+    }
+  }
+
+  .timeline-item {
+    margin-bottom: 3rem;
+    position: relative;
+
+    &:nth-child(odd) .timeline-content {
+      margin-left: 50%;
+      padding-left: 3rem;
+    }
+
+    &:nth-child(even) .timeline-content {
+      margin-right: 50%;
+      padding-right: 3rem;
+      text-align: right;
+    }
+  }
+
+  .timeline-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba($primary-color, 0.1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      border-color: $primary-color;
+    }
+  }
+
+  .timeline-date {
+    font-size: 1.1rem;
+    color: $primary-color;
+    margin-bottom: 1rem;
+  }
+
+  .timeline-icon {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background: $primary-color;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px $primary-lighter;
+  }
+}
+
+// Special Moments Section
+.special-moments-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, $gradient-light 0%, $gradient-dark 100%);
+
+  .moments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  .moment-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba($primary-color, 0.1);
+
+    &:hover {
+      transform: translateY(-5px);
+      border-color: $primary-color;
+    }
+
+    .moment-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      background: $primary-color;
+      border: 3px solid white;
+      box-shadow: 0 0 0 3px $primary-lighter;
+    }
+
+    .moment-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: $primary-dark;
+    }
+
+    .moment-date {
+      font-size: 1rem;
+      color: $primary-color;
+      margin-bottom: 1rem;
+    }
+
+    .moment-description {
+      color: #666;
+      line-height: 1.6;
+    }
+  }
+}
+
+// Our Songs Section
+.our-songs-section {
+  padding: 4rem 0;
+  background: #ffffff;
+
+  .songs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  .song-card {
+    background: linear-gradient(135deg, $gradient-light 0%, $gradient-dark 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba($primary-color, 0.1);
+
+    &:hover {
+      transform: translateY(-5px);
+      border-color: $primary-color;
+    }
+
+    .song-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: $primary-dark;
+    }
+
+    .song-artist {
+      font-size: 1.1rem;
+      color: $primary-color;
+      margin-bottom: 1rem;
+    }
+
+    .song-moment {
+      font-style: italic;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    .song-description {
+      color: #666;
+      line-height: 1.6;
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .parallax-header {
+    min-height: 500px;
+  }
+
+  .title-wrapper .typewriter {
+    font-size: 1.8rem;
+  }
+
+  .time-counter {
+    .counter-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .counter-card .number {
+      font-size: 2rem;
+    }
+  }
+
+  .timeline-section {
+    .timeline-container::before {
+      left: 0;
+    }
+
+    .timeline-item {
+      &:nth-child(odd) .timeline-content,
+      &:nth-child(even) .timeline-content {
+        margin: 0 0 0 2rem;
+        padding: 1rem;
+        text-align: left;
+      }
+    }
+
+    .timeline-icon {
+      left: 0;
+    }
+  }
+
+  .statistics-section,
+  .special-moments-section,
+  .our-songs-section {
+    .section-title {
+      font-size: 1.8rem;
+    }
+  }
+} 

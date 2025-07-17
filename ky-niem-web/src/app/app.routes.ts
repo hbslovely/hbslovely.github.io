@@ -1,32 +1,33 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-
-import { AlbumAnhComponent } from './pages/album-anh/album-anh.component';
-import { AnhYeuThichComponent } from './pages/anh-yeu-thich/anh-yeu-thich.component';
-import { KyNiemComponent } from './pages/ky-niem/ky-niem.component';
-import { DongThoiGianComponent } from './pages/dong-thoi-gian/dong-thoi-gian.component';
-import { ImageCloudComponent } from './pages/image-cloud/image-cloud.component';
-import { ThongDiepComponent } from './pages/thong-diep/thong-diep.component';
-import { VeChungToiComponent } from './pages/ve-chung-toi/ve-chung-toi.component';
-import { ThongTinChongComponent } from './pages/thong-tin-chong/thong-tin-chong.component';
-import { ThongTinVoComponent } from './pages/thong-tin-vo/thong-tin-vo.component';
+import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/album-anh', pathMatch: 'full' },
-  { path: 'album-anh', component: AlbumAnhComponent },
-  { path: 'anh-yeu-thich', component: AnhYeuThichComponent },
-  { path: 'ky-niem', component: KyNiemComponent },
-  { path: 'dong-thoi-gian', component: DongThoiGianComponent },
-  { path: 'image-cloud', component: ImageCloudComponent },
-  { path: 'thong-diep', component: ThongDiepComponent },
-  { path: 'thong-tin-chong', component: ThongTinChongComponent },
-  { path: 'thong-tin-vo', component: ThongTinVoComponent },
-  { path: 've-chung-toi', component: VeChungToiComponent },
-  { path: '**', redirectTo: '/album-anh' }
+  {
+    path: 'chao-mung',
+    loadComponent: () => import('./pages/chao-mung/chao-mung.component').then(m => m.ChaoMungComponent)
+  },
+  {
+    path: 've-chung-toi',
+    loadComponent: () => import('./pages/ve-chung-toi/ve-chung-toi.component').then(m => m.VeChungToiComponent)
+  },
+  {
+    path: 'thong-tin-vo',
+    loadComponent: () => import('./pages/thong-tin-vo/thong-tin-vo.component').then(m => m.ThongTinVoComponent)
+  },
+  {
+    path: 'thong-tin-chong',
+    loadComponent: () => import('./pages/thong-tin-chong/thong-tin-chong.component').then(m => m.ThongTinChongComponent)
+  },
+  {
+    path: 'album-anh',
+    loadComponent: () => import('./pages/album-anh/album-anh.component').then(m => m.AlbumAnhComponent)
+  },
+  {
+    path: 'tips-vo-chong',
+    loadComponent: () => import('./pages/tips-vo-chong/tips-vo-chong.component').then(m => m.TipsVoChongComponent)
+  },
+  {
+    path: '',
+    redirectTo: 'chao-mung',
+    pathMatch: 'full'
+  }
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule {}

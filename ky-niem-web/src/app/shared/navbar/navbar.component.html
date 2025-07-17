@@ -1,6 +1,6 @@
 <nav class="navbar">
   <div class="container">
-    <a routerLink="/" class="brand">
+    <a routerLink="/chao-mung" class="brand">
       <div class="avatar-container">
         <img src="assets/images/anh-chu-dao/avatar-couple.png" alt="Avatar đôi" class="couple-avatar" />
       </div>
@@ -14,37 +14,26 @@
       <i class="pi" [ngClass]="{'pi-bars': !isMenuOpen, 'pi-times': isMenuOpen}"></i>
     </button>
 
-    <ul class="nav-links" [class.show]="isMenuOpen">
-      <li class="nav-item">
-        <a routerLink="/ve-chung-toi" routerLinkActive="active" class="nav-link">
-          Câu Chuyện Của Tụi Mình
-        </a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/thong-tin-vo" routerLinkActive="active" class="nav-link">
-          Thông Tin Vợ
-        </a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/thong-tin-chong" routerLinkActive="active" class="nav-link">
-          Thông Tin Chồng
-        </a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/album-anh" routerLinkActive="active" class="nav-link">
-          Album Ảnh
-        </a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/ky-niem" routerLinkActive="active" class="nav-link">
-          Kỷ Niệm
-        </a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/tips-vo-chong" routerLinkActive="active" class="nav-link">
-          Tips Vợ Chồng
+    <!-- Desktop Menu -->
+    <ul class="nav-links">
+      <li class="nav-item" *ngFor="let item of menuItems">
+        <a [routerLink]="item.link" routerLinkActive="active" class="nav-link">
+          <i [class]="item.icon"></i>
+          <span>{{ item.text }}</span>
         </a>
       </li>
     </ul>
   </div>
 </nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" [class.show]="isMenuOpen">
+  <div class="mobile-nav-links">
+    <div class="mobile-nav-item" *ngFor="let item of menuItems">
+      <a [routerLink]="item.link" routerLinkActive="active" class="mobile-nav-link" (click)="toggleMenu()">
+        <i [class]="item.icon"></i>
+        <span>{{ item.text }}</span>
+      </a>
+    </div>
+  </div>
+</div>

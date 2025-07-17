@@ -1197,3 +1197,59 @@ html {
     }
   }
 }
+
+.typewriter {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 3rem;
+  min-height: 3.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
+  }
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+
+  span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #111827;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+    min-width: 120px;
+    position: relative;
+
+    &::after {
+      content: attr(data-label);
+      font-size: 1rem;
+      font-weight: 500;
+      color: #374151;
+      margin-top: 0.5rem;
+    }
+
+    &:not(:last-child)::before {
+      content: ':';
+      position: absolute;
+      right: -1.25rem;
+      color: #111827;
+      font-weight: 300;
+    }
+  }
+}

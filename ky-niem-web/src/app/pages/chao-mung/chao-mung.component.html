@@ -1,0 +1,117 @@
+<!-- Enhanced Header with Parallax and Blurred Avatar Backdrop -->
+<div class="parallax-header">
+  <div class="avatar-backdrop"></div>
+  
+  <div class="header-content">
+    <div class="floating-hearts">
+      <span class="heart">❤️</span>
+      <span class="heart">💕</span>
+      <span class="heart">💖</span>
+      <span class="heart">💗</span>
+      <span class="heart">💓</span>
+      <span class="heart">💝</span>
+      <span class="heart">💘</span>
+      <span class="heart">💞</span>
+      <span class="heart">💟</span>
+      <span class="heart">💌</span>
+    </div>
+    
+    <div class="title-wrapper">
+      <h1 class="typewriter">{{ currentText }}</h1>
+    </div>
+    
+    <div class="time-counter">
+      <h2 class="subtitle">⏰ Thời Gian Bên Nhau</h2>
+      <div class="counter-grid grid">
+        <!-- Days -->
+        <div class="counter-card">
+          <div class="number">{{ liveCounter.days }}</div>
+          <div class="label">NGÀY</div>
+        </div>
+        
+        <!-- Hours -->
+        <div class="counter-card">
+          <div class="number">{{ liveCounter.hours.toString().padStart(2, '0') }}</div>
+          <div class="label">GIỜ</div>
+        </div>
+        
+        <!-- Minutes -->
+        <div class="counter-card">
+          <div class="number">{{ liveCounter.minutes.toString().padStart(2, '0') }}</div>
+          <div class="label">PHÚT</div>
+        </div>
+        
+        <!-- Seconds -->
+        <div class="counter-card">
+          <div class="number">{{ liveCounter.seconds.toString().padStart(2, '0') }}</div>
+          <div class="label">GIÂY</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Statistics Section -->
+<div class="statistics-section">
+  <div class="container">
+    <h2 class="section-title">💝 Những Con Số Yêu Thương</h2>
+    <div class="stats-grid">
+      <div class="stat-card" *ngFor="let stat of Object.entries(loveStatistics)">
+        <div class="stat-value">{{ stat[1] }}</div>
+        <div class="stat-label">{{ getStatLabel(stat[0]) }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Timeline Section -->
+<div class="timeline-section">
+  <div class="container">
+    <h2 class="section-title">💝 Câu Chuyện Của Chúng Tôi</h2>
+    
+    <div class="timeline-container">
+      <div class="timeline-item" *ngFor="let item of timeline">
+        <div class="timeline-content">
+          <div class="timeline-date">{{ item.date }}</div>
+          <div class="timeline-icon">
+            <i [class]="item.icon"></i>
+          </div>
+          <h3 class="timeline-title">{{ item.title }}</h3>
+          <p class="timeline-description">{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Special Moments Section -->
+<div class="special-moments-section">
+  <div class="container">
+    <h2 class="section-title">✨ Những Khoảnh Khắc Đặc Biệt</h2>
+    <div class="moments-grid">
+      <div class="moment-card" *ngFor="let moment of specialMoments">
+        <div class="moment-icon" [style.background-color]="moment.color">
+          <i [class]="moment.icon"></i>
+        </div>
+        <h3 class="moment-title">{{ moment.title }}</h3>
+        <div class="moment-date">{{ moment.date }}</div>
+        <p class="moment-description">{{ moment.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Our Songs Section -->
+<div class="our-songs-section">
+  <div class="container">
+    <h2 class="section-title">🎵 Những Bài Hát Của Chúng Ta</h2>
+    <div class="songs-grid">
+      <div class="song-card" *ngFor="let song of ourSongs">
+        <h3 class="song-title">{{ song.title }}</h3>
+        <div class="song-artist">{{ song.artist }}</div>
+        <p class="song-moment">{{ song.moment }}</p>
+        <p class="song-description">{{ song.description }}</p>
+      </div>
+    </div>
+  </div>
+</div> 

@@ -1,0 +1,15 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+main {
+  padding-top: 80px; /* Chiều cao của navbar + thêm một chút space */
+  min-height: calc(100vh - 80px);
+}
+
+@media (max-width: 768px) {
+  main {
+    padding-top: 70px; /* Giảm padding một chút trên mobile */
+  }
+}
