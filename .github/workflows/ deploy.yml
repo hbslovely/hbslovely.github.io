@@ -30,10 +30,11 @@ jobs:
       - name: 🧹 Remove old files in ky-niem-web/
         run: rm -rf ky-niem-web/*
 
-      - name: 💾 Commit and push changes
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          git add memories
-          git commit -m "Deploy Angular site to ky-niem-web" || echo "No changes to commit"
-          git push
+  - name: Push to GitHub Pages
+    run: |
+      git config --global user.email "hbslovely@memories.io"
+      git config --global user.name "HBS"
+      git remote set-url origin https://<token>@github.com/hbslovely/hbslovely.github.io.git
+      git push origin main
+    env:
+      token: ${{ secrets.GH_PAT }}
