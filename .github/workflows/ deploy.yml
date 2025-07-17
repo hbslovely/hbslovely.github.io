@@ -25,7 +25,7 @@ jobs:
         run: cd ./ky-niem-web && npm run build -- --output-path=dist --base-href=/memories/
 
       - name: 📁 Copy build to ky-niem-web/
-        run: rf -rf ./memories && mkdir memories && cd ./ky-niem-web && cp -r dist/* ../memories
+        run: rm -rf ./memories && mkdir memories && cd ./ky-niem-web && cp -r dist/* ../memories
 
       - name: Push to GitHub Pages
         run: |
