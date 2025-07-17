@@ -1,24 +1,37 @@
 <div class="text-center mb-5">
-  <h1>💖 Ảnh Yêu Thích</h1>
-  <p class="text-lg text-secondary">Những bức ảnh đặc biệt trong tim chúng ta</p>
+  <h1 class="card-title">💖 Ảnh Yêu Thích</h1>
+  <p class="text-lg text-muted">Những bức ảnh đặc biệt nhất trong tim chúng em</p>
 </div>
 
-<div *ngIf="favoriteImages.length === 0" class="text-center mt-8">
-  <div class="card p-6 inline-block">
-    <i class="pi pi-heart text-6xl text-pink-300 mb-3"></i>
-    <h3 class="text-xl mb-2">Chưa có ảnh yêu thích nào</h3>
-    <p class="text-secondary">Hãy đi đến Album Ảnh và chọn những khoảnh khắc yêu thích nhé! 💕</p>
+<div class="grid justify-content-center">
+  <div *ngFor="let photo of favoritePhotos; let i = index" class="col-12 md:col-6 lg:col-4 px-3 mb-5">
+    <div class="glass-card animate-fadeInScale sparkle" [style.animation-delay]="(i * 0.2) + 's'">
+      <div class="relative">
+        <img [src]="photo.src" [alt]="photo.title" 
+             class="w-full border-round-top-lg memory-image" 
+             style="height: 250px; object-fit: cover;">
+        <div class="favorite-badge">
+          <i class="pi pi-heart-fill text-red-500"></i>
+        </div>
+      </div>
+      <div class="p-4">
+        <h3 class="card-subheading mb-2">{{ photo.title }}</h3>
+        <p class="text-muted text-sm line-height-3">{{ photo.reason }}</p>
+        <div class="mt-3 pt-3 border-top-1 border-200">
+          <div class="flex align-items-center text-muted">
+            <i class="pi pi-star-fill mr-2 text-yellow-500"></i>
+            <small>Yêu thích {{ i + 1 }}</small>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="grid justify-content-center" *ngIf="favoriteImages.length > 0">
-  <div *ngFor="let img of favoriteImages" class="col-12 md:col-4 lg:col-3 px-3 mb-4">
-    <div class="card memory-decoration">
-      <img [src]="img.src" [alt]="img.title" style="width: 100%; height: 200px; object-fit: cover;">
-      <div class="text-center p-3">
-        <div class="font-semibold text-primary">{{img.title}}</div>
-        <small class="text-secondary">💕 Yêu thích</small>
-      </div>
-    </div>
+<div class="text-center mt-5" *ngIf="favoritePhotos.length === 0">
+  <div class="glass-card p-5">
+    <i class="pi pi-heart text-primary" style="font-size: 3rem;"></i>
+    <h3 class="card-heading mt-3">Đang tải ảnh yêu thích...</h3>
+    <p class="text-muted">Những khoảnh khắc đặc biệt sẽ sớm xuất hiện!</p>
   </div>
 </div>

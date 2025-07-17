@@ -30,10 +30,10 @@
     { "icon": "pi pi-home", "name": "Gia đình", "description": "Dành thời gian bên vợ và xây dựng tổ ấm" }
   ],
   "husbandPhotos": [
-    { "url": "assets/images/phat/img.png", "caption": "Ba Heo Nhỏ tại nơi làm việc" },
-    { "url": "assets/images/phat/img1.png", "caption": "Anh trong một chuyến du lịch" },
-    { "url": "assets/images/phat/img2.png", "caption": "Ba Heo Nhỏ và đam mê công nghệ" },
-    { "url": "assets/images/phat/img_1.png", "caption": "Anh thư giãn trong cuối tuần" }
+    { "url": "assets/images/phat/phat-portrait.png", "caption": "Ba Heo Nhỏ - Ảnh chân dung đẹp trai" },
+    { "url": "assets/images/phat/phat-travel.png", "caption": "Anh trong chuyến du lịch khám phá" },
+    { "url": "assets/images/phat/phat-work.png", "caption": "Ba Heo Nhỏ tại nơi làm việc" },
+    { "url": "assets/images/phat/phat-hobby.png", "caption": "Anh với những sở thích yêu thích" }
   ],
   "husbandFunFacts": [
     { "title": "Món ăn yêu thích", "description": "Phở bò và bánh mì - những món ăn Việt Nam truyền thống" },

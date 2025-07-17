@@ -1,36 +1,17 @@
-<div class="heart-logo">
-  <div class="beating-heart">💕</div>
-  <span class="logo-text">Ba Heo & Heo Bỉm</span>
+<!-- Main Navigation -->
+<div class="navbar-container">
+  <p-menubar [model]="menuItems" styleClass="custom-menubar">
+    <ng-template pTemplate="start">
+      <div class="navbar-brand">
+        <img src="assets/images/anh-chu-dao/avatar-couple.png" alt="Avatar Couple" class="navbar-avatar">
+        <span class="navbar-title">Kỷ Niệm Yêu Thương</span>
+      </div>
+    </ng-template>
+  </p-menubar>
 </div>
 
-<p-menubar>
-  <div class="p-menubar-start">
-    <a routerLink="/album-anh" routerLinkActive="active" class="p-menuitem-link p-ripple">
-      <i class="pi pi-camera mr-2"></i>Album Ảnh
-    </a>
-    <a routerLink="/anh-yeu-thich" routerLinkActive="active" class="p-menuitem-link p-ripple">
-      <i class="pi pi-heart-fill mr-2"></i>Ảnh Yêu Thích
-    </a>
-    <a routerLink="/ky-niem" routerLinkActive="active" class="p-menuitem-link p-ripple">
-      <i class="pi pi-star-fill mr-2"></i>Kỷ Niệm
-    </a>
-    <a routerLink="/dong-thoi-gian" routerLinkActive="active" class="p-menuitem-link p-ripple">
-      <i class="pi pi-clock mr-2"></i>Dòng Thời Gian
-    </a>
-    <a routerLink="/thong-tin-chong" routerLinkActive="active" class="p-menuitem-link p-ripple">
-      <i class="pi pi-user mr-2"></i>Thông Tin Chồng
-    </a>
-    <a routerLink="/thong-tin-vo" routerLinkActive="active" class="p-menuitem-link p-ripple">
-      <i class="pi pi-crown mr-2"></i>Thông Tin Vợ
-    </a>
-    <a routerLink="/image-cloud" routerLinkActive="active" class="p-menuitem-link p-ripple">
-      <i class="pi pi-cloud mr-2"></i>Từ Khóa
-    </a>
-    <a routerLink="/thong-diep" routerLinkActive="active" class="p-menuitem-link p-ripple">
-      <i class="pi pi-envelope mr-2"></i>Thông Điệp
-    </a>
-    <a routerLink="/ve-chung-toi" routerLinkActive="active" class="p-menuitem-link p-ripple">
-      <i class="pi pi-users mr-2"></i>Về Chúng Tôi
-    </a>
-  </div>
-</p-menubar>
+<!-- Heart Logo - Moved to bottom right -->
+<div class="heart-logo-bottom animate-float">
+  <div class="beating-heart animate-heartbeat">💕</div>
+  <span class="logo-text">Ba Heo & Heo Bỉm</span>
+</div>

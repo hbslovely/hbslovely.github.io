@@ -30,7 +30,7 @@
     { "icon": "pi pi-home", "name": "Gia đình", "description": "Xây dựng tổ ấm hạnh phúc bên chồng" }
   ],
   "wifePhotos": [
-    { "url": "assets/images/quyen/img.png", "caption": "Heo Bỉm Sửa tại nơi làm việc" }
+    { "url": "assets/images/quyen/quyen-portrait.png", "caption": "Heo Bỉm Sửa - Xinh đẹp rạng rỡ" }
   ],
   "wifeBeautyStyles": [
     { "emoji": "💄", "title": "Makeup", "description": "Luôn biết cách trang điểm để tôn lên vẻ đẹp tự nhiên" },
