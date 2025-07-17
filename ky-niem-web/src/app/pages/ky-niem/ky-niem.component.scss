@@ -1,0 +1,56 @@
+/* Live Counter Animations */
+@keyframes sparkle {
+  0%, 100% { 
+    transform: scale(1); 
+    text-shadow: 0 0 5px rgba(20, 184, 166, 0.5);
+  }
+  50% { 
+    transform: scale(1.05); 
+    text-shadow: 0 0 15px rgba(20, 184, 166, 0.8), 0 0 25px rgba(20, 184, 166, 0.6);
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-5px); 
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 10px rgba(20, 184, 166, 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 20px rgba(20, 184, 166, 0.6), 0 0 30px rgba(20, 184, 166, 0.4);
+  }
+}
+
+.animate-sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.glass-card {
+  &:hover {
+    animation: pulse-glow 1.5s ease-in-out infinite;
+  }
+}
+
+/* Responsive text sizing for counter */
+@media (max-width: 768px) {
+  .text-5xl {
+    font-size: 2.5rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .text-5xl {
+    font-size: 2rem !important;
+  }
+}

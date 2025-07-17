@@ -56,5 +56,232 @@
       "image": "assets/images/hinh-cuoi/cung-nhau.png",
       "icon": "pi pi-sun"
     }
+  ],
+  "loveQuotes": [
+    {
+      "quote": "Trong vô vàn con người trên thế giới này, anh đã tìm thấy em - người duy nhất làm cho trái tim anh rung động.",
+      "author": "Ba Heo Nhỏ",
+      "icon": "pi pi-heart"
+    },
+    {
+      "quote": "Em yêu anh không phải vì anh hoàn hảo, mà vì anh làm cho cuộc sống của em trở nên hoàn hảo.",
+      "author": "Heo Bỉm Sửa",
+      "icon": "pi pi-star"
+    },
+    {
+      "quote": "Tình yêu của chúng ta như những ngôi sao - có thể không nhìn thấy ban ngày, nhưng luôn tồn tại và tỏa sáng.",
+      "author": "Cùng nhau",
+      "icon": "pi pi-sparkles"
+    },
+    {
+      "quote": "Mỗi ngày trôi qua, anh càng yêu em nhiều hơn. Em chính là ý nghĩa của cuộc đời anh.",
+      "author": "Ba Heo Nhỏ",
+      "icon": "pi pi-sun"
+    }
+  ],
+  "loveStatistics": {
+    "daysTogether": "1,531",
+    "photosShared": "12,457",
+    "tripsTaken": "18",
+    "smilesShared": "∞",
+    "hugsTight": "6,000+",
+    "laughsLoud": "Vô số",
+    "tearsOfJoy": "Rất nhiều",
+    "dreamsShared": "Tất cả"
+  },
+  "specialMoments": [
+    {
+      "title": "Lần đầu nói 'Anh yêu em'",
+      "description": "Khoảnh khắc thiêng liêng khi những từ ngữ ấm áp nhất được thổ lộ",
+      "date": "09/05/2021",
+      "icon": "pi pi-heart-fill",
+      "color": "#e91e63"
+    },
+    {
+      "title": "Chuyến du lịch đầu tiên",
+      "description": "Những bước chân đầu tiên khám phá thế giới bên nhau",
+      "date": "07/2021",
+      "icon": "pi pi-map",
+      "color": "#2196f3"
+    },
+    {
+      "title": "Gặp gia đình nhau",
+      "description": "Ngày được gia đình chính thức chấp nhận và yêu thương",
+      "date": "12/2021",
+      "icon": "pi pi-users",
+      "color": "#4caf50"
+    },
+    {
+      "title": "Mua nhà chung",
+      "description": "Tổ ấm đầu tiên của hai đứa, nơi bắt đầu cuộc sống mới",
+      "date": "01/2023",
+      "icon": "pi pi-home",
+      "color": "#ff9800"
+    }
+  ],
+  "ourSongs": [
+    {
+      "title": "Hẹn Ước Từ Hư Vô",
+      "artist": "Mỹ Tâm",
+      "description": "Bài hát về những lời hẹn ước ngọt ngào và tình yêu lãng mạn",
+      "moment": "Khi nghe nhạc cùng nhau"
+    },
+    {
+      "title": "Chờ Anh Nhé",
+      "artist": "Hoàng Dũng",
+      "description": "Lời hứa sẽ luôn chờ đợi nhau dù ở đâu, dù bao lâu",
+      "moment": "Lúc xa nhau"
+    },
+    {
+      "title": "Làm Vợ Anh Nhé",
+      "artist": "Chi Dân",
+      "description": "Lời cầu hôn ngọt ngào và ước mơ về một tương lai bên nhau",
+      "moment": "Khi anh cầu hôn em"
+    },
+    {
+      "title": "Ngày Đầu Tiên",
+      "artist": "Đức Phúc",
+      "description": "Kỷ niệm về những ngày đầu tiên yêu nhau, ngọt ngào và trong trẻo",
+      "moment": "Nhớ lại ngày đầu quen nhau"
+    },
+    {
+      "title": "Beautiful in White",
+      "artist": "Shane Filan",
+      "description": "Bài hát tiếng Anh lãng mạn về ngày cưới và tình yêu vĩnh cửu",
+      "moment": "Ngày cưới của chúng ta"
+    }
+  ],
+  "memoryPlaces": [
+    {
+      "name": "Vũng Tàu",
+      "description": "Bãi biển đầu tiên chúng ta cùng nhau đến, nơi có biển xanh, cát trắng và những kỷ niệm ngọt ngào",
+      "significance": "Chuyến đi biển đầu tiên",
+      "icon": "pi pi-sun",
+      "image": "assets/images/dia-diem/vung-tau.jpg"
+    },
+    {
+      "name": "Singapore",
+      "description": "Đất nước sư tử xinh đẹp, nơi chúng ta có chuyến du lịch nước ngoài đầu tiên cùng nhau",
+      "significance": "Du lịch quốc tế đầu tiên",
+      "icon": "pi pi-globe",
+      "image": "assets/images/dia-diem/singapore.jpg"
+    },
+    {
+      "name": "Thái Lan",
+      "description": "Xứ sở chùa vàng với văn hóa độc đáo, món ăn ngon và những kỷ niệm tuyệt vời",
+      "significance": "Khám phá văn hóa mới",
+      "icon": "pi pi-heart",
+      "image": "assets/images/dia-diem/thai-lan.jpg"
+    },
+    {
+      "name": "Nha Trang",
+      "description": "Thành phố biển xinh đẹp với những bãi tắm tuyệt vời và hải sản tươi ngon",
+      "significance": "Kỳ nghỉ lãng mạn",
+      "icon": "pi pi-camera",
+      "image": "assets/images/dia-diem/nha-trang.jpg"
+    },
+    {
+      "name": "Đà Lạt",
+      "description": "Thành phố ngàn hoa với khí hậu mát mẻ, những con đường hoa và café ấm cúng",
+      "significance": "Tháng mật ngọt ngào",
+      "icon": "pi pi-star",
+      "image": "assets/images/dia-diem/da-lat.jpg"
+    }
+  ],
+  "meaningfulGifts": [
+    {
+      "gift": "Chiếc nhẫn đầu tiên",
+      "occasion": "Kỷ niệm 1 năm yêu nhau",
+      "meaning": "Lời hứa sẽ bên nhau mãi mãi",
+      "emotion": "Xúc động và hạnh phúc"
+    },
+    {
+      "gift": "Album ảnh tự làm",
+      "occasion": "Sinh nhật em",
+      "meaning": "Ghi lại từng khoảnh khắc đẹp của chúng ta",
+      "emotion": "Ngọt ngào và ấm áp"
+    },
+    {
+      "gift": "Chuyến du lịch Đà Lạt",
+      "occasion": "Ngày Valentine",
+      "meaning": "Khám phá thế giới bên nhau",
+      "emotion": "Phấn khích và lãng mạn"
+    },
+    {
+      "gift": "Chiếc áo couple",
+      "occasion": "Không lý do gì cả",
+      "meaning": "Muốn cả thế giới biết chúng ta thuộc về nhau",
+      "emotion": "Tự hào và hạnh phúc"
+    }
+  ],
+  "favoriteFoods": [
+    {
+      "dish": "Phở bò",
+      "story": "Món ăn đầu tiên anh nấu cho em khi em ốm, tuy hơi mặn nhưng em vẫn ăn hết",
+      "feeling": "Ấm lòng"
+    },
+    {
+      "dish": "Bánh kem sinh nhật",
+      "story": "Em tự tay làm bánh cho anh, hơi cháy một chút nhưng anh nói ngon nhất thế giới",
+      "feeling": "Ngọt ngào"
+    },
+    {
+      "dish": "Lẩu thái",
+      "story": "Món ăn chúng ta hay ăn khi xem phim, luôn tranh nhau miếng thịt cuối cùng",
+      "feeling": "Vui vẻ"
+    },
+    {
+      "dish": "Trà sữa",
+      "story": "Đồ uống em yêu thích, anh luôn nhớ độ ngọt và topping em thích",
+      "feeling": "Quan tâm"
+    }
+  ],
+  "futureDreams": [
+    {
+      "dream": "Du lịch khắp thế giới",
+      "description": "Cùng nhau khám phá 50 quốc gia, chụp ảnh tại mọi nơi đẹp trên thế giới",
+      "timeline": "10 năm tới",
+      "icon": "pi pi-globe"
+    },
+    {
+      "dream": "Xây nhà riêng",
+      "description": "Một ngôi nhà nhỏ với khu vườn, nơi chúng ta có thể già đi bên nhau",
+      "timeline": "5 năm tới",
+      "icon": "pi pi-home"
+    },
+    {
+      "dream": "Có con yêu",
+      "description": "Những thiên thần nhỏ sẽ làm gia đình chúng ta thêm tràn đầy tiếng cười",
+      "timeline": "Sắp tới rồi",
+      "icon": "pi pi-heart"
+    },
+    {
+      "dream": "Mở quán café",
+      "description": "Một quán café nhỏ xinh, nơi chúng ta có thể làm việc cùng nhau mỗi ngày",
+      "timeline": "7 năm tới",
+      "icon": "pi pi-coffee"
+    }
+  ],
+  "gratitudeMessages": [
+    {
+      "to": "Gia đình anh",
+      "message": "Cảm ơn bác chú đã sinh ra anh - người đàn ông tuyệt vời nhất thế giới này",
+      "icon": "pi pi-users"
+    },
+    {
+      "to": "Gia đình em",
+      "message": "Cảm ơn bố mẹ đã nuôi dưỡng em thành người phụ nữ tuyệt vời như hôm nay",
+      "icon": "pi pi-heart"
+    },
+    {
+      "to": "Bạn bè",
+      "message": "Cảm ơn những người bạn đã luôn ủng hộ tình yêu của chúng ta",
+      "icon": "pi pi-users"
+    },
+    {
+      "to": "Số phận",
+      "message": "Cảm ơn vì đã sắp xếp để hai đứa gặp nhau trong đúng thời điểm tuyệt vời nhất",
+      "icon": "pi pi-star"
+    }
   ]
 } 

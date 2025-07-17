@@ -21,47 +21,47 @@ export class NavbarComponent {
   
   menuItems: MenuItem[] = [
     {
-      label: 'Trang Chủ',
+      label: '🏠 Tổ Ấm Tình Yêu',
       icon: 'pi pi-home',
       routerLink: '/ky-niem'
     },
     {
-      label: 'Album Ảnh',
+      label: '📸 Bộ Sưu Tập Kỷ Niệm',
       icon: 'pi pi-images',
       routerLink: '/album-anh'
     },
     {
-      label: 'Ảnh Yêu Thích',
+      label: '💕 Những Khoảnh Khắc Yêu Thích',
       icon: 'pi pi-heart-fill',
       routerLink: '/anh-yeu-thich'
     },
     {
-      label: 'Dòng Thời Gian',
+      label: '⏰ Hành Trình Tình Yêu',
       icon: 'pi pi-history',
       routerLink: '/dong-thoi-gian'
     },
     {
-      label: 'Thông Tin Chồng',
+      label: '👨‍💼 Hoàng Tử Của Em',
       icon: 'pi pi-user',
       routerLink: '/thong-tin-chong'
     },
     {
-      label: 'Thông Tin Vợ',
+      label: '👸 Công Chúa Của Anh',
       icon: 'pi pi-crown',
       routerLink: '/thong-tin-vo'
     },
     {
-      label: 'Từ Khóa',
+      label: '🎯 Từ Khóa Tình Yêu',
       icon: 'pi pi-tags',
       routerLink: '/image-cloud'
     },
     {
-      label: 'Thông Điệp',
+      label: '💌 Thư Tình Gửi Nhau',
       icon: 'pi pi-send',
       routerLink: '/thong-diep'
     },
     {
-      label: 'Về Chúng Tôi',
+      label: '💑 Câu Chuyện Của Chúng Ta',
       icon: 'pi pi-users',
       routerLink: '/ve-chung-toi'
     }
