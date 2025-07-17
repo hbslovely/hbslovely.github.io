@@ -130,30 +130,34 @@ $gradient-dark: #dcfce7; // Light green gradient
   }
 
   .counter-card {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(5px);
-    padding: 1rem;
+    padding: 1.5rem;
     border-radius: 15px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
-    border: 1px solid rgba($primary-lighter, 0.3);
+    border: 2px solid rgba($primary-lighter, 0.5);
 
     &:hover {
       transform: translateY(-5px);
-      border-color: $primary-lighter;
+      border-color: white;
+      background: rgba(255, 255, 255, 0.35);
     }
 
     .number {
-      font-size: 2.5rem;
+      font-size: 3.5rem;
       font-weight: bold;
       margin-bottom: 0.5rem;
-      color: $primary-lighter;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
 
     .label {
-      font-size: 1rem;
+      font-size: 1.2rem;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
+      color: $primary-lighter;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
     }
   }
 }
@@ -398,50 +402,493 @@ $gradient-dark: #dcfce7; // Light green gradient
   }
 }
 
-// Responsive Design
-@media (max-width: 768px) {
-  .parallax-header {
-    min-height: 500px;
+// Dual Section (Special Moments & Songs)
+.dual-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, $gradient-light 0%, $gradient-dark 100%);
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
   }
 
-  .title-wrapper .typewriter {
-    font-size: 1.8rem;
+  .section-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
   }
 
-  .time-counter {
-    .counter-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .counter-card .number {
+  .section-column {
+    .section-title {
+      text-align: center;
       font-size: 2rem;
+      margin-bottom: 2rem;
+      color: $primary-dark;
     }
   }
 
-  .timeline-section {
-    .timeline-container::before {
-      left: 0;
+  .moments-list, .songs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .moment-card, .song-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba($primary-color, 0.1);
+
+    &:hover {
+      transform: translateY(-5px);
+      border-color: $primary-color;
+    }
+  }
+
+  // Specific styles for moment cards
+  .moment-card {
+    .moment-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      background: $primary-color;
+      border: 3px solid white;
+      box-shadow: 0 0 0 3px $primary-lighter;
     }
 
-    .timeline-item {
-      &:nth-child(odd) .timeline-content,
-      &:nth-child(even) .timeline-content {
-        margin: 0 0 0 2rem;
-        padding: 1rem;
-        text-align: left;
+    .moment-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: $primary-dark;
+    }
+
+    .moment-date {
+      font-size: 1rem;
+      color: $primary-color;
+      margin-bottom: 1rem;
+    }
+
+    .moment-description {
+      color: #666;
+      line-height: 1.6;
+    }
+  }
+
+  // Specific styles for song cards
+  .song-card {
+    background: linear-gradient(135deg, $gradient-light 0%, $gradient-dark 100%);
+
+    .song-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: $primary-dark;
+    }
+
+    .song-artist {
+      font-size: 1.1rem;
+      color: $primary-color;
+      margin-bottom: 1rem;
+    }
+
+    .song-moment {
+      font-style: italic;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    .song-description {
+      color: #666;
+      line-height: 1.6;
+    }
+  }
+}
+
+// Memory Places Section
+.places-section {
+  padding: 4rem 0;
+  background: #ffffff;
+
+  .places-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+
+  .place-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba($primary-color, 0.1);
+
+    &:hover {
+      transform: translateY(-5px);
+      border-color: $primary-color;
+
+      .place-image img {
+        transform: scale(1.1);
       }
     }
 
-    .timeline-icon {
-      left: 0;
+    .place-image {
+      height: 200px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+    }
+
+    .place-content {
+      padding: 1.5rem;
+    }
+
+    .place-name {
+      font-size: 1.3rem;
+      color: $primary-dark;
+      margin-bottom: 0.5rem;
+    }
+
+    .place-significance {
+      color: $primary-color;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .place-description {
+      color: #666;
+      line-height: 1.6;
     }
   }
+}
 
-  .statistics-section,
-  .special-moments-section,
-  .our-songs-section {
-    .section-title {
-      font-size: 1.8rem;
+// Love Quotes Section
+.quotes-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, $gradient-light 0%, $gradient-dark 100%);
+
+  .quotes-carousel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+
+  .quote-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba($primary-color, 0.1);
+
+    &:hover {
+      transform: translateY(-5px);
+      border-color: $primary-color;
     }
+
+    i {
+      font-size: 2rem;
+      color: $primary-color;
+      margin-bottom: 1rem;
+    }
+
+    .quote-text {
+      font-size: 1.1rem;
+      color: #666;
+      line-height: 1.6;
+      margin: 1rem 0;
+      font-style: italic;
+    }
+
+    .quote-author {
+      color: $primary-dark;
+      font-weight: 600;
+    }
+  }
+}
+
+// Meaningful Gifts Section
+.gifts-section {
+  padding: 4rem 0;
+  background: #ffffff;
+
+  .gifts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+
+  .gift-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba($primary-color, 0.1);
+
+    &:hover {
+      transform: translateY(-5px);
+      border-color: $primary-color;
+    }
+
+    .gift-title {
+      font-size: 1.3rem;
+      color: $primary-dark;
+      margin-bottom: 0.5rem;
+    }
+
+    .gift-occasion {
+      color: $primary-color;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .gift-meaning {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .gift-emotion {
+      color: $primary-color;
+      font-style: italic;
+    }
+  }
+}
+
+// Favorite Foods Section
+.foods-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, $gradient-light 0%, $gradient-dark 100%);
+
+  .foods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+
+  .food-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba($primary-color, 0.1);
+
+    &:hover {
+      transform: translateY(-5px);
+      border-color: $primary-color;
+    }
+
+    .food-name {
+      font-size: 1.3rem;
+      color: $primary-dark;
+      margin-bottom: 1rem;
+    }
+
+    .food-story {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .food-feeling {
+      color: $primary-color;
+      font-style: italic;
+    }
+  }
+}
+
+// Future Dreams Section
+.dreams-section {
+  padding: 4rem 0;
+  background: #ffffff;
+
+  .dreams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+
+  .dream-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba($primary-color, 0.1);
+
+    &:hover {
+      transform: translateY(-5px);
+      border-color: $primary-color;
+    }
+
+    i {
+      font-size: 2rem;
+      color: $primary-color;
+      margin-bottom: 1rem;
+    }
+
+    .dream-title {
+      font-size: 1.3rem;
+      color: $primary-dark;
+      margin-bottom: 0.5rem;
+    }
+
+    .dream-description {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .dream-timeline {
+      color: $primary-color;
+      font-style: italic;
+    }
+  }
+}
+
+// Gallery Section
+.gallery-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, $gradient-light 0%, $gradient-dark 100%);
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+
+  .gallery-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+
+      img {
+        transform: scale(1.1);
+      }
+
+      .gallery-caption {
+        opacity: 1;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1rem;
+      background: rgba($primary-dark, 0.8);
+      color: white;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+  }
+}
+
+// Gratitude Section
+.gratitude-section {
+  padding: 4rem 0;
+  background: #ffffff;
+
+  .gratitude-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .gratitude-message {
+    font-size: 1.2rem;
+    color: $primary-dark;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .dual-section .section-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .places-grid,
+  .quotes-carousel,
+  .gifts-grid,
+  .foods-grid,
+  .dreams-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+
+  .gallery-item {
+    aspect-ratio: 3/2;
+  }
+
+  .gratitude-content {
+    padding: 1rem;
+  }
+
+  .gratitude-message {
+    font-size: 1.1rem;
   }
 } 

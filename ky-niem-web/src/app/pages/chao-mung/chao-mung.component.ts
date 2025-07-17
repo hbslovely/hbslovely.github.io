@@ -16,7 +16,7 @@ export class ChaoMungComponent implements OnInit, OnDestroy {
   currentText: string = '';
   textIndex: number = 0;
   charIndex: number = 0;
-  Object = Object; // Make Object available in template
+  Object = Object;
 
   welcomeTexts: string[] = [
     'Chào Mừng Đến Với Trang Kỷ Niệm Của Chúng Mình 💑',
@@ -34,6 +34,11 @@ export class ChaoMungComponent implements OnInit, OnDestroy {
   loveStatistics: any = {};
   specialMoments: any[] = [];
   ourSongs: any[] = [];
+  memoryPlaces: any[] = [];
+  loveQuotes: any[] = [];
+  meaningfulGifts: any[] = [];
+  favoriteFoods: any[] = [];
+  futureDreams: any[] = [];
   
   private counterInterval: any;
   private startDate = new Date('2021-05-09T00:00:00');
@@ -113,6 +118,11 @@ export class ChaoMungComponent implements OnInit, OnDestroy {
         this.loveStatistics = data.loveStatistics;
         this.specialMoments = data.specialMoments;
         this.ourSongs = data.ourSongs;
+        this.memoryPlaces = data.memoryPlaces;
+        this.loveQuotes = data.loveQuotes;
+        this.meaningfulGifts = data.meaningfulGifts;
+        this.favoriteFoods = data.favoriteFoods;
+        this.futureDreams = data.futureDreams;
       },
       error: (error) => {
         console.error('Error loading memories data:', error);
@@ -190,6 +200,50 @@ export class ChaoMungComponent implements OnInit, OnDestroy {
         artist: 'Hoàng Dũng',
         description: 'Lời hứa sẽ luôn chờ đợi nhau dù ở đâu, dù bao lâu',
         moment: 'Lúc xa nhau'
+      }
+    ];
+
+    this.memoryPlaces = [
+      {
+        name: 'Vũng Tàu',
+        description: 'Bãi biển đầu tiên chúng ta cùng nhau đến',
+        significance: 'Chuyến đi biển đầu tiên',
+        icon: 'pi pi-sun',
+        image: 'assets/images/dia-diem/vung-tau.jpg'
+      }
+    ];
+
+    this.loveQuotes = [
+      {
+        quote: 'Trong vô vàn con người trên thế giới này, anh đã tìm thấy em - người duy nhất làm cho trái tim anh rung động.',
+        author: 'Ba Heo Nhỏ',
+        icon: 'pi pi-heart'
+      }
+    ];
+
+    this.meaningfulGifts = [
+      {
+        gift: 'Chiếc nhẫn đầu tiên',
+        occasion: 'Kỷ niệm 1 năm yêu nhau',
+        meaning: 'Lời hứa sẽ bên nhau mãi mãi',
+        emotion: 'Xúc động và hạnh phúc'
+      }
+    ];
+
+    this.favoriteFoods = [
+      {
+        dish: 'Phở bò',
+        story: 'Món ăn đầu tiên anh nấu cho em khi em ốm',
+        feeling: 'Ấm lòng'
+      }
+    ];
+
+    this.futureDreams = [
+      {
+        dream: 'Du lịch khắp thế giới',
+        description: 'Cùng nhau khám phá 50 quốc gia',
+        timeline: '10 năm tới',
+        icon: 'pi pi-globe'
       }
     ];
   }
