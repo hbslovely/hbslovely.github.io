@@ -1,0 +1,129 @@
+<div class="text-center mb-6">
+  <h1>👨‍💼 Thông Tin Về Chồng</h1>
+  <p class="text-lg text-secondary">Người đàn ông tuyệt vời của tôi ❤️</p>
+</div>
+
+<div class="max-w-6xl mx-auto">
+  <!-- Main Profile Card -->
+  <div class="grid">
+    <div class="col-12 lg:col-4">
+      <div class="card p-0 overflow-hidden memory-decoration">
+        <div class="profile-header text-center p-6" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+          <div class="profile-avatar mx-auto mb-4">
+            <img src="assets/images/anh-chu-dao/avatar.jpg" 
+                 alt="Ba Heo Nhỏ" 
+                 class="w-full h-full object-cover border-circle">
+          </div>
+          <h3 class="text-white mb-2">{{ husbandInfo.name }}</h3>
+          <p class="text-200 mb-0">{{ husbandInfo.title }}</p>
+        </div>
+        
+        <div class="p-4">
+          <div class="info-item mb-3" *ngFor="let info of husbandBasicInfo">
+            <div class="flex align-items-center">
+              <i [class]="info.icon" class="text-primary mr-3 text-xl"></i>
+              <div>
+                <div class="font-semibold text-primary">{{ info.label }}</div>
+                <div class="text-600">{{ info.value }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 lg:col-8">
+      <!-- About Section -->
+      <div class="card p-6 mb-4 memory-decoration">
+        <h3 class="text-primary mb-4">
+          <i class="pi pi-heart-fill mr-2"></i>
+          Về Anh Ấy
+        </h3>
+        <p class="text-700 line-height-3 mb-4">{{ husbandInfo.description }}</p>
+        
+        <div class="grid">
+          <div class="col-12 md:col-6 mb-3" *ngFor="let trait of husbandTraits">
+            <div class="trait-item p-3 border-round-lg">
+              <div class="flex align-items-center">
+                <i [class]="trait.icon" class="text-pink-400 mr-3 text-2xl"></i>
+                <div>
+                  <div class="font-semibold text-primary">{{ trait.title }}</div>
+                  <small class="text-600">{{ trait.description }}</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hobbies -->
+      <div class="card p-6 mb-4 memory-decoration">
+        <h3 class="text-primary mb-4">
+          <i class="pi pi-star mr-2"></i>
+          Sở Thích & Đam Mê
+        </h3>
+        <div class="grid">
+          <div class="col-12 md:col-4 text-center mb-3" *ngFor="let hobby of husbandHobbies">
+            <div class="hobby-card p-4 border-round-xl h-full">
+              <i [class]="hobby.icon" class="text-4xl text-orange-400 mb-3"></i>
+              <h4 class="text-primary mb-2">{{ hobby.name }}</h4>
+              <p class="text-600 text-sm">{{ hobby.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Photo Gallery -->
+  <div class="card p-6 memory-decoration">
+    <h3 class="text-center text-primary mb-5">
+      <i class="pi pi-images mr-2"></i>
+      Album Ảnh Riêng Của Anh
+    </h3>
+    <div class="grid">
+      <div class="col-12 md:col-4 mb-4" *ngFor="let photo of husbandPhotos">
+        <div class="photo-card relative overflow-hidden border-round-xl">
+          <img [src]="photo.url" [alt]="photo.caption" 
+               class="w-full h-15rem object-cover transition-transform duration-300 hover:scale-110">
+          <div class="photo-overlay absolute bottom-0 left-0 right-0 p-3 text-white">
+            <p class="mb-0 text-sm font-semibold">{{ photo.caption }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fun Facts -->
+  <div class="card p-6 memory-decoration">
+    <h3 class="text-center text-primary mb-5">
+      <i class="pi pi-lightbulb mr-2"></i>
+      Những Điều Thú Vị Về Anh
+    </h3>
+    <div class="grid">
+      <div class="col-12 md:col-6 mb-3" *ngFor="let fact of husbandFunFacts; let i = index">
+        <div class="fun-fact-card p-4 border-round-lg">
+          <div class="flex align-items-start">
+            <div class="fact-number flex-shrink-0 mr-3">{{ i + 1 }}</div>
+            <div>
+              <h5 class="text-primary mb-2">{{ fact.title }}</h5>
+              <p class="text-600 mb-0">{{ fact.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Love Note -->
+  <div class="card p-6 text-center memory-decoration">
+    <div class="love-note-content">
+      <i class="pi pi-heart-fill text-6xl text-pink-400 mb-4"></i>
+      <h3 class="text-primary mb-3">Lời Nhắn Tình Yêu</h3>
+      <blockquote class="text-lg text-700 line-height-3 font-italic mb-4">
+        "{{ husbandInfo.loveMessage }}"
+      </blockquote>
+      <small class="text-secondary">- Từ người vợ yêu thương 💕</small>
+    </div>
+  </div>
+</div>

@@ -14,11 +14,14 @@ export class AnhYeuThichComponent {
     const favs = JSON.parse(localStorage.getItem('favoriteImages') || '[]');
     // Ảnh mẫu giống album
     const allImages = [
-      { id: 1, src: 'https://via.placeholder.com/300x200?text=Ảnh+1', title: 'Kỷ niệm 1' },
-      { id: 2, src: 'https://via.placeholder.com/300x200?text=Ảnh+2', title: 'Kỷ niệm 2' },
-      { id: 3, src: 'https://via.placeholder.com/300x200?text=Ảnh+3', title: 'Kỷ niệm 3' },
-      { id: 4, src: 'https://via.placeholder.com/300x200?text=Ảnh+4', title: 'Kỷ niệm 4' },
-      { id: 5, src: 'https://via.placeholder.com/300x200?text=Ảnh+5', title: 'Kỷ niệm 5' }
+      { id: 1, src: 'assets/images/ki-niem/ki-niem-1.jpg', title: 'Chuyến đi đầu tiên' },
+      { id: 2, src: 'assets/images/ki-niem/ki-niem-2.jpg', title: 'Kỷ niệm 1 năm' },
+      { id: 3, src: 'assets/images/ki-niem/ki-niem-3.jpg', title: 'Sinh nhật đáng nhớ' },
+      { id: 4, src: 'assets/images/ki-niem/ki-niem-4.jpg', title: 'Khoảnh khắc lãng mạn' },
+      { id: 5, src: 'assets/images/ki-niem/ki-niem-5.jpg', title: 'Kỷ niệm đặc biệt' },
+      { id: 6, src: 'assets/images/ki-niem/ki-niem-6.jpg', title: 'Hạnh phúc bên nhau' },
+      { id: 7, src: 'assets/images/hinh-cuoi/wedding-1.jpg', title: 'Ảnh cưới tuyệt đẹp' },
+      { id: 8, src: 'assets/images/hinh-cuoi/wedding-2.jpg', title: 'Ngày cưới hạnh phúc' }
     ];
 
     this.favoriteImages = allImages.filter(i => favs.includes(i.id));

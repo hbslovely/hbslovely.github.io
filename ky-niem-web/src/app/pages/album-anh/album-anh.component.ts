@@ -13,11 +13,14 @@ import { CommonModule } from '@angular/common';
 })
 export class AlbumAnhComponent {
   images = [
-    { id: 1, src: 'https://via.placeholder.com/300x200?text=Ảnh+1', title: 'Kỷ niệm 1', favorite: false },
-    { id: 2, src: 'https://via.placeholder.com/300x200?text=Ảnh+2', title: 'Kỷ niệm 2', favorite: false },
-    { id: 3, src: 'https://via.placeholder.com/300x200?text=Ảnh+3', title: 'Kỷ niệm 3', favorite: false },
-    { id: 4, src: 'https://via.placeholder.com/300x200?text=Ảnh+4', title: 'Kỷ niệm 4', favorite: false },
-    { id: 5, src: 'https://via.placeholder.com/300x200?text=Ảnh+5', title: 'Kỷ niệm 5', favorite: false }
+    { id: 1, src: 'assets/images/ki-niem/ki-niem-1.jpg', title: 'Chuyến đi đầu tiên', favorite: false },
+    { id: 2, src: 'assets/images/ki-niem/ki-niem-2.jpg', title: 'Kỷ niệm 1 năm', favorite: false },
+    { id: 3, src: 'assets/images/ki-niem/ki-niem-3.jpg', title: 'Sinh nhật đáng nhớ', favorite: false },
+    { id: 4, src: 'assets/images/ki-niem/ki-niem-4.jpg', title: 'Khoảnh khắc lãng mạn', favorite: false },
+    { id: 5, src: 'assets/images/ki-niem/ki-niem-5.jpg', title: 'Kỷ niệm đặc biệt', favorite: false },
+    { id: 6, src: 'assets/images/ki-niem/ki-niem-6.jpg', title: 'Hạnh phúc bên nhau', favorite: false },
+    { id: 7, src: 'assets/images/hinh-cuoi/wedding-1.jpg', title: 'Ảnh cưới tuyệt đẹp', favorite: false },
+    { id: 8, src: 'assets/images/hinh-cuoi/wedding-2.jpg', title: 'Ngày cưới hạnh phúc', favorite: false }
   ];
 
   toggleFavorite(img: any) {

@@ -8,6 +8,8 @@ import { DongThoiGianComponent } from './pages/dong-thoi-gian/dong-thoi-gian.com
 import { ImageCloudComponent } from './pages/image-cloud/image-cloud.component';
 import { ThongDiepComponent } from './pages/thong-diep/thong-diep.component';
 import { VeChungToiComponent } from './pages/ve-chung-toi/ve-chung-toi.component';
+import { ThongTinChongComponent } from './pages/thong-tin-chong/thong-tin-chong.component';
+import { ThongTinVoComponent } from './pages/thong-tin-vo/thong-tin-vo.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/album-anh', pathMatch: 'full' },
@@ -17,6 +19,8 @@ export const routes: Routes = [
   { path: 'dong-thoi-gian', component: DongThoiGianComponent },
   { path: 'image-cloud', component: ImageCloudComponent },
   { path: 'thong-diep', component: ThongDiepComponent },
+  { path: 'thong-tin-chong', component: ThongTinChongComponent },
+  { path: 'thong-tin-vo', component: ThongTinVoComponent },
   { path: 've-chung-toi', component: VeChungToiComponent },
   { path: '**', redirectTo: '/album-anh' }
 ];
