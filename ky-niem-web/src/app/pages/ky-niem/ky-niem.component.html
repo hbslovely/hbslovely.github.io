@@ -1,17 +1,55 @@
 <div class="text-center mb-5">
-  <h1>🌟 Kỷ Niệm Đáng Nhớ</h1>
-  <p class="text-lg text-secondary">Những câu chuyện tình yêu được lưu giữ mãi mãi</p>
+  <h1 class="card-title">🌟 Kỷ Niệm Đáng Nhớ</h1>
+  <p class="text-lg text-muted">Những câu chuyện tình yêu được lưu giữ mãi mãi</p>
 </div>
 
-<div class="grid justify-content-center">
-  <div *ngFor="let mem of memories; let i = index" class="col-12 md:col-6 lg:col-4 px-3 mb-5">
-    <div class="card memory-decoration" [style.animation-delay]="(i * 0.2) + 's'">
-      <img [src]="mem.src" [alt]="mem.description" style="width: 100%; height: 250px; object-fit: cover;">
-      <div class="p-4 text-center">
-        <div class="font-semibold text-primary text-lg mb-2">{{mem.description}}</div>
-        <div class="text-secondary">
-          <i class="pi pi-calendar mr-2"></i>
-          <small>Kỷ niệm {{i + 1}}</small>
+<!-- Timeline Section -->
+<div class="mb-8" *ngIf="timeline && timeline.length > 0">
+  <h2 class="card-heading text-center mb-5">💝 Hành Trình Yêu Thương</h2>
+  <div class="grid justify-content-center">
+    <div class="col-12 lg:col-10">
+      <div *ngFor="let item of timeline; let i = index" class="timeline-item animate-slideInUp" [style.animation-delay]="(i * 0.3) + 's'">
+        <div class="timeline-marker animate-heartbeat">
+          <i [class]="item.icon" style="color: white; font-size: 0.8rem;"></i>
+        </div>
+        <div class="glass-card p-4">
+          <div class="grid align-items-center">
+            <div class="col-12 md:col-8">
+              <h3 class="card-subheading mb-2">{{ item.title }}</h3>
+              <div class="mb-3">
+                <span class="bg-primary-100 text-primary-700 p-2 border-radius-md font-semibold">
+                  <i class="pi pi-calendar mr-2"></i>{{ item.date }}
+                </span>
+              </div>
+              <p class="text-contrast line-height-3">{{ item.description }}</p>
+            </div>
+            <div class="col-12 md:col-4" *ngIf="item.image">
+              <img [src]="item.image" [alt]="item.phase" 
+                   class="memory-image w-full border-round-lg shadow-2" 
+                   style="height: 200px; object-fit: cover;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Gallery Section -->
+<div class="mb-5">
+  <h2 class="card-heading text-center mb-5">📸 Thư Viện Kỷ Niệm</h2>
+  <div class="grid justify-content-center">
+    <div *ngFor="let mem of memories; let i = index" class="col-12 md:col-6 lg:col-4 px-3 mb-5">
+      <div class="glass-card memory-decoration animate-fadeInScale" [style.animation-delay]="(i * 0.2) + 's'">
+        <img [src]="mem.src" [alt]="mem.description" 
+             class="w-full border-round-top-lg" 
+             style="height: 250px; object-fit: cover;">
+        <div class="p-4 text-center">
+          <div class="card-subheading text-lg mb-2">{{ mem.description }}</div>
+          <div class="text-muted">
+            <i class="pi pi-calendar mr-2"></i>
+            <small>Kỷ niệm {{ i + 1 }}</small>
+          </div>
         </div>
       </div>
     </div>

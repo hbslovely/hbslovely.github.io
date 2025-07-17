@@ -33,9 +33,7 @@
     { "url": "assets/images/phat/img.png", "caption": "Ba Heo Nhỏ tại nơi làm việc" },
     { "url": "assets/images/phat/img1.png", "caption": "Anh trong một chuyến du lịch" },
     { "url": "assets/images/phat/img2.png", "caption": "Ba Heo Nhỏ và đam mê công nghệ" },
-    { "url": "assets/images/phat/img_1.png", "caption": "Anh thư giãn trong cuối tuần" },
-    { "url": "assets/images/phat/img3.png", "caption": "Ba Heo Nhỏ khám phá địa điểm mới" },
-    { "url": "assets/images/phat/img4.png", "caption": "Anh trong khoảnh khắc hạnh phúc" }
+    { "url": "assets/images/phat/img_1.png", "caption": "Anh thư giãn trong cuối tuần" }
   ],
   "husbandFunFacts": [
     { "title": "Món ăn yêu thích", "description": "Phở bò và bánh mì - những món ăn Việt Nam truyền thống" },
