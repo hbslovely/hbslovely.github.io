@@ -1,19 +1,50 @@
-<!-- Main Navigation -->
-<div class="navbar-container">
-  <p-menubar [model]="menuItems">
-    <ng-template pTemplate="start">
-      <a routerLink="/ky-niem" class="navbar-brand">
-        <img src="assets/images/anh-chu-dao/avatar-couple.png" 
-             alt="Ba Heo & Heo Bỉm" 
-             class="navbar-avatar">
-        <span class="navbar-title">Kỷ Niệm Yêu Thương</span>
-      </a>
-    </ng-template>
-  </p-menubar>
-</div>
+<nav class="navbar">
+  <div class="container">
+    <a routerLink="/" class="brand">
+      <div class="avatar-container">
+        <img src="assets/images/anh-chu-dao/avatar-couple.png" alt="Avatar đôi" class="couple-avatar" />
+      </div>
+      <div class="brand-text-container">
+        <i class="pi pi-heart-fill brand-icon"></i>
+        <span class="brand-text">Kỷ Niệm Yêu Thương</span>
+      </div>
+    </a>
+    
+    <button type="button" class="menu-toggle" (click)="toggleMenu()">
+      <i class="pi" [ngClass]="{'pi-bars': !isMenuOpen, 'pi-times': isMenuOpen}"></i>
+    </button>
 
-<!-- Heart Logo - Moved to bottom right -->
-<div class="heart-logo-bottom animate-float">
-  <div class="beating-heart animate-heartbeat">💕</div>
-  <span class="logo-text">Ba Heo & Heo Bỉm</span>
-</div>
+    <ul class="nav-links" [class.show]="isMenuOpen">
+      <li class="nav-item">
+        <a routerLink="/ve-chung-toi" routerLinkActive="active" class="nav-link">
+          Câu Chuyện Của Tụi Mình
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/thong-tin-vo" routerLinkActive="active" class="nav-link">
+          Thông Tin Vợ
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/thong-tin-chong" routerLinkActive="active" class="nav-link">
+          Thông Tin Chồng
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/album-anh" routerLinkActive="active" class="nav-link">
+          Album Ảnh
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/ky-niem" routerLinkActive="active" class="nav-link">
+          Kỷ Niệm
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/tips-vo-chong" routerLinkActive="active" class="nav-link">
+          Tips Vợ Chồng
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

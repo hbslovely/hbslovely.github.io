@@ -1,10 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { CarouselModule } from 'primeng/carousel';
 
 @Component({
   selector: 'app-ky-niem',
-  imports: [CommonModule],
+  standalone: true,
+  imports: [CommonModule, CarouselModule],
   templateUrl: './ky-niem.component.html',
   styleUrls: ['./ky-niem.component.scss']
 })
@@ -46,28 +48,6 @@ export class KyNiemComponent implements OnInit, OnDestroy {
     }
   }
 
-  // Enhanced mouse interaction for 3D effects
-  onCardMouseMove(event: MouseEvent, element: HTMLElement) {
-    if (!element) return;
-    
-    const rect = element.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-    
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    
-    const rotateX = (y - centerY) / 10;
-    const rotateY = (centerX - x) / 10;
-    
-    element.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
-  }
-
-  onCardMouseLeave(element: HTMLElement) {
-    if (!element) return;
-    element.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
-  }
-
   private startLiveCounter() {
     // Update immediately
     this.updateCounter();
@@ -80,12 +60,19 @@ export class KyNiemComponent implements OnInit, OnDestroy {
 
   private updateCounter() {
     const now = new Date();
-    const timeDiff = now.getTime() - this.startDate.getTime();
+    const diff = now.getTime() - this.startDate.getTime();
     
-    this.liveCounter.days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-    this.liveCounter.hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    this.liveCounter.minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-    this.liveCounter.seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    
+    this.liveCounter = {
+      days,
+      hours,
+      minutes,
+      seconds
+    };
   }
 
   onImageError(event: Event) {

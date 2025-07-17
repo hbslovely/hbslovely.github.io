@@ -1,8 +1,74 @@
-<app-navbar></app-navbar>
+<!-- Floating Background Elements -->
+<div class="floating-elements">
+  <div class="floating-element" *ngFor="let i of [].constructor(30)"></div>
+</div>
 
-<main class="main-content">
-  <div class="love-birds">🕊️💕</div>
-  <div class="page-container">
-    <router-outlet></router-outlet>
+<!-- Main Content -->
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>
+
+<!-- Global Footer -->
+<footer class="app-footer">
+  <div class="footer-avatar">
+    <img src="assets/images/anh-chu-dao/avatar-couple.png" alt="Ba Heo & Heo Bỉm">
   </div>
-</main>
+  
+  <div class="floating-hearts">
+    <span class="heart">❤️</span>
+    <span class="heart">💕</span>
+    <span class="heart">💖</span>
+    <span class="heart">💗</span>
+    <span class="heart">💓</span>
+    <span class="heart">💝</span>
+    <span class="heart">💘</span>
+    <span class="heart">💞</span>
+    <span class="heart">💟</span>
+    <span class="heart">💌</span>
+    <span class="heart">❤️</span>
+    <span class="heart">💕</span>
+    <span class="heart">💖</span>
+    <span class="heart">💗</span>
+    <span class="heart">💓</span>
+  </div>
+
+  <div class="container">
+    <div class="footer-content">
+      <div class="grid">
+        <div class="col-12 md:col-4">
+          <div class="footer-section">
+            <h3 class="section-title">Châm Ngôn Yêu Thương</h3>
+            <ul class="quote-list">
+              <li>"Tình yêu không làm cho thế giới quay tròn. Tình yêu là thứ làm cho chuyến đi đáng giá."</li>
+              <li>"Yêu không phải là nhìn nhau, mà là cùng nhau nhìn về một hướng."</li>
+              <li>"Hôn nhân là sự kết hợp của hai trái tim, hai tâm hồn trong một cuộc hành trình dài."</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-12 md:col-4">
+          <div class="footer-section">
+            <h3 class="section-title">Lời Cảm Ơn</h3>
+            <p class="gratitude-text">
+              Xin cảm ơn cuộc sống đã cho chúng tôi gặp nhau. Cảm ơn những người thân yêu đã luôn ủng hộ 
+              và đồng hành. Và đặc biệt, cảm ơn tình yêu đã cho chúng tôi sức mạnh để xây dựng hạnh phúc.
+            </p>
+          </div>
+        </div>
+        
+        <div class="col-12 md:col-4">
+          <div class="footer-section">
+            <h3 class="section-title">Thông Điệp Yêu Thương</h3>
+            <p class="gratitude-text">
+              "Mỗi ngày thức dậy bên nhau là một món quà. Mỗi nụ cười, mỗi cái nắm tay đều là những 
+              khoảnh khắc quý giá. Chúng tôi nguyện sẽ trân trọng và giữ gìn tình yêu này mãi mãi."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>© 2024 Kỷ Niệm Yêu Thương. Được tạo ra với tất cả tình yêu và sự trân trọng.</p>
+    </div>
+  </div>
+</footer>
