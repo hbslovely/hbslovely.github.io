@@ -7,325 +7,101 @@ $letter-border: #e2d5bc;
 $letter-shadow: rgba(0, 0, 0, 0.1);
 
 .gratitude-section {
-  --section-color: #fff5f7;
-  @include section-transition;
-  padding: 6rem 0;
-  background: var(--section-color);
   position: relative;
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
   overflow: hidden;
 
+  .watermark-icons {
+    position: absolute;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    opacity: 0.1;
+    pointer-events: none;
+
+    i {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      transform: rotate(-15deg);
+    }
+  }
+
   .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
   }
 
   .section-title {
     text-align: center;
     font-size: 2.5rem;
-    color: #d81b60;
-    margin-bottom: 4rem;
-    font-family: 'Dancing Script', cursive;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    color: var(--primary-800);
+    margin-bottom: 3rem;
   }
 
   .gratitude-content {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-    max-width: 800px;
-    margin: 0 auto;
+    position: relative;
+    z-index: 1;
   }
 
-  // Base letter styles
+  .letters-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    perspective: 1000px;
+  }
+
   .gratitude-letter {
+    padding: 2rem;
+    border-radius: 15px;
     position: relative;
-    padding: 4rem;
-    border-radius: 2px;
-    transform: rotate(-1deg);
+    font-size: 1rem;
+    line-height: 1.8;
     transition: transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 
     &:hover {
-      transform: rotate(0) translateY(-5px);
+      transform: translateY(-5px) rotate(0deg) !important;
     }
 
-    .gratitude-paragraph {
-      font-size: 1.2rem;
-      line-height: 2;
-      margin-bottom: 2rem;
-      position: relative;
-      z-index: 1;
-      text-align: justify;
-
-      &:last-of-type {
-        margin-bottom: 3rem;
-      }
-
-      span {
-        display: block;
-      }
-    }
-
-    .gratitude-signature {
-      text-align: right;
-      transform: rotate(-2deg);
-      padding-right: 2rem;
-
-      p {
-        margin: 0.5rem 0;
-        font-family: 'Dancing Script', cursive;
-
-        &:last-child {
-          font-size: 1.6rem;
-          font-weight: bold;
-          margin-top: 1rem;
-        }
-      }
-    }
-  }
-
-  // Husband's letter specific styles
-  .husband-letter {
-    background: #fffbe6;
-    box-shadow: 
-      0 4px 15px rgba(0, 0, 0, 0.1),
-      0 1px 3px rgba(0, 0, 0, 0.05);
-    color: #8b4513;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: repeating-linear-gradient(
-        transparent 0px,
-        transparent 31px,
-        #d4af37 31px,
-        #d4af37 32px
-      );
-      background-position: 0 4rem;
-      opacity: 0.15;
-      pointer-events: none;
-    }
-
-    .corner-flourish {
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      opacity: 0.3;
-      color: #d4af37;
-      font-size: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      &.top-left { top: 1.5rem; left: 1.5rem; transform: rotate(-45deg); }
-      &.top-right { top: 1.5rem; right: 1.5rem; transform: rotate(45deg); }
-      &.bottom-left { bottom: 1.5rem; left: 1.5rem; transform: rotate(-135deg); }
-      &.bottom-right { bottom: 1.5rem; right: 1.5rem; transform: rotate(135deg); }
-    }
-
-    .gratitude-signature {
-      color: #d4af37;
-
-      p:last-child {
-        color: #8b4513;
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-      }
-    }
-  }
-
-  // Wife's letter specific styles
-  .wife-letter {
-    background: #f4ecd8; // Old paper color
-    box-shadow: 
-      0 4px 15px rgba(139, 69, 19, 0.1),
-      0 1px 3px rgba(139, 69, 19, 0.05);
-    color: #5d4037;
-    transform: rotate(1deg);
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: 
-        url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E"),
-        linear-gradient(to right, rgba(139, 69, 19, 0.05) 1px, transparent 1px) 0 0 / 32px 32px;
-      opacity: 0.5;
-      pointer-events: none;
-    }
-
-    .vintage-corner {
-      position: absolute;
-      width: 40px;
-      height: 40px;
-      opacity: 0.3;
-
-      &::before,
-      &::after {
+    &.husband-letter {
+      transform: rotate(-3deg) translateX(2rem);
+      background: #fffbe6;
+      color: #5d4037;
+      z-index: 2;
+      margin-right: -2rem;
+      
+      &::before {
         content: '';
         position: absolute;
-        background: #8b4513;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: repeating-linear-gradient(
+          transparent 0px,
+          transparent 31px,
+          rgba(93, 64, 55, 0.1) 31px,
+          rgba(93, 64, 55, 0.1) 32px
+        );
+        background-position: 0 1rem;
+        opacity: 0.3;
+        pointer-events: none;
+        border-radius: inherit;
       }
 
-      &::before {
-        width: 100%;
-        height: 1px;
-      }
-
-      &::after {
-        width: 1px;
-        height: 100%;
-      }
-
-      &.top-left {
-        top: 1rem;
-        left: 1rem;
-        
-        &::before { top: 0; right: 0; }
-        &::after { bottom: 0; left: 0; }
-      }
-
-      &.top-right {
-        top: 1rem;
-        right: 1rem;
-        
-        &::before { top: 0; left: 0; }
-        &::after { bottom: 0; right: 0; }
-      }
-
-      &.bottom-left {
-        bottom: 1rem;
-        left: 1rem;
-        
-        &::before { bottom: 0; right: 0; }
-        &::after { top: 0; left: 0; }
-      }
-
-      &.bottom-right {
-        bottom: 1rem;
-        right: 1rem;
-        
-        &::before { bottom: 0; left: 0; }
-        &::after { top: 0; right: 0; }
-      }
-    }
-
-    .gratitude-paragraph {
-      &:first-letter {
-        float: left;
-        font-family: 'Dancing Script', cursive;
-        font-size: 3.5em;
-        line-height: 0.8;
-        padding: 0.1em 0.1em 0 0;
-        color: #8b4513;
-      }
-    }
-
-    .gratitude-signature {
-      color: #8b4513;
-
-      p:last-child {
-        color: #5d4037;
-        text-shadow: 1px 1px 1px rgba(139, 69, 19, 0.1);
-      }
-    }
-  }
-
-  // Responsive styles
-  @media (max-width: 768px) {
-    padding: 4rem 0;
-
-    .container {
-      padding: 0 1rem;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      margin-bottom: 3rem;
-    }
-
-    .gratitude-letter {
-      padding: 2rem;
-
-      .gratitude-paragraph {
-        font-size: 1.1rem;
-        line-height: 1.8;
-      }
-
-      .gratitude-signature {
-        padding-right: 1rem;
-        
-        p:last-child {
-          font-size: 1.4rem;
-        }
-      }
-    }
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) rotate(0);
-  }
-  50% {
-    transform: translateY(-30px) rotate(2deg);
-  }
-}
-
-// Responsive adjustments
-@media (max-width: 768px) {
-  .gratitude-section {
-    padding: 4rem 0;
-
-    .section-title {
-      font-size: 2rem;
-    }
-
-    .gratitude-letter {
-      padding: 3rem;
-
-      &:after {
-        left: 3rem;
-      }
-
-      .gratitude-paragraph {
-        font-size: 1.2rem;
-        line-height: 28px; // Slightly smaller for mobile
-        margin-bottom: 28px;
-
-        &:first-letter {
-          font-size: 1.4em; // Reduced from 4em
-        }
-
-        & + & {
-          margin-top: 28px;
-        }
-      }
-
-      .gratitude-signature {
-        margin-top: 56px;
-        line-height: 28px;
-
-        p {
-          font-size: 1.2rem;
-
-          &:last-child {
-            font-size: 1.8rem;
-            margin-top: 28px;
-          }
-        }
-      }
-
-      // Adjust corner flourishes for mobile
       .corner-flourish {
-        font-size: 1.2rem;
-
+        position: absolute;
+        font-size: 1.5rem;
+        color: rgba(93, 64, 55, 0.3);
+        
         &.top-left { top: 1rem; left: 1rem; }
         &.top-right { top: 1rem; right: 1rem; }
         &.bottom-left { bottom: 1rem; left: 1rem; }
@@ -333,13 +109,133 @@ $letter-shadow: rgba(0, 0, 0, 0.1);
       }
     }
 
-    .bubble {
-      opacity: 0.5;
+    &.wife-letter {
+      transform: rotate(2deg) translateX(-2rem);
+      background: #f4e4bc;
+      color: #4a4a4a;
+      z-index: 1;
+      margin-left: -2rem;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+          url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+        opacity: 0.1;
+        pointer-events: none;
+        border-radius: inherit;
+      }
+
+      .vintage-corner {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border: 2px solid rgba(74, 74, 74, 0.2);
+        
+        &.top-left {
+          top: 10px;
+          left: 10px;
+          border-right: none;
+          border-bottom: none;
+        }
+        &.top-right {
+          top: 10px;
+          right: 10px;
+          border-left: none;
+          border-bottom: none;
+        }
+        &.bottom-left {
+          bottom: 10px;
+          left: 10px;
+          border-right: none;
+          border-top: none;
+        }
+        &.bottom-right {
+          bottom: 10px;
+          right: 10px;
+          border-left: none;
+          border-top: none;
+        }
+      }
+    }
+  }
+
+  .gratitude-paragraph {
+    margin-bottom: 1.5rem;
+    
+    span {
+      display: block;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+  }
+
+  .gratitude-signature {
+    text-align: right;
+    margin-top: 2rem;
+    font-style: italic;
+    
+    p {
+      margin: 0.3rem 0;
+      &:last-child {
+        font-weight: bold;
+        color: inherit;
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .gratitude-section {
+    padding: 3rem 0;
+
+    .watermark-icons {
+      display: none;
     }
 
-    .gratitude-content:after {
-      width: 100px;
-      height: 100px;
+    .letters-container {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      padding: 1rem;
+    }
+
+    .gratitude-letter {
+      margin: 0 !important;
+      transform: none !important;
+      font-size: 0.95rem;
+
+      &:hover {
+        transform: none !important;
+      }
+
+      &::before {
+        opacity: 0.2; // Reduce texture opacity on mobile
+      }
+
+      &.husband-letter,
+      &.wife-letter {
+        transform: none !important;
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .gratitude-section {
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .gratitude-letter {
+      padding: 1.5rem;
+      font-size: 0.9rem;
     }
   }
 }

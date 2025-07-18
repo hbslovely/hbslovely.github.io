@@ -9,6 +9,7 @@ interface Memory {
   description: string;
   date: string;
   category: 'couple' | 'travel' | 'daily';
+  quote?: string;
 }
 
 @Component({
@@ -27,7 +28,7 @@ export class MemoryGalleryComponent implements OnInit {
   loading: boolean = false;
   hasMoreImages: boolean = true;
   private page: number = 1;
-  private pageSize: number = 12;
+  private pageSize: number = 6; // Reduced from 12 to 6
 
   constructor(private http: HttpClient) {}
 
@@ -38,11 +39,37 @@ export class MemoryGalleryComponent implements OnInit {
   private loadGalleryData() {
     this.http.get<{gallery: Memory[]}>('assets/data/gallery-data.json')
       .subscribe(data => {
-        this.memories = data.gallery.sort((a, b) => 
-          new Date(b.date).getTime() - new Date(a.date).getTime()
-        );
+        this.memories = data.gallery
+          .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+          .map(memory => ({
+            ...memory,
+            quote: this.getRandomQuote(memory.category) // Add random quotes to memories
+          }));
         this.loadInitialImages();
       });
+  }
+
+  private getRandomQuote(category: string): string {
+    const quotes = {
+      couple: [
+        "Mỗi khoảnh khắc bên nhau đều là kỷ niệm đẹp",
+        "Nụ cười em là điều tuyệt vời nhất anh từng thấy",
+        "Hạnh phúc là được nắm tay nhau đi trên con đường đời"
+      ],
+      travel: [
+        "Mỗi chuyến đi là một câu chuyện tình yêu mới",
+        "Cùng nhau đi khắp thế gian, tạo nên những kỷ niệm đẹp",
+        "Hành trình đẹp nhất là khi có em bên cạnh"
+      ],
+      daily: [
+        "Những phút giây bình dị cũng thật đáng trân trọng",
+        "Hạnh phúc đôi khi chỉ đơn giản là được ở bên nhau",
+        "Yêu là khi ta cùng nhau tận hưởng từng khoảnh khắc nhỏ"
+      ]
+    };
+
+    const categoryQuotes = quotes[category as keyof typeof quotes] || quotes.couple;
+    return categoryQuotes[Math.floor(Math.random() * categoryQuotes.length)];
   }
 
   private loadInitialImages() {

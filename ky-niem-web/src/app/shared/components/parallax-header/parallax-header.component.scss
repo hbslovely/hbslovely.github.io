@@ -1,24 +1,41 @@
+@import 'src/assets/scss/mixins';
+
 .parallax-header {
   position: relative;
   height: 100vh;
-  min-height: 600px;
-  overflow: hidden;
+  min-height: 800px; // Increased to accommodate avatar
+  overflow: visible; // Changed to visible to show avatar
   display: flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-light) 100%);
 
   .avatar-backdrop {
-    position: absolute;
+    position: absolute; // Changed back to absolute
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed; // Keep this for parallax
     filter: blur(8px) brightness(0.7);
     transform: scale(1.1);
     z-index: 1;
+
+    &::after { // Add overlay to enhance parallax effect
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.4)
+      );
+    }
   }
 
   .header-content {
@@ -26,9 +43,12 @@
     z-index: 2;
     text-align: center;
     color: white;
-    padding: 2rem;
+    padding: 2rem 2rem 120px; // Adjusted padding bottom
     max-width: 800px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100% - 60px); // Adjusted to account for avatar
   }
 
   .floating-hearts {
@@ -56,28 +76,95 @@
   }
 
   .title-wrapper {
-    margin-bottom: 3rem;
+    margin-top: auto;
+    margin-bottom: 2rem;
+    padding: 2rem 0;
+    position: relative;
 
-    h1 {
-      font-size: 2.5rem;
-      font-weight: bold;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-      margin: 0;
+    .title-decoration {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1rem 0;
 
-      &.typewriter {
-        display: inline-block;
-        border-right: 3px solid white;
-        padding-right: 5px;
-        animation: blink 0.7s step-end infinite;
+      .decoration-item {
+        font-size: 1.5rem;
+        color: rgba(255, 255, 255, 0.8);
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+
+        &:nth-child(1) {
+          animation: sparkle 2s ease-in-out infinite;
+        }
+        
+        &:nth-child(2) {
+          animation: sparkle 2s ease-in-out infinite 0.3s;
+          font-size: 1.8rem;
+        }
+        
+        &:nth-child(3) {
+          animation: sparkle 2s ease-in-out infinite 0.6s;
+        }
       }
+    }
+
+    .main-title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin: 1rem 0;
+      background: linear-gradient(120deg, #ffffff, #ffe1e1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      font-family: 'Dancing Script', cursive;
+      letter-spacing: 2px;
+    }
+
+    .subtitle-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1.5rem 0;
+      
+      .line {
+        height: 1px;
+        width: 100px;
+        background: linear-gradient(90deg, 
+          transparent, 
+          rgba(255, 255, 255, 0.8), 
+          transparent
+        );
+      }
+
+      i {
+        margin: 0 1rem;
+        font-size: 1.2rem;
+        color: #ff9999;
+        animation: pulse 1.5s ease-in-out infinite;
+      }
+    }
+
+    .love-quote {
+      font-size: 1.2rem;
+      font-style: italic;
+      margin: 1rem 0;
+      opacity: 0.9;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      font-family: 'Playfair Display', serif;
     }
   }
 
   .time-counter {
+    margin-bottom: auto;
     .subtitle {
       font-size: 1.8rem;
       margin-bottom: 2rem;
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+
+      i {
+        margin-right: 0.5rem;
+        color: #ff9999;
+      }
     }
 
     .counter-grid {
@@ -90,28 +177,112 @@
       .counter-card {
         background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(10px);
-        padding: 1rem;
+        padding: 1.5rem 1rem;
         border-radius: 1rem;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
+        transition: all 0.3s ease;
 
         &:hover {
           transform: translateY(-5px);
+          background: rgba(255, 255, 255, 0.15);
         }
 
         .number {
           font-size: 2.5rem;
           font-weight: bold;
           margin-bottom: 0.5rem;
+          background: linear-gradient(120deg, #ffffff, #ffe1e1);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
 
         .label {
           font-size: 0.9rem;
           text-transform: uppercase;
           letter-spacing: 1px;
+          margin-bottom: 0.5rem;
+        }
+
+        .card-quote {
+          font-size: 0.85rem;
+          opacity: 0.8;
+          font-style: italic;
         }
       }
     }
+  }
+
+  .love-message {
+    margin-bottom: 80px; // Reduced margin
+    
+    .message-icon {
+      font-size: 1.5rem;
+      color: #ff9999;
+      margin-bottom: 1rem;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    .message-text {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      font-style: italic;
+      max-width: 600px;
+      margin: 0 auto;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      font-family: 'Playfair Display', serif;
+    }
+  }
+
+  .bottom-avatar {
+    position: absolute;
+    bottom: -60px; // Position it to overlap the next section
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10; // Increased z-index
+    width: 120px; // Added explicit width
+    
+    .avatar-frame {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      padding: 4px;
+      background: linear-gradient(45deg, #ffffff, #ffe1e1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      position: relative;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: -3px;
+        left: -3px;
+        right: -3px;
+        bottom: -3px;
+        background: linear-gradient(45deg, var(--primary-color), var(--primary-color-light));
+        border-radius: 50%;
+        z-index: -1;
+        opacity: 0.8;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid white;
+      }
+    }
+
+    .avatar-shadow {
+      width: 100px;
+      height: 20px;
+      background: radial-gradient(ellipse at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 70%);
+      margin: 10px auto 0;
+      border-radius: 50%;
+      transform: translateY(-50%) scale(0.7);
+      opacity: 0.5;
+    }
+
+    animation: floatAvatar 3s ease-in-out infinite;
   }
 }
 
@@ -124,19 +295,75 @@
   }
 }
 
-@keyframes blink {
-  from, to {
-    border-color: transparent;
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
   }
   50% {
-    border-color: white;
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes floatAvatar {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
   }
 }
 
 @media (max-width: 768px) {
   .parallax-header {
-    .title-wrapper h1 {
-      font-size: 1.8rem;
+    min-height: 700px;
+
+    .header-content {
+      padding-bottom: 100px; // Adjusted for mobile
+    }
+
+    .love-message {
+      margin-bottom: 60px; // Reduced margin for mobile
+    }
+
+    .bottom-avatar {
+      bottom: -45px; // Adjusted for mobile
+      width: 90px; // Added explicit width for mobile
+      
+      .avatar-frame {
+        width: 90px;
+        height: 90px;
+      }
+      
+      .avatar-shadow {
+        width: 80px;
+      }
+    }
+
+    .title-wrapper {
+      .main-title {
+        font-size: 2.5rem;
+      }
+
+      .love-quote {
+        font-size: 1rem;
+      }
+
+      .subtitle-line .line {
+        width: 60px;
+      }
     }
 
     .time-counter {
@@ -146,10 +373,17 @@
 
       .counter-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
 
         .counter-card {
+          padding: 1rem;
+
           .number {
             font-size: 2rem;
+          }
+
+          .card-quote {
+            font-size: 0.8rem;
           }
         }
       }

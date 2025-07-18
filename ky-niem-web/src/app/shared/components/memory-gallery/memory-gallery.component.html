@@ -7,7 +7,10 @@
 
   <div class="gallery-section">
     <div class="container">
-      <h2 class="section-title">Album Kỷ Niệm</h2>
+      <div class="section-header">
+        <h2 class="section-title">Album Kỷ Niệm</h2>
+        <p class="section-subtitle">"Mỗi bức ảnh là một khoảnh khắc đáng nhớ trong câu chuyện tình yêu của chúng ta"</p>
+      </div>
 
       <!-- Filter Controls -->
       <div class="gallery-controls">
@@ -15,21 +18,25 @@
           <button class="filter-btn" 
                   [class.active]="currentFilter === 'all'"
                   (click)="filterImages('all')">
+            <i class="pi pi-images"></i>
             Tất cả
           </button>
           <button class="filter-btn" 
                   [class.active]="currentFilter === 'couple'"
                   (click)="filterImages('couple')">
+            <i class="pi pi-heart"></i>
             Đôi ta
           </button>
           <button class="filter-btn" 
                   [class.active]="currentFilter === 'travel'"
                   (click)="filterImages('travel')">
+            <i class="pi pi-map"></i>
             Du lịch
           </button>
           <button class="filter-btn" 
                   [class.active]="currentFilter === 'daily'"
                   (click)="filterImages('daily')">
+            <i class="pi pi-camera"></i>
             Đời thường
           </button>
         </div>
@@ -37,17 +44,22 @@
         <div class="view-controls">
           <button class="view-btn" 
                   [class.active]="viewMode === 'grid'"
-                  (click)="changeView('grid')">
+                  (click)="changeView('grid')"
+                  title="Xem dạng lưới">
             <i class="pi pi-th-large"></i>
           </button>
           <button class="view-btn" 
                   [class.active]="viewMode === 'masonry'"
-                  (click)="changeView('masonry')">
+                  (click)="changeView('masonry')"
+                  title="Xem dạng thác nước">
             <i class="pi pi-images"></i>
           </button>
         </div>
       </div>
 
+      <!-- Album Frame -->
+      <div class="album-frame">
+        <div class="album-spine"></div>
       <!-- Gallery Grid -->
       <div class="gallery-grid" [class]="viewMode">
         <ng-container *ngFor="let memory of displayedMemories">
@@ -62,6 +74,7 @@
               <div class="hover-overlay">
                 <span class="memory-date">{{ memory.date | date:'dd/MM/yyyy' }}</span>
                 <p class="memory-description">{{ memory.description }}</p>
+                <div class="memory-quote" *ngIf="memory.quote">"{{ memory.quote }}"</div>
                 <div class="zoom-icon">
                   <i class="pi pi-search-plus"></i>
                 </div>
@@ -77,8 +90,34 @@
                 (click)="loadMore()"
                 [disabled]="loading">
           <i class="pi pi-spinner pi-spin" *ngIf="loading"></i>
-          <span>{{ loading ? 'Đang tải...' : 'Xem thêm' }}</span>
+          <span>{{ loading ? 'Đang tải...' : 'Xem thêm kỷ niệm' }}</span>
         </button>
+        </div>
+      </div>
+
+      <!-- Gallery Quotes -->
+      <div class="gallery-quotes">
+        <div class="quote-wrapper">
+          <i class="pi pi-camera quote-icon"></i>
+          <blockquote class="main-quote">
+            "Những bức ảnh là cách chúng ta giữ lại những khoảnh khắc quý giá, 
+            là cầu nối đưa ta trở về với những ký ức hạnh phúc bên nhau"
+          </blockquote>
+          <div class="sub-quotes">
+            <p class="sub-quote">
+              <i class="pi pi-heart"></i>
+              "Mỗi nụ cười trong ảnh là một lời yêu thương"
+            </p>
+            <p class="sub-quote">
+              <i class="pi pi-clock"></i>
+              "Thời gian trôi qua, nhưng kỷ niệm vẫn mãi đẹp như ngày đầu"
+            </p>
+            <p class="sub-quote">
+              <i class="pi pi-map-marker"></i>
+              "Mỗi địa điểm là một dấu ấn của tình yêu chúng ta"
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>

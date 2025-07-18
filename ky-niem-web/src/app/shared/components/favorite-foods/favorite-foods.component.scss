@@ -172,3 +172,46 @@ $text-color: #333333;
     }
   }
 }
+
+// Quote Section Styles
+.quote-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px dashed rgba($dark-green, 0.2);
+  text-align: center;
+  
+  .quote-icon {
+    color: $dark-green;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .food-quote {
+    font-style: italic;
+    color: $text-color;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0 2rem;
+    position: relative;
+    
+    &::before,
+    &::after {
+      content: '"';
+      font-size: 2rem;
+      color: rgba($dark-green, 0.3);
+      position: absolute;
+    }
+    
+    &::before {
+      left: 0;
+      top: -0.5rem;
+    }
+    
+    &::after {
+      right: 0;
+      bottom: -1rem;
+    }
+  }
+}

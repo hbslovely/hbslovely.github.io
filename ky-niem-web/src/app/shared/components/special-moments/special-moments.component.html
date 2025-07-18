@@ -1,20 +1,50 @@
+<!-- Special Moments Section -->
 <div class="special-moments-section">
-  <div class="time-background"></div>
+  <div class="music-background"></div>
   <div class="container">
-    <h2 class="section-title">
-      <i class="pi pi-clock"></i>
-      Những Khoảnh Khắc Đặc Biệt
-    </h2>
-    <div class="moments-grid">
-      <div class="moment-card" *ngFor="let moment of moments">
-        <div class="moment-icon">
+    <div class="section-header text-center">
+      <h2 class="section-title">
+        <i class="pi pi-heart-fill"></i>
+        Những Khoảnh Khắc Đặc Biệt
+      </h2>
+      <p class="section-subtitle">"Mỗi khoảnh khắc đều là một bản nhạc, mỗi kỷ niệm đều là một giai điệu của tình yêu"</p>
+    </div>
+
+    <div class="moments-timeline">
+      <div class="timeline-line"></div>
+      
+      <div class="moment-item" *ngFor="let moment of moments; let i = index" [class.right]="i % 2 === 1">
+        <div class="moment-marker">
+          <div class="marker-dot"></div>
           <i [class]="moment.icon"></i>
         </div>
+        
         <div class="moment-content">
-          <h3 class="moment-title">{{ moment.title }}</h3>
-          <div class="moment-date">{{ moment.date }}</div>
-          <p class="moment-description">{{ moment.description }}</p>
+          <div class="moment-header">
+            <div class="moment-date">
+              <i class="pi pi-calendar"></i>
+              {{ moment.date }}
+            </div>
+            <h3 class="moment-title">{{ moment.title }}</h3>
+          </div>
+          
+          <div class="moment-body">
+            <p class="moment-description">{{ moment.description }}</p>
+            <div class="moment-note">
+              <i class="pi pi-heart"></i>
+              <span>{{ moment.message || 'Mỗi khoảnh khắc đều là một giai điệu của tình yêu' }}</span>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+
+    <div class="section-footer text-center">
+      <div class="footer-note">
+        <i class="pi pi-heart-fill"></i>
+        <blockquote>
+          "Tình yêu của chúng ta như một bản nhạc, mỗi ngày là một nốt nhạc mới, tạo nên bản tình ca vĩnh cửu"
+        </blockquote>
       </div>
     </div>
   </div>

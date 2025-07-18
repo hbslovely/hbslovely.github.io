@@ -1,227 +1,277 @@
-$primary-green: #14b8a6;
-$light-green: #5eead4;
-$dark-green: #0d9488;
-$bg-green: #f0fdfa;
-$text-green: #0f766e;
+$primary-color: #14b8a6;
+$accent-color: #5eead4;
+$text-color: #0f172a;
+$bg-color: #f8fafc;
 
 .special-moments-section {
   position: relative;
-  padding: 4rem 0;
+  padding: 5rem 0;
   overflow: hidden;
-  background-color: $bg-green;
+  background-color: $bg-color;
+  color: $text-color;
 
-  .time-background {
+  .music-background {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    opacity: 0.4;
-    background: 
-      linear-gradient(45deg, 
-        rgba(20, 184, 166, 0.05) 25%, 
-        transparent 25%, 
-        transparent 75%, 
-        rgba(20, 184, 166, 0.05) 75%
-      ),
-      linear-gradient(45deg, 
-        rgba(20, 184, 166, 0.05) 25%, 
-        transparent 25%, 
-        transparent 75%, 
-        rgba(20, 184, 166, 0.05) 75%
-      );
-    background-size: 60px 60px;
-    background-position: 0 0, 30px 30px;
-    animation: moveBackground 20s linear infinite;
+    opacity: 0.1;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 24 24' fill='%2314b8a6'%3E%3Cpath d='M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z'/%3E%3C/svg%3E") 0 0,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 24 24' fill='%235eead4'%3E%3Cpath d='M19 3v12h-6v-1.76c1.19-.67 2-1.95 2-3.42 0-2.21-1.79-4-4-4s-4 1.79-4 4c0 1.47.81 2.75 2 3.42V19h6v1h-6v2h12V3h-2z'/%3E%3C/svg%3E") 30px 30px,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24' fill='%2314b8a6'%3E%3Cpath d='M16 2H8C4.69 2 2 4.69 2 8v8c0 3.31 2.69 6 6 6h8c3.31 0 6-2.69 6-6V8c0-3.31-2.69-6-6-6zm-5 14H9v-2h2v2zm0-4H9v-2h2v2zm0-4H9V6h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V6h2v2z'/%3E%3C/svg%3E") 60px 60px;
+    background-repeat: repeat;
+    animation: floatBackground 30s linear infinite;
     z-index: 1;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      right: -50%;
-      bottom: -50%;
-      background: 
-        radial-gradient(circle at 0% 0%, rgba(94, 234, 212, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 100% 0%, rgba(94, 234, 212, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 100% 100%, rgba(94, 234, 212, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 0% 100%, rgba(94, 234, 212, 0.15) 0%, transparent 50%);
-      animation: rotate 30s linear infinite;
-    }
   }
 
   .container {
     position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
     z-index: 2;
   }
 }
 
-.section-title {
-  text-align: center;
-  color: $text-green;
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 3rem;
+.section-header {
+  margin-bottom: 4rem;
+
+  .section-title {
+    color: $text-color;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+
+    i {
+      color: $primary-color;
+      margin-right: 0.75rem;
+    }
+  }
+
+  .section-subtitle {
+    color: $text-color;
+    font-size: 1.2rem;
+    font-style: italic;
+    opacity: 0.8;
+  }
+}
+
+.moments-timeline {
   position: relative;
-  display: block;
-  padding: 0.5rem 0;
-  
-  i {
-    margin-right: 0.5rem;
-    font-size: 1.8rem;
-    vertical-align: middle;
-    color: $primary-green;
-  }
-  
-  &::after {
-    content: '';
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 0;
+
+  .timeline-line {
     position: absolute;
-    bottom: -10px;
+    top: 0;
     left: 50%;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom,
+      transparent,
+      $primary-color 10%,
+      $primary-color 90%,
+      transparent
+    );
     transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: $primary-green;
-    border-radius: 2px;
   }
-}
 
-.moments-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-  padding: 1rem;
-}
+  .moment-item {
+    position: relative;
+    width: 50%;
+    padding: 2rem;
 
-.moment-card {
-  display: flex;
-  align-items: flex-start;
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.7);
-  border-left: 4px solid $primary-green;
-  transition: all 0.3s ease;
+    &:nth-child(odd) {
+      left: 0;
+      padding-right: 3rem;
 
-  &:hover {
-    background: rgba(255, 255, 255, 0.9);
+      .moment-content {
+        text-align: right;
 
-    .moment-icon {
-      transform: rotate(360deg);
-      background: $light-green;
-      
-      i {
-        color: $dark-green;
+        &::before {
+          right: -10px;
+          border-left-color: $accent-color;
+        }
+      }
+    }
+
+    &:nth-child(even) {
+      left: 50%;
+      padding-left: 3rem;
+
+      .moment-content {
+        &::before {
+          left: -10px;
+          border-right-color: $accent-color;
+        }
       }
     }
   }
 
-  .moment-icon {
-    flex-shrink: 0;
-    width: 50px;
-    height: 50px;
-    margin-right: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: $primary-green;
+  .moment-marker {
+    position: absolute;
+    top: 50%;
+    right: -11px;
+    width: 22px;
+    height: 22px;
+    background: $primary-color;
     border-radius: 50%;
-    transition: all 0.6s ease;
+    transform: translateY(-50%);
+    z-index: 2;
+
+    .right & {
+      right: auto;
+      left: -11px;
+    }
 
     i {
-      font-size: 1.5rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       color: white;
-      transition: color 0.3s ease;
+      font-size: 0.8rem;
     }
   }
 
   .moment-content {
-    flex-grow: 1;
-  }
+    position: relative;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
 
-  .moment-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: $text-green;
-    margin-bottom: 0.5rem;
-  }
+    .moment-header {
+      margin-bottom: 1rem;
 
-  .moment-date {
-    font-size: 0.9rem;
-    color: $primary-green;
-    margin-bottom: 0.75rem;
-    opacity: 0.8;
-  }
+      .moment-date {
+        color: $primary-color;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
 
-  .moment-description {
-    font-size: 1rem;
-    color: #334155;
-    line-height: 1.6;
+        i {
+          margin-right: 0.5rem;
+        }
+      }
+
+      .moment-title {
+        color: $text-color;
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin: 0;
+      }
+    }
+
+    .moment-body {
+      .moment-description {
+        color: $text-color;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+
+      .moment-note {
+        color: $primary-color;
+        font-style: italic;
+        font-size: 0.95rem;
+
+        i {
+          margin-right: 0.5rem;
+        }
+      }
+    }
   }
 }
 
-@keyframes moveBackground {
-  0% {
-    background-position: 0 0, 30px 30px;
-  }
-  100% {
-    background-position: 60px 60px, 90px 90px;
+.section-footer {
+  margin-top: 4rem;
+
+  .footer-note {
+    max-width: 800px;
+    margin: 0 auto;
+
+    blockquote {
+      color: $text-color;
+      font-size: 1.2rem;
+      font-style: italic;
+      margin: 1rem 0;
+      padding: 0;
+    }
+
+    i {
+      color: $primary-color;
+      font-size: 1.5rem;
+    }
   }
 }
 
-@keyframes rotate {
+@keyframes floatBackground {
   0% {
-    transform: rotate(0deg);
+    background-position: 0 0, 30px 30px, 60px 60px;
   }
   100% {
-    transform: rotate(360deg);
+    background-position: 60px 60px, 90px 90px, 120px 120px;
+  }
+}
+
+@media (max-width: 991px) {
+  .special-moments-section {
+    padding: 4rem 0;
+  }
+
+  .section-header {
+    .section-title {
+      font-size: 2rem;
+    }
   }
 }
 
 @media (max-width: 768px) {
-  .special-moments-section {
-    padding: 3rem 0;
+  .moments-timeline {
+    .timeline-line {
+      left: 30px;
+    }
 
+    .moment-item {
+      width: 100%;
+      padding: 1.5rem 1.5rem 1.5rem 60px;
+      left: 0;
+
+      &:nth-child(odd) {
+        padding-right: 1.5rem;
+
+        .moment-content {
+          text-align: left;
+
+          &::before {
+            left: -10px;
+            right: auto;
+            border-right-color: $accent-color;
+            border-left-color: transparent;
+          }
+        }
+      }
+
+      .moment-marker {
+        left: 19px;
+        right: auto;
+      }
+    }
+  }
+
+  .section-header {
     .section-title {
       font-size: 1.75rem;
-      margin-bottom: 2rem;
+    }
 
-      i {
-        font-size: 1.6rem;
+    .section-subtitle {
+      font-size: 1rem;
+    }
+  }
+
+  .section-footer {
+    .footer-note {
+      blockquote {
+        font-size: 1rem;
       }
     }
-
-    .container {
-      padding: 0 1rem;
-    }
   }
-
-  .moments-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .moment-card {
-    padding: 1.25rem;
-
-    .moment-icon {
-      width: 40px;
-      height: 40px;
-      margin-right: 1rem;
-
-      i {
-        font-size: 1.25rem;
-      }
-    }
-
-    .moment-title {
-      font-size: 1.1rem;
-    }
-
-    .moment-description {
-      font-size: 0.95rem;
-    }
-  }
-} 
+}

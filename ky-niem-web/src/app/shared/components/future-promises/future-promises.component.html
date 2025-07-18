@@ -1,33 +1,61 @@
 <!-- Future Promises Section -->
 <div class="promises-section">
+  <div class="section-background"></div>
   <div class="container">
-    <h2 class="section-title">Lời Hứa Cho Tương Lai</h2>
-    <div class="promises-container">
-      <div class="promise-list">
-        <div class="promise-item" *ngFor="let promise of promises">
-          <div class="promise-icon">
-            <i [class]="'pi ' + promise.icon"></i>
-          </div>
-          <div class="promise-content">
-            <h3 class="promise-title">{{ promise.title }}</h3>
-            <p class="promise-description">{{ promise.description }}</p>
-            <div class="promise-tags">
-              <span class="tag" *ngFor="let tag of promise.tags">{{ tag }}</span>
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="pi pi-heart-fill"></i>
+        Lời Hứa Cho Tương Lai
+      </h2>
+      <p class="section-subtitle">Những cam kết và mục tiêu chúng ta cùng nhau xây dựng</p>
+    </div>
+
+    <div class="content-wrapper">
+      <!-- Main Promises -->
+      <div class="promises-container">
+        <div class="promise-list">
+          <div class="promise-item" *ngFor="let promise of promises">
+            <div class="promise-icon">
+              <i [class]="'pi ' + promise.icon"></i>
+            </div>
+            <div class="promise-content">
+              <h3 class="promise-title">{{ promise.title }}</h3>
+              <p class="promise-description">{{ promise.description }}</p>
+              <div class="promise-tags">
+                <span class="tag" *ngFor="let tag of promise.tags">
+                  <i class="pi pi-check-circle"></i>
+                  {{ tag }}
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- Future Goals -->
       <div class="goals-container">
-        <h3 class="goals-title">Mục Tiêu Chung</h3>
-        <div class="goal-items">
+        <div class="goals-header">
+          <div class="header-line"></div>
+          <div class="header-content">
+            <i class="pi pi-flag-fill"></i>
+            <h3 class="goals-title">Mục Tiêu Chung</h3>
+          </div>
+          <div class="header-line"></div>
+        </div>
+        
+        <div class="goal-timeline">
           <div class="goal-item" *ngFor="let goal of goals">
-            <div class="goal-icon">
-              <i [class]="'pi ' + goal.icon"></i>
-            </div>
             <div class="goal-content">
-              <h4>{{ goal.title }}</h4>
-              <p>{{ goal.timeframe }}</p>
+              <div class="goal-icon">
+                <i [class]="'pi ' + goal.icon"></i>
+              </div>
+              <div class="goal-info">
+                <h4 class="goal-title">{{ goal.title }}</h4>
+                <p class="goal-timeframe">
+                  <i class="pi pi-calendar"></i>
+                  {{ goal.timeframe }}
+                </p>
+              </div>
             </div>
           </div>
         </div>

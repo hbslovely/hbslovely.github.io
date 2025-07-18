@@ -7,46 +7,111 @@
   </div>
 
   <div class="container">
-    <h2 class="section-title">
-      <i class="pi pi-music"></i>
-      Những Bài Hát Của Chúng Ta
-    </h2>
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="pi pi-music"></i>
+        Những Bài Hát Của Chúng Ta
+      </h2>
+      <p class="section-subtitle">"Mỗi giai điệu là một câu chuyện tình, mỗi lời ca là một kỷ niệm đẹp"</p>
+    </div>
     
     <div class="songs-list">
-      <div class="song-item" *ngFor="let song of songs; let i = index">
-        <div class="vinyl-record" [class.playing]="i === 0">
-          <div class="vinyl-disc">
-            <div class="vinyl-label">
-              <span class="song-number">{{ i + 1 }}</span>
-            </div>
-          </div>
-          <div class="vinyl-arm"></div>
+      <!-- Hơn Cả Yêu -->
+      <div class="song-item">
+        <div class="song-icon">
+          <i class="pi pi-heart-fill"></i>
         </div>
-        
-        <div class="song-details">
+        <div class="song-content">
           <div class="song-header">
-            <h3 class="song-title">
-              <i class="pi pi-play"></i>
-              {{ song.title }}
-            </h3>
-            <div class="song-artist">
-              <i class="pi pi-user"></i>
-              {{ song.artist }}
-            </div>
+            <h3 class="song-title">Hơn Cả Yêu</h3>
+            <div class="song-artist">Đức Phúc</div>
+            <div class="song-info">Sáng tác: Khắc Hưng</div>
           </div>
-          
-          <div class="song-info">
-            <div class="song-moment">
-              <i class="pi pi-clock"></i>
-              {{ song.moment }}
-            </div>
-            <p class="song-description">{{ song.description }}</p>
+          <div class="song-lyrics">
+            "Cao hơn cả núi dài hơn cả sông
+            Rộng hơn cả đất xanh hơn cả trời..."
           </div>
-          
-          <div class="music-visualizer">
-            <div class="bar" *ngFor="let n of [1,2,3,4,5,6,7,8,9,10]"></div>
-          </div>
+          <div class="song-moment">Khoảnh khắc tình yêu đầu tiên</div>
         </div>
+      </div>
+
+      <!-- Cưới Nhau Đi -->
+      <div class="song-item">
+        <div class="song-icon">
+          <i class="pi pi-music"></i>
+        </div>
+        <div class="song-content">
+          <div class="song-header">
+            <h3 class="song-title">Cưới Nhau Đi</h3>
+            <div class="song-artist">Bùi Anh Tuấn & Hiền Hồ</div>
+          </div>
+          <div class="song-lyrics">
+            "Cưới nhau đi em, mình cưới nhau đi
+            Để anh được một lần xinh đẹp bên em mãi suốt đời..."
+          </div>
+          <div class="song-moment">Ngày đính hôn hạnh phúc</div>
+        </div>
+      </div>
+
+      <!-- Đám Cưới Nha -->
+      <div class="song-item">
+        <div class="song-icon">
+          <i class="pi pi-volume-up"></i>
+        </div>
+        <div class="song-content">
+          <div class="song-header">
+            <h3 class="song-title">Đám Cưới Nha</h3>
+            <div class="song-artist">Hồng Thanh & DJ Mie</div>
+          </div>
+          <div class="song-lyrics">
+            "Đám cưới nha, đám cưới nha
+            Tương lai của đôi mình sẽ vẹn toàn..."
+          </div>
+          <div class="song-moment">Lễ cưới ngọt ngào</div>
+        </div>
+      </div>
+
+      <!-- Một Nhà -->
+      <div class="song-item">
+        <div class="song-icon">
+          <i class="pi pi-video"></i>
+        </div>
+        <div class="song-content">
+          <div class="song-header">
+            <h3 class="song-title">Một Nhà</h3>
+            <div class="song-artist">Da LAB</div>
+          </div>
+          <div class="song-lyrics">
+            "Mình cùng nhau xây một nhà
+            Chẳng cần to đâu em ơi miễn là vừa đủ hai người..."
+          </div>
+          <div class="song-moment">Khoảnh khắc về chung một nhà</div>
+        </div>
+      </div>
+
+      <!-- Ngày Đầu Tiên -->
+      <div class="song-item">
+        <div class="song-icon">
+          <i class="pi pi-star-fill"></i>
+        </div>
+        <div class="song-content">
+          <div class="song-header">
+            <h3 class="song-title">Ngày Đầu Tiên</h3>
+            <div class="song-artist">Đức Phúc</div>
+          </div>
+          <div class="song-lyrics">
+            "Ngày đầu tiên ta gặp nhau em đẹp như một thiên thần
+            Rồi từ đó anh đem lòng thương nhớ..."
+          </div>
+          <div class="song-moment">Kỷ niệm ngày đầu gặp gỡ</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-footer">
+      <div class="footer-quote">
+        <i class="pi pi-heart"></i>
+        <p>"Những giai điệu này sẽ mãi là nhạc nền cho câu chuyện tình yêu của chúng ta"</p>
       </div>
     </div>
   </div>

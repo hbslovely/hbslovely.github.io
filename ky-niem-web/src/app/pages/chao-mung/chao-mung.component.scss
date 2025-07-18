@@ -216,7 +216,7 @@ $gradient-dark: #dcfce7; // Light green gradient
 // Section transition mixin
 @mixin section-transition {
   position: relative;
-  
+
   &::before,
   &::after {
     content: '';
@@ -286,14 +286,14 @@ $gradient-dark: #dcfce7; // Light green gradient
     &:nth-child(odd) {
       justify-content: flex-start;
       padding-right: 50%;
-      
+
       .timeline-content {
         margin-left: 0;
         padding-right: 2rem;
-        
+
         .timeline-bullet {
           right: -10px;
-          
+
           &::before {
             right: -30px;
           }
@@ -304,15 +304,15 @@ $gradient-dark: #dcfce7; // Light green gradient
     &:nth-child(even) {
       justify-content: flex-end;
       padding-left: 50%;
-      
+
       .timeline-content {
         margin-right: 0;
         padding-left: 2rem;
         text-align: right;
-        
+
         .timeline-bullet {
           left: -10px;
-          
+
           &::before {
             left: -30px;
           }
@@ -329,7 +329,7 @@ $gradient-dark: #dcfce7; // Light green gradient
     width: 100%;
     max-width: 450px;
     border-radius: 30px;
-    box-shadow: 
+    box-shadow:
       0 8px 20px rgba(0, 0, 0, 0.05),
       0 2px 5px rgba(0, 0, 0, 0.03);
 
@@ -343,22 +343,6 @@ $gradient-dark: #dcfce7; // Light green gradient
       box-shadow: inherit;
     }
 
-    // Top bump
-    &::before {
-      width: 100px;
-      height: 80px;
-      top: -20px;
-      left: 20%;
-    }
-
-    // Side bump
-    &::after {
-      width: 120px;
-      height: 90px;
-      top: 20%;
-      right: -30px;
-    }
-
     // Content wrapper to ensure text stays above bumps
     .content-wrapper {
       position: relative;
@@ -370,14 +354,14 @@ $gradient-dark: #dcfce7; // Light green gradient
 
     &:hover {
       transform: translateY(-5px);
-      box-shadow: 
+      box-shadow:
         0 12px 25px rgba(0, 0, 0, 0.07),
         0 4px 8px rgba(0, 0, 0, 0.04);
 
       .timeline-bullet {
         transform: scale(1.2);
         background: #ff1493;
-        
+
         &::before {
           width: 40px;
           opacity: 1;
@@ -454,20 +438,6 @@ $gradient-dark: #dcfce7; // Light green gradient
           padding: 1.5rem;
           text-align: left;
           max-width: 100%;
-
-          // Adjust cloud bumps for mobile
-          &::before {
-            width: 80px;
-            height: 60px;
-            top: -15px;
-            left: 15%;
-          }
-
-          &::after {
-            width: 90px;
-            height: 70px;
-            right: -20px;
-          }
 
           .timeline-bullet {
             left: -40px;
