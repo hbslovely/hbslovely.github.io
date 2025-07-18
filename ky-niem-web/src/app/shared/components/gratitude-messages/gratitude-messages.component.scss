@@ -4,124 +4,348 @@ $letter-border: #e2d5bc;
 $letter-shadow: rgba(0, 0, 0, 0.1);
 
 .gratitude-section {
-  padding: 4rem 0;
-  background-color: var(--surface-card);
+  position: relative;
+  background: linear-gradient(135deg, #fff0f5 0%, #ffe4e1 100%);
+  padding: 6rem 0;
+  overflow: hidden;
+
+  // Floating bubbles
+  .bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(2px);
+    pointer-events: none;
+
+    &:nth-child(1) {
+      width: 180px;
+      height: 180px;
+      top: -90px;
+      left: 10%;
+      animation: float 18s ease-in-out infinite;
+    }
+
+    &:nth-child(2) {
+      width: 220px;
+      height: 220px;
+      top: 20%;
+      right: -110px;
+      animation: float 15s ease-in-out infinite -2s;
+    }
+
+    &:nth-child(3) {
+      width: 160px;
+      height: 160px;
+      bottom: 10%;
+      left: 5%;
+      animation: float 20s ease-in-out infinite -5s;
+    }
+
+    &:nth-child(4) {
+      width: 200px;
+      height: 200px;
+      top: 40%;
+      left: 30%;
+      animation: float 17s ease-in-out infinite -8s;
+    }
+
+    &:nth-child(5) {
+      width: 140px;
+      height: 140px;
+      bottom: -70px;
+      right: 15%;
+      animation: float 16s ease-in-out infinite -12s;
+    }
+
+    // Bubble inner shadow
+    &:after {
+      content: '';
+      position: absolute;
+      top: 10%;
+      left: 15%;
+      width: 30%;
+      height: 30%;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      filter: blur(4px);
+    }
+  }
 
   .container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
   }
 
   .section-title {
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 3rem;
-    color: var(--text-color);
-    font-weight: 600;
+    font-size: 2.5rem;
+    color: #d81b60;
+    margin-bottom: 4rem;
+    font-family: 'Dancing Script', cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   .gratitude-content {
-    max-width: 800px;
-    margin: 0 auto;
+    position: relative;
     perspective: 1000px;
+
+    // Decorative quill pen
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 4rem;
+      right: 15%;
+      width: 150px;
+      height: 150px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23d4af37' d='M368.4 18.3L312.7 74.1 437.9 199.3l55.7-55.7c21.9-21.9 21.9-57.3 0-79.2L447.6 18.3c-21.9-21.9-57.3-21.9-79.2 0zM288 94.6l-9.2 2.8L134.7 140.6c-19.9 6-35.7 21.2-42.3 41L3.8 445.8c-3.8 11.3-1 23.9 7.3 32.4L164.7 324.7c-3-6.3-4.7-13.3-4.7-20.7c0-26.5 21.5-48 48-48s48 21.5 48 48s-21.5 48-48 48c-7.4 0-14.4-1.7-20.7-4.7L33.7 500.9c8.6 8.3 21.1 11.2 32.4 7.3l264.3-88.6c19.7-6.6 35-22.4 41-42.3l43.2-144.1 2.8-9.2L288 94.6z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: contain;
+      transform: rotate(-45deg);
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 2;
+      filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.2));
+
+      // Ink splatter effect
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        right: -10px;
+        width: 40px;
+        height: 40px;
+        background: rgba(212, 175, 55, 0.1);
+        border-radius: 50% 60% 40% 50%;
+        transform: rotate(-15deg);
+        filter: blur(2px);
+      }
+    }
+
+    // Ink trail
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 6rem;
+      right: 18%;
+      width: 80px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3));
+      transform: rotate(-45deg);
+    }
   }
 
   .gratitude-letter {
-    background: $letter-bg;
-    border: 1px solid $letter-border;
-    border-radius: 8px;
-    padding: 3rem;
+    background: #fffbe6;
+    padding: 4rem;
+    border-radius: 2px;
     position: relative;
-    transform: rotate(-1deg);
+    transform: rotate(-2deg);
     transition: transform 0.3s ease;
-    box-shadow: 
-      0 4px 15px $letter-shadow,
+    box-shadow:
+      0 4px 15px rgba(0, 0, 0, 0.1),
       0 1px 3px rgba(0, 0, 0, 0.05);
+    font-family: 'Dancing Script', cursive;
 
-    &::before {
+    // Paper lines - adjusted to match text baseline
+    &:before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(45deg, transparent 48%, $letter-border 49%, $letter-border 51%, transparent 52%);
-      opacity: 0.1;
+      background-image:
+        repeating-linear-gradient(
+            transparent 0px,
+            transparent 31px,
+            #d4af37 31px,
+            #d4af37 32px
+        );
+      background-position: 0 4rem;
+      opacity: 0.15;
       pointer-events: none;
     }
 
-    &:hover {
-      transform: rotate(0deg) translateY(-5px);
+    // Red margin line
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 4rem;
+      bottom: 0;
+      width: 1px;
+      background: rgba(212, 0, 0, 0.15);
+      pointer-events: none;
     }
 
     .gratitude-paragraph {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: var(--text-color);
-      margin-bottom: 1.5rem;
-      font-family: 'Crimson Text', serif;
-      font-style: italic;
-      text-align: justify;
+      font-size: 1.4rem;
+      line-height: 32px;
+      color: #8b4513;
+      margin-bottom: 32px;
       position: relative;
+      z-index: 1;
+      padding-left: 1.5rem;
+      text-align: justify;
+      min-height: 96px;
 
-      &::first-letter {
-        font-size: 1.5em;
-        font-weight: bold;
-        color: var(--primary-color);
+      // Improved drop cap with matching font
+      &:first-letter {
+        float: left;
+        font-family: 'Dancing Script', cursive;
+        font-size: 2em;
+        line-height: 0.85;
+        padding: 0.1em 0.1em 0 0;
+        color: #d4af37;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+        margin: 0 0.1em 0 -0.1em;
+        font-weight: 700;
       }
 
-      &:last-of-type {
-        margin-bottom: 2rem;
+      // Ensure text aligns with baseline grid
+      & > span {
+        display: block;
+        padding-top: 6px; // Fine-tune to align with grid
       }
     }
 
     .gratitude-signature {
+      margin-top: 64px; // Two lines
       text-align: right;
-      font-style: italic;
-      color: var(--primary-color);
-      transform: rotate(-2deg);
-      margin-top: 3rem;
+      color: #d4af37;
+      transform: rotate(-3deg);
       padding-right: 2rem;
+      line-height: 32px; // Match the lines
 
       p {
-        margin: 0.5rem 0;
-        font-size: 1.1rem;
-        font-family: 'Dancing Script', cursive;
+        margin: 0;
+        font-size: 1.4rem;
 
         &:last-child {
-          font-weight: bold;
-          font-size: 1.4rem;
-          color: var(--primary-color);
+          font-size: 2rem;
+          font-weight: 600;
+          color: #8b4513;
           text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+          margin-top: 32px; // One line
         }
+      }
+    }
+
+    // Corner decorations
+    .corner-flourish {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      opacity: 0.3;
+      color: #d4af37;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+
+      &.top-left {
+        top: 1.5rem;
+        left: 1.5rem;
+        transform: rotate(-45deg);
+      }
+
+      &.top-right {
+        top: 1.5rem;
+        right: 1.5rem;
+        transform: rotate(45deg);
+      }
+
+      &.bottom-left {
+        bottom: 1.5rem;
+        left: 1.5rem;
+        transform: rotate(-135deg);
+      }
+
+      &.bottom-right {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        transform: rotate(135deg);
       }
     }
   }
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-30px) rotate(2deg);
+  }
+}
+
+// Responsive adjustments
 @media (max-width: 768px) {
   .gratitude-section {
+    padding: 4rem 0;
+
+    .section-title {
+      font-size: 2rem;
+    }
+
     .gratitude-letter {
-      padding: 2rem;
-      transform: rotate(-0.5deg);
+      padding: 3rem;
+
+      &:after {
+        left: 3rem;
+      }
 
       .gratitude-paragraph {
-        font-size: 1rem;
-        line-height: 1.6;
+        font-size: 1.2rem;
+        line-height: 28px; // Slightly smaller for mobile
+        margin-bottom: 28px;
+
+        &:first-letter {
+          font-size: 1.4em; // Reduced from 4em
+        }
+
+        & + & {
+          margin-top: 28px;
+        }
       }
 
       .gratitude-signature {
-        padding-right: 1rem;
-        
+        margin-top: 56px;
+        line-height: 28px;
+
         p {
-          font-size: 1rem;
+          font-size: 1.2rem;
 
           &:last-child {
-            font-size: 1.2rem;
+            font-size: 1.8rem;
+            margin-top: 28px;
           }
         }
       }
+
+      // Adjust corner flourishes for mobile
+      .corner-flourish {
+        font-size: 1.2rem;
+
+        &.top-left { top: 1rem; left: 1rem; }
+        &.top-right { top: 1rem; right: 1rem; }
+        &.bottom-left { bottom: 1rem; left: 1rem; }
+        &.bottom-right { bottom: 1rem; right: 1rem; }
+      }
+    }
+
+    .bubble {
+      opacity: 0.5;
+    }
+
+    .gratitude-content:after {
+      width: 100px;
+      height: 100px;
     }
   }
-} 
+}
+
