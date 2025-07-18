@@ -65,25 +65,83 @@ $positions: (
 }
 
 .songs-section {
-  padding: 6rem 0;
+  padding: 3rem 0 6rem;
   background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
   position: relative;
   overflow: hidden;
 
+  .music-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+
+    .music-note {
+      position: absolute;
+      color: var(--primary-color);
+      opacity: 0.1;
+      font-size: 2rem;
+      animation: floatNote 15s linear infinite;
+
+      @for $i from 1 through 12 {
+        &:nth-child(#{$i}) {
+          left: #{random(100)}#{"%"};
+          top: #{random(100)}#{"%"};
+          animation-delay: #{$i * -1}s;
+          animation-duration: #{10 + random(10)}s;
+          font-size: #{1.5 + random(10)/10}rem;
+        }
+      }
+
+      &.alt {
+        color: var(--primary-300);
+        @for $i from 1 through 12 {
+          &:nth-child(#{$i}) {
+            left: #{random(100)}#{"%"};
+            top: #{random(100)}#{"%"};
+            animation-delay: #{($i * -1.5)}s;
+            animation-duration: #{12 + random(8)}s;
+            font-size: #{1.8 + random(10)/10}rem;
+          }
+        }
+      }
+    }
+  }
+
+  @keyframes floatNote {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.1;
+    }
+    90% {
+      opacity: 0.1;
+    }
+    100% {
+      transform: translate(#{random(50) - 25}px, -100px) rotate(#{random(360)}deg);
+      opacity: 0;
+    }
+  }
+
   .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 1.5rem;
   }
 
   .section-header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 
     .section-title {
       font-size: 2.5rem;
       color: var(--primary-800);
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -104,15 +162,16 @@ $positions: (
 
   .songs-list {
     display: grid;
-    gap: 3rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
     position: relative;
   }
 
   .song-item {
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 2rem;
-    padding: 2rem;
+    gap: 1.5rem;
+    padding: 1.5rem;
     background: white;
     border-radius: 20px;
     position: relative;
@@ -127,8 +186,8 @@ $positions: (
     }
 
     .song-cover {
-      width: 150px;
-      height: 150px;
+      width: 120px;
+      height: 120px;
       position: relative;
     }
 
@@ -166,8 +225,8 @@ $positions: (
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 15px;
-        height: 15px;
+        width: 12px;
+        height: 12px;
         background: white;
         border-radius: 50%;
         transform: translate(-50%, -50%);
@@ -185,7 +244,7 @@ $positions: (
 
         i {
           color: white;
-          font-size: 1.2rem;
+          font-size: 1rem;
         }
       }
     }
@@ -195,18 +254,18 @@ $positions: (
     }
 
     .song-header {
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
 
       .song-moment {
         display: inline-block;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         color: var(--primary-color);
         margin-bottom: 0.5rem;
         font-style: italic;
       }
 
       .song-title {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         color: var(--text-color);
         margin: 0 0 0.5rem;
       }
@@ -215,7 +274,8 @@ $positions: (
         display: flex;
         gap: 1rem;
         color: var(--text-color-secondary);
-        font-size: 1rem;
+        font-size: 0.9rem;
+        flex-wrap: wrap;
 
         .song-artist {
           font-weight: 500;
@@ -232,14 +292,15 @@ $positions: (
       color: var(--text-color-secondary);
       font-style: italic;
       line-height: 1.6;
-      padding-left: 2rem;
+      padding-left: 1.5rem;
+      font-size: 0.9rem;
 
       i.pi-quote-left {
         position: absolute;
         left: 0;
         top: 0;
         color: var(--primary-200);
-        font-size: 1.2rem;
+        font-size: 1rem;
       }
 
       p {
@@ -249,7 +310,7 @@ $positions: (
   }
 
   .section-footer {
-    margin-top: 4rem;
+    margin-top: 3rem;
     text-align: center;
 
     .footer-quote {
@@ -273,12 +334,21 @@ $positions: (
   }
 }
 
+@media (max-width: 1200px) {
+  .songs-section {
+    .songs-list {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .songs-section {
-    padding: 4rem 0;
+    padding: 2rem 0 4rem;
 
     .section-header {
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
 
       .section-title {
         font-size: 2rem;
@@ -300,13 +370,8 @@ $positions: (
       }
 
       .song-header {
-        .song-title {
-          font-size: 1.5rem;
-        }
-
         .song-meta {
           justify-content: center;
-          flex-wrap: wrap;
         }
       }
 

@@ -59,4 +59,15 @@ export interface SpecialMoment {
   icon: string;
   message?: string;
   author?: string;
+}
+
+export interface Memory {
+  id: number;
+  thumbnail: string;
+  fullImage: string;
+  description: string;
+  date: Date;
+  category: string;
+  quote?: string;
+  author?: string;
 } 

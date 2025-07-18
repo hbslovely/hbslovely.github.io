@@ -1,11 +1,36 @@
 <!-- Love Quotes Section -->
 <div class="quotes-section">
-  <div class="quotes-background"></div>
+  <!-- Watermark Icons -->
+  <div class="watermark-icons">
+    <i class="pi pi-heart"></i>
+    <i class="pi pi-heart-fill"></i>
+    <i class="pi pi-home"></i>
+    <i class="pi pi-star"></i>
+    <i class="pi pi-gift"></i>
+    <i class="pi pi-users"></i>
+  </div>
+
   <div class="container">
     <h2 class="section-title">💌 Những Câu Nói Yêu Thương</h2>
-    <div class="quotes-list">
-      <div class="quote-item" *ngFor="let quote of quotes; let i = index">
-        <div class="quote-content">
+    <div class="quotes-columns">
+      <!-- Left Column -->
+      <div class="quotes-column">
+        <div class="quote-item" *ngFor="let quote of leftColumnQuotes">
+          <div class="quote-icon">
+            <i [class]="quote.icon"></i>
+          </div>
+          <blockquote class="quote-text">
+            {{ quote.quote }}
+          </blockquote>
+          <div class="quote-author">
+            <span class="author-name">{{ quote.author }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="quotes-column right">
+        <div class="quote-item" *ngFor="let quote of rightColumnQuotes">
           <div class="quote-icon">
             <i [class]="quote.icon"></i>
           </div>

@@ -59,6 +59,25 @@
     max-width: 600px;
     margin: 0 auto;
   }
+
+  .quote-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+
+    .section-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-color);
+      margin-bottom: 0.5rem;
+      font-style: italic;
+    }
+
+    .quote-author {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--text-color-secondary);
+      font-style: normal;
+    }
+  }
 }
 
 .gallery-controls {
@@ -361,74 +380,81 @@
 
   .quote-wrapper {
     text-align: center;
-    padding: 3rem 2rem;
-    position: relative;
-    font-family: 'Playfair Display', serif;
+    max-width: 800px;
+    margin: 0 auto;
 
-    .quote-icon {
-      font-size: 2rem;
-      color: var(--primary-color);
+    .main-quote-container {
       margin-bottom: 2rem;
-      opacity: 0.8;
-    }
 
-    .main-quote {
-      font-size: 1.5rem;
-      color: var(--text-color);
-      line-height: 1.8;
-      margin: 0 auto 3rem;
-      max-width: 800px;
-      font-style: italic;
-      position: relative;
-      padding: 0 3rem;
-      font-weight: 500;
-
-      &:before, &:after {
-        content: '"';
-        font-family: Georgia, serif;
-        font-size: 4rem;
-        color: var(--primary-color);
-        opacity: 0.2;
-        position: absolute;
-        line-height: 1;
+      .main-quote {
+        font-size: 1.3rem;
+        color: var(--text-color);
+        font-style: italic;
+        margin-bottom: 0.5rem;
+        line-height: 1.6;
       }
 
-      &:before {
-        left: 0;
-        top: -1rem;
-      }
-
-      &:after {
-        right: 0;
-        bottom: -2rem;
+      .quote-author {
+        display: block;
+        font-size: 0.95rem;
+        color: var(--text-color-secondary);
+        font-style: normal;
       }
     }
 
     .sub-quotes {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2.5rem;
-      margin-top: 3rem;
-      padding-top: 2rem;
-      border-top: 1px dashed rgba(var(--primary-color-rgb), 0.2);
+      gap: 2rem;
+      margin-top: 2rem;
 
-      .sub-quote {
-        color: var(--text-color-secondary);
-        font-size: 1.2rem;
-        line-height: 1.6;
-        font-style: italic;
-        display: flex;
-        align-items: center;
-        gap: 1.2rem;
-        font-weight: 500;
+      .sub-quote-container {
+        .sub-quote {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          margin-bottom: 0.5rem;
 
-        i {
-          color: var(--primary-color);
-          font-size: 1.3rem;
-          opacity: 0.8;
+          i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+          }
+
+          .quote-text {
+            font-style: italic;
+            font-size: 1rem;
+            color: var(--text-color);
+          }
+        }
+
+        .quote-author {
+          display: block;
+          font-size: 0.85rem;
+          color: var(--text-color-secondary);
+          font-style: normal;
+          margin-left: calc(1.2rem + 1rem); // Icon width + gap
         }
       }
     }
+  }
+}
+
+.memory-quote {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+
+  .quote-text {
+    font-style: italic;
+    font-size: 0.9rem;
+  }
+
+  .quote-author {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-style: normal;
   }
 }
 
@@ -462,30 +488,53 @@
     }
   }
 
-  .gallery-quotes {
-    margin-top: 3rem;
-    padding: 0 1rem;
-
+  .section-header {
     .quote-wrapper {
-      padding: 2rem 1rem;
+      .section-subtitle {
+        font-size: 1rem;
+      }
 
-      .main-quote {
-        font-size: 1.3rem;
-        padding: 0 2rem;
-        margin-bottom: 2rem;
+      .quote-author {
+        font-size: 0.8rem;
+      }
+    }
+  }
 
-        &:before, &:after {
-          font-size: 3rem;
+  .memory-quote {
+    .quote-text {
+      font-size: 0.85rem;
+    }
+
+    .quote-author {
+      font-size: 0.75rem;
+    }
+  }
+
+  .gallery-quotes {
+    .quote-wrapper {
+      .main-quote-container {
+        .main-quote {
+          font-size: 1.1rem;
+        }
+
+        .quote-author {
+          font-size: 0.85rem;
         }
       }
 
       .sub-quotes {
-        gap: 2rem;
-        margin-top: 2rem;
+        gap: 1.5rem;
 
-        .sub-quote {
-          font-size: 1.1rem;
-          gap: 1rem;
+        .sub-quote-container {
+          .sub-quote {
+            .quote-text {
+              font-size: 0.9rem;
+            }
+          }
+
+          .quote-author {
+            font-size: 0.8rem;
+          }
         }
       }
     }

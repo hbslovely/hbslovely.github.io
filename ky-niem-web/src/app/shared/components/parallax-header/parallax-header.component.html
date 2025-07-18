@@ -5,34 +5,17 @@
   </div>
 
   <div class="header-content">
-    <div class="floating-hearts">
-      <span class="heart">❤️</span>
-      <span class="heart">💕</span>
-      <span class="heart">💖</span>
-      <span class="heart">💗</span>
-      <span class="heart">💓</span>
-      <span class="heart">💝</span>
-      <span class="heart">💘</span>
-      <span class="heart">💞</span>
-      <span class="heart">💟</span>
-      <span class="heart">💌</span>
-    </div>
-
     <div class="title-wrapper">
       <div class="title-decoration">
         <span class="decoration-item">✦</span>
         <span class="decoration-item">❀</span>
         <span class="decoration-item">✦</span>
       </div>
-      <h1 class="main-title">Phát & Quyên</h1>
+      <h1 class="main-title text-center">Phát & Quyên</h1>
       <div class="subtitle-line">
         <span class="line"></span>
         <i class="pi pi-heart-fill"></i>
         <span class="line"></span>
-      </div>
-      <div class="quote-wrapper">
-        <p class="love-quote">"Tình yêu là khi hai trái tim cùng nhảy điệu valse của hạnh phúc"</p>
-        <span class="quote-author">- Victor Hugo</span>
       </div>
       <div class="title-decoration">
         <span class="decoration-item">✦</span>
@@ -49,62 +32,74 @@
       <div class="counter-grid grid">
         <!-- Days -->
         <div class="counter-card">
-          <div class="number">{{ liveCounter.days }}</div>
-          <div class="label">NGÀY</div>
-          <div class="card-quote">
-            <span class="quote-text">"Mỗi ngày đều là phép màu"</span>
-            <span class="quote-author">- Albert Einstein</span>
+          <div class="number-wrapper">
+            <div class="flip-card">
+              <div class="top">{{ liveCounter.days }}</div>
+              <div class="bottom">{{ liveCounter.days }}</div>
+              <div class="flip-top">{{ liveCounter.days }}</div>
+              <div class="flip-bottom">{{ liveCounter.days }}</div>
+            </div>
           </div>
+          <div class="label">NGÀY</div>
         </div>
 
         <!-- Hours -->
         <div class="counter-card">
-          <div class="number">{{ liveCounter.hours.toString().padStart(2, '0') }}</div>
-          <div class="label">GIỜ</div>
-          <div class="card-quote">
-            <span class="quote-text">"Từng giờ trôi thật đáng giá"</span>
-            <span class="quote-author">- William Shakespeare</span>
+          <div class="number-wrapper">
+            <div class="flip-card">
+              <div class="top">{{ liveCounter.hours.toString().padStart(2, '0') }}</div>
+              <div class="bottom">{{ liveCounter.hours.toString().padStart(2, '0') }}</div>
+              <div class="flip-top">{{ liveCounter.hours.toString().padStart(2, '0') }}</div>
+              <div class="flip-bottom">{{ liveCounter.hours.toString().padStart(2, '0') }}</div>
+            </div>
           </div>
+          <div class="label">GIỜ</div>
         </div>
 
         <!-- Minutes -->
         <div class="counter-card">
-          <div class="number">{{ liveCounter.minutes.toString().padStart(2, '0') }}</div>
-          <div class="label">PHÚT</div>
-          <div class="card-quote">
-            <span class="quote-text">"Phút giây bên nhau thật quý"</span>
-            <span class="quote-author">- Paulo Coelho</span>
+          <div class="number-wrapper">
+            <div class="flip-card">
+              <div class="top">{{ liveCounter.minutes.toString().padStart(2, '0') }}</div>
+              <div class="bottom">{{ liveCounter.minutes.toString().padStart(2, '0') }}</div>
+              <div class="flip-top">{{ liveCounter.minutes.toString().padStart(2, '0') }}</div>
+              <div class="flip-bottom">{{ liveCounter.minutes.toString().padStart(2, '0') }}</div>
+            </div>
           </div>
+          <div class="label">PHÚT</div>
         </div>
 
         <!-- Seconds -->
         <div class="counter-card">
-          <div class="number">{{ liveCounter.seconds.toString().padStart(2, '0') }}</div>
-          <div class="label">GIÂY</div>
-          <div class="card-quote">
-            <span class="quote-text">"Mỗi giây đều là kỷ niệm"</span>
-            <span class="quote-author">- Rumi</span>
+          <div class="number-wrapper">
+            <div class="flip-card">
+              <div class="top">{{ liveCounter.seconds.toString().padStart(2, '0') }}</div>
+              <div class="bottom">{{ liveCounter.seconds.toString().padStart(2, '0') }}</div>
+              <div class="flip-top">{{ liveCounter.seconds.toString().padStart(2, '0') }}</div>
+              <div class="flip-bottom">{{ liveCounter.seconds.toString().padStart(2, '0') }}</div>
+            </div>
           </div>
+          <div class="label">GIÂY</div>
         </div>
       </div>
+    </div>
+
+    <div class="bottom-avatar">
+      <div class="avatar-frame rainbow-border">
+        <img src="assets/images/anh-chu-dao/avatar-couple.png" alt="Phát & Quyên">
+      </div>
+      <div class="avatar-shadow"></div>
     </div>
 
     <div class="love-message">
       <i class="pi pi-heart-fill message-icon"></i>
       <div class="message-content">
         <p class="message-text">
-          "Hạnh phúc không phải là điểm đến, mà là hành trình chúng ta cùng nhau trải qua. 
-          Mỗi khoảnh khắc bên nhau đều là một món quà vô giá."
+          "The best thing to hold onto in life is each other. Happiness is not a destination, it's a journey we share together."
         </p>
-        <span class="message-author">- Ralph Waldo Emerson</span>
+        <span class="message-author">- Audrey Hepburn</span>
       </div>
-    </div>
-
-    <div class="bottom-avatar">
-      <div class="avatar-frame">
-        <img src="assets/images/anh-chu-dao/avatar-couple.png" alt="Phát & Quyên">
-      </div>
-      <div class="avatar-shadow"></div>
     </div>
   </div>
 </div>
+

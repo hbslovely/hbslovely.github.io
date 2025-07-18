@@ -1,47 +1,73 @@
 <!-- Happy Moments Section -->
 <div class="moments-section">
+  <div class="section-background"></div>
   <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="section-title">Những Phút Giây Hạnh Phúc</h2>
-      <p class="text-lg text-muted">Những khoảnh khắc đáng nhớ trong hành trình yêu thương của chúng ta</p>
+    <div class="section-header text-center">
+      <h2 class="section-title">
+        <i class="pi pi-heart-fill"></i>
+        Những Phút Giây Hạnh Phúc
+      </h2>
+      <div class="quote-wrapper">
+        <p class="section-subtitle">"Happiness is not something ready made. It comes from your own actions"</p>
+        <span class="quote-author">- Dalai Lama</span>
+      </div>
     </div>
 
-    <div class="row">
-      <div class="col-12">
-        <div class="moments-grid">
-          <div class="moment-card" *ngFor="let moment of happyMoments">
-            <div class="moment-image">
-              <img [src]="moment.image" [alt]="moment.title">
-              <div class="moment-overlay">
-                <div class="moment-date">{{ moment.date }}</div>
+    <div class="moments-content">
+      <div class="moments-grid">
+        <div class="moment-item" *ngFor="let moment of happyMoments">
+          <div class="moment-image">
+            <img [src]="moment.image" [alt]="moment.title">
+            <div class="moment-overlay">
+              <div class="moment-date">
+                <i class="pi pi-calendar"></i>
+                {{ moment.date }}
               </div>
             </div>
-            <div class="moment-content">
-              <h3 class="moment-title">{{ moment.title }}</h3>
-              <p class="moment-description">{{ moment.description }}</p>
-              <div class="moment-emotions">
-                <span class="emotion" *ngFor="let emotion of moment.emotions">
-                  <i [class]="'pi ' + emotion.icon"></i>
-                  {{ emotion.text }}
-                </span>
+          </div>
+          <div class="moment-content">
+            <h3 class="moment-title">{{ moment.title }}</h3>
+            <p class="moment-description">{{ moment.description }}</p>
+            <div class="moment-emotions">
+              <span class="emotion" *ngFor="let emotion of moment.emotions">
+                <i [class]="'pi ' + emotion.icon"></i>
+                {{ emotion.text }}
+              </span>
+            </div>
+            <div class="moment-quote">
+              <i class="pi pi-heart"></i>
+              <div class="quote-content">
+                <p class="quote-text">"Every moment of happiness requires a great amount of sharing"</p>
+                <span class="quote-author">- Rumi</span>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="row mt-5">
-      <div class="col-12">
-        <div class="moments-categories">
-          <div class="category" *ngFor="let category of categories">
+      <div class="categories-section">
+        <div class="section-divider">
+          <div class="line"></div>
+          <i class="pi pi-heart-fill"></i>
+          <div class="line"></div>
+        </div>
+        
+        <div class="categories-grid">
+          <div class="category-item" *ngFor="let category of categories">
             <div class="category-icon">
               <i [class]="'pi ' + category.icon"></i>
             </div>
             <div class="category-info">
-              <h4>{{ category.title }}</h4>
-              <p>{{ category.count }} khoảnh khắc</p>
+              <h4 class="category-title">{{ category.title }}</h4>
+              <p class="category-count">{{ category.count }} khoảnh khắc</p>
             </div>
+          </div>
+        </div>
+
+        <div class="section-footer">
+          <div class="quote-wrapper">
+            <p class="footer-quote">"The best portion of your life will be the small, nameless moments you spend smiling with someone who matters to you"</p>
+            <span class="quote-author">- Ritu Ghatourey</span>
           </div>
         </div>
       </div>

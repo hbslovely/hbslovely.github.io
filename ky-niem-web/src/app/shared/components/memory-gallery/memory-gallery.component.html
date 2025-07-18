@@ -9,7 +9,10 @@
     <div class="container">
       <div class="section-header">
         <h2 class="section-title">Album Kỷ Niệm</h2>
-        <p class="section-subtitle">"Mỗi bức ảnh là một khoảnh khắc đáng nhớ trong câu chuyện tình yêu của chúng ta"</p>
+        <div class="quote-wrapper">
+          <p class="section-subtitle">"Photography is a way of feeling, of touching, of loving. What you have caught on film is captured forever... it remembers little things, long after you have forgotten everything"</p>
+          <span class="quote-author">- Aaron Siskind</span>
+        </div>
       </div>
 
       <!-- Filter Controls -->
@@ -74,7 +77,10 @@
               <div class="hover-overlay">
                 <span class="memory-date">{{ memory.date | date:'dd/MM/yyyy' }}</span>
                 <p class="memory-description">{{ memory.description }}</p>
-                <div class="memory-quote" *ngIf="memory.quote">"{{ memory.quote }}"</div>
+                <div class="memory-quote" *ngIf="memory.quote">
+                  <span class="quote-text">"{{ memory.quote }}"</span>
+                  <span class="quote-author">- {{ memory.author || 'Anonymous' }}</span>
+                </div>
                 <div class="zoom-icon">
                   <i class="pi pi-search-plus"></i>
                 </div>
@@ -99,23 +105,34 @@
       <div class="gallery-quotes">
         <div class="quote-wrapper">
           <i class="pi pi-camera quote-icon"></i>
-          <blockquote class="main-quote">
-            "Những bức ảnh là cách chúng ta giữ lại những khoảnh khắc quý giá, 
-            là cầu nối đưa ta trở về với những ký ức hạnh phúc bên nhau"
-          </blockquote>
+          <div class="main-quote-container">
+            <blockquote class="main-quote">
+              "A photograph is a secret about a secret. The more it tells you, the less you know"
+            </blockquote>
+            <span class="quote-author">- Diane Arbus</span>
+          </div>
           <div class="sub-quotes">
-            <p class="sub-quote">
-              <i class="pi pi-heart"></i>
-              "Mỗi nụ cười trong ảnh là một lời yêu thương"
-            </p>
-            <p class="sub-quote">
-              <i class="pi pi-clock"></i>
-              "Thời gian trôi qua, nhưng kỷ niệm vẫn mãi đẹp như ngày đầu"
-            </p>
-            <p class="sub-quote">
-              <i class="pi pi-map-marker"></i>
-              "Mỗi địa điểm là một dấu ấn của tình yêu chúng ta"
-            </p>
+            <div class="sub-quote-container">
+              <p class="sub-quote">
+                <i class="pi pi-heart"></i>
+                <span class="quote-text">"Taking pictures is savoring life intensely, every hundredth of a second"</span>
+              </p>
+              <span class="quote-author">- Marc Riboud</span>
+            </div>
+            <div class="sub-quote-container">
+              <p class="sub-quote">
+                <i class="pi pi-clock"></i>
+                <span class="quote-text">Thời gian trôi qua, nhưng kỷ niệm vẫn mãi đẹp như ngày đầu</span>
+              </p>
+              <span class="quote-author">- Robert Frank</span>
+            </div>
+            <div class="sub-quote-container">
+              <p class="sub-quote">
+                <i class="pi pi-map-marker"></i>
+                <span class="quote-text">"If you want to be a better photographer, stand in front of more interesting stuff"</span>
+              </p>
+              <span class="quote-author">- Jim Richardson</span>
+            </div>
           </div>
         </div>
       </div>

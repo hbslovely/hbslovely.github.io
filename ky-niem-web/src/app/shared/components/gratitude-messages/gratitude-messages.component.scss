@@ -1,176 +1,237 @@
 // Import mixins
-@import '../../../../assets/scss/mixins';
+@import 'src/assets/scss/mixins';
 
-/* Letter Frame Variables */
-$letter-bg: #fff6e5;
-$letter-border: #e2d5bc;
-$letter-shadow: rgba(0, 0, 0, 0.1);
+// Custom variables
+$mint-blue: #E0F7FA;
+$light-blue: #B2EBF2;
+$border-blue: #80DEEA;
+$text-blue: #00838F;
+$ribbon-blue: #00ACC1;
 
 .gratitude-section {
-  position: relative;
   padding: 4rem 0;
-  background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
+  position: relative;
+  background: #f8f9fa;
   overflow: hidden;
+
+  // Add large heart background
+  &::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -40%);
+    background: transparent;
+    border: 4px solid rgba(255, 64, 129, 0.2);
+    clip-path: path('M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z');
+    transform-origin: center;
+    transform: translate(-50%, -40%) scale(30);
+    z-index: 0;
+  }
+
+  // Add second heart with different opacity for layered effect
+  &::after {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -40%);
+    background: transparent;
+    border: 4px solid rgba(255, 64, 129, 0.1);
+    clip-path: path('M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z');
+    transform-origin: center;
+    transform: translate(-50%, -40%) scale(25);
+    z-index: 0;
+  }
 
   .watermark-icons {
     position: absolute;
-    left: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    opacity: 0.1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.05;
     pointer-events: none;
+    z-index: 0;
 
     i {
-      font-size: 2.5rem;
-      color: var(--primary-color);
-      transform: rotate(-15deg);
+      position: absolute;
+      font-size: 3rem;
+      color: #ff4081;
+
+      &:nth-child(1) { top: 10%; left: 15%; }
+      &:nth-child(2) { top: 45%; left: 80%; }
+      &:nth-child(3) { top: 75%; left: 25%; }
+      &:nth-child(4) { top: 30%; left: 60%; }
+      &:nth-child(5) { top: 85%; left: 75%; }
     }
   }
 
-  .container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-
-  .section-title {
+  .section-header {
     text-align: center;
-    font-size: 2.5rem;
-    color: var(--primary-800);
     margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+
+    .section-title {
+      font-size: 2.5rem;
+      color: #333;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+
+      i {
+        color: #ff4081;
+      }
+    }
+
+    .quote-wrapper {
+      .section-subtitle {
+        font-style: italic;
+        color: #666;
+        margin-bottom: 0.5rem;
+      }
+
+      .quote-author {
+        color: #888;
+        font-size: 0.9rem;
+      }
+    }
   }
 
-  .gratitude-content {
+  .letters-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem;
     position: relative;
     z-index: 1;
   }
 
-  .letters-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    perspective: 1000px;
-  }
-
   .gratitude-letter {
-    padding: 2rem;
-    border-radius: 15px;
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
     position: relative;
-    font-size: 1rem;
-    line-height: 1.8;
     transition: transform 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 
     &:hover {
-      transform: translateY(-5px) rotate(0deg) !important;
+      transform: scale(1.02) rotate(0deg) !important;
+      z-index: 2;
     }
 
     &.husband-letter {
-      transform: rotate(-3deg) translateX(2rem);
-      background: #fffbe6;
-      color: #5d4037;
-      z-index: 2;
-      margin-right: -2rem;
-      
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: repeating-linear-gradient(
-          transparent 0px,
-          transparent 31px,
-          rgba(93, 64, 55, 0.1) 31px,
-          rgba(93, 64, 55, 0.1) 32px
-        );
-        background-position: 0 1rem;
-        opacity: 0.3;
-        pointer-events: none;
-        border-radius: inherit;
-      }
-
-      .corner-flourish {
-        position: absolute;
-        font-size: 1.5rem;
-        color: rgba(93, 64, 55, 0.3);
-        
-        &.top-left { top: 1rem; left: 1rem; }
-        &.top-right { top: 1rem; right: 1rem; }
-        &.bottom-left { bottom: 1rem; left: 1rem; }
-        &.bottom-right { bottom: 1rem; right: 1rem; }
-      }
+      transform: rotate(-2deg);
     }
 
     &.wife-letter {
-      transform: rotate(2deg) translateX(-2rem);
-      background: #f4e4bc;
-      color: #4a4a4a;
-      z-index: 1;
-      margin-left: -2rem;
+      transform: rotate(2deg);
+    }
+  }
 
-      &::before {
+  .letter-frame {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 
+      0 1px 3px rgba(0,0,0,0.12),
+      0 1px 2px rgba(0,0,0,0.24),
+      0 0 8px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        linear-gradient(45deg, transparent 48%, #f0f0f0 49%, #f0f0f0 51%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, #f0f0f0 49%, #f0f0f0 51%, transparent 52%);
+      background-size: 30px 30px;
+      opacity: 0.3;
+    }
+
+    .frame-border {
+      border: 1px solid rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      background: #fff;
+      position: relative;
+      
+      &::after {
         content: '';
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: 
-          url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
-        opacity: 0.1;
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+        border: 1px solid rgba(0,0,0,0.05);
         pointer-events: none;
-        border-radius: inherit;
       }
+    }
+  }
 
-      .vintage-corner {
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        border: 2px solid rgba(74, 74, 74, 0.2);
-        
-        &.top-left {
-          top: 10px;
-          left: 10px;
-          border-right: none;
-          border-bottom: none;
-        }
-        &.top-right {
-          top: 10px;
-          right: 10px;
-          border-left: none;
-          border-bottom: none;
-        }
-        &.bottom-left {
-          bottom: 10px;
-          left: 10px;
-          border-right: none;
-          border-top: none;
-        }
-        &.bottom-right {
-          bottom: 10px;
-          right: 10px;
-          border-left: none;
-          border-top: none;
-        }
+  .ribbon {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    z-index: 1;
+
+    .ribbon-content {
+      background: #ff4081;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 3px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+
+      i {
+        font-size: 1rem;
       }
+    }
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      border-style: solid;
+      border-width: 0 10px 10px 0;
+      border-color: transparent #d81b60 transparent transparent;
+      top: 0;
+      right: 100%;
     }
   }
 
   .gratitude-paragraph {
     margin-bottom: 1.5rem;
-    
+    line-height: 1.6;
+    color: #444;
+    font-size: 1rem;
+    text-align: justify;
+
     span {
-      display: block;
       position: relative;
-      padding: 0.5rem 0;
+      
+      &::before {
+        content: '"';
+        margin-right: 2px;
+      }
+      
+      &::after {
+        content: '"';
+        margin-left: 2px;
+      }
     }
   }
 
@@ -178,65 +239,61 @@ $letter-shadow: rgba(0, 0, 0, 0.1);
     text-align: right;
     margin-top: 2rem;
     font-style: italic;
-    
+    color: #666;
+
     p {
-      margin: 0.3rem 0;
+      margin: 0.2rem 0;
+      
       &:last-child {
         font-weight: bold;
-        color: inherit;
-        opacity: 0.9;
+        color: #333;
       }
     }
   }
-}
 
-@media (max-width: 992px) {
-  .gratitude-section {
-    padding: 3rem 0;
+  .quote-section {
+    text-align: center;
+    margin-top: 4rem;
 
-    .watermark-icons {
-      display: none;
-    }
+    .quote-content {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
 
-    .letters-container {
-      grid-template-columns: 1fr;
-      gap: 3rem;
-      padding: 1rem;
-    }
-
-    .gratitude-letter {
-      margin: 0 !important;
-      transform: none !important;
-      font-size: 0.95rem;
-
-      &:hover {
-        transform: none !important;
+      i {
+        color: #ff4081;
+        font-size: 2rem;
       }
 
-      &::before {
-        opacity: 0.2; // Reduce texture opacity on mobile
-      }
-
-      &.husband-letter,
-      &.wife-letter {
-        transform: none !important;
+      blockquote {
+        font-size: 1.2rem;
+        color: #666;
+        font-style: italic;
         margin: 0;
       }
+
+      .quote-author {
+        color: #888;
+        font-size: 0.9rem;
+      }
     }
   }
 }
 
-@media (max-width: 768px) {
-  .gratitude-section {
-    .section-title {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-    }
+// Add random rotation animation
+@keyframes floatAnimation {
+  0% { transform: rotate(var(--rotation)) translateY(0px); }
+  50% { transform: rotate(var(--rotation)) translateY(-5px); }
+  100% { transform: rotate(var(--rotation)) translateY(0px); }
+}
 
-    .gratitude-letter {
-      padding: 1.5rem;
-      font-size: 0.9rem;
-    }
-  }
+// Apply random rotation to letters
+.gratitude-letter {
+  --rotation: 0deg;
+  animation: floatAnimation 4s ease-in-out infinite;
+
+  &:nth-child(1) { --rotation: -2deg; }
+  &:nth-child(2) { --rotation: 2deg; }
 }
 
