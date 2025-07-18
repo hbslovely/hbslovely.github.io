@@ -10,6 +10,8 @@ main {
 
 @media (max-width: 768px) {
   main {
-    padding-top: 70px; /* Giảm padding một chút trên mobile */
+    padding-top: 0; /* Xóa padding trên mobile */
+    padding-bottom: 160px; /* Tăng padding bottom lên nhiều hơn */
+    min-height: calc(100vh - 70px);
   }
 }
