@@ -7,6 +7,8 @@ interface SpecialMoment {
   date: string;
   icon: string;
   color: string;
+  message: string;
+  author: string;
 }
 
 @Component({
@@ -18,4 +20,4 @@ interface SpecialMoment {
 })
 export class SpecialMomentsComponent {
   @Input() moments: SpecialMoment[] = [];
-} 
+}

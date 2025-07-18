@@ -10,6 +10,7 @@ interface Memory {
   date: string;
   category: 'couple' | 'travel' | 'daily';
   quote?: string;
+  author: string;
 }
 
 @Component({
@@ -80,14 +81,14 @@ export class MemoryGalleryComponent implements OnInit {
   filterImages(category: string) {
     this.currentFilter = category;
     this.page = 1;
-    
+
     if (category === 'all') {
       this.displayedMemories = this.memories.slice(0, this.pageSize);
     } else {
       const filtered = this.memories.filter(m => m.category === category);
       this.displayedMemories = filtered.slice(0, this.pageSize);
     }
-    
+
     this.updateHasMoreImages();
   }
 
@@ -99,17 +100,17 @@ export class MemoryGalleryComponent implements OnInit {
     this.loading = true;
     const start = this.page * this.pageSize;
     const end = start + this.pageSize;
-    
+
     setTimeout(() => {
       let newImages: Memory[];
-      
+
       if (this.currentFilter === 'all') {
         newImages = this.memories.slice(start, end);
       } else {
         const filtered = this.memories.filter(m => m.category === this.currentFilter);
         newImages = filtered.slice(start, end);
       }
-      
+
       this.displayedMemories = [...this.displayedMemories, ...newImages];
       this.page++;
       this.loading = false;
@@ -118,10 +119,10 @@ export class MemoryGalleryComponent implements OnInit {
   }
 
   private updateHasMoreImages() {
-    const totalImages = this.currentFilter === 'all' 
-      ? this.memories.length 
+    const totalImages = this.currentFilter === 'all'
+      ? this.memories.length
       : this.memories.filter(m => m.category === this.currentFilter).length;
-    
+
     this.hasMoreImages = this.displayedMemories.length < totalImages;
   }
 
@@ -135,7 +136,7 @@ export class MemoryGalleryComponent implements OnInit {
 
   showPrevImage() {
     if (!this.selectedImage) return;
-    
+
     const currentIndex = this.displayedMemories.indexOf(this.selectedImage);
     if (currentIndex > 0) {
       this.selectedImage = this.displayedMemories[currentIndex - 1];
@@ -144,7 +145,7 @@ export class MemoryGalleryComponent implements OnInit {
 
   showNextImage() {
     if (!this.selectedImage) return;
-    
+
     const currentIndex = this.displayedMemories.indexOf(this.selectedImage);
     if (currentIndex < this.displayedMemories.length - 1) {
       this.selectedImage = this.displayedMemories[currentIndex + 1];
@@ -167,4 +168,4 @@ export class MemoryGalleryComponent implements OnInit {
       img.classList.add('loaded');
     }
   }
-} 
+}
