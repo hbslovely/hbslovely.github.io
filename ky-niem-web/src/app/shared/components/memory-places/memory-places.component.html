@@ -55,8 +55,28 @@
                 <i class="pi pi-map-marker"></i>
                 {{ place.name }}
               </div>
+              <!-- Mobile Info Overlay -->
+              <div class="mobile-info-overlay">
+                <div class="mobile-info-content">
+                  <div class="mobile-location">
+                    <h3>{{ place.name }}</h3>
+                    <span class="mobile-date">
+                      <i class="pi pi-calendar"></i>
+                      {{ place.date }}
+                    </span>
+                  </div>
+                  <p class="mobile-description">{{ place.description }}</p>
+                  <div class="mobile-emotions">
+                    <span class="emotion" *ngFor="let emotion of place.emotions">
+                      <i class="pi pi-heart-fill"></i>
+                      {{ emotion }}
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="slide-info">
+            <!-- Desktop Info (hidden on mobile) -->
+            <div class="slide-info desktop-only">
               <div class="info-header">
                 <h3>{{ place.name }}</h3>
                 <span class="date">
