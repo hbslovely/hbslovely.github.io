@@ -7,22 +7,22 @@
     linear-gradient(120deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.7)),
     url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239ae6b4' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
     url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2348bb78' fill-opacity='0.3'%3E%3Cpath d='M50 0v12m0 76v12M0 50h12m76 0h12M8.8 8.8l8.4 8.4m66.6 66.6l8.4 8.4M91.2 8.8l-8.4 8.4M8.8 91.2l8.4-8.4'/%3E%3C/g%3E%3C/svg%3E"),
-    repeating-linear-gradient(45deg, 
-      rgba(154, 230, 180, 0.1) 0px,
-      rgba(154, 230, 180, 0.1) 40px,
-      transparent 40px,
-      transparent 80px
-    );
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='%23276749'%3E%3Cpath d='M35 13v-3h-3v3h-3v3h3v3h3v-3h3v-3h-3zm15 0v-3h-3v3h-3v3h3v3h3v-3h3v-3h-3zM10 35v-3H7v3H4v3h3v3h3v-3h3v-3h-3zm15 0v-3h-3v3h-3v3h3v3h3v-3h3v-3h-3zM35 35v-3h-3v3h-3v3h3v3h3v-3h3v-3h-3z'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%232f855a'%3E%3Cpath d='M50 40a10 10 0 1 0 20 0 10 10 0 1 0-20 0zm-30 0a10 10 0 1 0 20 0 10 10 0 1 0-20 0z'/%3E%3C/g%3E%3C/svg%3E");
   background-size: 
     cover,
     60px 60px,
     100px 100px,
-    120px 120px;
+    120px 120px,
+    60px 60px,
+    80px 80px;
   background-position: 
     center,
     center,
     center,
-    center;
+    center,
+    0 0,
+    30px 30px;
   background-blend-mode: overlay;
 
   &::before {
@@ -72,7 +72,7 @@
   opacity: 0.03;
   background-image: 
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='%23276749'%3E%3Cpath d='M35 13v-3h-3v3h-3v3h3v3h3v-3h3v-3h-3zm15 0v-3h-3v3h-3v3h3v3h3v-3h3v-3h-3zM10 35v-3H7v3H4v3h3v3h3v-3h3v-3h-3zm15 0v-3h-3v3h-3v3h3v3h3v-3h3v-3h-3zM35 35v-3h-3v3h-3v3h3v3h3v-3h3v-3h-3z'/%3E%3C/g%3E%3C/svg%3E"),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%232f855a'%3E%3Cpath d='M50 40a10 10 0 1 0 20 0 10 10 0 1 0-20 0zm-30 0a10 10 0 1 0 20 0 10 10 0 1 0-20 0z'/%3E%3C/g%3E%3C/svg%3E");
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%232f855a'%3E%3Cpath d='M50 40a10 10 0 1 0 20 0 10 10 0 1 0-20 0z'/%3E%3C/g%3E%3C/svg%3E");
   background-size: 60px 60px, 80px 80px;
   background-position: 0 0, 30px 30px;
   z-index: 1;
@@ -281,13 +281,16 @@
   .image-wrapper {
     flex: 0 0 60%;
     position: relative;
+    width: 100%;
+    border-radius: 1rem;
     overflow: hidden;
-    
+    aspect-ratio: 16/9;
+
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease;
+      transition: transform 0.3s ease;
     }
 
     &:hover img {
@@ -296,21 +299,95 @@
 
     .location-tag {
       position: absolute;
-      bottom: 1rem;
+      top: 1rem;
       left: 1rem;
-      background: var(--primary-700);
-      color: white;
+      background: rgba(255, 255, 255, 0.9);
       padding: 0.5rem 1rem;
       border-radius: 2rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      font-size: 0.9rem;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      
+      font-weight: 600;
+      color: var(--primary-color);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      z-index: 2;
+
       i {
-        color: var(--primary-100);
+        font-size: 1rem;
+      }
+    }
+
+    // Mobile Info Overlay
+    .mobile-info-overlay {
+      display: none; // Hidden by default
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0.7) 50%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      padding: 2rem 1.5rem 1.5rem;
+      color: white;
+      transform: translateY(0);
+      transition: transform 0.3s ease;
+
+      .mobile-info-content {
+        .mobile-location {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 1rem;
+
+          h3 {
+            font-size: 1.5rem;
+            margin: 0;
+            font-weight: 600;
+          }
+
+          .mobile-date {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            i {
+              font-size: 1rem;
+            }
+          }
+        }
+
+        .mobile-description {
+          font-size: 1rem;
+          line-height: 1.6;
+          margin-bottom: 1rem;
+          opacity: 0.9;
+        }
+
+        .mobile-emotions {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+
+          .emotion {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.4rem 0.8rem;
+            border-radius: 1rem;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+
+            i {
+              font-size: 0.8rem;
+              color: var(--primary-lighter);
+            }
+          }
+        }
       }
     }
   }
@@ -396,6 +473,16 @@
         }
       }
     }
+  }
+}
+
+// Desktop Info
+.slide-info.desktop-only {
+  padding: 2rem;
+  flex: 1;
+
+  @media (max-width: 768px) {
+    display: none; // Hide on mobile
   }
 }
 
@@ -564,5 +651,41 @@
   .thumb {
     flex: 0 0 80px;
     height: 60px;
+  }
+
+  // Show mobile overlay on mobile devices
+  .image-wrapper {
+    aspect-ratio: 4/3; // Taller image on mobile
+
+    .mobile-info-overlay {
+      display: block;
+    }
+
+    // Adjust location tag on mobile
+    .location-tag {
+      top: 0.75rem;
+      left: 0.75rem;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  // Adjust thumbnails for mobile
+  .thumbnails {
+    .thumb {
+      min-width: 80px;
+      height: 60px;
+
+      .thumb-name {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  // Adjust navigation buttons
+  .nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
   }
 } 
