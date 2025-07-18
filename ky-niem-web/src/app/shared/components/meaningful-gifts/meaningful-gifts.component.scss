@@ -1,45 +1,93 @@
 // Variables
-$gift-text: var(--text-color);
-$gift-text-secondary: var(--text-color-secondary);
+$primary-color: #ff69b4;
+$secondary-color: #ffb6c1;
+$accent-color: #ffd1dc;
+$text-color: #4a4a4a;
+$shadow-color: rgba(0, 0, 0, 0.1);
+
+// Section transition mixin
+@mixin section-transition {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100px;
+    pointer-events: none;
+  }
+
+  &::before {
+    top: 0;
+    background: linear-gradient(to bottom,
+      var(--previous-section-color, transparent) 0%,
+      var(--section-color) 100%
+    );
+  }
+
+  &::after {
+    bottom: 0;
+    background: linear-gradient(to top,
+      var(--next-section-color, transparent) 0%,
+      var(--section-color) 100%
+    );
+  }
+}
 
 .gifts-section {
-  padding: 4rem 0;
+  --section-color: #fff0f5;
+  @include section-transition;
   position: relative;
-  background-color: var(--primary-50);
-  
-  // Gift box watermark pattern
-  background-image: 
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 24 24' fill='none' stroke='rgba(72, 187, 120, 0.1)' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 7h18v1h-18z'%3E%3C/path%3E%3Cpath d='M12 7v14'%3E%3C/path%3E%3Cpath d='M5 7l7-4l7 4'%3E%3C/path%3E%3Cpath d='M19 7v14H5V7'%3E%3C/path%3E%3Cpath d='M7 11h10'%3E%3C/path%3E%3C/svg%3E"),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24' fill='none' stroke='rgba(72, 187, 120, 0.05)' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 12v10H4V12'%3E%3C/path%3E%3Cpath d='M2 7h20v5H2z'%3E%3C/path%3E%3Cpath d='M12 22V7'%3E%3C/path%3E%3Cpath d='M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z'%3E%3C/path%3E%3Cpath d='M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z'%3E%3C/path%3E%3C/svg%3E");
-  background-position: 10% 10%, 90% 90%;
-  background-repeat: repeat;
-  background-size: 120px 120px, 150px 150px;
+  padding: 6rem 0;
+  background:
+    linear-gradient(120deg,
+      rgba(255, 182, 193, 0.1) 0%,
+      rgba(255, 105, 180, 0.05) 100%
+    );
+  overflow: hidden;
 
+  // Decorative background elements
   &::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 200px;
-    background: linear-gradient(to bottom, var(--primary-100), transparent);
+    bottom: 0;
+    background:
+      radial-gradient(circle at 10% 20%, rgba(255, 192, 203, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 90% 80%, rgba(255, 182, 193, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(255, 105, 180, 0.05) 0%, transparent 70%);
+    pointer-events: none;
   }
 
-  &::after {
-    content: '';
+  // Floating hearts background
+  .floating-heart {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 200px;
-    background: linear-gradient(to top, var(--primary-100), transparent);
+    pointer-events: none;
+    opacity: 0;
+    animation: floatHeart 12s linear infinite;
+
+    @for $i from 1 through 20 {
+      &:nth-child(#{$i}) {
+        $size: random(15) + 10px;
+        width: $size;
+        height: $size;
+        left: random(100) * 1%;
+        top: -20px;
+        animation-delay: random(12) * 1s;
+        color: rgba(255, 105, 180, random(3) * 0.1);
+      }
+    }
   }
 
   .container {
+    position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
-    position: relative;
+    padding: 0 2rem;
     z-index: 1;
   }
 
@@ -49,22 +97,20 @@ $gift-text-secondary: var(--text-color-secondary);
 
     .section-title {
       font-size: 2.5rem;
-      color: var(--primary-700);
+      color: $primary-color;
       margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
+      font-family: 'Dancing Script', cursive;
+      text-shadow: 2px 2px 4px $shadow-color;
 
-      .pi {
-        color: var(--primary-500);
-        font-size: 2rem;
+      i {
+        margin-right: 1rem;
+        color: $secondary-color;
       }
     }
 
     .section-subtitle {
       font-size: 1.1rem;
-      color: var(--text-color-secondary);
+      color: $text-color;
       max-width: 600px;
       margin: 0 auto;
       line-height: 1.6;
@@ -73,27 +119,30 @@ $gift-text-secondary: var(--text-color-secondary);
 
   .gifts-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     padding: 1rem;
   }
 
   .gift-box {
     position: relative;
-    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
     overflow: hidden;
     transition: all 0.3s ease;
+    box-shadow:
+      0 10px 20px rgba(255, 105, 180, 0.1),
+      0 6px 6px rgba(255, 105, 180, 0.05);
 
     &:hover {
-      transform: translateY(-10px);
+      transform: translateY(-5px);
+      box-shadow:
+        0 15px 30px rgba(255, 105, 180, 0.15),
+        0 10px 10px rgba(255, 105, 180, 0.1);
 
       .gift-hover-content {
         opacity: 1;
         visibility: visible;
-      }
-
-      .gift-content {
-        transform: scale(1.02);
       }
     }
   }
@@ -280,6 +329,23 @@ $gift-text-secondary: var(--text-color-secondary);
   }
 }
 
+@keyframes floatHeart {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-1000%) rotate(360deg);
+    opacity: 0;
+  }
+}
+
 @media (max-width: 768px) {
   .gifts-section {
     background-size: 80px 80px, 100px 100px;
@@ -316,10 +382,10 @@ $gift-text-secondary: var(--text-color-secondary);
 
     .section-footer {
       margin-top: 3rem;
-      
+
       .love-quote {
         font-size: 1rem;
       }
     }
   }
-} 
+}
