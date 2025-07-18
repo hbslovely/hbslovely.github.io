@@ -1,8 +1,7 @@
 <!-- Happy Moments Section -->
 <div class="moments-section">
-  <div class="section-background"></div>
   <div class="container">
-    <div class="section-header text-center">
+    <div class="section-header">
       <h2 class="section-title">
         <i class="pi pi-heart-fill"></i>
         Những Phút Giây Hạnh Phúc
@@ -14,18 +13,17 @@
     </div>
 
     <div class="moments-content">
+      <!-- Moments Grid -->
       <div class="moments-grid">
         <div class="moment-item" *ngFor="let moment of happyMoments">
           <div class="moment-image">
             <img [src]="moment.image" [alt]="moment.title">
-            <div class="moment-overlay">
-              <div class="moment-date">
-                <i class="pi pi-calendar"></i>
-                {{ moment.date }}
-              </div>
+            <div class="moment-date">
+              <i class="pi pi-calendar"></i>
+              {{ moment.date }}
             </div>
           </div>
-          <div class="moment-content">
+          <div class="moment-info">
             <h3 class="moment-title">{{ moment.title }}</h3>
             <p class="moment-description">{{ moment.description }}</p>
             <div class="moment-emotions">
@@ -34,22 +32,16 @@
                 {{ emotion.text }}
               </span>
             </div>
-            <div class="moment-quote">
-              <i class="pi pi-heart"></i>
-              <div class="quote-content">
-                <p class="quote-text">"Every moment of happiness requires a great amount of sharing"</p>
-                <span class="quote-author">- Rumi</span>
-              </div>
-            </div>
           </div>
         </div>
       </div>
 
+      <!-- Categories Section -->
       <div class="categories-section">
         <div class="section-divider">
-          <div class="line"></div>
+          <span class="line"></span>
           <i class="pi pi-heart-fill"></i>
-          <div class="line"></div>
+          <span class="line"></span>
         </div>
         
         <div class="categories-grid">
@@ -63,12 +55,16 @@
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="section-footer">
-          <div class="quote-wrapper">
-            <p class="footer-quote">"The best portion of your life will be the small, nameless moments you spend smiling with someone who matters to you"</p>
-            <span class="quote-author">- Ritu Ghatourey</span>
-          </div>
+      <!-- Footer Quote -->
+      <div class="section-footer">
+        <div class="quote-wrapper">
+          <i class="pi pi-quote-left"></i>
+          <p class="footer-quote">
+            The best portion of your life will be the small, nameless moments you spend smiling with someone who matters to you
+          </p>
+          <span class="quote-author">- Ritu Ghatourey</span>
         </div>
       </div>
     </div>

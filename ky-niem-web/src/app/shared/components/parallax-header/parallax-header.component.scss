@@ -3,12 +3,14 @@
 .parallax-header {
   position: relative;
   min-height: 100vh;
-  padding: 4rem 0;
   overflow: hidden;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-light) 100%);
+  color: white;
+  text-align: center;
+  padding: 2rem;
 
   .avatar-backdrop {
     position: absolute;
@@ -16,40 +18,21 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-position: center;
     filter: blur(8px) brightness(0.7);
     transform: scale(1.1);
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.6),
-        rgba(0, 0, 0, 0.8)
-      );
-    }
+    z-index: -1;
   }
 
   .header-content {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4rem;
-    color: white;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    gap: 2rem;
+    max-width: 800px;
+    width: 100%;
+    z-index: 1;
   }
 
   .floating-hearts {
@@ -179,142 +162,128 @@
   }
 
   .time-counter {
-    margin-bottom: auto;
+    width: 100%;
+    margin: 2rem 0;
+
     .subtitle {
-      font-size: 1.8rem;
-      margin-bottom: 2rem;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem; // Reduced from 2rem
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
 
       i {
-        margin-right: 0.5rem;
-        color: #ff9999;
+        color: #ff4b4b;
       }
     }
 
     .counter-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-      max-width: 600px;
+      gap: 1rem; // Reduced from 1.5rem
+      max-width: 600px; // Reduced from 800px
       margin: 0 auto;
+      padding: 0 1rem;
+    }
 
-      .counter-card {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        padding: 1.5rem 1rem;
-        border-radius: 1rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
+    .counter-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem; // Reduced from 1rem
 
-        &:hover {
-          transform: translateY(-5px);
-          background: rgba(255, 255, 255, 0.15);
-        }
+      .flip-card {
+        width: 100%;
+        aspect-ratio: 4/5; // Changed from 3/4 to make it less tall
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 8px; // Reduced from 12px
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); // Reduced shadow
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         .number {
-          font-size: 2.5rem;
+          font-size: 2rem; // Reduced from 2.5rem
           font-weight: bold;
-          margin-bottom: 0.5rem;
-          background: linear-gradient(120deg, #ffffff, #ffe1e1);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
+          color: white;
+          text-align: center;
         }
+      }
 
-        .label {
-          font-size: 0.9rem;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          margin-bottom: 0.5rem;
-        }
-
-        .card-quote {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 0.3rem;
-
-          .quote-text {
-            font-size: 0.85rem;
-            font-style: italic;
-          }
-
-          .quote-author {
-            font-size: 0.75rem;
-            opacity: 0.8;
-            font-style: normal;
-          }
-        }
+      .label {
+        font-size: 0.7rem; // Reduced from 0.75rem
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: rgba(255, 255, 255, 0.9);
       }
     }
   }
 
   .love-message {
-    margin-bottom: 80px; // Reduced margin
-    
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    max-width: 600px;
+    margin: 0 auto;
+
     .message-icon {
-      font-size: 1.5rem;
-      color: #ff9999;
-      margin-bottom: 1rem;
-      animation: pulse 1.5s ease-in-out infinite;
+      font-size: 2rem;
+      color: #ff4b4b;
     }
 
     .message-content {
-      text-align: center;
+      text-align: left;
 
       .message-text {
-        font-size: 1.1rem;
+        font-size: 1rem;
         line-height: 1.6;
+        margin-bottom: 0.5rem;
         font-style: italic;
-        max-width: 600px;
-        margin: 0 auto;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-        font-family: 'Playfair Display', serif;
       }
 
       .message-author {
-        display: block;
-        margin-top: 0.75rem;
         font-size: 0.9rem;
         opacity: 0.8;
-        font-style: normal;
-        font-family: 'Playfair Display', serif;
       }
     }
   }
 
-      .bottom-avatar {
+  .bottom-avatar {
+    position: relative;
+    margin: 2rem 0;
+
+    .avatar-frame {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
       position: relative;
-      width: 200px; // Fixed width instead of 100%
-      margin-top: 2rem;
-      margin-bottom: -2rem;
 
-      .avatar-frame {
-        position: relative;
-        z-index: 2;
-        width: 200px; // Fixed width
-        height: 200px; // Fixed height
-        border-radius: 50%;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        background: white;
-        padding: 4px;
-
-        &::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: linear-gradient(45deg, var(--primary-color), var(--primary-200));
-          opacity: 0.8;
-          z-index: 1;
-        }
-      
-      img {
+      &.rainbow-border::before {
+        content: '';
         position: absolute;
-        top: 0;
-        left: 0;
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+        background: linear-gradient(45deg, 
+          #ff0000, #ff7f00, #ffff00, #00ff00, 
+          #0000ff, #4b0082, #8f00ff
+        );
+        border-radius: 50%;
+        z-index: -1;
+        animation: rotate 3s linear infinite;
+      }
+
+      img {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -326,11 +295,11 @@
       bottom: -10px;
       left: 50%;
       transform: translateX(-50%);
-      width: 90%;
+      width: 80%;
       height: 20px;
-      background: radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 70%);
+      background: rgba(0, 0, 0, 0.3);
+      filter: blur(8px);
       border-radius: 50%;
-      z-index: 1;
     }
   }
 }
