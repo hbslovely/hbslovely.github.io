@@ -7,7 +7,10 @@
         <i class="pi pi-heart-fill"></i>
         Những Khoảnh Khắc Đặc Biệt
       </h2>
-      <p class="section-subtitle">"Mỗi khoảnh khắc đều là một bản nhạc, mỗi kỷ niệm đều là một giai điệu của tình yêu"</p>
+      <div class="quote-wrapper">
+        <p class="section-subtitle">"Mỗi khoảnh khắc đều là một bản nhạc, mỗi kỷ niệm đều là một giai điệu của tình yêu"</p>
+        <span class="quote-author">- Ludwig van Beethoven</span>
+      </div>
     </div>
 
     <div class="moments-timeline">
@@ -32,7 +35,10 @@
             <p class="moment-description">{{ moment.description }}</p>
             <div class="moment-note">
               <i class="pi pi-heart"></i>
-              <span>{{ moment.message || 'Mỗi khoảnh khắc đều là một giai điệu của tình yêu' }}</span>
+              <div class="note-content">
+                <span class="note-text">{{ moment.message || 'Mỗi khoảnh khắc đều là một giai điệu của tình yêu' }}</span>
+                <span class="note-author">- {{ moment.author || 'Wolfgang Amadeus Mozart' }}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -42,9 +48,12 @@
     <div class="section-footer text-center">
       <div class="footer-note">
         <i class="pi pi-heart-fill"></i>
-        <blockquote>
-          "Tình yêu của chúng ta như một bản nhạc, mỗi ngày là một nốt nhạc mới, tạo nên bản tình ca vĩnh cửu"
-        </blockquote>
+        <div class="quote-wrapper">
+          <blockquote>
+            "Tình yêu của chúng ta như một bản nhạc, mỗi ngày là một nốt nhạc mới, tạo nên bản tình ca vĩnh cửu"
+          </blockquote>
+          <span class="quote-author">- Frédéric Chopin</span>
+        </div>
       </div>
     </div>
   </div>

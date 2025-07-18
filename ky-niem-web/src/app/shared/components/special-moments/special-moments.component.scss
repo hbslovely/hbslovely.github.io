@@ -52,6 +52,26 @@ $bg-color: #f8fafc;
     font-style: italic;
     opacity: 0.8;
   }
+
+  .quote-wrapper {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+
+    .section-subtitle {
+      color: $text-color;
+      font-size: 1.2rem;
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+
+    .quote-author {
+      display: block;
+      color: rgba($text-color, 0.8);
+      font-size: 0.9rem;
+      font-style: normal;
+    }
+  }
 }
 
 .moments-timeline {
@@ -200,6 +220,25 @@ $bg-color: #f8fafc;
       color: $primary-color;
       font-size: 1.5rem;
     }
+
+    .quote-wrapper {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+
+      blockquote {
+        font-size: 1.2rem;
+        font-style: italic;
+        margin-bottom: 0.5rem;
+      }
+
+      .quote-author {
+        display: block;
+        color: rgba($text-color, 0.8);
+        font-size: 0.9rem;
+        font-style: normal;
+      }
+    }
   }
 }
 
@@ -274,4 +313,28 @@ $bg-color: #f8fafc;
       }
     }
   }
+
+  .quote-wrapper {
+    .section-subtitle,
+    blockquote {
+      font-size: 1rem;
+    }
+
+    .quote-author {
+      font-size: 0.8rem;
+    }
+  }
+
+  .moment-note {
+    .note-content {
+      .note-text {
+        font-size: 0.9rem;
+      }
+
+      .note-author {
+        font-size: 0.8rem;
+      }
+    }
+  }
 }
+

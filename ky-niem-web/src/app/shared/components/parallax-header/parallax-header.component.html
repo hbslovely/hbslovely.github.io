@@ -30,7 +30,10 @@
         <i class="pi pi-heart-fill"></i>
         <span class="line"></span>
       </div>
-      <p class="love-quote">"Tình yêu là khi hai trái tim cùng nhảy điệu valse của hạnh phúc"</p>
+      <div class="quote-wrapper">
+        <p class="love-quote">"Tình yêu là khi hai trái tim cùng nhảy điệu valse của hạnh phúc"</p>
+        <span class="quote-author">- Victor Hugo</span>
+      </div>
       <div class="title-decoration">
         <span class="decoration-item">✦</span>
         <span class="decoration-item">❀</span>
@@ -48,38 +51,53 @@
         <div class="counter-card">
           <div class="number">{{ liveCounter.days }}</div>
           <div class="label">NGÀY</div>
-          <div class="card-quote">Mỗi ngày đều là phép màu</div>
+          <div class="card-quote">
+            <span class="quote-text">"Mỗi ngày đều là phép màu"</span>
+            <span class="quote-author">- Albert Einstein</span>
+          </div>
         </div>
 
         <!-- Hours -->
         <div class="counter-card">
           <div class="number">{{ liveCounter.hours.toString().padStart(2, '0') }}</div>
           <div class="label">GIỜ</div>
-          <div class="card-quote">Từng giờ trôi thật đáng giá</div>
+          <div class="card-quote">
+            <span class="quote-text">"Từng giờ trôi thật đáng giá"</span>
+            <span class="quote-author">- William Shakespeare</span>
+          </div>
         </div>
 
         <!-- Minutes -->
         <div class="counter-card">
           <div class="number">{{ liveCounter.minutes.toString().padStart(2, '0') }}</div>
           <div class="label">PHÚT</div>
-          <div class="card-quote">Phút giây bên nhau thật quý</div>
+          <div class="card-quote">
+            <span class="quote-text">"Phút giây bên nhau thật quý"</span>
+            <span class="quote-author">- Paulo Coelho</span>
+          </div>
         </div>
 
         <!-- Seconds -->
         <div class="counter-card">
           <div class="number">{{ liveCounter.seconds.toString().padStart(2, '0') }}</div>
           <div class="label">GIÂY</div>
-          <div class="card-quote">Mỗi giây đều là kỷ niệm</div>
+          <div class="card-quote">
+            <span class="quote-text">"Mỗi giây đều là kỷ niệm"</span>
+            <span class="quote-author">- Rumi</span>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="love-message">
       <i class="pi pi-heart-fill message-icon"></i>
-      <p class="message-text">
-        "Hạnh phúc không phải là điểm đến, mà là hành trình chúng ta cùng nhau trải qua. 
-        Mỗi khoảnh khắc bên nhau đều là một món quà vô giá."
-      </p>
+      <div class="message-content">
+        <p class="message-text">
+          "Hạnh phúc không phải là điểm đến, mà là hành trình chúng ta cùng nhau trải qua. 
+          Mỗi khoảnh khắc bên nhau đều là một món quà vô giá."
+        </p>
+        <span class="message-author">- Ralph Waldo Emerson</span>
+      </div>
     </div>
 
     <div class="bottom-avatar">

@@ -49,4 +49,14 @@ export interface MomentCategory {
   icon: string;
   title: string;
   count: number;
+}
+
+export interface SpecialMoment {
+  id: number;
+  title: string;
+  description: string;
+  date: string;
+  icon: string;
+  message?: string;
+  author?: string;
 } 
