@@ -1,16 +1,13 @@
 <!-- Gallery Section -->
 <div class="gallery-background">
-  <div class="background-icons">
-    <i class="pi pi-camera"></i>
-    <i class="pi pi-image"></i>
-    <i class="pi pi-heart"></i>
-    <i class="pi pi-images"></i>
-    <i class="pi pi-camera"></i>
-    <i class="pi pi-heart-fill"></i>
-  </div>
+  <!-- Animated background circles -->
+  <div class="background-circle"></div>
+  <div class="background-circle"></div>
+  <div class="background-circle"></div>
+
   <div class="gallery-section">
     <div class="container">
-      <h2 class="section-title">📸 Album Kỷ Niệm</h2>
+      <h2 class="section-title">Album Kỷ Niệm</h2>
 
       <!-- Filter Controls -->
       <div class="gallery-controls">
@@ -65,9 +62,9 @@
               <div class="hover-overlay">
                 <span class="memory-date">{{ memory.date | date:'dd/MM/yyyy' }}</span>
                 <p class="memory-description">{{ memory.description }}</p>
-                <span class="zoom-icon">
+                <div class="zoom-icon">
                   <i class="pi pi-search-plus"></i>
-                </span>
+                </div>
               </div>
             </div>
           </div>
@@ -82,26 +79,6 @@
           <i class="pi pi-spinner pi-spin" *ngIf="loading"></i>
           <span>{{ loading ? 'Đang tải...' : 'Xem thêm' }}</span>
         </button>
-      </div>
-    </div>
-
-    <!-- Lightbox -->
-    <div class="lightbox" *ngIf="selectedImage" (click)="closeLightbox()">
-      <div class="lightbox-content" (click)="$event.stopPropagation()">
-        <button class="close-btn" (click)="closeLightbox()">
-          <i class="pi pi-times"></i>
-        </button>
-        <button class="nav-btn prev" *ngIf="hasPrevImage" (click)="showPrevImage()">
-          <i class="pi pi-chevron-left"></i>
-        </button>
-        <button class="nav-btn next" *ngIf="hasNextImage" (click)="showNextImage()">
-          <i class="pi pi-chevron-right"></i>
-        </button>
-        <img [src]="selectedImage.src" [alt]="selectedImage.description">
-        <div class="lightbox-caption">
-          <p class="caption-date">{{ selectedImage.date | date:'dd/MM/yyyy' }}</p>
-          <p class="caption-text">{{ selectedImage.description }}</p>
-        </div>
       </div>
     </div>
   </div>

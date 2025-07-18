@@ -1,45 +1,125 @@
 {
-  "husbandInfo": {
+  "basicInfo": {
     "name": "Bé Báo",
-    "title": "Người chồng tuyệt vời 💖",
+    "title": "Tech Warrior & Soulmate | Người kiến tạo code và hạnh phúc gia đình",
     "description": "Bé Báo - chàng IT boy thế hệ 9x với vibe năng động và tư duy nhạy bén. Không chỉ là một developer cực xịn với khả năng 'fix bug' thần sầu, anh còn là người bạn đời cực kỳ đáng yêu với khả năng biến mọi khoảnh khắc thành những memory đặc biệt. Với ánh mắt tràn ngập yêu thương và trái tim ấm áp, anh chính là best version của một người chồng trong mơ 💝",
     "loveMessage": "Em yêu anh Bé Báo không chỉ vì những điều anh làm, mà vì chính con người anh - một người đàn ông biết cách yêu thương bằng cả trái tim và lý trí. Anh là người kiến tạo hạnh phúc trong cuộc đời em, là người đồng hành trên mọi chặng đường, và là tác giả của câu chuyện tình yêu ngọt ngào nhất em từng được trải qua.",
-    "tags": ["Chồng Yêu", "Bé Báo", "Vững chãi", "Forever"]
+    "avatar": "assets/images/phat/phat-portrait.png",
+    "tags": ["Bé Báo", "Chồng Yêu", "Developer"]
   },
-  "husbandBasicInfo": [
-    { "icon": "pi pi-calendar", "label": "Năm sinh", "value": "199x" },
-    { "icon": "pi pi-star", "label": "Cung hoàng đạo", "value": "Thiên Bình ♎" },
-    { "icon": "pi pi-map-marker", "label": "Nơi sinh", "value": "TP. Hồ Chí Minh, Việt Nam" },
-    { "icon": "pi pi-briefcase", "label": "Nghề nghiệp", "value": "Lập trình web" },
-    { "icon": "pi pi-home", "label": "Sinh sống", "value": "TP. Hồ Chí Minh" },
-    { "icon": "pi pi-heart", "label": "Tình trạng", "value": "Đã có vợ 💕" }
+  "personalInfo": [
+    {
+      "icon": "pi pi-calendar",
+      "label": "Năm sinh",
+      "value": "199x"
+    },
+    {
+      "icon": "pi pi-star",
+      "label": "Cung hoàng đạo",
+      "value": "Thiên Bình ♎"
+    },
+    {
+      "icon": "pi pi-map-marker",
+      "label": "Nơi sinh",
+      "value": "TP. Hồ Chí Minh"
+    },
+    {
+      "icon": "pi pi-briefcase",
+      "label": "Nghề nghiệp",
+      "value": "Developer"
+    }
   ],
-  "husbandTraits": [
-    { "icon": "pi pi-heart-fill", "title": "Thánh thiện", "description": "70% - Luôn biết cách làm điều đúng đắn" },
-    { "icon": "pi pi-users", "title": "Tâm lý", "description": "8.5/10 - Hiểu và thấu cảm với mọi người" },
-    { "icon": "pi pi-bolt", "title": "Nhanh nhạy", "description": "Rank A - Phản ứng nhanh, xử lý tình huống tốt" },
-    { "icon": "pi pi-lightbulb", "title": "Sáng tạo", "description": "Luôn có những ý tưởng thú vị" },
-    { "icon": "pi pi-shield", "title": "Đáng tin cậy", "description": "Là chỗ dựa vững chắc cho gia đình" }
+  "traits": [
+    {
+      "icon": "pi pi-heart",
+      "title": "Thánh Thiện",
+      "description": "70% - Luôn biết cách làm điều đúng đắn"
+    },
+    {
+      "icon": "pi pi-users",
+      "title": "Tâm Lý",
+      "description": "8.5/10 - Hiểu và thấu cảm với mọi người"
+    },
+    {
+      "icon": "pi pi-bolt",
+      "title": "Nhanh Nhạy",
+      "description": "Rank A - Phản ứng nhanh, xử lý tình huống tốt"
+    }
   ],
-  "husbandHobbies": [
-    { "icon": "pi pi-car", "name": "Du lịch", "description": "Đam mê khám phá những địa điểm mới" },
-    { "icon": "pi pi-briefcase", "name": "Công việc", "description": "Đam mê và nhiệt huyết với công việc" },
-    { "icon": "pi pi-compass", "name": "Khám phá", "description": "Thích tìm hiểu những điều mới mẻ" },
-    { "icon": "pi pi-utensils", "name": "Ẩm thực", "description": "Yêu thích khám phá các món ăn ngon" }
+  "hobbies": [
+    {
+      "icon": "pi pi-globe",
+      "name": "Du lịch",
+      "description": "Đam mê khám phá những địa điểm mới"
+    },
+    {
+      "icon": "pi pi-desktop",
+      "name": "Công việc",
+      "description": "Đam mê và nhiệt huyết với công việc"
+    },
+    {
+      "icon": "pi pi-compass",
+      "name": "Khám phá",
+      "description": "Thích tìm hiểu những điều mới mẻ"
+    },
+    {
+      "icon": "pi pi-heart",
+      "name": "Ẩm thực",
+      "description": "Yêu thích khám phá các món ăn ngon"
+    }
   ],
-  "husbandPhotos": [
-    { "url": "assets/images/phat/phat-portrait.png", "caption": "Bé Báo - Ảnh chân dung đẹp trai" },
-    { "url": "assets/images/phat/phat-travel.png", "caption": "Anh trong chuyến du lịch khám phá" },
-    { "url": "assets/images/phat/phat-work.png", "caption": "Bé Báo tại nơi làm việc" },
-    { "url": "assets/images/phat/phat-hobby.png", "caption": "Anh với những sở thích yêu thích" },
-    { "url": "assets/images/phat/phat-quyen.jpeg", "caption": "Khoảnh khắc hạnh phúc bên em" }
+  "photos": [
+    {
+      "url": "assets/images/phat/phat-portrait.png",
+      "caption": "Chân dung",
+      "description": "Khoảnh khắc đời thường"
+    },
+    {
+      "url": "assets/images/phat/phat-work.png",
+      "caption": "Công việc",
+      "description": "Những giờ làm việc tập trung"
+    },
+    {
+      "url": "assets/images/phat/phat-travel.png",
+      "caption": "Du lịch",
+      "description": "Khám phá những vùng đất mới"
+    },
+    {
+      "url": "assets/images/phat/phat-hobby.png",
+      "caption": "Sở thích",
+      "description": "Những điều yêu thích"
+    }
   ],
-  "husbandFunFacts": [
-    { "title": "Đồ uống yêu thích", "description": "Soda - Giải khát sảng khoái" },
-    { "title": "Món ăn yêu thích", "description": "Cơm tấm sườn và thịt kho trứng - Đậm đà hương vị nhà" },
-    { "title": "Ước mơ tương lai", "description": "Phát triển sự nghiệp kinh doanh và xây dựng tổ ấm hạnh phúc với căn nhà mơ ước" },
-    { "title": "Điểm mạnh", "description": "Nhanh nhẹn, xử lý tình huống tốt" },
-    { "title": "Điểm yếu", "description": "Đôi khi hơi cẩu thả trong một số việc" },
-    { "title": "Mục tiêu", "description": "Xây dựng gia đình êm ấm, hạnh phúc và sớm có căn nhà của riêng mình" }
+  "funFacts": [
+    {
+      "icon": "pi pi-heart",
+      "title": "Đồ uống yêu thích",
+      "description": "Soda - Giải khát sảng khoái"
+    },
+    {
+      "icon": "pi pi-star",
+      "title": "Món ăn yêu thích",
+      "description": "Cơm tấm sườn và thịt kho trứng - Đậm đà hương vị nhà"
+    },
+    {
+      "icon": "pi pi-compass",
+      "title": "Ước mơ tương lai",
+      "description": "Phát triển sự nghiệp kinh doanh và xây dựng tổ ấm hạnh phúc với căn nhà mơ ước"
+    },
+    {
+      "icon": "pi pi-check",
+      "title": "Điểm mạnh",
+      "description": "Nhanh nhẹn, xử lý tình huống tốt"
+    },
+    {
+      "icon": "pi pi-exclamation-circle",
+      "title": "Điểm yếu",
+      "description": "Đôi khi hơi cẩu thả trong một số việc"
+    },
+    {
+      "icon": "pi pi-flag",
+      "title": "Mục tiêu",
+      "description": "Xây dựng gia đình êm ấm, hạnh phúc và sớm có căn nhà của riêng mình"
+    }
   ]
 } 
