@@ -1,8 +1,36 @@
 .gallery-background {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
+  background: linear-gradient(135deg, #fff0f3 0%, #ffe4e8 100%);
   padding: 6rem 0;
+
+  // Heart watermark pattern
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: repeating-linear-gradient(45deg,
+      transparent 0,
+      transparent 20px,
+      rgba(255, 182, 193, 0.1) 20px,
+      rgba(255, 182, 193, 0.1) 40px
+    );
+    z-index: 0;
+  }
+
+  // Large heart watermarks
+  &::after {
+    content: '♥';
+    position: fixed;
+    font-size: 400px;
+    color: rgba(255, 182, 193, 0.05);
+    z-index: 0;
+    pointer-events: none;
+    animation: floatHeart 20s infinite ease-in-out;
+  }
 
   .background-circle {
     position: absolute;
@@ -36,6 +64,8 @@
   }
 
   .container {
+    position: relative;
+    z-index: 1;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
@@ -160,12 +190,13 @@
 }
 
 .album-frame {
-  background: white;
+  background: #fff8f8;
   border-radius: 20px;
   padding: 2rem;
   position: relative;
   margin: 2rem 0;
-  border: 1px solid var(--surface-200);
+  border: 1px solid #ffd6d6;
+  box-shadow: 0 4px 15px rgba(255, 182, 193, 0.1);
 
   // Decorative corners
   &:before, &:after {
@@ -173,7 +204,7 @@
     position: absolute;
     width: 30px;
     height: 30px;
-    border-color: var(--surface-300);
+    border-color: #ffb6c1;
   }
 
   &:before {
@@ -197,9 +228,9 @@
     bottom: 0;
     width: 30px;
     background: linear-gradient(90deg, 
-      var(--surface-200) 0%, 
-      var(--surface-100) 30%, 
-      var(--surface-50) 100%
+      #ffb6c1 0%, 
+      #ffc0cb 30%, 
+      #ffd6d6 100%
     );
     border-radius: 20px 0 0 20px;
     
@@ -210,10 +241,9 @@
       top: 0;
       bottom: 0;
       width: 2px;
-      background: var(--surface-300);
+      background: rgba(255, 182, 193, 0.5);
     }
 
-    // Decorative holes
     &:after {
       content: '';
       position: absolute;
@@ -224,35 +254,30 @@
       height: 60%;
       background: repeating-linear-gradient(
         0deg,
-        var(--surface-300),
-        var(--surface-300) 4px,
+        rgba(255, 182, 193, 0.5),
+        rgba(255, 182, 193, 0.5) 4px,
         transparent 4px,
         transparent 20px
       );
+    }
   }
 }
 
 .gallery-grid {
   display: grid;
   gap: 1.5rem;
-    margin: 0 0 2rem 30px;
-    padding: 1.5rem;
-    background: var(--surface-50);
-    border-radius: 15px;
-    border: 1px solid var(--surface-100);
+  margin: 0 0 2rem 30px;
+  padding: 1.5rem;
+  background: rgba(255, 240, 243, 0.8);
+  border-radius: 15px;
+  border: 1px solid #ffd6d6;
 
   &.grid {
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   }
 
   &.masonry {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    }
-  }
-
-  .load-more {
-    margin: 0 0 0 30px;
-    padding-left: 1.5rem;
   }
 }
 
@@ -372,33 +397,42 @@
   }
 }
 
+// Modify quotes section
 .gallery-quotes {
-  margin-top: 4rem;
-  padding: 0 1.5rem;
-  background: linear-gradient(135deg, rgba(224, 242, 254, 0.5) 0%, rgba(186, 230, 253, 0.3) 100%);
-  border-radius: 30px;
-
   .quote-wrapper {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
+    padding: 2rem;
+    border: 2px solid #4a90e2;
+    border-radius: 15px;
+    background: transparent;
+    position: relative;
+    margin-top: 4rem;
+
+    .quote-icon {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      padding: 0.5rem;
+      border-radius: 50%;
+      color: #4a90e2;
+      font-size: 1.5rem;
+    }
 
     .main-quote-container {
+      text-align: center;
       margin-bottom: 2rem;
 
       .main-quote {
         font-size: 1.3rem;
-        color: var(--text-color);
+        color: #2c3e50;
         font-style: italic;
-        margin-bottom: 0.5rem;
-        line-height: 1.6;
+        margin: 0 0 1rem;
       }
 
       .quote-author {
-        display: block;
-        font-size: 0.95rem;
-        color: var(--text-color-secondary);
-        font-style: normal;
+        color: #7f8c8d;
+        font-size: 0.9rem;
       }
     }
 
@@ -406,33 +440,35 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
-      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(74, 144, 226, 0.2);
 
       .sub-quote-container {
+        text-align: center;
+
         .sub-quote {
           display: flex;
+          flex-direction: column;
           align-items: center;
-          gap: 1rem;
-          margin-bottom: 0.5rem;
+          gap: 0.5rem;
+          margin: 0;
 
           i {
-            color: var(--primary-color);
+            color: #4a90e2;
             font-size: 1.2rem;
           }
 
           .quote-text {
+            color: #34495e;
             font-style: italic;
-            font-size: 1rem;
-            color: var(--text-color);
           }
         }
 
         .quote-author {
           display: block;
+          margin-top: 0.5rem;
+          color: #95a5a6;
           font-size: 0.85rem;
-          color: var(--text-color-secondary);
-          font-style: normal;
-          margin-left: calc(1.2rem + 1rem); // Icon width + gap
         }
       }
     }
@@ -458,13 +494,14 @@
   }
 }
 
+@keyframes floatHeart {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.05; }
+  50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.08; }
+}
+
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
 }
 
 @media (max-width: 768px) {

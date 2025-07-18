@@ -30,6 +30,7 @@ export class ParallaxHeaderComponent implements OnInit, OnDestroy {
 
   private counterInterval: any;
   private typingInterval: any;
+  private previousValues = { ...this.liveCounter };
 
   ngOnInit() {
     this.startLiveCounter();
@@ -56,10 +57,17 @@ export class ParallaxHeaderComponent implements OnInit, OnDestroy {
     const now = new Date();
     const diff = now.getTime() - this.startDate.getTime();
 
+    // Lưu giá trị cũ
+    this.previousValues = { ...this.liveCounter };
+
+    // Tính toán giá trị mới
     this.liveCounter.days = Math.floor(diff / (1000 * 60 * 60 * 24));
     this.liveCounter.hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     this.liveCounter.minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     this.liveCounter.seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    // Thêm hiệu ứng lật
+    this.addFlipAnimation();
   }
 
   private startTypingAnimation() {
@@ -74,5 +82,21 @@ export class ParallaxHeaderComponent implements OnInit, OnDestroy {
         }, 2000);
       }
     }, 100);
+  }
+
+  private addFlipAnimation() {
+    const flipCards = document.querySelectorAll('.flip-card');
+    
+    flipCards.forEach((card: Element, index) => {
+      const currentValue = Object.values(this.liveCounter)[index];
+      const previousValue = Object.values(this.previousValues)[index];
+      
+      if (currentValue !== previousValue) {
+        card.classList.add('flip');
+        setTimeout(() => {
+          card.classList.remove('flip');
+        }, 600); // Match với thời gian transition trong CSS
+      }
+    });
   }
 }

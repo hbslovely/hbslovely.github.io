@@ -15,7 +15,7 @@
     <div class="quotes-columns">
       <!-- Left Column -->
       <div class="quotes-column">
-        <div class="quote-item" *ngFor="let quote of leftColumnQuotes">
+        <div class="quote-item" *ngFor="let quote of quotes | slice:0:(quotes.length/2)">
           <div class="quote-icon">
             <i [class]="quote.icon"></i>
           </div>
@@ -30,7 +30,7 @@
 
       <!-- Right Column -->
       <div class="quotes-column right">
-        <div class="quote-item" *ngFor="let quote of rightColumnQuotes">
+        <div class="quote-item" *ngFor="let quote of quotes | slice:(quotes.length/2)">
           <div class="quote-icon">
             <i [class]="quote.icon"></i>
           </div>
