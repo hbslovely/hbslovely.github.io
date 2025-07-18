@@ -1,32 +1,31 @@
 <!-- Favorite Foods Section -->
 <div class="foods-section">
-  <!-- Animated Background Pattern -->
-  <div class="animated-bg">
-    <div class="pattern pattern-1"></div>
-    <div class="pattern pattern-2"></div>
-    <div class="pattern pattern-3"></div>
-  </div>
+  <!-- Background with Watermark -->
+  <div class="watermark-bg"></div>
 
   <div class="container">
     <h2 class="section-title">🍜 Món Ăn Yêu Thích</h2>
-    <div class="foods-container">
-      <!-- Food Frame -->
-      <div class="food-frame">
-        <!-- Corner Decorations -->
-        <div class="corner-decor top-left"></div>
-        <div class="corner-decor top-right"></div>
-        <div class="corner-decor bottom-left"></div>
-        <div class="corner-decor bottom-right"></div>
+    <div class="menu-container">
+      <!-- Menu Card -->
+      <div class="menu-card">
+        <div class="menu-header">
+          <div class="menu-title">Thực Đơn Yêu Thương</div>
+          <div class="menu-subtitle">Những món ăn kể câu chuyện của chúng ta</div>
+        </div>
         
-        <!-- Content -->
-        <div class="foods-timeline">
-          <div class="food-item" *ngFor="let food of foods">
-            <div class="food-icon">{{ food.person === 'Chồng' ? '👨' : '👩' }}</div>
-            <div class="food-content">
-              <h3 class="food-name">{{ food.dish }}</h3>
-              <p class="food-story">{{ food.story }}</p>
-              <div class="food-feeling">
-                <span class="feeling-tag">{{ food.feeling }}</span>
+        <div class="menu-items">
+          <div class="menu-category" *ngFor="let person of ['Chồng', 'Vợ']">
+            <div class="category-header">
+              <span class="person-icon">{{ person === 'Chồng' ? '👨' : '👩' }}</span>
+              <h3>{{ person === 'Chồng' ? 'Món Anh Thích' : 'Món Em Thích' }}</h3>
+            </div>
+            <div class="food-list">
+              <div class="menu-item" *ngFor="let food of foods | filter: person">
+                <div class="item-content">
+                  <h4 class="dish-name">{{ food.dish }}</h4>
+                  <p class="dish-story">{{ food.story }}</p>
+                  <span class="dish-feeling">{{ food.feeling }}</span>
+                </div>
               </div>
             </div>
           </div>

@@ -1,265 +1,174 @@
-/* Food Section Variables */
-$frame-border: #e8c39e;
-$frame-bg: #fff9f0;
-$pattern-color-1: rgba(232, 195, 158, 0.1);
-$pattern-color-2: rgba(205, 164, 133, 0.1);
-$pattern-color-3: rgba(179, 136, 104, 0.1);
-$watermark-color: rgba(232, 195, 158, 0.04);
+// Variables
+$light-green: #e8f5e9;
+$dark-green: #2e7d32;
+$menu-bg: #ffffff;
+$text-color: #333333;
 
 .foods-section {
-  padding: 4rem 0;
-  background-color: var(--surface-card);
   position: relative;
+  padding: 4rem 0;
+  background-color: $light-green;
   overflow: hidden;
-  background-image: 
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60' fill='%23e8c39e' opacity='0.04'%3E%3Cpath d='M30 0c-3 0-5.5 2.5-5.5 5.5v12.1c0 3 2.5 5.5 5.5 5.5s5.5-2.5 5.5-5.5V5.5C35.5 2.5 33 0 30 0zm-11 30c0-3-2.5-5.5-5.5-5.5H1.4c-3 0-5.5 2.5-5.5 5.5s2.5 5.5 5.5 5.5h12.1c3 0 5.5-2.5 5.5-5.5zm11 11c-3 0-5.5 2.5-5.5 5.5v12.1c0 3 2.5 5.5 5.5 5.5s5.5-2.5 5.5-5.5V46.5c0-3-2.5-5.5-5.5-5.5zm11-11c0-3 2.5-5.5 5.5-5.5h12.1c3 0 5.5 2.5 5.5 5.5s-2.5 5.5-5.5 5.5H46.5c-3 0-5.5-2.5-5.5-5.5z'/%3E%3C/svg%3E"),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40' fill='%23e8c39e' opacity='0.04'%3E%3Cpath d='M20 0c16 0 20 4 20 20s-4 20-20 20S0 36 0 20 4 0 20 0z'/%3E%3C/svg%3E"),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50' fill='%23e8c39e' opacity='0.04'%3E%3Cpath d='M25 0c-5 0-9 4-9 9v7c0 5 4 9 9 9s9-4 9-9V9c0-5-4-9-9-9zM9 25c0-5-4-9-9-9v18c5 0 9-4 9-9zm16 16c-5 0-9 4-9 9h18c0-5-4-9-9-9zm16-16c0 5 4 9 9 9V16c-5 0-9 4-9 9z'/%3E%3C/svg%3E");
-  background-position: 0 0, 30px 30px, 15px 15px;
-  background-repeat: repeat;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80' fill='%23e8c39e' opacity='0.03'%3E%3Cpath d='M40 0c-8 0-15 7-15 15v20c0 8 7 15 15 15s15-7 15-15V15c0-8-7-15-15-15zM15 40c0-8-7-15-15-15v30c8 0 15-7 15-15zm25 25c-8 0-15 7-15 15h30c0-8-7-15-15-15zm25-25c0 8 7 15 15 15V25c-8 0-15 7-15 15z'/%3E%3C/svg%3E");
-    background-repeat: repeat;
-    background-position: center;
-    opacity: 0.5;
-    z-index: 1;
-    animation: floatBackground 60s linear infinite;
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    position: relative;
-    z-index: 2;
-  }
-
-  .section-title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 3rem;
-    color: var(--text-color);
-    font-weight: 600;
-  }
 }
 
-/* Animated Background */
-.animated-bg {
+// Food Icons Background
+.watermark-bg {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1;
-  overflow: hidden;
-}
+  opacity: 0.1;
+  pointer-events: none;
 
-.pattern {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0.4;
-
-  &.pattern-1 {
-    background-image: radial-gradient($pattern-color-1 10%, transparent 11%),
-                      radial-gradient($pattern-color-1 10%, transparent 11%);
-    background-size: 30px 30px;
-    background-position: 0 0, 15px 15px;
-    animation: patternMove 30s linear infinite;
+  &::before {
+    content: '🍜 🍖 🍲 🍱 🍚 🥘 🥗 🥪 🥢';
+    position: absolute;
+    font-size: 40px;
+    white-space: nowrap;
+    animation: floatIcons 60s linear infinite;
   }
 
-  &.pattern-2 {
-    background-image: 
-      repeating-linear-gradient(45deg, $pattern-color-2 0, $pattern-color-2 1px, transparent 0, transparent 50%);
-    background-size: 20px 20px;
-    animation: patternMove 20s linear infinite reverse;
-  }
-
-  &.pattern-3 {
-    background: 
-      linear-gradient(45deg, $pattern-color-3 25%, transparent 25%) -50px 0,
-      linear-gradient(-45deg, $pattern-color-3 25%, transparent 25%) -50px 0,
-      linear-gradient(45deg, transparent 75%, $pattern-color-3 75%) -50px 0,
-      linear-gradient(-45deg, transparent 75%, $pattern-color-3 75%) -50px 0;
-    background-size: 40px 40px;
-    animation: patternMove 40s linear infinite;
+  @for $i from 1 through 10 {
+    &::after {
+      content: '🍛 🥐 🥖 🥨 🥯 🥩 🥟 🍣 🍤';
+      position: absolute;
+      top: percentage(random(100) / 100);
+      left: percentage(random(100) / 100);
+      font-size: 30px + random(20) + px;
+      opacity: 0.1;
+      transform: rotate(random(360) + deg);
+      white-space: nowrap;
+    }
   }
 }
 
-/* Food Frame */
-.food-frame {
-  background: $frame-bg;
-  border: 2px solid $frame-border;
+@keyframes floatIcons {
+  0% {
+    transform: translate(-100%, 100%) rotate(0deg);
+  }
+  100% {
+    transform: translate(100%, -100%) rotate(360deg);
+  }
+}
+
+.section-title {
+  text-align: center;
+  color: $dark-green;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.menu-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.menu-card {
+  background: $menu-bg;
   border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   padding: 2rem;
   position: relative;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-    border: 1px dashed $frame-border;
-    border-radius: 10px;
-    pointer-events: none;
-  }
 }
 
-/* Corner Decorations */
-.corner-decor {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-  }
-
-  &.top-left {
-    top: -5px;
-    left: -5px;
-    transform: rotate(-45deg);
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23e8c39e'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z'/%3E%3C/svg%3E");
-  }
-
-  &.top-right {
-    top: -5px;
-    right: -5px;
-    transform: rotate(45deg);
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23e8c39e'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z'/%3E%3C/svg%3E");
-  }
-
-  &.bottom-left {
-    bottom: -5px;
-    left: -5px;
-    transform: rotate(-135deg);
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23e8c39e'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z'/%3E%3C/svg%3E");
-  }
-
-  &.bottom-right {
-    bottom: -5px;
-    right: -5px;
-    transform: rotate(135deg);
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23e8c39e'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z'/%3E%3C/svg%3E");
-  }
-}
-
-/* Timeline Content */
-.foods-timeline {
-  position: relative;
-  z-index: 2;
-}
-
-.food-item {
-  display: flex;
-  gap: 1.5rem;
+.menu-header {
+  text-align: center;
   margin-bottom: 2rem;
-  padding: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid $light-green;
+
+  .menu-title {
+    font-size: 1.8rem;
+    color: $dark-green;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  .menu-subtitle {
+    color: lighten($text-color, 20%);
+    font-style: italic;
+  }
+}
+
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.menu-category {
+  .category-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid $light-green;
+
+    .person-icon {
+      font-size: 1.5rem;
+      margin-right: 0.5rem;
+    }
+
+    h3 {
+      color: $dark-green;
+      margin: 0;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.food-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.menu-item {
   background: rgba(255, 255, 255, 0.8);
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
+  backdrop-filter: blur(5px);
+  border-radius: 12px;
+  padding: 1.2rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba($dark-green, 0.1);
 
   &:hover {
     transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-color: $dark-green;
   }
 
-  .food-icon {
-    font-size: 2rem;
-    min-width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--primary-color);
-    color: white;
-    border-radius: 50%;
-  }
-
-  .food-content {
-    flex: 1;
-
-    .food-name {
+  .item-content {
+    .dish-name {
+      color: $dark-green;
+      margin: 0 0 0.5rem 0;
       font-size: 1.2rem;
-      color: var(--text-color);
-      margin-bottom: 0.5rem;
-      font-weight: 600;
+      font-weight: bold;
     }
 
-    .food-story {
-      color: var(--text-color-secondary);
-      line-height: 1.6;
-      margin-bottom: 1rem;
+    .dish-story {
+      color: $text-color;
+      font-size: 1rem;
+      margin: 0.5rem 0;
+      line-height: 1.5;
     }
 
-    .food-feeling {
-      .feeling-tag {
-        display: inline-block;
-        padding: 0.3rem 0.8rem;
-        background: var(--primary-color);
-        color: white;
-        border-radius: 20px;
-        font-size: 0.9rem;
+    .dish-feeling {
+      display: inline-block;
+      background: $dark-green;
+      color: white;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      margin-top: 0.8rem;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
       }
     }
-  }
-}
-
-@keyframes patternMove {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(100%, 100%);
-  }
-}
-
-@keyframes floatBackground {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 80px 80px;
-  }
-}
-
-@media (max-width: 768px) {
-  .food-frame {
-    padding: 1rem;
-  }
-
-  .food-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1rem;
-
-    .food-icon {
-      min-width: 40px;
-      height: 40px;
-      font-size: 1.5rem;
-    }
-  }
-
-  .corner-decor {
-    width: 30px;
-    height: 30px;
   }
 }
