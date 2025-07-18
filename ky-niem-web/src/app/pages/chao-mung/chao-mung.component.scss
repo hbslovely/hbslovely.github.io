@@ -246,44 +246,10 @@ $gradient-dark: #dcfce7; // Light green gradient
 
 // Timeline Section
 .timeline-section {
-  --section-color: #fff5f7;
-  @include section-transition;
   padding: 4rem 0;
-  background: var(--section-color);
+  background: #fff5f7;
   position: relative;
   overflow: hidden;
-
-  // Floating elements background
-  .floating-element {
-    position: absolute;
-    pointer-events: none;
-    opacity: 0.4;
-    animation: float 20s ease-in-out infinite;
-
-    @for $i from 1 through 15 {
-      &:nth-child(#{$i}) {
-        $size: random(20) + 10px;
-        width: $size;
-        height: $size;
-        top: random(100) * 1%;
-        left: random(100) * 1%;
-        animation-delay: random(20) * -1s;
-        animation-duration: (15 + random(10)) * 1s;
-        
-        &::before {
-          content: '';
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          background-color: #ffb6c1;
-          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
-          mask-size: contain;
-          mask-repeat: no-repeat;
-          mask-position: center;
-        }
-      }
-    }
-  }
 
   .timeline-container {
     position: relative;
@@ -291,7 +257,6 @@ $gradient-dark: #dcfce7; // Light green gradient
     margin: 0 auto;
     padding: 2rem 0;
 
-    // Main timeline line with gradient fade effect
     &::before {
       content: '';
       position: absolute;
@@ -321,14 +286,14 @@ $gradient-dark: #dcfce7; // Light green gradient
     &:nth-child(odd) {
       justify-content: flex-start;
       padding-right: 50%;
-
+      
       .timeline-content {
         margin-left: 0;
         padding-right: 2rem;
-
+        
         .timeline-bullet {
           right: -10px;
-
+          
           &::before {
             right: -30px;
           }
@@ -339,15 +304,15 @@ $gradient-dark: #dcfce7; // Light green gradient
     &:nth-child(even) {
       justify-content: flex-end;
       padding-left: 50%;
-
+      
       .timeline-content {
         margin-right: 0;
         padding-left: 2rem;
         text-align: right;
-
+        
         .timeline-bullet {
           left: -10px;
-
+          
           &::before {
             left: -30px;
           }
@@ -358,21 +323,61 @@ $gradient-dark: #dcfce7; // Light green gradient
 
   .timeline-content {
     background: white;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
     position: relative;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
     width: 100%;
     max-width: 450px;
+    border-radius: 30px;
+    box-shadow: 
+      0 8px 20px rgba(0, 0, 0, 0.05),
+      0 2px 5px rgba(0, 0, 0, 0.03);
+
+    // Cloud bumps
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      box-shadow: inherit;
+    }
+
+    // Top bump
+    &::before {
+      width: 100px;
+      height: 80px;
+      top: -20px;
+      left: 20%;
+    }
+
+    // Side bump
+    &::after {
+      width: 120px;
+      height: 90px;
+      top: 20%;
+      right: -30px;
+    }
+
+    // Content wrapper to ensure text stays above bumps
+    .content-wrapper {
+      position: relative;
+      z-index: 2;
+      background: white;
+      border-radius: inherit;
+      height: 100%;
+    }
 
     &:hover {
       transform: translateY(-5px);
+      box-shadow: 
+        0 12px 25px rgba(0, 0, 0, 0.07),
+        0 4px 8px rgba(0, 0, 0, 0.04);
 
       .timeline-bullet {
         transform: scale(1.2);
         background: #ff1493;
-
+        
         &::before {
           width: 40px;
           opacity: 1;
@@ -380,7 +385,30 @@ $gradient-dark: #dcfce7; // Light green gradient
       }
     }
 
-    // Timeline bullet points
+    .timeline-date {
+      color: #ff69b4;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      i {
+        font-size: 1.2rem;
+      }
+    }
+
+    .timeline-title {
+      color: #ff69b4;
+      margin: 0.5rem 0;
+      font-size: 1.4rem;
+    }
+
+    .timeline-description {
+      color: #666;
+      line-height: 1.6;
+    }
+
     .timeline-bullet {
       position: absolute;
       width: 20px;
@@ -394,7 +422,6 @@ $gradient-dark: #dcfce7; // Light green gradient
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
 
-      // Connecting line to main timeline
       &::before {
         content: '';
         position: absolute;
@@ -407,25 +434,8 @@ $gradient-dark: #dcfce7; // Light green gradient
         transition: all 0.3s ease;
       }
     }
-
-    .timeline-date {
-      color: #ff69b4;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-    }
-
-    .timeline-title {
-      color: #ff69b4;
-      margin: 0.5rem 0;
-    }
-
-    .timeline-description {
-      color: #666;
-      line-height: 1.6;
-    }
   }
 
-  // Responsive styles
   @media (max-width: 768px) {
     .timeline-container {
       &::before {
@@ -444,6 +454,20 @@ $gradient-dark: #dcfce7; // Light green gradient
           padding: 1.5rem;
           text-align: left;
           max-width: 100%;
+
+          // Adjust cloud bumps for mobile
+          &::before {
+            width: 80px;
+            height: 60px;
+            top: -15px;
+            left: 15%;
+          }
+
+          &::after {
+            width: 90px;
+            height: 70px;
+            right: -20px;
+          }
 
           .timeline-bullet {
             left: -40px;

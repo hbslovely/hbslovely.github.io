@@ -1,0 +1,38 @@
+<!-- Happy Moments Section -->
+<div class="moments-section">
+  <div class="container">
+    <h2 class="section-title">Những Phút Giây Hạnh Phúc</h2>
+    <div class="moments-grid">
+      <div class="moment-card" *ngFor="let moment of happyMoments">
+        <div class="moment-image">
+          <img [src]="moment.image" [alt]="moment.title">
+          <div class="moment-overlay">
+            <div class="moment-date">{{ moment.date }}</div>
+          </div>
+        </div>
+        <div class="moment-content">
+          <h3 class="moment-title">{{ moment.title }}</h3>
+          <p class="moment-description">{{ moment.description }}</p>
+          <div class="moment-emotions">
+            <span class="emotion" *ngFor="let emotion of moment.emotions">
+              <i [class]="'pi ' + emotion.icon"></i>
+              {{ emotion.text }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="moments-categories">
+      <div class="category" *ngFor="let category of categories">
+        <div class="category-icon">
+          <i [class]="'pi ' + category.icon"></i>
+        </div>
+        <div class="category-info">
+          <h4>{{ category.title }}</h4>
+          <p>{{ category.count }} khoảnh khắc</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 

@@ -1,0 +1,37 @@
+<!-- Future Promises Section -->
+<div class="promises-section">
+  <div class="container">
+    <h2 class="section-title">Lời Hứa Cho Tương Lai</h2>
+    <div class="promises-container">
+      <div class="promise-list">
+        <div class="promise-item" *ngFor="let promise of promises">
+          <div class="promise-icon">
+            <i [class]="'pi ' + promise.icon"></i>
+          </div>
+          <div class="promise-content">
+            <h3 class="promise-title">{{ promise.title }}</h3>
+            <p class="promise-description">{{ promise.description }}</p>
+            <div class="promise-tags">
+              <span class="tag" *ngFor="let tag of promise.tags">{{ tag }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="goals-container">
+        <h3 class="goals-title">Mục Tiêu Chung</h3>
+        <div class="goal-items">
+          <div class="goal-item" *ngFor="let goal of goals">
+            <div class="goal-icon">
+              <i [class]="'pi ' + goal.icon"></i>
+            </div>
+            <div class="goal-content">
+              <h4>{{ goal.title }}</h4>
+              <p>{{ goal.timeframe }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
