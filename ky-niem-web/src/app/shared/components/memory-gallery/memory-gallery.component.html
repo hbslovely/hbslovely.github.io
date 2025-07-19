@@ -6,7 +6,7 @@
   <div class="background-circle"></div>
 
   <div class="gallery-section">
-    <div class="container">
+    <div class="container" style="padding: 0 8rem;">
       <div class="section-header">
         <h2 class="section-title">Album Kỷ Niệm</h2>
         <div class="quote-wrapper">
@@ -18,58 +18,46 @@
       <!-- Filter Controls -->
       <div class="gallery-controls">
         <div class="filter-buttons">
-          <button class="filter-btn" 
+          <button class="filter-btn"
                   [class.active]="currentFilter === 'all'"
                   (click)="filterImages('all')">
             <i class="pi pi-images"></i>
             Tất cả
           </button>
-          <button class="filter-btn" 
+          <button class="filter-btn"
                   [class.active]="currentFilter === 'couple'"
                   (click)="filterImages('couple')">
             <i class="pi pi-heart"></i>
             Đôi ta
           </button>
-          <button class="filter-btn" 
+          <button class="filter-btn"
                   [class.active]="currentFilter === 'travel'"
                   (click)="filterImages('travel')">
             <i class="pi pi-map"></i>
             Du lịch
           </button>
-          <button class="filter-btn" 
+          <button class="filter-btn"
                   [class.active]="currentFilter === 'daily'"
                   (click)="filterImages('daily')">
             <i class="pi pi-camera"></i>
             Đời thường
           </button>
         </div>
-        
+
         <div class="view-controls">
-          <button class="view-btn" 
+          <button class="view-btn"
                   [class.active]="viewMode === 'grid'"
                   (click)="changeView('grid')"
                   title="Xem dạng lưới">
             <i class="pi pi-th-large"></i>
           </button>
-          <button class="view-btn" 
+          <button class="view-btn"
                   [class.active]="viewMode === 'masonry'"
                   (click)="changeView('masonry')"
                   title="Xem dạng thác nước">
             <i class="pi pi-images"></i>
           </button>
-          <button class="view-btn" 
-                  [class.active]="viewMode === 'carousel'"
-                  (click)="changeView('carousel')"
-                  title="Xem dạng slideshow">
-            <i class="pi pi-sliders-h"></i>
-          </button>
-          <button class="view-btn" 
-                  [class.active]="viewMode === 'timeline'"
-                  (click)="changeView('timeline')"
-                  title="Xem dạng dòng thời gian">
-            <i class="pi pi-clock"></i>
-          </button>
-          <button class="view-btn" 
+          <button class="view-btn"
                   [class.active]="viewMode === 'cards'"
                   (click)="changeView('cards')"
                   title="Xem dạng thẻ">
@@ -85,11 +73,11 @@
         <!-- Grid View -->
         <div class="gallery-grid" *ngIf="viewMode === 'grid'">
           <ng-container *ngFor="let memory of displayedMemories">
-            <div class="gallery-item" 
+            <div class="gallery-item"
                  [attr.data-category]="memory.category"
                  (click)="openLightbox(memory)">
               <div class="image-wrapper">
-                <img [src]="memory.thumbnail" 
+                <img [src]="memory.thumbnail"
                      [alt]="memory.description"
                      loading="lazy"
                      (load)="onImageLoad($event)">
@@ -112,11 +100,11 @@
         <!-- Masonry View -->
         <div class="gallery-masonry" *ngIf="viewMode === 'masonry'">
           <ng-container *ngFor="let memory of displayedMemories">
-            <div class="gallery-item" 
+            <div class="gallery-item"
                  [attr.data-category]="memory.category"
                  (click)="openLightbox(memory)">
               <div class="image-wrapper">
-                <img [src]="memory.thumbnail" 
+                <img [src]="memory.thumbnail"
                      [alt]="memory.description"
                      loading="lazy"
                      (load)="onImageLoad($event)">
@@ -130,49 +118,6 @@
                   <div class="zoom-icon">
                     <i class="pi pi-search-plus"></i>
                   </div>
-                </div>
-              </div>
-            </div>
-          </ng-container>
-        </div>
-
-        <!-- Carousel View -->
-        <div class="gallery-carousel" *ngIf="viewMode === 'carousel'">
-          <div class="carousel-container">
-            <ng-container *ngFor="let memory of displayedMemories; let i = index">
-              <div class="carousel-slide" [class.active]="currentSlide === i">
-                <img [src]="memory.thumbnail" [alt]="memory.description">
-                <div class="slide-info">
-                  <h3>{{ memory.description }}</h3>
-                  <p>{{ memory.date | date:'dd/MM/yyyy' }}</p>
-                </div>
-              </div>
-            </ng-container>
-          </div>
-          <button class="carousel-nav prev" (click)="prevSlide()">
-            <i class="pi pi-chevron-left"></i>
-          </button>
-          <button class="carousel-nav next" (click)="nextSlide()">
-            <i class="pi pi-chevron-right"></i>
-          </button>
-        </div>
-
-        <!-- Timeline View -->
-        <div class="gallery-timeline" *ngIf="viewMode === 'timeline'">
-          <div class="timeline-line"></div>
-          <ng-container *ngFor="let memory of displayedMemories; let i = index">
-            <div class="timeline-item" [class.right]="i % 2 === 0">
-              <div class="timeline-date">
-                <span>{{ memory.date | date:'dd/MM/yyyy' }}</span>
-              </div>
-              <div class="timeline-content">
-                <div class="timeline-image">
-                  <img [src]="memory.thumbnail" [alt]="memory.description" loading="lazy">
-                </div>
-                <div class="timeline-info">
-                  <h3>{{ memory.description }}</h3>
-                  <p *ngIf="memory.quote" class="timeline-quote">"{{ memory.quote }}"</p>
-                  <span *ngIf="memory.author" class="timeline-author">- {{ memory.author }}</span>
                 </div>
               </div>
             </div>
@@ -198,7 +143,7 @@
 
         <!-- Load More Button -->
         <div class="load-more" *ngIf="hasMoreImages">
-          <button class="load-more-btn" 
+          <button class="load-more-btn"
                   (click)="loadMore()"
                   [disabled]="loading">
             <i class="pi pi-spinner pi-spin" *ngIf="loading"></i>
@@ -206,75 +151,20 @@
           </button>
         </div>
       </div>
-
-      <!-- First Parallax Memory -->
-      <app-parallax-memory
-        imageUrl="assets/images/bucket/DongHuyenKhong_DaNang_Thang5-2024.png"
-        height="500px"
-        caption="Chuyến du lịch đầu tiên của chúng ta tại Đà Nẵng"
-        date="Tháng 5, 2024">
-      </app-parallax-memory>
-
-      <!-- Gallery Quotes -->
-      <div class="gallery-quotes">
-        <div class="quote-card">
-          <div class="quote-icon">
-            <i class="pi pi-camera"></i>
-          </div>
-          <blockquote class="main-quote">
-            "A photograph is a secret about a secret. The more it tells you, the less you know"
-          </blockquote>
-          <span class="quote-author">- Diane Arbus</span>
-        </div>
-
-        <div class="quotes-grid">
-          <div class="quote-card">
-            <div class="quote-icon">
-              <i class="pi pi-heart"></i>
-            </div>
-            <blockquote class="quote-text">
-              "Taking pictures is savoring life intensely, every hundredth of a second"
-            </blockquote>
-            <span class="quote-author">- Marc Riboud</span>
-          </div>
-
-          <!-- Second Parallax Memory -->
-          <app-parallax-memory
-            imageUrl="assets/images/bucket/VinhHaLong_Thang6_2024.jpg"
-            height="400px"
-            caption="Vịnh Hạ Long - Nơi chúng ta cùng ngắm hoàng hôn"
-            date="Tháng 6, 2024">
-          </app-parallax-memory>
-
-          <div class="quote-card">
-            <div class="quote-icon">
-              <i class="pi pi-clock"></i>
-            </div>
-            <blockquote class="quote-text">
-              "Thời gian trôi qua, nhưng kỷ niệm vẫn mãi đẹp như ngày đầu"
-            </blockquote>
-            <span class="quote-author">- Robert Frank</span>
-          </div>
-
-          <div class="quote-card">
-            <div class="quote-icon">
-              <i class="pi pi-map-marker"></i>
-            </div>
-            <blockquote class="quote-text">
-              "If you want to be a better photographer, stand in front of more interesting stuff"
-            </blockquote>
-            <span class="quote-author">- Jim Richardson</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Final Parallax Memory -->
-      <app-parallax-memory
-        imageUrl="assets/images/bucket/dapxedap_Thang8-2024.jpg"
-        height="500px"
-        caption="Những chuyến đạp xe cùng nhau khám phá thành phố"
-        date="Tháng 8, 2024">
-      </app-parallax-memory>
     </div>
   </div>
-</div> 
+</div>
+
+<style>
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 3rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem !important;
+  }
+}
+</style>
