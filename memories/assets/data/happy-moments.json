@@ -1,0 +1,38 @@
+{
+  "happyMoments": [
+    {
+      "id": 1,
+      "image": "assets/images/moments/first-date.jpg",
+      "title": "Buổi Hẹn Đầu Tiên",
+      "date": "10/5/2021",
+      "description": "Ngày đầu tiên chúng ta gặp nhau, mọi thứ đều rất đặc biệt và đáng nhớ.",
+      "emotions": [
+        {
+          "icon": "pi-heart",
+          "text": "Hạnh phúc"
+        },
+        {
+          "icon": "pi-star",
+          "text": "Đáng nhớ"
+        }
+      ]
+    }
+  ],
+  "momentCategories": [
+    {
+      "icon": "pi-heart",
+      "title": "Khoảnh Khắc Lãng Mạn",
+      "count": 25
+    },
+    {
+      "icon": "pi-camera",
+      "title": "Chuyến Đi Đáng Nhớ",
+      "count": 15
+    },
+    {
+      "icon": "pi-home",
+      "title": "Khoảnh Khắc Gia Đình",
+      "count": 30
+    }
+  ]
+} 
