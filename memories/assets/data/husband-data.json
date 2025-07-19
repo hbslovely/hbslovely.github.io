@@ -1,7 +1,7 @@
 {
   "basicInfo": {
     "name": "Bé Báo",
-    "title": "Tech Warrior & Soulmate | Người kiến tạo code và hạnh phúc gia đình",
+    "title": "Chồng Yêu Của Em",
     "description": "Bé Báo - chàng IT boy thế hệ 9x với vibe năng động và tư duy nhạy bén. Không chỉ là một developer cực xịn với khả năng 'fix bug' thần sầu, anh còn là người bạn đời cực kỳ đáng yêu với khả năng biến mọi khoảnh khắc thành những memory đặc biệt. Với ánh mắt tràn ngập yêu thương và trái tim ấm áp, anh chính là best version của một người chồng trong mơ 💝",
     "loveMessage": "Em yêu anh Bé Báo không chỉ vì những điều anh làm, mà vì chính con người anh - một người đàn ông biết cách yêu thương bằng cả trái tim và lý trí. Anh là người kiến tạo hạnh phúc trong cuộc đời em, là người đồng hành trên mọi chặng đường, và là tác giả của câu chuyện tình yêu ngọt ngào nhất em từng được trải qua.",
     "avatar": "assets/images/phat/phat-portrait.png",
@@ -12,11 +12,6 @@
       "icon": "pi pi-calendar",
       "label": "Năm sinh",
       "value": "199x"
-    },
-    {
-      "icon": "pi pi-star",
-      "label": "Cung hoàng đạo",
-      "value": "Thiên Bình ♎"
     },
     {
       "icon": "pi pi-map-marker",
