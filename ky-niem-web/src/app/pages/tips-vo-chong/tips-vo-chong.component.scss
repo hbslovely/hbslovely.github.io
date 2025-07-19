@@ -10,22 +10,120 @@ $bg: #fef3e2;
   padding: 2rem 0;
 }
 
-/* Header */
-.header-section {
-  text-align: center;
-  margin-bottom: 3rem;
-  
-  h1 {
-    font-size: 2rem;
-    color: $text;
-    margin-bottom: 1rem;
-    font-weight: bold;
+.tips-header {
+  background: linear-gradient(135deg, #ff69b4 0%, #ff8da1 100%);
+  padding: 4rem 2rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/assets/images/albums/ngay-cuoi_3-2022/3.png') center/cover;
+    opacity: 0.15;
+    z-index: 0;
   }
-  
-  p {
-    color: lighten($text, 20%);
-    max-width: 600px;
+
+  .header-content {
+    max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .header-text {
+    flex: 1;
+
+    h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      font-family: 'Dancing Script', cursive;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      line-height: 1.6;
+      max-width: 600px;
+    }
+  }
+
+  .header-stats {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .stat-item {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    min-width: 120px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    i {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    span {
+      display: block;
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin: 0.5rem 0;
+    }
+
+    label {
+      display: block;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .tips-header {
+    padding: 3rem 1rem;
+
+    .header-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 2rem;
+    }
+
+    .header-text {
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
+
+    .header-stats {
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .stat-item {
+      min-width: 100px;
+      padding: 1rem;
+    }
   }
 }
 

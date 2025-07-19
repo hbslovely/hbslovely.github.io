@@ -1,73 +1,110 @@
-<!-- Album List View -->
-<div class="container" *ngIf="!selectedAlbumId">
-  <div class="album-header">
-    <h1 class="title">Album Kỷ Niệm</h1>
-    <p class="subtitle">Nơi lưu giữ những khoảnh khắc đẹp của chúng mình 💕</p>
+<!-- Album Header -->
+<div class="album-header">
+  <!-- Background image with parallax effect -->
+  <div class="background-image"
+       [style.background-image]="'url(assets/images/albums/ngay-cuoi_3-2022/1.png)'">
   </div>
 
-  <div class="controls-wrapper">
-    <!-- View Controls -->
-    <div class="view-controls">
-      <button [class.active]="viewMode === 'grid'" (click)="viewMode = 'grid'" class="view-btn" title="Grid View">
-        <i class="pi pi-th-large"></i>
-      </button>
-      <button [class.active]="viewMode === 'list'" (click)="viewMode = 'list'" class="view-btn" title="List View">
-        <i class="pi pi-list"></i>
-      </button>
-    </div>
-
-    <!-- User Guide -->
-    <div class="user-guide">
-      <i class="pi pi-info-circle"></i>
-      <p>Click vào album để xem chi tiết nhé! 🥰</p>
-    </div>
-  </div>
-
-  <!-- Grid View -->
-  <div class="albums-grid" *ngIf="viewMode === 'grid'">
-    <div class="album-card" *ngFor="let album of albums" (click)="openAlbum(album.id)">
-      <div class="album-cover">
-        <img [src]="album.coverImage" [alt]="album.title" loading="lazy">
-        <div class="album-overlay">
-          <span class="photo-count">
-            <i class="pi pi-images"></i> {{ album.photoCount }}
-          </span>
-          <span class="view-details">
-            <i class="pi pi-eye"></i>
-          </span>
+  <!-- Content overlay with animation -->
+  <div class="content-overlay">
+    <!-- Album info -->
+    <div class="album-info">
+      <div class="title-section">
+        <h1 class="title">Album Kỷ Niệm</h1>
+        <p class="subtitle">Nơi lưu giữ những khoảnh khắc đẹp của chúng mình 💕</p>
+      </div>
+      
+      <!-- Stats info -->
+      <div class="stats-info">
+        <div class="stat-item">
+          <i class="pi pi-images"></i>
+          <span>{{ albums.length }} Albums</span>
         </div>
-      </div>
-      <div class="album-info">
-        <h3>{{ album.title }}</h3>
-        <p>{{ album.description }}</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- List View -->
-  <div class="albums-list" *ngIf="viewMode === 'list'">
-    <div class="album-row" *ngFor="let album of albums" (click)="openAlbum(album.id)">
-      <div class="album-thumbnail">
-        <img [src]="album.coverImage" [alt]="album.title" loading="lazy">
-      </div>
-      <div class="album-details">
-        <h3>{{ album.title }}</h3>
-        <p>{{ album.description }}</p>
-        <div class="album-meta">
-          <span class="photo-count">
-            <i class="pi pi-images"></i> {{ album.photoCount }} ảnh
-          </span>
+        <div class="stat-item">
+          <i class="pi pi-camera"></i>
+          <span>{{ getTotalPhotos() }} Hình ảnh</span>
+        </div>
+        <div class="stat-item">
+          <i class="pi pi-heart-fill"></i>
+          <span>Kỷ niệm đẹp</span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Quote Section -->
-  <div class="quote-section">
-    <blockquote>
-      "Mỗi bức ảnh là một khoảnh khắc quý giá, là một kỷ niệm đẹp mà chúng mình đã cùng nhau trải qua"
-    </blockquote>
-    <p class="quote-author">- Ba Heo & Heo Bỉm -</p>
+  <!-- Floating hearts animation -->
+  <div class="floating-hearts">
+    <span class="heart" *ngFor="let i of [1,2,3,4,5,6,7,8]">❤️</span>
+  </div>
+</div>
+
+<!-- Album Content Section -->
+<div class="album-content" *ngIf="!selectedAlbumId">
+  <div class="container">
+    <div class="controls-wrapper">
+      <!-- View Controls -->
+      <div class="view-controls">
+        <button [class.active]="viewMode === 'grid'" (click)="viewMode = 'grid'" class="view-btn" title="Grid View">
+          <i class="pi pi-th-large"></i>
+        </button>
+        <button [class.active]="viewMode === 'list'" (click)="viewMode = 'list'" class="view-btn" title="List View">
+          <i class="pi pi-list"></i>
+        </button>
+      </div>
+
+      <!-- User Guide -->
+      <div class="user-guide">
+        <i class="pi pi-info-circle"></i>
+        <p>Click vào album để xem chi tiết nhé! 🥰</p>
+      </div>
+    </div>
+
+    <!-- Grid View -->
+    <div class="albums-grid" *ngIf="viewMode === 'grid'">
+      <div class="album-card" *ngFor="let album of albums" (click)="openAlbum(album.id)">
+        <div class="album-cover">
+          <img [src]="album.coverImage" [alt]="album.title" loading="lazy">
+          <div class="album-overlay">
+            <span class="photo-count">
+              <i class="pi pi-images"></i> {{ album.photoCount }}
+            </span>
+            <span class="view-details">
+              <i class="pi pi-eye"></i>
+            </span>
+          </div>
+        </div>
+        <div class="album-info">
+          <h3>{{ album.title }}</h3>
+          <p>{{ album.description }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- List View -->
+    <div class="albums-list" *ngIf="viewMode === 'list'">
+      <div class="album-row" *ngFor="let album of albums" (click)="openAlbum(album.id)">
+        <div class="album-thumbnail">
+          <img [src]="album.coverImage" [alt]="album.title" loading="lazy">
+        </div>
+        <div class="album-details">
+          <h3>{{ album.title }}</h3>
+          <p>{{ album.description }}</p>
+          <div class="album-meta">
+            <span class="photo-count">
+              <i class="pi pi-images"></i> {{ album.photoCount }} ảnh
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quote Section -->
+    <div class="quote-section">
+      <blockquote>
+        "Mỗi bức ảnh là một khoảnh khắc quý giá, là một kỷ niệm đẹp mà chúng mình đã cùng nhau trải qua"
+      </blockquote>
+      <p class="quote-author">- Ba Heo & Heo Bỉm -</p>
+    </div>
   </div>
 </div>
 

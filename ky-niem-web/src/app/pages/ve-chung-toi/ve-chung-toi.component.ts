@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-ve-chung-toi',
-  imports: [ CommonModule ],
   templateUrl: './ve-chung-toi.component.html',
-  styleUrl: './ve-chung-toi.component.scss'
+  styleUrls: ['./ve-chung-toi.component.scss'],
+  imports: [CommonModule],
+  standalone: true
 })
 export class VeChungToiComponent {
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ParallaxHeaderComponent } from '../../shared/components/parallax-header/parallax-header.component';
 
 interface Tip {
   id: number;
@@ -15,7 +16,7 @@ interface Tip {
 
 @Component({
   selector: 'app-tips-vo-chong',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, ParallaxHeaderComponent],
   templateUrl: './tips-vo-chong.component.html',
   styleUrls: ['./tips-vo-chong.component.scss']
 })

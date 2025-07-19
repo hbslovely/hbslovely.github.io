@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, ActivatedRoute, RouterModule } from '@angular/router';
+import { ParallaxHeaderComponent } from '../../shared/components/parallax-header/parallax-header.component';
 
 interface Album {
   id: string;
@@ -22,7 +23,7 @@ type DetailViewMode = 'grid' | 'masonry' | 'carousel';
 @Component({
   selector: 'app-album-anh',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, ParallaxHeaderComponent],
   templateUrl: './album-anh.component.html',
   styleUrls: ['./album-anh.component.scss']
 })
@@ -206,5 +207,9 @@ export class AlbumAnhComponent implements OnInit {
   canNavigateNext(): boolean {
     const currentIndex = this.selectedAlbumPhotos.findIndex(p => p.url === this.selectedPhoto?.url);
     return currentIndex < this.selectedAlbumPhotos.length - 1;
+  }
+
+  getTotalPhotos(): number {
+    return this.albums.reduce((total, album) => total + album.photoCount, 0);
   }
 }

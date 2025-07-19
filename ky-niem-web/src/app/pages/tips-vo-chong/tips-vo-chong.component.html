@@ -1,10 +1,32 @@
-<div class="tips-container">
-  <div class="max-w-6xl mx-auto px-4">
-    <!-- Header -->
-    <div class="header-section">
+<!-- Custom Header Section -->
+<div class="tips-header">
+  <div class="header-content">
+    <div class="header-text">
       <h1>Tips Vui Của Đôi Vợ Chồng</h1>
       <p>Những bí kíp và kinh nghiệm thú vị từ cuộc sống hôn nhân của Ba Heo & Heo Bỉm</p>
     </div>
+    <div class="header-stats">
+      <div class="stat-item">
+        <i class="pi pi-heart"></i>
+        <span>{{ getTotalTips() }}</span>
+        <label>Tips Chia Sẻ</label>
+      </div>
+      <div class="stat-item">
+        <i class="pi pi-star"></i>
+        <span>{{ getAverageRating() }}</span>
+        <label>Đánh Giá TB</label>
+      </div>
+      <div class="stat-item">
+        <i class="pi pi-users"></i>
+        <span>{{ getTopContributor() }}</span>
+        <label>Top Contributor</label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tips-container">
+  <div class="max-w-6xl mx-auto px-4">
 
     <!-- Categories -->
     <div class="categories-section">
