@@ -1,46 +1,47 @@
 <!-- Love Quotes Section -->
 <div class="quotes-section">
-  <!-- Watermark Icons -->
-  <div class="watermark-icons">
+  <!-- Subtle Watermark Background -->
+  <div class="watermark-bg">
     <i class="pi pi-heart"></i>
     <i class="pi pi-heart-fill"></i>
-    <i class="pi pi-home"></i>
     <i class="pi pi-star"></i>
-    <i class="pi pi-gift"></i>
-    <i class="pi pi-users"></i>
   </div>
 
   <div class="container">
-    <h2 class="section-title">💌 Những Câu Nói Yêu Thương</h2>
-    <div class="quotes-columns">
-      <!-- Left Column -->
-      <div class="quotes-column">
-        <div class="quote-item" *ngFor="let quote of quotes | slice:0:(quotes.length/2)">
+    <div class="section-header">
+      <h2 class="section-title">
+        <i class="pi pi-heart-fill"></i>
+        Lời Yêu Thương
+      </h2>
+      <p class="section-subtitle">Những câu nói sâu sắc về tình yêu và hạnh phúc</p>
+    </div>
+
+    <div class="quotes-grid">
+      <div class="quote-card" *ngFor="let quote of quotes">
+        <div class="quote-content">
           <div class="quote-icon">
             <i [class]="quote.icon"></i>
           </div>
-          <blockquote class="quote-text">
+          <blockquote>
             {{ quote.quote }}
+            <footer>
+              <cite>{{ quote.author }}</cite>
+            </footer>
           </blockquote>
-          <div class="quote-author">
-            <span class="author-name">{{ quote.author }}</span>
-          </div>
+        </div>
+        <div class="quote-decoration">
+          <i class="pi pi-heart"></i>
         </div>
       </div>
+    </div>
 
-      <!-- Right Column -->
-      <div class="quotes-column right">
-        <div class="quote-item" *ngFor="let quote of quotes | slice:(quotes.length/2)">
-          <div class="quote-icon">
-            <i [class]="quote.icon"></i>
-          </div>
-          <blockquote class="quote-text">
-            {{ quote.quote }}
-          </blockquote>
-          <div class="quote-author">
-            <span class="author-name">{{ quote.author }}</span>
-          </div>
-        </div>
+    <!-- Featured Quote -->
+    <div class="featured-quote">
+      <div class="quote-wrapper">
+        <i class="pi pi-quote-left quote-mark"></i>
+        <p class="main-quote">Tình yêu không phải là nhìn nhau, mà là cùng nhìn về một hướng</p>
+        <span class="quote-author">- Antoine de Saint-Exupéry</span>
+        <i class="pi pi-quote-right quote-mark"></i>
       </div>
     </div>
   </div>

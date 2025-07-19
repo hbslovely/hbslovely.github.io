@@ -22,6 +22,10 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/album-anh/album-anh.component').then(m => m.AlbumAnhComponent)
   },
   {
+    path: 'album-anh/:id',
+    loadComponent: () => import('./pages/album-anh/album-anh.component').then(m => m.AlbumAnhComponent)
+  },
+  {
     path: 'tips-vo-chong',
     loadComponent: () => import('./pages/tips-vo-chong/tips-vo-chong.component').then(m => m.TipsVoChongComponent)
   },

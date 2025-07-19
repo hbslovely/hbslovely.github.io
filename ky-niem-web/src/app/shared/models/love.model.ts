@@ -43,6 +43,8 @@ export interface LoveStatistics {
   daysTogether: number;
   photosTaken: number;
   placesVisited: number;
+  specialDates?: number;
+  memoriesCount?: number;
 }
 
 export interface MomentCategory {

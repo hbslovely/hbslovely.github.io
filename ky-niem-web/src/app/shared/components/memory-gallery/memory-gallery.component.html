@@ -57,85 +57,224 @@
                   title="Xem dạng thác nước">
             <i class="pi pi-images"></i>
           </button>
+          <button class="view-btn" 
+                  [class.active]="viewMode === 'carousel'"
+                  (click)="changeView('carousel')"
+                  title="Xem dạng slideshow">
+            <i class="pi pi-sliders-h"></i>
+          </button>
+          <button class="view-btn" 
+                  [class.active]="viewMode === 'timeline'"
+                  (click)="changeView('timeline')"
+                  title="Xem dạng dòng thời gian">
+            <i class="pi pi-clock"></i>
+          </button>
+          <button class="view-btn" 
+                  [class.active]="viewMode === 'cards'"
+                  (click)="changeView('cards')"
+                  title="Xem dạng thẻ">
+            <i class="pi pi-id-card"></i>
+          </button>
         </div>
       </div>
 
       <!-- Album Frame -->
       <div class="album-frame">
         <div class="album-spine"></div>
-      <!-- Gallery Grid -->
-      <div class="gallery-grid" [class]="viewMode">
-        <ng-container *ngFor="let memory of displayedMemories">
-          <div class="gallery-item" 
-               [attr.data-category]="memory.category"
-               (click)="openLightbox(memory)">
-            <div class="image-wrapper">
-              <img [src]="memory.thumbnail" 
-                   [alt]="memory.description"
-                   loading="lazy"
-                   (load)="onImageLoad($event)">
-              <div class="hover-overlay">
-                <span class="memory-date">{{ memory.date | date:'dd/MM/yyyy' }}</span>
-                <p class="memory-description">{{ memory.description }}</p>
-                <div class="memory-quote" *ngIf="memory.quote">
-                  <span class="quote-text">"{{ memory.quote }}"</span>
-                  <span class="quote-author">- {{ memory.author || 'Anonymous' }}</span>
-                </div>
-                <div class="zoom-icon">
-                  <i class="pi pi-search-plus"></i>
+
+        <!-- Grid View -->
+        <div class="gallery-grid" *ngIf="viewMode === 'grid'">
+          <ng-container *ngFor="let memory of displayedMemories">
+            <div class="gallery-item" 
+                 [attr.data-category]="memory.category"
+                 (click)="openLightbox(memory)">
+              <div class="image-wrapper">
+                <img [src]="memory.thumbnail" 
+                     [alt]="memory.description"
+                     loading="lazy"
+                     (load)="onImageLoad($event)">
+                <div class="hover-overlay">
+                  <span class="memory-date">{{ memory.date | date:'dd/MM/yyyy' }}</span>
+                  <p class="memory-description">{{ memory.description }}</p>
+                  <div class="memory-quote" *ngIf="memory.quote">
+                    <span class="quote-text">"{{ memory.quote }}"</span>
+                    <span class="quote-author">- {{ memory.author || 'Anonymous' }}</span>
+                  </div>
+                  <div class="zoom-icon">
+                    <i class="pi pi-search-plus"></i>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </ng-container>
-      </div>
+          </ng-container>
+        </div>
 
-      <!-- Load More Button -->
-      <div class="load-more" *ngIf="hasMoreImages">
-        <button class="load-more-btn" 
-                (click)="loadMore()"
-                [disabled]="loading">
-          <i class="pi pi-spinner pi-spin" *ngIf="loading"></i>
-          <span>{{ loading ? 'Đang tải...' : 'Xem thêm kỷ niệm' }}</span>
-        </button>
+        <!-- Masonry View -->
+        <div class="gallery-masonry" *ngIf="viewMode === 'masonry'">
+          <ng-container *ngFor="let memory of displayedMemories">
+            <div class="gallery-item" 
+                 [attr.data-category]="memory.category"
+                 (click)="openLightbox(memory)">
+              <div class="image-wrapper">
+                <img [src]="memory.thumbnail" 
+                     [alt]="memory.description"
+                     loading="lazy"
+                     (load)="onImageLoad($event)">
+                <div class="hover-overlay">
+                  <span class="memory-date">{{ memory.date | date:'dd/MM/yyyy' }}</span>
+                  <p class="memory-description">{{ memory.description }}</p>
+                  <div class="memory-quote" *ngIf="memory.quote">
+                    <span class="quote-text">"{{ memory.quote }}"</span>
+                    <span class="quote-author">- {{ memory.author || 'Anonymous' }}</span>
+                  </div>
+                  <div class="zoom-icon">
+                    <i class="pi pi-search-plus"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+
+        <!-- Carousel View -->
+        <div class="gallery-carousel" *ngIf="viewMode === 'carousel'">
+          <div class="carousel-container">
+            <ng-container *ngFor="let memory of displayedMemories; let i = index">
+              <div class="carousel-slide" [class.active]="currentSlide === i">
+                <img [src]="memory.thumbnail" [alt]="memory.description">
+                <div class="slide-info">
+                  <h3>{{ memory.description }}</h3>
+                  <p>{{ memory.date | date:'dd/MM/yyyy' }}</p>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+          <button class="carousel-nav prev" (click)="prevSlide()">
+            <i class="pi pi-chevron-left"></i>
+          </button>
+          <button class="carousel-nav next" (click)="nextSlide()">
+            <i class="pi pi-chevron-right"></i>
+          </button>
+        </div>
+
+        <!-- Timeline View -->
+        <div class="gallery-timeline" *ngIf="viewMode === 'timeline'">
+          <div class="timeline-line"></div>
+          <ng-container *ngFor="let memory of displayedMemories; let i = index">
+            <div class="timeline-item" [class.right]="i % 2 === 0">
+              <div class="timeline-date">
+                <span>{{ memory.date | date:'dd/MM/yyyy' }}</span>
+              </div>
+              <div class="timeline-content">
+                <div class="timeline-image">
+                  <img [src]="memory.thumbnail" [alt]="memory.description" loading="lazy">
+                </div>
+                <div class="timeline-info">
+                  <h3>{{ memory.description }}</h3>
+                  <p *ngIf="memory.quote" class="timeline-quote">"{{ memory.quote }}"</p>
+                  <span *ngIf="memory.author" class="timeline-author">- {{ memory.author }}</span>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+
+        <!-- Cards View -->
+        <div class="gallery-cards" *ngIf="viewMode === 'cards'">
+          <ng-container *ngFor="let memory of displayedMemories">
+            <div class="memory-card">
+              <div class="card-image">
+                <img [src]="memory.thumbnail" [alt]="memory.description">
+              </div>
+              <div class="card-content">
+                <div class="card-date">{{ memory.date | date:'dd/MM/yyyy' }}</div>
+                <h3>{{ memory.description }}</h3>
+                <p *ngIf="memory.quote" class="card-quote">"{{ memory.quote }}"</p>
+                <span *ngIf="memory.author" class="card-author">- {{ memory.author }}</span>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+
+        <!-- Load More Button -->
+        <div class="load-more" *ngIf="hasMoreImages">
+          <button class="load-more-btn" 
+                  (click)="loadMore()"
+                  [disabled]="loading">
+            <i class="pi pi-spinner pi-spin" *ngIf="loading"></i>
+            <span>{{ loading ? 'Đang tải...' : 'Xem thêm kỷ niệm' }}</span>
+          </button>
         </div>
       </div>
+
+      <!-- First Parallax Memory -->
+      <app-parallax-memory
+        imageUrl="assets/images/bucket/DongHuyenKhong_DaNang_Thang5-2024.png"
+        height="500px"
+        caption="Chuyến du lịch đầu tiên của chúng ta tại Đà Nẵng"
+        date="Tháng 5, 2024">
+      </app-parallax-memory>
 
       <!-- Gallery Quotes -->
       <div class="gallery-quotes">
-        <div class="quote-wrapper">
-          <i class="pi pi-camera quote-icon"></i>
-          <div class="main-quote-container">
-            <blockquote class="main-quote">
-              "A photograph is a secret about a secret. The more it tells you, the less you know"
-            </blockquote>
-            <span class="quote-author">- Diane Arbus</span>
+        <div class="quote-card">
+          <div class="quote-icon">
+            <i class="pi pi-camera"></i>
           </div>
-          <div class="sub-quotes">
-            <div class="sub-quote-container">
-              <p class="sub-quote">
-                <i class="pi pi-heart"></i>
-                <span class="quote-text">"Taking pictures is savoring life intensely, every hundredth of a second"</span>
-              </p>
-              <span class="quote-author">- Marc Riboud</span>
+          <blockquote class="main-quote">
+            "A photograph is a secret about a secret. The more it tells you, the less you know"
+          </blockquote>
+          <span class="quote-author">- Diane Arbus</span>
+        </div>
+
+        <div class="quotes-grid">
+          <div class="quote-card">
+            <div class="quote-icon">
+              <i class="pi pi-heart"></i>
             </div>
-            <div class="sub-quote-container">
-              <p class="sub-quote">
-                <i class="pi pi-clock"></i>
-                <span class="quote-text">Thời gian trôi qua, nhưng kỷ niệm vẫn mãi đẹp như ngày đầu</span>
-              </p>
-              <span class="quote-author">- Robert Frank</span>
+            <blockquote class="quote-text">
+              "Taking pictures is savoring life intensely, every hundredth of a second"
+            </blockquote>
+            <span class="quote-author">- Marc Riboud</span>
+          </div>
+
+          <!-- Second Parallax Memory -->
+          <app-parallax-memory
+            imageUrl="assets/images/bucket/VinhHaLong_Thang6_2024.jpg"
+            height="400px"
+            caption="Vịnh Hạ Long - Nơi chúng ta cùng ngắm hoàng hôn"
+            date="Tháng 6, 2024">
+          </app-parallax-memory>
+
+          <div class="quote-card">
+            <div class="quote-icon">
+              <i class="pi pi-clock"></i>
             </div>
-            <div class="sub-quote-container">
-              <p class="sub-quote">
-                <i class="pi pi-map-marker"></i>
-                <span class="quote-text">"If you want to be a better photographer, stand in front of more interesting stuff"</span>
-              </p>
-              <span class="quote-author">- Jim Richardson</span>
+            <blockquote class="quote-text">
+              "Thời gian trôi qua, nhưng kỷ niệm vẫn mãi đẹp như ngày đầu"
+            </blockquote>
+            <span class="quote-author">- Robert Frank</span>
+          </div>
+
+          <div class="quote-card">
+            <div class="quote-icon">
+              <i class="pi pi-map-marker"></i>
             </div>
+            <blockquote class="quote-text">
+              "If you want to be a better photographer, stand in front of more interesting stuff"
+            </blockquote>
+            <span class="quote-author">- Jim Richardson</span>
           </div>
         </div>
       </div>
+
+      <!-- Final Parallax Memory -->
+      <app-parallax-memory
+        imageUrl="assets/images/bucket/dapxedap_Thang8-2024.jpg"
+        height="500px"
+        caption="Những chuyến đạp xe cùng nhau khám phá thành phố"
+        date="Tháng 8, 2024">
+      </app-parallax-memory>
     </div>
   </div>
 </div> 

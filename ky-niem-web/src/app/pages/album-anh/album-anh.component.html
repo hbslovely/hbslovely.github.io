@@ -1,86 +1,192 @@
-<div class="text-center mb-5">
-  <h1 class="card-title">📸 Album Ảnh Kỷ Niệm</h1>
-  <p class="text-lg text-muted">Bộ sưu tập những khoảnh khắc đẹp nhất của chúng em</p>
-</div>
-
-<!-- Album Cover -->
-<div class="album-cover-container mb-6">
-  <div class="glass-card album-cover p-6 text-center">
-    <div class="album-title mb-4">
-      <h2 class="card-heading">💕 Our Love Story</h2>
-      <p class="text-muted">Ba Heo & Heo Bỉm</p>
-      <div class="album-date">{{ albumPhotos.length }} photos • 2020 - 2025</div>
-    </div>
-    <div class="album-preview-grid">
-      <div *ngFor="let photo of albumPhotos.slice(0, 4); let i = index" 
-           class="preview-photo"
-           [style.transform]="'rotate(' + (i % 2 === 0 ? -2 : 2) + 'deg)'">
-        <img [src]="photo.src" [alt]="photo.caption" class="w-full h-full object-cover">
-      </div>
-    </div>
+<!-- Album List View -->
+<div class="container" *ngIf="!selectedAlbumId">
+  <div class="album-header">
+    <h1 class="title">Album Kỷ Niệm</h1>
+    <p class="subtitle">Nơi lưu giữ những khoảnh khắc đẹp của chúng mình 💕</p>
   </div>
-</div>
 
-<!-- Photo Grid -->
-<div class="photo-album-grid">
-  <div *ngFor="let photo of albumPhotos; let i = index" 
-       class="photo-item animate-fadeInScale" 
-       [style.animation-delay]="(i * 0.1) + 's'"
-       (click)="openLightbox(i)">
-    <div class="photo-frame">
-      <img [src]="photo.src" [alt]="photo.caption" class="album-photo">
-      <div class="photo-caption">
-        <h4>{{ photo.caption }}</h4>
-        <small>Photo {{ i + 1 }}</small>
-      </div>
-      <div class="photo-overlay">
-        <i class="pi pi-search-plus text-white text-2xl"></i>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Lightbox Modal -->
-<div *ngIf="showLightbox" class="lightbox-overlay" (click)="closeLightbox()">
-  <div class="lightbox-content" (click)="$event.stopPropagation()">
-    <div class="lightbox-header">
-      <h3>{{ albumPhotos[currentImageIndex]?.caption }}</h3>
-      <button class="lightbox-close" (click)="closeLightbox()">
-        <i class="pi pi-times"></i>
+  <div class="controls-wrapper">
+    <!-- View Controls -->
+    <div class="view-controls">
+      <button [class.active]="viewMode === 'grid'" (click)="viewMode = 'grid'" class="view-btn" title="Grid View">
+        <i class="pi pi-th-large"></i>
+      </button>
+      <button [class.active]="viewMode === 'list'" (click)="viewMode = 'list'" class="view-btn" title="List View">
+        <i class="pi pi-list"></i>
       </button>
     </div>
-    
-    <div class="lightbox-image-container">
-      <button class="lightbox-nav lightbox-prev" 
-              (click)="previousImage()" 
-              [disabled]="currentImageIndex === 0">
-        <i class="pi pi-chevron-left"></i>
+
+    <!-- User Guide -->
+    <div class="user-guide">
+      <i class="pi pi-info-circle"></i>
+      <p>Click vào album để xem chi tiết nhé! 🥰</p>
+    </div>
+  </div>
+
+  <!-- Grid View -->
+  <div class="albums-grid" *ngIf="viewMode === 'grid'">
+    <div class="album-card" *ngFor="let album of albums" (click)="openAlbum(album.id)">
+      <div class="album-cover">
+        <img [src]="album.coverImage" [alt]="album.title" loading="lazy">
+        <div class="album-overlay">
+          <span class="photo-count">
+            <i class="pi pi-images"></i> {{ album.photoCount }}
+          </span>
+          <span class="view-details">
+            <i class="pi pi-eye"></i>
+          </span>
+        </div>
+      </div>
+      <div class="album-info">
+        <h3>{{ album.title }}</h3>
+        <p>{{ album.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- List View -->
+  <div class="albums-list" *ngIf="viewMode === 'list'">
+    <div class="album-row" *ngFor="let album of albums" (click)="openAlbum(album.id)">
+      <div class="album-thumbnail">
+        <img [src]="album.coverImage" [alt]="album.title" loading="lazy">
+      </div>
+      <div class="album-details">
+        <h3>{{ album.title }}</h3>
+        <p>{{ album.description }}</p>
+        <div class="album-meta">
+          <span class="photo-count">
+            <i class="pi pi-images"></i> {{ album.photoCount }} ảnh
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quote Section -->
+  <div class="quote-section">
+    <blockquote>
+      "Mỗi bức ảnh là một khoảnh khắc quý giá, là một kỷ niệm đẹp mà chúng mình đã cùng nhau trải qua"
+    </blockquote>
+    <p class="quote-author">- Ba Heo & Heo Bỉm -</p>
+  </div>
+</div>
+
+<!-- Album Detail View -->
+<div class="container" *ngIf="selectedAlbumId">
+  <div class="detail-header">
+    <button class="back-btn" (click)="goBack()">
+      <i class="pi pi-arrow-left"></i>
+    </button>
+    <div class="album-title">
+      <h2>{{ selectedAlbum?.title }}</h2>
+      <p>{{ selectedAlbum?.description }}</p>
+    </div>
+    <!-- View Mode Controls -->
+    <div class="view-mode-controls">
+      <button [class.active]="detailViewMode === 'grid'" 
+              (click)="setDetailViewMode('grid')" 
+              class="view-btn" 
+              title="Grid View">
+        <i class="pi pi-th-large"></i>
       </button>
-      
-      <img [src]="albumPhotos[currentImageIndex]?.src" 
-           [alt]="albumPhotos[currentImageIndex]?.caption"
-           class="lightbox-image">
-      
-      <button class="lightbox-nav lightbox-next" 
-              (click)="nextImage()" 
-              [disabled]="currentImageIndex === albumPhotos.length - 1">
-        <i class="pi pi-chevron-right"></i>
+      <button [class.active]="detailViewMode === 'masonry'" 
+              (click)="setDetailViewMode('masonry')" 
+              class="view-btn" 
+              title="Masonry View">
+        <i class="pi pi-images"></i>
+      </button>
+      <button [class.active]="detailViewMode === 'carousel'" 
+              (click)="setDetailViewMode('carousel')" 
+              class="view-btn" 
+              title="Carousel View">
+        <i class="pi pi-sliders-h"></i>
       </button>
     </div>
-    
-    <div class="lightbox-footer">
-      <p>{{ albumPhotos[currentImageIndex]?.caption }}</p>
-      <div class="lightbox-counter">
-        {{ currentImageIndex + 1 }} / {{ albumPhotos.length }}
+  </div>
+
+  <!-- Grid View -->
+  <div class="photos-grid" *ngIf="detailViewMode === 'grid'">
+    <div class="photo-card" *ngFor="let photo of selectedAlbumPhotos" (click)="openPhotoViewer(photo)">
+      <div class="photo-wrapper">
+        <img [src]="photo.url" [alt]="photo.title" loading="lazy">
+        <div class="photo-overlay">
+          <i class="pi pi-search"></i>
+        </div>
       </div>
+      <div class="photo-info">
+        <h4>{{ photo.title }}</h4>
+        <p *ngIf="photo.description">{{ photo.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Masonry View -->
+  <div class="photos-masonry" *ngIf="detailViewMode === 'masonry'">
+    <div class="masonry-column" *ngFor="let column of getMasonryColumns()">
+      <div class="photo-item" *ngFor="let photo of column" (click)="openPhotoViewer(photo)">
+        <img [src]="photo.url" [alt]="photo.title" loading="lazy">
+        <div class="photo-overlay">
+          <div class="photo-info">
+            <h4>{{ photo.title }}</h4>
+            <p *ngIf="photo.description">{{ photo.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carousel View -->
+  <div class="photos-carousel" *ngIf="detailViewMode === 'carousel'">
+    <button class="carousel-nav prev" (click)="prevSlide()" [disabled]="currentSlide === 0">
+      <i class="pi pi-chevron-left"></i>
+    </button>
+
+    <div class="carousel-container">
+      <div class="carousel-slide" 
+           *ngFor="let photo of selectedAlbumPhotos; let i = index"
+           [class.active]="i === currentSlide"
+           (click)="openPhotoViewer(photo)">
+        <img [src]="photo.url" [alt]="photo.title">
+        <div class="slide-info">
+          <h4>{{ photo.title }}</h4>
+          <p *ngIf="photo.description">{{ photo.description }}</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-nav next" (click)="nextSlide()" [disabled]="currentSlide === selectedAlbumPhotos.length - 1">
+      <i class="pi pi-chevron-right"></i>
+    </button>
+
+    <div class="carousel-dots">
+      <button *ngFor="let photo of selectedAlbumPhotos; let i = index" 
+              class="dot" 
+              [class.active]="i === currentSlide"
+              (click)="goToSlide(i)">
+      </button>
     </div>
   </div>
 </div>
 
-<div class="text-center mt-5" *ngIf="albumPhotos.length === 0">
-  <div class="glass-card p-5">
-    <i class="pi pi-image text-primary" style="font-size: 3rem;"></i>
-    <h3 class="card-heading mt-3">Đang tải album...</h3>
-    <p class="text-muted">Những khoảnh khắc đẹp sẽ sớm xuất hiện ở đây!</p>
+<!-- Fullscreen Photo Viewer -->
+<div class="fullscreen-viewer" *ngIf="selectedPhoto" (click)="closePhotoViewer()">
+  <button class="close-btn">
+    <i class="pi pi-times"></i>
+  </button>
+  
+  <button class="nav-btn prev" (click)="prevPhoto($event)" *ngIf="canNavigatePrev()">
+    <i class="pi pi-chevron-left"></i>
+  </button>
+  
+  <div class="viewer-content" (click)="$event.stopPropagation()">
+    <img [src]="selectedPhoto.url" [alt]="selectedPhoto.title">
+    <div class="photo-info">
+      <h3>{{ selectedPhoto.title }}</h3>
+      <p *ngIf="selectedPhoto.description">{{ selectedPhoto.description }}</p>
+    </div>
   </div>
+  
+  <button class="nav-btn next" (click)="nextPhoto($event)" *ngIf="canNavigateNext()">
+    <i class="pi pi-chevron-right"></i>
+  </button>
 </div>

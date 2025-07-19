@@ -462,13 +462,9 @@
 }
 
 .journey-timeline {
-  padding: 4rem 0;
   position: relative;
-  background-image: url('/assets/images/gallery/chuyen-di.png');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: #333;
+  padding: 2rem 0;
+  overflow: hidden;
 
   .timeline-backdrop {
     position: absolute;
@@ -476,222 +472,139 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.95);  // Tăng độ đục của backdrop
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    z-index: 0;
+  }
+
+  .horizontal-timeline {
+    position: relative;
     z-index: 1;
+    padding: 2rem 1rem;
+    overflow-x: auto;
+    
+    &::-webkit-scrollbar {
+      height: 8px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 4px;
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.5);
+      }
+    }
+
+    .timeline-track {
+      display: flex;
+      min-width: max-content;
+      position: relative;
+      padding: 3rem 0;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 3rem;
+        left: 2rem;
+        right: 2rem;
+        height: 2px;
+        background: linear-gradient(90deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.3) 100%);
+      }
+    }
+
+    .timeline-event {
+      position: relative;
+      width: 280px;
+      margin: 0 1rem;
+      text-align: center;
+
+      .timeline-point {
+        position: absolute;
+        top: -3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 16px;
+        height: 16px;
+        background: white;
+        border-radius: 50%;
+        box-shadow: 0 0 0 4px rgba(255,255,255,0.3);
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateX(-50%) scale(1.2);
+          box-shadow: 0 0 0 6px rgba(255,255,255,0.5);
+        }
+      }
+
+      .timeline-date {
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: white;
+        margin-bottom: 1rem;
+        opacity: 0.9;
+      }
+
+      .timeline-content {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        padding: 1.5rem;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+          background: rgba(255, 255, 255, 0.15);
+        }
+
+        h4 {
+          color: white;
+          font-size: 1.2rem;
+          margin-bottom: 0.8rem;
+        }
+
+        p {
+          color: rgba(255, 255, 255, 0.8);
+          font-size: 0.95rem;
+          line-height: 1.5;
+          margin: 0;
+        }
+      }
+    }
   }
 
   .card-title {
+    color: white;
     font-size: 2rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 1rem;
-    position: relative;
-    z-index: 2;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 0.5rem 1rem;
-    display: inline-block;
-    border-radius: 8px;
-  }
-
-  .text-lg {
-    font-size: 1.125rem;
-    position: relative;
-    z-index: 2;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 0.5rem 1rem;
-    display: inline-block;
-    border-radius: 8px;
+    margin-bottom: 0.5rem;
   }
 
   .text-muted {
-    color: #666;
-  }
-
-  .timeline-container {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem 0;
-    z-index: 2;
-
-    &::before {
-      content: '';
-      position: absolute;
-      width: 2px;
-      background: #3b82f6;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-  }
-
-  .timeline-item {
-    margin-bottom: 3rem;
-    width: 100%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    
-    &:nth-child(odd) {
-      .timeline-content {
-        margin-left: 2rem;
-      }
-      .timeline-date {
-        text-align: right;
-        margin-right: 2rem;
-      }
-    }
-
-    &:nth-child(even) {
-      flex-direction: row-reverse;
-      .timeline-content {
-        margin-right: 2rem;
-      }
-      .timeline-date {
-        text-align: left;
-        margin-left: 2rem;
-      }
-    }
-
-    &::before {
-      content: '';
-      position: absolute;
-      width: 16px;
-      height: 16px;
-      background: #fff;
-      border: 2px solid #3b82f6;
-      border-radius: 50%;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-  }
-
-  .timeline-date {
-    width: 150px;
-    padding: 0.5rem 1rem;
-    font-weight: 600;
-    color: #3b82f6;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 8px;
-  }
-
-  .timeline-content {
-    flex: 1;
-    max-width: 300px;
-    padding: 1.5rem;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.9);
-    
-    .timeline-event {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: #1f2937;
-      margin-bottom: 0.5rem;
-    }
-
-    .timeline-description {
-      color: #4b5563;
-      line-height: 1.6;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .timeline-container::before {
-      left: 32px;
-    }
-
-    .timeline-item {
-      justify-content: flex-start;
-      
-      &:nth-child(odd),
-      &:nth-child(even) {
-        flex-direction: row;
-        
-        .timeline-date {
-          width: 80px;
-          text-align: right;
-          margin-right: 1rem;
-        }
-        
-        .timeline-content {
-          margin-left: 2rem;
-          margin-right: 0;
-        }
-      }
-
-      &::before {
-        left: 32px;
-      }
-    }
+    color: rgba(255, 255, 255, 0.7);
   }
 }
 
+// Responsive adjustments
 @media (max-width: 768px) {
-  .love-story-section,
-  .journey-section,
-  .values-section {
-    .inline-image {
-      float: none !important;
-      margin: 0 auto 1.5rem !important;
-      width: 200px; // Giữ nguyên kích thước trên mobile
-      transform: none !important;
-    }
-  }
-
-  .values-section {
-    .value-item {
-      padding: 0;
-    }
-
-    .value-title {
-      font-size: 1.3rem;
-    }
-
-    .values-list {
-      grid-template-columns: 1fr;
-    }
-
-    .conclusion-text {
-      font-size: 1rem;
-    }
-  }
-
-  .love-story-section,
-  .journey-section {
-    .story-item,
-    .journey-item {
-      padding: 0;
-    }
-
-    .story-subtitle,
-    .journey-subtitle {
-      font-size: 1.3rem;
-    }
-
-    .love-story-highlights,
-    .journey-highlights {
-      grid-template-columns: 1fr;
-    }
-
-    .conclusion-text {
-      font-size: 1rem;
-    }
-  }
-
-  .journey-section {
-    .journey-timeline {
-      .milestone-list {
-        &::before {
-          left: 0;
-        }
-
-        .milestone-item {
-          margin-left: 2rem;
-
-          &::before {
-            left: -2.5rem;
+  .journey-timeline {
+    .horizontal-timeline {
+      .timeline-event {
+        width: 240px;
+        
+        .timeline-content {
+          padding: 1rem;
+          
+          h4 {
+            font-size: 1.1rem;
+          }
+          
+          p {
+            font-size: 0.9rem;
           }
         }
       }

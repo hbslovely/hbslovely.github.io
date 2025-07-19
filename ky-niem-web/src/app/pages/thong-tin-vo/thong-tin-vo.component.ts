@@ -12,12 +12,11 @@ import { ProfileHeaderComponent } from '../../shared/components/profile-header/p
 })
 export class ThongTinVoComponent implements OnInit {
   wifeData: any = {};
-  
+
   // Basic info for profile header
   profileInfo = {
-    'Năm sinh': '1994',
+    'Năm sinh': '199x',
     'Cung hoàng đạo': 'Ma Kết ♑',
-    'Nơi sinh': 'TP. Hồ Chí Minh',
     'Nghề nghiệp': 'Kế toán viên',
     'Tình trạng': 'Đã có chồng 💕'
   };
@@ -44,5 +43,31 @@ export class ThongTinVoComponent implements OnInit {
         console.error('Error loading wife data:', error);
       }
     });
+  }
+
+  getRandomEmoji(): string {
+    const emojis = ['🌸', '🎀', '💝', '💖', '✨', '🌟', '🦋', '🌺', '🎵', '💫'];
+    return emojis[Math.floor(Math.random() * emojis.length)];
+  }
+
+  getTraitPercentage(description: string): string {
+    const match = description.match(/(\d+)([%.]?\d*)/);
+    if (match) {
+      const value = parseFloat(match[0]);
+      return `${value}%`;
+    }
+    return '50%';
+  }
+
+  getTraitValue(description: string): string {
+    const match = description.match(/(\d+)([%.]?\d*)/);
+    if (match) {
+      return match[0];
+    }
+    return '';
+  }
+
+  getTraitDescription(description: string): string {
+    return description.replace(/\d+([%.]?\d*)\s*-\s*/, '');
   }
 }

@@ -1,220 +1,211 @@
 .quotes-section {
-  padding: 4rem 0;
   position: relative;
-  background: linear-gradient(135deg, #dcfce7 0%, #f0fdf4 100%);
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
   overflow: hidden;
+}
 
-  .watermark-icons {
+.watermark-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  i {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-    z-index: 0;
+    font-size: 8rem;
+    color: #ff4b6e;
+    opacity: 0.03;
 
-    i {
-      position: absolute;
-      color: #16a34a;
-      opacity: 0.05;
-      font-size: 4rem;
-      transition: all 0.5s ease;
-
-      @for $i from 1 through 6 {
-        &:nth-child(#{$i}) {
-          animation: floatIcon 20s ease-in-out infinite;
-          animation-delay: #{$i * 2}s;
-
-          @if $i == 1 {
-            top: 15%;
-            left: 10%;
-            transform: rotate(-15deg);
-          } @else if $i == 2 {
-            top: 45%;
-            left: 5%;
-            transform: rotate(10deg);
-            font-size: 5rem;
-          } @else if $i == 3 {
-            top: 75%;
-            left: 15%;
-            transform: rotate(-20deg);
-          } @else if $i == 4 {
-            top: 20%;
-            right: 8%;
-            transform: rotate(15deg);
-            font-size: 4.5rem;
-          } @else if $i == 5 {
-            top: 55%;
-            right: 12%;
-            transform: rotate(-10deg);
-          } @else if $i == 6 {
-            top: 80%;
-            right: 7%;
-            transform: rotate(25deg);
-            font-size: 3.5rem;
-          }
-        }
-      }
-    }
+    &:nth-child(1) { top: 10%; left: 5%; }
+    &:nth-child(2) { top: 40%; right: 10%; }
+    &:nth-child(3) { bottom: 15%; left: 15%; }
   }
+}
 
-  @keyframes floatIcon {
-    0%, 100% {
-      transform: translate(0, 0) rotate(var(--rotation));
-    }
-    25% {
-      transform: translate(-10px, -10px) rotate(calc(var(--rotation) + 5deg));
-    }
-    50% {
-      transform: translate(5px, -5px) rotate(var(--rotation));
-    }
-    75% {
-      transform: translate(10px, 10px) rotate(calc(var(--rotation) - 5deg));
-    }
-  }
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
 
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-    position: relative;
-    z-index: 1;
-  }
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
 
   .section-title {
-    text-align: center;
     font-size: 2.5rem;
-    color: #15803d;
-    margin-bottom: 3rem;
-  }
-
-  .quotes-columns {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
-    position: relative;
-  }
-
-  .quotes-column {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-
-    &.right {
-      margin-top: 4rem;
-    }
-  }
-
-  .quote-item {
-    position: relative;
-    padding: 0 1rem;
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: translateY(-5px);
-    }
-  }
-
-  .quote-content {
-    background: white;
-    border-radius: 20px;
-    padding: 2rem;
-    position: relative;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-    border: 1px solid var(--surface-100);
-
-    &::before {
-      content: '"';
-      position: absolute;
-      top: -0.5rem;
-      left: 2rem;
-      font-size: 5rem;
-      color: var(--primary-100);
-      font-family: Georgia, serif;
-      line-height: 1;
-      z-index: 1;
-      opacity: 0.5;
-    }
-  }
-
-  .quote-icon {
+    color: #ff4b6e;
     margin-bottom: 1rem;
-
-    i {
-      color: #16a34a;
-      font-size: 1.5rem;
-    }
-  }
-
-  .quote-text {
-    margin: 0 0 1rem;
-    padding: 0;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #374151;
-    font-style: italic;
-    position: relative;
-  }
-
-  .quote-author {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
+    gap: 1rem;
 
-    &::before {
-      content: '—';
-      color: #16a34a;
-      opacity: 0.7;
+    i {
+      font-size: 2rem;
     }
+  }
 
-    .author-name {
-      color: #4b5563;
-      font-size: 0.95rem;
-      font-weight: 500;
+  .section-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    font-style: italic;
+  }
+}
+
+.quotes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.quote-card {
+  position: relative;
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+
+    .quote-decoration i {
+      transform: translate(-50%, -50%) scale(1.1);
     }
   }
 }
 
-@media (max-width: 992px) {
-  .quotes-section {
-    .watermark-icons i {
-      font-size: 3rem !important;
-    }
+.quote-content {
+  position: relative;
+  z-index: 1;
 
-    .quotes-columns {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
+  .quote-icon {
+    color: #ff4b6e;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
 
-    .quotes-column {
-      gap: 2.5rem;
+  blockquote {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    font-style: italic;
 
-      &.right {
-        margin-top: 0;
+    footer {
+      margin-top: 1rem;
+      
+      cite {
+        color: #666;
+        font-size: 0.9rem;
+        font-style: normal;
+        
+        &::before {
+          content: '— ';
+        }
       }
+    }
+  }
+}
+
+.quote-decoration {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  overflow: hidden;
+  pointer-events: none;
+
+  i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8rem;
+    color: rgba(255, 75, 110, 0.03);
+    transition: transform 0.3s ease;
+  }
+}
+
+.featured-quote {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+
+  .quote-wrapper {
+    position: relative;
+    padding: 2rem;
+
+    .quote-mark {
+      position: absolute;
+      color: #ff4b6e;
+      font-size: 2rem;
+      opacity: 0.3;
+
+      &.pi-quote-left {
+        top: 0;
+        left: 0;
+      }
+
+      &.pi-quote-right {
+        bottom: 0;
+        right: 0;
+      }
+    }
+
+    .main-quote {
+      font-size: 1.5rem;
+      color: #333;
+      line-height: 1.6;
+      margin: 0 0 1rem;
+      font-style: italic;
+    }
+
+    .quote-author {
+      color: #666;
+      font-size: 1rem;
     }
   }
 }
 
 @media (max-width: 768px) {
-  .quotes-section {
-    padding: 3rem 0;
+  .section-header .section-title {
+    font-size: 2rem;
+  }
 
-    .watermark-icons i {
-      font-size: 2.5rem !important;
-    }
+  .quotes-grid {
+    grid-template-columns: 1fr;
+  }
 
-    .section-title {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-    }
+  .featured-quote {
+    padding: 2rem 1rem;
 
-    .quotes-column {
-      gap: 2rem;
-    }
+    .quote-wrapper {
+      padding: 1.5rem;
 
-    .quote-text {
-      font-size: 1rem;
+      .main-quote {
+        font-size: 1.2rem;
+      }
+
+      .quote-mark {
+        font-size: 1.5rem;
+      }
     }
   }
 }

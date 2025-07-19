@@ -278,174 +278,967 @@
   }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .photo-album-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    padding: 0.5rem;
-  }
-  
-  .album-preview-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
-    max-width: 200px;
-  }
-  
-  .preview-photo {
-    width: 80px;
-    height: 60px;
-  }
-  
-  .lightbox-content {
-    max-width: 95vw;
-    max-height: 95vh;
-  }
-  
-  .lightbox-image {
-    max-height: 50vh;
-  }
-  
-  .lightbox-nav {
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
-  }
-  
-  .lightbox-prev {
-    left: 0.5rem;
-  }
-  
-  .lightbox-next {
-    right: 0.5rem;
-  }
+// Variables
+$primary: #10b981;
+$primary-light: #34d399;
+$primary-dark: #059669;
+$primary-bg: rgba(16, 185, 129, 0.05);
+$text-primary: #065f46;
+
+// Romantic Background Pattern
+@mixin romantic-pattern {
+  background-color: $primary-bg;
+  background-image: 
+    radial-gradient(circle at 100% 150%, $primary-bg 24%, white 25%, white 28%, $primary-bg 29%, $primary-bg 36%, white 36%, white 40%, transparent 40%, transparent),
+    radial-gradient(circle at 0    150%, $primary-bg 24%, white 25%, white 28%, $primary-bg 29%, $primary-bg 36%, white 36%, white 40%, transparent 40%, transparent),
+    radial-gradient(circle at 50%  100%, white 10%, $primary-bg 11%, $primary-bg 23%, white 24%, white 30%, $primary-bg 31%, $primary-bg 43%, white 44%, white 50%, $primary-bg 51%, $primary-bg 63%, white 64%, white 71%, transparent 71%, transparent),
+    radial-gradient(circle at 100% 50%, white 5%, $primary-bg 6%, $primary-bg 15%, white 16%, white 20%, $primary-bg 21%, $primary-bg 30%, white 31%, white 35%, $primary-bg 36%, $primary-bg 45%, white 46%, white 49%, transparent 50%, transparent),
+    radial-gradient(circle at 0    50%, white 5%, $primary-bg 6%, $primary-bg 15%, white 16%, white 20%, $primary-bg 21%, $primary-bg 30%, white 31%, white 35%, $primary-bg 36%, $primary-bg 45%, white 46%, white 49%, transparent 50%, transparent);
+  background-size: 100px 50px;
+  background-attachment: fixed;
 }
 
-.album-container {
-  padding: 2rem;
-  max-width: 1400px;
+.container {
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 4rem 6rem;
+  position: relative;
+  min-height: 100vh;
+
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      linear-gradient(120deg, rgba(16, 185, 129, 0.05) 0%, rgba(52, 211, 153, 0.05) 50%, rgba(16, 185, 129, 0.05) 100%),
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2310b981' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    z-index: -1;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 3rem 4rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+  }
 }
 
-.album-title {
+.album-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   position: relative;
-  
-  h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #059669;
-    margin: 0;
-    padding: 0;
+
+  &::before {
+    content: '🌿';
+    position: absolute;
+    left: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    opacity: 0.8;
   }
 
   &::after {
-    content: '';
+    content: '🌿';
     position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 3px;
-    background: linear-gradient(to right, #34d399, #059669);
-    border-radius: 2px;
+    right: -2rem;
+    top: 50%;
+    transform: translateY(-50%) scaleX(-1);
+    font-size: 2rem;
+    opacity: 0.8;
+  }
+
+  .title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: $primary;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(16, 185, 129, 0.2);
+    font-family: 'Playfair Display', serif;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    color: $text-primary;
+    font-style: italic;
   }
 }
 
-.masonry-grid {
-  columns: 3;
-  column-gap: 1.5rem;
-  
-  @media (max-width: 1200px) {
-    columns: 2;
-    column-gap: 1.25rem;
-  }
-  
-  @media (max-width: 768px) {
-    columns: 2;
-    column-gap: 1rem;
-  }
-  
-  @media (max-width: 480px) {
-    columns: 1;
+// Controls Layout
+.controls-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(16, 185, 129, 0.1);
+}
+
+// View Controls
+.view-controls {
+  display: flex;
+  gap: 1rem;
+
+  .view-btn {
+    width: 45px;
+    height: 45px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: 12px;
+    background: transparent;
+    color: $text-primary;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      border-color: $primary;
+      color: $primary;
+      transform: translateY(-2px);
+    }
+
+    &.active {
+      background: $primary;
+      color: white;
+      border-color: $primary;
+    }
   }
 }
 
-.masonry-item {
-  break-inside: avoid;
-  margin-bottom: 1.5rem;
-  display: inline-block;
-  width: 100%;
-  background: white;
-  border-radius: 12px;
+// User Guide
+.user-guide {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(16, 185, 129, 0.1);
+  border-radius: 15px;
+  border: 1px dashed rgba(16, 185, 129, 0.3);
+
+  i {
+    font-size: 1.25rem;
+    color: $primary;
+  }
+
+  p {
+    color: $text-primary;
+    margin: 0;
+    font-size: 1rem;
+    font-style: italic;
+  }
+}
+
+// Album Grid
+.albums-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+// Album Card
+.album-card {
+  position: relative;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
+  background: transparent;
 
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-  }
-}
+    transform: translateY(-10px);
 
-.photo-card {
-  position: relative;
-  cursor: pointer;
+    .album-cover img {
+      transform: scale(1.1);
+    }
 
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+    .album-info {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 
-  .photo-content {
-    padding: 1rem;
-    background: white;
+  .album-cover {
+    position: relative;
+    padding-top: 75%;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1px solid rgba(16, 185, 129, 0.1);
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+  }
+
+  .album-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    background: linear-gradient(transparent, rgba(16, 185, 129, 0.95));
+    color: white;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s ease;
+    border-radius: 0 0 20px 20px;
 
     h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #1f2937;
+      font-size: 1.5rem;
+      font-weight: 700;
       margin: 0 0 0.5rem;
+      font-family: 'Playfair Display', serif;
     }
 
     p {
-      font-size: 0.95rem;
-      color: #4b5563;
+      font-size: 1rem;
       margin: 0;
-      line-height: 1.5;
+      opacity: 0.9;
     }
+
+    .photo-count {
+      position: absolute;
+      top: -30px;
+      right: 20px;
+      background: white;
+      color: $primary;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+}
+
+// Album List
+.albums-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.album-row {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  transition: all 0.4s ease;
+  position: relative;
+  border: 1px solid rgba(16, 185, 129, 0.1);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: $primary;
+    border-radius: 2px;
   }
 
   &:hover {
+    transform: translateX(10px);
+
+    .album-thumbnail img {
+      transform: scale(1.05);
+    }
+  }
+
+  .album-thumbnail {
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    flex-shrink: 0;
+
     img {
-      transform: scale(1.03);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+  }
+
+  .album-details {
+    flex: 1;
+
+    h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: $primary;
+      margin: 0 0 1rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    p {
+      color: $text-primary;
+      margin: 0 0 1rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .album-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: $text-primary;
+      font-size: 1rem;
+
+      i {
+        color: $primary;
+        font-size: 1.2rem;
+      }
     }
   }
 }
 
-// Animation for loading
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+// Quote Section
+.quote-section {
+  text-align: center;
+  padding: 4rem 0;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(16, 185, 129, 0.1);
+
+  blockquote {
+    font-size: 1.8rem;
+    color: $text-primary;
+    font-style: italic;
+    margin: 0 0 1.5rem;
+    position: relative;
+    padding: 0 3rem;
+    font-family: 'Playfair Display', serif;
+
+    &::before,
+    &::after {
+      content: '"';
+      color: $primary;
+      font-size: 4rem;
+      position: absolute;
+      opacity: 0.2;
+    }
+
+    &::before {
+      left: 0;
+      top: -1rem;
+    }
+
+    &::after {
+      right: 0;
+      bottom: -2rem;
+    }
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .quote-author {
+    color: $primary;
+    font-size: 1.2rem;
   }
 }
 
-.masonry-item {
-  opacity: 0;
-  animation: fadeInUp 0.6s ease-out forwards;
+// Album Detail Header
+.detail-header {
+  position: relative;
+  padding: 4rem 0;
+  margin-bottom: 4rem;
+  text-align: center;
 
-  @for $i from 1 through 20 {
-    &:nth-child(#{$i}) {
-      animation-delay: #{$i * 0.1}s;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -6rem;
+    right: -6rem;
+    height: 100%;
+    background: linear-gradient(120deg, 
+      rgba(16, 185, 129, 0.05) 0%,
+      rgba(52, 211, 153, 0.1) 50%,
+      rgba(16, 185, 129, 0.05) 100%);
+    z-index: -1;
+  }
+
+  .back-btn {
+    position: absolute;
+    left: -4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: $primary;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+
+    &:hover {
+      transform: translate(-5px, -50%);
+      background: $primary-dark;
+    }
+  }
+
+  .album-title {
+    max-width: 800px;
+    margin: 0 auto;
+
+    h2 {
+      font-size: 2.5rem;
+      color: $primary;
+      margin: 0 0 1rem;
+      font-weight: 700;
+      font-family: 'Playfair Display', serif;
+      
+      &::after {
+        content: '';
+        display: block;
+        width: 100px;
+        height: 3px;
+        background: linear-gradient(to right, $primary, $primary-light);
+        margin: 1rem auto;
+        border-radius: 2px;
+      }
+    }
+
+    p {
+      color: $text-primary;
+      margin: 0;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      font-style: italic;
+    }
+  }
+
+  .view-mode-controls {
+    position: absolute;
+    right: -4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+    border: 1px solid rgba(16, 185, 129, 0.1);
+
+    .view-btn {
+      width: 45px;
+      height: 45px;
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      border-radius: 12px;
+      background: transparent;
+      color: $text-primary;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        border-color: $primary;
+        color: $primary;
+        transform: scale(1.1);
+      }
+
+      &.active {
+        background: $primary;
+        color: white;
+        border-color: $primary;
+      }
+    }
+  }
+}
+
+// Grid View Photos
+.photos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+
+  .photo-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 6px rgba(37, 99, 235, 0.1);
+
+      .photo-overlay {
+        opacity: 1;
+      }
+    }
+
+    .photo-wrapper {
+      position: relative;
+      padding-top: 100%;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .photo-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(37, 99, 235, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+
+        i {
+          color: white;
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .photo-info {
+      padding: 1rem;
+
+      h4 {
+        font-size: 1rem;
+        color: #1f2937;
+        margin: 0 0 0.25rem;
+      }
+
+      p {
+        color: #6b7280;
+        font-size: 0.9rem;
+        margin: 0;
+      }
+    }
+  }
+}
+
+// Masonry View
+.photos-masonry {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1rem;
+
+  .masonry-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .photo-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .photo-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1rem;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+
+      .photo-info {
+        color: white;
+
+        h4 {
+          font-size: 1rem;
+          margin: 0 0 0.25rem;
+        }
+
+        p {
+          font-size: 0.9rem;
+          margin: 0;
+          opacity: 0.9;
+        }
+      }
+    }
+
+    &:hover .photo-overlay {
+      opacity: 1;
+    }
+  }
+}
+
+// Carousel View
+.photos-carousel {
+  position: relative;
+  height: 70vh;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+
+  .carousel-container {
+    height: 100%;
+    position: relative;
+  }
+
+  .carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .slide-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+      color: white;
+
+      h4 {
+        font-size: 1.1rem;
+        margin: 0 0 0.25rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+        margin: 0;
+        opacity: 0.9;
+      }
+    }
+  }
+
+  .carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    color: #1f2937;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: white;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &.prev {
+      left: 1rem;
+    }
+
+    &.next {
+      right: 1rem;
+    }
+  }
+
+  .carousel-dots {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 2;
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &.active {
+        background: white;
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+// Fullscreen Photo Viewer
+.fullscreen-viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    &.prev {
+      left: 1rem;
+    }
+
+    &.next {
+      right: 1rem;
+    }
+  }
+
+  .viewer-content {
+    max-width: 90%;
+    max-height: 90vh;
+    position: relative;
+
+    img {
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+
+    .photo-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+      color: white;
+
+      h3 {
+        font-size: 1.2rem;
+        margin: 0 0 0.25rem;
+      }
+
+      p {
+        font-size: 1rem;
+        margin: 0;
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 1024px) {
+  .detail-header {
+    .back-btn {
+      left: 0;
+    }
+
+    .view-mode-controls {
+      right: 0;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .controls-wrapper {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .albums-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .album-row {
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1.5rem;
+
+    .album-thumbnail {
+      width: 100%;
+      height: 250px;
+    }
+  }
+
+  .detail-header {
+    padding: 2rem 0;
+
+    .album-title h2 {
+      font-size: 1.8rem;
+    }
+
+    .view-mode-controls {
+      position: static;
+      transform: none;
+      flex-direction: row;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
+    .back-btn {
+      position: static;
+      transform: none;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .quote-section blockquote {
+    font-size: 1.4rem;
+    padding: 0 1.5rem;
+  }
+}
+
+.photos-grid .photo-card .photo-overlay,
+.photos-masonry .photo-item .photo-overlay,
+.carousel-nav,
+.carousel-dots .dot.active {
+  background: rgba(16, 185, 129, 0.9);
+}
+
+.fullscreen-viewer .nav-btn,
+.fullscreen-viewer .close-btn {
+  background: rgba(16, 185, 129, 0.3);
+  
+  &:hover {
+    background: rgba(16, 185, 129, 0.5);
+  }
+}
+
+// Add romantic decorative elements
+.detail-header::after {
+  content: '💚';
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  opacity: 0.5;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .detail-header {
+    padding: 1.5rem 0;
+    
+    .album-title h2 {
+      font-size: 1.5rem;
+    }
+    
+    .view-mode-controls {
+      padding: 0.25rem;
+      
+      .view-btn {
+        width: 40px;
+        height: 40px;
+      }
     }
   }
 }

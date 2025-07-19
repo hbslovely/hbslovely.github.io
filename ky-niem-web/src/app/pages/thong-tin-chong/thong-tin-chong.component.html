@@ -7,59 +7,41 @@
   [basicInfo]="profileInfo">
 </app-profile-header>
 
-<!-- Rest of the content -->
+<!-- Main Content -->
 <div class="content-container">
   <!-- Description -->
-  <section class="description-section">
-    <p class="description">{{ husbandData.basicInfo?.description }}</p>
-    <p class="love-message">{{ husbandData.basicInfo?.loveMessage }}</p>
+  <section class="intro-section">
+    <div class="section-content">
+      <div class="intro-text">
+        <div class="quote-mark">"</div>
+        <div class="intro-paragraphs">
+          <p class="description">{{ husbandData.basicInfo?.description }}</p>
+          <p class="description-extra">Mỗi ngày trôi qua là một hành trình mới, một cơ hội để chúng ta cùng nhau xây dựng những kỷ niệm đẹp. Tôi luôn trân trọng những giây phút bên nhau, từ những bữa cơm ấm cúng đến những chuyến đi khám phá thế giới.</p>
+          <p class="description-extra">Tình yêu không chỉ là cảm xúc, mà còn là sự cam kết và trách nhiệm. Tôi hứa sẽ luôn là người bạn đồng hành đáng tin cậy, là chỗ dựa vững chắc cho gia đình nhỏ của chúng ta.</p>
+          <p class="love-message">{{ husbandData.basicInfo?.loveMessage }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="section-image">
+      <img src="assets/images/phat/phat_dam-cuoi-2.png" alt="Khoảnh khắc đẹp">
+      <div class="image-caption">Khoảnh khắc hạnh phúc</div>
+    </div>
   </section>
 
   <!-- Thoughts about wife -->
   <section class="thoughts-section">
-    <h2>Suy nghĩ về vợ yêu</h2>
-    <div class="thoughts-grid">
-      <div class="thought-card">
-        <h3>Ấn tượng đầu tiên</h3>
-        <p>Em là một cô gái dễ thương, với nụ cười tỏa nắng và đôi mắt long lanh đầy sự tinh nghịch. Anh đã bị thu hút bởi vẻ đẹp tự nhiên và sự chân thành của em ngay từ lần đầu gặp gỡ.</p>
-      </div>
-      <div class="thought-card">
-        <h3>Điều đặc biệt nhất</h3>
-        <p>Em luôn biết cách làm cho cuộc sống trở nên đặc biệt hơn. Từ những bữa ăn em nấu với tất cả tình yêu, đến cách em chăm sóc và quan tâm đến từng chi tiết nhỏ trong cuộc sống của chúng ta.</p>
-      </div>
-      <div class="thought-card">
-        <h3>Lý do yêu em</h3>
-        <p>Anh yêu cách em nhìn cuộc sống với đôi mắt tràn đầy hy vọng và niềm tin. Em là người luôn đồng hành cùng anh trong mọi khoảnh khắc, là động lực để anh trở nên tốt hơn mỗi ngày.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Favorite Songs -->
-  <section class="songs-section">
-    <h2>Những bài hát của chúng ta</h2>
-    <div class="songs-grid">
-      <div class="song-card">
-        <h3>Cưới nhau đi</h3>
-        <div class="artist">Bùi Anh Tuấn</div>
-        <p>Bài hát đầu tiên chúng ta cùng nghe và cùng hát trong buổi hẹn hò đầu tiên.</p>
-        <div class="play-icon">
-          <i class="pi pi-play"></i>
-        </div>
-      </div>
-      <div class="song-card">
-        <h3>Ánh nắng của anh</h3>
-        <div class="artist">Đức Phúc</div>
-        <p>Bài hát mà anh luôn nghĩ về em mỗi khi nghe thấy, vì em chính là ánh nắng trong cuộc đời anh.</p>
-        <div class="play-icon">
-          <i class="pi pi-play"></i>
-        </div>
-      </div>
-      <div class="song-card">
-        <h3>Tình yêu xanh lá</h3>
-        <div class="artist">Thịnh Suy</div>
-        <p>Bài hát mà chúng ta thường cùng nhau nghe trên những chuyến đi xa.</p>
-        <div class="play-icon">
-          <i class="pi pi-play"></i>
+    <div class="section-content full-width">
+      <h2>Suy nghĩ về vợ yêu</h2>
+      <div class="thoughts-grid">
+        <div class="thought-card" *ngFor="let thought of [
+          { title: 'Ấn tượng đầu tiên', content: 'Em là một cô gái dễ thương, với nụ cười tỏa nắng và đôi mắt long lanh đầy sự tinh nghịch. Anh đã bị thu hút bởi vẻ đẹp tự nhiên và sự chân thành của em ngay từ lần đầu gặp gỡ.' },
+          { title: 'Điều đặc biệt nhất', content: 'Em luôn biết cách làm cho cuộc sống trở nên đặc biệt hơn. Từ những bữa ăn em nấu với tất cả tình yêu, đến cách em chăm sóc và quan tâm đến từng chi tiết nhỏ trong cuộc sống của chúng ta.' },
+          { title: 'Lý do yêu em', content: 'Anh yêu cách em nhìn cuộc sống với đôi mắt tràn đầy hy vọng và niềm tin. Em là người luôn đồng hành cùng anh trong mọi khoảnh khắc, là động lực để anh trở nên tốt hơn mỗi ngày.' }
+        ]">
+          <div class="thought-content">
+            <h3>{{ thought.title }}</h3>
+            <p>{{ thought.content }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -67,46 +49,574 @@
 
   <!-- Traits -->
   <section class="traits-section">
-    <h2>Đặc điểm tính cách</h2>
-    <div class="traits-grid">
-      <div class="trait-card" *ngFor="let trait of husbandData.traits">
-        <i [class]="trait.icon"></i>
-        <h3>{{ trait.title }}</h3>
-        <p>{{ trait.description }}</p>
+    <div class="section-content">
+      <h2>Đặc điểm tính cách</h2>
+      <p class="traits-intro">Mỗi người đều có những nét tính cách riêng biệt, đây là những đặc điểm nổi bật tạo nên con người tôi:</p>
+      <div class="traits-grid">
+        <div class="trait-item" *ngFor="let trait of husbandData.traits">
+          <div class="trait-header">
+            <div class="trait-icon">
+              <i [class]="trait.icon"></i>
+            </div>
+            <h3>{{ trait.title }}</h3>
+          </div>
+          <div class="trait-bar">
+            <div class="bar-fill" [style.width]="getTraitPercentage(trait.description)"></div>
+            <span class="bar-label">{{ getTraitValue(trait.description) }}</span>
+          </div>
+          <p class="trait-desc">{{ getTraitDescription(trait.description) }}</p>
+        </div>
       </div>
+    </div>
+    <div class="section-image">
+      <div class="image-frame">
+        <img src="assets/images/phat/phat-portrait.png" alt="Chân dung">
+      </div>
+      <div class="image-caption">Nụ cười hạnh phúc</div>
     </div>
   </section>
 
   <!-- Hobbies -->
   <section class="hobbies-section">
-    <h2>Sở thích & Đam mê</h2>
-    <div class="hobbies-grid">
-      <div class="hobby-card" *ngFor="let hobby of husbandData.hobbies">
-        <i [class]="hobby.icon"></i>
-        <h3>{{ hobby.name }}</h3>
-        <p>{{ hobby.description }}</p>
+    <div class="section-image left">
+      <div class="image-frame">
+        <img src="assets/images/phat/phat-hobby.png" alt="Sở thích">
+      </div>
+      <div class="image-caption">Những sở thích của anh</div>
+    </div>
+    <div class="section-content">
+      <h2>Sở thích & Đam mê</h2>
+      <div class="hobbies-grid">
+        <div class="hobby-item" *ngFor="let hobby of husbandData.hobbies; let i = index">
+          <div class="hobby-header">
+            <div class="hobby-icon">
+              <i [class]="hobby.icon"></i>
+            </div>
+            <h3>{{ hobby.name }}</h3>
+          </div>
+          <p>{{ hobby.description }}</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Fun Facts -->
   <section class="fun-facts-section">
-    <div class="emoji-watermark">😊</div>
-    <div class="emoji-watermark">😄</div>
-    <div class="emoji-watermark">😃</div>
-    <div class="emoji-watermark">😁</div>
-    
-    <h2>Những điều thú vị</h2>
-    <div class="fun-facts-grid">
-      <div class="fact-item" *ngFor="let fact of husbandData.funFacts">
-        <div class="fact-icon">
-          <i [class]="fact.icon"></i>
-        </div>
-        <div class="fact-content">
-          <h3>{{ fact.title }}</h3>
-          <p>{{ fact.description }}</p>
+    <div class="section-content full-width">
+      <h2>Những điều thú vị</h2>
+      <div class="facts-grid">
+        <div class="fact-item" *ngFor="let fact of [
+          { title: 'Khoảnh khắc đầu tiên', description: husbandData.funFacts[0].description, image: 'assets/images/phat/phat_dam-cuoi.png' },
+          { title: 'Chuyến đi đáng nhớ', description: husbandData.funFacts[1].description, image: 'assets/images/phat/phat_ho-may-vung-tau_10-2023.png' },
+          { title: 'Món quà ý nghĩa', description: husbandData.funFacts[2].description, image: 'assets/images/phat/phat-hobby.png' },
+          { title: 'Kỷ niệm khó quên', description: 'Những chuyến đi xa cùng nhau luôn là những kỷ niệm đáng nhớ nhất. Mỗi địa điểm mới là một câu chuyện mới, một trải nghiệm mới cho cả hai.', image: 'assets/images/phat/phat-travel.png' }
+        ]; let i = index">
+          <div class="fact-content">
+            <div class="fact-header">
+              <div class="fact-number">{{ i + 1 < 10 ? '0' + (i + 1) : i + 1 }}</div>
+              <h3>{{ fact.title }}</h3>
+            </div>
+            <p>{{ fact.description }}</p>
+          </div>
+          <div class="fact-image">
+            <img [src]="fact.image" [alt]="fact.title">
+          </div>
         </div>
       </div>
     </div>
   </section>
 </div>
+
+<style>
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+section {
+  margin-bottom: 6rem;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 4rem;
+}
+
+.section-content {
+  flex: 1;
+  max-width: 60%;
+}
+
+.section-content.full-width {
+  max-width: 100%;
+}
+
+.section-image {
+  position: sticky;
+  top: 100px;
+  width: 40%;
+  max-width: 400px;
+}
+
+.section-image.left {
+  order: -1;
+}
+
+.section-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.section-image:hover img {
+  transform: translateY(-10px);
+}
+
+.image-caption {
+  text-align: center;
+  margin-top: 1rem;
+  font-style: italic;
+  color: #666;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+  position: relative;
+}
+
+h2::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background: rgba(65, 105, 225, 0.1);
+  border-radius: 10px;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+/* Intro Section */
+.intro-text {
+  position: relative;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.intro-paragraphs {
+  font-family: 'Merriweather', serif;
+}
+
+.description, .description-extra {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  color: #444;
+  font-size: 1.1rem;
+}
+
+.description-extra {
+  font-style: italic;
+}
+
+.love-message {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.4rem;
+  color: #4169e1;
+  text-align: right;
+  margin-top: 2rem;
+  line-height: 1.6;
+}
+
+.quote-mark {
+  position: absolute;
+  top: -30px;
+  left: -20px;
+  font-size: 6rem;
+  color: rgba(65, 105, 225, 0.1);
+  font-family: 'Playfair Display', serif;
+}
+
+/* Thoughts Timeline */
+.thoughts-timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.thoughts-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #4169e1, transparent);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-left: 2rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -5px;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  background: #4169e1;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 3px rgba(65, 105, 225, 0.2);
+}
+
+.timeline-content {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Traits Section */
+.traits-intro {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.traits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.trait-item {
+  background: rgba(65, 105, 225, 0.1);
+  padding: 1.5rem;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.trait-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 8px 8px 20px rgba(65, 105, 225, 0.15),
+              -8px -8px 20px rgba(255, 255, 255, 0.9);
+}
+
+.trait-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.trait-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #e6f0ff, #ffffff);
+  border-radius: 10px;
+  color: #4169e1;
+  box-shadow: inset 2px 2px 5px rgba(65, 105, 225, 0.1),
+              inset -2px -2px 5px rgba(255, 255, 255, 0.8);
+}
+
+.trait-bar {
+  height: 6px;
+  background: rgba(65, 105, 225, 0.1);
+  border-radius: 3px;
+  margin: 0.5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4169e1, #6495ed);
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.bar-label {
+  position: absolute;
+  right: 0;
+  top: -20px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.trait-desc {
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Hobbies Section */
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.hobby-item {
+  background: rgba(65, 105, 225, 0.1);
+  padding: 1.5rem;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.hobby-item:hover {
+  transform: translateY(-5px);
+}
+
+.hobby-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.hobby-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(65, 105, 225, 0.1);
+  border-radius: 10px;
+  color: #4169e1;
+}
+
+.hobby-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.hobby-item p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Fun Facts Section */
+.fun-facts-section {
+  background: #fff9e6;
+  margin: 4rem -2rem;
+  padding: 4rem 2rem;
+}
+
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+
+.fact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  background: rgba(65, 105, 225, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+  border: none;
+}
+
+.fact-item:hover {
+  transform: translateY(-5px);
+}
+
+.fact-content {
+  flex: 1;
+}
+
+.fact-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.fact-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffd700;
+  font-family: 'Playfair Display', serif;
+}
+
+.fact-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.fact-content p {
+  margin: 0;
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.fact-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.fact-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Thoughts Section */
+.thoughts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.thought-card {
+  background: rgba(65, 105, 225, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.thought-card:hover {
+  transform: translateY(-5px);
+}
+
+.thought-content h3 {
+  color: #4169e1;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.thought-content p {
+  color: #444;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  section {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .section-content {
+    max-width: 100%;
+  }
+
+  .section-image {
+    position: relative;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    order: -1;
+  }
+
+  .traits-list,
+  .hobbies-list,
+  .facts-list {
+    grid-template-columns: 1fr;
+  }
+
+  .facts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fun-facts-section {
+    margin: 2rem -1rem;
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-container {
+    padding: 1rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .facts-timeline {
+    padding-left: 2rem;
+  }
+
+  .fact-item::before {
+    left: -2rem;
+  }
+
+  .fact-image img {
+    max-width: 100%;
+  }
+
+  .fact-item {
+    flex-direction: column;
+  }
+
+  .fact-image {
+    width: 100%;
+    height: 200px;
+    order: -1;
+    margin-bottom: 1rem;
+  }
+
+  .thought-card {
+    flex-direction: column;
+  }
+
+  .thought-image {
+    width: 100%;
+    height: 200px;
+    order: -1;
+    margin-bottom: 1rem;
+  }
+}
+</style>
+
+<script>
+function getTraitPercentage(description: string): string {
+  const match = description.match(/(\d+)([%.]?\d*)/);
+  if (match) {
+    const value = parseFloat(match[0]);
+    return `${value}%`;
+  }
+  return '50%';
+}
+
+function getTraitValue(description: string): string {
+  const match = description.match(/(\d+)([%.]?\d*)/);
+  if (match) {
+    return match[0];
+  }
+  return '';
+}
+
+function getTraitDescription(description: string): string {
+  return description.replace(/\d+([%.]?\d*)\s*-\s*/, '');
+}
+</script>

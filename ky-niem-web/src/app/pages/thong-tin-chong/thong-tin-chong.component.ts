@@ -44,4 +44,25 @@ export class ThongTinChongComponent implements OnInit {
       }
     });
   }
+
+  getTraitPercentage(description: string): string {
+    const match = description.match(/(\d+)([%.]?\d*)/);
+    if (match) {
+      const value = parseFloat(match[0]);
+      return `${value}%`;
+    }
+    return '50%';
+  }
+
+  getTraitValue(description: string): string {
+    const match = description.match(/(\d+)([%.]?\d*)/);
+    if (match) {
+      return match[0];
+    }
+    return '';
+  }
+
+  getTraitDescription(description: string): string {
+    return description.replace(/\d+([%.]?\d*)\s*-\s*/, '');
+  }
 }

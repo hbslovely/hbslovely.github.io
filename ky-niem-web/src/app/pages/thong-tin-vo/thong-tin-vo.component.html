@@ -7,59 +7,47 @@
   [basicInfo]="profileInfo">
 </app-profile-header>
 
-<!-- Rest of the content -->
+<!-- Main Content -->
 <div class="content-container">
   <!-- Description -->
-  <section class="description-section">
-    <p class="description">{{ wifeData.wifeInfo?.description }}</p>
-    <p class="love-message">{{ wifeData.wifeInfo?.loveMessage }}</p>
+  <section class="intro-section">
+    <div class="section-content">
+      <div class="intro-text">
+        <div class="floating-hearts">
+          <span>💖</span>
+          <span>💝</span>
+          <span>💕</span>
+        </div>
+        <div class="intro-paragraphs">
+          <p class="description">{{ wifeData.wifeInfo?.description }}</p>
+          <p class="description-extra">Mỗi ngày bên anh là một ngày tràn ngập niềm vui và hạnh phúc. Em trân trọng từng khoảnh khắc chúng ta chia sẻ, từ những bữa cơm ấm cúng đến những chuyến đi khám phá thế giới mới.</p>
+          <p class="description-extra">Tình yêu của chúng ta không chỉ là những lời ngọt ngào, mà còn là sự thấu hiểu và đồng hành. Em hứa sẽ luôn là người vợ tận tụy, là người bạn đồng hành đáng tin cậy của anh trên mọi chặng đường.</p>
+          <p class="love-message">{{ wifeData.wifeInfo?.loveMessage }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="section-image">
+      <div class="image-frame">
+        <img src="assets/images/quyen/quyen_lua-do-chup-hinh-cuoi_1-2022.png" alt="Khoảnh khắc đẹp">
+      </div>
+      <div class="image-caption">Khoảnh khắc hạnh phúc</div>
+    </div>
   </section>
 
   <!-- Thoughts about husband -->
   <section class="thoughts-section">
-    <h2>Suy nghĩ về chồng yêu</h2>
-    <div class="thoughts-grid">
-      <div class="thought-card">
-        <h3>Ấn tượng đầu tiên</h3>
-        <p>Anh là một chàng trai ấm áp, với nụ cười tươi và ánh mắt chân thành. Em đã bị thu hút bởi sự thông minh và tâm hồn đẹp của anh ngay từ những ngày đầu tiên.</p>
-      </div>
-      <div class="thought-card">
-        <h3>Điều đặc biệt nhất</h3>
-        <p>Anh luôn biết cách làm em cười và cảm thấy được yêu thương. Từ những món quà bất ngờ, đến những lời động viên ấm áp khi em mệt mỏi, anh luôn là người chồng tuyệt vời nhất.</p>
-      </div>
-      <div class="thought-card">
-        <h3>Lý do yêu anh</h3>
-        <p>Em yêu cách anh luôn đặt gia đình lên hàng đầu, yêu sự chăm chỉ và kiên trì của anh trong công việc. Anh là người cho em cảm giác an toàn và hạnh phúc mỗi ngày.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Favorite Songs -->
-  <section class="songs-section">
-    <h2>Những bài hát của chúng ta</h2>
-    <div class="songs-grid">
-      <div class="song-card">
-        <h3>Vợ người ta</h3>
-        <div class="artist">Phan Mạnh Quỳnh</div>
-        <p>Bài hát mà anh thường hát cho em nghe trong những buổi hẹn hò đầu tiên.</p>
-        <div class="play-icon">
-          <i class="pi pi-play"></i>
-        </div>
-      </div>
-      <div class="song-card">
-        <h3>Có em chờ</h3>
-        <div class="artist">MIN</div>
-        <p>Bài hát mà em luôn nghĩ về anh mỗi khi nghe, vì em luôn chờ đợi anh trở về.</p>
-        <div class="play-icon">
-          <i class="pi pi-play"></i>
-        </div>
-      </div>
-      <div class="song-card">
-        <h3>Một nhà</h3>
-        <div class="artist">Da LAB</div>
-        <p>Bài hát về ước mơ xây dựng tổ ấm của chúng ta.</p>
-        <div class="play-icon">
-          <i class="pi pi-play"></i>
+    <div class="section-content full-width">
+      <h2>Suy nghĩ về chồng yêu</h2>
+      <div class="thoughts-grid">
+        <div class="thought-card" *ngFor="let thought of [
+          { title: 'Ấn tượng đầu tiên', content: 'Anh là một chàng trai ấm áp, với nụ cười tươi và ánh mắt chân thành. Em đã bị thu hút bởi sự thông minh và tâm hồn đẹp của anh ngay từ những ngày đầu tiên.' },
+          { title: 'Điều đặc biệt nhất', content: 'Anh luôn biết cách làm em cười và cảm thấy được yêu thương. Từ những món quà bất ngờ, đến những lời động viên ấm áp khi em mệt mỏi, anh luôn là người chồng tuyệt vời nhất.' },
+          { title: 'Lý do yêu anh', content: 'Em yêu cách anh luôn đặt gia đình lên hàng đầu, yêu sự chăm chỉ và kiên trì của anh trong công việc. Anh là người cho em cảm giác an toàn và hạnh phúc mỗi ngày.' }
+        ]">
+          <div class="thought-content">
+            <h3>{{ thought.title }}</h3>
+            <p>{{ thought.content }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -67,46 +55,518 @@
 
   <!-- Traits -->
   <section class="traits-section">
-    <h2>Đặc điểm tính cách</h2>
-    <div class="traits-grid">
-      <div class="trait-card" *ngFor="let trait of wifeData.wifeTraits">
-        <i [class]="trait.icon"></i>
-        <h3>{{ trait.title }}</h3>
-        <p>{{ trait.description }}</p>
+    <div class="section-content">
+      <h2>Đặc điểm tính cách</h2>
+      <p class="traits-intro">Mỗi người phụ nữ đều có những nét đẹp riêng, đây là những đặc điểm làm nên con người em:</p>
+      <div class="traits-grid">
+        <div class="trait-item" *ngFor="let trait of wifeData.wifeTraits">
+          <div class="trait-header">
+            <div class="trait-icon">
+              <i [class]="trait.icon"></i>
+            </div>
+            <h3>{{ trait.title }}</h3>
+          </div>
+          <div class="trait-bar">
+            <div class="bar-fill" [style.width]="getTraitPercentage(trait.description)"></div>
+            <span class="bar-label">{{ getTraitValue(trait.description) }}</span>
+          </div>
+          <p class="trait-desc">{{ getTraitDescription(trait.description) }}</p>
+        </div>
       </div>
+    </div>
+    <div class="section-image">
+      <div class="image-frame">
+        <img src="assets/images/quyen/quyen-portrait.png" alt="Chân dung">
+      </div>
+      <div class="image-caption">Nụ cười rạng rỡ</div>
     </div>
   </section>
 
   <!-- Hobbies -->
   <section class="hobbies-section">
-    <h2>Sở thích & Đam mê</h2>
-    <div class="hobbies-grid">
-      <div class="hobby-card" *ngFor="let hobby of wifeData.wifeHobbies">
-        <i [class]="hobby.icon"></i>
-        <h3>{{ hobby.name }}</h3>
-        <p>{{ hobby.description }}</p>
+    <div class="section-image left">
+      <div class="image-frame">
+        <img src="assets/images/quyen/quyen.jpeg" alt="Sở thích">
+      </div>
+      <div class="image-caption">Khoảnh khắc đáng yêu</div>
+    </div>
+    <div class="section-content">
+      <h2>Sở thích & Đam mê</h2>
+      <div class="hobbies-grid">
+        <div class="hobby-item" *ngFor="let hobby of wifeData.wifeHobbies">
+          <div class="hobby-header">
+            <div class="hobby-icon">
+              <i [class]="hobby.icon"></i>
+            </div>
+            <h3>{{ hobby.name }}</h3>
+          </div>
+          <p>{{ hobby.description }}</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Fun Facts -->
   <section class="fun-facts-section">
-    <div class="emoji-watermark">🥰</div>
-    <div class="emoji-watermark">😘</div>
-    <div class="emoji-watermark">💝</div>
-    <div class="emoji-watermark">💖</div>
-    
-    <h2>Những điều thú vị</h2>
-    <div class="fun-facts-grid">
-      <div class="fact-item" *ngFor="let fact of wifeData.wifeFunFacts">
-        <div class="fact-icon">
-          <i [class]="fact.icon"></i>
-        </div>
-        <div class="fact-content">
-          <h3>{{ fact.title }}</h3>
-          <p>{{ fact.description }}</p>
+    <div class="section-content full-width">
+      <h2>Những điều thú vị</h2>
+      <div class="facts-grid">
+        <div class="fact-item" *ngFor="let fact of [
+          { title: 'Khoảnh khắc đầu tiên', description: wifeData.wifeFunFacts[0].description, image: 'assets/images/quyen/quyen_chup-len-vo-qua-anh-man-hinh.png' },
+          { title: 'Chuyến đi đáng nhớ', description: wifeData.wifeFunFacts[1].description, image: 'assets/images/quyen/quyen_lua-do-chup-hinh-cuoi_1-2022.png' },
+          { title: 'Món quà ý nghĩa', description: wifeData.wifeFunFacts[2].description, image: 'assets/images/quyen/quyen.jpeg' },
+          { title: 'Kỷ niệm khó quên', description: 'Những chuyến đi xa cùng nhau luôn là những kỷ niệm đáng nhớ nhất. Mỗi địa điểm mới là một câu chuyện mới, một trải nghiệm mới cho cả hai.', image: 'assets/images/quyen/quyen-portrait.png' }
+        ]; let i = index">
+          <div class="fact-content">
+            <div class="fact-header">
+              <div class="fact-number">{{ i + 1 < 10 ? '0' + (i + 1) : i + 1 }}</div>
+              <h3>{{ fact.title }}</h3>
+            </div>
+            <p>{{ fact.description }}</p>
+          </div>
+          <div class="fact-image">
+            <img [src]="fact.image" [alt]="fact.title">
+          </div>
         </div>
       </div>
     </div>
   </section>
 </div>
+
+<style>
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+section {
+  margin-bottom: 6rem;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 4rem;
+}
+
+.section-content {
+  flex: 1;
+  max-width: 60%;
+}
+
+.section-content.full-width {
+  max-width: 100%;
+}
+
+.section-image {
+  position: sticky;
+  top: 100px;
+  width: 40%;
+  max-width: 400px;
+}
+
+.section-image.left {
+  order: -1;
+}
+
+.image-frame {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.image-frame::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid rgba(255, 105, 180, 0.2);
+  border-radius: 30px;
+  pointer-events: none;
+}
+
+.image-frame img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+.image-frame:hover img {
+  transform: scale(1.05);
+}
+
+.image-caption {
+  text-align: center;
+  margin-top: 1rem;
+  font-style: italic;
+  color: #666;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+  position: relative;
+  font-family: 'Dancing Script', cursive;
+}
+
+/* Intro Section */
+.intro-text {
+  position: relative;
+  padding: 2rem;
+  background: linear-gradient(to bottom right, #fff, #fff5f8);
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(255, 105, 180, 0.1);
+}
+
+.intro-paragraphs {
+  font-family: 'Merriweather', serif;
+}
+
+.description, .description-extra {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  color: #444;
+  font-size: 1.1rem;
+}
+
+.description-extra {
+  font-style: italic;
+}
+
+.love-message {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.4rem;
+  color: #ff69b4;
+  text-align: right;
+  margin-top: 2rem;
+  line-height: 1.6;
+}
+
+/* Thoughts Section */
+.thoughts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.thought-card {
+  background: rgba(255, 105, 180, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.thought-card:hover {
+  transform: translateY(-5px);
+}
+
+.thought-content {
+  flex: 1;
+}
+
+.thought-content h3 {
+  color: #ff69b4;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.thought-content p {
+  color: #444;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Traits Section */
+.traits-intro {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.traits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.trait-item {
+  background: rgba(255, 105, 180, 0.1);
+  padding: 1.5rem;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.trait-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 8px 8px 20px rgba(255, 105, 180, 0.15),
+              -8px -8px 20px rgba(255, 255, 255, 0.9);
+}
+
+.trait-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.trait-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #ffe5f0, #ffffff);
+  border-radius: 10px;
+  color: #ff69b4;
+  box-shadow: inset 2px 2px 5px rgba(255, 105, 180, 0.1),
+              inset -2px -2px 5px rgba(255, 255, 255, 0.8);
+}
+
+.trait-bar {
+  height: 6px;
+  background: rgba(255, 105, 180, 0.1);
+  border-radius: 3px;
+  margin: 0.5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff69b4, #ff8da1);
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.bar-label {
+  position: absolute;
+  right: 0;
+  top: -20px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.trait-desc {
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Hobbies Section */
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.hobby-item {
+  background: rgba(255, 105, 180, 0.1);
+  padding: 1.5rem;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.hobby-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 8px 8px 20px rgba(255, 105, 180, 0.15),
+              -8px -8px 20px rgba(255, 255, 255, 0.9);
+}
+
+.hobby-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.hobby-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #ffe5f0, #ffffff);
+  border-radius: 10px;
+  color: #ff69b4;
+  box-shadow: inset 2px 2px 5px rgba(255, 105, 180, 0.1),
+              inset -2px -2px 5px rgba(255, 255, 255, 0.8);
+}
+
+.hobby-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.hobby-item p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Fun Facts Section */
+.fun-facts-section {
+  background: #fff9e6;
+  margin: 4rem -2rem;
+  padding: 4rem 2rem;
+}
+
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+
+.fact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  background: rgba(255, 105, 180, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+  border: none;
+}
+
+.fact-item:hover {
+  transform: translateY(-5px);
+}
+
+.fact-content {
+  flex: 1;
+}
+
+.fact-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.fact-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffd700;
+  font-family: 'Playfair Display', serif;
+}
+
+.fact-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.fact-content p {
+  margin: 0;
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.fact-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.fact-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  section {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .section-content {
+    max-width: 100%;
+  }
+
+  .section-image {
+    position: relative;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    order: -1;
+  }
+
+  .thoughts-grid,
+  .traits-grid,
+  .hobbies-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .facts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fun-facts-section {
+    margin: 2rem -1rem;
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-container {
+    padding: 1rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .thought-card {
+    flex-direction: column;
+  }
+
+  .thought-image {
+    width: 100%;
+    height: 200px;
+    order: -1;
+    margin-bottom: 1rem;
+  }
+
+  .fact-item {
+    flex-direction: column;
+  }
+
+  .fact-image {
+    width: 100%;
+    height: 200px;
+    order: -1;
+    margin-bottom: 1rem;
+  }
+}
+</style>
+
+<script>
+function getRandomEmoji() {
+  const emojis = ['🌸', '🎀', '💝', '💖', '✨', '🌟', '🦋', '🌺', '🎵', '💫'];
+  return emojis[Math.floor(Math.random() * emojis.length)];
+}
+</script>

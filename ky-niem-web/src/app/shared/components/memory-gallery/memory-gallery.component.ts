@@ -13,6 +13,9 @@ interface Memory {
   author: string;
 }
 
+type ViewMode = 'grid' | 'masonry' | 'carousel' | 'timeline' | 'cards';
+type FilterType = 'all' | 'couple' | 'travel' | 'daily';
+
 @Component({
   selector: 'app-memory-gallery',
   standalone: true,
@@ -24,10 +27,11 @@ export class MemoryGalleryComponent implements OnInit {
   memories: Memory[] = [];
   displayedMemories: Memory[] = [];
   selectedImage: Memory | null = null;
-  currentFilter: string = 'all';
-  viewMode: 'grid' | 'masonry' = 'grid';
+  currentFilter: FilterType = 'all';
+  viewMode: ViewMode = 'grid';
   loading: boolean = false;
   hasMoreImages: boolean = true;
+  currentSlide = 0;
   private page: number = 1;
   private pageSize: number = 6; // Reduced from 12 to 6
 
@@ -78,7 +82,7 @@ export class MemoryGalleryComponent implements OnInit {
     this.hasMoreImages = this.memories.length > this.pageSize;
   }
 
-  filterImages(category: string) {
+  filterImages(category: FilterType) {
     this.currentFilter = category;
     this.page = 1;
 
@@ -92,8 +96,11 @@ export class MemoryGalleryComponent implements OnInit {
     this.updateHasMoreImages();
   }
 
-  changeView(mode: 'grid' | 'masonry') {
+  changeView(mode: ViewMode) {
     this.viewMode = mode;
+    if (mode === 'carousel') {
+      this.currentSlide = 0;
+    }
   }
 
   loadMore() {
@@ -166,6 +173,19 @@ export class MemoryGalleryComponent implements OnInit {
     const img = event.target as HTMLImageElement;
     if (this.viewMode === 'masonry') {
       img.classList.add('loaded');
+    }
+  }
+
+  // Carousel Controls
+  nextSlide() {
+    if (this.currentSlide < this.displayedMemories.length - 1) {
+      this.currentSlide++;
+    }
+  }
+
+  prevSlide() {
+    if (this.currentSlide > 0) {
+      this.currentSlide--;
     }
   }
 }

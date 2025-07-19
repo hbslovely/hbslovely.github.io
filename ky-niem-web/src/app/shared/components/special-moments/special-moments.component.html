@@ -1,58 +1,101 @@
 <!-- Special Moments Section -->
 <div class="special-moments-section">
-  <div class="music-background"></div>
+  <!-- Watermark Background -->
+  <div class="watermark-bg">
+    <i class="pi pi-heart"></i>
+    <i class="pi pi-camera"></i>
+    <i class="pi pi-calendar"></i>
+  </div>
+
   <div class="container">
-    <div class="section-header text-center">
+    <div class="section-header">
       <h2 class="section-title">
         <i class="pi pi-heart-fill"></i>
         Những Khoảnh Khắc Đặc Biệt
       </h2>
-      <div class="quote-wrapper">
-        <p class="section-subtitle">"Music expresses that which cannot be put into words and that which cannot remain silent"</p>
-        <span class="quote-author">- Victor Hugo</span>
-      </div>
+      <p class="section-subtitle">"Mỗi khoảnh khắc bên nhau là một kỷ niệm đáng trân trọng"</p>
     </div>
 
-    <div class="moments-timeline">
-      <div class="timeline-line"></div>
-      
-      <div class="moment-item" *ngFor="let moment of moments; let i = index" [class.right]="i % 2 === 1">
-        <div class="moment-marker">
-          <div class="marker-dot"></div>
-          <i [class]="moment.icon"></i>
-        </div>
-        
-        <div class="moment-content">
-          <div class="moment-header">
+    <div class="content-wrapper">
+      <div class="moments-grid">
+        <!-- Kỷ niệm quen nhau -->
+        <div class="moment-card">
+          <div class="moment-image">
+            <img src="assets/images/ki-niem/ky-niem-quen-nhau.png" alt="Kỷ niệm quen nhau">
+            <div class="moment-overlay">
+              <i class="pi pi-heart"></i>
+            </div>
+          </div>
+          <div class="moment-content">
             <div class="moment-date">
               <i class="pi pi-calendar"></i>
-              {{ moment.date }}
+              Tháng 6/2021
             </div>
-            <h3 class="moment-title">{{ moment.title }}</h3>
+            <h3>Lần Đầu Gặp Gỡ</h3>
+            <p>Khoảnh khắc định mệnh khi hai trái tim tìm thấy nhau</p>
           </div>
-          
-          <div class="moment-body">
-            <p class="moment-description">{{ moment.description }}</p>
-            <div class="moment-note">
+        </div>
+
+        <!-- Lần đầu gặp nhau -->
+        <div class="moment-card">
+          <div class="moment-image">
+            <img src="assets/images/ki-niem/lan-dau-gap-nhau.png" alt="Lần đầu gặp nhau">
+            <div class="moment-overlay">
               <i class="pi pi-heart"></i>
-              <div class="note-content">
-                <span class="note-text">{{ moment.message || 'Life is not measured by the number of breaths we take, but by the moments that take our breath away' }}</span>
-                <span class="note-author">- {{ moment.author || 'Maya Angelou' }}</span>
-              </div>
             </div>
+          </div>
+          <div class="moment-content">
+            <div class="moment-date">
+              <i class="pi pi-calendar"></i>
+              Tháng 7/2021
+            </div>
+            <h3>Buổi Hẹn Đầu Tiên</h3>
+            <p>Những ánh mắt, nụ cười và câu chuyện đầu tiên</p>
+          </div>
+        </div>
+
+        <!-- Trao duyên -->
+        <div class="moment-card">
+          <div class="moment-image">
+            <img src="assets/images/ki-niem/trao-duyen.png" alt="Trao duyên">
+            <div class="moment-overlay">
+              <i class="pi pi-heart"></i>
+            </div>
+          </div>
+          <div class="moment-content">
+            <div class="moment-date">
+              <i class="pi pi-calendar"></i>
+              Tháng 12/2021
+            </div>
+            <h3>Ngày Trao Duyên</h3>
+            <p>Khoảnh khắc thiêng liêng khi ta nói lời yêu</p>
+          </div>
+        </div>
+
+        <!-- Cưới hỏi -->
+        <div class="moment-card">
+          <div class="moment-image">
+            <img src="assets/images/ki-niem/cuoi-hoi.png" alt="Cưới hỏi">
+            <div class="moment-overlay">
+              <i class="pi pi-heart"></i>
+            </div>
+          </div>
+          <div class="moment-content">
+            <div class="moment-date">
+              <i class="pi pi-calendar"></i>
+              Tháng 3/2022
+            </div>
+            <h3>Ngày Trọng Đại</h3>
+            <p>Hạnh phúc vỡ òa trong ngày chung đôi</p>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="section-footer text-center">
-      <div class="footer-note">
-        <i class="pi pi-heart-fill"></i>
-        <div class="quote-wrapper">
-          <blockquote>
-            "Love is like a beautiful melody, it's meaningless unless it is shared"
-          </blockquote>
-          <span class="quote-author">- Leonard Bernstein</span>
+      <div class="section-footer">
+        <div class="footer-quote">
+          <i class="pi pi-heart-fill"></i>
+          <p>"Tình yêu không phải là nhìn nhau mà là cùng nhìn về một hướng"</p>
+          <span class="quote-author">- Antoine de Saint-Exupéry</span>
         </div>
       </div>
     </div>
