@@ -1,18 +1,5 @@
 <!-- Memory Places Section -->
-<div class="places-section">
-  <div class="travel-watermark">
-    <div class="icon-group">
-    <i class="pi pi-globe"></i>
-    <i class="pi pi-camera"></i>
-    <i class="pi pi-map"></i>
-    <i class="pi pi-compass"></i>
-    <i class="pi pi-plane"></i>
-    <i class="pi pi-car"></i>
-    <i class="pi pi-heart"></i>
-    <i class="pi pi-map-marker"></i>
-    </div>
-  </div>
-
+<div class="places-section flat-layout">
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">
@@ -22,79 +9,6 @@
       <p class="section-subtitle">Mỗi nơi chúng ta đến là một kỷ niệm đáng nhớ</p>
     </div>
 
-    <div class="places-slider">
-      <!-- Current Slide -->
-      <div class="slide-container">
-        <div class="slide" *ngFor="let place of places; let i = index" [class.active]="i === currentSlide">
-          <div class="slide-content">
-            <div class="image-wrapper">
-              <img [src]="place.image" [alt]="place.name">
-              <div class="location-tag">
-                <i class="pi pi-map-marker"></i>
-                {{ place.name }}
-              </div>
-              <!-- Mobile Info Overlay -->
-              <div class="mobile-info-overlay">
-                <div class="mobile-info-content">
-                  <div class="mobile-location">
-                    <h3>{{ place.name }}</h3>
-                    <span class="mobile-date">
-                      <i class="pi pi-calendar"></i>
-                      {{ place.date }}
-                    </span>
-                  </div>
-                  <p class="mobile-description">{{ place.description }}</p>
-                  <div class="mobile-emotions">
-                    <span class="emotion" *ngFor="let emotion of place.emotions">
-                      <i class="pi pi-heart-fill"></i>
-                      {{ emotion }}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Desktop Info (hidden on mobile) -->
-            <div class="slide-info desktop-only">
-              <div class="info-header">
-                <h3>{{ place.name }}</h3>
-                <span class="date">
-                  <i class="pi pi-calendar"></i>
-                  {{ place.date }}
-                </span>
-              </div>
-              <p class="description">{{ place.description }}</p>
-              <div class="emotions">
-                <span class="emotion" *ngFor="let emotion of place.emotions">
-                  <i class="pi pi-heart-fill"></i>
-                  {{ emotion }}
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Navigation -->
-      <div class="slider-navigation">
-        <button class="nav-btn prev" (click)="prevSlide()" [class.disabled]="currentSlide === 0">
-          <i class="pi pi-chevron-left"></i>
-        </button>
-        
-        <!-- Thumbnails -->
-        <div class="thumbnails">
-          <div class="thumb" 
-               *ngFor="let place of places; let i = index"
-               [class.active]="i === currentSlide"
-               (click)="goToSlide(i)">
-            <img [src]="place.image" [alt]="place.name">
-            <span class="thumb-name">{{ place.name }}</span>
-          </div>
-        </div>
-
-        <button class="nav-btn next" (click)="nextSlide()" [class.disabled]="currentSlide === places.length - 1">
-          <i class="pi pi-chevron-right"></i>
-        </button>
-      </div>
-    </div>
+    <app-album-gallery [images]="albumImages"></app-album-gallery>
   </div>
-</div> 
+</div>

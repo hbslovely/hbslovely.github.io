@@ -1,599 +1,333 @@
+<!-- Animated Background -->
+<div class="profile-bg-animated">
+  <span class="floating-star" *ngFor="let n of [1,2,3,4,5,6,7,8,9,10]" [style.left.%]="10 * n + (n % 2 === 0 ? 5 : 0)" [style.animationDuration]="(6 + n % 4) + 's'">💙</span>
+  <span class="floating-star2" *ngFor="let n of [1,2,3,4,5]" [style.left.%]="20 * n - 5" [style.animationDuration]="(8 + n % 3) + 's'">⭐</span>
+</div>
+
 <!-- Profile Header -->
-<app-profile-header
-  [name]="husbandData.basicInfo?.name"
-  [nickname]="husbandData.basicInfo?.title"
-  [backgroundImage]="'assets/images/phat/phat-work.png'"
-  [avatarImage]="husbandData.basicInfo?.avatar"
-  [basicInfo]="profileInfo">
-</app-profile-header>
-
-<!-- Main Content -->
-<div class="content-container">
-  <!-- Description -->
-  <section class="intro-section">
-    <div class="section-content">
-      <div class="intro-text">
-        <div class="quote-mark">"</div>
-        <div class="intro-paragraphs">
-          <p class="description">{{ husbandData.basicInfo?.description }}</p>
-          <p class="description-extra">Mỗi ngày trôi qua là một hành trình mới, một cơ hội để chúng ta cùng nhau xây dựng những kỷ niệm đẹp. Tôi luôn trân trọng những giây phút bên nhau, từ những bữa cơm ấm cúng đến những chuyến đi khám phá thế giới.</p>
-          <p class="description-extra">Tình yêu không chỉ là cảm xúc, mà còn là sự cam kết và trách nhiệm. Tôi hứa sẽ luôn là người bạn đồng hành đáng tin cậy, là chỗ dựa vững chắc cho gia đình nhỏ của chúng ta.</p>
-          <p class="love-message">{{ husbandData.basicInfo?.loveMessage }}</p>
-        </div>
-      </div>
+<div class="profile-header-flat">
+  <div class="profile-avatar">
+    <img src="assets/images/phat/phat-portrait.png" alt="Chân dung" />
+    <img class="avatar-deco" src="assets/images/phat/phat_dam-cuoi.png" alt="Deco" />
+  </div>
+  <div class="profile-main-info">
+    <h1 class="profile-name">{{ husbandData.basicInfo?.name }}</h1>
+    <h2 class="profile-title">{{ husbandData.basicInfo?.title }}</h2>
+    <div class="profile-header-img-row">
+      <img class="inline-icon-lg" src="assets/images/phat/phat-work.png" alt="icon" />
+      <img class="inline-icon-lg" src="assets/images/phat/phat-travel.png" alt="icon" />
     </div>
-    <div class="section-image">
-      <img src="assets/images/phat/phat_dam-cuoi-2.png" alt="Khoảnh khắc đẹp">
-      <div class="image-caption">Khoảnh khắc hạnh phúc</div>
+    <p class="profile-desc">{{ husbandData.basicInfo?.description }}</p>
+    <div class="profile-tags">
+      <span class="profile-tag" *ngFor="let tag of husbandData.basicInfo?.tags">{{ tag }}</span>
     </div>
-  </section>
+    <div class="profile-love-message">{{ husbandData.basicInfo?.loveMessage }}</div>
+  </div>
+</div>
 
-  <!-- Thoughts about wife -->
-  <section class="thoughts-section">
-    <div class="section-content full-width">
-      <h2>Suy nghĩ về vợ yêu</h2>
-      <div class="thoughts-grid">
-        <div class="thought-card" *ngFor="let thought of [
-          { title: 'Ấn tượng đầu tiên', content: 'Em là một cô gái dễ thương, với nụ cười tỏa nắng và đôi mắt long lanh đầy sự tinh nghịch. Anh đã bị thu hút bởi vẻ đẹp tự nhiên và sự chân thành của em ngay từ lần đầu gặp gỡ.' },
-          { title: 'Điều đặc biệt nhất', content: 'Em luôn biết cách làm cho cuộc sống trở nên đặc biệt hơn. Từ những bữa ăn em nấu với tất cả tình yêu, đến cách em chăm sóc và quan tâm đến từng chi tiết nhỏ trong cuộc sống của chúng ta.' },
-          { title: 'Lý do yêu em', content: 'Anh yêu cách em nhìn cuộc sống với đôi mắt tràn đầy hy vọng và niềm tin. Em là người luôn đồng hành cùng anh trong mọi khoảnh khắc, là động lực để anh trở nên tốt hơn mỗi ngày.' }
-        ]">
-          <div class="thought-content">
-            <h3>{{ thought.title }}</h3>
-            <p>{{ thought.content }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
+<div class="content-container-flat">
+  <div class="section-img-row">
+    <img class="section-divider-img-lg" src="assets/images/phat/phat_dam-cuoi-2.png" alt="divider" />
+  </div>
+  <hr>
   <!-- Traits -->
-  <section class="traits-section">
-    <div class="section-content">
-      <h2>Đặc điểm tính cách</h2>
-      <p class="traits-intro">Mỗi người đều có những nét tính cách riêng biệt, đây là những đặc điểm nổi bật tạo nên con người tôi:</p>
-      <div class="traits-grid">
-        <div class="trait-item" *ngFor="let trait of husbandData.traits">
-          <div class="trait-header">
-            <div class="trait-icon">
-              <i [class]="trait.icon"></i>
-            </div>
-            <h3>{{ trait.title }}</h3>
-          </div>
-          <div class="trait-bar">
-            <div class="bar-fill" [style.width]="getTraitPercentage(trait.description)"></div>
-            <span class="bar-label">{{ getTraitValue(trait.description) }}</span>
-          </div>
-          <p class="trait-desc">{{ getTraitDescription(trait.description) }}</p>
-        </div>
-      </div>
+  <section class="traits-section-flat">
+    <h2>Đặc điểm tính cách</h2>
+    <div class="section-img-row">
+      <img class="section-divider-img-lg" src="assets/images/phat/phat-work.png" alt="divider" />
     </div>
-    <div class="section-image">
-      <div class="image-frame">
-        <img src="assets/images/phat/phat-portrait.png" alt="Chân dung">
-      </div>
-      <div class="image-caption">Nụ cười hạnh phúc</div>
-    </div>
+    <p class="section-intro">Tôi là người đàn ông với nhiều nét tính cách đa dạng, từ sự quyết đoán đến lòng kiên nhẫn. Những đặc điểm này không chỉ giúp tôi vượt qua thử thách mà còn là điểm tựa vững chắc cho gia đình nhỏ của mình.</p>
+    <ul class="traits-list">
+      <li *ngFor="let trait of husbandData.traits">
+        <span class="trait-icon"><i [class]="trait.icon"></i></span>
+        <span class="trait-title">{{ trait.title }}:</span>
+        <span class="trait-desc">{{ getTraitDescription(trait.description) }} ({{ getTraitValue(trait.description) }})</span>
+        <img class="mini-img-lg" *ngIf="trait.title === 'Kiên trì'" src="assets/images/phat/phat-work.png" alt="mini" />
+        <img class="mini-img-lg" *ngIf="trait.title === 'Gia đình'" src="assets/images/phat/phat_dam-cuoi-2.png" alt="mini" />
+      </li>
+    </ul>
+    <p class="section-extra">Mỗi tính cách là một bài học, một trải nghiệm giúp tôi trưởng thành hơn mỗi ngày.</p>
   </section>
-
+  <div class="section-img-row">
+    <img class="section-divider-img-lg" src="assets/images/phat/phat-hobby.png" alt="divider" />
+  </div>
+  <hr>
   <!-- Hobbies -->
-  <section class="hobbies-section">
-    <div class="section-image left">
-      <div class="image-frame">
-        <img src="assets/images/phat/phat-hobby.png" alt="Sở thích">
-      </div>
-      <div class="image-caption">Những sở thích của anh</div>
+  <section class="hobbies-section-flat">
+    <h2>Sở thích & Đam mê</h2>
+    <div class="section-img-row">
+      <img class="section-divider-img-lg" src="assets/images/phat/phat-travel.png" alt="divider" />
     </div>
-    <div class="section-content">
-      <h2>Sở thích & Đam mê</h2>
-      <div class="hobbies-grid">
-        <div class="hobby-item" *ngFor="let hobby of husbandData.hobbies; let i = index">
-          <div class="hobby-header">
-            <div class="hobby-icon">
-              <i [class]="hobby.icon"></i>
-            </div>
-            <h3>{{ hobby.name }}</h3>
-          </div>
-          <p>{{ hobby.description }}</p>
-        </div>
-      </div>
-    </div>
+    <p class="section-intro">Bên cạnh công việc, tôi luôn dành thời gian cho những sở thích cá nhân. Đó là nơi tôi tìm thấy sự cân bằng, niềm vui và cảm hứng để tiếp tục phấn đấu.</p>
+    <ul class="hobbies-list">
+      <li *ngFor="let hobby of husbandData.hobbies">
+        <span class="hobby-icon"><i [class]="hobby.icon"></i></span>
+        <span class="hobby-title">{{ hobby.name }}:</span>
+        <span class="hobby-desc">{{ hobby.description }}</span>
+        <img class="mini-img-lg" *ngIf="hobby.name === 'Du lịch'" src="assets/images/phat/phat-travel.png" alt="mini" />
+        <img class="mini-img-lg" *ngIf="hobby.name === 'Làm việc'" src="assets/images/phat/phat-work.png" alt="mini" />
+      </li>
+    </ul>
+    <p class="section-extra">Những đam mê này không chỉ giúp tôi phát triển bản thân mà còn tạo nên những kỷ niệm đáng nhớ bên gia đình và bạn bè.</p>
   </section>
-
+  <div class="section-img-row">
+    <img class="section-divider-img-lg" src="assets/images/phat/phat_ho-may-vung-tau_10-2023.png" alt="divider" />
+  </div>
+  <hr>
   <!-- Fun Facts -->
-  <section class="fun-facts-section">
-    <div class="section-content full-width">
-      <h2>Những điều thú vị</h2>
-      <div class="facts-grid">
-        <div class="fact-item" *ngFor="let fact of [
-          { title: 'Khoảnh khắc đầu tiên', description: husbandData.funFacts[0].description, image: 'assets/images/phat/phat_dam-cuoi.png' },
-          { title: 'Chuyến đi đáng nhớ', description: husbandData.funFacts[1].description, image: 'assets/images/phat/phat_ho-may-vung-tau_10-2023.png' },
-          { title: 'Món quà ý nghĩa', description: husbandData.funFacts[2].description, image: 'assets/images/phat/phat-hobby.png' },
-          { title: 'Kỷ niệm khó quên', description: 'Những chuyến đi xa cùng nhau luôn là những kỷ niệm đáng nhớ nhất. Mỗi địa điểm mới là một câu chuyện mới, một trải nghiệm mới cho cả hai.', image: 'assets/images/phat/phat-travel.png' }
-        ]; let i = index">
-          <div class="fact-content">
-            <div class="fact-header">
-              <div class="fact-number">{{ i + 1 < 10 ? '0' + (i + 1) : i + 1 }}</div>
-              <h3>{{ fact.title }}</h3>
-            </div>
-            <p>{{ fact.description }}</p>
-          </div>
-          <div class="fact-image">
-            <img [src]="fact.image" [alt]="fact.title">
-          </div>
-        </div>
-      </div>
+  <section class="fun-facts-section-flat" *ngIf="husbandData.funFacts && husbandData.funFacts.length >= 3">
+    <h2>Những điều thú vị về tôi</h2>
+    <div class="section-img-row">
+      <img class="section-divider-img-lg" src="assets/images/phat/phat_dam-cuoi.png" alt="divider" />
     </div>
+    <p class="section-intro">Cuộc sống của tôi không chỉ có những thành tựu lớn mà còn là những điều nhỏ bé, giản dị nhưng đầy ý nghĩa. Dưới đây là một vài điều thú vị về tôi mà có thể bạn chưa biết!</p>
+    <ol class="fun-facts-list">
+      <li *ngFor="let fact of [
+        { title: 'Khoảnh khắc đầu tiên', description: husbandData.funFacts[0]?.description },
+        { title: 'Chuyến đi đáng nhớ', description: husbandData.funFacts[1]?.description },
+        { title: 'Món quà ý nghĩa', description: husbandData.funFacts[2]?.description },
+        { title: 'Kỷ niệm khó quên', description: 'Những chuyến đi xa cùng nhau luôn là những kỷ niệm đáng nhớ nhất. Mỗi địa điểm mới là một câu chuyện mới, một trải nghiệm mới cho cả hai.' }
+      ]; let i = index">
+        <span class="fact-number">{{ i + 1 }}.</span>
+        <span class="fact-title">{{ fact.title }}:</span>
+        <span class="fact-desc">{{ fact.description }}</span>
+        <img class="mini-img-lg" *ngIf="i === 0" src="assets/images/phat/phat_dam-cuoi.png" alt="mini" />
+        <img class="mini-img-lg" *ngIf="i === 2" src="assets/images/phat/phat-hobby.png" alt="mini" />
+      </li>
+    </ol>
+    <p class="section-extra">Chính những điều nhỏ bé này đã tạo nên một tôi rất riêng, gần gũi và chân thành.</p>
   </section>
 </div>
 
 <style>
-.content-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-section {
-  margin-bottom: 6rem;
+body, .profile-bg-animated {
+  background: linear-gradient(135deg, #e6f0ff 0%, #f0f7ff 100%) !important;
+  min-height: 100vh;
   position: relative;
+}
+.profile-bg-animated {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.floating-star, .floating-star2 {
+  position: absolute;
+  bottom: -40px;
+  font-size: 2rem;
+  opacity: 0.5;
+  animation: floatUp 8s linear infinite;
+}
+.floating-star2 {
+  font-size: 1.7rem;
+  opacity: 0.4;
+  animation-duration: 10s;
+}
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 0.5; }
+  50% { opacity: 0.7; }
+  100% { transform: translateY(-100vh) scale(1.2) rotate(20deg); opacity: 0; }
+}
+.profile-header-flat {
   display: flex;
-  align-items: flex-start;
-  gap: 4rem;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0 1rem 0;
+  border-bottom: 2px solid #e6f0ff;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
 }
-
-.section-content {
+.profile-avatar {
+  flex: 0 0 140px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(65, 105, 225, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.avatar-deco {
+  position: absolute;
+  bottom: -24px;
+  right: -24px;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(65, 105, 225, 0.13);
+  border: 2px solid #fff;
+  background: #fff;
+  z-index: 2;
+  animation: popIn 1.2s cubic-bezier(.68,-0.55,.27,1.55) both;
+}
+@keyframes popIn {
+  0% { transform: scale(0.2) rotate(-30deg); opacity: 0; }
+  80% { transform: scale(1.1) rotate(10deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+.inline-icon-lg {
+  width: 48px;
+  height: 48px;
+  vertical-align: middle;
+  margin: 0 0.5rem 0.5rem 0;
+  animation: popIn 1.2s cubic-bezier(.68,-0.55,.27,1.55) both;
+}
+.profile-header-img-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+.section-img-row {
+  display: flex;
+  justify-content: center;
+  margin: 1.2rem 0 0.7rem 0;
+}
+.section-divider-img-lg {
+  width: 72px;
+  height: 72px;
+  opacity: 0.85;
+  filter: drop-shadow(0 2px 6px #e6f0ff);
+  animation: popIn 1.2s cubic-bezier(.68,-0.55,.27,1.55) both;
+  border-radius: 16px;
+  background: #fff;
+  border: 2px solid #e6f0ff;
+}
+.mini-img-lg {
+  width: 44px;
+  height: 44px;
+  margin-left: 0.7rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 8px rgba(65, 105, 225, 0.13);
+  vertical-align: middle;
+  animation: popIn 1.2s cubic-bezier(.68,-0.55,.27,1.55) both;
+  background: #fff;
+  border: 2px solid #e6f0ff;
+}
+.profile-main-info {
   flex: 1;
-  max-width: 60%;
+  min-width: 220px;
 }
-
-.section-content.full-width {
-  max-width: 100%;
+.profile-name {
+  font-size: 2rem;
+  margin: 0 0 0.5rem 0;
+  color: #4169e1;
+  font-family: 'Dancing Script', cursive;
 }
-
-.section-image {
-  position: sticky;
-  top: 100px;
-  width: 40%;
-  max-width: 400px;
+.profile-title {
+  font-size: 1.1rem;
+  color: #4169e1;
+  margin-bottom: 1rem;
 }
-
-.section-image.left {
-  order: -1;
+.profile-desc {
+  font-size: 1.05rem;
+  color: #444;
+  margin-bottom: 1rem;
 }
-
-.section-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+.profile-tags {
+  margin-bottom: 1rem;
 }
-
-.section-image:hover img {
-  transform: translateY(-10px);
+.profile-tag {
+  display: inline-block;
+  background: #e6f0ff;
+  color: #4169e1;
+  border-radius: 12px;
+  padding: 0.2rem 0.8rem;
+  font-size: 0.95rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.3rem;
 }
-
-.image-caption {
-  text-align: center;
+.profile-love-message {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.2rem;
+  color: #4169e1;
+  margin-top: 1rem;
+}
+.content-container-flat {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+  position: relative;
+  z-index: 1;
+}
+hr {
+  border: none;
+  border-top: 1.5px solid #e6f0ff;
+  margin: 2.5rem 0 2rem 0;
+}
+section {
+  margin-bottom: 1.5rem;
+}
+.section-intro {
+  color: #4169e1;
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+.section-extra {
+  color: #888;
+  font-size: 0.98rem;
   margin-top: 1rem;
   font-style: italic;
-  color: #666;
 }
-
-h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: #333;
-  position: relative;
-}
-
-h2::before {
-  content: '';
-  position: absolute;
-  top: -10px;
-  left: 0;
-  width: 40px;
-  height: 40px;
-  background: rgba(65, 105, 225, 0.1);
-  border-radius: 10px;
-  transform: rotate(45deg);
-  z-index: -1;
-}
-
-/* Intro Section */
-.intro-text {
-  position: relative;
-  padding: 2rem;
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-}
-
-.intro-paragraphs {
-  font-family: 'Merriweather', serif;
-}
-
-.description, .description-extra {
-  margin-bottom: 1.5rem;
-  line-height: 1.8;
-  color: #444;
-  font-size: 1.1rem;
-}
-
-.description-extra {
-  font-style: italic;
-}
-
-.love-message {
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.4rem;
-  color: #4169e1;
-  text-align: right;
-  margin-top: 2rem;
-  line-height: 1.6;
-}
-
-.quote-mark {
-  position: absolute;
-  top: -30px;
-  left: -20px;
-  font-size: 6rem;
-  color: rgba(65, 105, 225, 0.1);
-  font-family: 'Playfair Display', serif;
-}
-
-/* Thoughts Timeline */
-.thoughts-timeline {
-  position: relative;
-  padding-left: 2rem;
-}
-
-.thoughts-timeline::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(to bottom, #4169e1, transparent);
-}
-
-.timeline-item {
-  position: relative;
-  margin-bottom: 3rem;
-  padding-left: 2rem;
-}
-
-.timeline-dot {
-  position: absolute;
-  left: -5px;
-  top: 0;
-  width: 12px;
-  height: 12px;
-  background: #4169e1;
-  border-radius: 50%;
-  border: 3px solid #fff;
-  box-shadow: 0 0 0 3px rgba(65, 105, 225, 0.2);
-}
-
-.timeline-content {
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-
-/* Traits Section */
-.traits-intro {
-  font-size: 1.1rem;
-  color: #666;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-  font-style: italic;
-}
-
-.traits-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-
-.trait-item {
-  background: rgba(65, 105, 225, 0.1);
-  padding: 1.5rem;
-  border-radius: 15px;
-  transition: transform 0.3s ease;
-}
-
-.trait-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 8px 8px 20px rgba(65, 105, 225, 0.15),
-              -8px -8px 20px rgba(255, 255, 255, 0.9);
-}
-
-.trait-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.trait-icon {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(145deg, #e6f0ff, #ffffff);
-  border-radius: 10px;
-  color: #4169e1;
-  box-shadow: inset 2px 2px 5px rgba(65, 105, 225, 0.1),
-              inset -2px -2px 5px rgba(255, 255, 255, 0.8);
-}
-
-.trait-bar {
-  height: 6px;
-  background: rgba(65, 105, 225, 0.1);
-  border-radius: 3px;
-  margin: 0.5rem 0;
-  position: relative;
-  overflow: hidden;
-}
-
-.bar-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #4169e1, #6495ed);
-  border-radius: 3px;
-  transition: width 0.5s ease;
-}
-
-.bar-label {
-  position: absolute;
-  right: 0;
-  top: -20px;
-  font-size: 0.9rem;
-  color: #666;
-}
-
-.trait-desc {
-  margin: 0.5rem 0 0;
-  font-size: 0.95rem;
-  color: #666;
-  line-height: 1.5;
-}
-
-/* Hobbies Section */
-.hobbies-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-
-.hobby-item {
-  background: rgba(65, 105, 225, 0.1);
-  padding: 1.5rem;
-  border-radius: 15px;
-  transition: transform 0.3s ease;
-}
-
-.hobby-item:hover {
-  transform: translateY(-5px);
-}
-
-.hobby-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.hobby-icon {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(65, 105, 225, 0.1);
-  border-radius: 10px;
-  color: #4169e1;
-}
-
-.hobby-header h3 {
+.traits-list, .hobbies-list, .fun-facts-list {
+  list-style: none;
+  padding: 0;
   margin: 0;
-  font-size: 1.2rem;
-  color: #333;
 }
-
-.hobby-item p {
-  margin: 0;
-  color: #666;
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-
-/* Fun Facts Section */
-.fun-facts-section {
-  background: #fff9e6;
-  margin: 4rem -2rem;
-  padding: 4rem 2rem;
-}
-
-.facts-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  width: 100%;
-}
-
-.fact-item {
+.traits-list li, .hobbies-list li, .fun-facts-list li {
   display: flex;
   align-items: flex-start;
-  gap: 2rem;
-  background: rgba(65, 105, 225, 0.1);
-  padding: 2rem;
-  border-radius: 15px;
-  transition: transform 0.3s ease;
-  border: none;
+  gap: 0.7rem;
+  margin-bottom: 0.7rem;
+  font-size: 1.05rem;
 }
-
-.fact-item:hover {
-  transform: translateY(-5px);
-}
-
-.fact-content {
-  flex: 1;
-}
-
-.fact-header {
+.trait-icon, .hobby-icon {
+  width: 28px;
+  height: 28px;
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.fact-number {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #ffd700;
-  font-family: 'Playfair Display', serif;
-}
-
-.fact-header h3 {
-  margin: 0;
-  font-size: 1.3rem;
-  color: #333;
-  font-weight: 600;
-}
-
-.fact-content p {
-  margin: 0;
-  color: #666;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.fact-image {
-  width: 180px;
-  height: 180px;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.fact-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Thoughts Section */
-.thoughts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  width: 100%;
-}
-
-.thought-card {
-  background: rgba(65, 105, 225, 0.1);
-  padding: 2rem;
-  border-radius: 15px;
-  transition: transform 0.3s ease;
-}
-
-.thought-card:hover {
-  transform: translateY(-5px);
-}
-
-.thought-content h3 {
+  justify-content: center;
   color: #4169e1;
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+}
+.trait-title, .hobby-title, .fact-title {
   font-weight: 600;
+  color: #4169e1;
 }
-
-.thought-content p {
-  color: #444;
-  line-height: 1.6;
-  font-size: 1rem;
+.fact-number {
+  font-weight: bold;
+  color: #4169e1;
+  margin-right: 0.3rem;
 }
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-  section {
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .section-content {
-    max-width: 100%;
-  }
-
-  .section-image {
-    position: relative;
-    top: 0;
-    width: 100%;
-    max-width: 100%;
-    order: -1;
-  }
-
-  .traits-list,
-  .hobbies-list,
-  .facts-list {
-    grid-template-columns: 1fr;
-  }
-
-  .facts-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .fun-facts-section {
-    margin: 2rem -1rem;
-    padding: 2rem 1rem;
-  }
+.fact-title {
+  margin-right: 0.3rem;
 }
-
-@media (max-width: 768px) {
-  .content-container {
-    padding: 1rem;
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-
-  .facts-timeline {
-    padding-left: 2rem;
-  }
-
-  .fact-item::before {
-    left: -2rem;
-  }
-
-  .fact-image img {
-    max-width: 100%;
-  }
-
-  .fact-item {
+@media (max-width: 700px) {
+  .profile-header-flat {
     flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+    padding: 1rem 0 0.5rem 0;
   }
-
-  .fact-image {
+  .profile-main-info {
     width: 100%;
-    height: 200px;
-    order: -1;
-    margin-bottom: 1rem;
+    min-width: 0;
   }
-
-  .thought-card {
-    flex-direction: column;
+  .content-container-flat {
+    padding: 0.5rem 0;
   }
-
-  .thought-image {
-    width: 100%;
-    height: 200px;
-    order: -1;
-    margin-bottom: 1rem;
+  .traits-list li, .hobbies-list li, .fun-facts-list li {
+    font-size: 0.98rem;
+  }
+  .inline-icon-lg, .section-divider-img-lg, .mini-img-lg {
+    width: 36px !important;
+    height: 36px !important;
   }
 }
 </style>

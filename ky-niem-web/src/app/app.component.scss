@@ -54,6 +54,7 @@
 main {
   min-height: calc(100vh - 60px);
   position: relative;
+  padding-top: 70px; /* Add top padding for fixed navbar */
 }
 
 .route-container {

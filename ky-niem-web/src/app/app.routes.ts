@@ -3,31 +3,31 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: 'chao-mung',
-    loadComponent: () => import('./pages/chao-mung/chao-mung.component').then(m => m.ChaoMungComponent)
+    loadChildren: () => import('./pages/chao-mung/chao-mung.routes').then(m => m.CHaoMungRoutes)
   },
   {
     path: 've-chung-toi',
-    loadComponent: () => import('./pages/ve-chung-toi/ve-chung-toi.component').then(m => m.VeChungToiComponent)
+    loadChildren: () => import('./pages/ve-chung-toi/ve-chung-toi.routes').then(m => m.VeChungToiRoutes)
   },
   {
     path: 'thong-tin-vo',
-    loadComponent: () => import('./pages/thong-tin-vo/thong-tin-vo.component').then(m => m.ThongTinVoComponent)
+    loadChildren: () => import('./pages/thong-tin-vo/thong-tin-vo.routes').then(m => m.ThongTinVoRoutes)
   },
   {
     path: 'thong-tin-chong',
-    loadComponent: () => import('./pages/thong-tin-chong/thong-tin-chong.component').then(m => m.ThongTinChongComponent)
+    loadChildren: () => import('./pages/thong-tin-chong/thong-tin-chong.routes').then(m => m.ThongTinChongRoutes)
   },
   {
     path: 'album-anh',
-    loadComponent: () => import('./pages/album-anh/album-anh.component').then(m => m.AlbumAnhComponent)
+    loadChildren: () => import('./pages/album-anh/album-anh.routes').then(m => m.AlbumAnhRoutes)
   },
   {
     path: 'album-anh/:id',
-    loadComponent: () => import('./pages/album-anh/album-anh.component').then(m => m.AlbumAnhComponent)
+    loadChildren: () => import('./pages/album-anh/album-anh.routes').then(m => m.AlbumAnhRoutes)
   },
   {
     path: 'tips-vo-chong',
-    loadComponent: () => import('./pages/tips-vo-chong/tips-vo-chong.component').then(m => m.TipsVoChongComponent)
+    loadChildren: () => import('./pages/tips-vo-chong/tips-vo-chong.routes').then(m => m.TipsVoChongRoutes)
   },
   {
     path: '',
