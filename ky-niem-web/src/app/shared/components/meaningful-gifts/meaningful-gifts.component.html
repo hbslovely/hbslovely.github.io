@@ -1,60 +1,67 @@
 <!-- Meaningful Gifts Section -->
 <div class="gifts-section">
-  <!-- Floating Hearts Background -->
-  <i class="pi pi-heart floating-heart" *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]"></i>
-
   <div class="container">
+    <!-- Section Header -->
     <div class="section-header">
-      <h2 class="section-title">
+      <div class="title-decoration">
+        <span class="line"></span>
         <i class="pi pi-gift"></i>
-        Những Món Quà Yêu Thương
-      </h2>
+        <span class="line"></span>
+      </div>
+      <h2 class="section-title">Những Món Quà Yêu Thương</h2>
       <p class="section-subtitle">Mỗi món quà là một kỷ niệm, một câu chuyện về tình yêu của chúng ta</p>
     </div>
 
-    <div class="gifts-grid">
-      <div class="gift-box" *ngFor="let gift of gifts">
-        <div class="gift-content">
-          <!-- Gift Box Decorations -->
-          <div class="gift-decorations">
-            <div class="gift-ribbon-vertical"></div>
-            <div class="gift-ribbon-horizontal"></div>
-            <div class="gift-bow"></div>
+    <!-- Featured Gift -->
+    <div class="featured-gift">
+      <div class="gift-icon">
+        <i class="pi pi-heart-fill"></i>
+      </div>
+      <div class="gift-content">
+        <p class="gift-message">
+          "Món quà lớn nhất trong tình yêu không phải là những món đồ đắt tiền, 
+          mà là những khoảnh khắc ý nghĩa ta dành cho nhau"
+        </p>
+      </div>
+    </div>
+
+    <!-- Gifts List -->
+    <div class="gifts-list">
+      <div class="gift-item" *ngFor="let gift of gifts">
+        <div class="gift-header">
+          <div class="occasion-tag">
+            <i class="pi pi-calendar"></i>
+            <span>{{ gift.occasion }}</span>
           </div>
-
-          <!-- Gift Content -->
-          <div class="gift-info">
-            <span class="gift-occasion-tag">{{ gift.occasion }}</span>
-            <h3 class="gift-title">{{ gift.gift }}</h3>
-            
-            <div class="gift-description">
-              <i class="pi pi-heart gift-icon"></i>
-              <p class="gift-meaning">{{ gift.meaning }}</p>
-            </div>
-
-            <div class="gift-footer">
-              <span class="emotion-tag">
-                <i class="pi pi-star"></i>
-                {{ gift.emotion }}
-              </span>
-            </div>
+          <div class="emotion-tag">
+            <i class="pi pi-star"></i>
+            <span>{{ gift.emotion }}</span>
           </div>
         </div>
 
-        <!-- Hover Effects -->
-        <div class="gift-hover-content">
-          <div class="hover-message">
-            <i class="pi pi-heart-fill"></i>
-            <p>Món quà của tình yêu</p>
+        <div class="gift-main">
+          <div class="gift-icon">
+            <i class="pi pi-gift"></i>
+          </div>
+          <div class="gift-details">
+            <h3 class="gift-title">{{ gift.gift }}</h3>
+            <p class="gift-meaning">{{ gift.meaning }}</p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Section Footer -->
-    <div class="section-footer">
-      <p class="love-quote">"Món quà lớn nhất trong tình yêu không phải là những món đồ đắt tiền, 
-        mà là những khoảnh khắc ý nghĩa ta dành cho nhau"</p>
+    <!-- Bottom Decoration -->
+    <div class="bottom-decoration">
+      <div class="decoration-item">
+        <i class="pi pi-heart"></i>
+      </div>
+      <div class="decoration-item">
+        <i class="pi pi-gift"></i>
+      </div>
+      <div class="decoration-item">
+        <i class="pi pi-heart"></i>
+      </div>
     </div>
   </div>
 </div> 

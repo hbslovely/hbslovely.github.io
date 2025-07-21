@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
@@ -33,8 +33,9 @@ export class OurSongsComponent implements OnInit, OnDestroy {
   categories: string[] = ['Tất cả'];
   player: any;
   private playerReady = false;
+  private sanitizer = inject(DomSanitizer);
 
-  constructor(private sanitizer: DomSanitizer) {
+  constructor() {
     // Load YouTube IFrame API
     const tag = document.createElement('script');
     tag.src = 'https://www.youtube.com/iframe_api';
@@ -54,10 +55,10 @@ export class OurSongsComponent implements OnInit, OnDestroy {
       .then(data => {
         this.songs = data.songs;
         this.filteredSongs = this.songs;
-        
+
         const uniqueCategories = new Set(this.songs.map(song => song.category));
         this.categories = ['Tất cả', ...Array.from(uniqueCategories)];
-        
+
         if (this.songs.length > 0) {
           this.playSong(this.songs[0]);
         }
@@ -116,7 +117,7 @@ export class OurSongsComponent implements OnInit, OnDestroy {
   playSong(song: Song): void {
     this.currentSong = song;
     const videoId = this.getYouTubeVideoId(song.youtubeUrl);
-    
+
     if (this.playerReady) {
       this.initializePlayer(videoId);
     }
@@ -132,8 +133,8 @@ export class OurSongsComponent implements OnInit, OnDestroy {
 
   filterByCategory(category: string): void {
     this.selectedCategory = category;
-    this.filteredSongs = category === 'Tất cả' 
-      ? this.songs 
+    this.filteredSongs = category === 'Tất cả'
+      ? this.songs
       : this.songs.filter(song => song.category === category);
   }
 }

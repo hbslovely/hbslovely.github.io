@@ -1,217 +1,231 @@
-// Variables
-$light-green: #e8f5e9;
-$dark-green: #2e7d32;
-$menu-bg: #ffffff;
-$text-color: #333333;
+// Menu Variables
+$menu-green: #4CAF50;
+$menu-light-green: #E8F5E9;
+$menu-border: #2E7D32;
+$menu-text: #1B5E20;
+$menu-bg: #FFFFFF;
+$price-color: #2E7D32;
 
-.foods-section {
-  position: relative;
-  padding: 4rem 0;
-  background-color: $light-green;
-  overflow: hidden;
+.menu-frame {
+  padding: 2rem;
+  background: $menu-light-green;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-// Food Icons Background
-.watermark-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0.1;
-  pointer-events: none;
-
-  &::before {
-    content: '🍜 🍖 🍲 🍱 🍚 🥘 🥗 🥪 🥢';
-    position: absolute;
-    font-size: 40px;
-    white-space: nowrap;
-    animation: floatIcons 60s linear infinite;
-  }
-
-  @for $i from 1 through 10 {
-    &::after {
-      content: '🍛 🥐 🥖 🥨 🥯 🥩 🥟 🍣 🍤';
-      position: absolute;
-      top: percentage(random(100) / 100);
-      left: percentage(random(100) / 100);
-      font-size: 30px + random(20) + px;
-      opacity: 0.1;
-      transform: rotate(random(360) + deg);
-      white-space: nowrap;
-    }
-  }
-}
-
-@keyframes floatIcons {
-  0% {
-    transform: translate(-100%, 100%) rotate(0deg);
-  }
-  100% {
-    transform: translate(100%, -100%) rotate(360deg);
-  }
-}
-
-.section-title {
-  text-align: center;
-  color: $dark-green;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  font-weight: bold;
-}
-
-.menu-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.menu-card {
+.menu-border {
   background: $menu-bg;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   padding: 2rem;
   position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  
+  // Menu Border Design
+  &::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border: 2px solid $menu-border;
+    pointer-events: none;
+  }
+
+  // Corner Decorations
+  &::after {
+    content: '❀';
+    position: absolute;
+    color: $menu-border;
+    font-size: 1.5rem;
+    top: 5px;
+    left: 5px;
+  }
 }
 
 .menu-header {
   text-align: center;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid $light-green;
+  margin-bottom: 3rem;
+  padding: 1rem;
 
-  .menu-title {
-    font-size: 1.8rem;
-    color: $dark-green;
-    font-weight: bold;
+  .title {
+    color: $menu-text;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .divider {
+    color: $menu-green;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .subtitle {
+    color: $menu-text;
+    font-size: 1.1rem;
+    font-style: italic;
     margin-bottom: 0.5rem;
   }
 
-  .menu-subtitle {
-    color: lighten($text-color, 20%);
+  .currency-note {
+    color: $price-color;
+    font-size: 0.9rem;
     font-style: italic;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border: 1px dashed $menu-border;
+    display: inline-block;
+  }
+}
+
+.menu-content {
+  display: grid;
+  gap: 2rem;
+  padding: 0 1rem;
+  margin-bottom: 3rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.menu-section {
+  .section-header {
+    margin-bottom: 2rem;
+    text-align: center;
+
+    .emoji {
+      font-size: 2rem;
+      margin-right: 0.5rem;
+    }
+
+    h2 {
+      color: $menu-text;
+      font-size: 1.8rem;
+      margin: 0.5rem 0;
+    }
   }
 }
 
 .menu-items {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-.menu-category {
-  .category-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid $light-green;
-
-    .person-icon {
-      font-size: 1.5rem;
-      margin-right: 0.5rem;
-    }
-
-    h3 {
-      color: $dark-green;
-      margin: 0;
-      font-size: 1.3rem;
-    }
-  }
-}
-
-.food-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .menu-item {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(5px);
-  border-radius: 12px;
-  padding: 1.2rem;
-  transition: all 0.3s ease;
-  border: 1px solid rgba($dark-green, 0.1);
+  padding: 1rem 0;
+  border-bottom: 1px dotted $menu-border;
 
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    border-color: $dark-green;
+  .item-header {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+
+    .item-name {
+      color: $menu-text;
+      font-size: 1.2rem;
+      font-weight: 500;
+      padding-right: 0.5rem;
+      min-width: 30%;
+    }
+
+    .dots {
+      flex: 1;
+      border-bottom: 1px dotted $menu-border;
+      margin: 0 0.5rem;
+    }
+
+    .price {
+      color: $price-color;
+      font-weight: 600;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      min-width: 50px;
+      text-align: right;
+    }
   }
 
-  .item-content {
-    .dish-name {
-      color: $dark-green;
-      margin: 0 0 0.5rem 0;
+  .item-description {
+    color: $menu-text;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0.5rem 0;
+    padding-left: 1rem;
+  }
+
+  .item-note {
+    color: $menu-green;
+    font-size: 0.9rem;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-left: 1rem;
+
+    i {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.menu-footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 2px solid $menu-border;
+
+  .divider {
+    color: $menu-green;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .quote {
+    max-width: 80%;
+    margin: 0 auto;
+    color: $menu-text;
+    font-style: italic;
+
+    i {
+      color: $menu-green;
       font-size: 1.2rem;
-      font-weight: bold;
+      margin-bottom: 1rem;
     }
 
-    .dish-story {
-      color: $text-color;
+    p {
       font-size: 1rem;
-      margin: 0.5rem 0;
-      line-height: 1.5;
+      line-height: 1.8;
+      margin: 1rem 0 0;
     }
+  }
+}
 
-    .dish-feeling {
-      display: inline-block;
-      background: $dark-green;
-      color: white;
-      padding: 0.4rem 1rem;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      margin-top: 0.8rem;
-      transition: all 0.3s ease;
+// Responsive adjustments
+@media (max-width: 767px) {
+  .menu-border {
+    padding: 1rem;
+  }
 
-      &:hover {
-        transform: scale(1.05);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  .menu-header {
+    .title {
+      font-size: 2rem;
+    }
+  }
+
+  .menu-content {
+    padding: 0;
+  }
+
+  .menu-item {
+    .item-header {
+      .item-name {
+        min-width: 40%;
       }
     }
   }
 }
 
-// Quote Section Styles
-.quote-section {
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 2px dashed rgba($dark-green, 0.2);
-  text-align: center;
-  
-  .quote-icon {
-    color: $dark-green;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    display: block;
-  }
-
-  .food-quote {
-    font-style: italic;
-    color: $text-color;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0 2rem;
-    position: relative;
-    
-    &::before,
-    &::after {
-      content: '"';
-      font-size: 2rem;
-      color: rgba($dark-green, 0.3);
-      position: absolute;
-    }
-    
-    &::before {
-      left: 0;
-      top: -0.5rem;
-    }
-    
-    &::after {
-      right: 0;
-      bottom: -1rem;
-    }
-  }
-}

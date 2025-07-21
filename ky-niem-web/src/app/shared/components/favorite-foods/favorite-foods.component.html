@@ -1,45 +1,78 @@
-<!-- Favorite Foods Section -->
-<div class="foods-section">
-  <!-- Background with Watermark -->
-  <div class="watermark-bg"></div>
+<!-- Menu Frame Food Section -->
+<div class="menu-frame">
+  <!-- Menu Border -->
+  <div class="menu-border">
+    <!-- Menu Header -->
+    <div class="menu-header">
+      <h1 class="title">Món Ăn Yêu Thích</h1>
+      <div class="divider">❤</div>
+      <p class="subtitle">Hương vị của tình yêu và hạnh phúc</p>
+      <p class="currency-note">$ = Tình cảm đong đầy</p>
+    </div>
 
-  <div class="container">
-    <h2 class="section-title">🍜 Món Ăn Yêu Thích</h2>
-    <div class="menu-container">
-      <!-- Menu Card -->
-      <div class="menu-card">
-        <div class="menu-header">
-          <div class="menu-title">Thực Đơn Yêu Thương</div>
-          <div class="menu-subtitle">Những món ăn kể câu chuyện của chúng ta</div>
+    <!-- Menu Content -->
+    <div class="menu-content">
+      <!-- His Foods -->
+      <div class="menu-section">
+        <div class="section-header">
+          <span class="emoji">👨</span>
+          <h2>Món Anh Yêu Thích</h2>
         </div>
-        
+
         <div class="menu-items">
-          <div class="menu-category" *ngFor="let person of ['Chồng', 'Vợ']">
-            <div class="category-header">
-              <span class="person-icon">{{ person === 'Chồng' ? '👨' : '👩' }}</span>
-              <h3>{{ person === 'Chồng' ? 'Món Anh Thích' : 'Món Em Thích' }}</h3>
+          <div class="menu-item" *ngFor="let food of foods | filter:'Chồng'">
+            <div class="item-header">
+              <span class="item-name">{{ food.dish }}</span>
+              <span class="dots"></span>
+              <span class="price">$$$</span>
             </div>
-            <div class="food-list">
-              <div class="menu-item" *ngFor="let food of foods | filter: person">
-                <div class="item-content">
-                  <h4 class="dish-name">{{ food.dish }}</h4>
-                  <p class="dish-story">{{ food.story }}</p>
-                  <span class="dish-feeling">{{ food.feeling }}</span>
-                </div>
-              </div>
+            <div class="item-description">
+              {{ food.story }}
+            </div>
+            <div class="item-note">
+              <i class="pi pi-heart"></i>
+              {{ food.feeling }}
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Quote Section -->
-        <div class="quote-section">
-          <i class="pi pi-heart quote-icon"></i>
-          <blockquote class="food-quote">
-            "Tình yêu giống như nấu ăn vậy, cần có đủ gia vị ngọt ngào, cay đắng, và cả những hương vị bất ngờ. 
-            Nhưng điều quan trọng nhất là chúng ta cùng nhau thưởng thức bữa ăn cuộc đời."
-          </blockquote>
+      <!-- Her Foods -->
+      <div class="menu-section">
+        <div class="section-header">
+          <span class="emoji">👩</span>
+          <h2>Món Em Yêu Thích</h2>
+        </div>
+
+        <div class="menu-items">
+          <div class="menu-item" *ngFor="let food of foods | filter:'Vợ'">
+            <div class="item-header">
+              <span class="item-name">{{ food.dish }}</span>
+              <span class="dots"></span>
+              <span class="price">$$$</span>
+            </div>
+            <div class="item-description">
+              {{ food.story }}
+            </div>
+            <div class="item-note">
+              <i class="pi pi-heart"></i>
+              {{ food.feeling }}
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- Menu Footer -->
+    <div class="menu-footer">
+      <div class="divider">❤</div>
+      <div class="quote">
+        <i class="pi pi-heart"></i>
+        <p>
+          "Tình yêu giống như nấu ăn vậy, cần có đủ gia vị ngọt ngào, cay đắng, và cả những hương vị bất ngờ.
+          Nhưng điều quan trọng nhất là chúng ta cùng nhau thưởng thức bữa ăn cuộc đời."
+        </p>
+      </div>
+    </div>
   </div>
-</div> 
+</div>

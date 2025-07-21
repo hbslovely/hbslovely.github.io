@@ -1,47 +1,52 @@
 <!-- Love Quotes Section -->
 <div class="quotes-section">
-  <!-- Subtle Watermark Background -->
-  <div class="watermark-bg">
-    <i class="pi pi-heart"></i>
-    <i class="pi pi-heart-fill"></i>
-    <i class="pi pi-star"></i>
-  </div>
-
   <div class="container">
+    <!-- Section Header -->
     <div class="section-header">
-      <h2 class="section-title">
+      <div class="title-decoration">
+        <span class="line"></span>
         <i class="pi pi-heart-fill"></i>
-        Lời Yêu Thương
-      </h2>
-      <p class="section-subtitle">Những câu nói sâu sắc về tình yêu và hạnh phúc</p>
-    </div>
-
-    <div class="quotes-grid">
-      <div class="quote-card" *ngFor="let quote of quotes">
-        <div class="quote-content">
-          <div class="quote-icon">
-            <i [class]="quote.icon"></i>
-          </div>
-          <blockquote>
-            {{ quote.quote }}
-            <footer>
-              <cite>{{ quote.author }}</cite>
-            </footer>
-          </blockquote>
-        </div>
-        <div class="quote-decoration">
-          <i class="pi pi-heart"></i>
-        </div>
+        <span class="line"></span>
       </div>
+      <h2 class="section-title">Lời Yêu Thương</h2>
+      <p class="section-subtitle">Những câu nói sâu sắc về tình yêu và hạnh phúc</p>
     </div>
 
     <!-- Featured Quote -->
     <div class="featured-quote">
-      <div class="quote-wrapper">
-        <i class="pi pi-quote-left quote-mark"></i>
-        <p class="main-quote">Tình yêu không phải là nhìn nhau, mà là cùng nhìn về một hướng</p>
-        <span class="quote-author">- Antoine de Saint-Exupéry</span>
-        <i class="pi pi-quote-right quote-mark"></i>
+      <div class="quote-marks">
+        <i class="pi pi-quote-left"></i>
+      </div>
+      <p class="main-quote">Tình yêu không phải là nhìn nhau, mà là cùng nhìn về một hướng</p>
+      <span class="quote-author">- Antoine de Saint-Exupéry</span>
+      <div class="quote-marks right">
+        <i class="pi pi-quote-right"></i>
+      </div>
+    </div>
+
+    <!-- Quotes List -->
+    <div class="quotes-list">
+      <div class="quote-item" *ngFor="let quote of quotes">
+        <div class="quote-icon">
+          <i [class]="quote.icon"></i>
+        </div>
+        <div class="quote-content">
+          <p class="quote-text">{{ quote.quote }}</p>
+          <span class="quote-author">- {{ quote.author }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Decoration -->
+    <div class="bottom-decoration">
+      <div class="decoration-item">
+        <i class="pi pi-heart"></i>
+      </div>
+      <div class="decoration-item">
+        <i class="pi pi-star-fill"></i>
+      </div>
+      <div class="decoration-item">
+        <i class="pi pi-heart"></i>
       </div>
     </div>
   </div>

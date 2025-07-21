@@ -1,210 +1,252 @@
 .quotes-section {
-  position: relative;
   padding: 4rem 0;
-  background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
-  overflow: hidden;
-}
+  background: #f8f9fa;
 
-.watermark-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  z-index: 0;
-
-  i {
-    position: absolute;
-    font-size: 8rem;
-    color: #ff4b6e;
-    opacity: 0.03;
-
-    &:nth-child(1) { top: 10%; left: 5%; }
-    &:nth-child(2) { top: 40%; right: 10%; }
-    &:nth-child(3) { bottom: 15%; left: 15%; }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
   }
-}
 
-.container {
-  position: relative;
-  z-index: 1;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
+  // Section Header
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
 
-.section-header {
-  text-align: center;
-  margin-bottom: 3rem;
+    .title-decoration {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
 
-  .section-title {
-    font-size: 2.5rem;
-    color: #ff4b6e;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
+      .line {
+        width: 60px;
+        height: 1px;
+        background: linear-gradient(90deg, 
+          transparent, 
+          #2f855a,
+          transparent
+        );
+      }
 
-    i {
+      i {
+        color: #2f855a;
+        font-size: 1.2rem;
+      }
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      color: #2f855a;
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    .section-subtitle {
+      color: #4a5568;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+
+  // Featured Quote
+  .featured-quote {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    padding: 3rem 2rem;
+    position: relative;
+    background: #d7f8ec;
+    border-left: 4px solid #2f855a;
+
+    .quote-marks {
+      position: absolute;
+      top: 1rem;
+      left: 2rem;
+      color: #2f855a;
+      opacity: 0.3;
       font-size: 2rem;
+
+      &.right {
+        left: auto;
+        right: 2rem;
+      }
+    }
+
+    .main-quote {
+      font-size: 1.8rem;
+      color: #2f855a;
+      font-weight: 500;
+      margin: 0 0 1rem;
+      line-height: 1.4;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .quote-author {
+      color: #4a5568;
+      font-style: italic;
     }
   }
 
-  .section-subtitle {
-    font-size: 1.2rem;
-    color: #666;
-    font-style: italic;
+  // Quotes List
+  .quotes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+
+    .quote-item {
+      display: flex;
+      gap: 2rem;
+      padding: 2rem;
+      background: white;
+      border-left: 4px solid #2f855a;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateX(10px);
+      }
+
+      .quote-icon {
+        flex-shrink: 0;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #d7f8ec;
+        border-radius: 50%;
+
+        i {
+          color: #2f855a;
+          font-size: 1.5rem;
+        }
+      }
+
+      .quote-content {
+        flex: 1;
+
+        .quote-text {
+          font-size: 1.2rem;
+          color: #2d3748;
+          margin: 0 0 0.5rem;
+          line-height: 1.6;
+        }
+
+        .quote-author {
+          color: #4a5568;
+          font-style: italic;
+          font-size: 0.9rem;
+        }
+      }
+    }
   }
-}
 
-.quotes-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 4rem;
-}
+  // Bottom Decoration
+  .bottom-decoration {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 4rem;
 
-.quote-card {
-  position: relative;
-  background: white;
-  border-radius: 15px;
-  padding: 2rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden;
+    .decoration-item {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #d7f8ec;
+      border-radius: 50%;
 
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      i {
+        color: #2f855a;
+        font-size: 1.2rem;
+      }
 
-    .quote-decoration i {
-      transform: translate(-50%, -50%) scale(1.1);
+      &:nth-child(2) {
+        transform: translateY(-10px);
+      }
     }
   }
 }
 
-.quote-content {
-  position: relative;
-  z-index: 1;
+// Responsive Design
+@media (max-width: 768px) {
+  .quotes-section {
+    padding: 3rem 0;
 
-  .quote-icon {
-    color: #ff4b6e;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
+    .section-header {
+      margin-bottom: 3rem;
 
-  blockquote {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    font-style: italic;
+      .section-title {
+        font-size: 2rem;
+      }
+    }
 
-    footer {
-      margin-top: 1rem;
-      
-      cite {
-        color: #666;
-        font-size: 0.9rem;
-        font-style: normal;
-        
-        &::before {
-          content: '— ';
+    .featured-quote {
+      padding: 2rem 1.5rem;
+      margin-bottom: 3rem;
+
+      .main-quote {
+        font-size: 1.4rem;
+      }
+
+      .quote-marks {
+        font-size: 1.5rem;
+      }
+    }
+
+    .quotes-list {
+      .quote-item {
+        padding: 1.5rem;
+        gap: 1.5rem;
+
+        .quote-icon {
+          width: 40px;
+          height: 40px;
+
+          i {
+            font-size: 1.2rem;
+          }
+        }
+
+        .quote-content {
+          .quote-text {
+            font-size: 1.1rem;
+          }
         }
       }
     }
   }
 }
 
-.quote-decoration {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 100px;
-  overflow: hidden;
-  pointer-events: none;
+@media (max-width: 480px) {
+  .quotes-section {
+    .quotes-list {
+      .quote-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
 
-  i {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 8rem;
-    color: rgba(255, 75, 110, 0.03);
-    transition: transform 0.3s ease;
-  }
-}
-
-.featured-quote {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 3rem 2rem;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 20px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-
-  .quote-wrapper {
-    position: relative;
-    padding: 2rem;
-
-    .quote-mark {
-      position: absolute;
-      color: #ff4b6e;
-      font-size: 2rem;
-      opacity: 0.3;
-
-      &.pi-quote-left {
-        top: 0;
-        left: 0;
-      }
-
-      &.pi-quote-right {
-        bottom: 0;
-        right: 0;
+        .quote-icon {
+          margin-bottom: 0.5rem;
+        }
       }
     }
 
-    .main-quote {
-      font-size: 1.5rem;
-      color: #333;
-      line-height: 1.6;
-      margin: 0 0 1rem;
-      font-style: italic;
-    }
+    .bottom-decoration {
+      gap: 1rem;
 
-    .quote-author {
-      color: #666;
-      font-size: 1rem;
-    }
-  }
-}
+      .decoration-item {
+        width: 30px;
+        height: 30px;
 
-@media (max-width: 768px) {
-  .section-header .section-title {
-    font-size: 2rem;
-  }
-
-  .quotes-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .featured-quote {
-    padding: 2rem 1rem;
-
-    .quote-wrapper {
-      padding: 1.5rem;
-
-      .main-quote {
-        font-size: 1.2rem;
-      }
-
-      .quote-mark {
-        font-size: 1.5rem;
+        i {
+          font-size: 1rem;
+        }
       }
     }
   }

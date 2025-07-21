@@ -525,3 +525,61 @@ body::before {
     }
   }
 }
+
+/* You can add global styles to this file, and also import other style files */
+
+// Animation classes
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+  will-change: opacity, transform;
+
+  &.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Different animation variations
+.fade-up {
+  &.animate-on-scroll {
+    transform: translateY(30px);
+  }
+}
+
+.fade-down {
+  &.animate-on-scroll {
+    transform: translateY(-30px);
+  }
+}
+
+.fade-left {
+  &.animate-on-scroll {
+    transform: translateX(30px);
+  }
+}
+
+.fade-right {
+  &.animate-on-scroll {
+    transform: translateX(-30px);
+  }
+}
+
+.fade-in {
+  &.animate-on-scroll {
+    transform: none;
+  }
+}
+
+// Animation delays
+@for $i from 1 through 5 {
+  .delay-#{$i} {
+    transition-delay: #{$i * 0.1}s !important;
+  }
+}
+
+// Smooth scrolling for the whole page
+html {
+  scroll-behavior: smooth;
+}

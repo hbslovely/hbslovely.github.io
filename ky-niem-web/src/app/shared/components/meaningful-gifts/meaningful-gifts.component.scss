@@ -8,320 +8,209 @@ $shadow-color: rgba(0, 0, 0, 0.1);
 // Section transition mixin
 
 .gifts-section {
-  --section-color: #fff0f5;
-  position: relative;
-  padding: 6rem 0;
-  background:
-    linear-gradient(120deg,
-      rgba(76, 175, 80, 0.15) 0%,
-      rgba(33, 150, 243, 0.1) 100%
-    );
-  overflow: hidden;
-
-  // Decorative background elements
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background:
-      radial-gradient(circle at 10% 20%, rgba(76, 175, 80, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 90% 80%, rgba(33, 150, 243, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 50% 50%, rgba(129, 199, 132, 0.05) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  // Floating hearts background
-  .floating-heart {
-    position: absolute;
-    pointer-events: none;
-    opacity: 0;
-    animation: floatHeart 12s linear infinite;
-
-    @for $i from 1 through 20 {
-      &:nth-child(#{$i}) {
-        $size: random(15) + 10px;
-        width: $size;
-        height: $size;
-        left: random(100) * 1%;
-        top: -20px;
-        animation-delay: random(12) * 1s;
-        color: rgba(255, 105, 180, random(3) * 0.1);
-      }
-    }
-  }
+  padding: 4rem 0;
+  background: #f8f9fa;
 
   .container {
-    position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
-    z-index: 1;
+    padding: 0 1rem;
   }
 
+  // Section Header
   .section-header {
     text-align: center;
     margin-bottom: 4rem;
 
-    .section-title {
-      font-size: 2.5rem;
-      background: linear-gradient(45deg, #2E7D32, #1565C0);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+    .title-decoration {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
       margin-bottom: 1rem;
-      font-family: 'Dancing Script', cursive;
-      text-shadow: none;
+
+      .line {
+        width: 60px;
+        height: 1px;
+        background: linear-gradient(90deg, 
+          transparent, 
+          #2f855a,
+          transparent
+        );
+      }
 
       i {
-        margin-right: 1rem;
-        color: $secondary-color;
+        color: #2f855a;
+        font-size: 1.2rem;
       }
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      color: #2f855a;
+      margin: 0 0 1rem;
+      font-weight: 600;
     }
 
     .section-subtitle {
+      color: #4a5568;
       font-size: 1.1rem;
-      color: $text-color;
       max-width: 600px;
       margin: 0 auto;
-      line-height: 1.6;
     }
   }
 
-  .gifts-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    padding: 1rem;
-  }
-
-  .gift-box {
+  // Featured Gift
+  .featured-gift {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    padding: 3rem 2rem;
+    background: #d7f8ec;
+    border-left: 4px solid #2f855a;
     position: relative;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    box-shadow:
-      0 10px 20px rgba(255, 105, 180, 0.1),
-      0 6px 6px rgba(255, 105, 180, 0.05);
-
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow:
-        0 15px 30px rgba(255, 105, 180, 0.15),
-        0 10px 10px rgba(255, 105, 180, 0.1);
-
-      .gift-hover-content {
-        opacity: 1;
-        visibility: visible;
-      }
-    }
-  }
-
-  .gift-content {
-    position: relative;
-    background: white;
-    border-radius: 16px;
-    padding: 2rem;
-    height: 100%;
-    transition: all 0.3s ease;
-    border: 1px solid var(--primary-200);
-  }
-
-  .gift-decorations {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-
-    .gift-ribbon-vertical,
-    .gift-ribbon-horizontal {
-      position: absolute;
-      background: var(--primary-100);
-      transition: all 0.3s ease;
-    }
-
-    .gift-ribbon-vertical {
-      width: 2px;
-      height: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .gift-ribbon-horizontal {
-      width: 100%;
-      height: 2px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    .gift-bow {
-      position: absolute;
-      top: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 30px;
-      height: 30px;
-
-      &::before,
-      &::after {
-        content: '';
-        position: absolute;
-        width: 15px;
-        height: 15px;
-        border: 2px solid var(--primary-300);
-        border-radius: 50% 50% 0 50%;
-      }
-
-      &::before {
-        left: -5px;
-        transform: rotate(-45deg);
-      }
-
-      &::after {
-        right: -5px;
-        transform: rotate(45deg);
-      }
-    }
-  }
-
-  .gift-info {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .gift-occasion-tag {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background: var(--primary-100);
-    color: var(--primary-700);
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    align-self: flex-start;
-  }
-
-  .gift-title {
-    font-size: 1.4rem;
-    color: var(--primary-700);
-    margin: 0;
-    line-height: 1.4;
-  }
-
-  .gift-description {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
 
     .gift-icon {
-      color: var(--primary-500);
-      font-size: 1.2rem;
-      margin-top: 0.2rem;
-    }
-
-    .gift-meaning {
-      color: var(--text-color-secondary);
-      line-height: 1.6;
-      margin: 0;
-      flex: 1;
-    }
-  }
-
-  .gift-footer {
-    margin-top: auto;
-
-    .emotion-tag {
-      display: inline-flex;
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 40px;
+      background: #2f855a;
+      border-radius: 50%;
+      display: flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 1rem;
-      background: var(--primary-50);
-      color: var(--primary-600);
-      border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 500;
+      justify-content: center;
 
-      .pi {
-        font-size: 0.8rem;
+      i {
+        color: white;
+        font-size: 1.2rem;
       }
     }
-  }
 
-  .gift-hover-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(var(--primary-rgb), 0.9);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    border-radius: 16px;
-
-    .hover-message {
-      text-align: center;
-      color: white;
-
-      .pi {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-      }
-
-      p {
-        font-size: 1.1rem;
+    .gift-content {
+      .gift-message {
+        font-size: 1.4rem;
+        color: #2f855a;
+        line-height: 1.6;
         margin: 0;
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
       }
     }
   }
 
-  .section-footer {
-    text-align: center;
-    margin-top: 4rem;
-    padding: 2rem;
-    border-top: 1px solid var(--primary-100);
+  // Gifts List
+  .gifts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
 
-    .love-quote {
-      font-style: italic;
-      color: var(--text-color-secondary);
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      line-height: 1.6;
+    .gift-item {
+      background: white;
+      border-left: 4px solid #2f855a;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateX(10px);
+      }
+
+      .gift-header {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 1.5rem;
+        background: #d7f8ec;
+        border-bottom: 1px solid rgba(47, 133, 90, 0.1);
+
+        .occasion-tag,
+        .emotion-tag {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-size: 0.9rem;
+          color: #2f855a;
+
+          i {
+            font-size: 1rem;
+          }
+        }
+      }
+
+      .gift-main {
+        display: flex;
+        gap: 2rem;
+        padding: 1.5rem;
+
+        .gift-icon {
+          flex-shrink: 0;
+          width: 50px;
+          height: 50px;
+          background: #d7f8ec;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          i {
+            color: #2f855a;
+            font-size: 1.5rem;
+          }
+        }
+
+        .gift-details {
+          flex: 1;
+
+          .gift-title {
+            font-size: 1.2rem;
+            color: #2d3748;
+            margin: 0 0 0.5rem;
+            font-weight: 600;
+          }
+
+          .gift-meaning {
+            color: #4a5568;
+            line-height: 1.6;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  // Bottom Decoration
+  .bottom-decoration {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 4rem;
+
+    .decoration-item {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #d7f8ec;
+      border-radius: 50%;
+
+      i {
+        color: #2f855a;
+        font-size: 1.2rem;
+      }
+
+      &:nth-child(2) {
+        transform: translateY(-10px);
+      }
     }
   }
 }
 
-@keyframes floatHeart {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-1000%) rotate(360deg);
-    opacity: 0;
-  }
-}
-
+// Responsive Design
 @media (max-width: 768px) {
   .gifts-section {
-    background-size: 80px 80px, 100px 100px;
     padding: 3rem 0;
 
     .section-header {
@@ -330,34 +219,73 @@ $shadow-color: rgba(0, 0, 0, 0.1);
       .section-title {
         font-size: 2rem;
       }
+    }
 
-      .section-subtitle {
-        font-size: 1rem;
+    .featured-gift {
+      padding: 2rem 1.5rem;
+      margin-bottom: 3rem;
+
+      .gift-message {
+        font-size: 1.2rem !important;
       }
     }
 
-    .gifts-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
+    .gifts-list {
+      .gift-item {
+        .gift-header {
+          padding: 1rem;
+        }
+
+        .gift-main {
+          padding: 1.2rem;
+          gap: 1.5rem;
+
+          .gift-icon {
+            width: 40px;
+            height: 40px;
+
+            i {
+              font-size: 1.2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .gifts-section {
+    .gifts-list {
+      .gift-item {
+        .gift-header {
+          flex-direction: column;
+          gap: 0.5rem;
+          align-items: flex-start;
+        }
+
+        .gift-main {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+
+          .gift-icon {
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
     }
 
-    .gift-content {
-      padding: 1.5rem;
-    }
+    .bottom-decoration {
+      gap: 1rem;
 
-    .gift-title {
-      font-size: 1.2rem;
-    }
+      .decoration-item {
+        width: 30px;
+        height: 30px;
 
-    .gift-description {
-      font-size: 0.9rem;
-    }
-
-    .section-footer {
-      margin-top: 3rem;
-
-      .love-quote {
-        font-size: 1rem;
+        i {
+          font-size: 1rem;
+        }
       }
     }
   }

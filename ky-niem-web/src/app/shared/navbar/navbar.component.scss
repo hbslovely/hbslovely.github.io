@@ -1,75 +1,222 @@
-/* Color Variables */
-$primary-color: #2f855a; // Main green
-$primary-light: #48bb78; // Light green
-$primary-lighter: #9ae6b4; // Lighter green
-$primary-dark: #276749; // Dark green
-$white: #ffffff;
+// Variables
+$nav-bg: #ffffff;
+$nav-shadow: rgba(0, 0, 0, 0.05);
+$primary-green: #4CAF50;
+$light-green: #E8F5E9;
+$hover-green: #81C784;
+$text-color: #2E7D32;
 
-/* Navbar Styles */
+// Background Animations
+@keyframes floatingHearts {
+  0% { transform: translateY(0) rotate(0); opacity: 0; }
+  20% { opacity: 0.6; }
+  100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+@keyframes patternMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 50px 50px; }
+}
+
+@keyframes dotPulse {
+  0% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.2); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 0.3; }
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+// Existing Animations
+@keyframes glowEffect {
+  0% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.2); }
+  100% { opacity: 0.4; transform: scale(1); }
+}
+
+@keyframes pulseEffect {
+  0% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.1); opacity: 0.3; }
+  100% { transform: scale(1); opacity: 0.7; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+// Mixins
+@mixin nav-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Main Navigation
 .navbar {
+  background: rgba($nav-bg, 0.95);
+  padding: 0.8rem 0;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  background: $primary-color;
-  padding: 0.75rem 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px $nav-shadow;
+  animation: slideIn 0.5s ease-out;
+  overflow: hidden;
 
-  @media (max-width: 768px) {
-    display: none; // Hide top navbar on mobile
+  // Background Effects
+  .nav-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    overflow: hidden;
+
+    .bg-pattern {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: linear-gradient(45deg, $light-green 25%, transparent 25%),
+                        linear-gradient(-45deg, $light-green 25%, transparent 25%),
+                        linear-gradient(45deg, transparent 75%, $light-green 75%),
+                        linear-gradient(-45deg, transparent 75%, $light-green 75%);
+      background-size: 20px 20px;
+      opacity: 0.03;
+      animation: patternMove 20s linear infinite;
+    }
+
+    .bg-gradient {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, 
+        rgba($light-green, 0.1),
+        rgba($primary-green, 0.05),
+        rgba($light-green, 0.1));
+      background-size: 200% 100%;
+      animation: gradientFlow 15s ease infinite;
+    }
+
+    .bg-dots {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: radial-gradient(circle, $primary-green 1px, transparent 1px);
+      background-size: 30px 30px;
+      opacity: 0.05;
+      animation: dotPulse 3s ease-in-out infinite;
+    }
+
+    .floating-hearts {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      i {
+        position: absolute;
+        color: $primary-green;
+        opacity: 0;
+        font-size: 12px;
+
+        &:nth-child(1) {
+          left: 10%;
+          animation: floatingHearts 4s ease-in infinite;
+        }
+
+        &:nth-child(2) {
+          left: 50%;
+          animation: floatingHearts 4s ease-in infinite 1s;
+        }
+
+        &:nth-child(3) {
+          left: 80%;
+          animation: floatingHearts 4s ease-in infinite 2s;
+        }
+      }
+    }
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
+// Brand/Logo
 .brand {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  text-decoration: none;
-  color: $white;
-  transition: all 0.3s ease;
+  .avatar-wrapper {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    @include flex-center;
+    border: 2px solid $light-green;
+    @include nav-transition;
+    position: relative;
 
-  &:hover {
-    transform: scale(1.02);
-    
-    .couple-avatar {
-      transform: scale(1.1) rotate(5deg);
+    &:hover {
+      transform: scale(1.05);
+      border-color: $primary-green;
+      
+      .avatar-glow {
+        opacity: 1;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .avatar-glow {
+      position: absolute;
+      top: -20%;
+      left: -20%;
+      right: -20%;
+      bottom: -20%;
+      background: radial-gradient(circle, $light-green 0%, transparent 70%);
+      opacity: 0;
+      @include nav-transition;
+      animation: glowEffect 2s infinite;
     }
   }
 }
 
-.avatar-container {
-  position: relative;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 2px solid $primary-lighter;
-  box-shadow: 0 0 0 2px rgba($white, 0.2);
-}
-
-.couple-avatar {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: all 0.3s ease;
-}
-
-.nav-links {
+// Desktop Navigation
+.nav-menu {
   display: flex;
-  gap: 0.75rem;
-  list-style: none;
+  gap: 1rem;
   margin: 0;
   padding: 0;
+  list-style: none;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .nav-item {
@@ -77,157 +224,363 @@ $white: #ffffff;
 }
 
 .nav-link {
-  color: rgba($white, 0.9);
-  text-decoration: none;
-  padding: 0.5rem 0.75rem;
-  border-radius: 8px;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  white-space: nowrap;
+  padding: 0.5rem 1rem;
+  color: $text-color;
+  text-decoration: none;
+  font-size: 0.95rem;
+  border-radius: 4px;
+  @include nav-transition;
+  position: relative;
+  overflow: hidden;
 
-  i {
-    font-size: 1.1rem;
-    color: $primary-lighter;
+  .icon-wrapper {
+    position: relative;
+    @include flex-center;
+    width: 24px;
+    height: 24px;
+
+    i {
+      font-size: 1.1rem;
+      z-index: 1;
+    }
+
+    .icon-background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: $light-green;
+      border-radius: 50%;
+      transform: scale(0);
+      @include nav-transition;
+    }
+  }
+
+  .nav-text {
+    position: relative;
+    z-index: 1;
+  }
+
+  .link-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $light-green;
+    transform: translateX(-100%);
+    @include nav-transition;
   }
 
   &:hover {
-    color: $white;
-    transform: translateY(-2px);
-    background: rgba($white, 0.1);
+    color: $primary-green;
 
-    i {
-      transform: scale(1.1);
-      color: $white;
+    .icon-background {
+      transform: scale(1.2);
+    }
+
+    .link-effect {
+      transform: translateX(0);
+      opacity: 0.3;
     }
   }
 
   &.active {
-    color: $white;
-    font-weight: 600;
-    background: rgba($white, 0.15);
-
-    i {
-      color: $white;
-    }
+    color: $primary-green;
 
     &::after {
       content: '';
       position: absolute;
-      bottom: -3px;
+      bottom: -2px;
       left: 50%;
       transform: translateX(-50%);
       width: 20px;
-      height: 3px;
-      background: $primary-lighter;
+      height: 2px;
+      background: $primary-green;
       border-radius: 2px;
+    }
+
+    .icon-background {
+      transform: scale(1);
+      opacity: 0.3;
     }
   }
 }
 
-/* Mobile Bottom Navigation */
+// Additional Mobile Animations
+@keyframes rippleEffect {
+  0% { transform: scale(0.3); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes highlightPulse {
+  0% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(1.2); }
+  100% { opacity: 0.2; transform: scale(1); }
+}
+
+@keyframes dotScale {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+@keyframes lineGrow {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
+// Mobile Navigation Styles
 .mobile-nav {
-  display: none;
+  background: rgba($nav-bg, 0.98);
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  background: $white;
-  padding: 0.75rem 0.5rem calc(1rem + env(safe-area-inset-bottom, 0px)) 0.5rem;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  padding: 0.8rem 0.5rem;
+  box-shadow: 0 -2px 8px $nav-shadow;
   z-index: 1000;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 
-  @media (max-width: 768px) {
+  // Mobile Background Effects
+  .mobile-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+
+    .mobile-pattern {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        linear-gradient(0deg, rgba($light-green, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba($light-green, 0.03) 1px, transparent 1px);
+      background-size: 20px 20px;
+      opacity: 0.5;
+      animation: patternMove 15s linear infinite;
+    }
+
+    .mobile-glow {
+      position: absolute;
+      top: -50%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(
+        ellipse at 50% 0%,
+        rgba($primary-green, 0.1) 0%,
+        transparent 70%
+      );
+      animation: glowEffect 3s ease-in-out infinite;
+    }
+
+    .mobile-dots {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: radial-gradient(circle, rgba($primary-green, 0.1) 1px, transparent 1px);
+      background-size: 20px 20px;
+      opacity: 0.3;
+      animation: dotPulse 4s ease-in-out infinite;
+    }
+  }
+
+  // Mobile Menu Container
+  .mobile-menu {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+  }
+
+  // Mobile Navigation Link
+  .mobile-nav-link {
+    position: relative;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
+    padding: 0.5rem 0;
+    text-decoration: none;
+    color: $text-color;
+    transition: color 0.3s ease;
+
+    // Icon Wrapper
+    .mobile-icon-wrapper {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 4px;
+
+      .icon-highlight {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: rgba($light-green, 0.3);
+        transform: scale(0);
+        transition: transform 0.3s ease;
+      }
+
+      i {
+        position: relative;
+        z-index: 2;
+        font-size: 1.3rem;
+        transition: transform 0.3s ease;
+      }
+
+      .icon-ripple {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 50%;
+        background: rgba($primary-green, 0.2);
+        transform: scale(0);
+        opacity: 0;
+      }
+    }
+
+    // Text Style
+    .mobile-text {
+      font-size: 0.75rem;
+      text-align: center;
+      opacity: 0.8;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+    }
+
+    // Active Indicator
+    .active-indicator {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      pointer-events: none;
+
+      .indicator-dot {
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: $primary-green;
+        opacity: 0;
+        transform: scale(0);
+        transition: all 0.3s ease;
+      }
+
+      .indicator-line {
+        width: 20px;
+        height: 2px;
+        background: $primary-green;
+        margin-top: 2px;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+        transform-origin: center;
+      }
+    }
+
+    // Hover Effects
+    &:hover {
+      color: $primary-green;
+
+      .mobile-icon-wrapper {
+        i {
+          transform: translateY(-2px);
+        }
+
+        .icon-highlight {
+          transform: scale(1);
+          animation: highlightPulse 2s infinite;
+        }
+      }
+
+      .mobile-text {
+        opacity: 1;
+      }
+    }
+
+    // Active State
+    &.active {
+      color: $primary-green;
+
+      .mobile-icon-wrapper {
+        .icon-highlight {
+          transform: scale(1);
+          background: rgba($light-green, 0.4);
+        }
+
+        i {
+          transform: translateY(-2px);
+        }
+
+        .icon-ripple {
+          animation: rippleEffect 1.5s ease-out infinite;
+        }
+      }
+
+      .mobile-text {
+        opacity: 1;
+        font-weight: 500;
+      }
+
+      .active-indicator {
+        .indicator-dot {
+          opacity: 1;
+          transform: scale(1);
+          animation: dotScale 0.3s ease-out;
+        }
+
+        .indicator-line {
+          transform: scaleX(1);
+          animation: lineGrow 0.3s ease-out;
+        }
+      }
+    }
+  }
+
+  // Safe Area Support
+  padding-bottom: calc(0.8rem + env(safe-area-inset-bottom, 0px));
+}
+
+// Hide Mobile Nav on Desktop
+@media (min-width: 769px) {
+  .mobile-nav {
+    display: none;
   }
 }
 
-.mobile-nav-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: $primary-dark;
-  padding: 0.5rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  min-width: 55px; // Giảm min-width xuống
-  max-width: 70px; // Giảm max-width xuống
-  text-align: center;
-
-  i {
-    font-size: 1.2rem; // Giảm kích thước icon
-    margin-bottom: 0.2rem; // Giảm khoảng cách với text
-    color: $primary-dark;
-  }
-
-  .mobile-nav-text {
-    font-size: 0.7rem; // Giảm font size xuống
-    color: $primary-dark;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 100%;
-    text-align: center;
-    font-weight: 500;
-    line-height: 1.2; // Thêm line-height để text dễ đọc hơn
-  }
-
-  &.active {
-    background: rgba($primary-lighter, 0.15);
-
-    i {
-      color: $primary-color;
-    }
-
-    .mobile-nav-text {
-      color: $primary-color;
-      font-weight: 600;
-    }
-  }
-
-  &:active {
-    transform: scale(0.95);
-  }
-}
-
-// Adjust content padding
+// Body Padding
 :host {
   display: block;
-
-  ::ng-deep {
-    .app-content {
-      @media (min-width: 769px) {
-        padding-top: 76px; // Chỉ áp dụng padding cho desktop
-      }
-
-      @media (max-width: 768px) {
-        padding-top: 0 !important;
-        margin-top: 0 !important;
-        padding-bottom: calc(180px + env(safe-area-inset-bottom, 0px)) !important; // Tăng padding bottom nhiều hơn
-      }
-    }
-
-    // Thêm margin cho tất cả các section cuối
-    section:last-child,
-    div:last-child {
-      @media (max-width: 768px) {
-        margin-bottom: 4rem !important; // Tăng margin bottom
-      }
-    }
-  }
-}
-
-// Thêm padding cho container cuối
-::ng-deep {
-  .container:last-child {
+  
+  & + * {
+    padding-top: 70px;
+    
     @media (max-width: 768px) {
-      padding-bottom: 6rem !important; // Thêm padding lớn cho container cuối
+      padding-bottom: 70px;
     }
   }
 }

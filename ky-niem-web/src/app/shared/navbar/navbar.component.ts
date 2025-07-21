@@ -50,4 +50,16 @@ export class NavbarComponent implements OnInit {
       menuItems.forEach(item => item.classList.remove('show'));
     }
   }
+
+  getShortText(text: string): string {
+    const textMap: { [key: string]: string } = {
+      'Trang Chủ Yêu Thương': 'Trang Chủ',
+      'Chuyện Tình Đẹp': 'Chuyện Tình',
+      'Nàng Thơ Của Anh': 'Nàng Thơ',
+      'Chàng Trai Của Em': 'Chàng Trai',
+      'Khoảnh Khắc Yêu Thương': 'Khoảnh Khắc',
+      'Bí Quyết Hạnh Phúc': 'Bí Quyết'
+    };
+    return textMap[text] || text;
+  }
 }
