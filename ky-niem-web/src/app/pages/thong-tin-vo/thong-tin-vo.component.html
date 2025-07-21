@@ -1,8 +1,3 @@
-<!-- Subtle Animated Background -->
-<div class="profile-bg-animated subtle">
-  <span class="floating-heart" *ngFor="let n of [1,2,3,4,5]" [style.left.%]="15 * n + (n % 2 === 0 ? 5 : 0)" [style.animationDuration]="(10 + n % 3) + 's'">💖</span>
-</div>
-
 <!-- Hero Section -->
 <section class="hero-section">
   <div class="hero-avatar-wrapper">
@@ -14,7 +9,7 @@
 </section>
 
 <!-- Profile Info Block -->
-<section class="profile-info-block">
+<section class="profile-info-block flat-bg">
   <p class="profile-desc">{{ wifeData.wifeInfo?.description }}</p>
   <div class="profile-tags">
     <span class="profile-tag" *ngFor="let tag of wifeData.wifeInfo?.tags">{{ tag }}</span>
@@ -23,7 +18,7 @@
 </section>
 
 <!-- Traits Section -->
-<section class="profile-section traits-section-bg">
+<section class="profile-section flat-bg">
   <div class="section-title-row">
     <img class="section-title-img-lg" src="assets/images/ki-niem/ky-niem-quen-nhau.png" alt="Traits" />
     <h2>Đặc điểm tính cách</h2>
@@ -42,7 +37,7 @@
 </section>
 
 <!-- Hobbies Section -->
-<section class="profile-section hobbies-section-bg">
+<section class="profile-section flat-bg">
   <div class="section-title-row">
     <img class="section-title-img-lg" src="assets/images/ki-niem/choiZipLine_Ho-May-Vung-Tau_thang10-2023.png" alt="Hobbies" />
     <h2>Sở thích & Đam mê</h2>
@@ -61,7 +56,7 @@
 </section>
 
 <!-- Fun Facts Section -->
-<section class="profile-section funfacts-section-bg" *ngIf="wifeData.wifeFunFacts && wifeData.wifeFunFacts.length >= 3">
+<section class="profile-section flat-bg" *ngIf="wifeData.wifeFunFacts && wifeData.wifeFunFacts.length >= 3">
   <div class="section-title-row">
     <img class="section-title-img-lg" src="assets/images/ki-niem/mon-qua-dau-tien_6-2021.png" alt="Fun Fact" />
     <h2>Những điều thú vị về em</h2>
@@ -85,26 +80,10 @@
 </section>
 
 <style>
-body, .profile-bg-animated.subtle {
-  background: linear-gradient(135deg, #fff5f8 0%, #ffe5f0 100%) !important;
+body {
+  background: #fff5f8 !important;
   min-height: 100vh;
   position: relative;
-}
-.profile-bg-animated.subtle {
-  opacity: 0.25;
-  z-index: 0;
-}
-.floating-heart {
-  position: absolute;
-  bottom: -40px;
-  font-size: 2.5rem;
-  opacity: 0.3;
-  animation: floatUp 12s linear infinite;
-}
-@keyframes floatUp {
-  0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 0.3; }
-  50% { opacity: 0.5; }
-  100% { transform: translateY(-100vh) scale(1.2) rotate(20deg); opacity: 0; }
 }
 .hero-section {
   display: flex;
@@ -112,7 +91,7 @@ body, .profile-bg-animated.subtle {
   align-items: center;
   justify-content: center;
   padding: 3rem 0 1.5rem 0;
-  background: linear-gradient(135deg, #fff5f8 60%, #ffe5f0 100%);
+  background: #fff5f8;
   position: relative;
   z-index: 1;
 }
@@ -159,14 +138,17 @@ body, .profile-bg-animated.subtle {
   margin-bottom: 0.5rem;
   text-align: center;
 }
+.flat-bg {
+  background: #fff5f8 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  border: none !important;
+}
 .profile-info-block {
   max-width: 700px;
   margin: 0 auto 2.5rem auto;
-  background: rgba(255,255,255,0.7);
-  border-radius: 18px;
   padding: 2rem 2.5rem;
   text-align: center;
-  box-shadow: 0 2px 12px rgba(255, 105, 180, 0.04);
 }
 .profile-desc {
   font-size: 1.2rem;
@@ -196,15 +178,9 @@ body, .profile-bg-animated.subtle {
   max-width: 1000px;
   margin: 0 auto 2.5rem auto;
   padding: 2.5rem 2rem 2rem 2rem;
-  border-radius: 28px;
-  background: rgba(255,255,255,0.7);
-  box-shadow: 0 2px 12px rgba(255, 105, 180, 0.04);
   position: relative;
   z-index: 1;
 }
-.traits-section-bg { background: rgba(255,245,248,0.9); }
-.hobbies-section-bg { background: rgba(255,245,248,0.85); }
-.funfacts-section-bg { background: rgba(255,245,248,0.8); }
 .section-title-row {
   display: flex;
   align-items: center;
@@ -218,7 +194,7 @@ body, .profile-bg-animated.subtle {
   border-radius: 24px;
   background: #fff;
   border: 3px solid #ffe5f0;
-  box-shadow: 0 2px 12px #ffe5f0;
+  box-shadow: none;
   object-fit: cover;
 }
 .traits-list-block, .hobbies-list-block, .funfacts-list-block {
@@ -231,6 +207,9 @@ body, .profile-bg-animated.subtle {
   align-items: center;
   gap: 2.2rem;
   padding: 1.2rem 0;
+  background: #fff5f8;
+  border-radius: 0;
+  box-shadow: none;
 }
 .trait-img-col, .hobby-img-col, .funfact-img-col {
   flex: 0 0 120px;
@@ -244,7 +223,7 @@ body, .profile-bg-animated.subtle {
   border-radius: 18px;
   background: #fff;
   border: 3px solid #ffe5f0;
-  box-shadow: 0 2px 12px #ffe5f0;
+  box-shadow: none;
   object-fit: cover;
 }
 .trait-text-col, .hobby-text-col, .funfact-text-col {
