@@ -7,6 +7,7 @@
     background: white;
     padding: 1.5rem 2rem;
     border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 
     h2 {
       font-size: 2rem;
@@ -45,24 +46,39 @@
     background: white;
     padding: 2rem;
     border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   }
 
   .skill-category {
-    margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
 
     h4 {
       font-size: 1.2rem;
       font-weight: 600;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
       color: var(--text-color);
       position: relative;
-      display: inline-block;
-      padding-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .category-icon {
+        font-size: 1.2rem;
+        opacity: 0.8;
+      }
 
       &::after {
         content: '';
         position: absolute;
-        bottom: 0;
+        bottom: -8px;
         left: 0;
         width: 100%;
         height: 2px;
@@ -71,22 +87,24 @@
       }
     }
 
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
     :host ::ng-deep {
-      .ant-tag {
-        margin: 0.25rem;
+      .skill-tag {
+        margin: 0;
         padding: 0.25rem 0.75rem;
         font-size: 0.9rem;
         border-radius: 4px;
-        background: var(--primary-light);
-        color: var(--primary-color);
-        border: none;
         transition: all 0.3s ease;
         cursor: default;
 
         &:hover {
           transform: translateY(-2px);
-          background: var(--primary-light);
-          color: var(--primary-color);
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         }
       }
     }
@@ -109,10 +127,19 @@
 
     .skill-category {
       text-align: center;
+      padding: 1rem;
 
-      h4::after {
-        left: 50%;
-        transform: translateX(-50%);
+      h4 {
+        justify-content: center;
+
+        &::after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+
+      .skill-tags {
+        justify-content: center;
       }
     }
   }

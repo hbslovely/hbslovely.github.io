@@ -1,57 +1,58 @@
-<div class="projects-container">
-  <h2 class="section-title">Projects</h2>
+<div class="projects-section">
+  <div class="section-header">
+    <h2>Projects</h2>
+    <div class="section-subtitle">Notable projects and contributions</div>
+  </div>
 
-  @if (projects && projects.length > 0) {
-    <div class="projects-list">
-      @for (project of projects; track project.name; let i = $index) {
-        <div class="project-item" [class.expanded]="isProjectExpanded(i)">
-          <div class="project-header" (click)="toggleProject(i)">
-            <div class="project-title">
+  <div class="section-content">
+    @if (projects && projects.length > 0) {
+      <div class="projects-grid">
+        @for (project of projects; track project.name) {
+          <div class="project-card">
+            <div class="project-header">
               <h3>{{ project.name }}</h3>
               @if (project.company) {
-                <span class="project-company">{{ project.company }}</span>
+                <nz-tag class="company-badge" nzColor="#1890ff">{{ project.company }}</nz-tag>
+              }
+              <span class="duration-badge">{{ project.duration }}</span>
+            </div>
+
+            <div class="project-body">
+              <p class="description">{{ project.description }}</p>
+
+              <div class="project-meta">
+                <span class="role-badge">{{ project.role }}</span>
+              </div>
+
+              <div class="project-tech">
+                @for (tech of project.technologies; track tech) {
+                  <nz-tag nzColor="#e6f7ff" [nzBordered]="true">
+                    <span style="color: #1890ff">{{ tech }}</span>
+                  </nz-tag>
+                }
+              </div>
+
+              <div class="project-env">
+                @for (env of project.environment; track env) {
+                  <nz-tag nzColor="#f0f5ff" [nzBordered]="true">
+                    <span style="color: #2f54eb">{{ env }}</span>
+                  </nz-tag>
+                }
+              </div>
+
+              @if (project.scope) {
+                <div class="project-scope">
+                  <nz-tag nzColor="#f9f0ff" [nzBordered]="true">
+                    <span style="color: #722ed1">{{ project.scope }}</span>
+                  </nz-tag>
+                </div>
               }
             </div>
-            <div class="project-duration">{{ project.duration }}</div>
           </div>
-
-          <div class="project-content" [class.visible]="isProjectExpanded(i)">
-            <div class="project-description">{{ project.description }}</div>
-
-            @if (project.scope) {
-              <div class="project-scope">
-                <h4>Project Scope:</h4>
-                <p>{{ project.scope }}</p>
-              </div>
-            }
-
-            <div class="project-role">
-              <h4>Role:</h4>
-              <p>{{ project.role }}</p>
-            </div>
-
-            <div class="project-tech">
-              <h4>Technologies:</h4>
-              <div class="tech-tags">
-                @for (tech of project.technologies; track tech) {
-                  <nz-tag>{{ tech }}</nz-tag>
-                }
-              </div>
-            </div>
-
-            <div class="project-env">
-              <h4>Environment:</h4>
-              <div class="env-tags">
-                @for (env of project.environment; track env) {
-                  <nz-tag nzColor="blue">{{ env }}</nz-tag>
-                }
-              </div>
-            </div>
-          </div>
-        </div>
-      }
-    </div>
-  } @else {
-    <p class="no-projects">No projects to display</p>
-  }
+        }
+      </div>
+    } @else {
+      <p class="no-projects">No projects to display</p>
+    }
+  </div>
 </div>

@@ -1,119 +1,189 @@
 @import '../../styles/fonts';
 
-.projects-container {
-  .section-title {
-    font-family: $secondary-font;
-    font-weight: $font-weight-semibold;
-    font-size: $font-size-xl;
-    margin-bottom: 1.5rem;
-    color: #333;
-    border-bottom: 2px solid #f0f0f0;
-    padding-bottom: 0.5rem;
-  }
+.projects-section {
+  padding: 2rem;
+  margin-bottom: 2rem;
 
-  .projects-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-  }
-
-  .project-item {
-    border: 1px solid #e8e8e8;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: all 0.3s ease;
+  .section-header {
+    margin-bottom: 2rem;
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: var(--border-radius);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 
-    &.expanded {
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    h2 {
+      font-size: 2rem;
+      margin: 0;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      position: relative;
+      display: inline-block;
+      color: var(--text-color);
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 40%;
+        height: 3px;
+        background: var(--primary-color);
+        border-radius: 3px;
+        transition: width 0.3s ease;
+      }
     }
 
-    .project-header {
+    .section-subtitle {
+      color: rgba(0, 0, 0, 0.45);
+      margin-top: 1rem;
+      font-size: 1.1rem;
+    }
+
+    &:hover h2::after {
+      width: 60%;
+    }
+  }
+
+  .section-content {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+
+    .project-card {
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(24, 144, 255, 0.1);
+      transition: all 0.3s ease;
+      border: 1px solid #e6f7ff;
+      overflow: hidden;
+      height: 100%;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem;
-      background-color: #fafafa;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
+      flex-direction: column;
 
       &:hover {
-        background-color: #f0f0f0;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(24, 144, 255, 0.15);
+        border-color: #91d5ff;
       }
 
-      .project-title {
-        display: flex;
-        flex-direction: column;
+      .project-header {
+        padding: 0.75rem 1rem;
+        background-color: #f0f7ff;
+        border-bottom: 1px solid #e6f7ff;
 
         h3 {
-          @include heading-3;
-          margin-bottom: 0.25rem;
-          color: #1890ff;
+          margin-bottom: 0.5rem;
+          color: var(--text-color);
+          font-size: 1.1rem;
+          font-weight: 600;
         }
 
-        .project-company {
-          @include small-text;
+        .company-badge {
+          margin-right: 0.5rem;
+        }
+
+        .duration-badge {
           color: #666;
+          background-color: #f9f9f9;
+          padding: 0.2rem 0.5rem;
+          border-radius: 4px;
+          font-size: 0.75rem;
+          display: inline-block;
+          margin-top: 0.25rem;
         }
       }
 
-      .project-duration {
-        @include small-text;
-        color: #888;
-        font-style: italic;
-      }
-    }
-
-    .project-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease;
-
-      &.visible {
-        max-height: 1000px;
-        padding: 1.25rem;
-      }
-
-      .project-description {
-        @include body-text;
-        margin-bottom: 1rem;
-      }
-
-      h4 {
-        @include heading-3;
-        font-size: $font-size-md;
-        margin-bottom: 0.5rem;
-        color: #333;
-      }
-
-      .project-scope, .project-role {
-        margin-bottom: 1rem;
-
-        p {
-          @include body-text;
-        }
-      }
-
-      .tech-tags, .env-tags {
+      .project-body {
+        padding: 0.75rem 1rem;
+        flex: 1;
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
         gap: 0.5rem;
-        margin-bottom: 1rem;
 
-        nz-tag {
-          margin-right: 0;
+        .description {
+          font-size: 0.85rem;
+          color: rgba(0, 0, 0, 0.65);
+          margin-bottom: 0.5rem;
+          flex: 1;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          line-height: 1.6;
+        }
+
+        .project-meta {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+          margin-bottom: 0.5rem;
+
+          .role-badge {
+            background-color: #f0f7ff;
+            color: #1890ff;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            border: 1px solid #d4e8ff;
+          }
+        }
+
+        .project-tech, .project-env, .project-scope {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.3rem;
+          margin-top: 0.25rem;
+
+          nz-tag {
+            margin-right: 0;
+            font-size: 0.7rem;
+            height: auto;
+            line-height: 1.5;
+            padding: 0.1rem 0.4rem;
+          }
         }
       }
     }
   }
 
   .no-projects {
-    @include body-text;
-    color: #888;
+    color: rgba(0, 0, 0, 0.45);
     font-style: italic;
     text-align: center;
     padding: 1.5rem;
-    background-color: #f9f9f9;
+    background-color: #f0f7ff;
     border-radius: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 1rem;
+
+    .section-header {
+      text-align: center;
+      padding: 1.25rem;
+
+      h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .section-content {
+      padding: 1rem;
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   }
 }

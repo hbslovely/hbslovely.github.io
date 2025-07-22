@@ -24,6 +24,11 @@
         <app-personal-info [info]="cv()?.personalInfo"></app-personal-info>
       </div>
 
+      <!-- Work Experience -->
+      <div class="cv-section cv-experience">
+        <app-experience [experiences]="cv()?.experience?.workExperience"></app-experience>
+      </div>
+
       <!-- Skills -->
       <div class="cv-section cv-skills">
         <app-skills [skills]="cv()?.skills"></app-skills>

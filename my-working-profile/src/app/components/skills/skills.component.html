@@ -5,14 +5,21 @@
   </div>
 
   <div class="section-content">
-    <div nz-row [nzGutter]="[16, 16]">
+    <div nz-row [nzGutter]="[24, 24]">
       @for (category of getSkillCategories(); track category) {
-        <div nz-col [nzSpan]="12">
+        <div nz-col [nzXs]="24" [nzSm]="24" [nzMd]="12">
           <div class="skill-category">
-            <h4 nz-typography>{{ formatCategory(category) }}</h4>
-            @for (skill of getSkillsForCategory(category); track skill) {
-              <nz-tag [nzColor]="'blue'">{{ skill }}</nz-tag>
-            }
+            <h4 nz-typography>
+              <span nz-icon [nzType]="getCategoryIcon(category)" nzTheme="outline"></span>
+              {{ formatCategory(category) }}
+            </h4>
+            <div class="skill-tags">
+              @for (skill of getSkillsForCategory(category); track skill) {
+                <nz-tag [nzColor]="getTagColor(category)" class="skill-tag">
+                  {{ skill }}
+                </nz-tag>
+              }
+            </div>
           </div>
         </div>
       }
