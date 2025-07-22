@@ -1,53 +1,46 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatChipsModule } from '@angular/material/chips';
-import { MatDividerModule } from '@angular/material/divider';
-import { CV } from '../../models/cv.models';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { NzAlertComponent } from 'ng-zorro-antd/alert';
 import { CVService } from '../../services/cv.service';
+import { PersonalInfoComponent } from '../personal-info/personal-info.component';
+import { ExperienceComponent } from '../experience/experience.component';
+import { SkillsComponent } from '../skills/skills.component';
 
 @Component({
-    selector: 'app-cv-viewer',
-    standalone: true,
-    imports: [
-        CommonModule,
-        MatCardModule,
-        MatButtonModule,
-        MatIconModule,
-        MatChipsModule,
-        MatDividerModule
-    ],
-    templateUrl: './cv-viewer.component.html',
-    styleUrls: ['./cv-viewer.component.scss']
+  selector: 'app-cv-viewer',
+  standalone: true,
+  imports: [
+    CommonModule,
+    NzButtonModule,
+    NzIconModule,
+    NzSpinModule,
+    NzAlertComponent,
+    PersonalInfoComponent,
+    ExperienceComponent,
+    SkillsComponent
+  ],
+  templateUrl: './cv-viewer.component.html',
+  styleUrls: ['./cv-viewer.component.scss']
 })
-export class CVViewerComponent implements OnInit {
-    cv: CV | null = null;
-    loading = true;
-    error: string | null = null;
+export class CVViewerComponent {
+  private cvService = inject(CVService);
+  private message = inject(NzMessageService);
 
-    constructor(private cvService: CVService) {}
+  readonly cv = this.cvService.cv;
+  readonly isLoading = this.cvService.isLoading;
+  readonly hasError = this.cvService.hasError;
 
-    ngOnInit() {
-        this.loadCV();
+  async exportToPDF() {
+    try {
+      await this.cvService.exportToPDF('cv-content');
+      this.message.success('CV exported successfully!');
+    } catch (error) {
+      this.message.error('Failed to export CV');
+      console.error('Export error:', error);
     }
-
-    private loadCV() {
-        this.cvService.loadCV().subscribe({
-            next: (data) => {
-                this.cv = data;
-                this.loading = false;
-            },
-            error: (err) => {
-                this.error = 'Failed to load CV data';
-                this.loading = false;
-                console.error('Error loading CV:', err);
-            }
-        });
-    }
-
-    exportToPDF() {
-        this.cvService.exportToPDF('cv-content');
-    }
-} 
+  }
+}
