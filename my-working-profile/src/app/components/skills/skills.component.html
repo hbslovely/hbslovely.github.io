@@ -1,0 +1,21 @@
+<div class="skills-section">
+  <div class="section-header">
+    <h2>Technical Skills</h2>
+    <div class="section-subtitle">Technologies and tools I work with</div>
+  </div>
+
+  <div class="section-content">
+    <div nz-row [nzGutter]="[16, 16]">
+      @for (category of getSkillCategories(); track category) {
+        <div nz-col [nzSpan]="12">
+          <div class="skill-category">
+            <h4 nz-typography>{{ formatCategory(category) }}</h4>
+            @for (skill of getSkillsForCategory(category); track skill) {
+              <nz-tag [nzColor]="'blue'">{{ skill }}</nz-tag>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div> 

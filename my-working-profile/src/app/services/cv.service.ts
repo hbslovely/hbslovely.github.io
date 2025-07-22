@@ -31,7 +31,7 @@ export class CVService {
             experience: this.http.get<{ workExperience: WorkExperience[] }>('assets/json/experience.json'),
             education: this.http.get<{ education: Education[] }>('assets/json/education.json'),
             skills: this.http.get<Skills>('assets/json/skills.json'),
-            projects: this.http.get<{ projects: Project[] }>('assets/json/projects.json')
+            projects: this.http.get<{projects: Project[]}>('assets/json/projects.json')
         }).subscribe({
             next: (data) => {
                 this.cvData.set(data);
@@ -68,4 +68,4 @@ export class CVService {
         pdf.addImage(imgData, 'JPEG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
         pdf.save('cv.pdf');
     }
-} 
+}

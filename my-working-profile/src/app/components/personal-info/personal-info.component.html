@@ -1,0 +1,33 @@
+<div class="personal-info-section">
+  <div class="personal-info-header">
+    <div class="avatar-container">
+      <img src="assets/images/avatar.jpeg" alt="Professional photo" />
+    </div>
+    <div class="info-container">
+      <h1 nz-typography>{{ info?.name }}</h1>
+      <h2 nz-typography>{{ info?.title }}</h2>
+      <p nz-typography>{{ info?.summary }}</p>
+    </div>
+  </div>
+
+  <div class="contact-info">
+    <div>
+      <span nz-icon nzType="mail"></span>
+      {{ info?.email }}
+    </div>
+    <div>
+      <span nz-icon nzType="phone"></span>
+      {{ info?.phone }}
+    </div>
+    <div>
+      <span nz-icon nzType="environment"></span>
+      {{ info?.address }}
+    </div>
+    <div>
+      <a [href]="info?.linkedin" target="_blank">
+        <span nz-icon nzType="linkedin"></span>
+        LinkedIn Profile
+      </a>
+    </div>
+  </div>
+</div> 

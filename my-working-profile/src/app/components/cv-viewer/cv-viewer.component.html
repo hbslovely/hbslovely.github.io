@@ -33,6 +33,11 @@
       <div class="cv-section cv-skills">
         <app-skills [skills]="cv()?.skills"></app-skills>
       </div>
+
+      <!-- Projects -->
+      <div class="cv-section cv-projects">
+        <app-projects [projects]="cv()?.projects?.projects"></app-projects>
+      </div>
     </div>
   }
 </div>

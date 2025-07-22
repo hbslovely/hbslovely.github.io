@@ -1,0 +1,40 @@
+<div class="experience-section">
+  <div class="section-header">
+    <h2>Work Experience</h2>
+    <div class="section-subtitle">Professional journey and achievements</div>
+  </div>
+
+  <div class="section-content">
+    <nz-timeline>
+      @for (exp of experiences; track exp.company) {
+        <nz-timeline-item [nzColor]="exp.endDate === 'Present' ? 'blue' : 'gray'">
+          <div class="experience-item">
+            <h3 nz-typography>{{ exp.position }} at {{ exp.company }}</h3>
+            <div class="meta-info">
+              <span class="duration">{{ exp.startDate }} - {{ exp.endDate }}</span>
+              <span class="location">{{ exp.location }} ({{ exp.type }})</span>
+            </div>
+
+            <div class="responsibilities">
+              <h4 nz-typography>Responsibilities</h4>
+              <ul>
+                @for (resp of exp.responsibilities; track resp) {
+                  <li>{{ resp }}</li>
+                }
+              </ul>
+            </div>
+
+            <div class="achievements">
+              <h4 nz-typography>Key Achievements</h4>
+              <ul>
+                @for (achievement of exp.achievements; track achievement) {
+                  <li>{{ achievement }}</li>
+                }
+              </ul>
+            </div>
+          </div>
+        </nz-timeline-item>
+      }
+    </nz-timeline>
+  </div>
+</div>

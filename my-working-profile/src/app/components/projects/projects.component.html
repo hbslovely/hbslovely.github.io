@@ -1,0 +1,57 @@
+<div class="projects-container">
+  <h2 class="section-title">Projects</h2>
+
+  @if (projects && projects.length > 0) {
+    <div class="projects-list">
+      @for (project of projects; track project.name; let i = $index) {
+        <div class="project-item" [class.expanded]="isProjectExpanded(i)">
+          <div class="project-header" (click)="toggleProject(i)">
+            <div class="project-title">
+              <h3>{{ project.name }}</h3>
+              @if (project.company) {
+                <span class="project-company">{{ project.company }}</span>
+              }
+            </div>
+            <div class="project-duration">{{ project.duration }}</div>
+          </div>
+
+          <div class="project-content" [class.visible]="isProjectExpanded(i)">
+            <div class="project-description">{{ project.description }}</div>
+
+            @if (project.scope) {
+              <div class="project-scope">
+                <h4>Project Scope:</h4>
+                <p>{{ project.scope }}</p>
+              </div>
+            }
+
+            <div class="project-role">
+              <h4>Role:</h4>
+              <p>{{ project.role }}</p>
+            </div>
+
+            <div class="project-tech">
+              <h4>Technologies:</h4>
+              <div class="tech-tags">
+                @for (tech of project.technologies; track tech) {
+                  <nz-tag>{{ tech }}</nz-tag>
+                }
+              </div>
+            </div>
+
+            <div class="project-env">
+              <h4>Environment:</h4>
+              <div class="env-tags">
+                @for (env of project.environment; track env) {
+                  <nz-tag nzColor="blue">{{ env }}</nz-tag>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  } @else {
+    <p class="no-projects">No projects to display</p>
+  }
+</div>

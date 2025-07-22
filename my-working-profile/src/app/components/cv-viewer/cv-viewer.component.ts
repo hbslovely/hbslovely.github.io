@@ -9,6 +9,7 @@ import { CVService } from '../../services/cv.service';
 import { PersonalInfoComponent } from '../personal-info/personal-info.component';
 import { ExperienceComponent } from '../experience/experience.component';
 import { SkillsComponent } from '../skills/skills.component';
+import { ProjectsComponent } from '../projects/projects.component';
 
 @Component({
   selector: 'app-cv-viewer',
@@ -21,7 +22,8 @@ import { SkillsComponent } from '../skills/skills.component';
     NzAlertComponent,
     PersonalInfoComponent,
     ExperienceComponent,
-    SkillsComponent
+    SkillsComponent,
+    ProjectsComponent
   ],
   templateUrl: './cv-viewer.component.html',
   styleUrls: ['./cv-viewer.component.scss']
