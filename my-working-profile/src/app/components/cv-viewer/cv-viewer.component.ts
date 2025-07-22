@@ -7,7 +7,6 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzAlertComponent } from 'ng-zorro-antd/alert';
 import { CVService } from '../../services/cv.service';
 import { PersonalInfoComponent } from '../personal-info/personal-info.component';
-import { ExperienceComponent } from '../experience/experience.component';
 import { SkillsComponent } from '../skills/skills.component';
 import { ProjectsComponent } from '../projects/projects.component';
 
@@ -21,7 +20,6 @@ import { ProjectsComponent } from '../projects/projects.component';
     NzSpinModule,
     NzAlertComponent,
     PersonalInfoComponent,
-    ExperienceComponent,
     SkillsComponent,
     ProjectsComponent
   ],
