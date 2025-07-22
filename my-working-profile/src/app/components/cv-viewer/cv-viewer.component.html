@@ -1,0 +1,131 @@
+<div class="cv-container">
+    <div *ngIf="loading" class="loading">
+        Loading CV data...
+    </div>
+
+    <div *ngIf="error" class="error">
+        {{ error }}
+    </div>
+
+    <div *ngIf="cv" id="cv-content" class="cv-content">
+        <!-- Header with Export button -->
+        <div class="cv-actions">
+            <button mat-raised-button color="primary" (click)="exportToPDF()">
+                <mat-icon>download</mat-icon>
+                Export PDF
+            </button>
+        </div>
+
+        <!-- Personal Information -->
+        <mat-card class="section">
+            <mat-card-header>
+                <mat-card-title>{{ cv.personalInfo.name }}</mat-card-title>
+                <mat-card-subtitle>{{ cv.personalInfo.title }}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="contact-info">
+                    <p><mat-icon>email</mat-icon> {{ cv.personalInfo.email }}</p>
+                    <p><mat-icon>phone</mat-icon> {{ cv.personalInfo.phone }}</p>
+                    <p><mat-icon>location_on</mat-icon> {{ cv.personalInfo.address }}</p>
+                    <p>
+                        <mat-icon>link</mat-icon>
+                        <a [href]="cv.personalInfo.linkedin" target="_blank">LinkedIn Profile</a>
+                    </p>
+                </div>
+                <p class="summary">{{ cv.personalInfo.summary }}</p>
+            </mat-card-content>
+        </mat-card>
+
+        <!-- Work Experience -->
+        <mat-card class="section">
+            <mat-card-header>
+                <mat-card-title>Work Experience</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div *ngFor="let exp of cv.experience.workExperience" class="experience-item">
+                    <h3>{{ exp.position }} at {{ exp.company }}</h3>
+                    <p class="duration">{{ exp.startDate }} - {{ exp.endDate }}</p>
+                    <p class="location">{{ exp.location }} ({{ exp.type }})</p>
+                    
+                    <h4>Responsibilities:</h4>
+                    <ul>
+                        <li *ngFor="let resp of exp.responsibilities">{{ resp }}</li>
+                    </ul>
+                    
+                    <h4>Achievements:</h4>
+                    <ul>
+                        <li *ngFor="let achievement of exp.achievements">{{ achievement }}</li>
+                    </ul>
+                    <mat-divider *ngIf="!last"></mat-divider>
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+        <!-- Skills -->
+        <mat-card class="section">
+            <mat-card-header>
+                <mat-card-title>Technical Skills</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="skills-section">
+                    <div *ngFor="let category of getSkillCategories()" class="skill-category">
+                        <h4>{{ formatCategory(category) }}</h4>
+                        <mat-chip-set>
+                            <mat-chip *ngFor="let skill of cv.skills.technicalSkills[category]">
+                                {{ skill }}
+                            </mat-chip>
+                        </mat-chip-set>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+        <!-- Projects -->
+        <mat-card class="section">
+            <mat-card-header>
+                <mat-card-title>Key Projects</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div *ngFor="let project of cv.projects.projects" class="project-item">
+                    <h3>{{ project.name }}</h3>
+                    <p class="duration">{{ project.duration }}</p>
+                    <p>{{ project.description }}</p>
+                    
+                    <div class="project-details">
+                        <p><strong>Role:</strong> {{ project.role }}</p>
+                        <p *ngIf="project.scope"><strong>Scope:</strong> {{ project.scope }}</p>
+                    </div>
+
+                    <div class="technologies">
+                        <h4>Technologies:</h4>
+                        <mat-chip-set>
+                            <mat-chip *ngFor="let tech of project.technologies">{{ tech }}</mat-chip>
+                        </mat-chip-set>
+                    </div>
+
+                    <div class="environment">
+                        <h4>Environment:</h4>
+                        <mat-chip-set>
+                            <mat-chip *ngFor="let env of project.environment">{{ env }}</mat-chip>
+                        </mat-chip-set>
+                    </div>
+                    <mat-divider *ngIf="!last"></mat-divider>
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+        <!-- Education -->
+        <mat-card class="section">
+            <mat-card-header>
+                <mat-card-title>Education</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div *ngFor="let edu of cv.education.education" class="education-item">
+                    <h3>{{ edu.degree }} in {{ edu.field }}</h3>
+                    <p>{{ edu.institution }}</p>
+                    <p class="duration">{{ edu.startDate }} - {{ edu.endDate }}</p>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div> 
