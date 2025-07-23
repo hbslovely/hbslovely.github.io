@@ -5,10 +5,10 @@ on:
     branches:
       - main
       - profile
-jobs:
-  build-memory:
-    runs-on: ubuntu-latest
 
+jobs:
+  build-ky-niem:
+    runs-on: ubuntu-latest
     steps:
       - name: 🚀 Checkout code
         uses: actions/checkout@v3
@@ -19,17 +19,19 @@ jobs:
           node-version: 18
 
       - name: 📥 Install dependencies
-        run: cd ./ky-niem-web && npm install --force
+        run: cd ky-niem-web && npm install --force
 
-      - name: 🔨 Build Angular
-        run: cd ./ky-niem-web && npm run build -- --output-path=dist --base-href=/memories/
+      - name: 🔨 Build Angular ky-niem-web
+        run: cd ky-niem-web && npm run build -- --output-path=dist --base-href=/memories/
 
-      - name: 📁 Copy build to ky-niem-web/
-        run: rm -rf ./memories && mkdir memories && cd ./ky-niem-web && cp -r dist/* ../memories
+      - name: 📁 Copy build to memories/
+        run: |
+          rm -rf memories
+          mkdir memories
+          cp -r ky-niem-web/dist/* memories/
 
   build-profile:
     runs-on: ubuntu-latest
-
     steps:
       - name: 🚀 Checkout code
         uses: actions/checkout@v3
@@ -40,43 +42,30 @@ jobs:
           node-version: 18
 
       - name: 📥 Install dependencies
-        run: cd ./my-working-profile && npm install --force
+        run: cd my-working-profile && npm install --force
 
-      - name: 🔨 Build Angular
-        run: cd ./my-working-profile && npm run build -- --output-path=dist --base-href=/profile/
+      - name: 🔨 Build Angular profile
+        run: cd my-working-profile && npm run build -- --output-path=dist --base-href=/profile/
 
       - name: 📁 Copy build to cv/
-        run: rm -rf ./profile && mkdir cv && cd ./my-working-profile && cp -r dist/* ../cv
+        run: |
+          rm -rf cv
+          mkdir cv
+          cp -r my-working-profile/dist/* cv/
 
-  deploy-all-changes:
+  deploy:
+    needs: [build-ky-niem, build-profile]
     runs-on: ubuntu-latest
-
     steps:
       - name: 🚀 Checkout code
         uses: actions/checkout@v3
 
-      - name: 📦 Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: 📥 Install dependencies
-        run: cd ./my-working-profile && npm install --force
-
-      - name: 🔨 Build Angular
-        run: cd ./my-working-profile && npm run build -- --output-path=dist --base-href=/profile/
-
-      - name: 📁 Copy build to profile/
-        run: rm -rf ./profile && mkdir cv && cd ./my-working-profile && cp -r dist/* ../cv
-
-      - name: Push to GitHub Pages
+      - name: Commit & Push to GitHub Pages
         run: |
           git config --global user.name "Bhn"
           git config --global user.email "Bhn@memories.io"
           git add -f cv
           git add -f memories
-          git commit -a -m "Deploy changes"
-          git remote set-url origin https://$token@github.com/hbslovely/hbslovely.github.io.git
+          git commit -m "Deploy changes"
+          git remote set-url origin https://${{ secrets.GH_PAT }}@github.com/hbslovely/hbslovely.github.io.git
           git push origin main
-        env:
-          token: ${{ secrets.GH_PAT }}
