@@ -65,6 +65,7 @@ jobs:
           git config --global user.email "Bhn@memories.io"
           git add -f cv
           git commit -a -m "Deploy profile changes"
+          git pull origin main
           git remote set-url origin https://$token@github.com/hbslovely/hbslovely.github.io.git
           git push origin main
         env:
