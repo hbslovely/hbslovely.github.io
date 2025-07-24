@@ -1,87 +1,229 @@
 .nav-bar {
   display: flex;
-  background-color: #e6f7ff; // Light blue background
-  box-shadow: var(--card-shadow);
-  padding: 0.5rem;
-  gap: 1rem;
-  z-index: 1000;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 
-  // Desktop styles
-  &:not(.mobile) {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 0.5rem 2rem; // More horizontal padding for desktop
-    justify-content: space-between; // Logo on left, nav items on right
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      text-decoration: none;
-      color: var(--primary-color);
-      font-size: 1.25rem;
-      font-weight: 600;
-
-      [nz-icon] {
-        font-size: 1.5rem;
-      }
-
-      &:hover {
-        opacity: 0.8;
-      }
-    }
-
-    .nav-items {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .nav-item {
-      flex-direction: row !important; // Override the column direction for desktop
-      gap: 0.5rem !important; // Slightly larger gap between icon and text
-    }
+  &.scrolled {
+    padding: 0.75rem 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   }
 
-  // Mobile styles
   &.mobile {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    justify-content: space-around;
     padding: 0.75rem 1rem;
 
     .nav-items {
-      display: flex;
-      width: 100%;
-      justify-content: space-around;
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.98);
+      padding: 1rem;
+      flex-direction: column;
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+
+      &.open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .nav-item {
+        width: 100%;
+        justify-content: center;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 0.5rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
     }
   }
 
-  .nav-item {
+  .logo {
     display: flex;
-    flex-direction: column; // Default for mobile
     align-items: center;
-    gap: 0.25rem;
-    color: var(--text-color);
+    gap: 0.75rem;
     text-decoration: none;
-    padding: 0.5rem;
-    border-radius: 8px;
+    color: #1f1f1f;
     transition: all 0.3s ease;
 
-    &:hover, &.active {
-      color: var(--primary-color);
-      background-color: rgba(24, 144, 255, 0.1); // Light blue hover state
+    &:hover {
+      transform: translateY(-1px);
     }
 
     [nz-icon] {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
+      color: #1890ff;
     }
 
-    .label {
-      font-size: 0.875rem;
+    .logo-text {
+      font-size: 1.25rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+
+      &.hidden {
+        display: none;
+      }
     }
+  }
+
+  .menu-toggle {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: #666;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: #1890ff;
+    }
+
+    &.active {
+      color: #1890ff;
+      transform: rotate(180deg);
+    }
+
+    [nz-icon] {
+      font-size: 1.5rem;
+    }
+  }
+
+  .nav-items {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      color: #666;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: #1890ff;
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+
+      &:hover, &.active {
+        color: #1890ff;
+        background: #e6f7ff;
+
+        &::after {
+          width: 80%;
+        }
+      }
+
+      [nz-icon] {
+        font-size: 1.25rem;
+      }
+
+      .label {
+        font-size: 1rem;
+        font-weight: 500;
+      }
+    }
+
+    .export-btn {
+      background: none;
+      border: 2px solid #1890ff;
+      cursor: pointer;
+      color: #1890ff;
+      font-weight: 500;
+
+      &:hover:not(:disabled) {
+        background: #1890ff;
+        color: #fff;
+        transform: translateY(-1px);
+      }
+
+      &:active:not(:disabled) {
+        transform: translateY(0);
+      }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        border-color: #d9d9d9;
+        color: #999;
+      }
+
+      [nz-icon] {
+        font-size: 1.25rem;
+
+        &.anticon-loading {
+          animation: spin 1s infinite linear;
+        }
+      }
+    }
+  }
+
+  .keyboard-shortcuts {
+    display: flex;
+    gap: 1rem;
+    margin-left: auto;
+    padding-left: 2rem;
+    font-size: 0.875rem;
+    color: #666;
+    border-left: 1px solid #f0f0f0;
+
+    .shortcut {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.25rem 0.5rem;
+      background: #f5f5f5;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: #e6f7ff;
+        color: #1890ff;
+      }
+
+      [nz-icon] {
+        font-size: 1rem;
+        color: #999;
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

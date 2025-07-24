@@ -3,8 +3,7 @@
   "title": "Senior Software Developer",
   "dateOfBirth": "30 Sep 1992",
   "location": {
-    "address": "201/1/4 Doi Cung, Ward 9",
-    "district": "District 11",
+    "address": "Binh Thoi",
     "city": "Ho Chi Minh City",
     "country": "Vietnam"
   },
@@ -25,6 +24,7 @@
     }
   ],
   "summary": "Results-driven Senior Web Developer with over 8 years of expertise in front-end development and modern web technologies. Demonstrated track record of delivering high-quality solutions across diverse sectors including social networks, data management systems, and travel platforms. Proficient in HTML5, JavaScript, CSS, and various modern frameworks such as Angular and React. Skilled in leading development teams and implementing best practices throughout the entire software development lifecycle.\n\nCurrently focused on architecting scalable web applications while mentoring junior developers. Passionate about clean code, performance optimization, and staying current with emerging technologies. Actively pursuing advancement towards a Full Stack Developer or Technical Lead role, with a strong emphasis on building robust, user-centric applications.",
+  "shortSummary": "Senior Web Developer with 8+ years of expertise in front-end development. Proven track record in delivering high-quality solutions using Angular and React. Skilled in team leadership, performance optimization, and implementing best practices. Currently focused on scalable web applications and mentoring junior developers.",
   "professionalHighlights": [
     "Led development teams of 3-5 members in delivering complex web applications",
     "Implemented responsive design principles resulting in 40% improved mobile user engagement",

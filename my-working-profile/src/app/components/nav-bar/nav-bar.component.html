@@ -1,19 +1,39 @@
-<nav class="nav-bar" [class.mobile]="isMobile">
-  <!-- Logo section (hidden on mobile) -->
-  @if (!isMobile) {
-    <a [routerLink]="'/'" class="logo">
-      <span nz-icon nzType="code" nzTheme="outline"></span>
-      <span class="logo-text">{{ logoText }}</span>
-    </a>
+<nav class="nav-bar" [class.mobile]="isMobile" [class.scrolled]="isScrolled" [@fadeInOut]>
+  <!-- Logo section -->
+  <a [routerLink]="'/'" class="logo" (click)="closeMenu()">
+    <span nz-icon nzType="code" nzTheme="outline"></span>
+    <span class="logo-text" [class.hidden]="isMobile">{{ logoText }}</span>
+  </a>
+
+  <!-- Mobile menu toggle -->
+  @if (isMobile) {
+    <button class="menu-toggle" (click)="toggleMenu()" [class.active]="isMenuOpen">
+      <span nz-icon [nzType]="isMenuOpen ? 'close' : 'menu'" nzTheme="outline"></span>
+    </button>
   }
 
   <!-- Navigation items -->
-  <div class="nav-items">
+  <div class="nav-items" [class.open]="isMenuOpen || !isMobile">
     @for (item of navItems; track item) {
-      <a [routerLink]="item.path" routerLinkActive="active" class="nav-item">
+      <a 
+        [routerLink]="item.path" 
+        routerLinkActive="active" 
+        class="nav-item"
+        (click)="closeMenu()"
+        [@fadeInOut]>
         <span nz-icon [nzType]="item.icon" nzTheme="outline"></span>
         <span class="label">{{ item.label }}</span>
       </a>
     }
+    <button 
+      class="nav-item export-btn" 
+      (click)="exportToPDF()" 
+      [disabled]="isExporting"
+      nz-tooltip 
+      [nzTooltipTitle]="isExporting ? 'Generating PDF...' : 'Export CV as PDF'"
+      [@fadeInOut]>
+      <span nz-icon [nzType]="isExporting ? 'loading' : 'file-pdf'" nzTheme="outline"></span>
+      <span class="label">{{ isExporting ? 'Exporting...' : 'Export PDF' }}</span>
+    </button>
   </div>
-</nav> 
+</nav>

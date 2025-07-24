@@ -18,13 +18,32 @@ export interface Project {
 export interface PersonalInfo {
   name: string;
   title: string;
-  email: string;
-  phone: string;
-  address: string;
-  linkedin: string;
-  location: string;
+  dateOfBirth: string;
+  location: {
+    address: string;
+    district: string;
+    city: string;
+    country: string;
+  };
+  contact: {
+    phone: string;
+    email: string;
+    linkedin: string;
+    github: string;
+  };
+  languages: Array<{
+    name: string;
+    level: string;
+  }>;
   summary: string;
-  links?: { [key: string]: string };
+  shortSummary: string;
+  professionalHighlights: string[];
+  interests: string[];
+  availability: {
+    status: string;
+    preferredWorkType: string[];
+    remoteWork: string;
+  };
 }
 
 export interface Experience {
