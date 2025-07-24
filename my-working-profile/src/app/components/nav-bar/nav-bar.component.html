@@ -1,40 +1,36 @@
 <nav class="navbar">
   <div class="container">
     <div class="navbar-content">
-      <div class="navbar-left">
-        <a class="navbar-brand" routerLink="/">
-          <span class="logo">HPP</span>
-        </a>
-        
-        <button 
-          class="export-button" 
-          nz-button 
-          nzType="primary"
-          [nzLoading]="isExporting"
-          (click)="exportToPDF()" 
-          [disabled]="isExporting"
-          *ngIf="languageService.getCurrentLanguage() === 'en'"
-        >
-          <span nz-icon [nzType]="'file-pdf'" nzTheme="outline" *ngIf="!isExporting"></span>
-          {{ 'ACTIONS.EXPORT_PDF' | translate }}
-        </button>
-      </div>
+      <a class="navbar-brand" routerLink="/">
+        <span class="logo">HPP</span>
+      </a>
 
-      <div class="navbar-center">
-        <ul class="nav-links">
+      <button 
+        class="mobile-menu-button" 
+        nz-button 
+        nzType="text"
+        (click)="toggleMobileMenu()"
+      >
+        <span nz-icon [nzType]="isMobileMenuOpen ? 'close' : 'menu'" nzTheme="outline"></span>
+      </button>
+
+      <div class="nav-content" [class.mobile-open]="isMobileMenuOpen">
+        <ul class="nav-links" [class.mobile]="isMobile">
           <li *ngFor="let item of navItems">
             <a [routerLink]="item.path" 
                routerLinkActive="active" 
-               [routerLinkActiveOptions]="{ exact: item.exact }">
+               [routerLinkActiveOptions]="{ exact: item.exact }"
+               (click)="isMobile && closeMobileMenu()">
               <span nz-icon [nzType]="item.icon" nzTheme="outline"></span>
               {{ item.label | translate }}
             </a>
           </li>
         </ul>
-      </div>
 
-      <div class="navbar-right">
-        <app-language-switcher></app-language-switcher>
+        <div class="nav-actions" [class.mobile]="isMobile">
+          <app-export-pdf></app-export-pdf>
+          <app-language-switcher></app-language-switcher>
+        </div>
       </div>
     </div>
   </div>

@@ -1,14 +1,14 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzMessageService } from 'ng-zorro-antd/message';
-import { PdfService } from '../../services/pdf.service';
-import { LanguageSwitcherComponent } from '../language-switcher/language-switcher.component';
-import { LanguageService } from '../../services/language.service';
-import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { LanguageSwitcherComponent } from '../language-switcher/language-switcher.component';
+import { ExportPdfComponent } from '../export-pdf/export-pdf.component';
+import { LanguageService } from '../../services/language.service';
+import { TranslateModule } from '@ngx-translate/core';
+import { Subject, fromEvent } from 'rxjs';
+import { takeUntil, debounceTime, filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-nav-bar',
@@ -19,54 +19,64 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
     NzIconModule,
     NzButtonModule,
     LanguageSwitcherComponent,
-    NzMenuModule,
+    ExportPdfComponent,
     TranslateModule
   ],
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.scss']
 })
-export class NavBarComponent {
-  private pdfService = inject(PdfService);
-  private messageService = inject(NzMessageService);
+export class NavBarComponent implements OnInit, OnDestroy {
+  private destroy$ = new Subject<void>();
+  private router = inject(Router);
   public languageService = inject(LanguageService);
-  private translateService = inject(TranslateService);
 
-  isExporting = false;
+  isMobile = window.innerWidth < 768;
+  isMobileMenuOpen = false;
 
-  readonly navItems = [
-    { path: '/', label: 'NAV.ABOUT', icon: 'user', exact: true },
-    { path: '/experience', label: 'NAV.EXPERIENCE', icon: 'history', exact: false },
-    { path: '/skills', label: 'NAV.SKILLS', icon: 'tool', exact: false },
-    { path: '/projects', label: 'NAV.PROJECTS', icon: 'project', exact: false }
+  navItems = [
+    { path: '', label: 'NAV.ABOUT', icon: 'user', exact: true },
+    { path: 'experience', label: 'NAV.EXPERIENCE', icon: 'history', exact: false },
+    { path: 'skills', label: 'NAV.SKILLS', icon: 'tool', exact: false },
+    { path: 'projects', label: 'NAV.PROJECTS', icon: 'project', exact: false }
   ];
 
-  constructor() {
-    // Initialize with English as default language
-    this.translateService.setDefaultLang('en');
-    this.translateService.use(this.languageService.getCurrentLanguage());
+  ngOnInit(): void {
+    // Handle window resize
+    fromEvent(window, 'resize')
+      .pipe(
+        debounceTime(250),
+        takeUntil(this.destroy$)
+      )
+      .subscribe(() => {
+        this.isMobile = window.innerWidth < 768;
+        if (!this.isMobile) {
+          this.isMobileMenuOpen = false;
+        }
+      });
 
-    // Subscribe to language changes
-    this.languageService.language$.subscribe(lang => {
-      this.translateService.use(lang);
-    });
+    // Close mobile menu on navigation
+    this.router.events
+      .pipe(
+        filter(event => event.constructor.name === 'NavigationEnd'),
+        takeUntil(this.destroy$)
+      )
+      .subscribe(() => {
+        this.closeMobileMenu();
+        // Scroll to top on navigation
+        window.scrollTo(0, 0);
+      });
   }
 
-  async exportToPDF(): Promise<void> {
-    if (this.isExporting) return;
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
 
-    this.isExporting = true;
-    const loadingMessage = this.messageService.loading('Generating PDF...');
+  toggleMobileMenu(): void {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
 
-    try {
-      // Use the CV container ID for PDF generation
-      await this.pdfService.generateBeautifulPdf();
-      this.messageService.success('PDF generated successfully!');
-    } catch (error) {
-      console.error('Error generating PDF:', error);
-      this.messageService.error('Failed to generate PDF. Please try again.');
-    } finally {
-      this.messageService.remove(loadingMessage.messageId);
-      this.isExporting = false;
-    }
+  closeMobileMenu(): void {
+    this.isMobileMenuOpen = false;
   }
 }

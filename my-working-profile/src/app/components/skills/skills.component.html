@@ -5,25 +5,23 @@
   </div>
 
   <div class="section-content">
-    <div nz-row [nzGutter]="[24, 24]">
+    <div class="skills-container">
       @for (category of getSkillCategories(); track category) {
-        <div nz-col [nzXs]="24" [nzSm]="24" [nzMd]="12" [@fadeInUp]>
-          <div class="skill-category" [class.skill-category-hover]="true">
-            <div class="category-header">
-              <span nz-icon [nzType]="getCategoryIcon(category)" nzTheme="outline"></span>
-              <h4 nz-typography>{{ formatCategory(category) }}</h4>
-            </div>
-            <div class="skill-tags">
-              @for (skill of getSkillsForCategory(category); track skill) {
-                <nz-tag 
-                  class="skill-tag" 
-                  [nzColor]="getTagColor(category)"
-                  [nzBordered]="false"
-                  [@tagAnimation]>
-                  <span class="tag-text">{{ skill }}</span>
-                </nz-tag>
-              }
-            </div>
+        <div class="skill-category" [@fadeInUp]>
+          <div class="category-header">
+            <span nz-icon [nzType]="getCategoryIcon(category)" nzTheme="outline"></span>
+            <h4 nz-typography>{{ formatCategory(category) }}</h4>
+          </div>
+          <div class="skill-tags">
+            @for (skill of getSkillsForCategory(category); track skill) {
+              <nz-tag 
+                class="skill-tag" 
+                [nzColor]="getTagColor(category)"
+                [nzBordered]="false"
+                [@tagAnimation]>
+                <span class="tag-text">{{ skill }}</span>
+              </nz-tag>
+            }
           </div>
         </div>
       }

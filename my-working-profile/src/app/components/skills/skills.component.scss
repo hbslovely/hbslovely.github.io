@@ -46,19 +46,22 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   }
 
+  .skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
   .skill-category {
     background: #fafafa;
     padding: 1.5rem;
     border-radius: 12px;
     transition: all 0.3s ease;
-    height: 100%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
 
-    &.skill-category-hover {
-      &:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-      }
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     }
 
     .category-header {

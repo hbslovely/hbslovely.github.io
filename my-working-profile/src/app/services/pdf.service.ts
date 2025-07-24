@@ -15,9 +15,10 @@ export class PdfService {
   private readonly A4_HEIGHT = 841.89; // 11.69 × 72
   private readonly MARGIN = 40;
   private readonly CONTENT_WIDTH = this.A4_WIDTH - (this.MARGIN * 2);
-  private readonly SECTION_SPACING = 15;
+  private readonly SECTION_SPACING = 30; // Increased from 15 to 30 for better section separation
+  private readonly HEADER_SPACING = 25; // Increased from 20 to 25 for consistent header spacing
   private readonly AVATAR_SIZE = 180;
-  private readonly HEADER_SPACING = 20;
+  private readonly SUB_SECTION_SPACING = 20; // New constant for spacing between items within a section
 
   private defineVietnameseFont(pdf: jsPDF): void {
     // Add Vietnamese font definition
@@ -70,10 +71,15 @@ export class PdfService {
   }
 
   private addSectionHeader(pdf: jsPDF, text: string, yPos: number, colors: any): number {
+    // Add extra spacing before section header
+    yPos += this.SECTION_SPACING;
+    
     pdf.setFont('Times-Roman', 'bold');
     pdf.setFontSize(18);
     pdf.setTextColor(colors.primary);
     pdf.text(text, this.MARGIN, yPos);
+    
+    // Return position after header with consistent spacing
     return yPos + this.HEADER_SPACING;
   }
 
@@ -204,23 +210,19 @@ export class PdfService {
     pdf.line(this.MARGIN, yPos + 2, this.MARGIN + pdf.getTextWidth(linkedInUrl), yPos + 2);
 
     // Add extra spacing before Summary section
-    yPos = Math.max(yPos + this.getLineHeight(13) + 20, this.MARGIN + this.AVATAR_SIZE + this.SECTION_SPACING);
+    yPos = Math.max(yPos + this.getLineHeight(13), this.MARGIN + this.AVATAR_SIZE + this.SECTION_SPACING);
     yPos = this.addSectionHeader(pdf, 'Summary', yPos, colors);
 
-    // Add summary content with increased line height
+    // Add summary content
     pdf.setFont('Times-Roman', 'normal');
     pdf.setFontSize(13);
     pdf.setTextColor(colors.text);
     const summaryLines = pdf.splitTextToSize(cv.personalInfo.shortSummary || '', this.CONTENT_WIDTH);
     pdf.text(summaryLines, this.MARGIN, yPos);
-
-    // Calculate line height specifically for summary (1.5 times font size in points)
-    const summaryLineHeight = 13 * 1.5;
-    yPos += summaryLines.length * summaryLineHeight;
+    yPos += summaryLines.length * this.getLineHeight(13);
 
     // Add Experience Section
     yPos = this.addSectionHeader(pdf, 'Professional Experience', yPos, colors);
-    yPos += this.getLineHeight(18);
 
     // Update Experience section
     if (cv.experience?.workExperience) {
@@ -270,6 +272,8 @@ export class PdfService {
         }
 
         yPos += 15;
+        // Add spacing between experience items
+        yPos += this.SUB_SECTION_SPACING;
       });
     }
 
@@ -311,7 +315,7 @@ export class PdfService {
         }
       });
 
-      yPos = Math.max(leftColumnY, rightColumnY) + 5;
+      yPos = Math.max(leftColumnY, rightColumnY) + this.SUB_SECTION_SPACING;
     }
 
     // Add Education Section
@@ -320,7 +324,7 @@ export class PdfService {
     yPos += this.getLineHeight(18);
 
     if (cv.education?.education) {
-      cv.education.education.forEach(edu => {
+      cv.education.education.forEach((edu, index) => {
         yPos = this.checkPageBreak(pdf, yPos, 80);
 
         // Degree and Field
@@ -336,11 +340,13 @@ export class PdfService {
         pdf.setTextColor(colors.subtext);
         pdf.text(`${ edu.institution } (${ edu.startDate } - ${ edu.endDate })`, this.MARGIN + 15, yPos);
         yPos += this.getLineHeight(13) + 20;
+        // Add spacing between education items
+        yPos += this.SUB_SECTION_SPACING;
       });
     }
 
     // Add Projects Section
-    yPos = this.checkPageBreak(pdf, yPos + 20);
+    yPos = this.checkPageBreak(pdf, yPos);
     yPos = this.addSectionHeader(pdf, 'Notable Projects', yPos, colors);
     yPos += this.getLineHeight(18);
 
@@ -409,8 +415,8 @@ export class PdfService {
           pdf.text(` ${ project.role }`, this.MARGIN + labelWidth, yPos);
         }
 
-        // Add more spacing between projects (increased from previous value)
-        yPos += this.getLineHeight(13) + 25; // Increased from just getLineHeight(13)
+        // Add consistent spacing between projects
+        yPos += this.SUB_SECTION_SPACING;
 
         // Add a subtle separator line between projects (except for the last one)
         if (index < cv.projects.projects.length - 1) {
