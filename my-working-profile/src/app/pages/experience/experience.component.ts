@@ -1,33 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ExperienceComponent as ExperienceListComponent } from '../../components/experience/experience.component';
+import { NzTimelineModule } from 'ng-zorro-antd/timeline';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 import { CVService } from '../../services/cv.service';
+import { ExperiencePageProps } from './experience.types';
+import {
+  EXPERIENCE_PAGE_CONFIG,
+  EXPERIENCE_SECTIONS,
+  TIMELINE_CONFIG
+} from './experience.constants';
 
 @Component({
   selector: 'app-experience-page',
   standalone: true,
   imports: [
     CommonModule,
-    ExperienceListComponent
+    NzTimelineModule,
+    NzIconModule
   ],
-  template: `
-    <div class="experience-page">
-      <app-experience
-        [workExperience]="cv()?.experience?.workExperience"
-        [education]="cv()?.education?.education">
-      </app-experience>
-    </div>
-  `,
-  styles: [`
-    .experience-page {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-  `]
+  templateUrl: './experience.component.html',
+  styleUrls: ['./experience.component.scss']
 })
 export class ExperiencePageComponent {
-  // @ts-ignore
-  readonly cv = this.cvService.cv;
+  private readonly cvService = inject(CVService);
 
-  constructor(private cvService: CVService) {}
+  // Constants
+  readonly config: ExperiencePageProps = EXPERIENCE_PAGE_CONFIG;
+  readonly sections = EXPERIENCE_SECTIONS;
+  readonly timelineConfig = TIMELINE_CONFIG;
+
+  // State
+  readonly cv = this.cvService.cv;
 }

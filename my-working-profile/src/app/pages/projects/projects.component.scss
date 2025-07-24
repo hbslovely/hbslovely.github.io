@@ -1,0 +1,324 @@
+.projects-page {
+  padding: 2rem 1rem;
+  min-height: 100vh;
+  background-color: var(--background-color);
+
+  .container {
+    margin: 0 auto;
+
+    .section-header {
+      margin-bottom: 2rem;
+      
+      h2 {
+        font-size: 1.75rem;
+        color: var(--heading-color);
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+
+        [nz-icon] {
+          color: var(--primary-color);
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .filters-section {
+      margin-bottom: 2rem;
+      background-color: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+      .filters-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #f0f0f0;
+
+        h3 {
+          font-size: 1.2rem;
+          color: var(--heading-color);
+          margin: 0;
+        }
+
+        .clear-filters {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.5rem 1rem;
+          border: none;
+          background-color: #fafafa;
+          color: var(--text-color-secondary);
+          border-radius: 4px;
+          cursor: pointer;
+          transition: all 0.2s ease;
+
+          &:hover {
+            background-color: #f0f0f0;
+            color: var(--text-color);
+          }
+
+          [nz-icon] {
+            font-size: 1rem;
+          }
+        }
+      }
+
+      .filter-group {
+        margin-bottom: 1.5rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .group-header {
+          font-size: 1rem;
+          color: var(--text-color-secondary);
+          margin-bottom: 1rem;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+
+          [nz-icon] {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+          }
+        }
+
+        .filter-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+
+          :host ::ng-deep {
+            .ant-tag {
+              margin: 0;
+              padding: 0.4rem 0.8rem;
+              border-radius: 16px;
+              font-size: 0.875rem;
+              cursor: pointer;
+              transition: all 0.2s ease;
+              border: none;
+
+              &:hover {
+                opacity: 0.8;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+      
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .project-card {
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        padding: 1.5rem;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-bottom: 1rem;
+
+          h3 {
+            font-size: 1.4rem;
+            color: var(--heading-color);
+            margin: 0;
+          }
+
+          .project-links {
+            display: flex;
+            gap: 1rem;
+
+            .link-icon {
+              color: var(--text-color-secondary);
+              transition: color 0.2s ease;
+
+              &:hover {
+                color: var(--primary-color);
+              }
+
+              [nz-icon] {
+                font-size: 1.25rem;
+              }
+            }
+          }
+        }
+
+        .project-meta {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1rem;
+          margin-bottom: 1.5rem;
+          align-items: center;
+
+          .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-color-secondary);
+            font-size: 0.9rem;
+
+            [nz-icon] {
+              color: var(--primary-color);
+              font-size: 1rem;
+            }
+          }
+
+          :host ::ng-deep {
+            .ant-tag {
+              margin: 0;
+              padding: 0.25rem 0.75rem;
+              border-radius: 16px;
+              font-size: 0.875rem;
+              border: none;
+            }
+          }
+        }
+
+        .description {
+          color: var(--text-color);
+          line-height: 1.6;
+          margin-bottom: 1.5rem;
+        }
+
+        .role-scope {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1.5rem;
+          margin-bottom: 1.5rem;
+
+          @media (max-width: 400px) {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+          }
+
+          .role, .scope {
+            h4 {
+              font-size: 1.1rem;
+              color: var(--heading-color);
+              margin-bottom: 0.5rem;
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+
+              [nz-icon] {
+                color: var(--primary-color);
+                font-size: 1.1rem;
+              }
+            }
+
+            p {
+              color: var(--text-color);
+              line-height: 1.5;
+              margin: 0;
+            }
+          }
+        }
+
+        .tech-stack, .environment {
+          margin-bottom: 1.5rem;
+
+          h4 {
+            font-size: 1.1rem;
+            color: var(--heading-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            [nz-icon] {
+              color: var(--primary-color);
+              font-size: 1.1rem;
+            }
+          }
+
+          .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+
+            :host ::ng-deep {
+              .ant-tag {
+                margin: 0;
+                padding: 0.25rem 0.75rem;
+                border-radius: 16px;
+                font-size: 0.875rem;
+                border: none;
+
+                &.clickable {
+                  cursor: pointer;
+                  transition: all 0.2s ease;
+
+                  &:hover {
+                    opacity: 0.8;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .highlights {
+          h4 {
+            font-size: 1.1rem;
+            color: var(--heading-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            [nz-icon] {
+              color: var(--primary-color);
+              font-size: 1.1rem;
+            }
+          }
+
+          ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+
+            li {
+              display: flex;
+              gap: 0.75rem;
+              align-items: flex-start;
+              color: var(--text-color);
+              line-height: 1.5;
+
+              [nz-icon] {
+                color: var(--primary-color);
+                font-size: 1.1rem;
+                margin-top: 0.2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+} 

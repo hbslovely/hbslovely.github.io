@@ -1,0 +1,24 @@
+import { ExperienceSection } from './experience.types';
+
+export const EXPERIENCE_PAGE_CONFIG = {
+  maxWidth: 1000,
+  className: 'experience-page'
+} as const;
+
+export const EXPERIENCE_SECTIONS: ExperienceSection[] = [
+  {
+    id: 'work',
+    title: 'Work Experience',
+    icon: 'laptop'
+  },
+  {
+    id: 'education',
+    title: 'Education',
+    icon: 'book'
+  }
+] as const;
+
+export const TIMELINE_CONFIG = {
+  mode: 'left',
+  pending: false
+} as const; 

@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SkillsComponent as SkillsListComponent } from '../../components/skills/skills.component';
 import { CVService } from '../../services/cv.service';
+import { SkillsPageProps } from './skills.types';
+import { SKILLS_PAGE_CONFIG } from './skills.constants';
 
 @Component({
   selector: 'app-skills-page',
@@ -10,21 +12,15 @@ import { CVService } from '../../services/cv.service';
     CommonModule,
     SkillsListComponent
   ],
-  template: `
-    <div class="skills-page">
-      <app-skills [skills]="cv()?.skills"></app-skills>
-    </div>
-  `,
-  styles: [`
-    .skills-page {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-  `]
+  templateUrl: './skills.component.html',
+  styleUrls: ['./skills.component.scss']
 })
 export class SkillsPageComponent {
-  // @ts-ignore
-  readonly cv = this.cvService.cv;
+  private readonly cvService = inject(CVService);
 
-  constructor(private cvService: CVService) {}
+  // Constants
+  readonly config: SkillsPageProps = SKILLS_PAGE_CONFIG;
+
+  // State
+  readonly cv = this.cvService.cv;
 }

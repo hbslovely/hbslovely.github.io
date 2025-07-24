@@ -1,80 +1,19 @@
-<div class="nav-container">
-  <div class="nav-content">
-    <div class="logo">
-      <h1>My Portfolio</h1>
-    </div>
-    
-    <div class="nav-menu-container">
-      <!-- Desktop Menu -->
-      <ul nz-menu nzMode="horizontal" class="nav-menu">
-        @for (item of menuItems; track item.id) {
-          <li nz-menu-item (click)="scrollToSection(item.id)">
-            <span nz-icon [nzType]="item.icon" nzTheme="outline"></span>
-            {{ item.label }}
-          </li>
-        }
-      </ul>
+<nav class="nav-bar" [class.mobile]="isMobile">
+  <!-- Logo section (hidden on mobile) -->
+  @if (!isMobile) {
+    <a [routerLink]="'/'" class="logo">
+      <span nz-icon nzType="code" nzTheme="outline"></span>
+      <span class="logo-text">{{ logoText }}</span>
+    </a>
+  }
 
-      <!-- Download Button -->
-      <button 
-        nz-button 
-        nz-dropdown 
-        [nzDropdownMenu]="menu" 
-        nzType="primary"
-        class="download-button">
-        <span nz-icon nzType="download" nzTheme="outline"></span>
-        <span class="button-text">Download CV</span>
-      </button>
-
-      <!-- Mobile Menu Toggle -->
-      <button 
-        nz-button 
-        nzType="text"
-        class="mobile-menu-toggle"
-        (click)="toggleDrawer()">
-        <span nz-icon nzType="menu" nzTheme="outline"></span>
-      </button>
-    </div>
-
-    <!-- Download Dropdown Menu -->
-    <nz-dropdown-menu #menu="nzDropdownMenu">
-      <ul nz-menu>
-        <li nz-menu-item (click)="downloadPdf('standard')">
-          <span nz-icon nzType="file-pdf" nzTheme="outline"></span>
-          Standard PDF
-        </li>
-        <li nz-menu-item (click)="downloadPdf('beautiful')">
-          <span nz-icon nzType="file-pdf" nzTheme="outline"></span>
-          Beautiful PDF
-        </li>
-      </ul>
-    </nz-dropdown-menu>
+  <!-- Navigation items -->
+  <div class="nav-items">
+    @for (item of navItems; track item) {
+      <a [routerLink]="item.path" routerLinkActive="active" class="nav-item">
+        <span nz-icon [nzType]="item.icon" nzTheme="outline"></span>
+        <span class="label">{{ item.label }}</span>
+      </a>
+    }
   </div>
-</div>
-
-<!-- Mobile Drawer -->
-<nz-drawer
-  [nzVisible]="isDrawerVisible"
-  nzPlacement="right"
-  nzTitle="Menu"
-  (nzOnClose)="toggleDrawer()">
-  <ng-container *nzDrawerContent>
-    <ul class="mobile-menu">
-      @for (item of menuItems; track item.id) {
-        <li (click)="scrollToSection(item.id)">
-          <span nz-icon [nzType]="item.icon" nzTheme="outline"></span>
-          {{ item.label }}
-        </li>
-      }
-      <li class="divider"></li>
-      <li (click)="downloadPdf('standard')">
-        <span nz-icon nzType="file-pdf" nzTheme="outline"></span>
-        Download Standard PDF
-      </li>
-      <li (click)="downloadPdf('beautiful')">
-        <span nz-icon nzType="file-pdf" nzTheme="outline"></span>
-        Download Beautiful PDF
-      </li>
-    </ul>
-  </ng-container>
-</nz-drawer> 
+</nav> 

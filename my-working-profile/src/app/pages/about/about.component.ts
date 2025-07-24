@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PersonalInfoComponent } from '../../components/personal-info/personal-info.component';
 import { CVService } from '../../services/cv.service';
+import { AboutPageProps } from './about.types';
+import { ABOUT_PAGE_CONFIG, ABOUT_PAGE_SECTIONS } from './about.constants';
 
 @Component({
   selector: 'app-about',
@@ -10,24 +12,16 @@ import { CVService } from '../../services/cv.service';
     CommonModule,
     PersonalInfoComponent
   ],
-  template: `
-    <div class="about-page">
-      <app-personal-info [info]="cv()?.personalInfo"></app-personal-info>
-    </div>
-  `,
-  styles: [`
-    .about-page {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-  `]
+  templateUrl: './about.component.html',
+  styleUrls: ['./about.component.scss']
 })
 export class AboutComponent {
+  private readonly cvService = inject(CVService);
 
-  constructor(private cvService: CVService) {
-    this.cv = this.cvService.cv;
-  }
+  // Constants
+  readonly config: AboutPageProps = ABOUT_PAGE_CONFIG;
+  readonly sections = ABOUT_PAGE_SECTIONS;
 
-  // @ts-ignore
-  cv;
+  // State
+  readonly cv = this.cvService.cv;
 }
