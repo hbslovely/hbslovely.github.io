@@ -8,6 +8,7 @@ import { ProjectsPageProps } from './projects.types';
 import { PROJECTS_PAGE_CONFIG } from './projects.constants';
 import { Project } from '../../models/cv.models';
 import { NzIconService } from 'ng-zorro-antd/icon';
+import { SectionHeaderComponent } from '../../components/section-header/section-header.component';
 
 // Tag color mapping
 const TAG_COLORS = {
@@ -141,7 +142,8 @@ const TECH_ICONS: Record<string, string> = {
     CommonModule,
     NzIconModule,
     NzTagModule,
-    FormsModule
+    FormsModule,
+    SectionHeaderComponent
   ],
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']

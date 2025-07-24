@@ -9,6 +9,7 @@ import {
   EXPERIENCE_SECTIONS,
   TIMELINE_CONFIG
 } from './experience.constants';
+import { SectionHeaderComponent } from '../../components/section-header/section-header.component';
 
 @Component({
   selector: 'app-experience-page',
@@ -16,7 +17,8 @@ import {
   imports: [
     CommonModule,
     NzTimelineModule,
-    NzIconModule
+    NzIconModule,
+    SectionHeaderComponent
   ],
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.scss']
