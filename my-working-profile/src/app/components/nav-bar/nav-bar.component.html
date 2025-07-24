@@ -1,39 +1,41 @@
-<nav class="nav-bar" [class.mobile]="isMobile" [class.scrolled]="isScrolled" [@fadeInOut]>
-  <!-- Logo section -->
-  <a [routerLink]="'/'" class="logo" (click)="closeMenu()">
-    <span nz-icon nzType="code" nzTheme="outline"></span>
-    <span class="logo-text" [class.hidden]="isMobile">{{ logoText }}</span>
-  </a>
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar-content">
+      <div class="navbar-left">
+        <a class="navbar-brand" routerLink="/">
+          <span class="logo">HPP</span>
+        </a>
+        
+        <button 
+          class="export-button" 
+          nz-button 
+          nzType="primary"
+          [nzLoading]="isExporting"
+          (click)="exportToPDF()" 
+          [disabled]="isExporting"
+          *ngIf="languageService.getCurrentLanguage() === 'en'"
+        >
+          <span nz-icon [nzType]="'file-pdf'" nzTheme="outline" *ngIf="!isExporting"></span>
+          {{ 'ACTIONS.EXPORT_PDF' | translate }}
+        </button>
+      </div>
 
-  <!-- Mobile menu toggle -->
-  @if (isMobile) {
-    <button class="menu-toggle" (click)="toggleMenu()" [class.active]="isMenuOpen">
-      <span nz-icon [nzType]="isMenuOpen ? 'close' : 'menu'" nzTheme="outline"></span>
-    </button>
-  }
+      <div class="navbar-center">
+        <ul class="nav-links">
+          <li *ngFor="let item of navItems">
+            <a [routerLink]="item.path" 
+               routerLinkActive="active" 
+               [routerLinkActiveOptions]="{ exact: item.exact }">
+              <span nz-icon [nzType]="item.icon" nzTheme="outline"></span>
+              {{ item.label | translate }}
+            </a>
+          </li>
+        </ul>
+      </div>
 
-  <!-- Navigation items -->
-  <div class="nav-items" [class.open]="isMenuOpen || !isMobile">
-    @for (item of navItems; track item) {
-      <a 
-        [routerLink]="item.path" 
-        routerLinkActive="active" 
-        class="nav-item"
-        (click)="closeMenu()"
-        [@fadeInOut]>
-        <span nz-icon [nzType]="item.icon" nzTheme="outline"></span>
-        <span class="label">{{ item.label }}</span>
-      </a>
-    }
-    <button 
-      class="nav-item export-btn" 
-      (click)="exportToPDF()" 
-      [disabled]="isExporting"
-      nz-tooltip 
-      [nzTooltipTitle]="isExporting ? 'Generating PDF...' : 'Export CV as PDF'"
-      [@fadeInOut]>
-      <span nz-icon [nzType]="isExporting ? 'loading' : 'file-pdf'" nzTheme="outline"></span>
-      <span class="label">{{ isExporting ? 'Exporting...' : 'Export PDF' }}</span>
-    </button>
+      <div class="navbar-right">
+        <app-language-switcher></app-language-switcher>
+      </div>
+    </div>
   </div>
 </nav>

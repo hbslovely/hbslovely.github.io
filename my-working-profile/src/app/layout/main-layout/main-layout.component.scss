@@ -37,18 +37,72 @@ $color-bg-active: #e6f7ff;
 }
 
 // Layout
-.app-layout {
+.main-layout {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 
-  .main-content {
-    padding-top: 4rem; // Space for fixed top nav on desktop
-    min-height: calc(100vh - 4rem);
-    background-color: var(--background-color);
+  main {
+    flex: 1;
+    padding: 2rem 0;
+  }
 
-    @media (max-width: 768px) {
-      padding-top: 1rem;
-      padding-bottom: 4rem; // Space for fixed bottom nav on mobile
-      min-height: calc(100vh - 5rem);
+  .content-wrapper {
+    animation: fadeIn 0.5s ease-out;
+  }
+}
+
+.footer {
+  background: var(--card-bg);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 1.5rem 0;
+  margin-top: auto;
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      margin: 0;
     }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+
+      .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: var(--primary-lightest);
+        color: var(--primary-color);
+        transition: all 0.2s ease;
+
+        &:hover {
+          background: var(--primary-lighter);
+          transform: translateY(-2px);
+        }
+
+        [nz-icon] {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 } 

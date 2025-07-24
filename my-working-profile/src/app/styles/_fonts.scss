@@ -1,8 +1,45 @@
+// Font face declarations
+@font-face {
+  font-family: 'Roboto_VN';
+  src: url('/assets/fonts/Roboto_VN.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/assets/fonts/Inter-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/assets/fonts/Inter-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/assets/fonts/Inter-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
 // Font variables
-$primary-font: 'Calibri', 'Segoe UI', sans-serif;
-$secondary-font: 'Cambria', 'Times New Roman', serif;
-$heading-font: $primary-font;
-$body-font: $primary-font;
+$en-font: 'Inter', sans-serif;
+$vi-font: 'Roboto_VN', sans-serif;
+$secondary-font: 'Times New Roman', serif;
+
+// Language-specific mixins
+@mixin en-font {
+  font-family: $en-font;
+}
+
+@mixin vi-font {
+  font-family: $vi-font;
+}
 
 // Font weights
 $font-weight-regular: 400;
@@ -25,37 +62,46 @@ $line-height-tight: 1.25;
 $line-height-normal: 1.5;
 $line-height-relaxed: 1.75;
 
+// Language-specific classes
+:root[lang="en"] {
+  --primary-font: #{$en-font};
+}
+
+:root[lang="vi"] {
+  --primary-font: #{$vi-font};
+}
+
 // Mixins for typography
 @mixin heading-1 {
-  font-family: $heading-font;
+  font-family: var(--primary-font);
   font-weight: $font-weight-bold;
   font-size: $font-size-3xl;
   line-height: $line-height-tight;
 }
 
 @mixin heading-2 {
-  font-family: $heading-font;
+  font-family: var(--primary-font);
   font-weight: $font-weight-semibold;
   font-size: $font-size-2xl;
   line-height: $line-height-tight;
 }
 
 @mixin heading-3 {
-  font-family: $heading-font;
+  font-family: var(--primary-font);
   font-weight: $font-weight-semibold;
   font-size: $font-size-xl;
   line-height: $line-height-tight;
 }
 
 @mixin body-text {
-  font-family: $body-font;
+  font-family: var(--primary-font);
   font-weight: $font-weight-regular;
   font-size: $font-size-base;
   line-height: $line-height-normal;
 }
 
 @mixin small-text {
-  font-family: $body-font;
+  font-family: var(--primary-font);
   font-weight: $font-weight-regular;
   font-size: $font-size-sm;
   line-height: $line-height-normal;

@@ -1,10 +1,23 @@
-<nz-layout class="app-layout">
+<div class="main-layout">
   <app-nav-bar></app-nav-bar>
-  
-  <!-- Main Content -->
-  <nz-content>
-    <div class="main-content" id="cv-container">
+  <main class="container">
+    <div class="content-wrapper" id="cv-container">
       <router-outlet></router-outlet>
     </div>
-  </nz-content>
-</nz-layout>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p class="text-light">© {{ currentYear }} Hong Phung Phat. All rights reserved.</p>
+        <div class="social-links">
+          <a [href]="linkedInUrl" target="_blank" class="social-link">
+            <span nz-icon nzType="linkedin" nzTheme="outline"></span>
+          </a>
+          <a [href]="githubUrl" target="_blank" class="social-link">
+            <span nz-icon nzType="github" nzTheme="outline"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>

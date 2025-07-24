@@ -1,36 +1,36 @@
-<div class="personal-info-section">
-  <div class="personal-info-header">
-    <div class="avatar-container">
-      <img src="assets/images/avatar.jpeg" alt="Professional photo" />
+<div class="personal-info">
+  <div class="info-header">
+    <div class="avatar">
+      <img src="assets/images/avatar.jpeg" alt="Profile Picture">
     </div>
-    <div class="info-container">
-      <h1 nz-typography>{{ info?.name }}</h1>
-      <h2 nz-typography>{{ info?.title }}</h2>
-      <p nz-typography>{{ info?.summary }}</p>
-    </div>
-  </div>
-
-  <div class="contact-info">
-    <div>
-      <span nz-icon nzType="mail"></span>
-      {{ info?.email }}
-    </div>
-    <div>
-      <span nz-icon nzType="phone"></span>
-      {{ info?.phone }}
-    </div>
-    <div>
-      <span nz-icon nzType="environment"></span>
-      {{ info?.address }}
-    </div>
-    <div>
-      <a [href]="info?.linkedin" target="_blank">
-        <span nz-icon nzType="linkedin"></span>
-        LinkedIn Profile
-      </a>
-      <div class="linkedin-url" *ngIf="info?.linkedin">
-        {{ info?.linkedin }}
+    <div class="basic-info">
+      <h1>{{ info?.name }}</h1>
+      <h2>{{ info?.title }}</h2>
+      <div class="contact-info">
+        <div class="info-item">
+          <span nz-icon nzType="phone" nzTheme="outline"></span>
+          {{ info?.contact?.phone }}
+        </div>
+        <div class="info-item">
+          <span nz-icon nzType="mail" nzTheme="outline"></span>
+          {{ info?.contact?.email }}
+        </div>
+        <div class="info-item">
+          <span nz-icon nzType="linkedin" nzTheme="outline"></span>
+          <a [href]="info?.contact?.linkedin" target="_blank">LinkedIn Profile</a>
+        </div>
+        <div class="info-item">
+          <span nz-icon nzType="github" nzTheme="outline"></span>
+          <a [href]="info?.contact?.github" target="_blank">GitHub Profile</a>
+        </div>
+        <div class="info-item">
+          <span nz-icon nzType="environment" nzTheme="outline"></span>
+          {{ info?.location?.city }}, {{ info?.location?.country }}
+        </div>
       </div>
     </div>
+  </div>
+  <div class="summary">
+    <p>{{ info?.summary }}</p>
   </div>
 </div> 
