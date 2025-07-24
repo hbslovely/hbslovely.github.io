@@ -1,48 +1,54 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
-import { NzMessageService } from 'ng-zorro-antd/message';
-import { NzAlertComponent } from 'ng-zorro-antd/alert';
-import { CVService } from '../../services/cv.service';
 import { PersonalInfoComponent } from '../personal-info/personal-info.component';
+import { ExperienceComponent } from '../experience/experience.component';
 import { SkillsComponent } from '../skills/skills.component';
 import { ProjectsComponent } from '../projects/projects.component';
-import { ExperienceComponent } from '../experience/experience.component';
+import { NavBarComponent } from '../nav-bar/nav-bar.component';
+import { CVService } from '../../services/cv.service';
+import { PdfService } from '../../services/pdf.service';
 
 @Component({
   selector: 'app-cv-viewer',
   standalone: true,
   imports: [
     CommonModule,
-    NzButtonModule,
-    NzIconModule,
+    NzLayoutModule,
     NzSpinModule,
-    NzAlertComponent,
     PersonalInfoComponent,
+    ExperienceComponent,
     SkillsComponent,
     ProjectsComponent,
-    ExperienceComponent
+    NavBarComponent
   ],
   templateUrl: './cv-viewer.component.html',
   styleUrls: ['./cv-viewer.component.scss']
 })
-export class CVViewerComponent {
+export class CvViewerComponent {
   private cvService = inject(CVService);
-  private message = inject(NzMessageService);
+  private pdfService = inject(PdfService);
 
   readonly cv = this.cvService.cv;
   readonly isLoading = this.cvService.isLoading;
   readonly hasError = this.cvService.hasError;
 
-  async exportToPDF() {
+  async handleDownload(type: 'standard' | 'beautiful'): Promise<void> {
+    const cvData = this.cv();
+    if (!cvData) {
+      console.error('No CV data available');
+      return;
+    }
+
     try {
-      await this.cvService.exportToPDF('cv-content');
-      this.message.success('CV exported successfully!');
+      if (type === 'standard') {
+        await this.pdfService.generatePdf('cv-content', 'my-cv.pdf');
+      } else {
+        await this.pdfService.generateBeautifulPdf(cvData);
+      }
     } catch (error) {
-      this.message.error('Failed to export CV');
-      console.error('Export error:', error);
+      console.error('Error generating PDF:', error);
     }
   }
 }

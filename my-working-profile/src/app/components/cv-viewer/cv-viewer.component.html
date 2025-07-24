@@ -1,43 +1,38 @@
-<div class="cv-container">
-  @if (isLoading()) {
-    <div class="loading-container">
-      <nz-spin nzSize="large" nzTip="Loading CV data..."></nz-spin>
-    </div>
-  }
+<div class="app-container">
+  <app-nav-bar (onDownload)="handleDownload($event)"></app-nav-bar>
+  
+  <main class="main-content">
+    <div class="cv-container">
+      <div id="cv-content" class="cv-content">
+        @if (isLoading()) {
+          <div class="loading-container">
+            <nz-spin nzTip="Loading CV..."></nz-spin>
+          </div>
+        } @else if (hasError()) {
+          <div class="error-message">
+            Failed to load CV data. Please try again later.
+          </div>
+        } @else {
+          <section id="about" class="section">
+            <app-personal-info [info]="cv()?.personalInfo"></app-personal-info>
+          </section>
 
-  @if (hasError()) {
-    <nz-alert nzType="error" [nzMessage]="hasError()"></nz-alert>
-  }
+          <section id="experience" class="section">
+            <app-experience 
+              [workExperience]="cv()?.experience?.workExperience"
+              [education]="cv()?.education?.education">
+            </app-experience>
+          </section>
 
-  @if (cv()) {
-    <div id="cv-content" class="cv-content">
-      <!-- Header with Export button -->
-      <div class="cv-actions">
-        <button nz-button nzType="primary" (click)="exportToPDF()">
-          <span nz-icon nzType="download"></span>
-          Export PDF
-        </button>
-      </div>
+          <section id="skills" class="section">
+            <app-skills [skills]="cv()?.skills"></app-skills>
+          </section>
 
-      <!-- Personal Information -->
-      <div class="cv-section cv-personal-info">
-        <app-personal-info [info]="cv()?.personalInfo"></app-personal-info>
-      </div>
-
-      <!-- Work Experience -->
-      <div class="cv-section cv-experience">
-        <app-experience [experiences]="cv()?.experience?.workExperience"></app-experience>
-      </div>
-
-      <!-- Skills -->
-      <div class="cv-section cv-skills">
-        <app-skills [skills]="cv()?.skills"></app-skills>
-      </div>
-
-      <!-- Projects -->
-      <div class="cv-section cv-projects">
-        <app-projects [projects]="cv()?.projects?.projects"></app-projects>
+          <section id="projects" class="section">
+            <app-projects [projects]="cv()?.projects?.projects"></app-projects>
+          </section>
+        }
       </div>
     </div>
-  }
+  </main>
 </div>

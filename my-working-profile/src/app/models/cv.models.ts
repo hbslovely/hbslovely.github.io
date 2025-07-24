@@ -7,6 +7,12 @@ export interface Project {
   technologies: string[];
   environment: string[];
   role: string;
+  status?: 'active' | 'completed' | 'maintenance';
+  teamSize?: number;
+  image?: string;
+  github?: string;
+  demo?: string;
+  achievements?: string[];
 }
 
 export interface PersonalInfo {

@@ -1,56 +1,51 @@
+.app-container {
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+.main-content {
+  padding-top: 64px; // Height of the nav bar
+}
+
 .cv-container {
   max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-  animation: fadeIn 0.6s ease-out;
-  font-family: 'Calibri', 'Segoe UI', sans-serif;
-
-  .loading-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 300px;
-  }
+  margin: 0 auto;
+  padding: 2rem;
 
   .cv-content {
-    .cv-actions {
-      margin-bottom: 1.5rem;
-      text-align: right;
+    min-height: calc(100vh - 64px - 4rem); // Viewport height - header - padding
 
-      button {
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-        background: white;
+    .loading-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 300px;
+    }
 
-        &::after {
-          content: '';
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 0;
-          height: 0;
-          background: rgba(24, 144, 255, 0.1);
-          border-radius: 50%;
-          transform: translate(-50%, -50%);
-          transition: width 0.3s ease-out, height 0.3s ease-out;
-        }
+    .error-message {
+      padding: 2rem;
+      text-align: center;
+      color: #ff4d4f;
+      font-size: 1.1rem;
+    }
 
-        &:hover {
-          transform: translateY(-2px);
-          color: var(--primary-color);
+    .section {
+      margin-bottom: 2rem;
+      scroll-margin-top: 80px; // For smooth scrolling with fixed header
 
-          &::after {
-            width: 200px;
-            height: 200px;
-            opacity: 0;
-          }
-        }
-
-        [nz-icon] {
-          margin-right: 8px;
-        }
+      &:last-child {
+        margin-bottom: 0;
       }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .cv-container {
+    padding: 1rem;
+
+    .cv-content {
+      min-height: calc(100vh - 64px - 2rem);
     }
   }
 }

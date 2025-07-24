@@ -1,261 +1,569 @@
 <!-- Hero Section -->
-<section class="hero-section">
-  <div class="hero-avatar-wrapper">
-    <img class="hero-avatar-lg" src="assets/images/quyen/quyen-portrait.png" alt="Chân dung" />
-    <img class="hero-deco-lg" src="assets/images/ki-niem/trao-duyen.png" alt="Deco" />
-  </div>
-  <h1 class="hero-name">{{ wifeData.wifeInfo?.name }}</h1>
-  <h2 class="hero-title">{{ wifeData.wifeInfo?.title }}</h2>
-</section>
-
-<!-- Profile Info Block -->
-<section class="profile-info-block flat-bg">
-  <p class="profile-desc">{{ wifeData.wifeInfo?.description }}</p>
-  <div class="profile-tags">
-    <span class="profile-tag" *ngFor="let tag of wifeData.wifeInfo?.tags">{{ tag }}</span>
-  </div>
-  <div class="profile-love-message">{{ wifeData.wifeInfo?.loveMessage }}</div>
-</section>
-
-<!-- Traits Section -->
-<section class="profile-section flat-bg">
-  <div class="section-title-row">
-    <img class="section-title-img-lg" src="assets/images/ki-niem/ky-niem-quen-nhau.png" alt="Traits" />
-    <h2>Đặc điểm tính cách</h2>
-  </div>
-  <div class="traits-list-block">
-    <div class="trait-row-lg" *ngFor="let trait of wifeData.wifeTraits; let i = index">
-      <div class="trait-img-col">
-        <img class="trait-img-lg" src="assets/images/ki-niem/ky-niem-quen-nhau.png" alt="Trait" *ngIf="i === 0" />
-      </div>
-      <div class="trait-text-col">
-        <span class="trait-title">{{ trait.title }}</span>
-        <span class="trait-desc">{{ getTraitDescription(trait.description) }} ({{ getTraitValue(trait.description) }})</span>
+<section class="hero-banner">
+  <div class="hero-content">
+    <div class="hero-image-container">
+      <img class="hero-image" src="assets/images/quyen/quyen-portrait.png" alt="Profile Photo" />
+      <div class="hero-image-overlay"></div>
+    </div>
+    <div class="hero-text">
+      <h1>{{ wifeData.wifeInfo?.name }}</h1>
+      <h2>{{ wifeData.wifeInfo?.title }}</h2>
+      <div class="hero-tags">
+        <span *ngFor="let tag of wifeData.wifeInfo?.tags">{{ tag }}</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Hobbies Section -->
-<section class="profile-section flat-bg">
-  <div class="section-title-row">
-    <img class="section-title-img-lg" src="assets/images/ki-niem/choiZipLine_Ho-May-Vung-Tau_thang10-2023.png" alt="Hobbies" />
-    <h2>Sở thích & Đam mê</h2>
-  </div>
-  <div class="hobbies-list-block">
-    <div class="hobby-row-lg" *ngFor="let hobby of wifeData.wifeHobbies; let i = index">
-      <div class="hobby-img-col">
-        <img class="hobby-img-lg" src="assets/images/ki-niem/choiZipLine_Ho-May-Vung-Tau_thang10-2023.png" alt="Hobby" *ngIf="i === 0" />
-      </div>
-      <div class="hobby-text-col">
-        <span class="hobby-title">{{ hobby.name }}</span>
-        <span class="hobby-desc">{{ hobby.description }}</span>
-      </div>
+<!-- Quick Stats -->
+<section class="quick-stats">
+  <div class="stats-container">
+    <div class="stat-item" *ngFor="let info of wifeData.wifeBasicInfo">
+      <i [class]="info.icon"></i>
+      <span class="stat-label">{{ info.label }}</span>
+      <span class="stat-value">{{ info.value }}</span>
     </div>
   </div>
 </section>
 
-<!-- Fun Facts Section -->
-<section class="profile-section flat-bg" *ngIf="wifeData.wifeFunFacts && wifeData.wifeFunFacts.length >= 3">
-  <div class="section-title-row">
-    <img class="section-title-img-lg" src="assets/images/ki-niem/mon-qua-dau-tien_6-2021.png" alt="Fun Fact" />
-    <h2>Những điều thú vị về em</h2>
-  </div>
-  <div class="funfacts-list-block">
-    <div class="funfact-row-lg" *ngFor="let fact of [
-      { title: 'Khoảnh khắc đầu tiên', description: wifeData.wifeFunFacts[0]?.description },
-      { title: 'Chuyến đi đáng nhớ', description: wifeData.wifeFunFacts[1]?.description },
-      { title: 'Món quà ý nghĩa', description: wifeData.wifeFunFacts[2]?.description },
-      { title: 'Kỷ niệm khó quên', description: 'Những chuyến đi xa cùng nhau luôn là những kỷ niệm đáng nhớ nhất. Mỗi địa điểm mới là một câu chuyện mới, một trải nghiệm mới cho cả hai.' }
-    ]; let i = index">
-      <div class="funfact-img-col">
-        <img class="funfact-img-lg" src="assets/images/ki-niem/lan-dau-gap-nhau.png" alt="Fun Fact" *ngIf="i === 0" />
+<!-- Main Content -->
+<div class="main-content">
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="about-grid">
+      <!-- Profile Card -->
+      <div class="profile-card">
+        <div class="card-header">
+          <h3>Về Tôi</h3>
+        </div>
+        <div class="card-content">
+          <p>{{ wifeData.wifeInfo?.description }}</p>
+        </div>
+        <div class="card-footer">
+          <img src="assets/images/quyen/quyen.jpeg" alt="About Photo" />
+        </div>
       </div>
-      <div class="funfact-text-col">
-        <span class="funfact-title">{{ fact.title }}</span>
-        <span class="funfact-desc">{{ fact.description }}</span>
+
+      <!-- Love Message Card -->
+      <div class="love-message-card">
+        <div class="card-header">
+          <h3>Thông Điệp Tình Yêu</h3>
+        </div>
+        <div class="card-content">
+          <p>{{ wifeData.wifeInfo?.loveMessage }}</p>
+        </div>
+      </div>
+
+      <!-- Photo Gallery Card -->
+      <div class="gallery-card">
+        <div class="card-header">
+          <h3>Khoảnh Khắc</h3>
+        </div>
+        <div class="card-content">
+          <div class="photo-grid">
+            <div class="photo-item" *ngFor="let photo of wifeData.wifePhotos">
+              <img [src]="photo.url" [alt]="photo.caption" />
+              <div class="photo-caption">{{ photo.caption }}</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- Personality Grid -->
+  <section class="personality-section">
+    <h2>Đặc Điểm Tính Cách</h2>
+    <div class="traits-grid">
+      <div class="trait-card" *ngFor="let trait of wifeData.wifeTraits">
+        <i [class]="trait.icon"></i>
+        <h4>{{ trait.title }}</h4>
+        <p>{{ trait.description }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Life & Interests -->
+  <section class="interests-section">
+    <h2>Sở Thích & Đam Mê</h2>
+    <div class="interests-grid">
+      <div class="interest-card" *ngFor="let hobby of wifeData.wifeHobbies">
+        <div class="interest-icon">
+          <i [class]="hobby.icon"></i>
+        </div>
+        <div class="interest-content">
+          <h4>{{ hobby.name }}</h4>
+          <p>{{ hobby.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills-section">
+    <h2>Kỹ Năng & Tài Năng</h2>
+    <div class="skills-grid">
+      <div class="skill-category" *ngFor="let category of wifeData.wifeProfessionalSkills">
+        <h3>{{ category.category }}</h3>
+        <div class="skill-tags">
+          <span class="skill-tag" *ngFor="let skill of category.skills">{{ skill }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beauty & Style -->
+  <section class="style-section">
+    <h2>Phong Cách Cá Nhân</h2>
+    <div class="style-content">
+      <p class="style-description">{{ wifeData.wifeBeautyStyle?.description }}</p>
+      <div class="style-categories">
+        <div class="style-card" *ngFor="let category of wifeData.wifeBeautyStyle?.categories">
+          <h4>{{ category.title }}</h4>
+          <p>{{ category.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Memorable Moments -->
+  <section class="moments-section">
+    <h2>Khoảnh Khắc Đáng Nhớ</h2>
+    <div class="moments-timeline">
+      <div class="moment-card" *ngFor="let fact of wifeData.wifeFunFacts; let i = index">
+        <div class="moment-number">{{ i + 1 }}</div>
+        <div class="moment-content">
+          <h4>{{ fact.title }}</h4>
+          <p>{{ fact.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
 
 <style>
-body {
-  background: #fff5f8 !important;
+:host {
+  display: block;
+  background: #fafafa;
   min-height: 100vh;
-  position: relative;
 }
-.hero-section {
+
+/* Hero Section */
+.hero-banner {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  background: linear-gradient(135deg, #ff69b4, #ff1493);
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  z-index: 2;
+}
+
+.hero-image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+}
+
+.hero-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,105,180,0.8), rgba(255,20,147,0.8));
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  margin: 0;
+  font-family: 'Dancing Script', cursive;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.hero-text h2 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  font-weight: 300;
+}
+
+.hero-tags {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.hero-tags span {
+  background: rgba(255,255,255,0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* Quick Stats */
+.quick-stats {
+  background: white;
+  padding: 2rem 0;
+  margin-top: -50px;
+  position: relative;
+  z-index: 3;
+}
+
+.stats-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.stat-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 3rem 0 1.5rem 0;
-  background: #fff5f8;
-  position: relative;
-  z-index: 1;
-}
-.hero-avatar-wrapper {
-  position: relative;
-  margin-bottom: 1.2rem;
-}
-.hero-avatar-lg {
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 6px solid #fff;
-  box-shadow: 0 4px 32px rgba(255, 105, 180, 0.18);
-}
-.hero-deco-lg {
-  position: absolute;
-  bottom: -28px;
-  right: -28px;
-  width: 100px;
-  height: 100px;
-  border-radius: 24px;
-  box-shadow: 0 2px 12px rgba(255, 105, 180, 0.18);
-  border: 3px solid #fff;
-  background: #fff;
-  z-index: 2;
-  animation: popIn 1.2s cubic-bezier(.68,-0.55,.27,1.55) both;
-}
-@keyframes popIn {
-  0% { transform: scale(0.2) rotate(-30deg); opacity: 0; }
-  80% { transform: scale(1.1) rotate(10deg); opacity: 1; }
-  100% { transform: scale(1) rotate(0deg); opacity: 1; }
-}
-.hero-name {
-  font-size: 2.6rem;
-  color: #ff69b4;
-  font-family: 'Dancing Script', cursive;
-  margin: 0.5rem 0 0.2rem 0;
   text-align: center;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
 }
-.hero-title {
-  font-size: 1.3rem;
-  color: #b83280;
+
+.stat-item:hover {
+  transform: translateY(-5px);
+}
+
+.stat-item i {
+  font-size: 2rem;
+  color: #ff69b4;
+  margin-bottom: 1rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #666;
   margin-bottom: 0.5rem;
+}
+
+.stat-value {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Main Content */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+/* About Section */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.profile-card,
+.love-message-card,
+.gallery-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.card-header {
+  padding: 1.5rem;
+  background: #ff69b4;
+  color: white;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.card-footer img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Photo Grid */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.photo-item {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.photo-item:hover img {
+  transform: scale(1.1);
+}
+
+.photo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5rem;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  font-size: 0.8rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.photo-item:hover .photo-caption {
+  transform: translateY(0);
+}
+
+/* Personality Grid */
+.traits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.trait-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
   text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
 }
-.flat-bg {
-  background: #fff5f8 !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  border: none !important;
+
+.trait-card:hover {
+  transform: translateY(-5px);
 }
-.profile-info-block {
-  max-width: 700px;
-  margin: 0 auto 2.5rem auto;
-  padding: 2rem 2.5rem;
-  text-align: center;
-}
-.profile-desc {
-  font-size: 1.2rem;
-  color: #444;
+
+.trait-card i {
+  font-size: 2.5rem;
+  color: #ff69b4;
   margin-bottom: 1rem;
 }
-.profile-tags {
-  margin-bottom: 1rem;
+
+/* Interests Grid */
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
 }
-.profile-tag {
-  display: inline-block;
-  background: #ffe5f0;
-  color: #ff69b4;
-  border-radius: 12px;
-  padding: 0.2rem 0.8rem;
-  font-size: 1.05rem;
-  margin-right: 0.5rem;
-  margin-bottom: 0.3rem;
+
+.interest-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
-.profile-love-message {
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.3rem;
-  color: #ff69b4;
+
+.interest-icon {
+  width: 60px;
+  height: 60px;
+  background: #ff69b4;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* Skills Section */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.skill-category {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
   margin-top: 1rem;
 }
-.profile-section {
-  max-width: 1000px;
-  margin: 0 auto 2.5rem auto;
-  padding: 2.5rem 2rem 2rem 2rem;
+
+.skill-tag {
+  background: #ffe5f0;
+  color: #ff69b4;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* Style Section */
+.style-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin-top: 2rem;
+}
+
+.style-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.style-card {
+  padding: 1.5rem;
+  background: #ffe5f0;
+  border-radius: 10px;
+}
+
+/* Moments Timeline */
+.moments-timeline {
   position: relative;
-  z-index: 1;
+  margin-top: 2rem;
 }
-.section-title-row {
+
+.moment-card {
+  display: flex;
+  gap: 2rem;
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.moment-number {
+  width: 40px;
+  height: 40px;
+  background: #ff69b4;
+  color: white;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2.2rem;
-  margin-bottom: 2.2rem;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
-.section-title-img-lg {
-  width: 120px;
-  height: 120px;
-  border-radius: 24px;
-  background: #fff;
-  border: 3px solid #ffe5f0;
-  box-shadow: none;
-  object-fit: cover;
+
+/* Section Headers */
+section h2 {
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
 }
-.traits-list-block, .hobbies-list-block, .funfacts-list-block {
-  display: flex;
-  flex-direction: column;
-  gap: 2.2rem;
+
+section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #ff69b4;
 }
-.trait-row-lg, .hobby-row-lg, .funfact-row-lg {
-  display: flex;
-  align-items: center;
-  gap: 2.2rem;
-  padding: 1.2rem 0;
-  background: #fff5f8;
-  border-radius: 0;
-  box-shadow: none;
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1.2rem;
+  }
+
+  .main-content {
+    padding: 2rem 1rem;
+  }
+
+  .moment-card {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .interest-card {
+    flex-direction: column;
+    text-align: center;
+  }
 }
-.trait-img-col, .hobby-img-col, .funfact-img-col {
-  flex: 0 0 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.trait-img-lg, .hobby-img-lg, .funfact-img-lg {
-  width: 120px;
-  height: 120px;
-  border-radius: 18px;
-  background: #fff;
-  border: 3px solid #ffe5f0;
-  box-shadow: none;
-  object-fit: cover;
-}
-.trait-text-col, .hobby-text-col, .funfact-text-col {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  flex: 1;
-}
-.trait-title, .hobby-title, .funfact-title {
-  font-weight: 600;
-  color: #b83280;
-  font-size: 1.25rem;
-  margin-bottom: 0.3rem;
-}
-.trait-desc, .hobby-desc, .funfact-desc {
-  color: #444;
-  font-size: 1.15rem;
-}
-@media (max-width: 900px) {
-  .hero-avatar-lg { width: 140px; height: 140px; }
-  .hero-deco-lg { width: 60px; height: 60px; bottom: -12px; right: -12px; }
-  .section-title-img-lg, .trait-img-lg, .hobby-img-lg, .funfact-img-lg { width: 70px; height: 70px; }
-  .trait-img-col, .hobby-img-col, .funfact-img-col { flex-basis: 70px; }
-}
-@media (max-width: 700px) {
-  .hero-avatar-lg { width: 90px; height: 90px; }
-  .hero-deco-lg { width: 32px; height: 32px; bottom: -6px; right: -6px; }
-  .profile-info-block { padding: 1rem 0.5rem; }
-  .profile-section { padding: 1.2rem 0.5rem 1.2rem 0.5rem; }
-  .section-title-img-lg, .trait-img-lg, .hobby-img-lg, .funfact-img-lg { width: 44px; height: 44px; }
-  .trait-row-lg, .hobby-row-lg, .funfact-row-lg { flex-direction: column; gap: 1rem; align-items: flex-start; }
-  .trait-img-col, .hobby-img-col, .funfact-img-col { flex-basis: 44px; }
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 </style>
 

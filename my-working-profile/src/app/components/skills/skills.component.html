@@ -5,18 +5,18 @@
   </div>
 
   <div class="section-content">
-    <div nz-row [nzGutter]="[24, 24]">
+    <div nz-row [nzGutter]="[16, 16]">
       @for (category of getSkillCategories(); track category) {
         <div nz-col [nzXs]="24" [nzSm]="24" [nzMd]="12">
           <div class="skill-category">
-            <h4 nz-typography>
+            <div class="category-header">
               <span nz-icon [nzType]="getCategoryIcon(category)" nzTheme="outline"></span>
-              {{ formatCategory(category) }}
-            </h4>
+              <h4 nz-typography>{{ formatCategory(category) }}</h4>
+            </div>
             <div class="skill-tags">
               @for (skill of getSkillsForCategory(category); track skill) {
-                <nz-tag [nzColor]="getTagColor(category)" class="skill-tag">
-                  {{ skill }}
+                <nz-tag class="skill-tag" [nzColor]="'#e6f4ff'" [nzBordered]="false">
+                  <span class="tag-text">{{ skill }}</span>
                 </nz-tag>
               }
             </div>

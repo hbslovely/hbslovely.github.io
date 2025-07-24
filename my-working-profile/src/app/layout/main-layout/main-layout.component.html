@@ -1,0 +1,56 @@
+<nz-layout class="app-layout">
+  <nz-header class="header">
+    <div class="header-content">
+      <div class="logo">
+        <a routerLink="/">My Portfolio</a>
+      </div>
+
+      <!-- Desktop Menu -->
+      <ul nz-menu nzMode="horizontal" class="nav-menu">
+        @for (item of menuItems; track $index) {
+          <li nz-menu-item
+              [routerLink]="item.path"
+              [routerLinkActive]="'ant-menu-item-selected'"
+              [routerLinkActiveOptions]="{ exact: true }">
+            <span nz-icon [nzType]="item.icon"></span>
+            {{ item.label }}
+          </li>
+        }
+      </ul>
+
+      <!-- Mobile Menu Button -->
+      <button nz-button nzType="text" class="mobile-menu-btn" (click)="drawer.open()">
+        <span nz-icon nzType="menu"></span>
+      </button>
+    </div>
+  </nz-header>
+
+  <nz-content>
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
+  </nz-content>
+</nz-layout>
+
+<!-- Mobile Drawer -->
+<nz-drawer
+  #drawer
+  [nzClosable]="false"
+  [nzVisible]="false"
+  nzPlacement="right"
+  nzTitle="Menu"
+  (nzOnClose)="drawer.close()">
+  <ng-container *nzDrawerContent>
+    <ul class="mobile-menu">
+      @for (item of menuItems; track $index) {
+        <li [routerLink]="item.path"
+            [routerLinkActive]="'active'"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="drawer.close()">
+          <span nz-icon [nzType]="item.icon"></span>
+          {{ item.label }}
+        </li>
+      }
+    </ul>
+  </ng-container>
+</nz-drawer>

@@ -1,58 +1,215 @@
 <div class="projects-section">
-  <div class="section-header">
-    <h2>Projects</h2>
-    <div class="section-subtitle">Notable projects and contributions</div>
+  <!-- Header Section with Animation -->
+  <div class="section-header" nz-animate nzAnimationType="fadeIn">
+    <h2>
+      <span nz-icon nzType="project" nzTheme="outline"></span>
+      Projects & Portfolio
+    </h2>
+    <div class="section-subtitle">
+      Showcasing innovative solutions and technical expertise
+      <nz-divider nzType="horizontal"></nz-divider>
+    </div>
   </div>
 
+  <!-- Filter and Search Section -->
+  <div class="filter-section" nz-row [nzGutter]="16">
+    <div nz-col [nzXs]="24" [nzSm]="24" [nzMd]="8">
+      <nz-input-group [nzPrefix]="searchPrefix">
+        <input type="text" nz-input placeholder="Search projects..." [(ngModel)]="searchText" (ngModelChange)="filterProjects()"/>
+      </nz-input-group>
+      <ng-template #searchPrefix>
+        <span nz-icon nzType="search"></span>
+      </ng-template>
+    </div>
+    <div nz-col [nzXs]="24" [nzSm]="24" [nzMd]="16">
+      <nz-select 
+        [(ngModel)]="selectedTech" 
+        (ngModelChange)="filterProjects()"
+        nzMode="multiple" 
+        nzPlaceHolder="Filter by technology"
+        class="tech-filter">
+        @for (tech of allTechnologies; track tech) {
+          <nz-option [nzLabel]="tech" [nzValue]="tech"></nz-option>
+        }
+      </nz-select>
+    </div>
+  </div>
+
+  <!-- Projects Grid -->
   <div class="section-content">
-    @if (projects && projects.length > 0) {
-      <div class="projects-grid">
-        @for (project of projects; track project.name) {
-          <div class="project-card">
+    <div nz-row [nzGutter]="[24, 24]">
+      @for (project of filteredProjects; track project) {
+        <div nz-col [nzXs]="24" [nzSm]="24" [nzMd]="12">
+          <nz-card 
+            class="project-card" 
+            [nzHoverable]="true"
+            [nzCover]="coverTemplate"
+            [nzActions]="[actionGithub, actionDemo, actionDetails]">
+            
+            <!-- Card Cover -->
+            <ng-template #coverTemplate>
+              <div class="project-cover" [style.background-image]="'url(' + project.image + ')'">
+                @if (!project.image) {
+                  <span nz-icon nzType="picture" nzTheme="outline"></span>
+                }
+              </div>
+            </ng-template>
+
+            <!-- Project Header -->
             <div class="project-header">
-              <h3>{{ project.name }}</h3>
+              <h3>
+                {{ project.name }}
+                @if (project.status === 'active') {
+                  <nz-tag [nzColor]="'green'">Active</nz-tag>
+                }
+              </h3>
               @if (project.company) {
-                <nz-tag class="company-badge" nzColor="#1890ff">{{ project.company }}</nz-tag>
-              }
-              <span class="duration-badge">{{ project.duration }}</span>
-            </div>
-
-            <div class="project-body">
-              <p class="description">{{ project.description }}</p>
-
-              <div class="project-meta">
-                <span class="role-badge">{{ project.role }}</span>
-              </div>
-
-              <div class="project-tech">
-                @for (tech of project.technologies; track tech) {
-                  <nz-tag nzColor="#e6f7ff" [nzBordered]="true">
-                    <span style="color: #1890ff">{{ tech }}</span>
-                  </nz-tag>
-                }
-              </div>
-
-              <div class="project-env">
-                @for (env of project.environment; track env) {
-                  <nz-tag nzColor="#f0f5ff" [nzBordered]="true">
-                    <span style="color: #2f54eb">{{ env }}</span>
-                  </nz-tag>
-                }
-              </div>
-
-              @if (project.scope) {
-                <div class="project-scope">
-                  <nz-tag nzColor="#f9f0ff" [nzBordered]="true">
-                    <span style="color: #722ed1">{{ project.scope }}</span>
-                  </nz-tag>
+                <div class="company">
+                  <span nz-icon nzType="bank" nzTheme="outline"></span>
+                  {{ project.company }}
                 </div>
               }
             </div>
-          </div>
-        }
-      </div>
-    } @else {
-      <p class="no-projects">No projects to display</p>
-    }
+
+            <!-- Project Meta -->
+            <div class="project-meta">
+              <nz-space>
+                <span *nzSpaceItem>
+                  <span nz-icon nzType="calendar"></span>
+                  {{ project.duration }}
+                </span>
+                <span *nzSpaceItem>
+                  <span nz-icon nzType="team"></span>
+                  Team Size: {{ project.teamSize }}
+                </span>
+                <span *nzSpaceItem>
+                  <span nz-icon nzType="user"></span>
+                  {{ project.role }}
+                </span>
+              </nz-space>
+            </div>
+
+            <!-- Project Description -->
+            <nz-collapse>
+              <nz-collapse-panel 
+                [nzHeader]="'Description'"
+                [nzActive]="true"
+                [nzShowArrow]="false">
+                <p class="description">{{ project.description }}</p>
+              </nz-collapse-panel>
+            </nz-collapse>
+
+            <!-- Project Scope -->
+            @if (project.scope) {
+              <div class="scope">
+                <nz-collapse>
+                  <nz-collapse-panel [nzHeader]="'Project Scope'" [nzShowArrow]="false">
+                    <nz-timeline>
+                      @for (item of project.scope.split('. '); track item) {
+                        <nz-timeline-item>{{ item }}</nz-timeline-item>
+                      }
+                    </nz-timeline>
+                  </nz-collapse-panel>
+                </nz-collapse>
+              </div>
+            }
+
+            <!-- Technologies Section -->
+            <div class="tech-section">
+              <nz-divider></nz-divider>
+              <!-- Technologies -->
+              <div class="tech-group">
+                <strong>
+                  <span nz-icon nzType="code" nzTheme="outline"></span>
+                  Technologies:
+                </strong>
+                <div class="tech-tags">
+                  @for (tech of project.technologies; track tech) {
+                    <nz-tag 
+                      [nzColor]="getTechColor(tech)"
+                      nz-tooltip 
+                      [nzTooltipTitle]="tech">
+                      {{ tech }}
+                    </nz-tag>
+                  }
+                </div>
+              </div>
+
+              <!-- Environment -->
+              <div class="tech-group">
+                <strong>
+                  <span nz-icon nzType="cluster" nzTheme="outline"></span>
+                  Environment:
+                </strong>
+                <div class="tech-tags">
+                  @for (env of project.environment; track env) {
+                    <nz-tag 
+                      [nzColor]="'green'"
+                      nz-tooltip 
+                      [nzTooltipTitle]="getEnvDescription(env)">
+                      {{ env }}
+                    </nz-tag>
+                  }
+                </div>
+              </div>
+
+              <!-- Achievements -->
+              @if (project.achievements?.length) {
+                <div class="achievements">
+                  <strong>
+                    <span nz-icon nzType="trophy" nzTheme="outline"></span>
+                    Key Achievements:
+                  </strong>
+                  <ul>
+                    @for (achievement of project.achievements; track achievement) {
+                      <li>{{ achievement }}</li>
+                    }
+                  </ul>
+                </div>
+              }
+            </div>
+
+            <!-- Card Actions -->
+            <ng-template #actionGithub>
+              <span 
+                nz-tooltip 
+                [nzTooltipTitle]="project.github ? 'View Source Code' : 'Private Repository'"
+                (click)="openLink(project.github)">
+                <span nz-icon nzType="github"></span>
+              </span>
+            </ng-template>
+
+            <ng-template #actionDemo>
+              <span 
+                nz-tooltip 
+                [nzTooltipTitle]="project.demo ? 'View Live Demo' : 'Demo Not Available'"
+                (click)="openLink(project.demo)">
+                <span nz-icon nzType="play-circle"></span>
+              </span>
+            </ng-template>
+
+            <ng-template #actionDetails>
+              <span 
+                nz-tooltip 
+                nzTooltipTitle="View Details"
+                (click)="showProjectDetails(project)">
+                <span nz-icon nzType="info-circle"></span>
+              </span>
+            </ng-template>
+          </nz-card>
+        </div>
+      }
+    </div>
   </div>
+
+  <!-- Empty State -->
+  @if (filteredProjects.length === 0) {
+    <nz-empty
+      [nzNotFoundContent]="'No projects match your filters'"
+      [nzNotFoundFooter]="footerTemplate">
+    </nz-empty>
+    <ng-template #footerTemplate>
+      <button nz-button nzType="primary" (click)="resetFilters()">Reset Filters</button>
+    </ng-template>
+  }
 </div>

@@ -1,40 +1,59 @@
 <div class="experience-section">
   <div class="section-header">
-    <h2>Work Experience</h2>
-    <div class="section-subtitle">Professional journey and achievements</div>
+    <h2>Experience</h2>
   </div>
 
   <div class="section-content">
+    <h3>Work Experience</h3>
     <nz-timeline>
-      @for (exp of experiences; track exp.company) {
-        <nz-timeline-item [nzColor]="exp.endDate === 'Present' ? 'blue' : 'gray'">
-          <div class="experience-item">
-            <h3 nz-typography>{{ exp.position }} at {{ exp.company }}</h3>
-            <div class="meta-info">
-              <span class="duration">{{ exp.startDate }} - {{ exp.endDate }}</span>
-              <span class="location">{{ exp.location }} ({{ exp.type }})</span>
-            </div>
-
-            <div class="responsibilities">
-              <h4 nz-typography>Responsibilities</h4>
-              <ul>
-                @for (resp of exp.responsibilities; track resp) {
-                  <li>{{ resp }}</li>
-                }
-              </ul>
-            </div>
-
-            <div class="achievements">
-              <h4 nz-typography>Key Achievements</h4>
-              <ul>
-                @for (achievement of exp.achievements; track achievement) {
-                  <li>{{ achievement }}</li>
-                }
-              </ul>
-            </div>
+      @for (exp of workExperience; track exp) {
+        <nz-timeline-item>
+          <div class="timeline-content">
+            <h4>{{ exp.position }} at {{ exp.company }}</h4>
+            <p class="duration">{{ exp.startDate }} - {{ exp.endDate || 'Present' }}</p>
+            <p class="location">{{ exp.location }}</p>
+            <p class="description">{{ exp.description }}</p>
+            @if (exp.responsibilities?.length) {
+              <div class="responsibilities">
+                <strong>Key Responsibilities:</strong>
+                <ul>
+                  @for (responsibility of exp.responsibilities; track responsibility) {
+                    <li>{{ responsibility }}</li>
+                  }
+                </ul>
+              </div>
+            }
+            @if (exp.achievements?.length) {
+              <div class="achievements">
+                <strong>Key Achievements:</strong>
+                <ul>
+                  @for (achievement of exp.achievements; track achievement) {
+                    <li>{{ achievement }}</li>
+                  }
+                </ul>
+              </div>
+            }
           </div>
         </nz-timeline-item>
       }
     </nz-timeline>
+
+    @if (education?.length) {
+      <h3>Education</h3>
+      <nz-timeline>
+        @for (edu of education; track edu) {
+          <nz-timeline-item>
+            <div class="timeline-content">
+              <h4>{{ edu.degree }} in {{ edu.field }}</h4>
+              <p class="institution">{{ edu.institution }}</p>
+              <p class="duration">{{ edu.startDate }} - {{ edu.endDate }}</p>
+              @if (edu.description) {
+                <p class="description">{{ edu.description }}</p>
+              }
+            </div>
+          </nz-timeline-item>
+        }
+      </nz-timeline>
+    }
   </div>
 </div>
