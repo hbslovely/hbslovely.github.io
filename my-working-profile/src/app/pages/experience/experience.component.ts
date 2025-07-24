@@ -31,4 +31,13 @@ export class ExperiencePageComponent {
 
   // State
   readonly cv = this.cvService.cv;
+
+  // Helper method to get company logo filename
+  getCompanyLogo(company: string): string {
+    // Convert company name to lowercase and replace spaces/special chars with hyphens
+    const filename = company.toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-') // Replace any non-alphanumeric chars with hyphen
+      .replace(/^-+|-+$/g, ''); // Remove leading/trailing hyphens
+    return `${filename}.png`;
+  }
 }

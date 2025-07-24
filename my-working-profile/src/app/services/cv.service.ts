@@ -1,10 +1,7 @@
 import { Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { toSignal } from '@angular/core/rxjs-interop';
-import { forkJoin, map } from 'rxjs';
+import { forkJoin } from 'rxjs';
 import { CV, PersonalInfo, WorkExperience, Education, Skills, Project } from '../models/cv.models';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
 
 @Injectable({
     providedIn: 'root'
@@ -43,29 +40,5 @@ export class CVService {
                 console.error('Error loading CV:', err);
             }
         });
-    }
-
-    async exportToPDF(elementId: string): Promise<void> {
-        const element = document.getElementById(elementId);
-        if (!element) return;
-
-        const canvas = await html2canvas(element, {
-            scale: 2,
-            useCORS: true,
-            logging: false
-        });
-
-        const imgData = canvas.toDataURL('image/jpeg', 1.0);
-        const pdf = new jsPDF('p', 'mm', 'a4');
-        const pdfWidth = pdf.internal.pageSize.getWidth();
-        const pdfHeight = pdf.internal.pageSize.getHeight();
-        const imgWidth = canvas.width;
-        const imgHeight = canvas.height;
-        const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
-        const imgX = (pdfWidth - imgWidth * ratio) / 2;
-        const imgY = 0;
-
-        pdf.addImage(imgData, 'JPEG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
-        pdf.save('cv.pdf');
     }
 }

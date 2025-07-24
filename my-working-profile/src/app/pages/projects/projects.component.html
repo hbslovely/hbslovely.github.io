@@ -29,11 +29,13 @@
           @for (tech of allTechnologies(); track tech) {
             <nz-tag
               [nzMode]="'checkable'"
-              [nzColor]="'magenta'"
+              [nzChecked]="isTechnologySelected(tech)"
+              [nzColor]="getTagColor(tech, 'technology')"
               (click)="toggleTechnologyFilter(tech)"
               class="filter-tag"
             >
-              {{ tech }}
+              <span nz-icon [nzType]="getTechnologyIcon(tech)" nzTheme="outline"></span>
+              <span class="tech-name">{{ tech }}</span>
             </nz-tag>
           }
         </div>
@@ -49,7 +51,7 @@
           <div class="filter-tags">
             @for (scope of allScopes(); track scope) {
               <nz-tag
-                [nzColor]="selectedScopes().includes(scope) ? getTagColor(scope) : 'default'"
+                [nzColor]="getTagColor(scope, 'scope')"
                 (click)="toggleScopeFilter(scope)"
                 class="filter-tag"
               >
@@ -70,7 +72,7 @@
           <div class="filter-tags">
             @for (status of allStatuses(); track status) {
               <nz-tag
-                [nzColor]="selectedStatuses().includes(status) ? getTagColor(status) : 'default'"
+                [nzColor]="getTagColor(status, 'status')"
                 (click)="toggleStatusFilter(status)"
                 class="filter-tag"
               >
@@ -120,7 +122,7 @@
               </span>
             }
             @if (project.status) {
-              <nz-tag [nzColor]="getTagColor(project.status)" class="status-tag">
+              <nz-tag [nzColor]="getTagColor(project.status, 'status')" class="status-tag">
                 {{ project.status }}
               </nz-tag>
             }
@@ -142,7 +144,7 @@
                   <span nz-icon nzType="aim" nzTheme="outline"></span>
                   Scope
                 </h4>
-                <nz-tag [nzColor]="getTagColor(project.scope)">{{ project.scope }}</nz-tag>
+                <nz-tag [nzColor]="getTagColor(project.scope, 'scope')">{{ project.scope }}</nz-tag>
               </div>
             }
           </div>
@@ -155,12 +157,13 @@
             <div class="tech-tags">
               @for (tech of project.technologies; track tech) {
                 <nz-tag
-                  [nzColor]="getTagColor(tech)"
+                  [nzColor]="getTagColor(tech, 'technology')"
                   class="tech-tag clickable"
-                  [class.active]="selectedTechnologies().includes(tech)"
+                  [class.active]="isTechnologySelected(tech)"
                   (click)="toggleTechnologyFilter(tech)"
                 >
-                  {{ tech }}
+                  <span nz-icon [nzType]="getTechnologyIcon(tech)" nzTheme="outline"></span>
+                  <span class="tech-name">{{ tech }}</span>
                 </nz-tag>
               }
             </div>

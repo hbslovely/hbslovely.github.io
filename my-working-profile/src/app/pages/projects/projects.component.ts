@@ -7,6 +7,7 @@ import { CVService } from '../../services/cv.service';
 import { ProjectsPageProps } from './projects.types';
 import { PROJECTS_PAGE_CONFIG } from './projects.constants';
 import { Project } from '../../models/cv.models';
+import { NzIconService } from 'ng-zorro-antd/icon';
 
 // Tag color mapping
 const TAG_COLORS = {
@@ -76,6 +77,63 @@ const TAG_COLORS = {
   'maintenance': 'orange'
 } as const;
 
+type TagColorType = typeof TAG_COLORS[keyof typeof TAG_COLORS];
+
+// Technology icon mapping
+const TECH_ICONS: Record<string, string> = {
+  // Frontend
+  'React': 'code-sandbox',
+  'Angular': 'code-sandbox',
+  'Vue': 'code-sandbox',
+  'TypeScript': 'code',
+  'JavaScript': 'code',
+  'HTML': 'html5',
+  'CSS': 'bg-colors',
+  'SCSS': 'bg-colors',
+  'Redux': 'cloud-sync',
+  'Next.js': 'node-index',
+  'Gatsby': 'node-index',
+
+  // Backend
+  'Node.js': 'nodejs',
+  'ASP NET': 'windows',
+  'Python': 'code',
+  'Java': 'code',
+  'Spring': 'cloud',
+  'Express': 'api',
+  'MongoDB': 'database',
+  'PostgreSQL': 'database',
+  'MySQL': 'database',
+  'GraphQL': 'api',
+  'REST': 'api',
+
+  // DevOps & Tools
+  'Docker': 'container',
+  'Kubernetes': 'cluster',
+  'AWS': 'cloud',
+  'Azure': 'cloud',
+  'GCP': 'cloud',
+  'Git': 'branches',
+  'Jenkins': 'build',
+  'CircleCI': 'sync',
+  'Terraform': 'cloud-server',
+
+  // Mobile
+  'React Native': 'mobile',
+  'Flutter': 'mobile',
+  'iOS': 'apple',
+  'Android': 'android',
+  'Swift': 'apple',
+  'Kotlin': 'android',
+
+  // Testing
+  'Jest': 'experiment',
+  'Cypress': 'experiment',
+  'Selenium': 'bug',
+  'JUnit': 'experiment',
+  'TestNG': 'experiment',
+};
+
 @Component({
   selector: 'app-projects-page',
   standalone: true,
@@ -90,6 +148,11 @@ const TAG_COLORS = {
 })
 export class ProjectsPageComponent {
   private readonly cvService = inject(CVService);
+  private readonly iconService = inject(NzIconService);
+
+  constructor() {
+    // No need to register icons as we're using built-in Ant Design icons
+  }
 
   // Constants
   readonly config: ProjectsPageProps = PROJECTS_PAGE_CONFIG;
@@ -178,8 +241,37 @@ export class ProjectsPageComponent {
     this.selectedStatuses.set([]);
   }
 
-  // Helper method to get tag color
-  getTagColor(tag: string): string {
-    return TAG_COLORS[tag.trim() as keyof typeof TAG_COLORS] || 'default';
+  // Helper methods to check if a filter is selected
+  isTechnologySelected(tech: string): boolean {
+    return this.selectedTechnologies().includes(tech);
+  }
+
+  isScopeSelected(scope: string): boolean {
+    return this.selectedScopes().includes(scope);
+  }
+
+  isStatusSelected(status: string): boolean {
+    return this.selectedStatuses().includes(status);
+  }
+
+  // Helper method to get tag color based on selection state
+  getTagColor(tag: string, type: 'technology' | 'scope' | 'status' = 'technology'): string {
+    const isSelected = type === 'technology' ? this.isTechnologySelected(tag) :
+                      type === 'scope' ? this.isScopeSelected(tag) :
+                      this.isStatusSelected(tag);
+
+    if (isSelected) {
+      const baseColor = TAG_COLORS[tag.trim() as keyof typeof TAG_COLORS];
+      // If we have a predefined color, use it; otherwise use 'processing' for selected state
+      return baseColor || 'processing';
+    }
+
+    // Return 'default' for unselected state
+    return 'default';
+  }
+
+  // Helper method to get technology icon
+  getTechnologyIcon(tech: string): string {
+    return TECH_ICONS[tech.trim()] || 'code';
   }
 }

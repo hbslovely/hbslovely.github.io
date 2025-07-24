@@ -322,3 +322,36 @@
     }
   }
 } 
+
+.filter-tag, .tech-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  margin: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  .anticon {
+    font-size: 14px;
+  }
+
+  .tech-name {
+    margin-left: 2px;
+  }
+
+  &.active {
+    font-weight: 500;
+  }
+}
+
+.filter-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 0;
+} 
