@@ -1,0 +1,99 @@
+{
+  "workExperience": [
+    {
+      "company": "Backbase",
+      "position": "Kỹ sư phần mềm cao cấp",
+      "type": "Toàn thời gian",
+      "startDate": "Tháng 11/2024",
+      "endDate": "Hiện tại",
+      "location": "Hồ Chí Minh",
+      "description": "Làm việc trong bộ phận R&D để triển khai các ý tưởng dựa trên AI để hợp tác với sản phẩm chính của công ty.",
+      "achievements": [
+        "Phát triển và tối ưu hóa các tính năng mới cho nền tảng ngân hàng số",
+        "Tham gia nghiên cứu và áp dụng các công nghệ AI vào sản phẩm",
+        "Cộng tác với đội ngũ quốc tế để phát triển giải pháp sáng tạo"
+      ],
+      "responsibilities": [
+        "Phát triển front-end cho các ứng dụng ngân hàng số",
+        "Nghiên cứu và áp dụng công nghệ AI",
+        "Tối ưu hóa hiệu suất ứng dụng"
+      ]
+    },
+    {
+      "company": "HCL Technologies Limited",
+      "position": "Kỹ sư phần mềm cao cấp",
+      "type": "Toàn thời gian",
+      "startDate": "Tháng 10/2022",
+      "endDate": "Tháng 10/2024",
+      "location": "Hồ Chí Minh",
+      "description": "Phát triển và duy trì các ứng dụng web cho khách hàng doanh nghiệp lớn.",
+      "achievements": [
+        "Lãnh đạo nhóm 5 thành viên phát triển các tính năng mới",
+        "Cải thiện hiệu suất ứng dụng, giảm 40% thời gian tải trang",
+        "Triển khai thành công hệ thống CI/CD mới"
+      ],
+      "responsibilities": [
+        "Phát triển và tối ưu hóa ứng dụng web",
+        "Hướng dẫn các thành viên trong nhóm",
+        "Đảm bảo chất lượng code"
+      ]
+    },
+    {
+      "company": "NashTech Vietnam",
+      "position": "Kỹ sư phần mềm",
+      "type": "Toàn thời gian",
+      "startDate": "Tháng 4/2019",
+      "endDate": "Tháng 9/2022",
+      "location": "Hồ Chí Minh",
+      "description": "Phát triển các ứng dụng web cho khách hàng quốc tế.",
+      "achievements": [
+        "Phát triển thành công nhiều dự án lớn cho khách hàng",
+        "Cải thiện quy trình phát triển phần mềm",
+        "Đào tạo và hướng dẫn các thành viên mới"
+      ],
+      "responsibilities": [
+        "Phát triển front-end cho các ứng dụng web",
+        "Tối ưu hóa hiệu suất",
+        "Làm việc với khách hàng quốc tế"
+      ]
+    },
+    {
+      "company": "Saigon Technology Solution",
+      "position": "Kỹ sư phần mềm",
+      "type": "Toàn thời gian",
+      "startDate": "Tháng 1/2016",
+      "endDate": "Tháng 3/2019",
+      "location": "Hồ Chí Minh",
+      "description": "Phát triển các giải pháp phần mềm cho doanh nghiệp.",
+      "achievements": [
+        "Phát triển nhiều dự án thành công cho khách hàng",
+        "Triển khai các giải pháp kỹ thuật mới",
+        "Cải thiện quy trình phát triển"
+      ],
+      "responsibilities": [
+        "Phát triển ứng dụng web",
+        "Làm việc trực tiếp với khách hàng",
+        "Phân tích yêu cầu và đề xuất giải pháp"
+      ]
+    },
+    {
+      "company": "New Ocean Information System Co., Ltd",
+      "position": "Kỹ sư phần mềm",
+      "type": "Toàn thời gian",
+      "startDate": "Tháng 9/2014",
+      "endDate": "Tháng 12/2015",
+      "location": "Hồ Chí Minh",
+      "description": "Phát triển các ứng dụng web cho doanh nghiệp.",
+      "achievements": [
+        "Phát triển thành công các dự án web",
+        "Học hỏi và áp dụng công nghệ mới",
+        "Làm việc hiệu quả trong môi trường nhóm"
+      ],
+      "responsibilities": [
+        "Phát triển front-end",
+        "Tối ưu hóa code",
+        "Làm việc với khách hàng"
+      ]
+    }
+  ]
+} 

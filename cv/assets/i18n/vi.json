@@ -1,0 +1,12 @@
+{
+  "NAV": {
+    "ABOUT": "Giới thiệu",
+    "EXPERIENCE": "Kinh nghiệm",
+    "PROJECTS": "Dự án",
+    "SKILLS": "Kỹ năng",
+    "EXPORT_PDF": "Xuất PDF"
+  },
+  "ACTIONS": {
+    "EXPORT_PDF": "Xuất PDF"
+  }
+} 

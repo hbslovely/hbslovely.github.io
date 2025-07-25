@@ -1,0 +1,64 @@
+{
+  "wifeInfo": {
+    "name": "Heo Bỉm Sửa",
+    "title": "Vợ Yêu Của Anh",
+    "description": "Heo Bỉm Sửa - một cô gái với trái tim ấm áp như ánh nắng ban mai và nụ cười tỏa sáng như vì sao đêm. Là một kế toán viên tài năng, em không chỉ giỏi quản lý số liệu mà còn biết cách cân bằng hoàn hảo giữa lý trí và cảm xúc. Với đôi tay khéo léo có thể biến những nguyên liệu đơn giản thành bữa ăn ngon và khả năng biến căn nhà thành tổ ấm, em chính là điều kỳ diệu mà anh luôn cầu mong.",
+    "loveMessage": "Anh yêu em Heo Bỉm Sửa không chỉ vì vẻ đẹp tự nhiên của em, mà vì cách em nhìn thế giới bằng đôi mắt tràn đầy tình yêu thương. Em là nàng thơ của cuộc đời anh, là nguồn cảm hứng bất tận, và là lý do khiến anh tin rằng thiên đường thực sự tồn tại - ngay trong vòng tay ấm áp của em.",
+    "tags": ["Vợ Yêu", "Cá Tính", "Người bạn đời", "Forever"]
+  },
+  "wifeBasicInfo": [
+    { "icon": "pi pi-calendar", "label": "Năm sinh", "value": "199x" },
+    { "icon": "pi pi-briefcase", "label": "Nghề nghiệp", "value": "Kế toán viên" },
+    { "icon": "pi pi-home", "label": "Sinh sống", "value": "TP. Hồ Chí Minh" },
+    { "icon": "pi pi-heart", "label": "Tình trạng", "value": "Đã có chồng 💕" }
+  ],
+  "wifeTraits": [
+    { "icon": "pi pi-heart-fill", "title": "Dịu dàng", "description": "Luôn nhẹ nhàng và ân cần" },
+    { "icon": "pi pi-palette", "title": "Nghệ thuật", "description": "Có khiếu thẩm mỹ tuyệt vời" },
+    { "icon": "pi pi-sun", "title": "Tích cực", "description": "Luôn lạc quan và tràn đầy năng lượng" },
+    { "icon": "pi pi-gift", "title": "Chu đáo", "description": "Quan tâm đến từng chi tiết nhỏ" },
+    { "icon": "pi pi-home", "title": "Gia đình", "description": "Biết cách tạo nên tổ ấm hạnh phúc" }
+  ],
+  "wifeHobbies": [
+    { "icon": "pi pi-car", "name": "Du lịch", "description": "Đam mê khám phá thế giới mới" },
+    { "icon": "pi pi-heart-fill", "name": "Chăm sóc chồng", "description": "Yêu thương và chăm sóc chồng là niềm vui" },
+    { "icon": "pi pi-shopping-bag", "name": "Kinh doanh", "description": "Đam mê kinh doanh và phát triển sự nghiệp" },
+    { "icon": "pi pi-palette", "name": "Làm đẹp", "description": "Thích chăm sóc bản thân và làm đẹp" },
+    { "icon": "pi pi-search", "name": "Khám phá", "description": "Thích tìm hiểu những điều mới mẻ" }
+  ],
+  "wifePhotos": [
+    { "url": "assets/images/quyen/quyen-portrait.png", "caption": "Heo Bỉm Sửa - Xinh đẹp rạng rỡ" },
+    { "url": "assets/images/quyen/quyen.jpeg", "caption": "Nụ cười tỏa nắng của em" },
+    { "url": "assets/images/quyen/quyen-phat.jpeg", "caption": "Khoảnh khắc ngọt ngào bên anh" }
+  ],
+  "wifeFunFacts": [
+    { "title": "Đồ uống yêu thích", "description": "Chè tươi - món đồ uống không thể thiếu" },
+    { "title": "Ước mơ tương lai", "description": "Mở tiệm chăm sóc mẹ và bé tại gia" },
+    { "title": "Điểm mạnh", "description": "Năng động, nhiệt tình, luôn tràn đầy năng lượng" },
+    { "title": "Điểm yếu", "description": "Say xe và đôi khi nóng tính" },
+    { "title": "Sở trường", "description": "Quản lý tài chính và lên kế hoạch chi tiết" },
+    { "title": "Điều thú vị", "description": "Có thể nấu được nhiều món ăn ngon từ nguyên liệu đơn giản" }
+  ],
+  "wifeBeautyStyle": {
+    "description": "Phong cách của Heo Bỉm Sửa là sự kết hợp hoàn hảo giữa vẻ đẹp tự nhiên và sự tinh tế trong việc chăm sóc bản thân. Luôn ưu tiên sự thoải mái nhưng không kém phần thanh lịch, em thích những trang phục đơn giản nhưng chất lượng, phù hợp với nhiều hoàn cảnh khác nhau.",
+    "categories": [
+      { "title": "Trang điểm", "description": "Theo đuổi phong cách trang điểm tự nhiên, nhẹ nhàng" },
+      { "title": "Thời trang", "description": "Yêu thích những items basic, dễ phối đồ và thanh lịch" },
+      { "title": "Chăm sóc", "description": "Chú trọng skincare, tập yoga và giữ gìn sức khỏe" }
+    ]
+  },
+  "wifeProfessionalSkills": [
+    { "category": "Kỹ năng chuyên môn", "skills": [
+      "Kế toán tổng hợp",
+      "Phân tích tài chính",
+      "Lập trình web - Angular/ReactJS",
+      "Quản lý dự án"
+    ]},
+    { "category": "Kỹ năng mềm", "skills": [
+      "Giao tiếp hiệu quả",
+      "Tổ chức và sắp xếp công việc",
+      "Làm việc nhóm",
+      "Giải quyết vấn đề"
+    ]}
+  ]
+}
