@@ -79,5 +79,5 @@ jobs:
           git add -f cv
           git add -f memories
           git commit -m "Deploy the changes in the page"
-          git remote set-url origin https://${{ secrets.GH_PAT }}@github.com/hbslovely/hbslovely.github.io.git
+          git remote set-url origin https://x-access-token:${{ secrets.GH_DEPLOY_TOKEN }}@github.com/hbslovely/hbslovely.github.io.git
           git push origin main
