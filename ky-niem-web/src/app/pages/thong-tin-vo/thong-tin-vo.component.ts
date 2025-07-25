@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { ProfileHeaderComponent } from '../../shared/components/profile-header/profile-header.component';
 
 interface WifeData {
   wifeInfo: {
@@ -50,7 +49,7 @@ interface WifeData {
 @Component({
   selector: 'app-thong-tin-vo',
   standalone: true,
-  imports: [CommonModule, ProfileHeaderComponent],
+  imports: [CommonModule],
   templateUrl: './thong-tin-vo.component.html',
   styleUrls: ['./thong-tin-vo.component.scss']
 })

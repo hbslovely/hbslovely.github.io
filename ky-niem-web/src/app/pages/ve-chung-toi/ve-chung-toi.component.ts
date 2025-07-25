@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,6 +8,13 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   standalone: true
 })
-export class VeChungToiComponent {
-
+export class VeChungToiComponent implements AfterViewInit {
+  ngAfterViewInit() {
+    // Set random heights for all images
+    const figures = document.querySelectorAll('figure');
+    figures.forEach(figure => {
+      const randomHeight = Math.floor(Math.random() * (350 - 250 + 1) + 250);
+      figure.style.setProperty('--random-height', `${randomHeight}px`);
+    });
+  }
 }

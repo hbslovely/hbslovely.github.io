@@ -1,107 +1,145 @@
 .album-gallery {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 1rem;
   width: 100%;
-}
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
 
-.main-image-wrapper {
-  width: 100%;
-  max-width: 600px;
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.main-image-fade {
-  width: 100%;
-  position: relative;
-  transition: opacity 0.35s cubic-bezier(0.4,0,0.2,1);
-  opacity: 1;
-}
-
-.main-image-fade.fading {
-  opacity: 0;
-}
-
-.main-image {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  object-fit: cover;
-  transition: opacity 0.5s cubic-bezier(0.4,0,0.2,1);
-  opacity: 1;
-}
-
-.place-name {
-  margin-top: 0.75rem;
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #222;
-  text-align: center;
-}
-
-.place-description {
-  margin-top: 0.25rem;
-  font-size: 1rem;
-  color: #555;
-  text-align: center;
-}
-
-.caption {
-  margin-top: 0.25rem;
-  font-size: 0.95rem;
-  color: #888;
-  text-align: center;
-}
-
-.thumbnails {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.thumbnail {
-  border-radius: 8px;
-  overflow: hidden;
-  border: 2px solid transparent;
-  cursor: pointer;
-  transition: border 0.2s;
-  width: 64px;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.thumbnail.selected {
-  border-color: #ff4081;
-}
-
-.thumbnail img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.2s;
-}
-
-.thumbnail:hover img {
-  transform: scale(1.08);
-}
-
-@media (max-width: 600px) {
-  .main-image-wrapper {
-    max-width: 100%;
-  }
-  .main-image {
+  // Error and empty states
+  .error-message, .empty-state {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.05);
     border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+
+    p {
+      font-size: 1.1rem;
+      color: #666;
+      margin: 0;
+    }
   }
-  .thumbnail {
-    width: 48px;
-    height: 48px;
+
+  .error-message p {
+    color: #d32f2f;
+  }
+
+  .main-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    .main-image-fade {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: opacity 0.35s ease-in-out;
+
+      &.fading {
+        opacity: 0.6;
+      }
+
+      .main-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .main-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1rem;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+      color: white;
+
+      .place-name {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+
+      .place-description {
+        font-size: 1rem;
+        opacity: 0.9;
+      }
+
+      .caption {
+        font-size: 0.9rem;
+        opacity: 0.8;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+
+  .thumbnails {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+
+    .thumbnail {
+      position: relative;
+      aspect-ratio: 1;
+      cursor: pointer;
+      border-radius: 4px;
+      overflow: hidden;
+      transition: transform 0.2s ease-in-out;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      &.selected {
+        outline: 3px solid #2196f3;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .album-gallery {
+    padding: 0.5rem;
+
+    .main-image-wrapper {
+      aspect-ratio: 4/3;
+
+      .main-info {
+        .place-name {
+          font-size: 1.2rem;
+        }
+
+        .place-description {
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .thumbnails {
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    }
   }
 } 

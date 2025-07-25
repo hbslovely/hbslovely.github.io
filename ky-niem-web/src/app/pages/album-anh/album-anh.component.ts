@@ -1,165 +1,127 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, ActivatedRoute, RouterModule } from '@angular/router';
-import { ParallaxHeaderComponent } from '../../shared/components/parallax-header/parallax-header.component';
+import { AlbumGalleryComponent, AlbumGalleryImage } from '../../shared/components/album-gallery/album-gallery.component';
+
+interface Photo {
+  id: string | number;
+  url: string;
+  title: string;
+  description?: string;
+}
 
 interface Album {
   id: string;
   title: string;
   description: string;
   coverImage: string;
-  folderPath: string;
   photoCount: number;
+  photos: Photo[];
 }
-
-interface Photo {
-  url: string;
-  title: string;
-  description?: string;
-}
-
-type DetailViewMode = 'grid' | 'masonry' | 'carousel';
 
 @Component({
   selector: 'app-album-anh',
   standalone: true,
-  imports: [CommonModule, RouterModule, ParallaxHeaderComponent],
+  imports: [CommonModule, AlbumGalleryComponent],
   templateUrl: './album-anh.component.html',
   styleUrls: ['./album-anh.component.scss']
 })
 export class AlbumAnhComponent implements OnInit {
-  viewMode: 'grid' | 'list' = 'grid';
-  detailViewMode: DetailViewMode = 'grid';
-  currentSlide = 0;
-  selectedPhoto: Photo | null = null;
-  masonryColumns = 3;
-
-  albums: Album[] = [
-    {
-      id: 'doi-thuong',
-      title: 'Đời Thường',
-      description: 'Những khoảnh khắc đời thường đáng yêu của chúng mình',
-      coverImage: 'assets/images/albums/doi-thuong/1.png',
-      folderPath: 'assets/images/albums/doi-thuong',
-      photoCount: 7
-    },
-    {
-      id: 'du-lich',
-      title: 'Du Lịch',
-      description: 'Những chuyến đi và khám phá thú vị cùng nhau',
-      coverImage: 'assets/images/albums/du-lich/1.png',
-      folderPath: 'assets/images/albums/du-lich',
-      photoCount: 6
-    },
-    {
-      id: 'ngay-cuoi',
-      title: 'Ngày Cưới',
-      description: 'Album kỷ niệm ngày trọng đại của chúng mình (03/2022)',
-      coverImage: 'assets/images/albums/ngay-cuoi_3-2022/1.png',
-      folderPath: 'assets/images/albums/ngay-cuoi_3-2022',
-      photoCount: 9
-    }
-  ];
-
+  albums: Album[] = [];
   selectedAlbumId: string | null = null;
   selectedAlbum: Album | null = null;
-  selectedAlbumPhotos: Photo[] = [];
+  selectedAlbumPhotos: AlbumGalleryImage[] = [];
+  selectedPhoto: Photo | null = null;
+  viewMode: 'grid' | 'list' = 'grid';
+  detailViewMode: 'grid' | 'masonry' | 'carousel' = 'grid';
+  currentSlide = 0;
 
-  constructor(
-    private router: Router,
-    private route: ActivatedRoute
-  ) {}
-
-  @HostListener('window:resize')
-  onResize() {
-    this.updateMasonryColumns();
-  }
-
-  ngOnInit() {
-    this.route.params.subscribe(params => {
-      const albumId = params['id'];
-      if (albumId) {
-        this.loadAlbum(albumId);
-      }
-    });
-
-    const savedViewMode = localStorage.getItem('albumViewMode');
-    if (savedViewMode === 'grid' || savedViewMode === 'list') {
-      this.viewMode = savedViewMode;
-    }
-
-    const savedDetailViewMode = localStorage.getItem('albumDetailViewMode') as DetailViewMode;
-    if (savedDetailViewMode) {
-      this.detailViewMode = savedDetailViewMode;
-    }
-
-    this.updateMasonryColumns();
-  }
-
-  updateMasonryColumns() {
-    if (window.innerWidth < 768) {
-      this.masonryColumns = 1;
-    } else if (window.innerWidth < 1024) {
-      this.masonryColumns = 2;
-    } else {
-      this.masonryColumns = 3;
+  async ngOnInit() {
+    try {
+      const response = await fetch('assets/data/album-data.json');
+      const data = await response.json();
+      this.albums = data.albums;
+    } catch (error) {
+      console.error('Error loading album data:', error);
     }
   }
 
-  loadAlbum(albumId: string) {
-    this.selectedAlbumId = albumId;
-    this.selectedAlbum = this.albums.find(a => a.id === albumId) || null;
-    
-    if (this.selectedAlbum) {
-      this.loadAlbumPhotos(this.selectedAlbum);
-    }
-  }
-
-  loadAlbumPhotos(album: Album) {
-    this.selectedAlbumPhotos = Array.from({ length: album.photoCount }, (_, i) => ({
-      url: `${album.folderPath}/${i + 1}.png`,
-      title: `Khoảnh khắc ${i + 1}`,
-      description: `Một khoảnh khắc đáng nhớ trong album ${album.title}`
-    }));
+  getTotalPhotos(): number {
+    return this.albums.reduce((total, album) => total + album.photoCount, 0);
   }
 
   openAlbum(albumId: string) {
-    this.router.navigate(['/album-anh', albumId]);
+    this.selectedAlbumId = albumId;
+    this.selectedAlbum = this.albums.find(album => album.id === albumId) || null;
+    if (this.selectedAlbum) {
+      this.selectedAlbumPhotos = this.selectedAlbum.photos.map(photo => ({
+        src: photo.url,
+        name: photo.title,
+        description: photo.description
+      }));
+    } else {
+      this.selectedAlbumPhotos = [];
+    }
+    this.currentSlide = 0;
   }
 
   goBack() {
     this.selectedAlbumId = null;
     this.selectedAlbum = null;
     this.selectedAlbumPhotos = [];
-    this.router.navigate(['/album-anh']);
+    this.selectedPhoto = null;
   }
 
-  setViewMode(mode: 'grid' | 'list') {
-    this.viewMode = mode;
-    localStorage.setItem('albumViewMode', mode);
-  }
-
-  setDetailViewMode(mode: DetailViewMode) {
+  setDetailViewMode(mode: 'grid' | 'masonry' | 'carousel') {
     this.detailViewMode = mode;
-    localStorage.setItem('albumDetailViewMode', mode);
     if (mode === 'carousel') {
       this.currentSlide = 0;
     }
   }
 
-  getMasonryColumns(): Photo[][] {
-    const columns: Photo[][] = Array.from({ length: this.masonryColumns }, () => []);
-    this.selectedAlbumPhotos.forEach((photo, index) => {
-      columns[index % this.masonryColumns].push(photo);
-    });
-    return columns;
+  openPhotoViewer(photo: Photo) {
+    this.selectedPhoto = photo;
   }
 
-  // Carousel Controls
-  nextSlide() {
-    if (this.currentSlide < this.selectedAlbumPhotos.length - 1) {
-      this.currentSlide++;
+  closePhotoViewer() {
+    this.selectedPhoto = null;
+  }
+
+  prevPhoto(event: Event) {
+    event.stopPropagation();
+    const currentIndex = this.selectedAlbum?.photos.findIndex(photo => photo.id === this.selectedPhoto?.id) ?? -1;
+    if (currentIndex > 0 && this.selectedAlbum) {
+      this.selectedPhoto = this.selectedAlbum.photos[currentIndex - 1];
     }
+  }
+
+  nextPhoto(event: Event) {
+    event.stopPropagation();
+    const currentIndex = this.selectedAlbum?.photos.findIndex(photo => photo.id === this.selectedPhoto?.id) ?? -1;
+    if (this.selectedAlbum && currentIndex < this.selectedAlbum.photos.length - 1) {
+      this.selectedPhoto = this.selectedAlbum.photos[currentIndex + 1];
+    }
+  }
+
+  canNavigatePrev(): boolean {
+    if (!this.selectedPhoto || !this.selectedAlbum) return false;
+    const currentIndex = this.selectedAlbum.photos.findIndex(photo => photo.id === this.selectedPhoto?.id);
+    return currentIndex > 0;
+  }
+
+  canNavigateNext(): boolean {
+    if (!this.selectedPhoto || !this.selectedAlbum) return false;
+    const currentIndex = this.selectedAlbum.photos.findIndex(photo => photo.id === this.selectedPhoto?.id);
+    return currentIndex < this.selectedAlbum.photos.length - 1;
+  }
+
+  getMasonryColumns(): Photo[][] {
+    const columns: Photo[][] = [[], [], []];
+    if (this.selectedAlbum) {
+      this.selectedAlbum.photos.forEach((photo, index) => {
+        columns[index % 3].push(photo);
+      });
+    }
+    return columns;
   }
 
   prevSlide() {
@@ -168,48 +130,13 @@ export class AlbumAnhComponent implements OnInit {
     }
   }
 
+  nextSlide() {
+    if (this.selectedAlbumPhotos && this.currentSlide < this.selectedAlbumPhotos.length - 1) {
+      this.currentSlide++;
+    }
+  }
+
   goToSlide(index: number) {
     this.currentSlide = index;
-  }
-
-  // Fullscreen Photo Viewer
-  openPhotoViewer(photo: Photo) {
-    this.selectedPhoto = photo;
-    document.body.style.overflow = 'hidden';
-  }
-
-  closePhotoViewer() {
-    this.selectedPhoto = null;
-    document.body.style.overflow = '';
-  }
-
-  prevPhoto(event: Event) {
-    event.stopPropagation();
-    const currentIndex = this.selectedAlbumPhotos.findIndex(p => p.url === this.selectedPhoto?.url);
-    if (currentIndex > 0) {
-      this.selectedPhoto = this.selectedAlbumPhotos[currentIndex - 1];
-    }
-  }
-
-  nextPhoto(event: Event) {
-    event.stopPropagation();
-    const currentIndex = this.selectedAlbumPhotos.findIndex(p => p.url === this.selectedPhoto?.url);
-    if (currentIndex < this.selectedAlbumPhotos.length - 1) {
-      this.selectedPhoto = this.selectedAlbumPhotos[currentIndex + 1];
-    }
-  }
-
-  canNavigatePrev(): boolean {
-    const currentIndex = this.selectedAlbumPhotos.findIndex(p => p.url === this.selectedPhoto?.url);
-    return currentIndex > 0;
-  }
-
-  canNavigateNext(): boolean {
-    const currentIndex = this.selectedAlbumPhotos.findIndex(p => p.url === this.selectedPhoto?.url);
-    return currentIndex < this.selectedAlbumPhotos.length - 1;
-  }
-
-  getTotalPhotos(): number {
-    return this.albums.reduce((total, album) => total + album.photoCount, 0);
   }
 }

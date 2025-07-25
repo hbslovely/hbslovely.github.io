@@ -1,15 +1,304 @@
 {
-  "albumPhotos": [
-    { "id": 1, "src": "assets/images/ki-niem/lan-dau-gap-nhau.png", "caption": "Lần đầu gặp nhau - Khoảnh khắc định mệnh" },
-    { "id": 2, "src": "assets/images/ki-niem/trao-duyen.png", "caption": "Trao duyên - Những ngày đầu yêu nhau" },
-    { "id": 3, "src": "assets/images/ki-niem/ky-niem-quen-nhau.png", "caption": "Kỷ niệm ngày quen nhau đặc biệt" },
-    { "id": 4, "src": "assets/images/ki-niem/cuoi-hoi.png", "caption": "Lễ cưới hạnh phúc và trọng đại" },
-    { "id": 5, "src": "assets/images/hinh-cuoi/mang-thai.png", "caption": "Chờ đón thiên thần nhỏ" },
-    { "id": 6, "src": "assets/images/hinh-cuoi/cung-nhau.png", "caption": "Hạnh phúc cùng nhau mỗi ngày" },
-    { "id": 7, "src": "assets/images/phat/phat-portrait.png", "caption": "Ba Heo Nhỏ đẹp trai" },
-    { "id": 8, "src": "assets/images/quyen/quyen-portrait.png", "caption": "Heo Bỉm Sửa xinh đẹp" },
-    { "id": 9, "src": "assets/images/phat/phat-travel.png", "caption": "Anh trong chuyến du lịch" },
-    { "id": 10, "src": "assets/images/phat/phat-work.png", "caption": "Anh tại nơi làm việc" },
-    { "id": 11, "src": "assets/images/phat/phat-hobby.png", "caption": "Anh với sở thích yêu thích" }
+  "albums": [
+    {
+      "id": "wedding-day",
+      "title": "Ngày Cưới 03/2022",
+      "description": "Những khoảnh khắc hạnh phúc trong ngày trọng đại của chúng mình",
+      "coverImage": "assets/images/hinh-cuoi/dam-cuoi-03-2022.png",
+      "photoCount": 10,
+      "photos": [
+        {
+          "id": "wedding-1",
+          "url": "assets/images/albums/ngay-cuoi_3-2022/1.png",
+          "title": "Khoảnh khắc hạnh phúc",
+          "description": "Nụ cười rạng rỡ trong ngày vui"
+        },
+        {
+          "id": "wedding-2",
+          "url": "assets/images/albums/ngay-cuoi_3-2022/2.png",
+          "title": "Lễ thành hôn",
+          "description": "Giây phút thiêng liêng trao nhẫn cưới"
+        },
+        {
+          "id": "wedding-3",
+          "url": "assets/images/albums/ngay-cuoi_3-2022/3.png",
+          "title": "Chụp ảnh cưới",
+          "description": "Những bức ảnh đầu tiên của vợ chồng son"
+        },
+        {
+          "id": "wedding-4",
+          "url": "assets/images/albums/ngay-cuoi_3-2022/4.png",
+          "title": "Tiệc cưới",
+          "description": "Không khí vui vẻ trong buổi tiệc"
+        },
+        {
+          "id": "wedding-5",
+          "url": "assets/images/albums/ngay-cuoi_3-2022/5.png",
+          "title": "Gia đình",
+          "description": "Khoảnh khắc ấm áp bên gia đình"
+        },
+        {
+          "id": "wedding-6",
+          "url": "assets/images/albums/ngay-cuoi_3-2022/6.png",
+          "title": "Bạn bè",
+          "description": "Những người bạn thân yêu đến chung vui"
+        },
+        {
+          "id": "wedding-7",
+          "url": "assets/images/albums/ngay-cuoi_3-2022/7.png",
+          "title": "Khoảnh khắc đáng nhớ",
+          "description": "Những giây phút không thể nào quên"
+        },
+        {
+          "id": "wedding-8",
+          "url": "assets/images/albums/ngay-cuoi_3-2022/8.png",
+          "title": "Niềm vui ngày cưới",
+          "description": "Nụ cười hạnh phúc của cô dâu chú rể"
+        },
+        {
+          "id": "wedding-9",
+          "url": "assets/images/albums/ngay-cuoi_3-2022/9.png",
+          "title": "Lời chúc phúc",
+          "description": "Những lời chúc phúc từ người thân và bạn bè"
+        },
+        {
+          "id": "wedding-10",
+          "url": "assets/images/albums/ngay-cuoi_3-2022/10.png",
+          "title": "Kết thúc hoàn hảo",
+          "description": "Khoảnh khắc cuối của một ngày trọn vẹn"
+        }
+      ]
+    },
+    {
+      "id": "memories",
+      "title": "Kỷ Niệm Đáng Nhớ",
+      "description": "Những khoảnh khắc đặc biệt của chúng mình",
+      "coverImage": "assets/images/ki-niem/lan-dau-gap-nhau.png",
+      "photoCount": 8,
+      "photos": [
+        {
+          "id": "first-meet",
+          "url": "assets/images/ki-niem/lan-dau-gap-nhau.png",
+          "title": "Lần đầu gặp nhau",
+          "description": "Khoảnh khắc định mệnh"
+        },
+        {
+          "id": "engagement",
+          "url": "assets/images/ki-niem/trao-duyen.png",
+          "title": "Trao duyên",
+          "description": "Những ngày đầu yêu nhau"
+        },
+        {
+          "id": "anniversary",
+          "url": "assets/images/ki-niem/ky-niem-quen-nhau.png",
+          "title": "Kỷ niệm ngày quen nhau",
+          "description": "Ngày đặc biệt của chúng mình"
+        },
+        {
+          "id": "wedding-ceremony",
+          "url": "assets/images/ki-niem/cuoi-hoi.png",
+          "title": "Lễ cưới",
+          "description": "Ngày trọng đại và hạnh phúc"
+        },
+        {
+          "id": "selfie",
+          "url": "assets/images/ki-niem/chup-anh-tu-suong.png",
+          "title": "Selfie",
+          "description": "Những khoảnh khắc tự sướng"
+        },
+        {
+          "id": "together",
+          "url": "assets/images/ki-niem/cung-nhau.jpg",
+          "title": "Bên nhau",
+          "description": "Những phút giây hạnh phúc"
+        },
+        {
+          "id": "family-meet",
+          "url": "assets/images/ki-niem/gap-mat-gia-dinh.png",
+          "title": "Gặp gỡ gia đình",
+          "description": "Khoảnh khắc gia đình sum vầy"
+        },
+        {
+          "id": "durian",
+          "url": "assets/images/ki-niem/sau-rieng-vo-gui-tu-dak-lak_8-2021.png",
+          "title": "Quà từ Đắk Lắk",
+          "description": "Sầu riêng vợ gửi từ Đắk Lắk - 8/2021"
+        }
+      ]
+    },
+    {
+      "id": "travel",
+      "title": "Hành Trình Du Lịch",
+      "description": "Những điểm đến đáng nhớ trong hành trình của chúng mình",
+      "coverImage": "assets/images/bucket/checkin_hoi-an_quang-nam.jpg",
+      "photoCount": 17,
+      "photos": [
+        {
+          "id": "sam-son",
+          "url": "assets/images/bucket/checkin_bai-bien-sam-son_thanh-hoa.jpg",
+          "title": "Bãi biển Sầm Sơn",
+          "description": "Thư giãn tại bãi biển Sầm Sơn - Thanh Hóa"
+        },
+        {
+          "id": "vinh",
+          "url": "assets/images/bucket/checkin_vinh_nghe-an.jpg",
+          "title": "TP. Vinh",
+          "description": "Thành phố Vinh - Nghệ An"
+        },
+        {
+          "id": "deo-ngang",
+          "url": "assets/images/bucket/checkin_deo-ngang.jpg",
+          "title": "Đèo Ngang",
+          "description": "Chinh phục đèo Ngang - Ranh giới Hà Tĩnh và Quảng Bình"
+        },
+        {
+          "id": "quang-binh",
+          "url": "assets/images/bucket/checkin_quang-binh.jpg",
+          "title": "Quảng Bình",
+          "description": "Vùng đất di sản - Quảng Bình"
+        },
+        {
+          "id": "hue-thien-mu",
+          "url": "assets/images/bucket/checkin_chua-thien-mu_hue.jpg",
+          "title": "Chùa Thiên Mụ",
+          "description": "Thăm chùa Thiên Mụ - Biểu tượng của xứ Huế"
+        },
+        {
+          "id": "hue-dai-noi",
+          "url": "assets/images/bucket/checkin_dai-noi_hue.jpg",
+          "title": "Đại Nội Huế",
+          "description": "Khám phá Hoàng cung xưa"
+        },
+        {
+          "id": "hue-dong-ba",
+          "url": "assets/images/bucket/checkin_cho-dong-ba_hue.jpg",
+          "title": "Chợ Đông Ba",
+          "description": "Ghé thăm khu chợ truyền thống của Huế"
+        },
+        {
+          "id": "da-nang-ngu-hanh-son",
+          "url": "assets/images/bucket/checkin_ngu-hanh-son_da-nang.jpg",
+          "title": "Ngũ Hành Sơn",
+          "description": "Chiêm ngưỡng vẻ đẹp của Ngũ Hành Sơn - Đà Nẵng"
+        },
+        {
+          "id": "da-nang-cho-con",
+          "url": "assets/images/bucket/checkin_cho-con_da-nang.jpg",
+          "title": "Chợ Cồn",
+          "description": "Khám phá chợ Cồn - Đà Nẵng"
+        },
+        {
+          "id": "hoi-an",
+          "url": "assets/images/bucket/checkin_hoi-an_quang-nam.jpg",
+          "title": "Phố cổ Hội An",
+          "description": "Dạo bước trong không gian cổ kính của phố Hội"
+        },
+        {
+          "id": "quang-ngai",
+          "url": "assets/images/bucket/checkin_quang-ngai.jpg",
+          "title": "Quảng Ngãi",
+          "description": "Thăm thú Quảng Ngãi"
+        },
+        {
+          "id": "binh-dinh",
+          "url": "assets/images/bucket/check-in_binh-dinh.jpg",
+          "title": "Bình Định",
+          "description": "Khám phá vùng đất võ Bình Định"
+        },
+        {
+          "id": "phu-yen-mui-dien",
+          "url": "assets/images/bucket/mui-dien_Phu-yen.jpg",
+          "title": "Mũi Điện",
+          "description": "Mũi Điện - Điểm Đông cực của Tổ quốc"
+        },
+        {
+          "id": "phu-yen-tuy-hoa",
+          "url": "assets/images/bucket/checkin_tuy-hoa_phu-yen.jpg",
+          "title": "Tuy Hòa",
+          "description": "Thành phố biển Tuy Hòa - Phú Yên"
+        },
+        {
+          "id": "ninh-thuan-cat",
+          "url": "assets/images/bucket/Doi-cat-trang_Ninh-thuan.jpg",
+          "title": "Đồi cát trắng",
+          "description": "Đồi cát trắng Ninh Thuận - Tiểu sa mạc của Việt Nam"
+        },
+        {
+          "id": "ninh-thuan-thap",
+          "url": "assets/images/bucket/thap-cham_ninh-thuan.jpg",
+          "title": "Tháp Chàm",
+          "description": "Tháp Chàm - Di sản văn hóa Chăm"
+        },
+        {
+          "id": "saigon",
+          "url": "assets/images/bucket/hoang-hon_ho-chi-minh.jpg",
+          "title": "Hoàng hôn Sài Gòn",
+          "description": "Ngắm hoàng hôn tại Sài Gòn - TP.HCM"
+        }
+      ]
+    },
+    {
+      "id": "couple",
+      "title": "Chúng Mình",
+      "description": "Chân dung của chúng mình",
+      "coverImage": "assets/images/anh-chu-dao/avatar-couple.png",
+      "photoCount": 9,
+      "photos": [
+        {
+          "id": "phat-portrait",
+          "url": "assets/images/phat/phat-portrait.png",
+          "title": "Chân dung anh",
+          "description": "Anh Phát"
+        },
+        {
+          "id": "quyen-portrait",
+          "url": "assets/images/quyen/quyen-portrait.png",
+          "title": "Chân dung em",
+          "description": "Em Quyên"
+        },
+        {
+          "id": "phat-wedding",
+          "url": "assets/images/phat/phat_dam-cuoi.png",
+          "title": "Anh trong ngày cưới",
+          "description": "Khoảnh khắc hạnh phúc"
+        },
+        {
+          "id": "phat-wedding-2",
+          "url": "assets/images/phat/phat_dam-cuoi-2.png",
+          "title": "Anh trong ngày cưới",
+          "description": "Giây phút thiêng liêng"
+        },
+        {
+          "id": "phat-hobby",
+          "url": "assets/images/phat/phat_anh-voi-cho.jpg",
+          "title": "Anh và thú cưng",
+          "description": "Những người bạn đáng yêu"
+        },
+        {
+          "id": "phat-travel",
+          "url": "assets/images/phat/phat_ho-may-vung-tau_10-2023.png",
+          "title": "Du lịch Vũng Tàu",
+          "description": "Hồ Mây - Vũng Tàu 10/2023"
+        },
+        {
+          "id": "quyen-wedding",
+          "url": "assets/images/quyen/quyen_lua-do-chup-hinh-cuoi_1-2022.png",
+          "title": "Em thử váy cưới",
+          "description": "Lựa đồ chụp hình cưới - 1/2022"
+        },
+        {
+          "id": "quyen-screenshot",
+          "url": "assets/images/quyen/quyen_chup-len-vo-qua-anh-man-hinh.png",
+          "title": "Em qua ảnh màn hình",
+          "description": "Khoảnh khắc đáng yêu"
+        },
+        {
+          "id": "couple",
+          "url": "assets/images/anh-chu-dao/avatar-couple.png",
+          "title": "Chúng mình",
+          "description": "Hạnh phúc bên nhau"
+        }
+      ]
+    }
   ]
 } 

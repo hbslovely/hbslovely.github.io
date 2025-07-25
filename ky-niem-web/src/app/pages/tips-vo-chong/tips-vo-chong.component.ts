@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ParallaxHeaderComponent } from '../../shared/components/parallax-header/parallax-header.component';
 
 interface Tip {
   id: number;
@@ -16,14 +15,14 @@ interface Tip {
 
 @Component({
   selector: 'app-tips-vo-chong',
-  imports: [CommonModule, FormsModule, ParallaxHeaderComponent],
+  imports: [CommonModule, FormsModule],
   templateUrl: './tips-vo-chong.component.html',
   styleUrls: ['./tips-vo-chong.component.scss']
 })
 export class TipsVoChongComponent implements OnInit {
-  
+
   selectedCategory: string = 'all';
-  
+
   categories = [
     { value: 'all', label: 'Tất cả', icon: 'pi pi-list' },
     { value: 'communication', label: 'Giao tiếp', icon: 'pi pi-comments' },
@@ -160,8 +159,8 @@ export class TipsVoChongComponent implements OnInit {
   }
 
   canSubmitTip(): boolean {
-    return !!(this.newTip.title?.trim() && 
-              this.newTip.content?.trim() && 
+    return !!(this.newTip.title?.trim() &&
+              this.newTip.content?.trim() &&
               this.newTip.category);
   }
 
@@ -207,11 +206,11 @@ export class TipsVoChongComponent implements OnInit {
     this.tips.forEach(tip => {
       categoryCount[tip.category] = (categoryCount[tip.category] || 0) + 1;
     });
-    
-    const mostPopular = Object.keys(categoryCount).reduce((a, b) => 
+
+    const mostPopular = Object.keys(categoryCount).reduce((a, b) =>
       categoryCount[a] > categoryCount[b] ? a : b
     );
-    
+
     return this.getTipCategoryLabel(mostPopular);
   }
 
@@ -220,8 +219,8 @@ export class TipsVoChongComponent implements OnInit {
     this.tips.forEach(tip => {
       authorCount[tip.author] = (authorCount[tip.author] || 0) + 1;
     });
-    
-    return Object.keys(authorCount).reduce((a, b) => 
+
+    return Object.keys(authorCount).reduce((a, b) =>
       authorCount[a] > authorCount[b] ? a : b
     );
   }

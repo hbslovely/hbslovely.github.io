@@ -19,43 +19,26 @@
       <div class="gallery-controls">
         <div class="filter-buttons">
           <button class="filter-btn"
-                  [class.active]="currentFilter === 'all'"
-                  (click)="filterImages('all')">
-            <i class="pi pi-images"></i>
-            Tất cả
-          </button>
-          <button class="filter-btn"
-                  [class.active]="currentFilter === 'couple'"
-                  (click)="filterImages('couple')">
-            <i class="pi pi-heart"></i>
-            Đôi ta
-          </button>
-          <button class="filter-btn"
-                  [class.active]="currentFilter === 'travel'"
-                  (click)="filterImages('travel')">
-            <i class="pi pi-map"></i>
-            Du lịch
-          </button>
-          <button class="filter-btn"
-                  [class.active]="currentFilter === 'daily'"
-                  (click)="filterImages('daily')">
-            <i class="pi pi-camera"></i>
-            Đời thường
+                  *ngFor="let control of galleryControls"
+                  [class.active]="currentFilter === control.id"
+                  (click)="filterImages(control.id)">
+            <i class="pi" [ngClass]="control.icon"></i>
+            {{ control.title }}
           </button>
         </div>
 
         <div class="view-controls">
           <button class="view-btn"
-                  [class.active]="viewMode === 'grid'"
-                  (click)="changeView('grid')"
-                  title="Xem dạng lưới">
-            <i class="pi pi-th-large"></i>
+                  [class.active]="viewMode === 'carousel'"
+                  (click)="changeView('carousel')"
+                  title="Xem dạng trình chiếu">
+            <i class="pi pi-images"></i>
           </button>
           <button class="view-btn"
                   [class.active]="viewMode === 'masonry'"
                   (click)="changeView('masonry')"
                   title="Xem dạng thác nước">
-            <i class="pi pi-images"></i>
+            <i class="pi pi-th-large"></i>
           </button>
           <button class="view-btn"
                   [class.active]="viewMode === 'cards'"
@@ -70,51 +53,53 @@
       <div class="album-frame">
         <div class="album-spine"></div>
 
-        <!-- Grid View -->
-        <div class="gallery-grid" *ngIf="viewMode === 'grid'">
-          <ng-container *ngFor="let memory of displayedMemories">
-            <div class="gallery-item"
-                 [attr.data-category]="memory.category"
-                 (click)="openLightbox(memory)">
-              <div class="image-wrapper">
-                <img [src]="memory.thumbnail"
-                     [alt]="memory.description"
-                     loading="lazy"
-                     (load)="onImageLoad($event)">
-                <div class="hover-overlay">
-                  <span class="memory-date">{{ memory.date | date:'dd/MM/yyyy' }}</span>
-                  <p class="memory-description">{{ memory.description }}</p>
-                  <div class="memory-quote" *ngIf="memory.quote">
-                    <span class="quote-text">"{{ memory.quote }}"</span>
-                    <span class="quote-author">- {{ memory.author || 'Anonymous' }}</span>
-                  </div>
-                  <div class="zoom-icon">
-                    <i class="pi pi-search-plus"></i>
-                  </div>
-                </div>
+        <!-- Carousel View -->
+        <div class="gallery-carousel" *ngIf="viewMode === 'carousel'">
+          <div class="carousel-container">
+            <div class="carousel-slide" *ngFor="let memory of displayedMemories; let i = index"
+                 [class.active]="i === currentSlideIndex">
+              <img [src]="memory.src" [alt]="memory.description" (load)="onImageLoad($event)">
+              <div class="slide-caption">
+                <h3>{{ memory.name }}</h3>
+                <p>{{ memory.description }}</p>
               </div>
             </div>
-          </ng-container>
+
+            <!-- Carousel Controls -->
+            <div class="carousel-controls">
+              <button class="carousel-btn prev" (click)="prevSlide()">
+                <i class="pi pi-chevron-left"></i>
+              </button>
+              <button class="carousel-btn next" (click)="nextSlide()">
+                <i class="pi pi-chevron-right"></i>
+              </button>
+              <button class="carousel-btn play-pause" (click)="toggleAutoPlay()">
+                <i class="pi" [ngClass]="isPlaying ? 'pi-pause' : 'pi-play'"></i>
+              </button>
+            </div>
+
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators">
+              <button *ngFor="let memory of displayedMemories; let i = index"
+                      class="indicator-dot"
+                      [class.active]="i === currentSlideIndex"
+                      (click)="goToSlide(i)">
+              </button>
+            </div>
+          </div>
         </div>
 
         <!-- Masonry View -->
         <div class="gallery-masonry" *ngIf="viewMode === 'masonry'">
           <ng-container *ngFor="let memory of displayedMemories">
-            <div class="gallery-item"
-                 [attr.data-category]="memory.category"
-                 (click)="openLightbox(memory)">
+            <div class="gallery-item" (click)="openLightbox(memory)">
               <div class="image-wrapper">
-                <img [src]="memory.thumbnail"
+                <img [src]="memory.src"
                      [alt]="memory.description"
                      loading="lazy"
                      (load)="onImageLoad($event)">
                 <div class="hover-overlay">
-                  <span class="memory-date">{{ memory.date | date:'dd/MM/yyyy' }}</span>
                   <p class="memory-description">{{ memory.description }}</p>
-                  <div class="memory-quote" *ngIf="memory.quote">
-                    <span class="quote-text">"{{ memory.quote }}"</span>
-                    <span class="quote-author">- {{ memory.author || 'Anonymous' }}</span>
-                  </div>
                   <div class="zoom-icon">
                     <i class="pi pi-search-plus"></i>
                   </div>
@@ -129,13 +114,11 @@
           <ng-container *ngFor="let memory of displayedMemories">
             <div class="memory-card">
               <div class="card-image">
-                <img [src]="memory.thumbnail" [alt]="memory.description">
+                <img [src]="memory.src" [alt]="memory.description">
               </div>
               <div class="card-content">
-                <div class="card-date">{{ memory.date | date:'dd/MM/yyyy' }}</div>
-                <h3>{{ memory.description }}</h3>
-                <p *ngIf="memory.quote" class="card-quote">"{{ memory.quote }}"</p>
-                <span *ngIf="memory.author" class="card-author">- {{ memory.author }}</span>
+                <h3>{{ memory.name }}</h3>
+                <p class="card-description">{{ memory.description }}</p>
               </div>
             </div>
           </ng-container>

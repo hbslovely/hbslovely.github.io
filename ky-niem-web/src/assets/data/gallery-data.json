@@ -1,132 +1,157 @@
 {
-  "gallery": [
+  "config": {
+    "icons": {
+      "all": "pi-images",
+      "wedding": "pi-heart",
+      "memories": "pi-camera",
+      "places": "pi-map",
+      "foods": "pi-heart-fill"
+    }
+  },
+  "galleries": [
     {
-      "id": 1,
-      "src": "assets/images/ki-niem/lan-dau-gap-nhau.png",
-      "thumbnail": "assets/images/ki-niem/lan-dau-gap-nhau.png",
-      "description": "Lần đầu gặp nhau - Khoảnh khắc định mệnh",
-      "date": "2020-01-15",
-      "category": "couple"
+      "id": "wedding",
+      "title": "Ngày Cưới",
+      "images": [
+        {
+          "src": "assets/images/gallery/nuoc-mat-hanh-phuc.png",
+          "name": "Nước mắt hạnh phúc",
+          "description": "Giọt nước mắt hạnh phúc trong ngày trọng đại, khoảnh khắc thiêng liêng khi chúng tôi trao nhau lời thề nguyện. Mỗi giọt nước mắt là một lời hứa về tương lai bên nhau."
+        },
+        {
+          "src": "assets/images/gallery/nu-cuoi.png",
+          "name": "Nụ cười rạng rỡ",
+          "description": "Nụ cười rạng ngời trên gương mặt cô dâu chú rể, phản chiếu niềm hạnh phúc vô bờ trong ngày trọng đại. Một khoảnh khắc đẹp đẽ đánh dấu khởi đầu cho hành trình yêu thương."
+        },
+        {
+          "src": "assets/images/hinh-cuoi/dam-cuoi-03-2022.png",
+          "name": "Lễ thành hôn",
+          "description": "Lễ thành hôn tháng 3/2022 - Ngày hai trái tim chính thức về chung một nhà. Không gian tràn ngập hoa tươi và những lời chúc phúc từ người thân, bạn bè thân thiết."
+        },
+        {
+          "src": "assets/images/hinh-cuoi/dam-cuoi-hcm-03-2022.png",
+          "name": "Tiệc cưới",
+          "description": "Tiệc cưới tại TP.HCM - Đêm tiệc ngập tràn tiếng cười, âm nhạc và những cái ôm thân thương. Khoảnh khắc đặc biệt khi hai gia đình chính thức trở thành một."
+        }
+      ]
     },
     {
-      "id": 2,
-      "src": "assets/images/ki-niem/trao-duyen.png",
-      "thumbnail": "assets/images/ki-niem/trao-duyen.png",
-      "description": "Trao duyên - Những ngày đầu yêu nhau",
-      "date": "2020-02-14",
-      "category": "couple"
+      "id": "memories",
+      "title": "Kỷ Niệm",
+      "images": [
+        {
+          "src": "assets/images/gallery/ben-nhau.png",
+          "name": "Bên nhau",
+          "description": "Những khoảnh khắc bình dị bên nhau, từ những buổi cà phê cuối tuần đến những lần nấu ăn cùng nhau. Hạnh phúc đôi khi chỉ đơn giản là được ở bên người mình yêu."
+        },
+        {
+          "src": "assets/images/gallery/chuyen-di-dau-tien.png",
+          "name": "Chuyến đi đầu tiên",
+          "description": "Chuyến du lịch đầu tiên của đôi ta - Những bước chân đầu tiên khám phá thế giới cùng nhau, tạo nên những kỷ niệm khó quên và càng thêm gắn bó."
+        },
+        {
+          "src": "assets/images/gallery/chuyen-di.png",
+          "name": "Hành trình yêu thương",
+          "description": "Mỗi chuyến đi là một câu chuyện mới, mỗi điểm đến là một kỷ niệm đẹp. Cùng nhau trải nghiệm, học hỏi và lớn lên trong tình yêu."
+        },
+        {
+          "src": "assets/images/gallery/nam-tay-yeu-thuong.png",
+          "name": "Nắm tay nhau",
+          "description": "Những cái nắm tay thật chặt, cùng nhau đi qua mọi nẻo đường. Mỗi bước chân có nhau, mỗi khoảnh khắc đều trở nên ý nghĩa hơn."
+        },
+        {
+          "src": "assets/images/gallery/ngay-ben-nhau.png",
+          "name": "Ngày bên nhau",
+          "description": "Những ngày hạnh phúc bên nhau, từ những bữa ăn đơn giản đến những buổi dạo phố. Mỗi phút giây đều là khoảnh khắc đáng nhớ của tình yêu."
+        },
+        {
+          "src": "assets/images/gallery/ngay-dau-ben-nhau.png",
+          "name": "Khởi đầu tình yêu",
+          "description": "Những ngày đầu tiên bên nhau - Ngại ngùng, vụng về nhưng đầy ngọt ngào. Những ánh mắt đầu tiên, những nụ cười rạng rỡ khi mới yêu."
+        },
+        {
+          "src": "assets/images/gallery/su-an-ui.png",
+          "name": "Sự an ủi",
+          "description": "Luôn bên nhau, an ủi và động viên trong những lúc khó khăn. Tình yêu là khi ta biết làm điểm tựa cho nhau trong mọi hoàn cảnh."
+        },
+        {
+          "src": "assets/images/gallery/su-ben-nhau-moi-luc.png",
+          "name": "Mãi bên nhau",
+          "description": "Luôn ở bên nhau mọi lúc mọi nơi, chia sẻ từng niềm vui nỗi buồn. Tình yêu là sự đồng hành và thấu hiểu không cần lời nói."
+        }
+      ]
     },
     {
-      "id": 3,
-      "src": "assets/images/ki-niem/ky-niem-quen-nhau.png",
-      "thumbnail": "assets/images/ki-niem/ky-niem-quen-nhau.png",
-      "description": "Kỷ niệm ngày quen nhau",
-      "date": "2020-03-01",
-      "category": "couple"
+      "id": "places",
+      "title": "Địa Điểm Yêu Thích",
+      "images": [
+        {
+          "src": "assets/images/dia-diem/da-lat.png",
+          "name": "Đà Lạt mộng mơ",
+          "description": "Thành phố ngàn hoa - nơi chúng tôi đã cùng nhau ngắm những đồi thông xanh ngát, thưởng thức cà phê trong sương sớm và dạo bước trên những con đường đầy hoa."
+        },
+        {
+          "src": "assets/images/dia-diem/da-nang.png",
+          "name": "Đà Nẵng năng động",
+          "description": "Thành phố đáng sống với những bãi biển tuyệt đẹp, cầu Rồng rực rỡ về đêm và những bữa hải sản ngon khó quên. Nơi chúng tôi có những kỷ niệm đẹp không thể nào quên."
+        },
+        {
+          "src": "assets/images/dia-diem/hue.png",
+          "name": "Huế thơ mộng",
+          "description": "Cố đô Huế - nơi chúng tôi cùng nhau khám phá vẻ đẹp cổ kính của di sản, thưởng thức ẩm thực cung đình và đi thuyền trên sông Hương thơ mộng."
+        },
+        {
+          "src": "assets/images/dia-diem/nha-trang.png",
+          "name": "Nha Trang biển xanh",
+          "description": "Thành phố biển với bãi cát trắng mịn, nước biển xanh trong và những buổi hoàng hôn tuyệt đẹp. Nơi chúng tôi cùng nhau tận hưởng những phút giây lãng mạn bên bờ biển."
+        },
+        {
+          "src": "assets/images/dia-diem/sapa.png",
+          "name": "Sa Pa hùng vĩ",
+          "description": "Thị trấn trong sương với những thửa ruộng bậc thang tuyệt đẹp, những đỉnh núi cao vút và văn hóa độc đáo của đồng bào dân tộc. Nơi chúng tôi cùng chinh phục và khám phá."
+        },
+        {
+          "src": "assets/images/dia-diem/vung-tau.png",
+          "name": "Vũng Tàu gần gũi",
+          "description": "Thành phố biển thân thương - điểm đến cuối tuần yêu thích của chúng tôi. Nơi có những bữa hải sản ngon lành, những buổi picnic bên bờ biển và ngọn hải đăng cổ kính."
+        },
+        {
+          "src": "assets/images/dia-diem/thai-lan.png",
+          "name": "Thái Lan đầy màu sắc",
+          "description": "Xứ sở chùa vàng với những ngôi đền rực rỡ, ẩm thực đường phố đặc sắc và những khu chợ nổi nhộn nhịp. Chuyến đi nước ngoài đầu tiên đáng nhớ của đôi ta."
+        },
+        {
+          "src": "assets/images/dia-diem/campuchia.png",
+          "name": "Campuchia huyền bí",
+          "description": "Đất nước chùa tháp với quần thể Angkor Wat hùng vĩ, những con đường làng yên bình và nụ cười thân thiện của người dân. Nơi chúng tôi cùng khám phá nền văn hóa độc đáo."
+        }
+      ]
     },
     {
-      "id": 4,
-      "src": "assets/images/ki-niem/cuoi-hoi.png",
-      "thumbnail": "assets/images/ki-niem/cuoi-hoi.png",
-      "description": "Cưới hỏi - Ngày trọng đại",
-      "date": "2022-12-25",
-      "category": "couple"
-    },
-    {
-      "id": 5,
-      "src": "assets/images/hinh-cuoi/mang-thai.png",
-      "thumbnail": "assets/images/hinh-cuoi/mang-thai.png",
-      "description": "Mang thai - Chờ đón thiên thần nhỏ",
-      "date": "2023-06-10",
-      "category": "daily"
-    },
-    {
-      "id": 6,
-      "src": "assets/images/hinh-cuoi/cung-nhau.png",
-      "thumbnail": "assets/images/hinh-cuoi/cung-nhau.png",
-      "description": "Cùng nhau - Hạnh phúc mỗi ngày",
-      "date": "2023-08-15",
-      "category": "daily"
-    },
-    {
-      "id": 7,
-      "src": "assets/images/bucket/DongHuyenKhong_DaNang_Thang5-2024.png",
-      "thumbnail": "assets/images/bucket/DongHuyenKhong_DaNang_Thang5-2024.png",
-      "description": "Du lịch Đà Nẵng - Động Huyền Không",
-      "date": "2024-05-15",
-      "category": "travel"
-    },
-    {
-      "id": 8,
-      "src": "assets/images/bucket/dapxedap_Thang8-2024.jpg",
-      "thumbnail": "assets/images/bucket/dapxedap_Thang8-2024.jpg",
-      "description": "Đạp xe cùng nhau - Quận 1",
-      "date": "2024-08-01",
-      "category": "daily"
-    },
-    {
-      "id": 9,
-      "src": "assets/images/gallery/ben-nhau.png",
-      "thumbnail": "assets/images/gallery/ben-nhau.png",
-      "description": "Những phút giây bên nhau",
-      "date": "2023-09-20",
-      "category": "couple"
-    },
-    {
-      "id": 10,
-      "src": "assets/images/gallery/cai-om.png",
-      "thumbnail": "assets/images/gallery/cai-om.png",
-      "description": "Cái ôm ấm áp",
-      "date": "2023-10-05",
-      "category": "couple"
-    },
-    {
-      "id": 11,
-      "src": "assets/images/gallery/chuyen-di.png",
-      "thumbnail": "assets/images/gallery/chuyen-di.png",
-      "description": "Chuyến đi đáng nhớ",
-      "date": "2023-11-15",
-      "category": "travel"
-    },
-    {
-      "id": 12,
-      "src": "assets/images/gallery/giot-nuoc-mat-hanh-phuc.png",
-      "thumbnail": "assets/images/gallery/giot-nuoc-mat-hanh-phuc.png",
-      "description": "Giọt nước mắt hạnh phúc",
-      "date": "2023-12-25",
-      "category": "couple"
-    },
-    {
-      "id": 13,
-      "src": "assets/images/gallery/ngay-ben-nhau.png",
-      "thumbnail": "assets/images/gallery/ngay-ben-nhau.png",
-      "description": "Ngày bên nhau",
-      "date": "2024-01-01",
-      "category": "daily"
-    },
-    {
-      "id": 14,
-      "src": "assets/images/gallery/nu-cuoi.png",
-      "thumbnail": "assets/images/gallery/nu-cuoi.png",
-      "description": "Nụ cười rạng rỡ",
-      "date": "2024-02-14",
-      "category": "daily"
-    },
-    {
-      "id": 15,
-      "src": "assets/images/gallery/so-anh-da-chup.png",
-      "thumbnail": "assets/images/gallery/so-anh-da-chup.png",
-      "description": "Sổ ảnh đã chụp",
-      "date": "2024-03-01",
-      "category": "daily"
-    },
-    {
-      "id": 16,
-      "src": "assets/images/gallery/su-an-ui.png",
-      "thumbnail": "assets/images/gallery/su-an-ui.png",
-      "description": "Sự an ủi",
-      "date": "2024-03-15",
-      "category": "couple"
+      "id": "foods",
+      "title": "Món Ăn Yêu Thích",
+      "images": [
+        {
+          "src": "assets/images/foods/banh-hoi-long.jpg",
+          "name": "Bánh hỏi lòng Phú Yên",
+          "description": "Đặc sản Phú Yên - Sợi bánh hỏi mềm mịn quyện với lòng heo thơm ngon, rau sống tươi mát và nước mắm chua ngọt đậm đà. Món ăn gắn liền với những kỷ niệm đầu tiên của chúng tôi."
+        },
+        {
+          "src": "assets/images/foods/cha-ram-tom-dat.jpg",
+          "name": "Chả ram tôm đất miền Trung",
+          "description": "Đặc sản miền Trung với vỏ giòn rụm, nhân tôm đất thơm ngọt. Món ăn gợi nhớ về những chuyến du lịch đáng nhớ và những bữa ăn ngon cùng nhau."
+        },
+        {
+          "src": "assets/images/foods/nem-nuong.png",
+          "name": "Nem nướng Nha Trang",
+          "description": "Đặc sản Nha Trang - Nem nướng thơm lừng, cuốn với bánh tráng, rau sống và chấm cùng nước chấm đặc biệt. Món ăn gắn liền với những buổi hẹn hò đầu tiên của chúng tôi."
+        },
+        {
+          "src": "assets/images/foods/tre-tron.jpg",
+          "name": "Tre trộn đậm đà",
+          "description": "Đặc sản miền Trung với vị chua ngọt đặc trưng, thịt tre giòn ngon trộn với rau thơm và gia vị. Món ăn nhẹ yêu thích mỗi khi chúng tôi ghé thăm quê nhà."
+        }
+      ]
     }
   ]
 } 

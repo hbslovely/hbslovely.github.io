@@ -1,0 +1,21 @@
+<div [class]="config.className">
+  <div class="container" [style.maxWidth.px]="config.maxWidth">
+    <app-section-header title="Technical Skills" icon="tool"></app-section-header>
+
+    <div class="skills-grid">
+      @for (category of Object.keys(cv()?.skills?.technicalSkills || {}); track category) {
+        <div class="skill-category">
+          <h3>
+            <span nz-icon [nzType]="getTechnologyIcon(category)" nzTheme="outline"></span>
+            {{ formatCategory(category) }}
+          </h3>
+          <div class="skill-tags">
+            @for (skill of cv()?.skills?.technicalSkills?.[category]; track skill) {
+              <nz-tag [nzColor]="getTagColor(skill)">{{ skill }}</nz-tag>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>
