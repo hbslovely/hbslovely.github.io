@@ -9,8 +9,13 @@ import { trigger, transition, style, animate } from '@angular/animations';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  imports: [RouterOutlet, NavbarComponent,
-    CommonModule, FooterComponent],
+  standalone: true,
+  imports: [
+    RouterOutlet,
+    NavbarComponent,
+    CommonModule,
+    FooterComponent
+  ],
   animations: [
     trigger('routeAnimations', [
       transition('* <=> *', [

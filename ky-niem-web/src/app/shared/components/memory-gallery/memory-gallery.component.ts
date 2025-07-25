@@ -2,38 +2,55 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 
-interface Memory {
-  id: number;
+interface GalleryImage {
   src: string;
-  thumbnail: string;
+  name: string;
   description: string;
-  date: string;
-  category: 'couple' | 'travel' | 'daily';
-  quote?: string;
-  author: string;
 }
 
-type ViewMode = 'grid' | 'masonry' | 'carousel' | 'timeline' | 'cards';
-type FilterType = 'all' | 'couple' | 'travel' | 'daily';
+interface Gallery {
+  id: string;
+  title: string;
+  images: GalleryImage[];
+}
+
+interface GalleryConfig {
+  icons: Record<string, string>;
+}
+
+interface GalleryData {
+  config: GalleryConfig;
+  galleries: Gallery[];
+}
+
+interface GalleryControl {
+  id: string;
+  title: string;
+  icon: string;
+}
 
 @Component({
   selector: 'app-memory-gallery',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './memory-gallery.component.html',
-  styleUrls: ['./memory-gallery.component.scss']
+  styleUrls: ['./memory-gallery.component.scss'],
+  standalone: true,
+  imports: [CommonModule]
 })
 export class MemoryGalleryComponent implements OnInit {
-  memories: Memory[] = [];
-  displayedMemories: Memory[] = [];
-  selectedImage: Memory | null = null;
-  currentFilter: FilterType = 'all';
-  viewMode: ViewMode = 'grid';
+  galleries: Gallery[] = [];
+  displayedMemories: GalleryImage[] = [];
+  currentFilter: string = 'all';
+  viewMode: 'carousel' | 'masonry' | 'cards' = 'carousel';
   loading: boolean = false;
-  hasMoreImages: boolean = true;
-  currentSlide = 0;
-  private page: number = 1;
-  private pageSize: number = 6; // Reduced from 12 to 6
+  hasMoreImages: boolean = false;
+  galleryControls: GalleryControl[] = [];
+  
+  // Carousel specific properties
+  currentSlideIndex: number = 0;
+  autoPlayInterval: any;
+  isPlaying: boolean = true;
+  
+  private icons: Record<string, string> = {};
 
   constructor(private http: HttpClient) {}
 
@@ -41,151 +58,111 @@ export class MemoryGalleryComponent implements OnInit {
     this.loadGalleryData();
   }
 
+  ngOnDestroy() {
+    this.stopAutoPlay();
+  }
+
   private loadGalleryData() {
-    this.http.get<{gallery: Memory[]}>('assets/data/gallery-data.json')
-      .subscribe(data => {
-        this.memories = data.gallery
-          .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-          .map(memory => ({
-            ...memory,
-            quote: this.getRandomQuote(memory.category) // Add random quotes to memories
-          }));
-        this.loadInitialImages();
+    this.http.get<GalleryData>('assets/data/gallery-data.json').subscribe(data => {
+      this.galleries = data.galleries;
+      this.icons = data.config.icons;
+      this.setupGalleryControls();
+      this.updateDisplayedMemories();
+      this.startAutoPlay();
+    });
+  }
+
+  private setupGalleryControls() {
+    // Add the "All" control first
+    this.galleryControls = [{
+      id: 'all',
+      title: 'Tất cả',
+      icon: this.icons['all']
+    }];
+
+    // Add controls for each gallery
+    this.galleries.forEach(gallery => {
+      this.galleryControls.push({
+        id: gallery.id,
+        title: gallery.title,
+        icon: this.icons[gallery.id] || 'pi-image' // Fallback icon if not found in config
       });
+    });
   }
 
-  private getRandomQuote(category: string): string {
-    const quotes = {
-      couple: [
-        "Mỗi khoảnh khắc bên nhau đều là kỷ niệm đẹp",
-        "Nụ cười em là điều tuyệt vời nhất anh từng thấy",
-        "Hạnh phúc là được nắm tay nhau đi trên con đường đời"
-      ],
-      travel: [
-        "Mỗi chuyến đi là một câu chuyện tình yêu mới",
-        "Cùng nhau đi khắp thế gian, tạo nên những kỷ niệm đẹp",
-        "Hành trình đẹp nhất là khi có em bên cạnh"
-      ],
-      daily: [
-        "Những phút giây bình dị cũng thật đáng trân trọng",
-        "Hạnh phúc đôi khi chỉ đơn giản là được ở bên nhau",
-        "Yêu là khi ta cùng nhau tận hưởng từng khoảnh khắc nhỏ"
-      ]
-    };
-
-    const categoryQuotes = quotes[category as keyof typeof quotes] || quotes.couple;
-    return categoryQuotes[Math.floor(Math.random() * categoryQuotes.length)];
-  }
-
-  private loadInitialImages() {
-    this.displayedMemories = this.memories.slice(0, this.pageSize);
-    this.hasMoreImages = this.memories.length > this.pageSize;
-  }
-
-  filterImages(category: FilterType) {
+  filterImages(category: string) {
     this.currentFilter = category;
-    this.page = 1;
-
-    if (category === 'all') {
-      this.displayedMemories = this.memories.slice(0, this.pageSize);
-    } else {
-      const filtered = this.memories.filter(m => m.category === category);
-      this.displayedMemories = filtered.slice(0, this.pageSize);
-    }
-
-    this.updateHasMoreImages();
+    this.updateDisplayedMemories();
+    this.currentSlideIndex = 0;
   }
 
-  changeView(mode: ViewMode) {
+  changeView(mode: 'carousel' | 'masonry' | 'cards') {
     this.viewMode = mode;
     if (mode === 'carousel') {
-      this.currentSlide = 0;
+      this.startAutoPlay();
+    } else {
+      this.stopAutoPlay();
     }
   }
 
-  loadMore() {
-    this.loading = true;
-    const start = this.page * this.pageSize;
-    const end = start + this.pageSize;
-
-    setTimeout(() => {
-      let newImages: Memory[];
-
-      if (this.currentFilter === 'all') {
-        newImages = this.memories.slice(start, end);
-      } else {
-        const filtered = this.memories.filter(m => m.category === this.currentFilter);
-        newImages = filtered.slice(start, end);
-      }
-
-      this.displayedMemories = [...this.displayedMemories, ...newImages];
-      this.page++;
-      this.loading = false;
-      this.updateHasMoreImages();
-    }, 800);
-  }
-
-  private updateHasMoreImages() {
-    const totalImages = this.currentFilter === 'all'
-      ? this.memories.length
-      : this.memories.filter(m => m.category === this.currentFilter).length;
-
-    this.hasMoreImages = this.displayedMemories.length < totalImages;
-  }
-
-  openLightbox(memory: Memory) {
-    this.selectedImage = memory;
-  }
-
-  closeLightbox() {
-    this.selectedImage = null;
-  }
-
-  showPrevImage() {
-    if (!this.selectedImage) return;
-
-    const currentIndex = this.displayedMemories.indexOf(this.selectedImage);
-    if (currentIndex > 0) {
-      this.selectedImage = this.displayedMemories[currentIndex - 1];
-    }
-  }
-
-  showNextImage() {
-    if (!this.selectedImage) return;
-
-    const currentIndex = this.displayedMemories.indexOf(this.selectedImage);
-    if (currentIndex < this.displayedMemories.length - 1) {
-      this.selectedImage = this.displayedMemories[currentIndex + 1];
-    }
-  }
-
-  get hasPrevImage(): boolean {
-    if (!this.selectedImage) return false;
-    return this.displayedMemories.indexOf(this.selectedImage) > 0;
-  }
-
-  get hasNextImage(): boolean {
-    if (!this.selectedImage) return false;
-    return this.displayedMemories.indexOf(this.selectedImage) < this.displayedMemories.length - 1;
-  }
-
-  onImageLoad(event: Event) {
-    const img = event.target as HTMLImageElement;
-    if (this.viewMode === 'masonry') {
-      img.classList.add('loaded');
+  private updateDisplayedMemories() {
+    if (this.currentFilter === 'all') {
+      this.displayedMemories = this.galleries.reduce((acc, gallery) => [...acc, ...gallery.images], [] as GalleryImage[]);
+    } else {
+      const gallery = this.galleries.find(g => g.id === this.currentFilter);
+      this.displayedMemories = gallery ? gallery.images : [];
     }
   }
 
   // Carousel Controls
   nextSlide() {
-    if (this.currentSlide < this.displayedMemories.length - 1) {
-      this.currentSlide++;
-    }
+    this.currentSlideIndex = (this.currentSlideIndex + 1) % this.displayedMemories.length;
   }
 
   prevSlide() {
-    if (this.currentSlide > 0) {
-      this.currentSlide--;
+    this.currentSlideIndex = this.currentSlideIndex === 0 
+      ? this.displayedMemories.length - 1 
+      : this.currentSlideIndex - 1;
+  }
+
+  goToSlide(index: number) {
+    this.currentSlideIndex = index;
+  }
+
+  startAutoPlay() {
+    if (this.viewMode === 'carousel' && !this.autoPlayInterval) {
+      this.isPlaying = true;
+      this.autoPlayInterval = setInterval(() => {
+        this.nextSlide();
+      }, 5000); // Change slide every 5 seconds
+    }
+  }
+
+  stopAutoPlay() {
+    if (this.autoPlayInterval) {
+      clearInterval(this.autoPlayInterval);
+      this.autoPlayInterval = null;
+      this.isPlaying = false;
+    }
+  }
+
+  toggleAutoPlay() {
+    if (this.isPlaying) {
+      this.stopAutoPlay();
+    } else {
+      this.startAutoPlay();
+    }
+  }
+
+  openLightbox(memory: GalleryImage) {
+    // Implement lightbox functionality here
+    console.log('Opening lightbox for:', memory);
+  }
+
+  onImageLoad(event: Event) {
+    const img = event.target as HTMLImageElement;
+    if (img) {
+      img.classList.add('loaded');
     }
   }
 }

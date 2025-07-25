@@ -1,7 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
-import { AlbumGalleryComponent } from '../album-gallery/album-gallery.component';
+import { AlbumGalleryComponent, AlbumGalleryImage } from '../album-gallery/album-gallery.component';
 
 interface MemoryPlace {
   name: string;
@@ -18,7 +18,7 @@ interface MemoryPlace {
   templateUrl: './memory-places.component.html',
   styleUrls: ['./memory-places.component.scss']
 })
-export class MemoryPlacesComponent implements OnInit {
+export class MemoryPlacesComponent implements OnInit, OnDestroy {
   @Input() places: MemoryPlace[] = [
     {
       name: 'Đà Nẵng',
@@ -35,10 +35,10 @@ export class MemoryPlacesComponent implements OnInit {
       emotions: ['Lãng mạn', 'Bình yên', 'Ấm áp']
     },
     {
-      name: 'Hạ Long',
+      name: 'Vũng Tàu',
       date: 'Tháng 7, 2024',
       image: 'assets/images/dia-diem/vung-tau.png',
-      description: 'Vịnh Hạ Long hùng vĩ với những hòn đảo đá vôi kỳ vĩ và mặt nước xanh biếc. Chuyến du thuyền giữa thiên nhiên tuyệt đẹp, cùng nhau ngắm hoàng hôn trên boong tàu, đã khiến mình cảm nhận rõ hơn về sự phiêu lưu và hạnh phúc khi được đồng hành cùng em.',
+      description: 'Vũng Tàu với bãi biển dài và những ngọn đồi xanh mát. Chuyến đi ngắn ngày nhưng đầy ắp tiếng cười, cùng nhau ngắm hoàng hôn trên Núi Nhỏ và thưởng thức hải sản tươi ngon.',
       emotions: ['Phiêu lưu', 'Thích thú', 'Hạnh phúc']
     },
     {
@@ -50,12 +50,12 @@ export class MemoryPlacesComponent implements OnInit {
     }
   ];
   
-  get albumImages() {
+  get albumImages(): AlbumGalleryImage[] {
     return this.places.map(place => ({
       src: place.image,
-      caption: place.name + (place.date ? ' - ' + place.date : ''),
       name: place.name,
-      description: place.description
+      description: place.description,
+      caption: place.date
     }));
   }
   

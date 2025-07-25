@@ -1,11 +1,26 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 
 export interface AlbumGalleryImage {
   src: string;
   name?: string;
   description?: string;
   caption?: string;
+}
+
+export interface Album {
+  id: string;
+  title: string;
+  description: string;
+  coverImage: string;
+  photoCount: number;
+  photos: {
+    id: string;
+    url: string;
+    title: string;
+    description: string;
+  }[];
 }
 
 @Component({
@@ -16,18 +31,38 @@ export interface AlbumGalleryImage {
   styleUrls: ['./album-gallery.component.scss']
 })
 export class AlbumGalleryComponent implements OnInit, OnDestroy {
+  @Input() albumId?: string;
   @Input() images: AlbumGalleryImage[] = [];
+  
   selectedIndex = 0;
   private autoPlayInterval: any;
   private readonly AUTO_PLAY_INTERVAL = 4000;
   isTransitioning = false;
 
+  constructor(private http: HttpClient) {}
+
   ngOnInit() {
+    if (this.albumId) {
+      this.loadAlbumData();
+    }
     this.startAutoPlay();
   }
 
   ngOnDestroy() {
     this.stopAutoPlay();
+  }
+
+  private loadAlbumData() {
+    this.http.get<{ albums: Album[] }>('assets/data/album-data.json').subscribe(data => {
+      const album = data.albums.find(a => a.id === this.albumId);
+      if (album) {
+        this.images = album.photos.map(photo => ({
+          src: photo.url,
+          name: photo.title,
+          description: photo.description
+        }));
+      }
+    });
   }
 
   selectImage(index: number) {
