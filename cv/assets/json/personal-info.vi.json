@@ -1,0 +1,40 @@
+{
+  "name": "Hồng Phùng Phát",
+  "title": "Kỹ sư phần mềm cao cấp",
+  "dateOfBirth": "30/09/1992",
+  "location": {
+    "address": "Bình Thới",
+    "city": "Hồ Chí Minh",
+    "country": "Việt Nam"
+  },
+  "contact": {
+    "phone": "+84 764 74 99 64",
+    "email": "hpphat1992@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/hpphat1992/",
+    "github": "https://github.com/hpphat92"
+  },
+  "languages": [
+    {
+      "name": "Tiếng Việt",
+      "level": "Bản ngữ"
+    },
+    {
+      "name": "Tiếng Anh",
+      "level": "Khả năng làm việc chuyên nghiệp (IELTS 6.0)"
+    }
+  ],
+  "summary": "Kỹ sư phần mềm cao cấp với hơn 10 năm kinh nghiệm trong phát triển front-end và các công nghệ web hiện đại. Có thành tích xuất sắc trong việc cung cấp các giải pháp chất lượng cao cho nhiều lĩnh vực khác nhau bao gồm mạng xã hội, hệ thống quản lý dữ liệu và nền tảng du lịch. Thành thạo HTML5, JavaScript, CSS và các framework hiện đại như Angular và React. Có kỹ năng lãnh đạo nhóm phát triển và triển khai các phương pháp tốt nhất trong toàn bộ vòng đời phát triển phần mềm.\n\nHiện đang tập trung vào việc thiết kế các ứng dụng web có khả năng mở rộng đồng thời hướng dẫn các lập trình viên junior. Đam mê về clean code, tối ưu hiệu suất và luôn cập nhật công nghệ mới. Đang hướng tới vị trí Full Stack Developer hoặc Technical Lead, với trọng tâm là xây dựng các ứng dụng mạnh mẽ, lấy người dùng làm trung tâm.",
+  "shortSummary": "Kỹ sư phần mềm cao cấp với hơn 10 năm kinh nghiệm phát triển front-end. Có thành tích xuất sắc trong việc cung cấp giải pháp chất lượng cao sử dụng Angular và React. Có kỹ năng lãnh đạo nhóm, tối ưu hiệu suất và triển khai các phương pháp tốt nhất. Hiện đang tập trung vào các ứng dụng web có khả năng mở rộng và hướng dẫn các lập trình viên junior.",
+  "interests": [
+    "Kiến trúc Web & Design Patterns",
+    "Tối ưu hiệu suất",
+    "Lãnh đạo nhóm",
+    "Công nghệ mới",
+    "Viết tài liệu kỹ thuật"
+  ],
+  "availability": {
+    "status": "Sẵn sàng cho cơ hội mới",
+    "preferredWorkType": ["Toàn thời gian", "Hợp đồng"],
+    "remoteWork": "Có thể làm việc từ xa"
+  }
+} 
