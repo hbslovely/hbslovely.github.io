@@ -2138,7 +2138,7 @@
 
 // Post Content
 .post-content {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
   font-family: 'Roboto', sans-serif;
@@ -2152,7 +2152,7 @@
   text-align: center;
 
   h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: #1a202c;
     margin-bottom: 1rem;
     font-family: 'Dancing Script', cursive;
@@ -2160,7 +2160,7 @@
 
   .post-meta {
     color: #718096;
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 }
 
@@ -2199,20 +2199,20 @@
 
 // Images
 .post-image {
-  max-width: 300px;
+  max-width: 400px;
   border-radius: 8px;
   margin: 1rem 0;
 
   &.right {
     float: right;
-    margin-left: 2rem;
-    margin-bottom: 1rem;
+    margin-left: 3rem;
+    margin-bottom: 1.5rem;
   }
 
   &.left {
     float: left;
-    margin-right: 2rem;
-    margin-bottom: 1rem;
+    margin-right: 3rem;
+    margin-bottom: 1.5rem;
   }
 
   // Ensure figure behaves like image
@@ -2290,8 +2290,8 @@ blockquote {
 // Memory Grid
 .memory-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
   margin: 2rem 0;
 
   figure {
@@ -2300,7 +2300,7 @@ blockquote {
     
     img {
       width: 100%;
-      height: 200px;
+      height: 250px;
       object-fit: cover;
       border-radius: 8px;
       display: block;
@@ -2313,9 +2313,9 @@ blockquote {
       bottom: 0;
       background: rgba(44, 62, 80, 0.85);
       color: #fff;
-      font-size: 0.95rem;
+      font-size: 1rem;
       text-align: center;
-      padding: 0.7rem 0.5rem;
+      padding: 0.8rem 0.5rem;
       border-radius: 0 0 8px 8px;
       opacity: 0;
       pointer-events: none;
@@ -2331,14 +2331,37 @@ blockquote {
 }
 
 // Responsive adjustment for memory-grid
+@media (max-width: 1200px) {
+  .memory-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
+  .post-content {
+    padding: 1.5rem;
+  }
+
+  .post-image,
+  .post-image.left,
+  .post-image.right {
+    max-width: 100%;
+    float: none !important;
+    margin: 2rem 0 !important;
+    display: block;
+  }
+
   .memory-grid {
     grid-template-columns: 1fr;
-    figure {
-      img {
-        height: 180px;
-      }
+    gap: 1.5rem;
+    
+    figure img {
+      height: 200px;
     }
+  }
+
+  .post-header h1 {
+    font-size: 2.5rem;
   }
 }
 
