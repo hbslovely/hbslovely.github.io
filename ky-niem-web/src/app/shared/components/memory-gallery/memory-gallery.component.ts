@@ -39,11 +39,16 @@ interface GalleryControl {
 export class MemoryGalleryComponent implements OnInit {
   galleries: Gallery[] = [];
   displayedMemories: GalleryImage[] = [];
+  allMemories: GalleryImage[] = [];
   currentFilter: string = 'all';
   viewMode: 'carousel' | 'masonry' | 'cards' = 'carousel';
   loading: boolean = false;
   hasMoreImages: boolean = false;
   galleryControls: GalleryControl[] = [];
+  
+  // Pagination
+  private readonly itemsPerPage = 12;
+  private currentPage = 1;
   
   // Carousel specific properties
   currentSlideIndex: number = 0;
@@ -92,6 +97,7 @@ export class MemoryGalleryComponent implements OnInit {
 
   filterImages(category: string) {
     this.currentFilter = category;
+    this.currentPage = 1; // Reset pagination when filter changes
     this.updateDisplayedMemories();
     this.currentSlideIndex = 0;
   }
@@ -106,12 +112,33 @@ export class MemoryGalleryComponent implements OnInit {
   }
 
   private updateDisplayedMemories() {
+    // Get all images for current filter
     if (this.currentFilter === 'all') {
-      this.displayedMemories = this.galleries.reduce((acc, gallery) => [...acc, ...gallery.images], [] as GalleryImage[]);
+      this.allMemories = this.galleries.reduce((acc, gallery) => [...acc, ...gallery.images], [] as GalleryImage[]);
     } else {
       const gallery = this.galleries.find(g => g.id === this.currentFilter);
-      this.displayedMemories = gallery ? gallery.images : [];
+      this.allMemories = gallery ? gallery.images : [];
     }
+
+    // Apply pagination
+    const startIndex = 0;
+    const endIndex = this.currentPage * this.itemsPerPage;
+    this.displayedMemories = this.allMemories.slice(startIndex, endIndex);
+    
+    // Check if there are more images to load
+    this.hasMoreImages = this.allMemories.length > endIndex;
+  }
+
+  loadMore() {
+    if (this.loading || !this.hasMoreImages) return;
+
+    this.loading = true;
+    // Simulate loading delay
+    setTimeout(() => {
+      this.currentPage++;
+      this.updateDisplayedMemories();
+      this.loading = false;
+    }, 500);
   }
 
   // Carousel Controls
