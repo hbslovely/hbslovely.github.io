@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { PlaceCardComponent } from '../place-card/place-card.component';
 
 interface GalleryImage {
   src: string;
@@ -37,7 +36,6 @@ interface GalleryControl {
   standalone: true,
   imports: [
     CommonModule,
-    PlaceCardComponent
   ]
 })
 export class MemoryGalleryComponent implements OnInit {
@@ -49,16 +47,16 @@ export class MemoryGalleryComponent implements OnInit {
   loading: boolean = false;
   hasMoreImages: boolean = false;
   galleryControls: GalleryControl[] = [];
-  
+
   // Pagination
   private readonly itemsPerPage = 12;
   private currentPage = 1;
-  
+
   // Carousel specific properties
   currentSlideIndex: number = 0;
   autoPlayInterval: any;
   isPlaying: boolean = true;
-  
+
   private icons: Record<string, string> = {};
 
   featuredPlaces = [
@@ -159,7 +157,7 @@ export class MemoryGalleryComponent implements OnInit {
     const startIndex = 0;
     const endIndex = this.currentPage * this.itemsPerPage;
     this.displayedMemories = this.allMemories.slice(startIndex, endIndex);
-    
+
     // Check if there are more images to load
     this.hasMoreImages = this.allMemories.length > endIndex;
   }
@@ -182,8 +180,8 @@ export class MemoryGalleryComponent implements OnInit {
   }
 
   prevSlide() {
-    this.currentSlideIndex = this.currentSlideIndex === 0 
-      ? this.displayedMemories.length - 1 
+    this.currentSlideIndex = this.currentSlideIndex === 0
+      ? this.displayedMemories.length - 1
       : this.currentSlideIndex - 1;
   }
 

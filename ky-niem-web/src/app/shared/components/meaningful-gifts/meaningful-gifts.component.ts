@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { CommonModule, DatePipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 interface Gift {
   id: number;
@@ -14,7 +14,6 @@ interface Gift {
   selector: 'app-meaningful-gifts',
   templateUrl: './meaningful-gifts.component.html',
   imports: [
-    DatePipe,
     CommonModule
   ],
   styleUrls: [ './meaningful-gifts.component.scss' ]

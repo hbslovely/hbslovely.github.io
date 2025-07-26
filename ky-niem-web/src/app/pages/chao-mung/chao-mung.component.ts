@@ -25,7 +25,6 @@ import { MemoryGalleryComponent } from '../../shared/components/memory-gallery/m
 import { GratitudeMessagesComponent } from '../../shared/components/gratitude-messages/gratitude-messages.component';
 import { LoveTimelineComponent } from '../../shared/components/love-timeline/love-timeline.component';
 import { FuturePromisesComponent } from '../../shared/components/future-promises/future-promises.component';
-import { RandomMemoryComponent } from '../../shared/components/random-memory/random-memory.component';
 
 @Component({
   selector: 'app-chao-mung',
@@ -43,7 +42,6 @@ import { RandomMemoryComponent } from '../../shared/components/random-memory/ran
     GratitudeMessagesComponent,
     LoveTimelineComponent,
     FuturePromisesComponent,
-    RandomMemoryComponent,
   ],
   templateUrl: './chao-mung.component.html',
   styleUrls: ['./chao-mung.component.scss']

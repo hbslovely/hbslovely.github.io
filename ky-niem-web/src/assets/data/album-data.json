@@ -188,12 +188,6 @@
           "description": "Em đáng yêu qua ảnh chụp màn hình"
         },
         {
-          "id": "quyen-31",
-          "url": "assets/images/quyen/quyen-phat.jpeg",
-          "title": "Hạnh Phúc Bên Nhau",
-          "description": "Khoảnh khắc hạnh phúc của đôi mình"
-        },
-        {
           "id": "quyen-32",
           "url": "assets/images/quyen/z6843528165353_bec6048cfea8af58ebb1da382d4a357d.jpg",
           "title": "Nụ Cười Rạng Rỡ",
@@ -283,7 +277,7 @@
       "id": "wedding-photos",
       "title": "Hình Cưới Đẹp",
       "description": "Bộ ảnh cưới đặc biệt của chúng mình - Những khoảnh khắc ngọt ngào, lãng mạn được ghi lại trong từng khung hình. Mỗi bức ảnh là một câu chuyện tình yêu, là kỷ niệm đẹp của tình yêu chúng mình.",
-      "coverImage": "assets/images/albums/hinh-cuoi-dep/z6839748525440_4f786e6d4a074c4a4e00a2f5d3be0696.jpg",
+      "coverImage": "assets/images/albums/hinh-cuoi-dep/z6839748810316_8d8b31818d09ad37e0395ba952e1827e.jpg",
       "photoCount": 50,
       "photos": [
         {
@@ -590,9 +584,9 @@
     },
     {
       "id": "wedding-day",
-      "title": "Ngày Cưới 03/2022",
+      "title": "Ngày Cưới 01/2022",
       "description": "Những khoảnh khắc hạnh phúc trong ngày trọng đại của chúng mình",
-      "coverImage": "assets/images/hinh-cuoi/dam-cuoi-03-2022.png",
+      "coverImage": "assets/images/hinh-cuoi/dam-cuoi-01-2022.png",
       "photoCount": 10,
       "photos": [
         {
@@ -689,12 +683,6 @@
           "description": "Ngày trọng đại và hạnh phúc"
         },
         {
-          "id": "selfie",
-          "url": "assets/images/ki-niem/chup-anh-tu-suong.png",
-          "title": "Selfie",
-          "description": "Những khoảnh khắc tự sướng"
-        },
-        {
           "id": "together",
           "url": "assets/images/ki-niem/cung-nhau.jpg",
           "title": "Bên nhau",
@@ -708,7 +696,7 @@
         },
         {
           "id": "durian",
-          "url": "assets/images/ki-niem/sau-rieng-vo-gui-tu-dak-lak_8-2021.png",
+          "url": "assets/images/ki-niem/sau-rieng-vo-gui.png",
           "title": "Quà từ Đắk Lắk",
           "description": "Sầu riêng vợ gửi từ Đắk Lắk - 8/2021"
         },
