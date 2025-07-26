@@ -1,0 +1,14 @@
+{
+  "files": [
+    "memory-places-1.json",
+    "memory-places-2.json",
+    "memory-places-3.json",
+    "memory-places-4.json",
+    "memory-places-5.json",
+    "memory-places-6.json",
+    "memory-places-7.json",
+    "memory-places-8.json",
+    "memory-places-9.json"
+  ],
+  "basePath": "assets/data/memory-place-list"
+}

@@ -8,7 +8,6 @@
   },
   "wifeBasicInfo": [
     { "icon": "pi pi-calendar", "label": "Năm sinh", "value": "199x" },
-    { "icon": "pi pi-briefcase", "label": "Nghề nghiệp", "value": "Kế toán viên" },
     { "icon": "pi pi-home", "label": "Sinh sống", "value": "TP. Hồ Chí Minh" },
     { "icon": "pi pi-heart", "label": "Tình trạng", "value": "Đã có chồng 💕" }
   ],
@@ -62,7 +61,6 @@
   },
   "wifeProfessionalSkills": [
     { "category": "Kỹ năng chuyên môn", "skills": [
-      "Kế toán tổng hợp",
       "Phân tích tài chính",
       "Lập trình web - Angular/ReactJS",
       "Quản lý dự án"

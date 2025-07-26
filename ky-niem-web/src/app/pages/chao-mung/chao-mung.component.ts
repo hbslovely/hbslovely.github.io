@@ -19,7 +19,6 @@ import { ParallaxHeaderComponent } from '../../shared/components/parallax-header
 import { LoveStatisticsComponent } from '../../shared/components/love-statistics/love-statistics.component';
 import { SpecialMomentsComponent } from '../../shared/components/special-moments/special-moments.component';
 import { OurSongsComponent } from '../../shared/components/our-songs/our-songs.component';
-import { MemoryPlacesComponent } from '../../shared/components/memory-places/memory-places.component';
 import { LoveQuotesComponent } from '../../shared/components/love-quotes/love-quotes.component';
 import { MeaningfulGiftsComponent } from '../../shared/components/meaningful-gifts/meaningful-gifts.component';
 import { FavoriteFoodsComponent } from '../../shared/components/favorite-foods/favorite-foods.component';
@@ -38,7 +37,6 @@ import { FuturePromisesComponent } from '../../shared/components/future-promises
     LoveStatisticsComponent,
     SpecialMomentsComponent,
     OurSongsComponent,
-    MemoryPlacesComponent,
     LoveQuotesComponent,
     MeaningfulGiftsComponent,
     FavoriteFoodsComponent,

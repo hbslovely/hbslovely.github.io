@@ -1,0 +1,497 @@
+{
+  "places": [
+    {
+      "id": "cau-hien-luong",
+      "name": "Cầu Hiền Lương",
+      "location": "Quảng Trị",
+      "image": "assets/images/places/checkin-cau-hien-luong-quang-tri.png",
+      "description": "Cây cầu lịch sử trên sông Bến Hải, biểu tượng của sự chia cắt và thống nhất đất nước. Với chiều dài 178m, cầu Hiền Lương không chỉ là chứng nhân lịch sử mà còn là điểm du lịch thu hút du khách tìm hiểu về một giai đoạn lịch sử đặc biệt của dân tộc.",
+      "detailedDescription": "Cầu Hiền Lương là một di tích lịch sử quan trọng, nằm trên sông Bến Hải, tỉnh Quảng Trị. Được xây dựng từ thời Pháp thuộc, cây cầu này từng là ranh giới tạm thời giữa hai miền Nam - Bắc Việt Nam trong giai đoạn 1954-1975. Với hai màu sơn đặc trưng ở hai đầu cầu, công trình này đã trở thành biểu tượng của sự chia cắt và sau này là sự thống nhất đất nước. Ngày nay, cầu Hiền Lương không chỉ là điểm tham quan du lịch ý nghĩa mà còn là nơi giáo dục truyền thống lịch sử cho thế hệ trẻ.",
+      "howToGet": "Từ trung tâm thành phố Đông Hà, Quảng Trị, bạn di chuyển theo Quốc lộ 1A khoảng 30km về phía Bắc là đến cầu Hiền Lương. Có thể đi bằng xe máy (khoảng 45 phút) hoặc taxi (khoảng 400.000 VND/chiều).",
+      "bestTimeToVisit": "Thời điểm thích hợp để thăm cầu Hiền Lương là từ tháng 2 đến tháng 8, khi thời tiết khô ráo và thuận lợi cho việc tham quan. Nên đến vào buổi sáng sớm hoặc chiều tối để tránh nắng nóng và có những bức ảnh đẹp nhất.",
+      "nearbyAttractions": [
+        {
+          "name": "Địa đạo Vịnh Mốc",
+          "description": "Hệ thống địa đạo nổi tiếng thời kháng chiến, được xây dựng để bảo vệ người dân và chiến sĩ trong thời kỳ chiến tranh. Địa đạo có 3 tầng với tổng chiều dài hơn 1.700m.",
+          "distance": "15km về phía Đông Bắc",
+          "travelTime": "25 phút đi xe máy hoặc 20 phút đi ô tô",
+          "image": "assets/images/places/dia-dao-vinh-moc.jpg"
+        },
+        {
+          "name": "Thành cổ Quảng Trị",
+          "description": "Di tích lịch sử của những trận đánh ác liệt trong chiến tranh, nơi ghi dấu 81 ngày đêm chiến đấu anh dũng của quân và dân ta năm 1972",
+          "distance": "20km về phía Nam",
+          "travelTime": "35 phút đi xe máy hoặc 25 phút đi ô tô",
+          "image": "assets/images/places/thanh-co-quang-tri.jpg"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Cơm hến",
+          "description": "Món ăn dân dã đặc trưng của xứ Quảng, được chế biến từ hến tươi sông Bến Hải kết hợp với các loại rau thơm và gia vị đặc biệt",
+          "restaurant": "Quán Cơm Hến Hiền Lương",
+          "price": "30000-50000 VND/phần",
+          "where": "Các quán ăn dọc đường Quốc lộ 1A, gần cầu Hiền Lương"
+        },
+        {
+          "name": "Bánh bột lọc",
+          "description": "Bánh trong suốt nhân tôm thịt, đặc sản của vùng đất Quảng Trị, được làm từ bột sắn tinh chế với công thức gia truyền",
+          "restaurant": "Quán Bánh Bột Lọc Cô Hai",
+          "price": "20000-40000 VND/10 cái",
+          "where": "Chợ địa phương và các quán ăn vặt gần khu di tích"
+        }
+      ]
+    },
+    {
+      "id": "cho-dong-xuan-da-lat",
+      "name": "Chợ Đông Xuân Đà Lạt",
+      "location": "Lâm Đồng",
+      "image": "assets/images/places/checkin-cho-dong-xuan-da-lat.png",
+      "description": "Khu chợ truyền thống nổi tiếng của thành phố Đà Lạt, nơi hội tụ đặc sản vùng cao nguyên với không gian mua sắm sôi động và đa dạng. Chợ không chỉ là điểm đến mua sắm mà còn là nơi trải nghiệm văn hóa ẩm thực độc đáo của vùng đất cao nguyên.",
+      "detailedDescription": "Chợ Đông Xuân Đà Lạt là một trong những khu chợ truyền thống lớn nhất thành phố, được xây dựng từ thời Pháp với kiến trúc đặc trưng. Nơi đây bán các sản phẩm đặc trưng của vùng đất cao nguyên như rau củ tươi, hoa quả, và các đặc sản địa phương. Chợ hoạt động từ sáng sớm với không khí nhộn nhịp của người mua kẻ bán, là nơi lý tưởng để trải nghiệm cuộc sống thường ngày của người dân Đà Lạt.",
+      "howToGet": "Chợ nằm ở trung tâm thành phố Đà Lạt, cách Hồ Xuân Hương khoảng 500m. Bạn có thể đi bộ từ khu vực trung tâm hoặc bắt taxi với giá khoảng 20.000-30.000 VND.",
+      "bestTimeToVisit": "Buổi sáng sớm từ 5h-9h là thời điểm tốt nhất để tham quan và mua sắm tại chợ. Đây là lúc các mặt hàng tươi sống được nhập về nhiều nhất và giá cả cũng hợp lý nhất.",
+      "nearbyAttractions": [
+        {
+          "name": "Hồ Xuân Hương",
+          "description": "Hồ nước ngọt nhân tạo trung tâm Đà Lạt, nơi lý tưởng để dạo bộ và ngắm cảnh thành phố. Xung quanh hồ có nhiều quán cà phê và điểm chụp ảnh đẹp.",
+          "distance": "1km về phía Tây",
+          "travelTime": "15 phút đi bộ hoặc 5 phút đi xe",
+          "image": "assets/images/places/ho-xuan-huong.jpg"
+        },
+        {
+          "name": "Nhà thờ Con Gà",
+          "description": "Công trình kiến trúc Pháp nổi tiếng với lối kiến trúc Gothic độc đáo, là biểu tượng của thành phố Đà Lạt. Nhà thờ còn nổi tiếng với quả chuông đồng nặng 500kg.",
+          "distance": "500m về phía Nam",
+          "travelTime": "10 phút đi bộ",
+          "image": "assets/images/places/nha-tho-con-ga.jpg"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Bánh căn",
+          "description": "Bánh làm từ bột gạo với nhân trứng hoặc thịt, được nướng trong khuôn đặc biệt và ăn kèm với nước chấm chua ngọt đặc trưng",
+          "restaurant": "Quán Bánh Căn Cô Năm",
+          "price": "25000-40000 VND/phần",
+          "where": "Khu ẩm thực chợ Đà Lạt, gần cổng chính"
+        },
+        {
+          "name": "Sữa đậu nành nóng",
+          "description": "Đồ uống ấm nóng phù hợp với thời tiết Đà Lạt, được làm từ đậu nành tươi nguyên chất và phục vụ kèm bánh tiêu nóng",
+          "restaurant": "Quầy Sữa Đậu Nành Bà Hai",
+          "price": "10000-15000 VND/ly",
+          "where": "Các quầy đồ uống trong chợ, khu vực tầng trệt"
+        }
+      ]
+    },
+    {
+      "id": "cho-rong-nam-dinh",
+      "name": "Chợ Rồng Nam Định",
+      "location": "Nam Định",
+      "image": "assets/images/places/checkin-cho-rong-nam-dinh.jpg",
+      "description": "Khu chợ truyền thống lớn nhất Nam Định, biểu tượng văn hóa và thương mại của thành phố với lịch sử hơn 100 năm. Chợ không chỉ là trung tâm mua sắm sầm uất mà còn là nơi gìn giữ những nét văn hóa đặc trưng của vùng đất Nam Định.",
+      "detailedDescription": "Chợ Rồng Nam Định là một trong những khu chợ lớn nhất miền Bắc, được xây dựng từ thời Pháp thuộc. Với kiến trúc độc đáo và quy mô hoành tráng, chợ là nơi tập trung buôn bán các mặt hàng đa dạng từ thực phẩm, vải vóc đến đồ gia dụng. Đặc biệt, chợ nổi tiếng với khu vực bán vải và may mặc, phản ánh truyền thống dệt may lâu đời của Nam Định. Không gian chợ được tổ chức khoa học với nhiều khu vực chuyên biệt, tạo thuận lợi cho việc mua sắm.",
+      "howToGet": "Chợ nằm ở trung tâm thành phố Nam Định, cách ga Nam Định khoảng 1km. Bạn có thể đi bộ từ trung tâm thành phố hoặc bắt xe ôm, taxi với giá từ 15.000-30.000 VND tùy khoảng cách.",
+      "bestTimeToVisit": "Chợ hoạt động từ 5h sáng đến 18h hàng ngày. Buổi sáng sớm từ 5h-8h là thời điểm sầm uất nhất, đặc biệt thích hợp để mua thực phẩm tươi sống và trải nghiệm không khí buôn bán nhộn nhịp.",
+      "nearbyAttractions": [
+        {
+          "name": "Nhà thờ Chính tòa Nam Định",
+          "description": "Công trình kiến trúc Gothic ấn tượng được xây dựng từ năm 1880, là một trong những nhà thờ lớn và đẹp nhất miền Bắc. Nhà thờ nổi bật với hai tháp chuông cao 44m và những ô cửa kính màu tuyệt đẹp.",
+          "distance": "800m về phía Đông",
+          "travelTime": "10 phút đi bộ hoặc 3 phút đi xe",
+          "image": "assets/images/places/nha-tho-chinh-toa.jpg"
+        },
+        {
+          "name": "Khu phố cổ Nam Định",
+          "description": "Khu phố với những công trình kiến trúc cổ từ thời Pháp thuộc, nơi lưu giữ nhiều giá trị văn hóa và lịch sử của thành phố. Khu vực này còn nổi tiếng với nhiều quán ăn truyền thống.",
+          "distance": "500m về phía Nam",
+          "travelTime": "7 phút đi bộ",
+          "image": "assets/images/places/pho-co-nam-dinh.jpg"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Phở bò Nam Định",
+          "description": "Món phở truyền thống với nước dùng đậm đà, thịt bò mềm và bánh phở dai ngon. Đặc biệt là cách pha nước dùng với nhiều gia vị bí truyền tạo nên hương vị độc đáo",
+          "restaurant": "Phở Bò Bà Vân",
+          "price": "35000-50000 VND/bát",
+          "where": "Đối diện cổng chợ Rồng, khu vực phía Nam"
+        },
+        {
+          "name": "Bún đũa Nam Định",
+          "description": "Món bún đặc trưng của Nam Định với sợi bún tròn dài, ăn kèm chả lụa, giò sống và nước dùng trong vắt. Món ăn này thể hiện sự tinh tế trong ẩm thực Nam Định",
+          "restaurant": "Quán Bún Đũa Cô Thảo",
+          "price": "25000-35000 VND/bát",
+          "where": "Khu ẩm thực trong chợ Rồng, tầng 1"
+        }
+      ]
+    },
+    {
+      "id": "lang-mau-lieu-hanh",
+      "name": "Lăng Mẫu Liễu Hạnh Phủ Dầy",
+      "location": "Nam Định",
+      "image": "assets/images/places/checkin-lang-mau-lieu-hanh-phu-day-nam-dinh.jpg",
+      "description": "Di tích tâm linh nổi tiếng thờ Thánh Mẫu Liễu Hạnh, một trong Tứ bất tử trong tín ngưỡng dân gian Việt Nam. Quần thể di tích không chỉ là trung tâm tín ngưỡng thờ Mẫu lớn nhất cả nước mà còn là nơi bảo tồn và phát huy các giá trị văn hóa truyền thống.",
+      "detailedDescription": "Lăng Mẫu Liễu Hạnh tại Phủ Dầy là một trong những trung tâm tín ngưỡng thờ Mẫu lớn nhất Việt Nam. Quần thể di tích bao gồm nhiều công trình kiến trúc nghệ thuật độc đáo như đền, phủ, lăng, miếu được xây dựng theo kiến trúc truyền thống. Nơi đây không chỉ là điểm đến tâm linh mà còn là di tích văn hóa quan trọng, nơi diễn ra nhiều lễ hội truyền thống và hoạt động hát văn, hầu đồng. Phủ Dầy còn lưu giữ nhiều hiện vật quý giá và là nơi nghiên cứu về tín ngưỡng thờ Mẫu của người Việt.",
+      "howToGet": "Từ thành phố Nam Định, đi theo hướng Tây Nam khoảng 25km theo quốc lộ 38B. Bạn có thể đi xe khách (khoảng 45 phút, giá 30.000 VND/người) hoặc taxi (khoảng 300.000 VND/chiều).",
+      "bestTimeToVisit": "Có thể đến vào bất kỳ thời điểm nào trong năm, nhưng nên tránh những ngày mưa lớn. Thời điểm lý tưởng nhất là vào các dịp lễ hội (tháng 3 âm lịch) để được trải nghiệm không khí tâm linh sôi động và các hoạt động văn hóa đặc sắc.",
+      "nearbyAttractions": [
+        {
+          "name": "Đền Trần Nam Định",
+          "description": "Quần thể di tích lịch sử văn hóa thờ các vua nhà Trần, nơi diễn ra lễ hội khai ấn đầu năm nổi tiếng. Công trình kiến trúc độc đáo mang đậm dấu ấn thời Trần.",
+          "distance": "15km về phía Đông",
+          "travelTime": "25 phút đi ô tô hoặc xe máy",
+          "image": "assets/images/places/den-tran.jpg"
+        },
+        {
+          "name": "Chợ Viềng Nam Định",
+          "description": "Phiên chợ truyền thống nổi tiếng, theo tín ngưỡng dân gian, đi chợ Viềng sẽ mua được may mắn cho cả năm. Chợ họp vào đêm mồng 7 tháng Giêng âm lịch.",
+          "distance": "10km về phía Tây",
+          "travelTime": "20 phút đi ô tô",
+          "image": "assets/images/places/cho-vieng.jpg"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Xôi Phủ Dầy",
+          "description": "Món xôi truyền thống được nấu từ gạo nếp cái hoa vàng, dẻo thơm và được cúng trong các dịp lễ hội. Xôi được gói trong lá dong tạo hương vị đặc trưng",
+          "restaurant": "Quán Xôi Bà Liên",
+          "price": "20000-30000 VND/suất",
+          "where": "Khu vực cổng Phủ Dầy"
+        },
+        {
+          "name": "Chè kho Nam Định",
+          "description": "Món chè truyền thống của Nam Định, được nấu công phu từ đường phèn và gạo nếp, có vị ngọt thanh và dẻo thơm. Món tráng miệng phổ biến trong các dịp lễ hội",
+          "restaurant": "Chè Kho Cô Hương",
+          "price": "15000-25000 VND/bát",
+          "where": "Dọc đường vào Phủ Dầy"
+        }
+      ]
+    },
+    {
+      "id": "dinh-fansipan",
+      "name": "Đỉnh Fansipan",
+      "location": "Lào Cai",
+      "image": "assets/images/places/checkin-dinh-fansipan-lao-cai.jpg",
+      "description": "Nóc nhà Đông Dương với độ cao 3.143m",
+      "detailedDescription": "Fansipan là đỉnh núi cao nhất Việt Nam và khu vực Đông Dương, thuộc dãy Hoàng Liên Sơn. Ngày nay, du khách có thể lên đỉnh bằng cáp treo hiện đại hoặc chinh phục bằng cách leo núi. Từ đỉnh núi, du khách có thể ngắm nhìn toàn cảnh thung lũng Mường Hoa và dãy Hoàng Liên hùng vĩ.",
+      "howToGet": "Từ thị trấn Sa Pa, bạn có thể đi cáp treo lên đỉnh Fansipan hoặc tham gia tour leo núi 2-3 ngày.",
+      "bestTimeToVisit": "Thời điểm đẹp nhất để chinh phục Fansipan là từ tháng 9 đến tháng 3 năm sau, khi thời tiết khô ráo và có nhiều nắng."
+    },
+    {
+      "id": "deo-bao-loc",
+      "name": "Đèo Bảo Lộc",
+      "location": "Lâm Đồng",
+      "image": "assets/images/places/checkin-deo-bao-loc-lam-dong.jpg",
+      "description": "Cung đường đèo uốn lượn với cảnh quan thiên nhiên tuyệt đẹp",
+      "detailedDescription": "Đèo Bảo Lộc là một trong những cung đường đèo đẹp nhất Việt Nam, nối liền thành phố Bảo Lộc với các vùng lân cận. Đèo có độ dài khoảng 10km với nhiều khúc cua uốn lượn, hai bên là những đồi chè xanh mướt và thung lũng sâu.",
+      "howToGet": "Đèo nằm trên Quốc lộ 20, cách thành phố Bảo Lộc khoảng 10km về phía Nam.",
+      "bestTimeToVisit": "Thời điểm lý tưởng để chinh phục đèo Bảo Lộc là từ tháng 12 đến tháng 4, khi thời tiết khô ráo và có nhiều nắng.",
+      "attractions": {
+        "natural": [
+          {
+            "name": "Đồi chè Bảo Lộc",
+            "description": "Những đồi chè xanh mướt trải dài hai bên đèo",
+            "image": "assets/images/places/doi-che-bao-loc.jpg"
+          },
+          {
+            "name": "Thác Damb'ri",
+            "description": "Thác nước cao nhất tỉnh Lâm Đồng",
+            "image": "assets/images/places/thac-dambri.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Trà Bảo Lộc",
+          "description": "Trà xanh thượng hạng từ đồi chè Bảo Lộc",
+          "image": "assets/images/foods/tra-bao-loc.jpg"
+        },
+        {
+          "name": "Cá tầm nướng",
+          "description": "Đặc sản cá tầm từ các hồ nuôi cá vùng cao",
+          "image": "assets/images/foods/ca-tam-nuong.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Thác Đamri",
+          "description": "Thác nước hùng vĩ cao 57m",
+          "distance": "15km",
+          "image": "assets/images/places/thac-damri.jpg"
+        },
+        {
+          "name": "Chùa Linh Quy Pháp Ấn",
+          "description": "Ngôi chùa nổi tiếng với cổng trời",
+          "distance": "20km",
+          "image": "assets/images/places/chua-linh-quy-phap-an.jpg"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Lẩu cá tầm",
+          "description": "Món ăn đặc trưng vùng cao nguyên",
+          "price": "200000-300000 VND/nồi",
+          "where": "Các nhà hàng dọc đèo Bảo Lộc"
+        },
+        {
+          "name": "Trà Bảo Lộc tươi",
+          "description": "Trà tươi hái từ đồi chè",
+          "price": "20000-30000 VND/ly",
+          "where": "Các quán trà dọc đường"
+        }
+      ]
+    },
+    {
+      "id": "nha-lao-thieu-nhi-da-lat",
+      "name": "Nhà Lao Thiếu Nhi Đà Lạt",
+      "location": "Lâm Đồng",
+      "image": "assets/images/places/checkin-nha-lao-thieu-nhi-da-lat-lam-dong.jpg",
+      "description": "Di tích lịch sử ghi dấu thời kỳ kháng chiến",
+      "detailedDescription": "Nhà Lao Thiếu Nhi Đà Lạt là một di tích lịch sử quan trọng, nơi ghi dấu những trang sử hào hùng của dân tộc trong thời kỳ kháng chiến. Công trình này ngày nay đã trở thành điểm tham quan giáo dục truyền thống cho thế hệ trẻ.",
+      "howToGet": "Di tích nằm trong trung tâm thành phố Đà Lạt, có thể di chuyển bằng xe máy hoặc taxi.",
+      "bestTimeToVisit": "Có thể tham quan vào bất kỳ thời điểm nào trong năm, nhưng nên tránh những ngày mưa lớn.",
+      "attractions": {
+        "historical": [
+          {
+            "name": "Nhà Lao Thiếu Nhi",
+            "description": "Di tích lịch sử với kiến trúc thời Pháp",
+            "image": "assets/images/places/nha-lao-thieu-nhi.jpg"
+          },
+          {
+            "name": "Bảo tàng",
+            "description": "Khu trưng bày hiện vật lịch sử",
+            "image": "assets/images/places/bao-tang-nha-lao.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Bánh mì xíu mại",
+          "description": "Món ăn sáng phổ biến ở Đà Lạt",
+          "image": "assets/images/foods/banh-mi-xiu-mai.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Dinh Bảo Đại",
+          "description": "Cung điện của vua Bảo Đại",
+          "distance": "2km",
+          "image": "assets/images/places/dinh-bao-dai.jpg"
+        },
+        {
+          "name": "Hồ Xuân Hương",
+          "description": "Hồ trung tâm thành phố Đà Lạt",
+          "distance": "1km",
+          "image": "assets/images/places/ho-xuan-huong.jpg"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Bánh ướt lòng gà",
+          "description": "Món ăn đặc trưng Đà Lạt",
+          "price": "35000-50000 VND/phần",
+          "where": "Các quán ăn gần di tích"
+        },
+        {
+          "name": "Cà phê",
+          "description": "Cà phê Arabica Đà Lạt",
+          "price": "25000-40000 VND/ly",
+          "where": "Các quán cà phê xung quanh"
+        }
+      ]
+    },
+    {
+      "id": "nui-da-con-voi",
+      "name": "Núi Đá Voi",
+      "location": "Đắk Lắk",
+      "image": "assets/images/places/checkin-nui-da-con-voi-dak-lak.jpg",
+      "description": "Danh thắng với hình dáng độc đáo giống như một chú voi",
+      "detailedDescription": "Núi Đá Voi là một danh thắng nổi tiếng của Đắk Lắk, với hình dáng tự nhiên giống như một chú voi đang nằm nghỉ. Đây không chỉ là điểm du lịch hấp dẫn mà còn gắn liền với nhiều truyền thuyết của người dân địa phương.",
+      "howToGet": "Từ trung tâm thành phố Buôn Ma Thuột, đi theo hướng Đông Nam khoảng 15km là đến núi Đá Voi.",
+      "bestTimeToVisit": "Thời điểm thích hợp để tham quan là từ tháng 11 đến tháng 4 năm sau, khi thời tiết khô ráo.",
+      "attractions": {
+        "natural": [
+          {
+            "name": "Núi Đá Voi",
+            "description": "Khối đá tự nhiên có hình dáng như voi",
+            "image": "assets/images/places/nui-da-voi.jpg"
+          },
+          {
+            "name": "Thác Đray Sap",
+            "description": "Thác nước hùng vĩ gần núi Đá Voi",
+            "image": "assets/images/places/thac-dray-sap.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Cơm lam",
+          "description": "Cơm nấu trong ống tre, đặc sản Tây Nguyên",
+          "image": "assets/images/foods/com-lam.jpg"
+        },
+        {
+          "name": "Rượu cần",
+          "description": "Đồ uống truyền thống của người Tây Nguyên",
+          "image": "assets/images/foods/ruou-can.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Thác Đray Sap",
+          "description": "Thác nước đẹp của Tây Nguyên",
+          "distance": "10km",
+          "image": "assets/images/places/thac-dray-sap.jpg"
+        },
+        {
+          "name": "Buôn Đôn",
+          "description": "Làng của những người thuần dưỡng voi",
+          "distance": "25km",
+          "image": "assets/images/places/buon-don.jpg"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Cơm lam gà nướng",
+          "description": "Món ăn đặc trưng của Tây Nguyên",
+          "price": "60000-80000 VND/phần",
+          "where": "Các quán ăn địa phương gần núi Đá Voi"
+        },
+        {
+          "name": "Cà phê Buôn Ma Thuột",
+          "description": "Cà phê đặc sản vùng Tây Nguyên",
+          "price": "15000-25000 VND/ly",
+          "where": "Các quán cà phê xung quanh khu vực"
+        }
+      ]
+    },
+    {
+      "id": "deo-phu-son",
+      "name": "Đèo Phú Sơn",
+      "location": "Bình Định",
+      "image": "assets/images/places/checkin-deo-phu-son.jpg",
+      "description": "Cung đường đèo ngoạn mục với view biển tuyệt đẹp",
+      "detailedDescription": "Đèo Phú Sơn là một trong những cung đường ven biển đẹp nhất miền Trung, nối liền các vùng duyên hải của tỉnh Bình Định. Từ đỉnh đèo, du khách có thể ngắm nhìn toàn cảnh biển xanh và những dãy núi trùng điệp.",
+      "howToGet": "Đèo nằm trên quốc lộ 1D, cách thành phố Quy Nhơn khoảng 30km về phía Bắc.",
+      "bestTimeToVisit": "Thời điểm đẹp nhất để chinh phục đèo là từ tháng 3 đến tháng 8, khi thời tiết thuận lợi.",
+      "attractions": {
+        "natural": [
+          {
+            "name": "Đỉnh đèo Phú Sơn",
+            "description": "Điểm ngắm cảnh tuyệt đẹp nhìn ra biển",
+            "image": "assets/images/places/dinh-deo-phu-son.jpg"
+          },
+          {
+            "name": "Bãi biển Trung Lương",
+            "description": "Bãi biển hoang sơ dưới chân đèo",
+            "image": "assets/images/places/bai-bien-trung-luong.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Bánh hỏi lòng heo",
+          "description": "Món ăn đặc trưng của Bình Định",
+          "image": "assets/images/foods/banh-hoi-long-heo.jpg"
+        },
+        {
+          "name": "Gỏi cá mai",
+          "description": "Đặc sản vùng biển Bình Định",
+          "image": "assets/images/foods/goi-ca-mai.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Bãi biển Trung Lương",
+          "description": "Bãi biển đẹp dưới chân đèo",
+          "distance": "5km",
+          "image": "assets/images/places/bai-bien-trung-luong.jpg"
+        },
+        {
+          "name": "Tháp Đôi",
+          "description": "Di tích tháp Chăm cổ",
+          "distance": "15km",
+          "image": "assets/images/places/thap-doi.jpg"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Bánh hỏi lòng heo",
+          "description": "Món ăn truyền thống Bình Định",
+          "price": "30000-50000 VND/phần",
+          "where": "Các quán ăn dọc đèo"
+        },
+        {
+          "name": "Hải sản tươi sống",
+          "description": "Các món hải sản tươi từ biển",
+          "price": "100000-300000 VND/phần",
+          "where": "Các nhà hàng ven biển"
+        }
+      ]
+    },
+    {
+      "id": "buon-ma-thuot",
+      "name": "Thành phố Buôn Ma Thuột",
+      "location": "Đắk Lắk",
+      "image": "assets/images/places/checkin-thanh-pho-buon-ma-thuot.jpg",
+      "description": "Thủ phủ của cà phê Việt Nam",
+      "detailedDescription": "Buôn Ma Thuột là thành phố lớn nhất Tây Nguyên và được mệnh danh là thủ phủ cà phê của Việt Nam. Nơi đây không chỉ nổi tiếng với những đồi cà phê bạt ngàn mà còn có nền văn hóa đa dạng của các dân tộc Tây Nguyên.",
+      "howToGet": "Có thể đến Buôn Ma Thuột bằng máy bay (sân bay Buôn Ma Thuột) hoặc xe khách từ các tỉnh thành lớn.",
+      "bestTimeToVisit": "Mùa khô từ tháng 11 đến tháng 4 là thời điểm lý tưởng để thăm Buôn Ma Thuột.",
+      "attractions": {
+        "cultural": [
+          {
+            "name": "Bảo tàng Đắk Lắk",
+            "description": "Nơi trưng bày văn hóa Tây Nguyên",
+            "image": "assets/images/places/bao-tang-dak-lak.jpg"
+          },
+          {
+            "name": "Buôn Akô Dhông",
+            "description": "Làng đồng bào dân tộc E Đê truyền thống",
+            "image": "assets/images/places/buon-ako-dhong.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Cà phê Buôn Ma Thuột",
+          "description": "Cà phê nổi tiếng nhất Việt Nam",
+          "image": "assets/images/foods/ca-phe-buon-ma-thuot.jpg"
+        },
+        {
+          "name": "Bún đỏ",
+          "description": "Món ăn đặc trưng của người Tây Nguyên",
+          "image": "assets/images/foods/bun-do.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Buôn Đôn",
+          "description": "Làng voi nổi tiếng",
+          "distance": "40km",
+          "image": "assets/images/places/buon-don.jpg"
+        },
+        {
+          "name": "Hồ Lắk",
+          "description": "Hồ nước ngọt lớn nhất Đắk Lắk",
+          "distance": "45km",
+          "image": "assets/images/places/ho-lak.jpg"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Phở khô Gia Lai",
+          "description": "Món ăn đặc trưng Tây Nguyên",
+          "price": "35000-50000 VND/tô",
+          "where": "Các quán ăn trong thành phố"
+        },
+        {
+          "name": "Cà phê sữa đá",
+          "description": "Cà phê nguyên chất Buôn Ma Thuột",
+          "price": "15000-25000 VND/ly",
+          "where": "Các quán cà phê trong thành phố"
+        }
+      ]
+    }
+  ]
+} 

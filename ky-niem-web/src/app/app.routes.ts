@@ -27,6 +27,10 @@ export const routes: Routes = [
     loadChildren: () => import('./pages/album-anh/album-anh.routes').then(m => m.ALBUM_ANH_ROUTES)
   },
   {
+    path: 'dia-diem',
+    loadChildren: () => import('./pages/memory-places/memory-places.routes').then(m => m.MEMORY_PLACES_ROUTES)
+  },
+  {
     path: 'place/:id',
     component: PlaceDetailComponent
   },

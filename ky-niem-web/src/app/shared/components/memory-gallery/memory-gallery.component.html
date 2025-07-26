@@ -1,3 +1,14 @@
+<!-- Static Travel Header -->
+<div class="travel-header">
+  <div class="travel-header-image">
+    <div class="header-overlay"></div>
+    <img src="assets/images/places/checkin_hoi-an_quang-nam.jpg" alt="Travel Memories Header">
+    <div class="overlay-text">
+      <h1>Hành Trình Kỷ Niệm</h1>
+      <p>"Không phải đích đến, mà là hành trình cùng nhau mới là điều ý nghĩa nhất"</p>
+    </div>
+  </div>
+</div>
 <!-- Gallery Section -->
 <div class="gallery-background">
   <!-- Animated background circles -->
@@ -7,14 +18,6 @@
 
   <div class="gallery-section">
     <div class="container" style="padding: 0 8rem;">
-      <div class="section-header">
-        <h2 class="section-title">Album Kỷ Niệm</h2>
-        <div class="quote-wrapper">
-          <p class="section-subtitle">"Photography is a way of feeling, of touching, of loving. What you have caught on film is captured forever... it remembers little things, long after you have forgotten everything"</p>
-          <span class="quote-author">- Aaron Siskind</span>
-        </div>
-      </div>
-
       <!-- Filter Controls -->
       <div class="gallery-controls">
         <div class="filter-buttons">
@@ -139,15 +142,178 @@
 </div>
 
 <style>
+/* Travel Header Styles */
+.travel-header {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.travel-header-image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.4)
+  );
+  z-index: 1;
+}
+
+.travel-header-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(
+    transparent,
+    rgba(0, 0, 0, 0.5)
+  );
+  z-index: 1;
+}
+
+.travel-header-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9);
+  transition: transform 20s ease;
+}
+
+.travel-header:hover .travel-header-image img {
+  transform: scale(1.1);
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  width: 80%;
+  max-width: 800px;
+}
+
+.overlay-text h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.overlay-text p {
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeInUp 1s ease 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Places Preview Styles */
+.places-preview {
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+}
+
+.places-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  padding: 0 8rem;
+}
+
+.place-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.place-item:hover {
+  transform: translateY(-5px);
+}
+
+.place-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.place-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+}
+
 @media (max-width: 1200px) {
   .container {
     padding: 0 3rem !important;
+  }
+
+  .places-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 3rem;
+  }
+
+  .overlay-text h1 {
+    font-size: 2.5rem;
   }
 }
 
 @media (max-width: 768px) {
   .container {
     padding: 0 1.5rem !important;
+  }
+
+  .places-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1.5rem;
+  }
+
+  .overlay-text h1 {
+    font-size: 2rem;
+  }
+
+  .overlay-text p {
+    font-size: 1rem;
+  }
+
+  .travel-header {
+    height: 40vh;
   }
 }
 </style>

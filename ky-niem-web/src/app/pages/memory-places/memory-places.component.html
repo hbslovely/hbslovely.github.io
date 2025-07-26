@@ -1,0 +1,107 @@
+<!-- Page Layout -->
+<div class="page-container">
+  <!-- Left Column - Filters -->
+  <aside class="filters-column">
+    <div class="filters-header">
+      <h2>Bộ lọc</h2>
+      <button 
+        class="reset-button" 
+        (click)="resetFilters()"
+        *ngIf="hasActiveFilters()"
+        [class.resetting]="isResetting"
+        [disabled]="isResetting">
+        <i class="pi" [class.pi-spin]="isResetting" [class.pi-spinner]="isResetting" [class.pi-refresh]="!isResetting"></i>
+        {{ isResetting ? 'Đang đặt lại...' : 'Đặt lại' }}
+      </button>
+    </div>
+
+    <!-- Search Input -->
+    <div class="filter-section search-section">
+      <h3 class="filter-label">Tìm kiếm</h3>
+      <div class="search-container">
+        <i class="pi pi-search search-icon"></i>
+        <input 
+          type="text" 
+          class="search-input"
+          placeholder="Tìm theo tên, địa điểm..."
+          [(ngModel)]="searchText"
+          (input)="onSearch($event)"
+        >
+        <button 
+          *ngIf="searchText"
+          class="clear-search"
+          (click)="searchText = ''; onSearch($event)">
+          <i class="pi pi-times"></i>
+        </button>
+      </div>
+    </div>
+    
+    <div class="filter-section">
+      <h3 class="filter-label">Khu Vực</h3>
+      <div class="filter-chips">
+        <button 
+          *ngFor="let type of locationTypes"
+          [class.active]="selectedFilters.locationType.includes(type.value)"
+          (click)="toggleFilter('locationType', type.value)"
+          class="filter-chip">
+          <i [class]="type.icon"></i>
+          {{ type.label }}
+        </button>
+      </div>
+    </div>
+
+    <div class="filter-section">
+      <h3 class="filter-label">Vùng Miền</h3>
+      <div class="filter-chips">
+        <button 
+          *ngFor="let region of regions"
+          [class.active]="selectedFilters.region.includes(region.value)"
+          (click)="toggleFilter('region', region.value)"
+          class="filter-chip">
+          {{ region.label }}
+        </button>
+      </div>
+    </div>
+
+    <div class="filter-section">
+      <h3 class="filter-label">Đặc Điểm</h3>
+      <div class="filter-chips">
+        <button 
+          *ngFor="let feature of features"
+          [class.active]="selectedFilters.features.includes(feature.value)"
+          (click)="toggleFilter('features', feature.value)"
+          class="filter-chip">
+          <i [class]="feature.icon"></i>
+          {{ feature.label }}
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Right Column - Content -->
+  <main class="content-column">
+    <div class="content-header">
+      <h1>Địa Điểm Kỷ Niệm</h1>
+      <p>Những nơi chúng ta đã đến cùng nhau</p>
+    </div>
+
+    <!-- Places Grid -->
+    <div class="places-grid" *ngIf="!loading">
+      <app-place-card 
+        *ngFor="let place of filteredPlaces"
+        [place]="place">
+      </app-place-card>
+    </div>
+
+    <!-- Loading State -->
+    <div class="loading" *ngIf="loading">
+      <i class="pi pi-spin pi-spinner"></i>
+      <span>Đang tải...</span>
+    </div>
+
+    <!-- No Results -->
+    <div class="no-results" *ngIf="!loading && filteredPlaces.length === 0">
+      <p>Không tìm thấy địa điểm nào phù hợp với bộ lọc đã chọn</p>
+    </div>
+  </main>
+</div> 

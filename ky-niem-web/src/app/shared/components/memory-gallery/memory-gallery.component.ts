@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { PlaceCardComponent } from '../place-card/place-card.component';
 
 interface GalleryImage {
   src: string;
@@ -34,7 +35,10 @@ interface GalleryControl {
   templateUrl: './memory-gallery.component.html',
   styleUrls: ['./memory-gallery.component.scss'],
   standalone: true,
-  imports: [CommonModule]
+  imports: [
+    CommonModule,
+    PlaceCardComponent
+  ]
 })
 export class MemoryGalleryComponent implements OnInit {
   galleries: Gallery[] = [];
@@ -56,6 +60,37 @@ export class MemoryGalleryComponent implements OnInit {
   isPlaying: boolean = true;
   
   private icons: Record<string, string> = {};
+
+  featuredPlaces = [
+    {
+      id: 'dinh-fansipan',
+      name: 'Đỉnh Fansipan',
+      location: 'Lào Cai',
+      image: 'assets/images/places/checkin-dinh-fansipan-lao-cai.jpg',
+      description: 'Chinh phục đỉnh núi cao nhất Đông Dương với độ cao 3.143m'
+    },
+    {
+      id: 'chua-huong',
+      name: 'Chùa Hương',
+      location: 'Hà Nội',
+      image: 'assets/images/places/checkin-chua-huong-ha-noi.jpg',
+      description: 'Danh thắng tâm linh nổi tiếng với cảnh quan thiên nhiên tuyệt đẹp'
+    },
+    {
+      id: 'bien-sam-son',
+      name: 'Biển Sầm Sơn',
+      location: 'Thanh Hóa',
+      image: 'assets/images/places/checkin_bai-bien-sam-son_thanh-hoa.jpg',
+      description: 'Bãi biển xinh đẹp với những khoảnh khắc bình minh tuyệt vời'
+    },
+    {
+      id: 'da-lat',
+      name: 'Thành Phố Đà Lạt',
+      location: 'Lâm Đồng',
+      image: 'assets/images/places/checkin-cho-da-lat-lam-dong.jpg',
+      description: 'Thành phố ngàn hoa với khí hậu mát mẻ quanh năm'
+    }
+  ];
 
   constructor(private http: HttpClient) {}
 

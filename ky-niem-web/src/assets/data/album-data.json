@@ -662,7 +662,7 @@
       "title": "Kỷ Niệm Đáng Nhớ",
       "description": "Những khoảnh khắc đặc biệt của chúng mình",
       "coverImage": "assets/images/ki-niem/lan-dau-gap-nhau.png",
-      "photoCount": 8,
+      "photoCount": 15,
       "photos": [
         {
           "id": "first-meet",
@@ -711,135 +711,48 @@
           "url": "assets/images/ki-niem/sau-rieng-vo-gui-tu-dak-lak_8-2021.png",
           "title": "Quà từ Đắk Lắk",
           "description": "Sầu riêng vợ gửi từ Đắk Lắk - 8/2021"
-        }
-      ]
-    },
-    {
-      "id": "travel",
-      "title": "Hành Trình Du Lịch",
-      "description": "Những điểm đến đáng nhớ trong hành trình của chúng mình",
-      "coverImage": "assets/images/bucket/checkin_hoi-an_quang-nam.jpg",
-      "photoCount": 20,
-      "photos": [
-        {
-          "id": "sam-son",
-          "url": "assets/images/bucket/checkin_bai-bien-sam-son_thanh-hoa.jpg",
-          "title": "Bãi biển Sầm Sơn",
-          "description": "Thư giãn tại bãi biển Sầm Sơn - Thanh Hóa"
         },
         {
-          "id": "vinh",
-          "url": "assets/images/bucket/checkin_vinh_nghe-an.jpg",
-          "title": "TP. Vinh",
-          "description": "Thành phố Vinh - Nghệ An"
+          "id": "hoi-an-memory",
+          "url": "assets/images/places/checkin_hoi-an_quang-nam.jpg",
+          "title": "Phố Cổ Hội An",
+          "description": "Kỷ niệm dạo bước trong phố cổ Hội An - Quảng Nam"
         },
         {
-          "id": "deo-ngang",
-          "url": "assets/images/bucket/checkin_deo-ngang.jpg",
-          "title": "Đèo Ngang",
-          "description": "Chinh phục đèo Ngang - Ranh giới Hà Tĩnh và Quảng Bình"
+          "id": "sam-son-memory",
+          "url": "assets/images/places/checkin_bai-bien-sam-son_thanh-hoa.jpg",
+          "title": "Biển Sầm Sơn",
+          "description": "Những khoảnh khắc hạnh phúc tại bãi biển Sầm Sơn - Thanh Hóa"
         },
         {
-          "id": "quang-binh",
-          "url": "assets/images/bucket/checkin_quang-binh.jpg",
-          "title": "Quảng Bình",
-          "description": "Vùng đất di sản - Quảng Bình"
+          "id": "da-lat-memory",
+          "url": "assets/images/places/checkin-cho-da-lat-lam-dong.jpg",
+          "title": "Đà Lạt Thành Phố Mộng Mơ",
+          "description": "Những kỷ niệm ngọt ngào tại thành phố Đà Lạt"
         },
         {
-          "id": "hue-thien-mu",
-          "url": "assets/images/bucket/checkin_chua-thien-mu_hue.jpg",
-          "title": "Chùa Thiên Mụ",
-          "description": "Thăm chùa Thiên Mụ - Biểu tượng của xứ Huế"
+          "id": "fansipan-memory",
+          "url": "assets/images/places/checkin-dinh-fansipan-lao-cai.jpg",
+          "title": "Chinh Phục Fansipan",
+          "description": "Khoảnh khắc đáng nhớ trên đỉnh Fansipan - Nóc nhà Đông Dương"
         },
         {
-          "id": "hue-dai-noi",
-          "url": "assets/images/bucket/checkin_dai-noi_hue.jpg",
-          "title": "Đại Nội Huế",
-          "description": "Khám phá Hoàng cung xưa"
+          "id": "chua-huong-memory",
+          "url": "assets/images/places/checkin-chua-huong-ha-noi.jpg",
+          "title": "Chùa Hương",
+          "description": "Hành trình về với đất Phật tại Chùa Hương"
         },
         {
-          "id": "hue-dong-ba",
-          "url": "assets/images/bucket/checkin_cho-dong-ba_hue.jpg",
-          "title": "Chợ Đông Ba",
-          "description": "Ghé thăm khu chợ truyền thống của Huế"
+          "id": "lang-bac-memory",
+          "url": "assets/images/places/checkin-lang-bac-ha-noi.jpg",
+          "title": "Lăng Bác",
+          "description": "Thăm Lăng Bác - Khoảnh khắc trang nghiêm và ý nghĩa"
         },
         {
-          "id": "da-nang-ngu-hanh-son",
-          "url": "assets/images/bucket/checkin_ngu-hanh-son_da-nang.jpg",
-          "title": "Ngũ Hành Sơn",
-          "description": "Chiêm ngưỡng vẻ đẹp của Ngũ Hành Sơn - Đà Nẵng"
-        },
-        {
-          "id": "da-nang-cho-con",
-          "url": "assets/images/bucket/checkin_cho-con_da-nang.jpg",
-          "title": "Chợ Cồn",
-          "description": "Khám phá chợ Cồn - Đà Nẵng"
-        },
-        {
-          "id": "hoi-an",
-          "url": "assets/images/bucket/checkin_hoi-an_quang-nam.jpg",
-          "title": "Phố cổ Hội An",
-          "description": "Dạo bước trong không gian cổ kính của phố Hội"
-        },
-        {
-          "id": "quang-ngai",
-          "url": "assets/images/bucket/checkin_quang-ngai.jpg",
-          "title": "Quảng Ngãi",
-          "description": "Thăm thú Quảng Ngãi"
-        },
-        {
-          "id": "binh-dinh",
-          "url": "assets/images/bucket/check-in_binh-dinh.jpg",
-          "title": "Bình Định",
-          "description": "Khám phá vùng đất võ Bình Định"
-        },
-        {
-          "id": "phu-yen-mui-dien",
-          "url": "assets/images/bucket/mui-dien_Phu-yen.jpg",
-          "title": "Mũi Điện",
-          "description": "Mũi Điện - Điểm Đông cực của Tổ quốc"
-        },
-        {
-          "id": "phu-yen-tuy-hoa",
-          "url": "assets/images/bucket/checkin_tuy-hoa_phu-yen.jpg",
-          "title": "Tuy Hòa",
-          "description": "Thành phố biển Tuy Hòa - Phú Yên"
-        },
-        {
-          "id": "ninh-thuan-cat",
-          "url": "assets/images/bucket/Doi-cat-trang_Ninh-thuan.jpg",
-          "title": "Đồi cát trắng",
-          "description": "Đồi cát trắng Ninh Thuận - Tiểu sa mạc của Việt Nam"
-        },
-        {
-          "id": "ninh-thuan-thap",
-          "url": "assets/images/bucket/thap-cham_ninh-thuan.jpg",
-          "title": "Tháp Chàm",
-          "description": "Tháp Chàm - Di sản văn hóa Chăm"
-        },
-        {
-          "id": "saigon",
-          "url": "assets/images/bucket/hoang-hon_ho-chi-minh.jpg",
-          "title": "Hoàng hôn Sài Gòn",
-          "description": "Ngắm hoàng hôn tại Sài Gòn - TP.HCM"
-        },
-        {
-          "id": "deo-tam-giang",
-          "url": "assets/images/bucket/deo-tam-giang.jpg",
-          "title": "Đèo Tam Giang",
-          "description": "Chinh phục đèo Tam Giang hùng vĩ"
-        },
-        {
-          "id": "deo-quan-cau",
-          "url": "assets/images/bucket/deo-quan-cau.jpg",
-          "title": "Đèo Quán Cau",
-          "description": "Cung đường đèo Quán Cau ngoạn mục"
-        },
-        {
-          "id": "chua-dien-tho",
-          "url": "assets/images/bucket/checkin_Chua-dien-tho_Binh-Thuan.jpg",
-          "title": "Chùa Diên Thọ",
-          "description": "Thăm chùa Diên Thọ - Bình Thuận"
+          "id": "ba-den-memory",
+          "url": "assets/images/places/checkin-nui-ba-den-tay-ninh.jpg",
+          "title": "Núi Bà Đen",
+          "description": "Chinh phục đỉnh Núi Bà Đen - Tây Ninh"
         }
       ]
     },
