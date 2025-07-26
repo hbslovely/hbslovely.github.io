@@ -63,16 +63,10 @@ export interface Goal {
   icon: string;
 }
 
-export interface LoveQuote {
-  icon: string;
-  quote: string;
-  author: string;
-}
-
 export interface MemoryPlace {
   id: string;
   name: string;
   location: string;
   image: string;
   description: string;
-} 
+}

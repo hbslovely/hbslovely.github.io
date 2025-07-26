@@ -3,7 +3,7 @@
     [title]="album.title"
     [description]="album.description"
     [coverImage]="album.coverImage"
-    [photoCount]="album.photos.length"
+    [photoCount]="album.photos?.length"
     [previewPhotos]="getAlbumPreviewPhotos()">
   </app-album-detail-header>
 
@@ -76,4 +76,4 @@
       <i class="pi pi-chevron-right"></i>
     </button>
   </div>
-</div> 
+</div>

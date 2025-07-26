@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoveQuote } from '../../models';
+import { Quote } from '../../models';
 
 @Component({
   selector: 'app-love-quotes',
@@ -10,10 +10,10 @@ import { LoveQuote } from '../../models';
   imports: [CommonModule]
 })
 export class LoveQuotesComponent {
-  @Input() quotes: LoveQuote[] = [];
+  @Input() quotes: Quote[] = [];
 
-  leftColumnQuotes: LoveQuote[] = [];
-  rightColumnQuotes: LoveQuote[] = [];
+  leftColumnQuotes: Quote[] = [];
+  rightColumnQuotes: Quote[] = [];
 
   ngOnInit() {
     // Chia quotes thành 2 cột
@@ -25,4 +25,4 @@ export class LoveQuotesComponent {
       }
     });
   }
-} 
+}
