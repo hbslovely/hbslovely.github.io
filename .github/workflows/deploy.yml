@@ -17,18 +17,23 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+          cache: 'npm'
+          cache-dependency-path: 'ky-niem-web/package-lock.json'
 
       - name: 📥 Install dependencies
-        run: cd ky-niem-web && npm install --force
+        working-directory: ky-niem-web
+        run: npm ci
 
       - name: 🔨 Build Angular ky-niem-web
-        run: cd ky-niem-web && npm run build -- --output-path=dist --base-href=/memories/
+        working-directory: ky-niem-web
+        run: npm run build -- --configuration production --aot --optimization --build-optimizer --vendor-chunk --output-path=dist --base-href=/memories/
 
       - name: 📁 Upload memories build
         uses: actions/upload-artifact@v4
         with:
           name: memories
           path: ky-niem-web/dist
+          retention-days: 1
 
   build-profile:
     runs-on: ubuntu-latest
@@ -40,22 +45,29 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+          cache: 'npm'
+          cache-dependency-path: 'my-working-profile/package-lock.json'
 
       - name: 📥 Install dependencies
-        run: cd my-working-profile && npm install --force
+        working-directory: my-working-profile
+        run: npm ci
 
       - name: 🔨 Build Angular profile
-        run: cd my-working-profile && npm run build -- --output-path=dist --base-href=/cv/
+        working-directory: my-working-profile
+        run: npm run build -- --configuration production --aot --optimization --build-optimizer --vendor-chunk --output-path=dist --base-href=/cv/
 
       - name: 📁 Upload profile build
         uses: actions/upload-artifact@v4
         with:
           name: profile
           path: my-working-profile/dist
+          retention-days: 1
 
   deploy:
     needs: [build-ky-niem, build-profile]
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: 🚀 Checkout code
         uses: actions/checkout@v3
@@ -73,11 +85,12 @@ jobs:
           path: cv
 
       - name: 🚀 Deploy to GitHub Pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
         run: |
-          git config --global user.name "Bhn"
-          git config --global user.email "Bhn@memories.io"
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add -f cv
           git add -f memories
-          git commit -m "Deploy the changes of the page"
-          git remote set-url origin https://${{ secrets.GH_PAT }}@github.com/hbslovely/hbslovely.github.io.git
-          git push origin main
+          git commit -m "Deploy production build to GitHub Pages"
+          git push origin main 
