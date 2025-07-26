@@ -22,7 +22,7 @@ jobs:
 
       - name: 📥 Install dependencies
         working-directory: ky-niem-web
-        run: npm ci
+        run: npm install --force
 
       - name: 🔨 Build Angular ky-niem-web
         working-directory: ky-niem-web
@@ -93,4 +93,4 @@ jobs:
           git add -f cv
           git add -f memories
           git commit -m "Deploy production build to GitHub Pages"
-          git push origin main 
+          git push origin main
