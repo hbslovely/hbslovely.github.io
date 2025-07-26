@@ -5,7 +5,7 @@
       "title": "Nàng Thơ Của Anh",
       "description": "Những khoảnh khắc đáng yêu và xinh đẹp của em - người con gái anh yêu thương nhất",
       "coverImage": "assets/images/quyen/quyen-portrait.png",
-      "photoCount": 31,
+      "photoCount": 45,
       "photos": [
         {
           "id": "quyen-1",
@@ -192,6 +192,90 @@
           "url": "assets/images/quyen/quyen-phat.jpeg",
           "title": "Hạnh Phúc Bên Nhau",
           "description": "Khoảnh khắc hạnh phúc của đôi mình"
+        },
+        {
+          "id": "quyen-32",
+          "url": "assets/images/quyen/z6843528165353_bec6048cfea8af58ebb1da382d4a357d.jpg",
+          "title": "Nụ Cười Rạng Rỡ",
+          "description": "Em tươi tắn trong trang phục công sở"
+        },
+        {
+          "id": "quyen-33",
+          "url": "assets/images/quyen/z6843524186042_f86e79a1ecf2ca5a44fe4a4b07c9af2c.jpg",
+          "title": "Duyên Dáng Văn Phòng",
+          "description": "Em duyên dáng trong môi trường làm việc"
+        },
+        {
+          "id": "quyen-34",
+          "url": "assets/images/quyen/z6843515658578_a4a2821f16bb3911c1d1165772b30eae.jpg",
+          "title": "Xinh Đẹp Mỗi Ngày",
+          "description": "Em xinh đẹp trong cuộc sống hàng ngày"
+        },
+        {
+          "id": "quyen-35",
+          "url": "assets/images/quyen/z6843511376185_67cbe1ac795e387c8dbf309efcf326f8.jpg",
+          "title": "Nét Đẹp Tự Nhiên",
+          "description": "Em dịu dàng với nét đẹp tự nhiên"
+        },
+        {
+          "id": "quyen-36",
+          "url": "assets/images/quyen/z6843508203125_4da060882f1c88efb6147fe56573ea1f.jpg",
+          "title": "Khoảnh Khắc Đáng Yêu",
+          "description": "Em đáng yêu trong những phút giây đời thường"
+        },
+        {
+          "id": "quyen-37",
+          "url": "assets/images/quyen/z6843505637575_d6f149a3635a65e03e5f3f08ce24cc0b.jpg",
+          "title": "Dịu Dàng Trong Nắng",
+          "description": "Em dịu dàng trong ánh nắng văn phòng"
+        },
+        {
+          "id": "quyen-38",
+          "url": "assets/images/quyen/z6843488897657_bbf00d4751379b63b8dc7ad1bf03fbf0.jpg",
+          "title": "Nụ Cười Tỏa Nắng",
+          "description": "Nụ cười tươi tắn của em"
+        },
+        {
+          "id": "quyen-39",
+          "url": "assets/images/quyen/z6843474414777_ba24be1484ec56131cbdafa916cb7a68.jpg",
+          "title": "Xinh Tươi Mỗi Ngày",
+          "description": "Em xinh tươi trong công việc"
+        },
+        {
+          "id": "quyen-40",
+          "url": "assets/images/quyen/z6843464036239_417682cbd09b61d0ad7b71a7daed623f.jpg",
+          "title": "Khoảnh Khắc Đời Thường",
+          "description": "Em trong những phút giây bình thường"
+        },
+        {
+          "id": "quyen-41",
+          "url": "assets/images/quyen/z6843551866623_ebf56a0d86f9f579fd7cd4d8797c814b.jpg",
+          "title": "Duyên Dáng Công Sở",
+          "description": "Em duyên dáng trong môi trường làm việc"
+        },
+        {
+          "id": "quyen-42",
+          "url": "assets/images/quyen/img_4.png",
+          "title": "Nét Đẹp Tinh Khôi",
+          "description": "Em với nét đẹp tinh khôi"
+        },
+        {
+          "id": "quyen-43",
+          "url": "assets/images/quyen/img_3.png",
+          "title": "Dịu Dàng Trong Gió",
+          "description": "Em dịu dàng như cơn gió nhẹ"
+        },
+        {
+          "id": "quyen-44",
+          "url": "assets/images/quyen/img_2.png",
+          "title": "Nụ Cười Hạnh Phúc",
+          "description": "Nụ cười hạnh phúc của em"
+        },
+        {
+          "id": "quyen-45",
+          "url": "assets/images/quyen/img_1.png",
+          "title": "Khoảnh Khắc Yêu Thương",
+          "description": "Những khoảnh khắc yêu thương của em"
         }
       ]
     },
@@ -635,7 +719,7 @@
       "title": "Hành Trình Du Lịch",
       "description": "Những điểm đến đáng nhớ trong hành trình của chúng mình",
       "coverImage": "assets/images/bucket/checkin_hoi-an_quang-nam.jpg",
-      "photoCount": 17,
+      "photoCount": 20,
       "photos": [
         {
           "id": "sam-son",
@@ -738,6 +822,24 @@
           "url": "assets/images/bucket/hoang-hon_ho-chi-minh.jpg",
           "title": "Hoàng hôn Sài Gòn",
           "description": "Ngắm hoàng hôn tại Sài Gòn - TP.HCM"
+        },
+        {
+          "id": "deo-tam-giang",
+          "url": "assets/images/bucket/deo-tam-giang.jpg",
+          "title": "Đèo Tam Giang",
+          "description": "Chinh phục đèo Tam Giang hùng vĩ"
+        },
+        {
+          "id": "deo-quan-cau",
+          "url": "assets/images/bucket/deo-quan-cau.jpg",
+          "title": "Đèo Quán Cau",
+          "description": "Cung đường đèo Quán Cau ngoạn mục"
+        },
+        {
+          "id": "chua-dien-tho",
+          "url": "assets/images/bucket/checkin_Chua-dien-tho_Binh-Thuan.jpg",
+          "title": "Chùa Diên Thọ",
+          "description": "Thăm chùa Diên Thọ - Bình Thuận"
         }
       ]
     },
@@ -746,7 +848,7 @@
       "title": "Chúng Mình",
       "description": "Chân dung của chúng mình",
       "coverImage": "assets/images/anh-chu-dao/avatar-couple.png",
-      "photoCount": 9,
+      "photoCount": 15,
       "photos": [
         {
           "id": "phat-portrait",
@@ -801,8 +903,401 @@
           "url": "assets/images/anh-chu-dao/avatar-couple.png",
           "title": "Chúng mình",
           "description": "Hạnh phúc bên nhau"
+        },
+        {
+          "id": "phat-quyen-new-1",
+          "url": "assets/images/phat/phat-quyen-ben-nhau.png",
+          "title": "Khoảnh Khắc Bên Nhau",
+          "description": "Những giây phút ngọt ngào của đôi ta"
+        },
+        {
+          "id": "quyen-office-1",
+          "url": "assets/images/quyen/z6843535586778_050aaffcce7fc14fc48d5facc985fe23.jpg",
+          "title": "Em Trong Công Ty",
+          "description": "Em xinh đẹp trong trang phục công sở"
+        },
+        {
+          "id": "quyen-office-2",
+          "url": "assets/images/quyen/z6843535586743_0ee5cfdb404b7a8352018d405a288039.jpg",
+          "title": "Nụ Cười Rạng Rỡ",
+          "description": "Em tươi tắn trong giờ làm việc"
+        },
+        {
+          "id": "phat-daily-special",
+          "url": "assets/images/phat/z6843682702130_be6dd4103032582d17a53d1ed2acb5ea.jpg",
+          "title": "Anh Trong Đời Thường",
+          "description": "Những khoảnh khắc đời thường ý nghĩa"
+        },
+        {
+          "id": "quyen-special",
+          "url": "assets/images/quyen/z6843526377730_46c05ef6a063901ba161f8e8a598ed38.jpg",
+          "title": "Em Trong Nắng",
+          "description": "Em dịu dàng trong ánh nắng"
+        },
+        {
+          "id": "phat-cooking-love",
+          "url": "assets/images/phat/phat-nau-an-cho-vo.png",
+          "title": "Nấu Ăn Cho Em",
+          "description": "Những món ăn tình yêu"
+        }
+      ]
+    },
+    {
+      "id": "phat-moments",
+      "title": "Khoảnh Khắc Của Anh",
+      "description": "Những khoảnh khắc đáng nhớ trong cuộc sống của anh - từ công việc đến những chuyến đi và thời gian bên em",
+      "coverImage": "assets/images/phat/phat-portrait.png",
+      "photoCount": 58,
+      "photos": [
+        {
+          "id": "phat-1",
+          "url": "assets/images/phat/img_1.png",
+          "title": "Khoảnh Khắc Đời Thường",
+          "description": "Những giây phút tự nhiên trong cuộc sống"
+        },
+        {
+          "id": "phat-2",
+          "url": "assets/images/phat/img.png",
+          "title": "Chân Dung",
+          "description": "Hình ảnh chân dung của anh"
+        },
+        {
+          "id": "phat-3",
+          "url": "assets/images/phat/phat_anh-voi-cho.jpg",
+          "title": "Bạn Thú Cưng",
+          "description": "Khoảnh khắc vui vẻ với thú cưng"
+        },
+        {
+          "id": "phat-4",
+          "url": "assets/images/phat/phat-hobby.png",
+          "title": "Sở Thích",
+          "description": "Những điều yêu thích trong cuộc sống"
+        },
+        {
+          "id": "phat-5",
+          "url": "assets/images/phat/phat-nau-an-cho-vo.png",
+          "title": "Nấu Ăn Cho Vợ",
+          "description": "Những món ăn tình yêu từ anh"
+        },
+        {
+          "id": "phat-6",
+          "url": "assets/images/phat/phat-portrait.png",
+          "title": "Chân Dung Chính Thức",
+          "description": "Hình ảnh đại diện của anh"
+        },
+        {
+          "id": "phat-7",
+          "url": "assets/images/phat/phat-quyen-ben-nhau.png",
+          "title": "Hạnh Phúc Bên Nhau",
+          "description": "Khoảnh khắc ngọt ngào của đôi ta"
+        },
+        {
+          "id": "phat-8",
+          "url": "assets/images/phat/phat-quyen.jpeg",
+          "title": "Khoảnh Khắc Yêu Thương",
+          "description": "Những giây phút hạnh phúc bên em"
+        },
+        {
+          "id": "phat-9",
+          "url": "assets/images/phat/phat-travel.png",
+          "title": "Chuyến Du Lịch",
+          "description": "Những chuyến đi khám phá thú vị"
+        },
+        {
+          "id": "phat-10",
+          "url": "assets/images/phat/phat-work.png",
+          "title": "Công Việc",
+          "description": "Những giây phút tập trung làm việc"
+        },
+        {
+          "id": "phat-11",
+          "url": "assets/images/phat/phat_dam-cuoi-2.png",
+          "title": "Ngày Cưới 2",
+          "description": "Khoảnh khắc hạnh phúc trong ngày trọng đại"
+        },
+        {
+          "id": "phat-12",
+          "url": "assets/images/phat/phat_dam-cuoi.png",
+          "title": "Ngày Cưới 1",
+          "description": "Giây phút thiêng liêng của lễ cưới"
+        },
+        {
+          "id": "phat-13",
+          "url": "assets/images/phat/phat_ho-may-vung-tau_10-2023.png",
+          "title": "Du Lịch Vũng Tàu",
+          "description": "Chuyến đi Hồ Mây - Vũng Tàu 10/2023"
+        },
+        {
+          "id": "phat-14",
+          "url": "assets/images/phat/z6843682678824_a3a224f2f950d8bbb26193804d1d0f43.jpg",
+          "title": "Khoảnh Khắc Tự Nhiên",
+          "description": "Những giây phút đời thường ý nghĩa"
+        },
+        {
+          "id": "phat-15",
+          "url": "assets/images/phat/z6843682688942_8ae8a3bccc41f133a7025665a46240d6.jpg",
+          "title": "Nụ Cười Hạnh Phúc",
+          "description": "Nụ cười rạng rỡ trong cuộc sống"
+        },
+        {
+          "id": "phat-16",
+          "url": "assets/images/phat/z6843682691039_4659ec69633c02093c6714210b0c61b3.jpg",
+          "title": "Khoảnh Khắc Đẹp",
+          "description": "Những giây phút đáng nhớ trong đời"
+        },
+        {
+          "id": "phat-17",
+          "url": "assets/images/phat/z6843682691782_32db84b32a2f1856432503a3170088be.jpg",
+          "title": "Chân Dung Tự Nhiên",
+          "description": "Hình ảnh chân thực trong cuộc sống"
+        },
+        {
+          "id": "phat-18",
+          "url": "assets/images/phat/z6843682698030_3fcb9aaca223166784693e1bc410cf26.jpg",
+          "title": "Khoảnh Khắc Thường Ngày",
+          "description": "Những phút giây bình dị mà ý nghĩa"
+        },
+        {
+          "id": "phat-19",
+          "url": "assets/images/phat/z6843682702130_be6dd4103032582d17a53d1ed2acb5ea.jpg",
+          "title": "Nụ Cười Tươi",
+          "description": "Nụ cười rạng rỡ trong ngày mới"
+        },
+        {
+          "id": "phat-20",
+          "url": "assets/images/phat/z6843682705796_f354648f3cf01be0d21f2d52a57aa605.jpg",
+          "title": "Khoảnh Khắc Đời Thường",
+          "description": "Những giây phút đời thường đáng nhớ"
+        },
+        {
+          "id": "phat-21",
+          "url": "assets/images/phat/z6843682711688_475699ed183c3f601b5ff49734bb3edf.jpg",
+          "title": "Chân Dung Nghiêm Túc",
+          "description": "Khoảnh khắc nghiêm túc trong công việc"
+        },
+        {
+          "id": "phat-22",
+          "url": "assets/images/phat/z6843682721838_7563273053af6785397b2092df4ade28.jpg",
+          "title": "Khoảnh Khắc Suy Tư",
+          "description": "Những phút giây trầm tư"
+        },
+        {
+          "id": "phat-23",
+          "url": "assets/images/phat/z6843682733026_c449d4bd840bafdea4ccf61deaba5461.jpg",
+          "title": "Nụ Cười Tự Nhiên",
+          "description": "Nụ cười thoải mái trong cuộc sống"
+        },
+        {
+          "id": "phat-24",
+          "url": "assets/images/phat/z6843682733264_9ba32417469f92fd318571b186291266.jpg",
+          "title": "Khoảnh Khắc Đẹp",
+          "description": "Những giây phút đáng nhớ"
+        },
+        {
+          "id": "phat-25",
+          "url": "assets/images/phat/z6843682736683_12e74d7e2926653e294c7137a25b36a5.jpg",
+          "title": "Chân Dung Tự Nhiên",
+          "description": "Hình ảnh chân thực trong đời sống"
+        },
+        {
+          "id": "phat-26",
+          "url": "assets/images/phat/z6843682748876_eed8ca92a6b36b77a096a27fa8415190.jpg",
+          "title": "Khoảnh Khắc Vui Vẻ",
+          "description": "Những giây phút vui vẻ trong ngày"
+        },
+        {
+          "id": "phat-27",
+          "url": "assets/images/phat/z6843682755111_e17eba9ec070ccfe43e27f9cac824bf9.jpg",
+          "title": "Nụ Cười Hạnh Phúc",
+          "description": "Nụ cười rạng rỡ của hạnh phúc"
+        },
+        {
+          "id": "phat-28",
+          "url": "assets/images/phat/z6843682760892_ee2af16154a39a5d771a8ba289770688.jpg",
+          "title": "Khoảnh Khắc Đời Thường",
+          "description": "Những phút giây bình dị trong đời"
+        },
+        {
+          "id": "phat-29",
+          "url": "assets/images/phat/z6843682765601_3cf15eecf55196b86974ba4cc24aced4.jpg",
+          "title": "Chân Dung Tự Nhiên",
+          "description": "Hình ảnh tự nhiên trong cuộc sống"
+        },
+        {
+          "id": "phat-30",
+          "url": "assets/images/phat/z6843682773540_877882a1f1ccdb00a2e28e143704fec8.jpg",
+          "title": "Khoảnh Khắc Đẹp",
+          "description": "Những giây phút đáng nhớ"
+        },
+        {
+          "id": "phat-31",
+          "url": "assets/images/phat/z6843682775441_bfe4a4dd32c8a998dd66a66224b0fc1a.jpg",
+          "title": "Nụ Cười Tươi",
+          "description": "Nụ cười tươi tắn trong ngày"
+        },
+        {
+          "id": "phat-32",
+          "url": "assets/images/phat/z6843682777634_dde7e8995bab7e3191f19952fc25faca.jpg",
+          "title": "Khoảnh Khắc Thường Ngày",
+          "description": "Những phút giây đời thường ý nghĩa"
+        },
+        {
+          "id": "phat-33",
+          "url": "assets/images/phat/z6843682785005_af17ea3295c05a017f2aa0bb2218ab7c.jpg",
+          "title": "Chân Dung Nghiêm Túc",
+          "description": "Khoảnh khắc nghiêm túc trong công việc"
+        },
+        {
+          "id": "phat-34",
+          "url": "assets/images/phat/z6843682787307_7cb5a7fed2ef603edd1a45106663e695.jpg",
+          "title": "Khoảnh Khắc Suy Tư",
+          "description": "Những phút giây trầm tư"
+        },
+        {
+          "id": "phat-35",
+          "url": "assets/images/phat/z6843682799868_df75a26ceef12562600fac23c06b28f1.jpg",
+          "title": "Nụ Cười Tự Nhiên",
+          "description": "Nụ cười thoải mái trong cuộc sống"
+        },
+        {
+          "id": "phat-36",
+          "url": "assets/images/phat/z6843682801163_247f8a7ef50dc6826e5830d53dbed1ea.jpg",
+          "title": "Khoảnh Khắc Đẹp",
+          "description": "Những giây phút đáng nhớ"
+        },
+        {
+          "id": "phat-37",
+          "url": "assets/images/phat/z6843682801412_fdad8ff9e1e241e66893a1426fc1a288.jpg",
+          "title": "Chân Dung Tự Nhiên",
+          "description": "Hình ảnh chân thực trong đời sống"
+        },
+        {
+          "id": "phat-38",
+          "url": "assets/images/phat/z6843682806625_cf8508e3d57defa8e6b30386f4ad55ae.jpg",
+          "title": "Khoảnh Khắc Vui Vẻ",
+          "description": "Những giây phút vui vẻ trong ngày"
+        },
+        {
+          "id": "phat-39",
+          "url": "assets/images/phat/z6843682810989_248c679cb47c2f14aafe0644534f96b9.jpg",
+          "title": "Nụ Cười Hạnh Phúc",
+          "description": "Nụ cười rạng rỡ của hạnh phúc"
+        },
+        {
+          "id": "phat-40",
+          "url": "assets/images/phat/z6843682821681_a3faa46f09be2ce3dead89ad670d34e4.jpg",
+          "title": "Khoảnh Khắc Đời Thường",
+          "description": "Những phút giây bình dị trong đời"
+        },
+        {
+          "id": "phat-41",
+          "url": "assets/images/phat/z6843682821944_a0bafa5333624a8155e34fb1102ed4e4.jpg",
+          "title": "Chân Dung Tự Nhiên",
+          "description": "Hình ảnh tự nhiên trong cuộc sống"
+        },
+        {
+          "id": "phat-42",
+          "url": "assets/images/phat/z6843682831601_2a4899df6d5c708382d966f031209c59.jpg",
+          "title": "Khoảnh Khắc Đẹp",
+          "description": "Những giây phút đáng nhớ"
+        },
+        {
+          "id": "phat-43",
+          "url": "assets/images/phat/z6843682837403_6a83bb824a83670b318f277c05b5a65b.jpg",
+          "title": "Nụ Cười Tươi",
+          "description": "Nụ cười tươi tắn trong ngày"
+        },
+        {
+          "id": "phat-44",
+          "url": "assets/images/phat/z6843682839929_b49435cdbe58749bab5025d7780640d0.jpg",
+          "title": "Khoảnh Khắc Thường Ngày",
+          "description": "Những phút giây đời thường ý nghĩa"
+        },
+        {
+          "id": "phat-45",
+          "url": "assets/images/phat/z6843682847277_5f8844798c7eaaa90aa6906d50df3f92.jpg",
+          "title": "Chân Dung Nghiêm Túc",
+          "description": "Khoảnh khắc nghiêm túc trong công việc"
+        },
+        {
+          "id": "phat-46",
+          "url": "assets/images/phat/z6843682849734_760ddd17fbd438566cdb5981d472f63d.jpg",
+          "title": "Khoảnh Khắc Suy Tư",
+          "description": "Những phút giây trầm tư"
+        },
+        {
+          "id": "phat-47",
+          "url": "assets/images/phat/z6843682858131_1c86ad34b42bde86cbc036cf7f562206.jpg",
+          "title": "Nụ Cười Tự Nhiên",
+          "description": "Nụ cười thoải mái trong cuộc sống"
+        },
+        {
+          "id": "phat-48",
+          "url": "assets/images/phat/z6843682862558_7606482c774384e7fa4cbaff27ff8200.jpg",
+          "title": "Khoảnh Khắc Đẹp",
+          "description": "Những giây phút đáng nhớ"
+        },
+        {
+          "id": "phat-49",
+          "url": "assets/images/phat/z6843682862808_fc48bc1de10a07788df32c989e820040.jpg",
+          "title": "Chân Dung Tự Nhiên",
+          "description": "Hình ảnh chân thực trong đời sống"
+        },
+        {
+          "id": "phat-50",
+          "url": "assets/images/phat/z6843682870568_416d8f06779601d897aa20a27d2f8e81.jpg",
+          "title": "Khoảnh Khắc Vui Vẻ",
+          "description": "Những giây phút vui vẻ trong ngày"
+        },
+        {
+          "id": "phat-51",
+          "url": "assets/images/phat/z6843682880102_a975966a4b5f4d0b574da155f338b606.jpg",
+          "title": "Nụ Cười Hạnh Phúc",
+          "description": "Nụ cười rạng rỡ của hạnh phúc"
+        },
+        {
+          "id": "phat-52",
+          "url": "assets/images/phat/z6843682884337_80f1a131d64aa40dd504f7a63bd23b7f.jpg",
+          "title": "Khoảnh Khắc Đời Thường",
+          "description": "Những phút giây bình dị trong đời"
+        },
+        {
+          "id": "phat-53",
+          "url": "assets/images/phat/z6843682889471_41e20de7b4208a66425b9b6687af4b44.jpg",
+          "title": "Chân Dung Tự Nhiên",
+          "description": "Hình ảnh tự nhiên trong cuộc sống"
+        },
+        {
+          "id": "phat-54",
+          "url": "assets/images/phat/z6843682896201_ea5cb269bb14d38255d781d2dd689a28.jpg",
+          "title": "Khoảnh Khắc Đẹp",
+          "description": "Những giây phút đáng nhớ"
+        },
+        {
+          "id": "phat-55",
+          "url": "assets/images/phat/z6843682903723_47ba779878d64b628ccbfe6f8974018c.jpg",
+          "title": "Nụ Cười Tươi",
+          "description": "Nụ cười tươi tắn trong ngày"
+        },
+        {
+          "id": "phat-56",
+          "url": "assets/images/phat/z6843682908006_f464f958e7cd8ac90be6ec107c0cd621.jpg",
+          "title": "Khoảnh Khắc Thường Ngày",
+          "description": "Những phút giây đời thường ý nghĩa"
+        },
+        {
+          "id": "phat-57",
+          "url": "assets/images/phat/z6843682908743_47f38453cf9b0ae07080d7d7fa0c0c84.jpg",
+          "title": "Chân Dung Nghiêm Túc",
+          "description": "Khoảnh khắc nghiêm túc trong công việc"
+        },
+        {
+          "id": "phat-58",
+          "url": "assets/images/phat/z6843682929191_7714d7ccf73e3fe05c50d1467c2cc215.jpg",
+          "title": "Khoảnh Khắc Suy Tư",
+          "description": "Những phút giây trầm tư"
         }
       ]
     }
   ]
-} 
+}

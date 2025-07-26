@@ -1,14 +1,41 @@
 <!-- Memory Places Section -->
-<div class="places-section flat-layout">
+<div class="places-section">
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">
         <i class="pi pi-map-marker"></i>
         Những Địa Điểm Kỷ Niệm
       </h2>
-      <p class="section-subtitle">Mỗi nơi chúng ta đến là một kỷ niệm đáng nhớ</p>
+      <p class="section-subtitle">Hành trình tình yêu qua những vùng đất mới</p>
     </div>
 
-    <app-album-gallery [images]="albumImages"></app-album-gallery>
+    <div class="gallery-container" *ngIf="!loading">
+      <!-- Gallery Grid -->
+      <div class="gallery-grid">
+        <div class="gallery-item" *ngFor="let place of places" [title]="place.name">
+          <div class="gallery-image">
+            <img [src]="place.image" [alt]="place.name" loading="lazy">
+            <div class="image-overlay">
+              <div class="overlay-content">
+                <h3 class="place-name">{{place.name}}</h3>
+                <span class="location">
+                  <i class="pi pi-map-marker"></i>
+                  {{place.location}}
+                </span>
+                <p class="place-description">{{place.description}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loading State -->
+    <div class="loading-state" *ngIf="loading">
+      <div class="loading-spinner">
+        <i class="pi pi-spin pi-spinner"></i>
+        <span>Đang tải kỷ niệm...</span>
+      </div>
+    </div>
   </div>
 </div>

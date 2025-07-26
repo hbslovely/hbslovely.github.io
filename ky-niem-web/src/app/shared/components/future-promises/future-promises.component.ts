@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Promise, Goal } from '../../models/love.model';
+import { Promise, Goal } from '../../../shared/models';
 
 @Component({
   selector: 'app-future-promises',

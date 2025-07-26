@@ -3,27 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlbumDetailHeaderComponent } from '../album-detail-header/album-detail-header.component';
 import { AlbumGalleryComponent } from '../../../../shared/components/album-gallery/album-gallery.component';
-
-interface Photo {
-  id: string;
-  url: string;
-  title: string;
-  description?: string;
-}
-
-interface Album {
-  id: string;
-  title: string;
-  description: string;
-  coverImage: string;
-  photos: Photo[];
-}
-
-interface AlbumGalleryImage {
-  url: string;
-  title: string;
-  description?: string;
-}
+import { Album, Photo, AlbumGalleryImage } from '../../../../shared/models';
 
 @Component({
   selector: 'app-album-detail',
@@ -55,15 +35,19 @@ export class AlbumDetailComponent implements OnInit {
       const data = await response.json();
       this.album = data.albums.find((a: Album) => a.id === albumId);
       
-      if (!this.album) {
+      if (!this.album || !this.album.photos) {
         this.router.navigate(['/album-anh']);
         return;
       }
 
+      // Properly map photos to match AlbumGalleryImage interface
       this.albumPhotos = this.album.photos.map(photo => ({
+        src: photo.url,
+        name: photo.title,
+        description: photo.description,
         url: photo.url,
         title: photo.title,
-        description: photo.description
+        caption: photo.description
       }));
     } catch (error) {
       console.error('Error loading album data:', error);
@@ -72,11 +56,12 @@ export class AlbumDetailComponent implements OnInit {
   }
 
   getAlbumPreviewPhotos(): string[] {
-    return this.album?.photos.slice(0, 3).map(photo => photo.url) || [];
+    if (!this.album?.photos) return [];
+    return this.album.photos.slice(0, 3).map(photo => photo.url);
   }
 
   getMasonryColumns(): Photo[][] {
-    if (!this.album) return [];
+    if (!this.album?.photos) return [[], [], []];
     const columns: Photo[][] = [[], [], []];
     this.album.photos.forEach((photo, index) => {
       columns[index % 3].push(photo);
@@ -97,20 +82,20 @@ export class AlbumDetailComponent implements OnInit {
   }
 
   canNavigatePrev(): boolean {
-    if (!this.album || !this.selectedPhoto) return false;
+    if (!this.album?.photos || !this.selectedPhoto) return false;
     const currentIndex = this.album.photos.findIndex(p => p.id === this.selectedPhoto?.id);
     return currentIndex > 0;
   }
 
   canNavigateNext(): boolean {
-    if (!this.album || !this.selectedPhoto) return false;
+    if (!this.album?.photos || !this.selectedPhoto) return false;
     const currentIndex = this.album.photos.findIndex(p => p.id === this.selectedPhoto?.id);
     return currentIndex < this.album.photos.length - 1;
   }
 
   prevPhoto(event: Event) {
     event.stopPropagation();
-    if (!this.album || !this.selectedPhoto) return;
+    if (!this.album?.photos || !this.selectedPhoto) return;
     const currentIndex = this.album.photos.findIndex(p => p.id === this.selectedPhoto?.id);
     if (currentIndex > 0) {
       this.selectedPhoto = this.album.photos[currentIndex - 1];
@@ -119,7 +104,7 @@ export class AlbumDetailComponent implements OnInit {
 
   nextPhoto(event: Event) {
     event.stopPropagation();
-    if (!this.album || !this.selectedPhoto) return;
+    if (!this.album?.photos || !this.selectedPhoto) return;
     const currentIndex = this.album.photos.findIndex(p => p.id === this.selectedPhoto?.id);
     if (currentIndex < this.album.photos.length - 1) {
       this.selectedPhoto = this.album.photos[currentIndex + 1];

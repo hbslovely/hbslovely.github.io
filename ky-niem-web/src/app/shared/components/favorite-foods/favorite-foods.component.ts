@@ -1,13 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PersonFilterPipe } from '../../pipes/person-filter.pipe';
-
-interface Food {
-  person: string;
-  dish: string;
-  story: string;
-  feeling: string;
-}
+import { Food } from '../../models';
 
 @Component({
   selector: 'app-favorite-foods',

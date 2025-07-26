@@ -26,10 +26,6 @@ export const routes: Routes = [
     loadChildren: () => import('./pages/album-anh/album-anh.routes').then(m => m.ALBUM_ANH_ROUTES)
   },
   {
-    path: 'tips-vo-chong',
-    loadChildren: () => import('./pages/tips-vo-chong/tips-vo-chong.routes').then(m => m.TipsVoChongRoutes)
-  },
-  {
     path: '',
     redirectTo: 'chao-mung',
     pathMatch: 'full'

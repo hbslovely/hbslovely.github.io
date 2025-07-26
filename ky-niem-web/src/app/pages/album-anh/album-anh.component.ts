@@ -2,28 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { AlbumHeaderComponent } from './components/album-header/album-header.component';
-import { AlbumDetailHeaderComponent } from './components/album-detail-header/album-detail-header.component';
-
-interface Album {
-  id: string;
-  title: string;
-  description: string;
-  coverImage: string;
-  photoCount: number;
-}
-
-interface AlbumData {
-  id: string;
-  title: string;
-  description: string;
-  coverImage: string;
-  photos: string[];
-}
+import { Album, AlbumData, AlbumDataResponse } from '../../shared/models';
 
 @Component({
   selector: 'app-album-anh',
   standalone: true,
-  imports: [ CommonModule, AlbumHeaderComponent, AlbumDetailHeaderComponent ],
+  imports: [ CommonModule, AlbumHeaderComponent ],
   templateUrl: './album-anh.component.html',
   styleUrls: ['./album-anh.component.scss']
 })
@@ -36,7 +20,7 @@ export class AlbumAnhComponent implements OnInit {
   async ngOnInit() {
     try {
       const response = await fetch('assets/data/album-data.json');
-      const data: { albums: AlbumData[] } = await response.json();
+      const data: AlbumDataResponse = await response.json();
       this.albums = data.albums.map((album: AlbumData) => ({
         id: album.id,
         title: album.title,
@@ -50,7 +34,7 @@ export class AlbumAnhComponent implements OnInit {
   }
 
   getTotalPhotos(): number {
-    return this.albums.reduce((total, album) => total + album.photoCount, 0);
+    return this.albums.reduce((total, album) => total + (album.photoCount || 0), 0);
   }
 
   getRandomPreviewPhotos(count: number): string[] {

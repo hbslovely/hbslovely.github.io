@@ -29,12 +29,6 @@
       "link": "/album-anh",
       "icon": "pi pi-camera",
       "description": "Những khoảnh khắc hạnh phúc của chúng ta"
-    },
-    {
-      "text": "Bí Quyết Hạnh Phúc",
-      "link": "/tips-vo-chong",
-      "icon": "pi pi-heart-fill",
-      "description": "Những điều nhỏ nhặt tạo nên hạnh phúc lớn lao"
     }
   ]
 } 

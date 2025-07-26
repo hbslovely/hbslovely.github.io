@@ -1,11 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-export interface Quote {
-  icon: string;
-  quote: string;
-  author: string;
-}
+import { LoveQuote } from '../../models';
 
 @Component({
   selector: 'app-love-quotes',
@@ -15,10 +10,10 @@ export interface Quote {
   imports: [CommonModule]
 })
 export class LoveQuotesComponent {
-  @Input() quotes: Quote[] = [];
+  @Input() quotes: LoveQuote[] = [];
 
-  leftColumnQuotes: Quote[] = [];
-  rightColumnQuotes: Quote[] = [];
+  leftColumnQuotes: LoveQuote[] = [];
+  rightColumnQuotes: LoveQuote[] = [];
 
   ngOnInit() {
     // Chia quotes thành 2 cột

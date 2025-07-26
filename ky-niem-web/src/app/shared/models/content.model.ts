@@ -1,0 +1,78 @@
+export interface Song {
+  id: number;
+  title: string;
+  artist: string;
+  url?: string;
+  coverImage?: string;
+  description?: string;
+  date?: string;
+}
+
+export interface Place {
+  id: number;
+  name: string;
+  location: string;
+  image: string;
+  date: string;
+  description?: string;
+  coordinates?: {
+    lat: number;
+    lng: number;
+  };
+}
+
+export interface Quote {
+  id?: number;
+  text: string;
+  author: string;
+  date?: string;
+  context?: string;
+  icon?: string;
+}
+
+export interface Gift {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  date: string;
+  occasion?: string;
+  from?: string;
+  to?: string;
+}
+
+export interface Food {
+  person: string;
+  dish: string;
+  story: string;
+  feeling: string;
+}
+
+export interface Promise {
+  id: number;
+  title: string;
+  description: string;
+  icon: string;
+  tags: string[];
+}
+
+export interface Goal {
+  id: number;
+  title: string;
+  timeframe: string;
+  icon: string;
+}
+
+export interface LoveQuote {
+  icon: string;
+  quote: string;
+  author: string;
+}
+
+export interface MemoryPlace {
+  id: string;
+  name: string;
+  location: string;
+  image: string;
+  description: string;
+} 

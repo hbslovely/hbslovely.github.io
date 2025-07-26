@@ -1,37 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-
-interface HusbandData {
-  basicInfo: {
-    name: string;
-    title: string;
-    description: string;
-    loveMessage: string;
-    tags: string[];
-    stats: Array<{
-      icon: string;
-      label: string;
-      value: string;
-    }>;
-  };
-  traits: Array<{
-    icon: string;
-    title: string;
-    description: string;
-  }>;
-  hobbies: Array<{
-    icon: string;
-    name: string;
-    description: string;
-  }>;
-  professionalSkills: string[];
-  softSkills: string[];
-  funFacts: Array<{
-    title: string;
-    description: string;
-  }>;
-}
+import { HusbandData } from '../../shared/models';
 
 @Component({
   selector: 'app-thong-tin-chong',

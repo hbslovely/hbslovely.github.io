@@ -1,27 +1,7 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-
-export interface AlbumGalleryImage {
-  src: string;
-  name?: string;
-  description?: string;
-  caption?: string;
-}
-
-export interface Album {
-  id: string;
-  title: string;
-  description: string;
-  coverImage: string;
-  photoCount: number;
-  photos: {
-    id: string;
-    url: string;
-    title: string;
-    description: string;
-  }[];
-}
+import { AlbumGalleryImage } from '../../models';
 
 @Component({
   selector: 'app-album-gallery',
@@ -31,19 +11,7 @@ export interface Album {
   styleUrls: ['./album-gallery.component.scss']
 })
 export class AlbumGalleryComponent implements OnInit, OnDestroy {
-  @Input() albumId?: string;
-  @Input() set images(value: any[]) {
-    if (value && value.length > 0) {
-      this._images = value.map(img => this.normalizeImageData(img));
-    } else {
-      this._images = [];
-    }
-  }
-  get images(): AlbumGalleryImage[] {
-    return this._images;
-  }
-  
-  private _images: AlbumGalleryImage[] = [];
+  @Input() images: AlbumGalleryImage[] = [];
   selectedIndex = 0;
   private autoPlayInterval: any;
   private readonly AUTO_PLAY_INTERVAL = 4000;
@@ -52,9 +20,6 @@ export class AlbumGalleryComponent implements OnInit, OnDestroy {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    if (this.albumId) {
-      this.loadAlbumData();
-    }
     this.startAutoPlay();
   }
 
@@ -62,26 +27,13 @@ export class AlbumGalleryComponent implements OnInit, OnDestroy {
     this.stopAutoPlay();
   }
 
-  private normalizeImageData(image: any): AlbumGalleryImage {
+  private normalizeImageData(image: AlbumGalleryImage): AlbumGalleryImage {
     return {
       src: image.src || image.url || '',
       name: image.name || image.title || '',
       description: image.description || '',
       caption: image.caption || ''
     };
-  }
-
-  private loadAlbumData() {
-    this.http.get<{ albums: Album[] }>('assets/data/album-data.json').subscribe(data => {
-      const album = data.albums.find(a => a.id === this.albumId);
-      if (album) {
-        this.images = album.photos.map(photo => ({
-          src: photo.url,
-          name: photo.title,
-          description: photo.description
-        }));
-      }
-    });
   }
 
   selectImage(index: number) {

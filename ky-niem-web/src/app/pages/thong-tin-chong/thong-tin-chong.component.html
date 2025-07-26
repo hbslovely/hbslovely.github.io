@@ -186,19 +186,13 @@
   </section>
 
   <!-- Skills Section -->
-  <section class="skills-section">
+  <section class="skills-section" style="margin-bottom: 4rem;">
     <h2>Kỹ Năng & Tài Năng</h2>
     <div class="skills-grid">
-      <div class="skill-category">
-        <h3>Kỹ năng chuyên môn</h3>
+      <div class="skill-category" *ngFor="let category of husbandData.professionalSkillCategories">
+        <h3>{{ category.category }}</h3>
         <div class="skill-tags">
-          <span class="skill-tag" *ngFor="let skill of husbandData.professionalSkills">{{ skill }}</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h3>Kỹ năng mềm</h3>
-        <div class="skill-tags">
-          <span class="skill-tag" *ngFor="let skill of husbandData.softSkills">{{ skill }}</span>
+          <span class="skill-tag" *ngFor="let skill of category.skills">{{ skill }}</span>
         </div>
       </div>
     </div>
@@ -595,6 +589,18 @@
   border-radius: 8px;
   border: 1px solid #eee;
   box-shadow: none;
+  transition: transform 0.3s ease;
+}
+
+.skill-category:hover {
+  transform: translateY(-5px);
+}
+
+.skill-category h3 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  font-weight: 500;
 }
 
 .skill-tags {
@@ -610,6 +616,23 @@
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.9rem;
+  color: #4169e1;
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  background: #4169e1;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .skill-category {
+    padding: 1.5rem;
+  }
 }
 
 /* Moments Section */
