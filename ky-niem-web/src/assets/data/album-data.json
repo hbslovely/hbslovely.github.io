@@ -590,12 +590,6 @@
       "photoCount": 10,
       "photos": [
         {
-          "id": "wedding-1",
-          "url": "assets/images/albums/ngay-cuoi_3-2022/1.png",
-          "title": "Khoảnh khắc hạnh phúc",
-          "description": "Nụ cười rạng rỡ trong ngày vui"
-        },
-        {
           "id": "wedding-2",
           "url": "assets/images/albums/ngay-cuoi_3-2022/2.png",
           "title": "Lễ thành hôn",
@@ -608,34 +602,10 @@
           "description": "Những bức ảnh đầu tiên của vợ chồng son"
         },
         {
-          "id": "wedding-4",
-          "url": "assets/images/albums/ngay-cuoi_3-2022/4.png",
-          "title": "Tiệc cưới",
-          "description": "Không khí vui vẻ trong buổi tiệc"
-        },
-        {
           "id": "wedding-5",
           "url": "assets/images/albums/ngay-cuoi_3-2022/5.png",
           "title": "Gia đình",
           "description": "Khoảnh khắc ấm áp bên gia đình"
-        },
-        {
-          "id": "wedding-6",
-          "url": "assets/images/albums/ngay-cuoi_3-2022/6.png",
-          "title": "Bạn bè",
-          "description": "Những người bạn thân yêu đến chung vui"
-        },
-        {
-          "id": "wedding-7",
-          "url": "assets/images/albums/ngay-cuoi_3-2022/7.png",
-          "title": "Khoảnh khắc đáng nhớ",
-          "description": "Những giây phút không thể nào quên"
-        },
-        {
-          "id": "wedding-8",
-          "url": "assets/images/albums/ngay-cuoi_3-2022/8.png",
-          "title": "Niềm vui ngày cưới",
-          "description": "Nụ cười hạnh phúc của cô dâu chú rể"
         },
         {
           "id": "wedding-9",
