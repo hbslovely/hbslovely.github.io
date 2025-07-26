@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { PlaceDetailComponent } from './pages/place-detail/place-detail.component';
 
 export const routes: Routes = [
   {
@@ -24,6 +25,10 @@ export const routes: Routes = [
   {
     path: 'album-anh/:id',
     loadChildren: () => import('./pages/album-anh/album-anh.routes').then(m => m.ALBUM_ANH_ROUTES)
+  },
+  {
+    path: 'place/:id',
+    component: PlaceDetailComponent
   },
   {
     path: '',

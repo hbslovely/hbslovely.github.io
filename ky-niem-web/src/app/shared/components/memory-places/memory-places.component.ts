@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 import { MemoryPlace } from '../../models';
+import { PlaceCardComponent } from '../place-card/place-card.component';
 
 @Component({
   selector: 'app-memory-places',
   templateUrl: './memory-places.component.html',
   styleUrls: ['./memory-places.component.scss'],
   standalone: true,
-  imports: [CommonModule]
+  imports: [CommonModule, PlaceCardComponent]
 })
 export class MemoryPlacesComponent implements OnInit {
   places: MemoryPlace[] = [];

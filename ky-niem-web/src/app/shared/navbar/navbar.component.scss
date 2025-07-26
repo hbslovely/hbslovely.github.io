@@ -5,6 +5,7 @@ $primary-green: #4CAF50;
 $light-green: #E8F5E9;
 $hover-green: #81C784;
 $text-color: #2E7D32;
+$active-text-color: darken($text-color, 15%);
 
 // Background Animations
 @keyframes floatingHearts {
@@ -288,7 +289,9 @@ $text-color: #2E7D32;
   }
 
   &.active {
-    color: $primary-green;
+    color: $active-text-color;
+    font-weight: 500;
+    letter-spacing: 0.2px;
 
     &::after {
       content: '';
@@ -296,15 +299,26 @@ $text-color: #2E7D32;
       bottom: -2px;
       left: 50%;
       transform: translateX(-50%);
-      width: 20px;
+      width: 15px;
       height: 2px;
-      background: $primary-green;
+      background: $active-text-color;
       border-radius: 2px;
+      opacity: 0.7;
     }
 
-    .icon-background {
-      transform: scale(1);
-      opacity: 0.3;
+    .icon-wrapper {
+      i {
+        transform: scale(1.1);
+      }
+      
+      .icon-background {
+        transform: scale(1);
+        opacity: 0.15;
+      }
+    }
+
+    .nav-text {
+      text-shadow: 0 0 0.5px currentColor;
     }
   }
 }
@@ -531,31 +545,33 @@ $text-color: #2E7D32;
 
     // Active State
     &.active {
-      color: $primary-green;
+      color: $active-text-color;
 
       .mobile-icon-wrapper {
         .icon-highlight {
           transform: scale(1);
-          background: rgba($light-green, 0.4);
+          background: rgba($light-green, 0.25);
         }
 
         i {
-          transform: translateY(-2px);
+          transform: translateY(-2px) scale(1.1);
         }
 
         .icon-ripple {
-          animation: rippleEffect 1.5s ease-out infinite;
+          animation: rippleEffect 2s ease-out infinite;
         }
       }
 
       .mobile-text {
         opacity: 1;
         font-weight: 500;
+        letter-spacing: 0.2px;
+        text-shadow: 0 0 0.5px currentColor;
       }
 
       .active-indicator {
         .indicator-dot {
-          opacity: 1;
+          opacity: 0.7;
           transform: scale(1);
           animation: dotScale 0.3s ease-out;
         }
@@ -563,6 +579,7 @@ $text-color: #2E7D32;
         .indicator-line {
           transform: scaleX(1);
           animation: lineGrow 0.3s ease-out;
+          opacity: 0.7;
         }
       }
     }

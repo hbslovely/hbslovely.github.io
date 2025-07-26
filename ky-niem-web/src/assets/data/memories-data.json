@@ -1,34 +1,34 @@
 {
   "memoriesGallery": [
-    { 
-      "id": 1, 
-      "src": "assets/images/ki-niem/lan-dau-gap-nhau.png", 
-      "description": "Lần đầu gặp nhau - Khoảnh khắc định mệnh" 
+    {
+      "id": 1,
+      "src": "assets/images/ki-niem/lan-dau-gap-nhau.png",
+      "description": "Lần đầu gặp nhau - Khoảnh khắc định mệnh"
     },
-    { 
-      "id": 2, 
-      "src": "assets/images/ki-niem/trao-duyen.png", 
-      "description": "Trao duyên - Những ngày đầu yêu nhau" 
+    {
+      "id": 2,
+      "src": "assets/images/ki-niem/trao-duyen.png",
+      "description": "Trao duyên - Những ngày đầu yêu nhau"
     },
-    { 
-      "id": 3, 
-      "src": "assets/images/ki-niem/ky-niem-quen-nhau.png", 
-      "description": "Kỷ niệm ngày quen nhau" 
+    {
+      "id": 3,
+      "src": "assets/images/ki-niem/ky-niem-quen-nhau.png",
+      "description": "Kỷ niệm ngày quen nhau"
     },
-    { 
-      "id": 4, 
-      "src": "assets/images/ki-niem/cuoi-hoi.png", 
-      "description": "Cưới hỏi - Ngày trọng đại" 
+    {
+      "id": 4,
+      "src": "assets/images/ki-niem/cuoi-hoi.png",
+      "description": "Cưới hỏi - Ngày trọng đại"
     },
-    { 
-      "id": 5, 
-      "src": "assets/images/hinh-cuoi/mang-thai.png", 
-      "description": "Mang thai - Chờ đón thiên thần nhỏ" 
+    {
+      "id": 5,
+      "src": "assets/images/hinh-cuoi/mang-thai.png",
+      "description": "Mang thai - Chờ đón thiên thần nhỏ"
     },
-    { 
-      "id": 6, 
-      "src": "assets/images/hinh-cuoi/cung-nhau.png", 
-      "description": "Cùng nhau - Hạnh phúc mỗi ngày" 
+    {
+      "id": 6,
+      "src": "assets/images/hinh-cuoi/cung-nhau.png",
+      "description": "Cùng nhau - Hạnh phúc mỗi ngày"
     }
   ],
   "timeline": [
@@ -73,7 +73,7 @@
     },
     {
       "quote": "Em yêu anh không phải vì anh hoàn hảo, mà vì anh làm cho cuộc sống của em trở nên hoàn hảo.",
-      "author": "Heo Bỉm Sửa",
+      "author": "Bé \"Shi\"",
       "icon": "pi pi-star"
     }
   ],

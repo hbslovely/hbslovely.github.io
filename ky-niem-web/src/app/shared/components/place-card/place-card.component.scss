@@ -1,0 +1,144 @@
+.place-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 360px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+
+    .image-container {
+      height: 100%;
+
+      .image-overlay {
+        opacity: 1;
+
+        .location-tag, .view-more {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      img {
+        transform: scale(1.05);
+      }
+    }
+
+    .card-body {
+      height: 0;
+      padding: 0;
+      opacity: 0;
+    }
+  }
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .image-container {
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+    transition: height 0.3s ease;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+
+      .location-tag {
+        position: absolute;
+        left: 1.5rem;
+        bottom: 1.5rem;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 0.4rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        color: #4caf50;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        backdrop-filter: blur(4px);
+        transform: translateY(20px);
+        opacity: 0;
+        transition: all 0.3s ease;
+
+        i {
+          font-size: 0.75rem;
+        }
+      }
+
+      .view-more {
+        position: absolute;
+        right: 1.5rem;
+        bottom: 1.5rem;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(76, 175, 80, 0.9);
+        border-radius: 50%;
+        backdrop-filter: blur(4px);
+        transform: translateY(20px);
+        opacity: 0;
+        transition: all 0.3s ease;
+
+        i {
+          color: white;
+          font-size: 1rem;
+          transition: transform 0.3s ease;
+        }
+
+        &:hover {
+          background: rgba(76, 175, 80, 1);
+          
+          i {
+            transform: translateX(2px);
+          }
+        }
+      }
+    }
+  }
+
+  .card-body {
+    height: 100px;
+    padding: 1rem 1.5rem;
+    background: #e8f5e9;
+    transition: all 0.3s ease;
+
+    .place-name {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #1b5e20;
+      margin: 0 0 0.5rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .description {
+      color: #2e7d32;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+}

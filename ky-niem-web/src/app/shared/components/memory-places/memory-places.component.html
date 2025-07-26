@@ -12,21 +12,10 @@
     <div class="gallery-container" *ngIf="!loading">
       <!-- Gallery Grid -->
       <div class="gallery-grid">
-        <div class="gallery-item" *ngFor="let place of places" [title]="place.name">
-          <div class="gallery-image">
-            <img [src]="place.image" [alt]="place.name" loading="lazy">
-            <div class="image-overlay">
-              <div class="overlay-content">
-                <h3 class="place-name">{{place.name}}</h3>
-                <span class="location">
-                  <i class="pi pi-map-marker"></i>
-                  {{place.location}}
-                </span>
-                <p class="place-description">{{place.description}}</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <app-place-card
+          *ngFor="let otherPlace of places"
+          [place]="otherPlace">
+        </app-place-card>
       </div>
     </div>
 

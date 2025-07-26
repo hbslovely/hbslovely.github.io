@@ -1,0 +1,205 @@
+<div class="place-detail-page">
+  <!-- Loading State -->
+  <div class="loading-state" *ngIf="loading">
+    <div class="loading-spinner">
+      <i class="pi pi-spin pi-spinner"></i>
+      <span>Đang tải thông tin...</span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="main-content" *ngIf="!loading && place">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <img [src]="place.image" [alt]="place.name" class="hero-image">
+      <div class="place-info-overlay">
+        <a [routerLink]="['/']" class="back-button">
+          <i class="pi pi-arrow-left"></i>
+          <span>Quay về</span>
+        </a>
+        <h1>{{place.name}}</h1>
+        <div class="location">
+          <i class="pi pi-map-marker"></i>
+          <span>{{place.location}}</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Details Section -->
+    <section class="details-section">
+      <div class="container">
+        <!-- Description -->
+        <div class="detail-block">
+          <h2>
+            <i class="pi pi-info-circle"></i>
+            Giới thiệu
+          </h2>
+          <p [innerHTML]="place.detailedDescription"></p>
+        </div>
+
+        <!-- All Foods -->
+        <div class="detail-block" *ngIf="place.recommendedFood?.length || place.localFood?.length">
+          <h2>
+            <i class="pi pi-heart"></i>
+            Ẩm thực địa phương
+          </h2>
+          <div class="food-list">
+            <div class="food-grid">
+              <!-- Recommended Foods -->
+              <div class="food-item" *ngFor="let food of place.recommendedFood">
+                <div class="food-header">
+                  <h4>{{food.name}}</h4>
+                  <span class="food-tag recommended">
+                    <i class="pi pi-star"></i>
+                    Món nên thử
+                  </span>
+                </div>
+                <p>{{food.description}}</p>
+                <div class="food-info">
+                  <span class="restaurant" *ngIf="food.restaurant">
+                    <i class="pi pi-home"></i>
+                    {{food.restaurant}}
+                  </span>
+                  <span class="price" *ngIf="food.price">
+                    <i class="pi pi-tag"></i>
+                    {{food.price}}
+                  </span>
+                </div>
+              </div>
+
+              <!-- Local Foods -->
+              <div class="food-item" *ngFor="let food of place.localFood">
+                <div class="food-header">
+                  <h4>{{food.name}}</h4>
+                  <span class="food-tag local">
+                    <i class="pi pi-heart"></i>
+                    Đặc sản
+                  </span>
+                </div>
+                <p>{{food.description}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- All Attractions -->
+        <div class="detail-block" *ngIf="place.attractions || place.nearbyAttractions?.length">
+          <h2>
+            <i class="pi pi-map"></i>
+            Địa điểm tham quan
+          </h2>
+
+          <!-- Nearby Attractions -->
+          <div class="attraction-section" *ngIf="place.nearbyAttractions?.length">
+            <h3>
+              <i class="pi pi-compass"></i>
+              Điểm du lịch gần đó
+            </h3>
+            <div class="attraction-list">
+              <div class="attraction-item" *ngFor="let attraction of place.nearbyAttractions">
+                <div class="attraction-content">
+                  <h4>{{attraction.name}}</h4>
+                  <p>{{attraction.description}}</p>
+                  <div class="attraction-info">
+                    <span class="distance">
+                      <i class="pi pi-map-marker"></i>
+                      Cách {{attraction.distance}}
+                    </span>
+                    <span class="travel-time">
+                      <i class="pi pi-clock"></i>
+                      {{attraction.travelTime}}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Historical Sites -->
+          <div class="attraction-section" *ngIf="place.attractions?.historical?.length">
+            <h3>
+              <i class="pi pi-building"></i>
+              Di tích lịch sử
+            </h3>
+            <div class="attraction-list">
+              <div class="attraction-item" *ngFor="let site of place.attractions.historical">
+                <div class="attraction-content">
+                  <h4>{{site.name}}</h4>
+                  <p>{{site.description}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Religious Sites -->
+          <div class="attraction-section" *ngIf="place.attractions?.religious?.length">
+            <h3>
+              <i class="pi pi-home"></i>
+              Công trình tôn giáo
+            </h3>
+            <div class="attraction-list">
+              <div class="attraction-item" *ngFor="let site of place.attractions.religious">
+                <div class="attraction-content">
+                  <h4>{{site.name}}</h4>
+                  <p>{{site.description}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Entertainment -->
+          <div class="attraction-section" *ngIf="place.attractions?.entertainment?.length">
+            <h3>
+              <i class="pi pi-ticket"></i>
+              Khu vui chơi giải trí
+            </h3>
+            <div class="attraction-list">
+              <div class="attraction-item" *ngFor="let site of place.attractions.entertainment">
+                <div class="attraction-content">
+                  <h4>{{site.name}}</h4>
+                  <p>{{site.description}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- How to Get There -->
+        <div class="detail-block">
+          <h2>
+            <i class="pi pi-directions"></i>
+            Cách đến nơi
+          </h2>
+          <div class="info-content">
+            <p>{{place.howToGet}}</p>
+          </div>
+        </div>
+
+        <!-- Best Time to Visit -->
+        <div class="detail-block">
+          <h2>
+            <i class="pi pi-calendar"></i>
+            Thời điểm thích hợp
+          </h2>
+          <div class="info-content">
+            <p>{{place.bestTimeToVisit}}</p>
+          </div>
+        </div>
+
+        <!-- Other Places -->
+        <div class="other-places">
+          <h2>
+            <i class="pi pi-images"></i>
+            Địa điểm khác
+          </h2>
+          <div class="places-grid">
+            <app-place-card 
+              *ngFor="let otherPlace of otherPlaces" 
+              [place]="otherPlace">
+            </app-place-card>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
