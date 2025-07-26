@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AlbumGalleryComponent, AlbumGalleryImage } from '../../shared/components/album-gallery/album-gallery.component';
+import { AlbumHeaderComponent } from './components/album-header/album-header.component';
+import { AlbumDetailHeaderComponent } from './components/album-detail-header/album-detail-header.component';
 
 interface Photo {
   id: string | number;
@@ -21,7 +23,7 @@ interface Album {
 @Component({
   selector: 'app-album-anh',
   standalone: true,
-  imports: [CommonModule, AlbumGalleryComponent],
+  imports: [ CommonModule, AlbumGalleryComponent, AlbumHeaderComponent, AlbumDetailHeaderComponent ],
   templateUrl: './album-anh.component.html',
   styleUrls: ['./album-anh.component.scss']
 })
@@ -32,7 +34,7 @@ export class AlbumAnhComponent implements OnInit {
   selectedAlbumPhotos: AlbumGalleryImage[] = [];
   selectedPhoto: Photo | null = null;
   viewMode: 'grid' | 'list' = 'grid';
-  detailViewMode: 'grid' | 'masonry' | 'carousel' = 'grid';
+  detailViewMode: 'masonry' | 'carousel' = 'masonry';
   currentSlide = 0;
 
   async ngOnInit() {
@@ -71,7 +73,7 @@ export class AlbumAnhComponent implements OnInit {
     this.selectedPhoto = null;
   }
 
-  setDetailViewMode(mode: 'grid' | 'masonry' | 'carousel') {
+  setDetailViewMode(mode: 'masonry' | 'carousel') {
     this.detailViewMode = mode;
     if (mode === 'carousel') {
       this.currentSlide = 0;
@@ -138,5 +140,18 @@ export class AlbumAnhComponent implements OnInit {
 
   goToSlide(index: number) {
     this.currentSlide = index;
+  }
+
+  getRandomPreviewPhotos(count: number): string[] {
+    const allPhotos = this.albums.reduce((photos, album) => {
+      return photos.concat(album.photos.map(p => p.url));
+    }, [] as string[]);
+
+    const shuffled = allPhotos.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+  }
+
+  getAlbumPreviewPhotos(album: any): string[] {
+    return album.photos.slice(0, 5).map((photo: any) => photo.url);
   }
 }

@@ -1,10 +1,10 @@
 <div class="album-page">
   <!-- Album List View -->
   <div class="album-list" *ngIf="!selectedAlbumId">
-    <div class="page-header">
-      <h1>Album Ảnh</h1>
-      <p>{{ getTotalPhotos() }} khoảnh khắc đáng nhớ</p>
-    </div>
+    <app-album-header
+      [totalPhotos]="getTotalPhotos()"
+      [previewPhotos]="getRandomPreviewPhotos(3)">
+    </app-album-header>
 
     <div class="view-controls">
       <button class="view-btn" [class.active]="viewMode === 'grid'" (click)="viewMode = 'grid'">
@@ -19,10 +19,16 @@
       <div class="album-card" *ngFor="let album of albums" (click)="openAlbum(album.id)">
         <div class="album-cover">
           <img [src]="album.coverImage" [alt]="album.title">
-          <div class="photo-count">{{ album.photoCount }} ảnh</div>
+          <div class="photo-count">
+            <i class="pi pi-images"></i>
+            {{ album.photoCount }} ảnh
+          </div>
         </div>
         <div class="album-info">
-          <h3>{{ album.title }}</h3>
+          <h3>
+            <i class="pi pi-folder"></i>
+            {{ album.title }}
+          </h3>
           <p>{{ album.description }}</p>
         </div>
       </div>
@@ -31,19 +37,16 @@
 
   <!-- Album Detail View -->
   <div class="album-detail" *ngIf="selectedAlbumId && selectedAlbum">
-    <div class="detail-header">
-      <button class="back-btn" (click)="goBack()">
-        <i class="pi pi-arrow-left"></i>
-        Quay lại
-      </button>
-      <h2>{{ selectedAlbum.title }}</h2>
-      <p>{{ selectedAlbum.description }}</p>
-    </div>
+    <app-album-detail-header
+      [title]="selectedAlbum.title"
+      [description]="selectedAlbum.description"
+      [coverImage]="selectedAlbum.coverImage"
+      [photoCount]="selectedAlbum.photos.length"
+      [previewPhotos]="getAlbumPreviewPhotos(selectedAlbum)"
+      (onBack)="goBack()">
+    </app-album-detail-header>
 
     <div class="view-controls">
-      <button class="view-btn" [class.active]="detailViewMode === 'grid'" (click)="setDetailViewMode('grid')">
-        <i class="pi pi-th-large"></i>
-      </button>
       <button class="view-btn" [class.active]="detailViewMode === 'masonry'" (click)="setDetailViewMode('masonry')">
         <i class="pi pi-images"></i>
       </button>
@@ -88,11 +91,11 @@
       <button class="close-btn" (click)="closePhotoViewer()">
         <i class="pi pi-times"></i>
       </button>
-      
+
       <button class="nav-btn prev" *ngIf="canNavigatePrev()" (click)="prevPhoto($event)">
         <i class="pi pi-chevron-left"></i>
       </button>
-      
+
       <div class="photo-container">
         <img [src]="selectedPhoto.url" [alt]="selectedPhoto.title">
         <div class="photo-info">
@@ -100,7 +103,7 @@
           <p *ngIf="selectedPhoto.description">{{ selectedPhoto.description }}</p>
         </div>
       </div>
-      
+
       <button class="nav-btn next" *ngIf="canNavigateNext()" (click)="nextPhoto($event)">
         <i class="pi pi-chevron-right"></i>
       </button>
