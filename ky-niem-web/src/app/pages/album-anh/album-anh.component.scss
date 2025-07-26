@@ -18,6 +18,22 @@ $white: #fff;
   transition: all 0.3s ease;
 }
 
+// Floating Icons Animation
+@keyframes floatingIcons {
+  0% {
+    transform: translateY(0) rotate(0);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-15px) rotate(5deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+    opacity: 0.3;
+  }
+}
+
 @keyframes softGradientMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -52,27 +68,37 @@ $white: #fff;
   background: linear-gradient(
     135deg,
     rgba($light-green, 0.4) 0%,
-    rgba($white, 0.8) 50%,
+    rgba($white, 0.9) 50%,
     rgba($light-green, 0.4) 100%
   );
   background-size: 400% 400%;
-  animation: gradientMove 15s ease infinite;
+  animation: softGradientMove 15s ease infinite;
+  overflow: hidden;
 
+  // Floating Icons
   &::before {
     content: '';
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-image:
-      linear-gradient(45deg, rgba($primary-green, 0.05) 25%, transparent 25%),
-      linear-gradient(-45deg, rgba($primary-green, 0.05) 25%, transparent 25%),
-      linear-gradient(45deg, transparent 75%, rgba($primary-green, 0.05) 75%),
-      linear-gradient(-45deg, transparent 75%, rgba($primary-green, 0.05) 75%);
-    background-size: 50px 50px;
-    animation: patternFloat 20s linear infinite;
     pointer-events: none;
+  }
+
+  .floating-icon {
+    position: fixed;
+    color: rgba($primary-green, 0.1);
+    animation: floatingIcons 6s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+
+    &:nth-child(1) { top: 10%; left: 10%; font-size: 2rem; animation-delay: 0s; }
+    &:nth-child(2) { top: 20%; right: 20%; font-size: 3rem; animation-delay: 1s; }
+    &:nth-child(3) { bottom: 15%; left: 25%; font-size: 2.5rem; animation-delay: 2s; }
+    &:nth-child(4) { top: 40%; right: 10%; font-size: 2rem; animation-delay: 3s; }
+    &:nth-child(5) { bottom: 20%; right: 15%; font-size: 3rem; animation-delay: 4s; }
+    &:nth-child(6) { top: 30%; left: 30%; font-size: 2.5rem; animation-delay: 5s; }
   }
 }
 
@@ -84,6 +110,42 @@ $white: #fff;
 
 .content-wrapper {
   padding: 2rem 0;
+}
+
+// Quote Section
+.quote-section {
+  margin-bottom: 2.5rem;
+  padding: 2rem;
+  background: linear-gradient(120deg, rgba($light-green, 0.8), rgba($white, 0.9), rgba($light-green, 0.8));
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba($primary-green, 0.1);
+
+  .quote-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+
+    i {
+      font-size: 2rem;
+      color: $primary-green;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    p {
+      font-size: 1.3rem;
+      line-height: 1.6;
+      color: $text-color;
+      margin: 0 0 1rem;
+      font-style: italic;
+    }
+
+    .quote-author {
+      display: block;
+      color: rgba($text-color, 0.8);
+      font-size: 1rem;
+    }
+  }
 }
 
 // View Controls

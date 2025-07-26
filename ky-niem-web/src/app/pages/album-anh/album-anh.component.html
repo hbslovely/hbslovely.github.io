@@ -1,4 +1,12 @@
 <div class="album-page">
+  <!-- Floating Background Icons -->
+  <i class="pi pi-camera floating-icon"></i>
+  <i class="pi pi-heart floating-icon"></i>
+  <i class="pi pi-image floating-icon"></i>
+  <i class="pi pi-images floating-icon"></i>
+  <i class="pi pi-heart-fill floating-icon"></i>
+  <i class="pi pi-camera floating-icon"></i>
+
   <!-- Album List View -->
   <div class="album-list">
     <app-album-header
@@ -8,6 +16,15 @@
 
     <div class="container">
       <div class="content-wrapper">
+        <!-- Quote Section -->
+        <div class="quote-section">
+          <div class="quote-content">
+            <i class="pi pi-camera"></i>
+            <p>"Mỗi bức ảnh là một khoảnh khắc quý giá, là câu chuyện tình yêu của chúng ta được kể bằng ánh sáng và màu sắc"</p>
+            <span class="quote-author">- Kỷ niệm của chúng ta</span>
+          </div>
+        </div>
+
         <div class="view-controls">
           <button class="view-btn" [class.active]="viewMode === 'grid'" (click)="viewMode = 'grid'" title="Xem dạng lưới">
             <div class="btn-content">

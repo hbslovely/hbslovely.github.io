@@ -56,7 +56,6 @@ export class ChaoMungComponent implements OnInit {
   };
   specialMoments: SpecialMoment[] = [];
   ourSongs: Song[] = [];
-  loveQuotes: Quote[] = [];
   meaningfulGifts: Gift[] = [];
   favoriteFoods: Food[] = [];
 
@@ -83,7 +82,6 @@ export class ChaoMungComponent implements OnInit {
         this.loveStatistics = data.loveStatistics;
         this.specialMoments = data.specialMoments;
         this.ourSongs = data.ourSongs;
-        this.loveQuotes = data.loveQuotes;
         this.meaningfulGifts = data.meaningfulGifts;
         this.favoriteFoods = data.favoriteFoods;
       },
