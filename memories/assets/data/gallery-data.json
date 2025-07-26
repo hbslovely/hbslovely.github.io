@@ -24,14 +24,14 @@
           "description": "Nụ cười rạng ngời trên gương mặt cô dâu chú rể, phản chiếu niềm hạnh phúc vô bờ trong ngày trọng đại. Một khoảnh khắc đẹp đẽ đánh dấu khởi đầu cho hành trình yêu thương."
         },
         {
-          "src": "assets/images/hinh-cuoi/dam-cuoi-03-2022.png",
+          "src": "assets/images/hinh-cuoi/dam-cuoi-01-2022.png",
           "name": "Lễ thành hôn",
-          "description": "Lễ thành hôn tháng 3/2022 - Ngày hai trái tim chính thức về chung một nhà. Không gian tràn ngập hoa tươi và những lời chúc phúc từ người thân, bạn bè thân thiết."
+          "description": "Lễ thành hôn tại Nam Định tháng 1/2022 - Ngày hai trái tim chính thức về chung một nhà. Không gian tràn ngập hoa tươi và những lời chúc phúc từ người thân, bạn bè thân thiết."
         },
         {
           "src": "assets/images/hinh-cuoi/dam-cuoi-hcm-03-2022.png",
           "name": "Tiệc cưới",
-          "description": "Tiệc cưới tại TP.HCM - Đêm tiệc ngập tràn tiếng cười, âm nhạc và những cái ôm thân thương. Khoảnh khắc đặc biệt khi hai gia đình chính thức trở thành một."
+          "description": "Tiệc cưới tại TP.HCM - Tháng 2/2022 -  Đêm tiệc ngập tràn tiếng cười, âm nhạc và những cái ôm thân thương. Khoảnh khắc đặc biệt khi hai gia đình chính thức trở thành một."
         }
       ]
     },
@@ -86,42 +86,42 @@
       "title": "Địa Điểm Yêu Thích",
       "images": [
         {
-          "src": "assets/images/bucket/checkin_hoi-an_quang-nam.jpg",
+          "src": "assets/images/places/checkin_hoi-an_quang-nam.jpg",
           "name": "Phố cổ Hội An",
           "description": "Dạo bước trong không gian cổ kính của phố Hội, nơi mỗi góc phố đều mang đậm dấu ấn thời gian và văn hóa đặc trưng."
         },
         {
-          "src": "assets/images/bucket/checkin_ngu-hanh-son_da-nang.jpg",
+          "src": "assets/images/places/checkin_ngu-hanh-son_da-nang.jpg",
           "name": "Ngũ Hành Sơn",
           "description": "Chiêm ngưỡng vẻ đẹp của Ngũ Hành Sơn - Đà Nẵng, nơi có những hang động kỳ bí và cảnh quan tuyệt đẹp."
         },
         {
-          "src": "assets/images/bucket/checkin_chua-thien-mu_hue.jpg",
+          "src": "assets/images/places/checkin-chua-thien-mu.jpg",
           "name": "Chùa Thiên Mụ",
           "description": "Thăm chùa Thiên Mụ - Biểu tượng của xứ Huế, nơi mang đậm dấu ấn lịch sử và văn hóa Việt Nam."
         },
         {
-          "src": "assets/images/bucket/checkin_dai-noi_hue.jpg",
+          "src": "assets/images/places/checkin_dai-noi_hue.jpg",
           "name": "Đại Nội Huế",
           "description": "Khám phá Hoàng cung xưa - Đại Nội Huế, nơi lưu giữ những giá trị văn hóa và lịch sử của triều Nguyễn."
         },
         {
-          "src": "assets/images/bucket/checkin_bai-bien-sam-son_thanh-hoa.jpg",
+          "src": "assets/images/places/checkin_bai-bien-sam-son_thanh-hoa.jpg",
           "name": "Bãi biển Sầm Sơn",
           "description": "Thư giãn tại bãi biển Sầm Sơn - Thanh Hóa, nơi có những bãi cát trắng mịn và sóng biển dịu êm."
         },
         {
-          "src": "assets/images/bucket/checkin_deo-ngang.jpg",
+          "src": "assets/images/places/checkin_deo-ngang.jpg",
           "name": "Đèo Ngang",
           "description": "Chinh phục đèo Ngang - Cung đường đèo hùng vĩ nối liền Hà Tĩnh và Quảng Bình."
         },
         {
-          "src": "assets/images/bucket/checkin_quang-binh.jpg",
+          "src": "assets/images/places/checkin_quang-binh.jpg",
           "name": "Quảng Bình",
           "description": "Khám phá Quảng Bình - Vùng đất của những hang động kỳ vĩ và những bãi biển hoang sơ."
         },
         {
-          "src": "assets/images/bucket/checkin_tuy-hoa_phu-yen.jpg",
+          "src": "assets/images/places/checkin_tuy-hoa_phu-yen.jpg",
           "name": "Tuy Hòa",
           "description": "Thành phố biển Tuy Hòa - Phú Yên, nơi có những bãi biển đẹp và ẩm thực đặc sắc."
         }
@@ -154,4 +154,4 @@
       ]
     }
   ]
-} 
+}
