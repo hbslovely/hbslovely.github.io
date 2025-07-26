@@ -1,0 +1,648 @@
+{
+  "places": [
+    {
+      "id": "chua-huong-ha-noi",
+      "name": "Chùa Hương",
+      "location": "Hà Nội",
+      "image": "assets/images/places/checkin-chua-huong-ha-noi.jpg",
+      "description": "Danh thắng tâm linh nổi tiếng với cảnh quan thiên nhiên tuyệt đẹp, nơi hội tụ giữa đức tin tâm linh và vẻ đẹp kỳ vĩ của tạo hóa",
+      "detailedDescription": "Chùa Hương hay còn gọi là chùa Hương Tích là một quần thể di tích danh thắng nổi tiếng bậc nhất của Việt Nam, bao gồm hàng chục ngôi chùa, đền, đình nằm rải rác trong thung lũng Suối Yến, xã Hương Sơn, huyện Mỹ Đức, Hà Nội. Quần thể này không chỉ là một trung tâm du lịch tâm linh quan trọng mà còn là nơi hội tụ của những cảnh quan thiên nhiên tuyệt đẹp với hệ thống hang động, suối nước trong vắt và những dãy núi đá vôi hùng vĩ. Mỗi năm, chùa Hương đón hàng triệu lượt khách hành hương và du lịch, đặc biệt là trong mùa lễ hội kéo dài từ tháng Giêng đến tháng Ba âm lịch. Du khách không chỉ được chiêm bái các công trình tâm linh mà còn được trải nghiệm hành trình đi thuyền trên Suối Yến thơ mộng, leo núi khám phá các hang động tự nhiên và thưởng ngoạn phong cảnh núi rừng hùng vĩ của vùng Hương Sơn.",
+      "howToGet": "Từ trung tâm Hà Nội, bạn có thể đi xe khách hoặc xe máy đến Mỹ Đức (khoảng 70km). Sau đó đi thuyền và leo núi để thăm quan các điểm trong quần thể.",
+      "bestTimeToVisit": "Thời điểm lý tưởng để thăm Chùa Hương là từ tháng 1 đến tháng 3 (mùa lễ hội), hoặc tháng 9-11 (thời tiết mát mẻ, ít mưa).",
+      "attractions": {
+        "religious": [
+          {
+            "name": "Chùa Hương Tích",
+            "description": "Ngôi chùa chính trong quần thể, nằm trong lòng núi với nhiều hang động đẹp và tượng Phật cổ quý giá",
+            "image": "assets/images/places/checkin-chua-huong-ha-noi.jpg"
+          },
+          {
+            "name": "Đền Trình",
+            "description": "Điểm dừng chân đầu tiên của hành trình hành hương, nơi du khách thắp hương bái lễ trước khi lên đường",
+            "image": "assets/images/places/den-trinh.jpg"
+          }
+        ],
+        "natural": [
+          {
+            "name": "Suối Yến",
+            "description": "Dòng suối uốn lượn giữa núi non, nơi du khách đi thuyền ngắm cảnh, chiêm ngưỡng vẻ đẹp hoang sơ của thiên nhiên",
+            "image": "assets/images/places/suoi-yen.jpg"
+          },
+          {
+            "name": "Động Hương Tích",
+            "description": "Hang động tự nhiên với nhiều nhũ đá độc đáo và các hình thù kỳ thú do thiên nhiên tạo nên",
+            "image": "assets/images/places/dong-huong-tich.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Bánh chưng rau sắn",
+          "description": "Đặc sản truyền thống của vùng Hương Sơn, được làm từ gạo nếp và rau sắn rừng",
+          "image": "assets/images/foods/banh-chung-rau-san.jpg"
+        },
+        {
+          "name": "Chè lam Hương Sơn",
+          "description": "Món chè đặc trưng của vùng núi, được làm từ gạo nếp và mật mía",
+          "image": "assets/images/foods/che-lam.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Khu di tích Ngã Ba Đồng Lộc",
+          "description": "Di tích lịch sử cách mạng ghi dấu sự hy sinh của các nữ thanh niên xung phong",
+          "distance": "15km",
+          "travelTime": "30 phút đi xe máy"
+        },
+        {
+          "name": "Làng cổ Đường Lâm",
+          "description": "Làng cổ với kiến trúc truyền thống đặc trưng của vùng đồng bằng Bắc Bộ",
+          "distance": "25km",
+          "travelTime": "45 phút đi xe máy"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Bánh chưng rau sắn",
+          "description": "Món ăn truyền thống với hương vị đặc trưng của rau sắn rừng",
+          "restaurant": "Quán ăn Hương Sơn - Gần bến đò Suối Yến",
+          "price": "25000-35000 VND/cái"
+        },
+        {
+          "name": "Cơm chay Hương Sơn",
+          "description": "Bữa cơm chay thanh tịnh với các món từ rau củ địa phương",
+          "restaurant": "Nhà hàng chay Thiền Tâm - Đường vào chùa Hương",
+          "price": "50000-80000 VND/suất"
+        }
+      ]
+    },
+    {
+      "id": "lang-bac-ha-noi",
+      "name": "Lăng Chủ tịch Hồ Chí Minh",
+      "location": "Hà Nội",
+      "image": "assets/images/places/checkin-lang-bac-ha-noi.jpg",
+      "description": "Công trình lịch sử quan trọng tưởng nhớ Chủ tịch Hồ Chí Minh, một biểu tượng thiêng liêng của dân tộc Việt Nam và là điểm đến không thể bỏ qua khi đến thủ đô Hà Nội",
+      "detailedDescription": "Lăng Chủ tịch Hồ Chí Minh là công trình kiến trúc đặc biệt nằm tại Quảng trường Ba Đình lịch sử, nơi lưu giữ thi hài của Chủ tịch Hồ Chí Minh. Công trình được khởi công xây dựng ngày 2/9/1973, hoàn thành ngày 29/8/1975, với sự giúp đỡ của các chuyên gia Liên Xô. Lăng được xây dựng bằng đá granite xám, có kiến trúc hình khối chữ nhật đơn giản nhưng trang nghiêm, uy nghi. Phía trước Lăng là Quảng trường Ba Đình rộng lớn, nơi Chủ tịch Hồ Chí Minh đã đọc bản Tuyên ngôn Độc lập khai sinh nước Việt Nam Dân chủ Cộng hòa vào ngày 2/9/1945. Hàng năm, Lăng đón tiếp hàng triệu lượt khách trong và ngoài nước đến viếng và tưởng nhớ vị lãnh tụ kính yêu của dân tộc Việt Nam.",
+      "howToGet": "Lăng Bác nằm ở trung tâm Hà Nội, có thể đi bằng nhiều phương tiện công cộng hoặc taxi.",
+      "bestTimeToVisit": "Lăng mở cửa vào buổi sáng từ 7h30-10h30 các ngày trong tuần trừ thứ 2 và thứ 6. Nên đến sớm để tránh phải xếp hàng lâu.",
+      "attractions": {
+        "historical": [
+          {
+            "name": "Lăng Chủ tịch",
+            "description": "Nơi lưu giữ thi hài Bác Hồ, được xây dựng từ năm 1973, là công trình kiến trúc độc đáo với đá granite xám và các họa tiết trang trí tinh tế",
+            "image": "assets/images/places/checkin-lang-bac-ha-noi.jpg"
+          },
+          {
+            "name": "Quảng trường Ba Đình",
+            "description": "Nơi diễn ra sự kiện lịch sử trọng đại - Chủ tịch Hồ Chí Minh đọc bản Tuyên ngôn Độc lập năm 1945",
+            "image": "assets/images/places/quang-truong-ba-dinh.jpg"
+          }
+        ],
+        "cultural": [
+          {
+            "name": "Nhà sàn Bác Hồ",
+            "description": "Nơi Bác Hồ sống và làm việc từ năm 1958 đến 1969, được bảo tồn nguyên vẹn với kiến trúc đơn giản, gần gũi",
+            "image": "assets/images/places/nha-san-bac-ho.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Phở Bát Đàn",
+          "description": "Phở truyền thống Hà Nội với nước dùng đậm đà và thịt bò mềm",
+          "image": "assets/images/foods/pho-bat-dan.jpg"
+        },
+        {
+          "name": "Cà phê Giảng",
+          "description": "Cà phê trứng nổi tiếng với công thức độc đáo từ những năm 1940",
+          "image": "assets/images/foods/ca-phe-giang.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Bảo tàng Hồ Chí Minh",
+          "description": "Nơi lưu giữ và trưng bày các hiện vật, tư liệu về cuộc đời và sự nghiệp của Chủ tịch Hồ Chí Minh",
+          "distance": "0.2km",
+          "travelTime": "5 phút đi bộ"
+        },
+        {
+          "name": "Văn Miếu - Quốc Tử Giám",
+          "description": "Trường đại học đầu tiên của Việt Nam, di tích lịch sử văn hóa quan trọng",
+          "distance": "2km",
+          "travelTime": "10 phút đi xe máy"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Phở Bát Đàn",
+          "description": "Phở bò truyền thống Hà Nội với nước dùng đặc biệt",
+          "restaurant": "Phở Bát Đàn - 49 Bát Đàn",
+          "price": "45000-60000 VND/bát"
+        },
+        {
+          "name": "Cà phê trứng",
+          "description": "Thức uống đặc trưng của Hà Nội",
+          "restaurant": "Cà phê Giảng - 39 Nguyễn Hữu Huân",
+          "price": "35000-45000 VND/ly"
+        }
+      ]
+    },
+    {
+      "id": "chua-dia-tang-phi-lai",
+      "name": "Chùa Địa Tạng Phi Lai",
+      "location": "Hà Nam",
+      "image": "assets/images/places/checkin-chua-dia-tang-phi-lai-ha-nam.jpg",
+      "description": "Ngôi chùa cổ với kiến trúc độc đáo, một trong những trung tâm Phật giáo quan trọng của vùng đồng bằng Bắc Bộ, nơi hội tụ giữa tâm linh và nghệ thuật kiến trúc truyền thống",
+      "detailedDescription": "Chùa Địa Tạng Phi Lai là một trong những ngôi chùa cổ nổi tiếng tại Hà Nam, được xây dựng từ thời nhà Lý với kiến trúc độc đáo và không gian thanh tịnh. Chùa nằm trên một ngọn núi thuộc dãy núi Phi Lai, từ đây có thể ngắm nhìn toàn cảnh vùng đồng bằng xung quanh. Công trình chùa được xây dựng theo kiến trúc chữ Công, với nhiều lớp mái uốn cong tinh tế, các đầu đao cong vút, tạo nên vẻ đẹp uy nghiêm nhưng không kém phần thanh thoát. Trong chùa còn lưu giữ nhiều tượng Phật cổ quý giá và các hiện vật lịch sử có giá trị. Hàng năm, chùa tổ chức nhiều lễ hội truyền thống, thu hút đông đảo Phật tử và du khách thập phương đến tham quan, chiêm bái.",
+      "howToGet": "Từ Hà Nội, bạn có thể đi xe khách hoặc xe máy theo quốc lộ 1A về Hà Nam (khoảng 60km).",
+      "bestTimeToVisit": "Có thể thăm chùa quanh năm, nhưng đẹp nhất là vào mùa xuân (tháng 1-3) khi thời tiết mát mẻ.",
+      "attractions": {
+        "religious": [
+          {
+            "name": "Chùa Địa Tạng",
+            "description": "Ngôi chùa cổ với nhiều tượng Phật và di tích lịch sử, nổi bật với kiến trúc chữ Công độc đáo và các chi tiết chạm khắc tinh xảo",
+            "image": "assets/images/places/checkin-chua-dia-tang-phi-lai-ha-nam.jpg"
+          },
+          {
+            "name": "Tháp cổ",
+            "description": "Tháp cổ thời Lý với kiến trúc độc đáo, nơi lưu giữ xá lợi Phật",
+            "image": "assets/images/places/thap-co-dia-tang.jpg"
+          }
+        ],
+        "natural": [
+          {
+            "name": "Núi Phi Lai",
+            "description": "Dãy núi đá vôi hùng vĩ với nhiều hang động tự nhiên và cảnh quan đẹp",
+            "image": "assets/images/places/nui-phi-lai.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Cơm cháy Ninh Bình",
+          "description": "Món ăn đặc sản của vùng, được làm từ gạo địa phương với cách chế biến độc đáo",
+          "image": "assets/images/foods/com-chay.jpg"
+        },
+        {
+          "name": "Chè sen Hà Nam",
+          "description": "Món tráng miệng truyền thống với hạt sen tươi và đường phèn",
+          "image": "assets/images/foods/che-sen.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Khu di tích Đền Trúc",
+          "description": "Di tích lịch sử văn hóa gắn với truyền thuyết và tín ngưỡng dân gian",
+          "distance": "10km",
+          "travelTime": "20 phút đi xe máy"
+        },
+        {
+          "name": "Làng nghề gốm Bồ Bát",
+          "description": "Làng nghề truyền thống với những sản phẩm gốm độc đáo",
+          "distance": "15km",
+          "travelTime": "30 phút đi xe máy"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Cơm cháy chà bông",
+          "description": "Món ăn đặc trưng của vùng với cơm cháy giòn và chà bông thơm ngon",
+          "restaurant": "Quán Cơm cháy Phi Lai - Gần chân núi",
+          "price": "50000-70000 VND/phần"
+        },
+        {
+          "name": "Chè sen long nhãn",
+          "description": "Món tráng miệng thanh mát với hạt sen và long nhãn",
+          "restaurant": "Quán chè Bà Cả - Đường vào chùa",
+          "price": "25000-35000 VND/bát"
+        }
+      ]
+    },
+    {
+      "id": "chua-dau-ha-noi",
+      "name": "Chùa Dâu",
+      "location": "Hà Nội",
+      "image": "assets/images/places/checkin-chua-dau-ha-noi.jpg",
+      "description": "Ngôi chùa cổ nhất miền Bắc, một trong tứ pháp linh thiêng của Phật giáo Việt Nam, nơi lưu giữ những giá trị văn hóa và kiến trúc độc đáo từ thời kỳ đầu Phật giáo du nhập",
+      "detailedDescription": "Chùa Dâu, còn gọi là chùa Pháp Vân, là ngôi chùa cổ nhất miền Bắc Việt Nam, được xây dựng từ thế kỷ II. Đây là một trong tứ pháp - bốn ngôi chùa lớn thờ Tứ pháp (Pháp Vân, Pháp Vũ, Pháp Lôi, Pháp Điện), đại diện cho bốn hiện tượng tự nhiên: mây, mưa, sấm, chớp. Chùa mang đậm dấu ấn kiến trúc Phật giáo cổ với nhiều lớp mái chồng, các chi tiết chạm khắc tinh xảo và hệ thống tượng Phật độc đáo. Trong chùa còn lưu giữ nhiều hiện vật quý như tượng Tứ Pháp, chuông đồng cổ và các bia đá ghi chép lịch sử. Hàng năm, chùa tổ chức lễ hội truyền thống vào tháng Ba âm lịch, thu hút hàng nghìn người dân và du khách tham dự.",
+      "howToGet": "Chùa nằm ở huyện Thuận Thành, Bắc Ninh, cách Hà Nội khoảng 30km. Có thể đi bằng xe máy hoặc ô tô theo quốc lộ 1A.",
+      "bestTimeToVisit": "Thời điểm tốt nhất để thăm chùa là vào mùa xuân, đặc biệt là trong dịp lễ hội chùa Dâu (tháng 3-4 âm lịch).",
+      "attractions": {
+        "religious": [
+          {
+            "name": "Chùa Dâu",
+            "description": "Ngôi chùa cổ với kiến trúc độc đáo và nhiều di tích lịch sử, nổi bật với tượng Tứ Pháp và hệ thống tượng Phật cổ",
+            "image": "assets/images/places/checkin-chua-dau-ha-noi.jpg"
+          },
+          {
+            "name": "Tháp Hòa Phong",
+            "description": "Tháp cổ thời Lý với kiến trúc độc đáo, nơi lưu giữ xá lợi và các di vật Phật giáo quý giá",
+            "image": "assets/images/places/thap-hoa-phong.jpg"
+          }
+        ],
+        "cultural": [
+          {
+            "name": "Bảo tàng Phật giáo",
+            "description": "Nơi trưng bày các hiện vật, tư liệu về lịch sử Phật giáo Việt Nam",
+            "image": "assets/images/places/bao-tang-phat-giao.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Bánh phu thê",
+          "description": "Bánh truyền thống của vùng Bắc Ninh, được làm từ gạo nếp và đậu xanh",
+          "image": "assets/images/foods/banh-phu-the.jpg"
+        },
+        {
+          "name": "Bánh tẻ",
+          "description": "Món bánh dân gian đặc trưng của vùng đồng bằng Bắc Bộ",
+          "image": "assets/images/foods/banh-te.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Đình Đình Bảng",
+          "description": "Di tích kiến trúc nghệ thuật cấp quốc gia với những họa tiết chạm khắc tinh xảo",
+          "distance": "5km",
+          "travelTime": "15 phút đi xe máy"
+        },
+        {
+          "name": "Làng quan họ Viêm Xá",
+          "description": "Làng quan họ cổ với những làn điệu dân ca truyền thống",
+          "distance": "8km",
+          "travelTime": "20 phút đi xe máy"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Bánh phu thê",
+          "description": "Bánh truyền thống với nhân đậu xanh thơm ngon",
+          "restaurant": "Cửa hàng bánh phu thê Bà Tới - Gần chùa",
+          "price": "50000-100000 VND/hộp"
+        },
+        {
+          "name": "Cơm chay",
+          "description": "Bữa cơm chay thanh tịnh tại chùa",
+          "restaurant": "Nhà hàng chay Tâm Phúc - Khuôn viên chùa",
+          "price": "40000-60000 VND/suất"
+        }
+      ]
+    },
+    {
+      "id": "nha-tho-do-nam-dinh",
+      "name": "Nhà thờ Đổ Nam Định",
+      "location": "Nam Định",
+      "image": "assets/images/places/checkin-nha-tho-do-nam-dinh.jpg",
+      "description": "Công trình kiến trúc Gothic độc đáo, một di tích lịch sử văn hóa đặc biệt của Nam Định, nơi ghi dấu những thăng trầm của lịch sử và là điểm check-in nổi tiếng với vẻ đẹp hoang tàn nhưng lãng mạn",
+      "detailedDescription": "Nhà thờ Đổ Nam Định là một công trình kiến trúc Gothic độc đáo, được xây dựng từ thời Pháp thuộc vào cuối thế kỷ XIX. Công trình mang đậm phong cách kiến trúc Gothic châu Âu với những đường nét cao vút, các cửa sổ hình vòm và những họa tiết trang trí tinh xảo. Dù đã bị tàn phá nặng nề trong chiến tranh, nhưng những mảng tường đổ nát và khung cảnh hoang tàn lại tạo nên một vẻ đẹp đặc biệt, thu hút nhiều người đến tham quan và chụp ảnh. Nhà thờ không chỉ là một di tích lịch sử mà còn là biểu tượng của sự giao thoa văn hóa Đông - Tây và là điểm đến yêu thích của giới trẻ và các nhiếp ảnh gia.",
+      "howToGet": "Từ Hà Nội đi xe khách hoặc tàu hỏa đến Nam Định (khoảng 90km). Nhà thờ nằm ở trung tâm thành phố Nam Định.",
+      "bestTimeToVisit": "Có thể tham quan quanh năm, đẹp nhất vào buổi sáng sớm hoặc chiều tà khi ánh nắng tạo nên những góc chụp ảnh đẹp.",
+      "attractions": {
+        "historical": [
+          {
+            "name": "Nhà thờ Đổ",
+            "description": "Công trình kiến trúc Gothic cổ với những mảng tường đổ nát tạo nên vẻ đẹp hoang sơ, là điểm chụp ảnh lý tưởng với kiến trúc độc đáo",
+            "image": "assets/images/places/checkin-nha-tho-do-nam-dinh.jpg"
+          },
+          {
+            "name": "Khu vực tháp chuông",
+            "description": "Phần còn sót lại của tháp chuông cổ với kiến trúc Gothic đặc trưng",
+            "image": "assets/images/places/thap-chuong-nha-tho-do.jpg"
+          }
+        ],
+        "architectural": [
+          {
+            "name": "Cổng chính",
+            "description": "Cổng vòm Gothic với những họa tiết chạm khắc tinh xảo còn sót lại",
+            "image": "assets/images/places/cong-nha-tho-do.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Phở bò Nam Định",
+          "description": "Món phở truyền thống nổi tiếng của Nam Định với nước dùng đặc biệt",
+          "image": "assets/images/foods/pho-nam-dinh.jpg"
+        },
+        {
+          "name": "Bún đũa",
+          "description": "Món ăn đặc trưng của Nam Định với sợi bún dài và nước dùng thơm ngon",
+          "image": "assets/images/foods/bun-dua.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Chợ Rồng",
+          "description": "Khu chợ truyền thống lớn nhất Nam Định, nơi bán nhiều đặc sản địa phương",
+          "distance": "1km",
+          "travelTime": "5 phút đi xe máy"
+        },
+        {
+          "name": "Đền Trần",
+          "description": "Di tích lịch sử văn hóa thờ các vua nhà Trần",
+          "distance": "3km",
+          "travelTime": "10 phút đi xe máy"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Phở bò Nam Định",
+          "description": "Phở truyền thống với thịt bò mềm và nước dùng đặc trưng",
+          "restaurant": "Phở Bò Việt - Gần nhà thờ",
+          "price": "35000-50000 VND/bát"
+        },
+        {
+          "name": "Bún đũa Nam Định",
+          "description": "Món bún đặc sản với nước dùng thơm ngon",
+          "restaurant": "Quán Bún Đũa Cô Loan - Phố Trần Hưng Đạo",
+          "price": "30000-40000 VND/bát"
+        }
+      ]
+    },
+    {
+      "id": "hung-yen",
+      "name": "Phố Hiến",
+      "location": "Hưng Yên",
+      "image": "assets/images/places/checkin-hung-yen.jpg",
+      "description": "Thành phố cổ với nhiều di tích lịch sử, từng được mệnh danh là 'Tiểu Quảng Châu' của Việt Nam, nơi lưu giữ những giá trị văn hóa và kiến trúc độc đáo của một thương cảng sầm uất thời xưa",
+      "detailedDescription": "Phố Hiến xưa, nay là thành phố Hưng Yên, từng được ví như 'Tiểu Quảng Châu' với vai trò là một trong những trung tâm thương mại, văn hóa sầm uất bậc nhất Đàng Ngoài thế kỷ XVII-XVIII. Nơi đây còn lưu giữ nhiều công trình kiến trúc cổ có giá trị như đền Mẫu, chùa Chuông, đền Trần, văn miếu Xích Đằng. Mỗi công trình đều mang những nét kiến trúc độc đáo và chứa đựng những câu chuyện lịch sử thú vị. Phố Hiến không chỉ nổi tiếng với các di tích lịch sử mà còn được biết đến với nghề trồng nhãn lồng thơm ngọt và các làng nghề truyền thống như làm tương, làm bún, dệt lụa.",
+      "howToGet": "Từ Hà Nội đi xe khách hoặc xe máy theo quốc lộ 5 (khoảng 50km).",
+      "bestTimeToVisit": "Thời điểm thích hợp để thăm Hưng Yên là từ tháng 9 đến tháng 3 năm sau, khi thời tiết mát mẻ. Đặc biệt vào mùa nhãn (tháng 7-8) là thời điểm lý tưởng để thưởng thức đặc sản nhãn lồng.",
+      "attractions": {
+        "historical": [
+          {
+            "name": "Phố Hiến",
+            "description": "Khu phố cổ với nhiều công trình kiến trúc và di tích lịch sử, minh chứng cho sự phồn thịnh của một thương cảng xưa",
+            "image": "assets/images/places/checkin-hung-yen.jpg"
+          },
+          {
+            "name": "Văn miếu Xích Đằng",
+            "description": "Công trình kiến trúc cổ thờ Khổng Tử và các bậc hiền triết",
+            "image": "assets/images/places/van-mieu-xich-dang.jpg"
+          }
+        ],
+        "cultural": [
+          {
+            "name": "Chùa Chuông",
+            "description": "Ngôi chùa cổ với kiến trúc độc đáo và nhiều di vật quý",
+            "image": "assets/images/places/chua-chuong.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Nhãn lồng Hưng Yên",
+          "description": "Đặc sản nổi tiếng với vị ngọt thanh, thơm và múi to",
+          "image": "assets/images/foods/nhan-long.jpg"
+        },
+        {
+          "name": "Tương Bần",
+          "description": "Loại tương truyền thống được làm theo bí quyết riêng của làng nghề Bần",
+          "image": "assets/images/foods/tuong-ban.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Làng nghề tương Bần",
+          "description": "Làng nghề truyền thống nổi tiếng với nghề làm tương đen thơm ngon",
+          "distance": "7km",
+          "travelTime": "15 phút đi xe máy"
+        },
+        {
+          "name": "Vườn nhãn Hưng Yên",
+          "description": "Vườn nhãn lồng nổi tiếng với những cây nhãn cổ thụ hàng trăm năm tuổi",
+          "distance": "3km",
+          "travelTime": "10 phút đi xe máy"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Cơm Vòng",
+          "description": "Món cơm truyền thống được nấu trong nồi đất với gạo địa phương",
+          "restaurant": "Quán cơm Bà Vòng - Phố cổ",
+          "price": "40000-60000 VND/suất"
+        },
+        {
+          "name": "Bánh cuốn Phố Hiến",
+          "description": "Bánh cuốn truyền thống với nhân thịt băm và nấm mèo",
+          "restaurant": "Quán Bánh cuốn cô Hà - Gần chợ",
+          "price": "25000-35000 VND/đĩa"
+        }
+      ]
+    },
+    {
+      "id": "bac-ninh",
+      "name": "Thành phố Bắc Ninh",
+      "location": "Bắc Ninh",
+      "image": "assets/images/places/checkin-bac-ninh.jpg",
+      "description": "Kinh đô quan họ với nhiều di sản văn hóa phi vật thể độc đáo, nơi hội tụ của những làn điệu dân ca truyền thống và là cái nôi của văn hóa dân gian Bắc Bộ",
+      "detailedDescription": "Bắc Ninh, vùng đất được mệnh danh là kinh đô quan họ, là nơi sinh thành và phát triển của dân ca quan họ - di sản văn hóa phi vật thể được UNESCO công nhận. Thành phố không chỉ nổi tiếng với những làn điệu quan họ ngọt ngào mà còn là nơi lưu giữ nhiều di tích lịch sử văn hóa quan trọng như đền Đô, chùa Phật Tích, đình Đình Bảng. Bắc Ninh còn là quê hương của nhiều làng nghề truyền thống như tranh dân gian Đông Hồ, gốm Phù Lãng, tơ tằm Hồ. Đặc biệt, vào mùa xuân, Bắc Ninh trở thành điểm đến hấp dẫn với nhiều lễ hội truyền thống, trong đó nổi bật nhất là lễ hội quan họ, nơi du khách có thể thưởng thức những làn điệu quan họ đặc sắc và tìm hiểu về nét văn hóa độc đáo của vùng đất này.",
+      "howToGet": "Từ Hà Nội đi xe buýt hoặc xe khách theo quốc lộ 1 (khoảng 30km).",
+      "bestTimeToVisit": "Thời điểm lý tưởng để thăm Bắc Ninh là vào mùa xuân, đặc biệt là dịp lễ hội quan họ (tháng 2-3 âm lịch). Thời tiết mát mẻ và có nhiều hoạt động văn hóa truyền thống.",
+      "attractions": {
+        "cultural": [
+          {
+            "name": "Làng quan họ Lim",
+            "description": "Nơi bảo tồn và phát triển nghệ thuật dân ca quan họ, với những liền anh, liền chị nổi tiếng và các hoạt động văn hóa đặc sắc",
+            "image": "assets/images/places/lang-quan-ho-lim.jpg"
+          },
+          {
+            "name": "Làng tranh Đông Hồ",
+            "description": "Làng nghề truyền thống nổi tiếng với nghề làm tranh dân gian bằng giấy dó và màu tự nhiên",
+            "image": "assets/images/places/lang-tranh-dong-ho.jpg"
+          }
+        ],
+        "historical": [
+          {
+            "name": "Đền Đô",
+            "description": "Di tích lịch sử quan trọng thờ các vua nhà Lý, với kiến trúc độc đáo và nhiều hiện vật quý",
+            "image": "assets/images/places/den-do.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Bánh phu thê",
+          "description": "Bánh truyền thống của Bắc Ninh, biểu tượng cho tình nghĩa vợ chồng, với vị ngọt thanh và nhân đậu xanh thơm ngon",
+          "image": "assets/images/foods/banh-phu-the.jpg"
+        },
+        {
+          "name": "Bánh gai Tứ Kỳ",
+          "description": "Đặc sản nổi tiếng làm từ lá gai, với màu đen đặc trưng và hương vị độc đáo",
+          "image": "assets/images/foods/banh-gai.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Chùa Phật Tích",
+          "description": "Ngôi chùa cổ trên núi Phật Tích với tượng phật cổ và cảnh quan đẹp",
+          "distance": "15km",
+          "travelTime": "30 phút đi xe máy"
+        },
+        {
+          "name": "Làng gốm Phù Lãng",
+          "description": "Làng nghề gốm truyền thống với những sản phẩm gốm độc đáo",
+          "distance": "20km",
+          "travelTime": "40 phút đi xe máy"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Bánh phu thê",
+          "description": "Bánh truyền thống với nhân đậu xanh thơm ngon",
+          "restaurant": "Tiệm bánh Bà Tới - Phố Văn",
+          "price": "50000-100000 VND/hộp"
+        },
+        {
+          "name": "Bún thang Bắc Ninh",
+          "description": "Món bún đặc trưng với nhiều loại rau thơm và nước dùng đậm đà",
+          "restaurant": "Quán Bún thang cô Hương - Phố Huyền Quang",
+          "price": "35000-50000 VND/bát"
+        }
+      ]
+    },
+    {
+      "id": "bac-giang",
+      "name": "Thành phố Bắc Giang",
+      "location": "Bắc Giang",
+      "image": "assets/images/places/checkin-bac-giang.jpg",
+      "description": "Vùng đất của vải thiều và di tích lịch sử, nơi hội tụ giữa nông nghiệp đặc sản và văn hóa truyền thống, với những thắng cảnh thiên nhiên tuyệt đẹp của vùng Đông Bắc",
+      "detailedDescription": "Bắc Giang là vùng đất nổi tiếng với vải thiều Lục Ngạn - một trong những đặc sản nổi tiếng nhất Việt Nam. Không chỉ có vải thiều, Bắc Giang còn là nơi có nhiều di tích lịch sử văn hóa quan trọng như chùa Vĩnh Nghiêm - một trong những trung tâm Phật giáo lớn thời Trần, đền thờ Hoàng Vân - di tích gắn liền với cuộc khởi nghĩa Yên Thế. Cảnh quan thiên nhiên nơi đây đặc biệt đẹp với những dãy núi và thung lũng xanh tươi, đặc biệt là khu vực Tây Yên Tử với những cánh rừng nguyên sinh và các ngôi chùa cổ. Vào mùa vải (tháng 5-7), Bắc Giang trở thành điểm đến hấp dẫn với những vườn vải bạt ngàn và không khí nhộn nhịp của mùa thu hoạch.",
+      "howToGet": "Từ Hà Nội đi xe khách hoặc xe máy theo quốc lộ 1A (khoảng 50km).",
+      "bestTimeToVisit": "Thời điểm đẹp nhất là mùa vải (tháng 5-7) để thưởng thức vải thiều tươi ngon và tham quan vườn vải. Mùa xuân (tháng 1-3) cũng là thời điểm lý tưởng với nhiều lễ hội truyền thống.",
+      "attractions": {
+        "natural": [
+          {
+            "name": "Vườn vải Lục Ngạn",
+            "description": "Vùng trồng vải nổi tiếng của cả nước, với những đồi vải bạt ngàn và truyền thống canh tác lâu đời",
+            "image": "assets/images/places/vuon-vai-luc-ngan.jpg"
+          },
+          {
+            "name": "Khu du lịch Tây Yên Tử",
+            "description": "Khu vực núi non hùng vĩ với rừng nguyên sinh và các di tích Phật giáo",
+            "image": "assets/images/places/tay-yen-tu.jpg"
+          }
+        ],
+        "historical": [
+          {
+            "name": "Chùa Vĩnh Nghiêm",
+            "description": "Trung tâm Phật giáo lớn thời Trần với kiến trúc độc đáo và nhiều di vật quý",
+            "image": "assets/images/places/chua-vinh-nghiem.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Vải thiều Lục Ngạn",
+          "description": "Đặc sản nổi tiếng với vị ngọt thanh, thơm và giòn",
+          "image": "assets/images/foods/vai-thieu.jpg"
+        },
+        {
+          "name": "Bánh đa Kế",
+          "description": "Bánh đa truyền thống với hương vị đặc trưng của làng nghề Kế",
+          "image": "assets/images/foods/banh-da-ke.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Khu di tích Yên Thế",
+          "description": "Di tích lịch sử gắn liền với cuộc khởi nghĩa Yên Thế của nghĩa quân Hoàng Hoa Thám",
+          "distance": "30km",
+          "travelTime": "45 phút đi xe máy"
+        },
+        {
+          "name": "Suối Mỡ",
+          "description": "Khu du lịch sinh thái với thác nước và không gian xanh mát",
+          "distance": "15km",
+          "travelTime": "25 phút đi xe máy"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Cơm gà Bắc Giang",
+          "description": "Món cơm gà đặc trưng với gà thả vườn và gạo địa phương",
+          "restaurant": "Quán cơm gà Hương - Phố Hoàng Văn Thụ",
+          "price": "45000-70000 VND/phần"
+        },
+        {
+          "name": "Bánh đa Kế",
+          "description": "Bánh đa truyền thống được làm thủ công",
+          "restaurant": "Cửa hàng đặc sản Bắc Giang - Chợ trung tâm",
+          "price": "20000-30000 VND/gói"
+        }
+      ]
+    },
+    {
+      "id": "lang-son",
+      "name": "Thành phố Lạng Sơn",
+      "location": "Lạng Sơn",
+      "image": "assets/images/places/checkin-lang-son.jpg",
+      "description": "Thành phố biên giới với nhiều danh thắng, nơi giao thoa văn hóa Việt - Hoa độc đáo, với những hang động kỳ thú và di tích lịch sử quan trọng của vùng biên cương Tổ quốc",
+      "detailedDescription": "Lạng Sơn là thành phố biên giới nằm ở cửa ngõ phía Bắc của Tổ quốc, nơi hội tụ những nét văn hóa độc đáo của người Việt, Tày, Nùng và ảnh hưởng văn hóa Trung Hoa. Thành phố nổi tiếng với quần thể hang động Tam Thanh - Nhị Thanh, núi Tô Thị gắn với truyền thuyết về tình mẫu tử, và đền Kỳ Cùng - trung tâm tâm linh quan trọng của vùng. Chợ Đông Kinh sầm uất là điểm đến không thể bỏ qua, nơi tập trung nhiều mặt hàng đặc sắc và ẩm thực đa dạng. Thành phố còn lưu giữ nhiều di tích lịch sử quan trọng như thành nhà Mạc, cửa khẩu Hữu Nghị - điểm giao thương quốc tế sôi động. Cảnh quan thiên nhiên nơi đây đặc biệt đẹp với những dãy núi đá vôi hùng vĩ và thung lũng xanh tươi.",
+      "howToGet": "Từ Hà Nội đi xe khách hoặc tàu hỏa (khoảng 150km). Có nhiều chuyến xe khách và tàu chạy hàng ngày từ Hà Nội đến Lạng Sơn.",
+      "bestTimeToVisit": "Thời điểm đẹp nhất là mùa thu (tháng 9-11) khi thời tiết mát mẻ, trong trẻo hoặc mùa xuân (tháng 2-4) để tham dự các lễ hội truyền thống.",
+      "attractions": {
+        "natural": [
+          {
+            "name": "Núi Tô Thị",
+            "description": "Danh thắng gắn với truyền thuyết về tình mẫu tử, điểm ngắm cảnh lý tưởng của thành phố",
+            "image": "assets/images/places/nui-to-thi.jpg"
+          },
+          {
+            "name": "Động Tam Thanh",
+            "description": "Hang động tự nhiên với nhiều nhũ đá độc đáo và truyền thuyết lịch sử",
+            "image": "assets/images/places/dong-tam-thanh.jpg"
+          }
+        ],
+        "cultural": [
+          {
+            "name": "Chợ Đông Kinh",
+            "description": "Khu chợ truyền thống sầm uất với nhiều mặt hàng đặc trưng vùng biên giới",
+            "image": "assets/images/places/cho-dong-kinh.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Vịt quay Lạng Sơn",
+          "description": "Món ăn đặc sản nổi tiếng với cách chế biến độc đáo và hương vị thơm ngon",
+          "image": "assets/images/foods/vit-quay-lang-son.jpg"
+        },
+        {
+          "name": "Phở chua Lạng Sơn",
+          "description": "Món phở đặc trưng của vùng với vị chua thanh và nước dùng đặc biệt",
+          "image": "assets/images/foods/pho-chua.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Cửa khẩu Hữu Nghị",
+          "description": "Cửa khẩu quốc tế quan trọng giữa Việt Nam và Trung Quốc",
+          "distance": "20km",
+          "travelTime": "30 phút đi xe máy"
+        },
+        {
+          "name": "Thành nhà Mạc",
+          "description": "Di tích lịch sử thời nhà Mạc với kiến trúc cổ",
+          "distance": "5km",
+          "travelTime": "15 phút đi xe máy"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Vịt quay Lạng Sơn",
+          "description": "Vịt quay truyền thống với da giòn và thịt mềm",
+          "restaurant": "Nhà hàng Vịt quay Kỳ Cùng - Phố Kỳ Lừa",
+          "price": "250000-300000 VND/con"
+        },
+        {
+          "name": "Phở chua",
+          "description": "Phở đặc sản với vị chua đặc trưng",
+          "restaurant": "Quán phở chua Bà Hằng - Phố Tam Thanh",
+          "price": "35000-45000 VND/bát"
+        }
+      ]
+    }
+  ]
+} 

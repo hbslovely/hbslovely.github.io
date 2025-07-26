@@ -1,0 +1,718 @@
+{
+  "places": [
+    {
+      "id": "cho-da-lat",
+      "name": "Chợ Đà Lạt",
+      "location": "Lâm Đồng",
+      "image": "assets/images/places/checkin-cho-da-lat-lam-dong.jpg",
+      "description": "Khu chợ truyền thống nổi tiếng của thành phố ngàn hoa, nơi hội tụ tinh hoa ẩm thực và văn hóa của vùng đất cao nguyên. Chợ không chỉ là trung tâm mua sắm sầm uất mà còn là điểm đến không thể bỏ qua để trải nghiệm không khí sinh hoạt đặc trưng của người dân địa phương.",
+      "detailedDescription": "Chợ Đà Lạt là một trong những điểm đến không thể bỏ qua khi đến thành phố ngàn hoa. Được xây dựng từ thời Pháp thuộc với kiến trúc độc đáo, chợ là nơi tập trung đầy đủ các đặc sản của vùng đất cao nguyên như rau củ tươi, hoa quả, đồ len và các món ăn đặc trưng. Khu chợ không chỉ phục vụ nhu cầu mua sắm mà còn là điểm giao thoa văn hóa, nơi du khách có thể tìm hiểu về cuộc sống và phong cách sinh hoạt của người dân Đà Lạt. Vào mỗi buổi sáng sớm, chợ là nơi diễn ra các hoạt động mua bán sôi động nhất, với những người nông dân mang các sản phẩm tươi ngon từ các vườn rau và trang trại về bán.",
+      "howToGet": "Chợ nằm ở trung tâm thành phố Đà Lạt, dễ dàng di chuyển bằng các phương tiện công cộng. Từ ga Đà Lạt, bạn có thể đi bộ khoảng 10 phút hoặc bắt taxi với giá khoảng 20.000 đồng.",
+      "bestTimeToVisit": "Chợ họp từ sáng sớm, nhưng nhộn nhịp nhất là từ 6h-9h sáng. Đây là thời điểm lý tưởng để mua sắm rau củ quả tươi và thưởng thức bữa sáng đặc trưng của người Đà Lạt.",
+      "attractions": {
+        "shopping": [
+          {
+            "name": "Khu chợ truyền thống",
+            "description": "Nơi tập trung nhiều đặc sản và hàng hóa đặc trưng Đà Lạt",
+            "image": "assets/images/places/checkin-cho-da-lat-lam-dong.jpg"
+          },
+          {
+            "name": "Khu bán hoa tươi",
+            "description": "Nơi bán các loại hoa đặc trưng Đà Lạt",
+            "image": "assets/images/places/cho-hoa-da-lat.jpg"
+          }
+        ],
+        "cultural": [
+          {
+            "name": "Khu ẩm thực",
+            "description": "Nơi thưởng thức các món ăn đặc sản Đà Lạt",
+            "image": "assets/images/places/am-thuc-cho-da-lat.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Bánh tráng nướng",
+          "description": "Món ăn vặt đặc trưng của Đà Lạt",
+          "image": "assets/images/foods/banh-trang-nuong.jpg"
+        },
+        {
+          "name": "Sữa đậu nành nóng",
+          "description": "Đồ uống truyền thống ấm nóng",
+          "image": "assets/images/foods/sua-dau-nanh.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Nhà thờ Con Gà",
+          "description": "Công trình kiến trúc Pháp nổi tiếng với lối kiến trúc Gothic độc đáo, là biểu tượng của thành phố Đà Lạt",
+          "distance": "500m về phía Đông",
+          "travelTime": "10 phút đi bộ",
+          "image": "assets/images/places/nha-tho-con-ga.jpg"
+        },
+        {
+          "name": "Hồ Xuân Hương",
+          "description": "Hồ nước ngọt trung tâm Đà Lạt, nơi lý tưởng để dạo bộ và ngắm cảnh thành phố",
+          "distance": "1km về phía Tây",
+          "travelTime": "15 phút đi bộ hoặc 5 phút đi xe",
+          "image": "assets/images/places/ho-xuan-huong.jpg"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Bánh ướt lòng gà",
+          "description": "Món ăn đặc trưng Đà Lạt với bánh ướt mềm mịn và lòng gà tươi ngon",
+          "restaurant": "Quán Bánh Ướt Lòng Gà Bà Hương",
+          "price": "35000-50000 VND/phần",
+          "where": "Khu B, tầng 1, chợ Đà Lạt"
+        },
+        {
+          "name": "Bánh mì xíu mại",
+          "description": "Bánh mì giòn với nhân xíu mại nóng hổi, nước sốt đặc biệt",
+          "restaurant": "Bánh Mì Xíu Mại Hoàng Diệu",
+          "price": "20000-30000 VND/ổ",
+          "where": "Khu ẩm thực sáng, lối vào chính chợ Đà Lạt"
+        }
+      ]
+    },
+    {
+      "id": "chua-linh-phuoc",
+      "name": "Chùa Linh Phước",
+      "location": "Lâm Đồng",
+      "image": "assets/images/places/checkin-chua-linh-phuoc-lam-dong.jpg",
+      "description": "Ngôi chùa độc đáo với kiến trúc từ mảnh sành sứ",
+      "detailedDescription": "Chùa Linh Phước, còn được gọi là chùa Ve Chai, nổi tiếng với lối kiến trúc độc đáo được trang trí bằng các mảnh sành sứ. Đây là một trong những ngôi chùa có kiến trúc độc đáo nhất Đà Lạt.",
+      "howToGet": "Từ trung tâm Đà Lạt đi khoảng 8km theo đường Tự Phước.",
+      "bestTimeToVisit": "Có thể thăm quan quanh năm, đẹp nhất vào buổi sáng sớm.",
+      "attractions": {
+        "religious": [
+          {
+            "name": "Chùa Ve Chai",
+            "description": "Công trình tôn giáo với kiến trúc độc đáo từ mảnh sành sứ",
+            "image": "assets/images/places/checkin-chua-linh-phuoc-lam-dong.jpg"
+          },
+          {
+            "name": "Long Hoa Viên",
+            "description": "Khu vườn với tượng rồng dài 49m",
+            "image": "assets/images/places/long-hoa-vien.jpg"
+          }
+        ],
+        "cultural": [
+          {
+            "name": "Bảo tàng trà",
+            "description": "Nơi trưng bày văn hóa trà Đà Lạt",
+            "image": "assets/images/places/bao-tang-tra.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Chè đậu đỏ",
+          "description": "Món chè truyền thống của chùa",
+          "image": "assets/images/foods/che-dau-do.jpg"
+        },
+        {
+          "name": "Trà Ô Long",
+          "description": "Trà đặc sản Đà Lạt",
+          "image": "assets/images/foods/tra-o-long.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Ga Trại Mát",
+          "description": "Nhà ga cổ của Đà Lạt",
+          "distance": "1km",
+          "image": "assets/images/places/ga-trai-mat.jpg"
+        },
+        {
+          "name": "Thác Datanla",
+          "description": "Thác nước đẹp gần chùa",
+          "distance": "5km",
+          "image": "assets/images/places/thac-datanla.jpg"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Cơm chay",
+          "description": "Món chay của chùa",
+          "price": "30000-50000 VND/phần",
+          "where": "Nhà ăn trong chùa"
+        },
+        {
+          "name": "Bánh ít chay",
+          "description": "Bánh truyền thống",
+          "price": "5000-10000 VND/cái",
+          "where": "Quầy bán đồ chay trong chùa"
+        }
+      ]
+    },
+    {
+      "id": "kinh-luan-dat-vang",
+      "name": "Kính Lửa Đất Vàng",
+      "location": "Lâm Đồng",
+      "image": "assets/images/places/checkin-kinh-luan-dat-vang-lam-dong.jpg",
+      "description": "Điểm check-in độc đáo với kiến trúc hiện đại",
+      "detailedDescription": "Kính Lửa Đất Vàng là một công trình kiến trúc hiện đại tại Đà Lạt, nổi tiếng với thiết kế độc đáo và view nhìn toàn cảnh thành phố. Đây là điểm check-in yêu thích của giới trẻ.",
+      "howToGet": "Từ trung tâm Đà Lạt đi khoảng 5km theo hướng Suối Vàng.",
+      "bestTimeToVisit": "Thời điểm đẹp nhất là buổi sáng sớm hoặc hoàng hôn.",
+      "attractions": {
+        "entertainment": [
+          {
+            "name": "Kính Lửa Đất Vàng",
+            "description": "Công trình kiến trúc hiện đại với view toàn cảnh",
+            "image": "assets/images/places/checkin-kinh-luan-dat-vang-lam-dong.jpg"
+          },
+          {
+            "name": "Khu chụp ảnh",
+            "description": "Khu vực trang trí đẹp để chụp ảnh",
+            "image": "assets/images/places/khu-chup-anh-kinh-lua.jpg"
+          }
+        ],
+        "natural": [
+          {
+            "name": "Đồi thông",
+            "description": "Cảnh quan thiên nhiên đẹp xung quanh",
+            "image": "assets/images/places/doi-thong-da-lat.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Cà phê view đồi",
+          "description": "Cà phê thưởng thức với view đẹp",
+          "image": "assets/images/foods/cafe-view-doi.jpg"
+        },
+        {
+          "name": "Bánh mì nướng muối ớt",
+          "description": "Món ăn vặt phổ biến",
+          "image": "assets/images/foods/banh-mi-nuong.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Thung lũng Tình Yêu",
+          "description": "Khu du lịch nổi tiếng Đà Lạt",
+          "distance": "3km",
+          "image": "assets/images/places/thung-lung-tinh-yeu.jpg"
+        },
+        {
+          "name": "Đồi Robin",
+          "description": "Điểm ngắm cảnh đẹp",
+          "distance": "2km",
+          "image": "assets/images/places/doi-robin.jpg"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Cà phê sữa đá",
+          "description": "Cà phê Đà Lạt thơm ngon",
+          "price": "25000-35000 VND/ly",
+          "where": "Quán cà phê trong khu du lịch"
+        },
+        {
+          "name": "Trà trái cây",
+          "description": "Đồ uống từ trái cây Đà Lạt",
+          "price": "30000-45000 VND/ly",
+          "where": "Các quán nước trong khu vực"
+        }
+      ]
+    },
+    {
+      "id": "cho-noi-cai-rang",
+      "name": "Chợ nổi Cái Răng",
+      "location": "Cần Thơ",
+      "image": "assets/images/places/checkin-cho-noi-cai-rang-can-tho.jpg",
+      "description": "Chợ nổi truyền thống của vùng sông nước miền Tây",
+      "detailedDescription": "Chợ nổi Cái Răng là một trong những chợ nổi lớn nhất đồng bằng sông Cửu Long. Đây là nơi giao thương truyền thống trên sông nước, mang đậm bản sắc văn hóa miền Tây Nam Bộ.",
+      "howToGet": "Từ trung tâm Cần Thơ đi thuyền khoảng 30 phút theo sông Hậu.",
+      "bestTimeToVisit": "Chợ họp từ rạng sáng, nhộn nhịp nhất từ 5h-8h sáng.",
+      "attractions": {
+        "cultural": [
+          {
+            "name": "Chợ nổi truyền thống",
+            "description": "Khu chợ trên sông với nhiều ghe thuyền buôn bán",
+            "image": "assets/images/places/checkin-cho-noi-cai-rang-can-tho.jpg"
+          },
+          {
+            "name": "Khu ẩm thực trên sông",
+            "description": "Nơi thưởng thức ẩm thực sông nước",
+            "image": "assets/images/places/am-thuc-cai-rang.jpg"
+          }
+        ],
+        "natural": [
+          {
+            "name": "Cảnh sông nước",
+            "description": "Khung cảnh sông nước miền Tây",
+            "image": "assets/images/places/song-nuoc-cai-rang.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Hủ tiếu",
+          "description": "Món ăn sáng đặc trưng",
+          "image": "assets/images/foods/hu-tieu.jpg"
+        },
+        {
+          "name": "Bún riêu cua",
+          "description": "Món bún nổi tiếng miền Tây",
+          "image": "assets/images/foods/bun-rieu-cua.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Bến Ninh Kiều",
+          "description": "Bến tàu du lịch nổi tiếng",
+          "distance": "2km",
+          "image": "assets/images/places/ben-ninh-kieu.jpg"
+        },
+        {
+          "name": "Nhà cổ Bình Thủy",
+          "description": "Di tích kiến trúc cổ",
+          "distance": "5km",
+          "image": "assets/images/places/nha-co-binh-thuy.jpg"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Cà phê vợt",
+          "description": "Cà phê truyền thống miền Tây",
+          "price": "15000-25000 VND/ly",
+          "where": "Các ghe bán cà phê trong chợ"
+        },
+        {
+          "name": "Bánh cống",
+          "description": "Món ăn đặc sản Cần Thơ",
+          "price": "5000-10000 VND/cái",
+          "where": "Các ghe bán đồ ăn trong chợ"
+        }
+      ]
+    },
+    {
+      "id": "phu-chau-mieu",
+      "name": "Phù Châu Miếu",
+      "location": "TP.HCM",
+      "image": "assets/images/places/checkin-phu-chau-mieu-go-vap-hcm.jpg",
+      "description": "Di tích tâm linh cổ tại Gò Vấp",
+      "detailedDescription": "Phù Châu Miếu là ngôi miếu cổ nằm tại quận Gò Vấp, TP.HCM. Công trình mang đậm kiến trúc truyền thống và là điểm đến tâm linh quan trọng của người dân địa phương.",
+      "howToGet": "Từ trung tâm TP.HCM đi xe buýt hoặc taxi đến quận Gò Vấp.",
+      "bestTimeToVisit": "Có thể thăm quan quanh năm, đặc biệt vào các dịp lễ tết.",
+      "attractions": {
+        "religious": [
+          {
+            "name": "Miếu cổ",
+            "description": "Công trình tâm linh với kiến trúc truyền thống",
+            "image": "assets/images/places/checkin-phu-chau-mieu-go-vap-hcm.jpg"
+          },
+          {
+            "name": "Khu thờ tự",
+            "description": "Nơi thờ phụng trang nghiêm",
+            "image": "assets/images/places/khu-tho-phu-chau-mieu.jpg"
+          }
+        ],
+        "cultural": [
+          {
+            "name": "Khu trưng bày",
+            "description": "Nơi trưng bày các hiện vật lịch sử",
+            "image": "assets/images/places/trung-bay-phu-chau-mieu.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Chè trái cây",
+          "description": "Món chè mát lạnh đặc trưng",
+          "image": "assets/images/foods/che-trai-cay.jpg"
+        },
+        {
+          "name": "Bánh ít trần",
+          "description": "Bánh truyền thống",
+          "image": "assets/images/foods/banh-it-tran.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Công viên Gia Định",
+          "description": "Công viên xanh mát",
+          "distance": "2km",
+          "image": "assets/images/places/cong-vien-gia-dinh.jpg"
+        },
+        {
+          "name": "Chợ Hạnh Thông Tây",
+          "description": "Chợ truyền thống sầm uất",
+          "distance": "1km",
+          "image": "assets/images/places/cho-hanh-thong-tay.jpg"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Chè dừa dầm",
+          "description": "Chè mát lạnh",
+          "price": "20000-30000 VND/ly",
+          "where": "Các quán chè gần miếu"
+        },
+        {
+          "name": "Bánh bò thốt nốt",
+          "description": "Bánh truyền thống",
+          "price": "5000-10000 VND/cái",
+          "where": "Các quầy bánh gần miếu"
+        }
+      ]
+    },
+    {
+      "id": "chua-keo-thai-binh",
+      "name": "Chùa Keo",
+      "location": "Thái Bình",
+      "image": "assets/images/places/checkin-chua-keo-thai-binh.jpg",
+      "description": "Di tích kiến trúc nghệ thuật quốc gia",
+      "detailedDescription": "Chùa Keo là một trong những ngôi chùa cổ nhất Việt Nam, nổi tiếng với kiến trúc độc đáo thời Lý. Chùa còn lưu giữ nhiều hiện vật quý giá và là điểm đến tâm linh quan trọng của vùng đồng bằng Bắc Bộ.",
+      "howToGet": "Từ trung tâm Thái Bình đi khoảng 15km theo hướng Vũ Thư.",
+      "bestTimeToVisit": "Thời điểm đẹp nhất là vào mùa xuân, đặc biệt là dịp lễ hội chùa.",
+      "attractions": {
+        "religious": [
+          {
+            "name": "Chùa Keo",
+            "description": "Ngôi chùa cổ với kiến trúc độc đáo thời Lý",
+            "image": "assets/images/places/checkin-chua-keo-thai-binh.jpg"
+          },
+          {
+            "name": "Tháp chuông",
+            "description": "Tháp chuông cổ kính",
+            "image": "assets/images/places/thap-chuong-chua-keo.jpg"
+          }
+        ],
+        "historical": [
+          {
+            "name": "Bảo tàng chùa",
+            "description": "Nơi lưu giữ các hiện vật lịch sử",
+            "image": "assets/images/places/bao-tang-chua-keo.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Xôi cốm",
+          "description": "Món xôi truyền thống",
+          "image": "assets/images/foods/xoi-com.jpg"
+        },
+        {
+          "name": "Chè lam",
+          "description": "Món chè đặc sản",
+          "image": "assets/images/foods/che-lam.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Làng nghề dệt Hồng Quang",
+          "description": "Làng nghề truyền thống",
+          "distance": "5km",
+          "image": "assets/images/places/lang-nghe-det.jpg"
+        },
+        {
+          "name": "Đền Trần Thái Bình",
+          "description": "Di tích lịch sử",
+          "distance": "10km",
+          "image": "assets/images/places/den-tran-thai-binh.jpg"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Cơm chay",
+          "description": "Món chay của chùa",
+          "price": "30000-50000 VND/phần",
+          "where": "Nhà ăn trong chùa"
+        },
+        {
+          "name": "Bánh gai",
+          "description": "Đặc sản Thái Bình",
+          "price": "10000-15000 VND/cái",
+          "where": "Các quầy bán quà lưu niệm"
+        }
+      ]
+    },
+    {
+      "id": "dinh-yen-tu",
+      "name": "Đỉnh Yên Tử",
+      "location": "Quảng Ninh",
+      "image": "assets/images/places/checkin-dinh-yen-tu-quang-ninh.jpg",
+      "description": "Trung tâm Phật giáo của Việt Nam",
+      "detailedDescription": "Yên Tử là quần thể di tích danh thắng gắn liền với Phật hoàng Trần Nhân Tông và dòng thiền Trúc Lâm. Nơi đây có cảnh quan thiên nhiên hùng vĩ và nhiều công trình tâm linh quan trọng.",
+      "howToGet": "Từ Hà Nội đi xe khách đến Uông Bí (khoảng 130km), sau đó đi cáp treo hoặc leo núi.",
+      "bestTimeToVisit": "Thời điểm đẹp nhất là từ tháng 1 đến tháng 3 (mùa lễ hội Yên Tử).",
+      "attractions": {
+        "religious": [
+          {
+            "name": "Chùa Đồng",
+            "description": "Ngôi chùa đồng cao nhất Việt Nam trên đỉnh Yên Tử",
+            "image": "assets/images/places/checkin-dinh-yen-tu-quang-ninh.jpg"
+          },
+          {
+            "name": "Chùa Một Mái",
+            "description": "Ngôi chùa cổ độc đáo",
+            "image": "assets/images/places/chua-mot-mai.jpg"
+          }
+        ],
+        "natural": [
+          {
+            "name": "Rừng cổ thụ",
+            "description": "Khu rừng nguyên sinh với nhiều cây cổ thụ",
+            "image": "assets/images/places/rung-co-thu-yen-tu.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Chè dưỡng sinh",
+          "description": "Món chè đặc trưng của vùng núi",
+          "image": "assets/images/foods/che-duong-sinh.jpg"
+        },
+        {
+          "name": "Bánh đậu xanh",
+          "description": "Đặc sản Quảng Ninh",
+          "image": "assets/images/foods/banh-dau-xanh.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Thiền viện Trúc Lâm",
+          "description": "Trung tâm thiền học lớn",
+          "distance": "2km",
+          "image": "assets/images/places/thien-vien-truc-lam.jpg"
+        },
+        {
+          "name": "Suối Giải Oan",
+          "description": "Dòng suối linh thiêng",
+          "distance": "1km",
+          "image": "assets/images/places/suoi-giai-oan.jpg"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Cơm chay núi",
+          "description": "Món chay đặc trưng",
+          "price": "40000-60000 VND/phần",
+          "where": "Các nhà hàng chay dọc đường lên núi"
+        },
+        {
+          "name": "Trà Yên Tử",
+          "description": "Trà đặc sản vùng núi",
+          "price": "50000-100000 VND/gói",
+          "where": "Các quầy bán đặc sản"
+        }
+      ]
+    },
+    {
+      "id": "chua-dong-yen-tu",
+      "name": "Chùa Đồng Yên Tử",
+      "location": "Quảng Ninh",
+      "image": "assets/images/places/checkin-chua-dong-yen-tu-quang-ninh.jpg",
+      "description": "Ngôi chùa đồng trên đỉnh núi thiêng",
+      "detailedDescription": "Chùa Đồng là ngôi chùa nằm trên đỉnh cao nhất của dãy Yên Tử, được đúc hoàn toàn bằng đồng. Đây là điểm đến tâm linh quan trọng và là nơi ngắm cảnh tuyệt đẹp từ độ cao hơn 1000m.",
+      "howToGet": "Từ chân núi Yên Tử đi cáp treo hoặc leo bộ khoảng 6km.",
+      "bestTimeToVisit": "Thời điểm đẹp nhất là từ tháng 1 đến tháng 3, tránh mùa mưa bão.",
+      "attractions": {
+        "religious": [
+          {
+            "name": "Chùa Đồng",
+            "description": "Ngôi chùa bằng đồng độc đáo trên đỉnh Yên Tử",
+            "image": "assets/images/places/checkin-chua-dong-yen-tu-quang-ninh.jpg"
+          },
+          {
+            "name": "Tượng Phật đồng",
+            "description": "Tượng Phật lớn bằng đồng",
+            "image": "assets/images/places/tuong-phat-dong.jpg"
+          }
+        ],
+        "natural": [
+          {
+            "name": "View đỉnh núi",
+            "description": "Cảnh quan tuyệt đẹp từ đỉnh Yên Tử",
+            "image": "assets/images/places/view-dinh-yen-tu.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Nước suối thiêng",
+          "description": "Nước suối từ đỉnh Yên Tử",
+          "image": "assets/images/foods/nuoc-suoi-thieng.jpg"
+        },
+        {
+          "name": "Bánh gai Yên Tử",
+          "description": "Đặc sản vùng núi",
+          "image": "assets/images/foods/banh-gai.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Am Ngọa Vân",
+          "description": "Nơi tu hành của Phật hoàng",
+          "distance": "3km",
+          "image": "assets/images/places/am-ngoa-van.jpg"
+        },
+        {
+          "name": "Tháp Huệ Quang",
+          "description": "Tháp cổ linh thiêng",
+          "distance": "0.5km",
+          "image": "assets/images/places/thap-hue-quang.jpg"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Nước suối Yên Tử",
+          "description": "Nước suối tinh khiết",
+          "price": "10000-15000 VND/chai",
+          "where": "Các quầy bán nước dọc đường"
+        },
+        {
+          "name": "Bánh chưng gai",
+          "description": "Đặc sản truyền thống",
+          "price": "30000-50000 VND/cái",
+          "where": "Các quầy bán đặc sản"
+        }
+      ]
+    },
+    {
+      "id": "den-tran-nam-dinh",
+      "name": "Đền Trần",
+      "location": "Nam Định",
+      "image": "assets/images/places/checkin-den-tran-nam-dinh.jpg",
+      "description": "Di tích lịch sử thờ các vua Trần",
+      "detailedDescription": "Đền Trần là quần thể di tích lịch sử văn hóa thờ các vua nhà Trần và những người có công với triều đại này. Đây là một trong những công trình kiến trúc tôn giáo tiêu biểu của vùng đồng bằng Bắc Bộ.",
+      "howToGet": "Từ trung tâm Nam Định đi khoảng 3km theo đường Trần Thừa.",
+      "bestTimeToVisit": "Thời điểm đẹp nhất là vào dịp lễ hội Đền Trần (tháng 1-2 âm lịch).",
+      "attractions": {
+        "religious": [
+          {
+            "name": "Đền Trần",
+            "description": "Quần thể đền thờ với kiến trúc cổ thời Trần",
+            "image": "assets/images/places/checkin-den-tran-nam-dinh.jpg"
+          },
+          {
+            "name": "Điện thờ chính",
+            "description": "Nơi thờ các vua Trần",
+            "image": "assets/images/places/dien-tho-den-tran.jpg"
+          }
+        ],
+        "historical": [
+          {
+            "name": "Bảo tàng",
+            "description": "Trưng bày hiện vật thời Trần",
+            "image": "assets/images/places/bao-tang-den-tran.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Phở bò Nam Định",
+          "description": "Phở truyền thống nổi tiếng",
+          "image": "assets/images/foods/pho-bo-nam-dinh.jpg"
+        },
+        {
+          "name": "Xôi Phú Nhi",
+          "description": "Xôi đặc sản Nam Định",
+          "image": "assets/images/foods/xoi-phu-nhi.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Chợ Viềng",
+          "description": "Chợ truyền thống nổi tiếng",
+          "distance": "5km",
+          "image": "assets/images/places/cho-vieng.jpg"
+        },
+        {
+          "name": "Phủ Dầy",
+          "description": "Quần thể di tích tâm linh",
+          "distance": "15km",
+          "image": "assets/images/places/phu-day.jpg"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Phở bò Nam Định",
+          "description": "Phở truyền thống",
+          "price": "35000-50000 VND/bát",
+          "where": "Các quán phở gần đền"
+        },
+        {
+          "name": "Bún đũa",
+          "description": "Món ăn đặc trưng",
+          "price": "25000-35000 VND/bát",
+          "where": "Các quán ăn địa phương"
+        }
+      ]
+    },
+    {
+      "id": "chua-tam-chuc",
+      "name": "Chùa Tam Chúc",
+      "location": "Hà Nam",
+      "image": "assets/images/places/checkin-chua-tam-chuc-ha-nam.jpg",
+      "description": "Quần thể chùa lớn nhất thế giới",
+      "detailedDescription": "Chùa Tam Chúc là quần thể chùa lớn nhất thế giới, nằm giữa khung cảnh núi non hùng vĩ của Hà Nam. Nơi đây không chỉ là trung tâm tâm linh mà còn là điểm du lịch văn hóa quan trọng của miền Bắc.",
+      "howToGet": "Từ Hà Nội đi xe khách hoặc ô tô khoảng 60km theo quốc lộ 1A.",
+      "bestTimeToVisit": "Có thể thăm quan quanh năm, đẹp nhất vào mùa xuân và thu.",
+      "attractions": {
+        "religious": [
+          {
+            "name": "Quần thể chùa",
+            "description": "Khu chùa rộng lớn với kiến trúc độc đáo và cảnh quan đẹp",
+            "image": "assets/images/places/checkin-chua-tam-chuc-ha-nam.jpg"
+          },
+          {
+            "name": "Điện Tam Thế",
+            "description": "Công trình tâm linh lớn",
+            "image": "assets/images/places/dien-tam-the.jpg"
+          }
+        ],
+        "natural": [
+          {
+            "name": "Hồ Tam Chúc",
+            "description": "Hồ nước trong xanh bao quanh chùa",
+            "image": "assets/images/places/ho-tam-chuc.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Cơm chay",
+          "description": "Món chay tinh tế",
+          "image": "assets/images/foods/com-chay-tam-chuc.jpg"
+        },
+        {
+          "name": "Chè sen",
+          "description": "Chè thanh mát",
+          "image": "assets/images/foods/che-sen.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Núi Ngọc",
+          "description": "Núi đá vôi đẹp",
+          "distance": "2km",
+          "image": "assets/images/places/nui-ngoc.jpg"
+        },
+        {
+          "name": "Làng nghề đá Non Nước",
+          "description": "Làng nghề truyền thống",
+          "distance": "5km",
+          "image": "assets/images/places/lang-nghe-da.jpg"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Buffet chay",
+          "description": "Các món chay đa dạng",
+          "price": "100000-150000 VND/người",
+          "where": "Nhà hàng chay trong khuôn viên chùa"
+        },
+        {
+          "name": "Trà sen Tam Chúc",
+          "description": "Trà thơm đặc sản",
+          "price": "30000-50000 VND/gói",
+          "where": "Các quầy bán đặc sản"
+        }
+      ]
+    }
+  ]
+} 
