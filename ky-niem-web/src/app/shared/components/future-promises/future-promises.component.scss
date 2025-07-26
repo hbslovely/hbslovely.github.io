@@ -3,9 +3,30 @@
 // Variables
 $primary-green: #4CAF50;
 $light-green: #E8F5E9;
-$dark-green: #2E7D32;
-$white: #FFFFFF;
-$border-color: rgba($dark-green, 0.2);
+$lighter-green: #F1F8E9;
+$hover-green: #81C784;
+$text-color: #2E7D32;
+$dark-green: #57955a;
+$white: #fff;
+$border-color: $primary-green;
+
+@keyframes floatQuoteIcon {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-5px, -5px) rotate(-5deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes pulseOpacity {
+  0% { opacity: 0.03; }
+  50% { opacity: 0.05; }
+  100% { opacity: 0.03; }
+}
 
 .promises-section {
   background-color: $light-green;
@@ -44,16 +65,58 @@ $border-color: rgba($dark-green, 0.2);
   }
 
   .header-quote {
-    color: $dark-green;
-    font-style: italic;
+    position: relative;
+    background: linear-gradient(135deg, $lighter-green 0%, white 100%);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+    overflow: hidden;
+
+    &::before {
+      content: '\e908'; // PrimeIcons quote-left
+      font-family: 'PrimeIcons';
+      position: absolute;
+      font-size: 150px;
+      color: $primary-green;
+      opacity: 0.03;
+      left: -20px;
+      top: -20px;
+      z-index: 0;
+      animation: floatQuoteIcon 6s ease-in-out infinite, pulseOpacity 4s ease-in-out infinite;
+    }
+
+    &::after {
+      content: '\e909'; // PrimeIcons quote-right
+      font-family: 'PrimeIcons';
+      position: absolute;
+      font-size: 150px;
+      color: $primary-green;
+      opacity: 0.03;
+      right: -20px;
+      bottom: -20px;
+      z-index: 0;
+      transform: rotate(180deg);
+      animation: floatQuoteIcon 6s ease-in-out infinite reverse, pulseOpacity 4s ease-in-out infinite;
+      animation-delay: 2s;
+    }
 
     p {
+      position: relative;
+      z-index: 1;
       font-size: 1.2rem;
-      margin-bottom: 0.5rem;
+      line-height: 1.6;
+      color: $text-color;
+      font-style: italic;
+      text-align: center;
+      margin: 0;
     }
 
     span {
-      font-size: 0.9rem;
+      display: block;
+      text-align: right;
+      color: $text-color;
+      font-weight: 500;
+      margin-top: 1rem;
     }
   }
 }
@@ -226,6 +289,22 @@ $border-color: rgba($dark-green, 0.2);
     padding: 1.5rem;
     margin: 0 2rem;
     width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+    &:nth-child(3n+1) {
+      animation: floatingCard1 2s ease-in-out infinite;
+    }
+
+    &:nth-child(3n+2) {
+      animation: floatingCard2 1.8s ease-in-out infinite;
+      animation-delay: 0.3s;
+    }
+
+    &:nth-child(3n) {
+      animation: floatingCard3 2.2s ease-in-out infinite;
+      animation-delay: 0.6s;
+    }
 
     h4 {
       color: $dark-green;
@@ -254,30 +333,66 @@ $border-color: rgba($dark-green, 0.2);
 }
 
 .quote-box {
-  background: $white;
-  padding: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
   position: relative;
+  background: linear-gradient(135deg, $lighter-green 0%, white 100%);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem 0;
+  overflow: hidden;
 
-  i {
+  &::before {
+    content: '\e908'; // PrimeIcons quote-left
+    font-family: 'PrimeIcons';
+    position: absolute;
+    font-size: 180px;
     color: $primary-green;
-    font-size: 1.5rem;
+    opacity: 0.03;
+    left: -25px;
+    top: -25px;
+    z-index: 0;
+    animation: floatQuoteIcon 6s ease-in-out infinite, pulseOpacity 4s ease-in-out infinite;
+  }
+
+  &::after {
+    content: '\e909'; // PrimeIcons quote-right
+    font-family: 'PrimeIcons';
+    position: absolute;
+    font-size: 180px;
+    color: $primary-green;
+    opacity: 0.03;
+    right: -25px;
+    bottom: -25px;
+    z-index: 0;
+    transform: rotate(180deg);
+    animation: floatQuoteIcon 6s ease-in-out infinite reverse, pulseOpacity 4s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+
+  .pi-heart {
+    color: $primary-green;
+    font-size: 2rem;
+    opacity: 0.7;
+    display: block;
+    text-align: center;
     margin-bottom: 1rem;
   }
 
   blockquote {
-    color: $dark-green;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin: 1rem 0;
+    position: relative;
+    z-index: 1;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: $text-color;
     font-style: italic;
+    text-align: center;
+    margin: 0;
   }
 
   .author {
-    color: $primary-green;
-    font-size: 0.9rem;
     display: block;
+    text-align: right;
+    color: $text-color;
+    font-weight: 500;
     margin-top: 1rem;
   }
 }
@@ -311,4 +426,4 @@ $border-color: rgba($dark-green, 0.2);
       margin-left: 0;
     }
   }
-} 
+}

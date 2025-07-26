@@ -1,6 +1,201 @@
 {
   "albums": [
     {
+      "id": "quyen-moments",
+      "title": "Nàng Thơ Của Anh",
+      "description": "Những khoảnh khắc đáng yêu và xinh đẹp của em - người con gái anh yêu thương nhất",
+      "coverImage": "assets/images/quyen/quyen-portrait.png",
+      "photoCount": 31,
+      "photos": [
+        {
+          "id": "quyen-1",
+          "url": "assets/images/quyen/quyen-portrait.png",
+          "title": "Nàng Thơ Của Anh",
+          "description": "Chân dung em trong chiếc áo trắng tinh khôi"
+        },
+        {
+          "id": "quyen-2",
+          "url": "assets/images/quyen/z6843539895501_95bd68ae1ce476718ac2a2ea38d8e046.jpg",
+          "title": "Nụ Cười Tỏa Nắng",
+          "description": "Em cười rạng rỡ trong chiếc áo sơ mi trắng"
+        },
+        {
+          "id": "quyen-3",
+          "url": "assets/images/quyen/z6843535586778_050aaffcce7fc14fc48d5facc985fe23.jpg",
+          "title": "Dịu Dàng Và Đáng Yêu",
+          "description": "Em duyên dáng với mái tóc dài và nụ cười tươi"
+        },
+        {
+          "id": "quyen-4",
+          "url": "assets/images/quyen/z6843535586743_0ee5cfdb404b7a8352018d405a288039.jpg",
+          "title": "Thiên Thần Của Anh",
+          "description": "Em xinh đẹp trong trang phục công sở thanh lịch"
+        },
+        {
+          "id": "quyen-5",
+          "url": "assets/images/quyen/z6843526377730_46c05ef6a063901ba161f8e8a598ed38.jpg",
+          "title": "Công Chúa Nhỏ",
+          "description": "Em dễ thương với áo sơ mi trắng và mái tóc buông dài"
+        },
+        {
+          "id": "quyen-6",
+          "url": "assets/images/quyen/z6843528165353_bec6048cfea8af58ebb1da382d4a357d.jpg",
+          "title": "Nàng Tiên Hoa",
+          "description": "Em rạng ngời trong trang phục công sở"
+        },
+        {
+          "id": "quyen-7",
+          "url": "assets/images/quyen/z6843524186042_f86e79a1ecf2ca5a44fe4a4b07c9af2c.jpg",
+          "title": "Ánh Mắt Ngọt Ngào",
+          "description": "Em duyên dáng với áo sơ mi và mái tóc xõa"
+        },
+        {
+          "id": "quyen-8",
+          "url": "assets/images/quyen/z6843515658578_a4a2821f16bb3911c1d1165772b30eae.jpg",
+          "title": "Nụ Cười Hạnh Phúc",
+          "description": "Em tươi tắn trong buổi chụp hình ngoài trời"
+        },
+        {
+          "id": "quyen-9",
+          "url": "assets/images/quyen/z6843515658506_de688e976cc79b2d7c55e56d9432ef0d.jpg",
+          "title": "Khoảnh Khắc Yêu Thương",
+          "description": "Em xinh xắn với áo sơ mi trắng trong văn phòng"
+        },
+        {
+          "id": "quyen-10",
+          "url": "assets/images/quyen/z6843511376185_67cbe1ac795e387c8dbf309efcf326f8.jpg",
+          "title": "Duyên Dáng Áo Dài",
+          "description": "Em dịu dàng trong tà áo dài truyền thống màu trắng"
+        },
+        {
+          "id": "quyen-11",
+          "url": "assets/images/quyen/z6843508203125_4da060882f1c88efb6147fe56573ea1f.jpg",
+          "title": "Xinh Tươi Rạng Ngời",
+          "description": "Em tươi tắn trong buổi chụp hình ngoài trời"
+        },
+        {
+          "id": "quyen-12",
+          "url": "assets/images/quyen/z6843508159760_ff9c396a811f5427caf75a43cd00d7f0.jpg",
+          "title": "Nét Đẹp Tinh Khôi",
+          "description": "Em duyên dáng với áo sơ mi trắng trong văn phòng"
+        },
+        {
+          "id": "quyen-13",
+          "url": "assets/images/quyen/z6843505637575_d6f149a3635a65e03e5f3f08ce24cc0b.jpg",
+          "title": "Nàng Thơ Dịu Dàng",
+          "description": "Em xinh đẹp trong trang phục công sở"
+        },
+        {
+          "id": "quyen-14",
+          "url": "assets/images/quyen/z6843500921245_ee900de19b79840fa3a8d2efba11a6d2.jpg",
+          "title": "Nét Đẹp Đằm Thắm",
+          "description": "Em dịu dàng với mái tóc dài và nụ cười tươi"
+        },
+        {
+          "id": "quyen-15",
+          "url": "assets/images/quyen/z6843488897657_bbf00d4751379b63b8dc7ad1bf03fbf0.jpg",
+          "title": "Trong Veo Như Nắng Mai",
+          "description": "Em rạng rỡ trong trang phục công sở"
+        },
+        {
+          "id": "quyen-16",
+          "url": "assets/images/quyen/z6843474414777_ba24be1484ec56131cbdafa916cb7a68.jpg",
+          "title": "Nụ Cười Thiên Thần",
+          "description": "Em tươi tắn với áo sơ mi trắng trong văn phòng"
+        },
+        {
+          "id": "quyen-17",
+          "url": "assets/images/quyen/z6843464036239_417682cbd09b61d0ad7b71a7daed623f.jpg",
+          "title": "Dễ Thương Như Búp Bê",
+          "description": "Em xinh xắn trong buổi chụp hình tại công ty"
+        },
+        {
+          "id": "quyen-18",
+          "url": "assets/images/quyen/z6843458636694_0b655bfda7015527d928be4eb2ca956b.jpg",
+          "title": "Xinh Xắn Đáng Yêu",
+          "description": "Em dễ thương trong trang phục công sở"
+        },
+        {
+          "id": "quyen-19",
+          "url": "assets/images/quyen/z6843551866623_ebf56a0d86f9f579fd7cd4d8797c814b.jpg",
+          "title": "Nàng Công Chúa Nhỏ",
+          "description": "Em rạng rỡ với nụ cười tươi tắn"
+        },
+        {
+          "id": "quyen-20",
+          "url": "assets/images/quyen/img_4.png",
+          "title": "Nét Đẹp Thuần Khiết",
+          "description": "Em dịu dàng trong trang phục công sở"
+        },
+        {
+          "id": "quyen-21",
+          "url": "assets/images/quyen/img_3.png",
+          "title": "Nàng Thơ Của Mùa Xuân",
+          "description": "Em xinh đẹp với áo sơ mi trắng và mái tóc buông"
+        },
+        {
+          "id": "quyen-22",
+          "url": "assets/images/quyen/img_2.png",
+          "title": "Nụ Cười Trong Veo",
+          "description": "Em tươi tắn trong buổi làm việc tại văn phòng"
+        },
+        {
+          "id": "quyen-23",
+          "url": "assets/images/quyen/img_1.png",
+          "title": "Ánh Mắt Biết Nói",
+          "description": "Em duyên dáng trong trang phục công sở"
+        },
+        {
+          "id": "quyen-24",
+          "url": "assets/images/quyen/img.png",
+          "title": "Dịu Dàng Nắng Mai",
+          "description": "Em xinh xắn với áo sơ mi trắng trong văn phòng"
+        },
+        {
+          "id": "quyen-25",
+          "url": "assets/images/quyen/3.png",
+          "title": "Nàng Thơ Của Anh",
+          "description": "Em rạng rỡ trong buổi làm việc"
+        },
+        {
+          "id": "quyen-26",
+          "url": "assets/images/quyen/2.png",
+          "title": "Xinh Đẹp Tựa Hoa",
+          "description": "Em dịu dàng trong trang phục công sở"
+        },
+        {
+          "id": "quyen-27",
+          "url": "assets/images/quyen/1.png",
+          "title": "Trong Trẻo Như Sương",
+          "description": "Em xinh đẹp với áo sơ mi trắng tại văn phòng"
+        },
+        {
+          "id": "quyen-28",
+          "url": "assets/images/quyen/quyen_1.png",
+          "title": "Nét Đẹp Tinh Khôi",
+          "description": "Em duyên dáng trong trang phục công sở"
+        },
+        {
+          "id": "quyen-29",
+          "url": "assets/images/quyen/quyen_lua-do-chup-hinh-cuoi_1-2022.png",
+          "title": "Cô Dâu Xinh Đẹp",
+          "description": "Em xinh đẹp trong ngày thử váy cưới - 1/2022"
+        },
+        {
+          "id": "quyen-30",
+          "url": "assets/images/quyen/quyen_chup-len-vo-qua-anh-man-hinh.png",
+          "title": "Khoảnh Khắc Đáng Yêu",
+          "description": "Em đáng yêu qua ảnh chụp màn hình"
+        },
+        {
+          "id": "quyen-31",
+          "url": "assets/images/quyen/quyen-phat.jpeg",
+          "title": "Hạnh Phúc Bên Nhau",
+          "description": "Khoảnh khắc hạnh phúc của đôi mình"
+        }
+      ]
+    },
+    {
       "id": "wedding-photos",
       "title": "Hình Cưới Đẹp",
       "description": "Bộ ảnh cưới đặc biệt của chúng mình - Những khoảnh khắc ngọt ngào, lãng mạn được ghi lại trong từng khung hình. Mỗi bức ảnh là một câu chuyện tình yêu, là kỷ niệm đẹp của tình yêu chúng mình.",

@@ -1,472 +1,430 @@
-@import '../../../../assets/scss/mixins';
+// Variables
+$primary-green: #4CAF50;
+$light-green: #E8F5E9;
+$lighter-green: #F1F8E9;
+$hover-green: #81C784;
+$text-color: #2E7D32;
+$border-radius: 12px;
 
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin smooth-transition {
+  transition: all 0.3s ease;
+}
+
+// Animations
+@keyframes floatingIcon {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(5px, -5px) rotate(2deg);
+  }
+  50% {
+    transform: translate(0, -10px) rotate(0deg);
+  }
+  75% {
+    transform: translate(-5px, -5px) rotate(-2deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes pulseOpacity {
+  0% {
+    opacity: 0.02;
+  }
+  50% {
+    opacity: 0.04;
+  }
+  100% {
+    opacity: 0.02;
+  }
+}
+
+// Main Section
 .moments-section {
-  padding: 4rem 0;
-  background-color: #fff;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #FAFAFA 0%, $lighter-green 100%);
+  position: relative;
+  overflow: hidden;
 
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
+  // Large Background Icon
+  &::before {
+    content: '\e901'; // PrimeIcons heart icon
+    font-family: 'PrimeIcons';
+    position: fixed;
+    font-size: 800px;
+    color: $primary-green;
+    opacity: 0.02;
+    z-index: 0;
+    right: -100px;
+    bottom: -100px;
+    animation: floatingIcon 8s ease-in-out infinite, pulseOpacity 4s ease-in-out infinite;
+    pointer-events: none;
   }
 
-  .section-header {
-    text-align: center;
-    margin-bottom: 3rem;
-
-    .section-title {
-      font-size: 2.5rem;
-      color: #333;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-
-      i {
-        color: #ff4081;
-      }
-    }
-
-    .quote-wrapper {
-      max-width: 600px;
-      margin: 0 auto;
-
-      .section-subtitle {
-        font-size: 1.2rem;
-        color: #666;
-        font-style: italic;
-        margin-bottom: 0.5rem;
-      }
-
-      .quote-author {
-        color: #888;
-        font-size: 1rem;
-      }
-    }
+  // Additional Watermark Icons
+  &::after {
+    content: '\e933'; // PrimeIcons star-fill icon
+    font-family: 'PrimeIcons';
+    position: fixed;
+    font-size: 400px;
+    color: $primary-green;
+    opacity: 0.015;
+    z-index: 0;
+    left: -50px;
+    top: -50px;
+    transform: rotate(-45deg);
+    animation: pulseOpacity 4s ease-in-out infinite;
+    animation-delay: 2s;
+    pointer-events: none;
   }
+}
 
-  // Featured Moment
-  .featured-moment {
-    margin-bottom: 4rem;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
 
-    .featured-image {
-      position: relative;
-      border-radius: 1rem;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+// Section Header
+.section-header {
+  padding: 3rem 0;
+  margin-bottom: 3rem;
+  text-align: center;
 
-      img {
-        width: 100%;
-        height: 400px;
-        object-fit: cover;
-      }
+  .section-title {
+    color: $text-color;
+    font-size: 2rem;
+    margin: 0 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 
-      .featured-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 2rem;
-        background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
-        color: white;
-
-        h3 {
-          font-size: 2rem;
-          margin-bottom: 0.5rem;
-        }
-
-        p {
-          font-size: 1.1rem;
-          opacity: 0.9;
-        }
-      }
+    i {
+      color: $primary-green;
     }
   }
 
-  // Moments Grid
-  .moments-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-bottom: 4rem;
+  .quote-wrapper {
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: rgba($text-color, 0.8);
+      margin: 0;
+      font-style: italic;
+    }
 
-    .moment-item {
-      background: white;
-      border-radius: 1rem;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-
-      &:hover {
-        transform: translateY(-5px);
-      }
-
-      .moment-image {
-        position: relative;
-
-        img {
-          width: 100%;
-          height: 250px;
-          object-fit: cover;
-        }
-
-        .moment-date {
-          position: absolute;
-          bottom: 1rem;
-          right: 1rem;
-          background: rgba(255, 255, 255, 0.9);
-          padding: 0.5rem 1rem;
-          border-radius: 2rem;
-          font-size: 0.9rem;
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-
-          i {
-            color: #ff4081;
-          }
-        }
-      }
-
-      .moment-info {
-        padding: 1.5rem;
-
-        .moment-title {
-          font-size: 1.3rem;
-          color: #333;
-          margin-bottom: 0.5rem;
-        }
-
-        .moment-description {
-          color: #666;
-          margin-bottom: 1rem;
-          line-height: 1.6;
-        }
-
-        .moment-emotions {
-          display: flex;
-          gap: 1rem;
-
-          .emotion {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: #f8f8f8;
-            padding: 0.5rem 1rem;
-            border-radius: 2rem;
-            font-size: 0.9rem;
-            color: #666;
-
-            i {
-              color: #ff4081;
-            }
-          }
-        }
-      }
+    .quote-author {
+      display: block;
+      margin-top: 0.5rem;
+      color: $text-color;
+      font-weight: 500;
     }
   }
+}
 
-  // Memory Timeline
-  .memory-timeline {
-    margin-bottom: 4rem;
+// Featured Moment
+.featured-moment {
+  margin-bottom: 3rem;
 
-    .timeline-header {
-      text-align: center;
-      margin-bottom: 2rem;
+  .featured-image {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    border-radius: $border-radius;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      @include smooth-transition;
+    }
+
+    .featured-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 2rem;
+      background: linear-gradient(transparent, rgba($text-color, 0.8));
+      color: white;
 
       h3 {
-        font-size: 2rem;
-        color: #333;
-        margin-bottom: 0.5rem;
+        font-size: 1.8rem;
+        margin: 0 0 0.5rem;
       }
 
       p {
-        color: #666;
-      }
-    }
-
-    .timeline-items {
-      position: relative;
-      padding: 2rem 0;
-
-      &::before {
-        content: '';
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 2px;
-        height: 100%;
-        background: #ff4081;
-        top: 0;
-      }
-
-      .timeline-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 3rem;
-        position: relative;
-
-        &:nth-child(odd) {
-          flex-direction: row-reverse;
-
-          .timeline-content {
-            text-align: right;
-            padding-left: 0;
-            padding-right: 2rem;
-          }
-        }
-
-        .timeline-image {
-          flex: 0 0 300px;
-          
-          img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 1rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-          }
-        }
-
-        .timeline-content {
-          flex: 1;
-          padding-left: 2rem;
-
-          h4 {
-            font-size: 1.5rem;
-            color: #333;
-            margin-bottom: 0.5rem;
-          }
-
-          p {
-            color: #666;
-            line-height: 1.6;
-          }
-        }
+        font-size: 1.1rem;
+        margin: 0;
+        opacity: 0.9;
       }
     }
   }
+}
 
-  // Categories Section
-  .categories-section {
-    margin-bottom: 4rem;
+// Moments Grid Section
+.moments-content {
+  padding: 3rem 0;
+}
 
-    .section-divider {
+// Moments Grid
+.moments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.moment-item {
+  background: white;
+  border-radius: $border-radius;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  @include smooth-transition;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    img {
+      transform: scale(1.05);
+    }
+  }
+
+  .moment-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      @include smooth-transition;
+    }
+
+    .moment-date {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba($text-color, 0.8);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
       display: flex;
       align-items: center;
-      justify-content: center;
-      margin-bottom: 2rem;
+      gap: 0.5rem;
+    }
+  }
 
-      .line {
-        flex: 1;
-        height: 1px;
-        background: #ddd;
-        max-width: 200px;
-      }
+  .moment-info {
+    padding: 1.5rem;
 
-      i {
-        margin: 0 1rem;
-        color: #ff4081;
-        font-size: 1.5rem;
-      }
+    .moment-title {
+      color: $text-color;
+      margin: 0 0 0.8rem;
+      font-size: 1.2rem;
     }
 
-    .categories-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
+    .moment-description {
+      color: rgba($text-color, 0.8);
+      margin: 0 0 1rem;
+      line-height: 1.5;
+    }
 
-      .category-item {
-        text-align: center;
-        padding: 2rem;
-        background: white;
-        border-radius: 1rem;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
+    .moment-emotions {
+      display: flex;
+      gap: 1rem;
 
-        &:hover {
-          transform: translateY(-5px);
-        }
+      .emotion {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        color: $primary-green;
+        font-size: 0.9rem;
 
-        .category-icon {
-          font-size: 2rem;
-          color: #ff4081;
-          margin-bottom: 1rem;
-        }
-
-        .category-info {
-          .category-title {
-            font-size: 1.2rem;
-            color: #333;
-            margin-bottom: 0.5rem;
-          }
-
-          .category-count {
-            color: #666;
-            font-size: 0.9rem;
-          }
+        i {
+          font-size: 1rem;
         }
       }
     }
   }
+}
 
-  // Photo Gallery
-  .photo-gallery {
-    margin-bottom: 4rem;
+// Categories Section
+.categories-section {
+  padding: 3rem 0;
+}
 
-    .gallery-title {
-      text-align: center;
-      font-size: 2rem;
-      color: #333;
-      margin-bottom: 2rem;
-    }
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
 
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
+.category-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: $border-radius;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  @include smooth-transition;
 
-      .gallery-item {
-        position: relative;
-        overflow: hidden;
-        border-radius: 1rem;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-
-        img {
-          width: 100%;
-          height: 300px;
-          object-fit: cover;
-          transition: transform 0.3s ease;
-        }
-
-        &:hover img {
-          transform: scale(1.05);
-        }
-      }
-    }
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
-  // Emotional Quotes
-  .emotional-quotes {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-bottom: 4rem;
-
-    .quote-card {
-      text-align: center;
-      padding: 2rem;
-      background: white;
-      border-radius: 1rem;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-
-      i {
-        font-size: 2rem;
-        color: #ff4081;
-        margin-bottom: 1rem;
-      }
-
-      p {
-        font-size: 1.2rem;
-        color: #333;
-        font-style: italic;
-        margin-bottom: 1rem;
-        line-height: 1.6;
-      }
-
-      span {
-        color: #666;
-      }
-    }
+  .category-icon {
+    color: $primary-green;
+    font-size: 2rem;
+    margin-bottom: 1rem;
   }
 
-  // Footer Quote
-  .section-footer {
-    text-align: center;
+  .category-info {
+    .category-title {
+      color: $text-color;
+      margin: 0 0 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .category-count {
+      color: rgba($text-color, 0.8);
+      margin: 0;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// Quotes Section
+.emotional-quotes {
+  padding: 3rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.quote-card {
+  background: white;
+  padding: 2rem;
+  border-radius: $border-radius;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  @include smooth-transition;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  i {
+    color: $primary-green;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: $text-color;
+    font-size: 1.1rem;
+    margin: 0 0 1rem;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  span {
+    color: rgba($text-color, 0.8);
+    font-size: 0.9rem;
+  }
+}
+
+// Footer Quote
+.section-footer {
+  padding: 3rem 0;
+  text-align: center;
+
+  .quote-wrapper {
     max-width: 800px;
     margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: $border-radius;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    @include smooth-transition;
 
-    .quote-wrapper {
-      position: relative;
-      padding: 2rem;
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
 
-      i {
-        font-size: 2rem;
-        color: #ff4081;
-        opacity: 0.2;
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
+    i {
+      color: $primary-green;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
 
-      .footer-quote {
-        font-size: 1.5rem;
-        color: #333;
-        font-style: italic;
-        margin-bottom: 1rem;
-        line-height: 1.6;
-      }
+    .footer-quote {
+      color: $text-color;
+      font-size: 1.2rem;
+      margin: 0 0 1rem;
+      line-height: 1.6;
+      font-style: italic;
+    }
 
-      .quote-author {
-        color: #666;
-      }
+    .quote-author {
+      color: rgba($text-color, 0.8);
+      font-size: 1rem;
     }
   }
 }
 
 // Responsive Design
 @media (max-width: 768px) {
-  .moments-section {
-    .section-header {
-      .section-title {
-        font-size: 2rem;
-      }
+  .container {
+    padding: 0 1rem;
+  }
+
+  .section-header {
+    padding: 2rem 0;
+
+    .section-title {
+      font-size: 1.5rem;
     }
+  }
 
-    .featured-moment {
-      .featured-image {
-        img {
-          height: 300px;
-        }
+  .featured-moment .featured-image {
+    height: 300px;
 
-        .featured-overlay {
-          h3 {
-            font-size: 1.5rem;
-          }
-        }
-      }
-    }
+    .featured-overlay {
+      padding: 1.5rem;
 
-    .memory-timeline {
-      .timeline-items {
-        &::before {
-          left: 0;
-        }
-
-        .timeline-item {
-          flex-direction: column;
-          padding-left: 2rem;
-
-          &:nth-child(odd) {
-            flex-direction: column;
-
-            .timeline-content {
-              text-align: left;
-              padding-right: 0;
-            }
-          }
-
-          .timeline-image {
-            flex: 0 0 100%;
-            margin-bottom: 1rem;
-          }
-
-          .timeline-content {
-            padding-left: 0;
-          }
-        }
+      h3 {
+        font-size: 1.4rem;
       }
     }
   }
-} 
+
+  .moments-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .emotional-quotes {
+    grid-template-columns: 1fr;
+  }
+}

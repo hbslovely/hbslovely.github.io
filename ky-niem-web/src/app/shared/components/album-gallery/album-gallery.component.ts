@@ -32,8 +32,18 @@ export interface Album {
 })
 export class AlbumGalleryComponent implements OnInit, OnDestroy {
   @Input() albumId?: string;
-  @Input() images: AlbumGalleryImage[] = [];
+  @Input() set images(value: any[]) {
+    if (value && value.length > 0) {
+      this._images = value.map(img => this.normalizeImageData(img));
+    } else {
+      this._images = [];
+    }
+  }
+  get images(): AlbumGalleryImage[] {
+    return this._images;
+  }
   
+  private _images: AlbumGalleryImage[] = [];
   selectedIndex = 0;
   private autoPlayInterval: any;
   private readonly AUTO_PLAY_INTERVAL = 4000;
@@ -50,6 +60,15 @@ export class AlbumGalleryComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.stopAutoPlay();
+  }
+
+  private normalizeImageData(image: any): AlbumGalleryImage {
+    return {
+      src: image.src || image.url || '',
+      name: image.name || image.title || '',
+      description: image.description || '',
+      caption: image.caption || ''
+    };
   }
 
   private loadAlbumData() {

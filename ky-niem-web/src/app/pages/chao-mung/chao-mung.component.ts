@@ -20,7 +20,6 @@ import { FavoriteFoodsComponent } from '../../shared/components/favorite-foods/f
 import { MemoryGalleryComponent } from '../../shared/components/memory-gallery/memory-gallery.component';
 import { GratitudeMessagesComponent } from '../../shared/components/gratitude-messages/gratitude-messages.component';
 import { LoveTimelineComponent } from '../../shared/components/love-timeline/love-timeline.component';
-import { LoveMilestonesComponent } from '../../shared/components/love-milestones/love-milestones.component';
 import { HappyMomentsComponent } from '../../shared/components/happy-moments/happy-moments.component';
 import { FuturePromisesComponent } from '../../shared/components/future-promises/future-promises.component';
 
@@ -41,7 +40,6 @@ import { FuturePromisesComponent } from '../../shared/components/future-promises
     MemoryGalleryComponent,
     GratitudeMessagesComponent,
     LoveTimelineComponent,
-    LoveMilestonesComponent,
     HappyMomentsComponent,
     FuturePromisesComponent
   ],

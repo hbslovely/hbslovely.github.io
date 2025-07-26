@@ -7,6 +7,31 @@ $dark-pink: #FF8FA3;
 $text-pink: #FF4D6D;
 $border-pink: rgba(255, 179, 193, 0.3);
 
+// Variables
+$primary-green: #4CAF50;
+$light-green: #E8F5E9;
+$lighter-green: #F1F8E9;
+$hover-green: #81C784;
+$text-color: #2E7D32;
+
+@keyframes floatQuoteIcon {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-5px, -5px) rotate(-5deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes pulseOpacity {
+  0% { opacity: 0.03; }
+  50% { opacity: 0.05; }
+  100% { opacity: 0.03; }
+}
+
 .timeline-section {
   position: relative;
   padding: 4rem 0;
@@ -57,48 +82,70 @@ $border-pink: rgba(255, 179, 193, 0.3);
   }
 
   .main-quote-wrapper {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.9);
+    position: relative;
+    background: linear-gradient(135deg, $soft-pink 0%, white 100%);
+    border: 1px solid $border-pink;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(255, 77, 109, 0.05);
+
+    &::before {
+      content: '\e908'; // PrimeIcons quote-left
+      font-family: 'PrimeIcons';
+      position: absolute;
+      font-size: 200px;
+      color: $primary-pink;
+      opacity: 0.1;
+      left: -30px;
+      top: -30px;
+      z-index: 0;
+      animation: floatQuoteIcon 6s ease-in-out infinite, pulseOpacity 4s ease-in-out infinite;
+    }
+
+    &::after {
+      content: '\e909'; // PrimeIcons quote-right
+      font-family: 'PrimeIcons';
+      position: absolute;
+      font-size: 200px;
+      color: $primary-pink;
+      opacity: 0.1;
+      right: -30px;
+      bottom: -30px;
+      z-index: 0;
+      transform: rotate(180deg);
+      animation: floatQuoteIcon 6s ease-in-out infinite reverse, pulseOpacity 4s ease-in-out infinite;
+      animation-delay: 2s;
+    }
 
     .quote-content {
       position: relative;
-      padding: 1rem 2rem;
+      z-index: 1;
+      text-align: center;
+    }
 
-      .quote-icon {
-        color: #ff4b6e;
-        font-size: 1.5rem;
-        opacity: 0.5;
+    .quote-icon {
+      color: $text-pink;
+      font-size: 1.5rem;
+      opacity: 0.7;
+    }
 
-        &.pi-quote-left {
-          position: absolute;
-          left: 0;
-          top: 0;
-        }
-
-        &.pi-quote-right {
-          position: absolute;
-          right: 0;
-          bottom: 0;
-        }
-      }
-
-      .section-subtitle {
-        font-size: 1.3rem;
-        color: #333;
-        font-style: italic;
-        line-height: 1.6;
-        margin: 0;
-      }
+    .section-subtitle {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: $text-pink;
+      margin: 1rem 0;
+      font-style: italic;
+      font-weight: 500;
     }
 
     .quote-author {
       display: block;
-      color: #666;
-      font-size: 1rem;
+      text-align: right;
+      color: $dark-pink;
+      font-weight: 500;
       margin-top: 1rem;
       font-style: italic;
     }
@@ -238,4 +285,4 @@ $border-pink: rgba(255, 179, 193, 0.3);
       left: -40px !important;
     }
   }
-} 
+}

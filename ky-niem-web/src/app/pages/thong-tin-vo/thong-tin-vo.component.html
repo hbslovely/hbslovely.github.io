@@ -1,11 +1,29 @@
 <!-- Hero Section -->
 <section class="hero-banner">
   <div class="hero-content">
+    <!-- Add Hero Background Decorations -->
+    <div class="hero-decorations">
+      <div class="hero-floating-icons">
+        <i class="pi pi-heart-fill"></i>
+        <i class="pi pi-heart"></i>
+        <i class="pi pi-star-fill"></i>
+        <i class="pi pi-star"></i>
+        <i class="pi pi-gift"></i>
+      </div>
+      <div class="hero-watermarks">
+        <i class="pi pi-heart-fill watermark-left"></i>
+        <i class="pi pi-heart-fill watermark-right"></i>
+      </div>
+    </div>
+    
     <div class="hero-image-container">
-      <img class="hero-image" src="assets/images/quyen/quyen-portrait.png" alt="Profile Photo" />
+      <img class="hero-image" src="assets/images/albums/hinh-cuoi-dep/z6839748525510_085d4586f5e49f5e9ac19ae074e6a9d7.jpg" alt="Profile Photo" />
       <div class="hero-image-overlay"></div>
     </div>
     <div class="hero-text">
+      <div class="avatar-container">
+        <img src="assets/images/quyen/quyen_1.png" alt="Avatar" class="avatar" />
+      </div>
       <h1>{{ wifeData.wifeInfo?.name }}</h1>
       <h2>{{ wifeData.wifeInfo?.title }}</h2>
       <div class="hero-tags">
@@ -28,42 +46,138 @@
 
 <!-- Main Content -->
 <div class="main-content">
+  <!-- Background Decorations -->
+  <div class="content-background">
+    <div class="floating-icons">
+      <i class="pi pi-heart"></i>
+      <i class="pi pi-star"></i>
+      <i class="pi pi-camera"></i>
+      <i class="pi pi-gift"></i>
+      <i class="pi pi-map"></i>
+    </div>
+    <div class="static-watermark">
+      <i class="pi pi-heart"></i>
+    </div>
+  </div>
+  
   <!-- About Section -->
   <section class="about-section">
-    <div class="about-grid">
+    <div class="masonry-grid">
       <!-- Profile Card -->
-      <div class="profile-card">
+      <div class="masonry-item profile-card">
         <div class="card-header">
-          <h3>Về Tôi</h3>
+          <i class="pi pi-heart-fill"></i>
+          <h3>Chuyện Về Nàng</h3>
         </div>
         <div class="card-content">
           <p>{{ wifeData.wifeInfo?.description }}</p>
         </div>
         <div class="card-footer">
-          <img src="assets/images/quyen/quyen.jpeg" alt="About Photo" />
+          <img src="assets/images/albums/hinh-cuoi-dep/z6839748547513_1b41d744b95885998cc9eb267ac19b86.jpg" alt="About Photo" />
         </div>
       </div>
 
       <!-- Love Message Card -->
-      <div class="love-message-card">
+      <div class="masonry-item love-message-card">
         <div class="card-header">
-          <h3>Thông Điệp Tình Yêu</h3>
+          <i class="pi pi-heart"></i>
+          <h3>Thư Gửi Người Yêu Thương</h3>
         </div>
         <div class="card-content">
           <p>{{ wifeData.wifeInfo?.loveMessage }}</p>
+          <div class="love-decoration">
+            <i class="pi pi-heart-fill"></i>
+          </div>
         </div>
       </div>
 
-      <!-- Photo Gallery Card -->
-      <div class="gallery-card">
+      <!-- Love Quote Card -->
+      <div class="masonry-item love-quote-card">
         <div class="card-header">
-          <h3>Khoảnh Khắc</h3>
+          <i class="pi pi-heart"></i>
+          <h3>Lời Yêu Thương</h3>
         </div>
         <div class="card-content">
-          <div class="photo-grid">
-            <div class="photo-item" *ngFor="let photo of wifeData.wifePhotos">
-              <img [src]="photo.url" [alt]="photo.caption" />
-              <div class="photo-caption">{{ photo.caption }}</div>
+          <p class="quote">"Yêu là khi hạnh phúc của người kia trở thành hạnh phúc của chính mình."</p>
+          <p class="author">- Lev Tolstoy -</p>
+        </div>
+      </div>
+
+      <!-- Daily Life Card -->
+      <div class="masonry-item daily-life-card">
+        <div class="card-header">
+          <i class="pi pi-calendar"></i>
+          <h3>Một Ngày Của Em</h3>
+        </div>
+        <div class="card-content">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="time">6:00 AM</div>
+              <div class="event">Thức dậy, chuẩn bị bữa sáng cho gia đình</div>
+            </div>
+            <div class="timeline-item">
+              <div class="time">8:00 AM</div>
+              <div class="event">Bắt đầu công việc với năng lượng tràn đầy</div>
+            </div>
+            <div class="timeline-item">
+              <div class="time">12:00 PM</div>
+              <div class="event">Nghỉ trưa, lướt TikTok xem món ngon</div>
+            </div>
+            <div class="timeline-item">
+              <div class="time">7:00 PM</div>
+              <div class="event">Về nhà, nấu ăn và chăm sóc gia đình</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Favorite Things Card -->
+      <div class="masonry-item favorites-card">
+        <div class="card-header">
+          <i class="pi pi-star"></i>
+          <h3>Những Điều Em Yêu</h3>
+        </div>
+        <div class="card-content">
+          <div class="favorites-grid">
+            <div class="favorite-item">
+              <i class="pi pi-heart"></i>
+              <span>Được chồng ôm mỗi ngày</span>
+            </div>
+            <div class="favorite-item">
+              <i class="pi pi-camera"></i>
+              <span>Chụp ảnh kỷ niệm cùng nhau</span>
+            </div>
+            <div class="favorite-item">
+              <i class="pi pi-map"></i>
+              <span>Khám phá những vùng đất mới</span>
+            </div>
+            <div class="favorite-item">
+              <i class="pi pi-shopping-cart"></i>
+              <span>Mua sắm với chồng yêu</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dreams Card -->
+      <div class="masonry-item dreams-card">
+        <div class="card-header">
+          <i class="pi pi-star"></i>
+          <h3>Ước Mơ Của Em</h3>
+        </div>
+        <div class="card-content">
+          <div class="dreams-list">
+            <div class="dream-item">
+              <i class="pi pi-home"></i>
+              <p>Xây dựng một tổ ấm hạnh phúc cùng anh</p>
+            </div>
+            <div class="dream-item">
+              <i class="pi pi-globe"></i>
+              <p>Du lịch khắp thế giới, khám phá những điều mới</p>
+            </div>
+            <div class="dream-item">
+              <i class="pi pi-heart"></i>
+              <p>Cùng nhau già đi trong tình yêu và hạnh phúc</p>
             </div>
           </div>
         </div>
@@ -126,13 +240,64 @@
     </div>
   </section>
 
-  <!-- Memorable Moments -->
-  <section class="moments-section">
-    <h2>Khoảnh Khắc Đáng Nhớ</h2>
-    <div class="moments-timeline">
-      <div class="moment-card" *ngFor="let fact of wifeData.wifeFunFacts; let i = index">
-        <div class="moment-number">{{ i + 1 }}</div>
-        <div class="moment-content">
+<!-- Photo Gallery Section -->
+<section class="photo-gallery-section">
+  <h2>Những Khoảnh Khắc Ngọt Ngào</h2>
+  <div class="gallery-masonry">
+    <div class="gallery-item wide">
+      <img src="assets/images/quyen/1.png" alt="Khoảnh khắc yêu thương" />
+      <div class="gallery-overlay">
+        <h4>Nụ Cười Hạnh Phúc</h4>
+        <p>Nụ cười tỏa nắng của em trong những khoảnh khắc bên anh</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="assets/images/quyen/2.png" alt="Khoảnh khắc yêu thương" />
+      <div class="gallery-overlay">
+        <h4>Ánh Mắt Yêu Thương</h4>
+        <p>Ánh mắt ngọt ngào khi nhìn về phía anh</p>
+      </div>
+    </div>
+    <div class="gallery-item tall">
+      <img src="assets/images/quyen/3.png" alt="Khoảnh khắc yêu thương" />
+      <div class="gallery-overlay">
+        <h4>Duyên Dáng Nàng Thơ</h4>
+        <p>Em duyên dáng trong từng khoảnh khắc</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="assets/images/quyen/img.png" alt="Khoảnh khắc yêu thương" />
+      <div class="gallery-overlay">
+        <h4>Ngọt Ngào Bên Nhau</h4>
+        <p>Những phút giây hạnh phúc bên người thương</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="assets/images/quyen/img_1.png" alt="Khoảnh khắc yêu thương" />
+      <div class="gallery-overlay">
+        <h4>Nét Đẹp Tinh Khôi</h4>
+        <p>Em xinh đẹp trong từng khoảnh khắc</p>
+      </div>
+    </div>
+    <div class="gallery-item wide">
+      <img src="assets/images/quyen/img_2.png" alt="Khoảnh khắc yêu thương" />
+      <div class="gallery-overlay">
+        <h4>Hạnh Phúc Bên Nhau</h4>
+        <p>Những giây phút đáng nhớ của đôi ta</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Little Things Section -->
+  <section class="little-things-section">
+    <h2>Những Điều Nhỏ Xíu</h2>
+    <div class="things-grid">
+      <div class="thing-card" *ngFor="let fact of wifeData.wifeFunFacts">
+        <div class="thing-icon">
+          <i [class]="fact.icon"></i>
+        </div>
+        <div class="thing-content">
           <h4>{{ fact.title }}</h4>
           <p>{{ fact.description }}</p>
         </div>
@@ -153,7 +318,7 @@
   position: relative;
   height: 70vh;
   min-height: 500px;
-  background: #ff69b4;
+  background: #ffd1dc;
   overflow: hidden;
 }
 
@@ -163,7 +328,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #333;
   text-align: center;
   z-index: 2;
 }
@@ -181,7 +346,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.3;
+  opacity: 0.2;
 }
 
 .hero-image-overlay {
@@ -190,7 +355,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255,105,180,0.85);
+  background: rgba(255, 209, 220, 0.7);
 }
 
 .hero-text {
@@ -200,17 +365,35 @@
   padding: 2rem;
 }
 
+.avatar-container {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .hero-text h1 {
   font-size: 4rem;
   margin: 0;
   font-family: 'Dancing Script', cursive;
   text-shadow: none;
+  color: #333;
 }
 
 .hero-text h2 {
   font-size: 1.5rem;
   margin: 1rem 0;
   font-weight: 300;
+  color: #666;
 }
 
 .hero-tags {
@@ -222,7 +405,8 @@
 }
 
 .hero-tags span {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.6);
+  color: #333;
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.9rem;
@@ -287,6 +471,8 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 4rem 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 /* About Section */
@@ -483,35 +669,197 @@
   border-radius: 10px;
 }
 
-/* Moments Timeline */
-.moments-timeline {
+/* Photo Gallery Section */
+.photo-gallery-section {
+  padding: 4rem 2rem;
+  background: #ffffff;
+}
+
+.photo-gallery-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #333;
+  font-weight: 300;
+}
+
+.gallery-masonry {
+  columns: 3;
+  column-gap: 1.5rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
   position: relative;
-  margin-top: 2rem;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item.wide {
+  grid-column: span 2;
+}
+
+.gallery-item.tall {
+  grid-row: span 2;
+  height: 600px;
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  color: white;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.gallery-overlay h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.gallery-overlay p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 1200px) {
+  .gallery-masonry {
+    columns: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-masonry {
+    columns: 1;
+  }
+
+  .photo-gallery-section {
+    padding: 3rem 1rem;
+  }
+
+  .gallery-item.tall {
+    height: 400px;
+  }
+}
+
+/* Moments Section */
+.moments-section {
+  padding: 4rem 2rem;
+  background: #fff5f9;
+  margin: 2rem 0;
+}
+
+.moments-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #333;
+}
+
+.moments-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .moment-card {
-  display: flex;
-  gap: 2rem;
   background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.moment-card:hover {
+  transform: translateY(-10px);
+}
+
+.moment-image {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.moment-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.moment-card:hover .moment-image img {
+  transform: scale(1.1);
+}
+
+.moment-content {
   padding: 2rem;
-  border-radius: 8px;
-  border: 1px solid #eee;
-  box-shadow: none;
-  margin-bottom: 2rem;
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .moment-number {
-  width: 40px;
-  height: 40px;
+  position: absolute;
+  top: -2rem;
+  right: 2rem;
+  width: 4rem;
+  height: 4rem;
   background: #ff69b4;
   color: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1.5rem;
   font-weight: bold;
-  font-size: 1.2rem;
-  border: none;
+  box-shadow: 0 5px 15px rgba(255,105,180,0.3);
+}
+
+.moment-content h4 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  color: #333;
+}
+
+.moment-content p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 1.1rem;
 }
 
 /* Section Headers */
@@ -572,6 +920,656 @@ section h2::after {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* Masonry Grid Layout */
+.masonry-grid {
+  column-count: 3;
+  column-gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+  .masonry-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .masonry-grid {
+    column-count: 1;
+  }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  background: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.masonry-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Card Styles */
+.card-header {
+  padding: 1.5rem;
+  background: linear-gradient(45deg, #ff69b4, #ff8da1);
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card-header i {
+  font-size: 1.5rem;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.card-content {
+  padding: 1.5rem;
+  position: relative;
+}
+
+/* Photo Masonry */
+.photo-masonry {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.photo-item {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.photo-item:hover img {
+  transform: scale(1.1);
+}
+
+.photo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.photo-item:hover .photo-caption {
+  transform: translateY(0);
+}
+
+/* Timeline Style */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 1.5rem;
+  padding-left: 1rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  top: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+  background: #ff69b4;
+  border-radius: 50%;
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  left: -1.6rem;
+  top: 1.5rem;
+  bottom: 0;
+  width: 2px;
+  background: #ffe5f0;
+}
+
+.time {
+  font-weight: 600;
+  color: #ff69b4;
+  margin-bottom: 0.3rem;
+}
+
+/* Favorites Grid */
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.favorite-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem;
+  background: #fff5f9;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.favorite-item:hover {
+  transform: translateY(-3px);
+}
+
+.favorite-item i {
+  color: #ff69b4;
+  font-size: 1.2rem;
+}
+
+/* Dreams List */
+.dreams-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dream-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #fff5f9;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.dream-item:hover {
+  transform: translateX(5px);
+}
+
+.dream-item i {
+  color: #ff69b4;
+  font-size: 1.5rem;
+}
+
+/* Love Message Decoration */
+.love-decoration {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  color: #ffe5f0;
+  font-size: 2rem;
+  opacity: 0.5;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Large Card Style */
+.large-card {
+  grid-column: span 2;
+  margin: 2rem 0;
+}
+
+.large-card .photo-masonry {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.large-card .photo-item {
+  aspect-ratio: 4/3;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.large-card .photo-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.large-card .photo-item img {
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.large-card .photo-caption {
+  padding: 1.5rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.large-card .photo-caption span {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.large-card .card-header {
+  padding: 2rem;
+}
+
+.large-card .card-header h3 {
+  font-size: 1.8rem;
+}
+
+.large-card .card-content {
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .large-card {
+    grid-column: span 1;
+    margin: 1rem 0;
+  }
+  
+  .large-card .photo-masonry {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .large-card .photo-item img {
+    height: 300px;
+  }
+
+  .large-card .card-header h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .moments-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .moments-section {
+    padding: 3rem 1rem;
+  }
+
+  .moments-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .moment-card {
+    min-height: 350px;
+  }
+
+  .moment-image {
+    height: 250px;
+  }
+
+  .moment-content {
+    padding: 1.5rem;
+  }
+
+  .moment-number {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Little Things Section */
+.little-things-section {
+  padding: 4rem 2rem;
+  background: #fff5f9;
+}
+
+.little-things-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #333;
+  font-weight: 300;
+}
+
+.things-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.thing-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.thing-card:hover {
+  transform: translateY(-5px);
+}
+
+.thing-icon {
+  width: 48px;
+  height: 48px;
+  background: #ff69b4;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.thing-icon i {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.thing-content h4 {
+  color: #333;
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem;
+  font-weight: 500;
+}
+
+.thing-content p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .little-things-section {
+    padding: 3rem 1rem;
+  }
+
+  .things-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Content background watermark */
+.content-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, #fff5f9 0%, #fff 100%);
+  z-index: -1;
+  overflow: hidden;
+}
+
+.floating-icons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.floating-icons i {
+  position: absolute;
+  color: rgba(255, 105, 180, 0.05);
+  font-size: 2rem;
+  pointer-events: none;
+}
+
+.floating-icons i:nth-child(1) {
+  top: 10%;
+  left: 10%;
+  animation: floatIcon 20s infinite linear;
+}
+
+.floating-icons i:nth-child(2) {
+  top: 30%;
+  right: 20%;
+  animation: floatIcon 25s infinite linear reverse;
+}
+
+.floating-icons i:nth-child(3) {
+  bottom: 20%;
+  left: 30%;
+  animation: floatIcon 22s infinite linear;
+}
+
+.floating-icons i:nth-child(4) {
+  bottom: 40%;
+  right: 15%;
+  animation: floatIcon 28s infinite linear reverse;
+}
+
+.floating-icons i:nth-child(5) {
+  top: 50%;
+  left: 50%;
+  animation: floatIcon 24s infinite linear;
+}
+
+.static-watermark {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  opacity: 0.1;
+  transform: rotate(-15deg);
+}
+
+.static-watermark i {
+  font-size: 30rem;
+  color: #ff69b4;
+}
+
+@keyframes floatIcon {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(100px, 50px) rotate(90deg);
+  }
+  50% {
+    transform: translate(50px, 100px) rotate(180deg);
+  }
+  75% {
+    transform: translate(-50px, 50px) rotate(270deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+/* Update watermark styles */
+.hero-decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-floating-icons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-floating-icons i {
+  position: absolute;
+  color: rgba(255, 192, 203, 0.15);
+  font-size: 2.5rem;
+  pointer-events: none;
+}
+
+.hero-floating-icons i:nth-child(1) {
+  top: 20%;
+  left: 10%;
+  animation: heroFloat 15s infinite linear;
+}
+
+.hero-floating-icons i:nth-child(2) {
+  top: 60%;
+  right: 15%;
+  animation: heroFloat 18s infinite linear reverse;
+}
+
+.hero-floating-icons i:nth-child(3) {
+  bottom: 30%;
+  left: 20%;
+  animation: heroFloat 20s infinite linear;
+}
+
+.hero-floating-icons i:nth-child(4) {
+  top: 40%;
+  right: 25%;
+  animation: heroFloat 17s infinite linear reverse;
+}
+
+.hero-floating-icons i:nth-child(5) {
+  bottom: 20%;
+  right: 30%;
+  animation: heroFloat 19s infinite linear;
+}
+
+.hero-watermarks {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-watermarks i {
+  position: absolute;
+  color: rgba(255, 192, 203, 0.15);
+  font-size: 25rem;
+  transition: all 0.3s ease;
+}
+
+.watermark-left {
+  top: 50%;
+  left: -5%;
+  transform: translate(-30%, -50%) rotate(-15deg);
+  animation: watermarkPulseLeft 8s ease-in-out infinite;
+}
+
+.watermark-right {
+  top: 50%;
+  right: -5%;
+  transform: translate(30%, -50%) rotate(15deg);
+  animation: watermarkPulseRight 8s ease-in-out infinite;
+}
+
+@keyframes watermarkPulseLeft {
+  0% {
+    transform: translate(-30%, -50%) rotate(-15deg) scale(1);
+    opacity: 0.05;
+  }
+  50% {
+    transform: translate(-25%, -45%) rotate(-10deg) scale(1.1);
+    opacity: 0.08;
+  }
+  100% {
+    transform: translate(-30%, -50%) rotate(-15deg) scale(1);
+    opacity: 0.05;
+  }
+}
+
+@keyframes watermarkPulseRight {
+  0% {
+    transform: translate(30%, -50%) rotate(15deg) scale(1);
+    opacity: 0.05;
+  }
+  50% {
+    transform: translate(25%, -45%) rotate(10deg) scale(1.1);
+    opacity: 0.08;
+  }
+  100% {
+    transform: translate(30%, -50%) rotate(15deg) scale(1);
+    opacity: 0.05;
+  }
+}
+
+/* Add animation for content background watermark */
+.static-watermark i {
+  animation: contentWatermarkPulse 10s ease-in-out infinite;
+}
+
+@keyframes contentWatermarkPulse {
+  0% {
+    transform: rotate(-15deg) scale(1);
+    opacity: 0.03;
+  }
+  50% {
+    transform: rotate(-10deg) scale(1.05);
+    opacity: 0.05;
+  }
+  100% {
+    transform: rotate(-15deg) scale(1);
+    opacity: 0.03;
+  }
+}
+
+@keyframes heroFloat {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(15px, 15px) rotate(90deg);
+  }
+  50% {
+    transform: translate(0, 30px) rotate(180deg);
+  }
+  75% {
+    transform: translate(-15px, 15px) rotate(270deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
 </style>
 
 <script>

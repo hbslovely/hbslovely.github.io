@@ -1,13 +1,14 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-album-detail-header',
   templateUrl: './album-detail-header.component.html',
+  standalone: true,
   imports: [
-    CommonModule
+    CommonModule,
   ],
-  styleUrls: [ './album-detail-header.component.scss' ]
+  styleUrls: ['./album-detail-header.component.scss']
 })
 export class AlbumDetailHeaderComponent {
   @Input() title: string = '';
@@ -16,5 +17,22 @@ export class AlbumDetailHeaderComponent {
   @Input() photoCount: number = 0;
   @Input() date: Date = new Date();
   @Input() previewPhotos: string[] = [];
-  @Output() onBack = new EventEmitter<void>();
+
+  responsiveOptions = [
+    {
+      breakpoint: '1024px',
+      numVisible: 3,
+      numScroll: 1
+    },
+    {
+      breakpoint: '768px',
+      numVisible: 2,
+      numScroll: 1
+    },
+    {
+      breakpoint: '560px',
+      numVisible: 1,
+      numScroll: 1
+    }
+  ];
 }

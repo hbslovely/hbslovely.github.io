@@ -1,11 +1,11 @@
 {
   "happyMoments": [
     {
-      "id": 1,
-      "image": "assets/images/moments/first-date.jpg",
-      "title": "Buổi Hẹn Đầu Tiên",
-      "date": "10/5/2021",
-      "description": "Ngày đầu tiên chúng ta gặp nhau, mọi thứ đều rất đặc biệt và đáng nhớ.",
+      "id": "1",
+      "title": "Ngày Đầu Gặp Nhau",
+      "description": "Khoảnh khắc đầu tiên khi ta bắt đầu câu chuyện tình yêu của mình",
+      "image": "assets/images/gallery/ngay-dau-ben-nhau.png",
+      "date": "15/03/2023",
       "emotions": [
         {
           "icon": "pi-heart",
@@ -16,23 +16,83 @@
           "text": "Đáng nhớ"
         }
       ]
+    },
+    {
+      "id": "2",
+      "title": "Chuyến Đi Đầu Tiên",
+      "description": "Những kỷ niệm đẹp trong chuyến đi đầu tiên của chúng ta",
+      "image": "assets/images/gallery/chuyen-di-dau-tien.png",
+      "date": "20/04/2023",
+      "emotions": [
+        {
+          "icon": "pi-heart",
+          "text": "Yêu thương"
+        },
+        {
+          "icon": "pi-map",
+          "text": "Khám phá"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Những Ngày Bên Nhau",
+      "description": "Mỗi ngày bên nhau đều là một kỷ niệm đáng trân trọng",
+      "image": "assets/images/gallery/ben-nhau.png",
+      "date": "15/05/2023",
+      "emotions": [
+        {
+          "icon": "pi-heart",
+          "text": "Yêu thương"
+        },
+        {
+          "icon": "pi-home",
+          "text": "Ấm áp"
+        }
+      ]
     }
   ],
-  "momentCategories": [
+  "categories": [
     {
+      "id": "1",
+      "title": "Những Chuyến Đi",
+      "icon": "pi-map-marker",
+      "count": 5
+    },
+    {
+      "id": "2",
+      "title": "Khoảnh Khắc Yêu Thương",
       "icon": "pi-heart",
-      "title": "Khoảnh Khắc Lãng Mạn",
-      "count": 25
+      "count": 12
     },
     {
-      "icon": "pi-camera",
-      "title": "Chuyến Đi Đáng Nhớ",
-      "count": 15
+      "id": "3",
+      "title": "Ngày Đặc Biệt",
+      "icon": "pi-calendar",
+      "count": 8
     },
     {
-      "icon": "pi-home",
-      "title": "Khoảnh Khắc Gia Đình",
-      "count": 30
+      "id": "4",
+      "title": "Kỷ Niệm Đáng Nhớ",
+      "icon": "pi-star",
+      "count": 10
     }
-  ]
+  ],
+  "quotes": [
+    {
+      "text": "Yêu không phải là nhìn nhau, mà là cùng nhìn về một hướng",
+      "author": "Antoine de Saint-Exupéry",
+      "icon": "pi-heart"
+    },
+    {
+      "text": "Tình yêu không làm cho thế giới quay, tình yêu làm cho chuyến đi đáng giá",
+      "author": "Franklin P. Jones",
+      "icon": "pi-star"
+    }
+  ],
+  "featuredMoment": {
+    "image": "assets/images/gallery/nam-tay-yeu-thuong.png",
+    "title": "Khoảnh Khắc Đặc Biệt",
+    "description": "Những giây phút bên nhau đều là những kỷ niệm đáng nhớ"
+  }
 } 

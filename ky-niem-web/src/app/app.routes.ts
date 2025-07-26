@@ -19,11 +19,11 @@ export const routes: Routes = [
   },
   {
     path: 'album-anh',
-    loadChildren: () => import('./pages/album-anh/album-anh.routes').then(m => m.AlbumAnhRoutes)
+    loadChildren: () => import('./pages/album-anh/album-anh.routes').then(m => m.ALBUM_ANH_ROUTES)
   },
   {
     path: 'album-anh/:id',
-    loadChildren: () => import('./pages/album-anh/album-anh.routes').then(m => m.AlbumAnhRoutes)
+    loadChildren: () => import('./pages/album-anh/album-anh.routes').then(m => m.ALBUM_ANH_ROUTES)
   },
   {
     path: 'tips-vo-chong',
