@@ -45,7 +45,7 @@ jobs:
 
       - name: 📥 Install dependencies
         working-directory: my-working-profile
-        run: npm ci
+        run: npm install --force
 
       - name: 🔨 Build Angular profile
         working-directory: my-working-profile
