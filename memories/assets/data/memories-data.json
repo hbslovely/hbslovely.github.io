@@ -65,18 +65,6 @@
       "icon": "pi pi-home"
     }
   ],
-  "loveQuotes": [
-    {
-      "quote": "Trong vô vàn con người trên thế giới này, anh đã tìm thấy em - người duy nhất làm cho trái tim anh rung động.",
-      "author": "Ba Heo Nhỏ",
-      "icon": "pi pi-heart"
-    },
-    {
-      "quote": "Em yêu anh không phải vì anh hoàn hảo, mà vì anh làm cho cuộc sống của em trở nên hoàn hảo.",
-      "author": "Bé \"Shi\"",
-      "icon": "pi pi-star"
-    }
-  ],
   "loveStatistics": {
     "daysTogether": "1,531",
     "photosTaken": "12,457",

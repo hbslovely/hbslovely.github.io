@@ -1,15 +1,15 @@
 {
   "sectionTitle": "Hành Trình Yêu Thương",
   "quote": {
-    "content": "The course of true love never did run smooth, but that's what makes it an adventure",
-    "author": "William Shakespeare"
+    "content": "Yêu không phải là những lời hoa mỹ, mà là những việc làm giản dị mỗi ngày",
+    "author": "Ngạn ngữ"
   },
   "events": [
     {
       "date": "9/5/2021",
       "icon": "pi pi-heart",
-      "title": "Định Mệnh Gặp Gỡ",
-      "description": "Khoảnh khắc đầu tiên chúng ta gặp nhau qua mạng. Một cuộc gặp gỡ tình cờ nhưng lại mở ra câu chuyện tình yêu đẹp như mơ."
+      "title": "Phút Đầu Nhìn Thấy Nhau",
+      "description": "Khoảnh khắc đầu tiên chúng ta trò chuyện với nhau. Một cuộc trò chuyện tình cờ nhưng đã mở ra câu chuyện tình yêu đẹp như mơ."
     },
     {
       "date": "9/6/2021",
@@ -26,7 +26,7 @@
     {
       "date": "20/05/2024",
       "icon": "pi pi-map-marker",
-      "title": "Kỷ niệm chuyến phượt Nam Bắc bằng xe máy",
+      "title": "Chuyến Phượt Nam-Bắc",
       "description": "Chuyến phượt đầy ý nghĩa bằng xe máy từ Nam ra Bắc, nơi chúng ta cùng nhau tạo nên những kỷ niệm đẹp, những phút giây hạnh phúc khó quên."
     },
     {
@@ -36,4 +36,4 @@
       "description": "Cùng nhau xây dựng tổ ấm hạnh phúc, thực hiện những ước mơ và hoài bão. Mỗi ngày bên nhau là một ngày tràn ngập yêu thương và niềm vui."
     }
   ]
-} 
+}
