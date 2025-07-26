@@ -20,18 +20,18 @@
         </div>
 
         <div class="menu-items">
-          <div class="menu-item" *ngFor="let food of foods | filter:'Chồng'">
+          <div class="menu-item" *ngFor="let food of $any(foods) | filter:'Chồng'">
             <div class="item-header">
-              <span class="item-name">{{ food.dish }}</span>
+              <span class="item-name">{{ $any(food).dish }}</span>
               <span class="dots"></span>
               <span class="price">$$$</span>
             </div>
             <div class="item-description">
-              {{ food.story }}
+              {{ $any(food).story }}
             </div>
             <div class="item-note">
               <i class="pi pi-heart"></i>
-              {{ food.feeling }}
+              {{ $any(food).feeling }}
             </div>
           </div>
         </div>
