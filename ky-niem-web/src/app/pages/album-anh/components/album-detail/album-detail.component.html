@@ -3,7 +3,7 @@
     [title]="album.title"
     [description]="album.description"
     [coverImage]="album.coverImage"
-    [photoCount]="album.photos?.length"
+    [photoCount]="album.photos?.length ?? 0"
     [previewPhotos]="getAlbumPreviewPhotos()">
   </app-album-detail-header>
 

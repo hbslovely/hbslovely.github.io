@@ -22,11 +22,11 @@
 <!-- Place Image -->
 <div class="place-image-section">
   <figure class="place-figure">
-    <img [src]="place.image" [alt]="place.name" class="main-image">
+    <img [src]="$any(place)?.image" [alt]="$any(place)?.name" class="main-image">
     <figcaption class="image-caption">
       <div class="caption-content">
         <i class="pi pi-info-circle"></i>
-        <p>{{ place.description }}</p>
+        <p>{{ $any(place)?.description }}</p>
       </div>
     </figcaption>
   </figure>
@@ -55,17 +55,17 @@
         </div>
         <div class="best-time-content">
           <p>{{ place.bestTimeToVisit }}</p>
-          <div class="season-tips" *ngIf="place.seasonalTips">
+          <div class="season-tips" *ngIf="$any(place)?.seasonalTips">
             <h4>Lưu ý theo mùa:</h4>
             <ul>
-              <li *ngFor="let tip of place.seasonalTips">{{ tip }}</li>
+              <li *ngFor="let tip of $any(place)?.seasonalTips">{{ tip }}</li>
             </ul>
           </div>
         </div>
       </div>
 
       <!-- How to Get There -->
-      <div class="detail-section" *ngIf="place.howToGet">
+      <div class="detail-section" *ngIf="$any(place)?.howToGet">
         <div class="section-header">
           <i class="pi pi-compass"></i>
           <h3>Cách đến đây</h3>

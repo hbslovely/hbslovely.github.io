@@ -24,7 +24,7 @@
         </div>
 
         <!-- Grid View -->
-        <div class="albums" [class.grid-view]="viewMode === 'grid'" [class.list-view]="viewMode === 'list'" [class.masonry-view]="viewMode === 'masonry'">
+        <div class="albums" [class.grid-view]="viewMode === 'grid'" [class.list-view]="viewMode === 'list'">
           <div class="album-card" *ngFor="let album of albums" (click)="openAlbum(album.id)">
             <div class="album-cover">
               <img [src]="album.coverImage" [alt]="album.title">
@@ -51,7 +51,7 @@
                 </div>
               </div>
             </div>
-            <div class="album-info" [class.masonry-info]="viewMode === 'masonry'">
+            <div class="album-info">
               <div class="info-header">
                 <i class="pi pi-folder"></i>
                 <h3>{{ album.title }}</h3>

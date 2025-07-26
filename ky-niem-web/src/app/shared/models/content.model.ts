@@ -41,13 +41,6 @@ export interface Gift {
   to?: string;
 }
 
-export interface Food {
-  person: string;
-  dish: string;
-  story: string;
-  feeling: string;
-}
-
 export interface Promise {
   id: number;
   title: string;

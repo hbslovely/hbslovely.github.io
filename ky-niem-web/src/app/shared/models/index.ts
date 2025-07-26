@@ -23,6 +23,13 @@ export interface Food {
   name: string;
   description: string;
   image?: string;
+  restaurant?: string;
+  where?: string;
+  price?: string;
+  person?: string;
+  dish?: string;
+  story?: string;
+  feeling?: string;
 }
 
 export interface Attractions {
@@ -49,6 +56,7 @@ export interface RecommendedFood {
   name: string;
   description: string;
   restaurant: string;
+  where?: string;
   price: string;
   image?: string;
-} 
+}
