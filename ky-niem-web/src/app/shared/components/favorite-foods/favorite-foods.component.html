@@ -45,7 +45,7 @@
         </div>
 
         <div class="menu-items">
-          <div class="menu-item" *ngFor="let food of foods | filter:'Vợ'">
+          <div class="menu-item" *ngFor="let food of $any(foods) | filter:'Vợ'">
             <div class="item-header">
               <span class="item-name">{{ food.dish }}</span>
               <span class="dots"></span>
