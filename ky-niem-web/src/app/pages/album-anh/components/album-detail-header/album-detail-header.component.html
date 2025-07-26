@@ -1,0 +1,23 @@
+<div class="album-detail-header" [style.backgroundImage]="'url(' + coverImage + ')'">
+  <div class="overlay"></div>
+  <button class="back-btn" (click)="onBack.emit()">
+    <i class="pi pi-arrow-left"></i>
+  </button>
+  <div class="header-content">
+    <div class="album-info">
+      <h1 class="title">{{ title }}</h1>
+      <p class="description">{{ description }}</p>
+      <div class="stats">
+        <div class="stat">
+          <i class="pi pi-images"></i>
+          <span>{{ photoCount }} ảnh</span>
+        </div>
+      </div>
+    </div>
+    <div class="preview-strip">
+      <div class="preview-photo" *ngFor="let photo of previewPhotos">
+        <img [src]="photo" alt="Preview">
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,315 @@
 {
   "albums": [
     {
+      "id": "wedding-photos",
+      "title": "Hình Cưới Đẹp",
+      "description": "Bộ ảnh cưới đặc biệt của chúng mình - Những khoảnh khắc ngọt ngào, lãng mạn được ghi lại trong từng khung hình. Mỗi bức ảnh là một câu chuyện tình yêu, là kỷ niệm đẹp của tình yêu chúng mình.",
+      "coverImage": "assets/images/albums/hinh-cuoi-dep/z6839748525440_4f786e6d4a074c4a4e00a2f5d3be0696.jpg",
+      "photoCount": 50,
+      "photos": [
+        {
+          "id": "wedding-beautiful-1",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839748525440_4f786e6d4a074c4a4e00a2f5d3be0696.jpg",
+          "title": "Khoảnh khắc ngọt ngào",
+          "description": "Ánh mắt đắm đuối, nụ cười hạnh phúc"
+        },
+        {
+          "id": "wedding-beautiful-2",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839748547298_b5ca358084616504239404b32c19c4cc.jpg",
+          "title": "Tình yêu vĩnh cửu",
+          "description": "Những giây phút lãng mạn bên nhau"
+        },
+        {
+          "id": "wedding-beautiful-3",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839748547513_1b41d744b95885998cc9eb267ac19b86.jpg",
+          "title": "Hạnh phúc bên nhau",
+          "description": "Nụ hôn ngọt ngào của tình yêu"
+        },
+        {
+          "id": "wedding-beautiful-4",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839748590879_b6ef8cf008e13f2462c78753d7705f88.jpg",
+          "title": "Duyên phận trời định",
+          "description": "Khoảnh khắc thiêng liêng của đôi ta"
+        },
+        {
+          "id": "wedding-beautiful-5",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839748591140_92cf6d5ad9c203ce4a2feee4eaf35626.jpg",
+          "title": "Tình yêu vĩnh cửu",
+          "description": "Những khoảnh khắc đẹp như mơ"
+        },
+        {
+          "id": "wedding-beautiful-6",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839748614959_10f7494ca2d8d4367f966fed33cd655d.jpg",
+          "title": "Nắng chiều lãng mạn",
+          "description": "Ánh nắng chiều tô điểm cho tình yêu thêm ngọt ngào"
+        },
+        {
+          "id": "wedding-beautiful-7",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839748615091_b394bea7561ca2862a97742e063d4a5c.jpg",
+          "title": "Khoảnh khắc yêu thương",
+          "description": "Những phút giây hạnh phúc bên nhau"
+        },
+        {
+          "id": "wedding-beautiful-8",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839748641768_bab392b1c0264833276b886a70d5e902.jpg",
+          "title": "Tình yêu thuần khiết",
+          "description": "Nụ cười rạng rỡ của tình yêu đích thực"
+        },
+        {
+          "id": "wedding-beautiful-9",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839748641907_bc0a319f761def1073c7bb21f0b8cb3c.jpg",
+          "title": "Hạnh phúc viên mãn",
+          "description": "Khoảnh khắc ngọt ngào của đôi lứa"
+        },
+        {
+          "id": "wedding-beautiful-10",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839748664548_85002afa19c8c9f7bb28c515216faf05.jpg",
+          "title": "Duyên phận trời ban",
+          "description": "Tình yêu đẹp như một bức tranh hoàn hảo"
+        },
+        {
+          "id": "wedding-beautiful-11",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839748711284_23e9168655cabe6cdfe5a7dd460182fa.jpg",
+          "title": "Khoảnh khắc vĩnh cửu",
+          "description": "Những giây phút thiêng liêng được lưu giữ mãi mãi"
+        },
+        {
+          "id": "wedding-beautiful-12",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839748735120_c80a38b787a2b8d01524eabdec4ea54f.jpg",
+          "title": "Tình yêu ngọt ngào",
+          "description": "Ánh mắt và nụ cười nói lên tất cả"
+        },
+        {
+          "id": "wedding-beautiful-13",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839748784244_4a61339675016f89d2b47d9e094262ee.jpg",
+          "title": "Hạnh phúc đôi ta",
+          "description": "Khoảnh khắc hạnh phúc của tình yêu đích thực"
+        },
+        {
+          "id": "wedding-beautiful-14",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839748810071_58b7c254db33c95911171992d6d7fcbc.jpg",
+          "title": "Tình yêu vĩnh hằng",
+          "description": "Những khoảnh khắc đẹp như tranh vẽ"
+        },
+        {
+          "id": "wedding-beautiful-15",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839748810316_8d8b31818d09ad37e0395ba952e1827e.jpg",
+          "title": "Duyên số an bài",
+          "description": "Tình yêu đẹp như thơ, ngọt ngào như mật"
+        },
+        {
+          "id": "wedding-beautiful-16",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839748833931_596e0bb426b5daf267a74805f59386c2.jpg",
+          "title": "Tình yêu bất diệt",
+          "description": "Khoảnh khắc tình yêu được khắc ghi mãi mãi"
+        },
+        {
+          "id": "wedding-beautiful-17",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839748857055_94d59ff46b0106fd9046389fbe8f46c8.jpg",
+          "title": "Hạnh phúc trọn vẹn",
+          "description": "Nụ cười hạnh phúc của đôi lứa yêu nhau"
+        },
+        {
+          "id": "wedding-beautiful-18",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839748857220_a26ee9ae5741366789b9e3b058ebbd14.jpg",
+          "title": "Tình yêu vĩnh cửu",
+          "description": "Những khoảnh khắc ngọt ngào của tình yêu"
+        },
+        {
+          "id": "wedding-beautiful-19",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839748875343_fd5fedf04faf77b3906fe7731749af84.jpg",
+          "title": "Duyên phận trời định",
+          "description": "Tình yêu đẹp như một bức tranh hoàn mỹ"
+        },
+        {
+          "id": "wedding-beautiful-20",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839748875465_0773b7cf057f4189a2768cca296aaa53.jpg",
+          "title": "Khoảnh khắc thiêng liêng",
+          "description": "Những giây phút hạnh phúc không thể nào quên"
+        },
+        {
+          "id": "wedding-beautiful-21",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839748875467_050d7c47df7f44d46b5e2b3734122e0e.jpg",
+          "title": "Tình yêu vĩnh cửu",
+          "description": "Khoảnh khắc tình yêu được ghi lại mãi mãi"
+        },
+        {
+          "id": "wedding-beautiful-22",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839748902511_f1b6c4bd0f59bf4d23abd25ffbf8f97b.jpg",
+          "title": "Hạnh phúc trọn vẹn",
+          "description": "Nụ cười rạng rỡ của tình yêu đích thực"
+        },
+        {
+          "id": "wedding-beautiful-23",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839748926405_19ff22aa9cf901022365166f14eeb060.jpg",
+          "title": "Duyên phận trời ban",
+          "description": "Những khoảnh khắc ngọt ngào của đôi lứa"
+        },
+        {
+          "id": "wedding-beautiful-24",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839748926404_7ecae2344d56a8a66536bf208e44cea0.jpg",
+          "title": "Tình yêu thuần khiết",
+          "description": "Ánh mắt và nụ cười nói lên tất cả"
+        },
+        {
+          "id": "wedding-beautiful-25",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839748926606_4667f65f7afb58dd41ea00b6eea3ce3d.jpg",
+          "title": "Khoảnh khắc yêu thương",
+          "description": "Tình yêu đẹp như một bức tranh hoàn hảo"
+        },
+        {
+          "id": "wedding-beautiful-26",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839748952402_e08e25c67223cd6b67ca34237e432a4a.jpg",
+          "title": "Tình yêu vĩnh hằng",
+          "description": "Những khoảnh khắc đẹp như mơ của tình yêu"
+        },
+        {
+          "id": "wedding-beautiful-27",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839748952543_f6ca87ecb937d763fb6faad554c813ae.jpg",
+          "title": "Duyên phận trời định",
+          "description": "Khoảnh khắc thiêng liêng của đôi lứa yêu nhau"
+        },
+        {
+          "id": "wedding-beautiful-28",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839748975772_944c2afa325c74a26043434677573f72.jpg",
+          "title": "Hạnh phúc trọn vẹn",
+          "description": "Nụ cười hạnh phúc của tình yêu đích thực"
+        },
+        {
+          "id": "wedding-beautiful-29",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839749000339_43db755c948103953fd6ec23f02265fd.jpg",
+          "title": "Tình yêu thuần khiết",
+          "description": "Ánh mắt và nụ cười nói lên tất cả"
+        },
+        {
+          "id": "wedding-beautiful-30",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839748975950_0a2379fb9b32a2e4cc24d9a3f8fb7ff5.jpg",
+          "title": "Khoảnh khắc yêu thương",
+          "description": "Những giây phút ngọt ngào của tình yêu"
+        },
+        {
+          "id": "wedding-beautiful-31",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839749000341_31c828ebd8c2e772fa62dce3375b2f90.jpg",
+          "title": "Duyên số an bài",
+          "description": "Tình yêu đẹp như thơ, ngọt ngào như mật"
+        },
+        {
+          "id": "wedding-beautiful-32",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839749023128_eb306ff39453aa46d1cad5f0244edc48.jpg",
+          "title": "Tình yêu vĩnh cửu",
+          "description": "Khoảnh khắc tình yêu được khắc ghi mãi mãi"
+        },
+        {
+          "id": "wedding-beautiful-33",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839749023207_0116117201174645cc44008b2d82ba09.jpg",
+          "title": "Hạnh phúc đôi ta",
+          "description": "Những khoảnh khắc ngọt ngào của tình yêu"
+        },
+        {
+          "id": "wedding-beautiful-34",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839749023413_16a76a5353a4824e9c2d6f8efb731ee2.jpg",
+          "title": "Tình yêu bất diệt",
+          "description": "Tình yêu đẹp như một bức tranh hoàn mỹ"
+        },
+        {
+          "id": "wedding-beautiful-35",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839749023416_3381800ca97a7cc84df745eb532d1768.jpg",
+          "title": "Khoảnh khắc thiêng liêng",
+          "description": "Những giây phút hạnh phúc không thể nào quên"
+        },
+        {
+          "id": "wedding-beautiful-36",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839749067028_2d43862ba1076b9afa3a138567008a12.jpg",
+          "title": "Tình yêu vĩnh cửu",
+          "description": "Khoảnh khắc tình yêu được ghi lại mãi mãi"
+        },
+        {
+          "id": "wedding-beautiful-37",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839749043243_f24f1b9a4d9faedb1321fa12cacc82ff.jpg",
+          "title": "Hạnh phúc trọn vẹn",
+          "description": "Nụ cười rạng rỡ của tình yêu đích thực"
+        },
+        {
+          "id": "wedding-beautiful-38",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839749067027_b5f191ce542e087fa5a3e2114d2ee3b9.jpg",
+          "title": "Duyên phận trời ban",
+          "description": "Những khoảnh khắc ngọt ngào của đôi lứa"
+        },
+        {
+          "id": "wedding-beautiful-39",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839749067103_be76dc5eb70742ef9c843ced2df36a51.jpg",
+          "title": "Tình yêu thuần khiết",
+          "description": "Ánh mắt và nụ cười nói lên tất cả"
+        },
+        {
+          "id": "wedding-beautiful-40",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839749067292_974ed88641f8ac91820eb1c90e417c00.jpg",
+          "title": "Khoảnh khắc yêu thương",
+          "description": "Tình yêu đẹp như một bức tranh hoàn hảo"
+        },
+        {
+          "id": "wedding-beautiful-41",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839749094706_8e5e8eb765102d3c5b28181e7937cc69.jpg",
+          "title": "Duyên số an bài",
+          "description": "Tình yêu đẹp như thơ, ngọt ngào như mật"
+        },
+        {
+          "id": "wedding-beautiful-42",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839749094837_8885c657a1bb8d2de123064a74bc2cb4.jpg",
+          "title": "Tình yêu vĩnh hằng",
+          "description": "Khoảnh khắc tình yêu được khắc ghi mãi mãi"
+        },
+        {
+          "id": "wedding-beautiful-43",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839749117782_9336de0fab7ea60f1696931ce39ad29c.jpg",
+          "title": "Hạnh phúc đôi ta",
+          "description": "Những khoảnh khắc ngọt ngào của tình yêu"
+        },
+        {
+          "id": "wedding-beautiful-44",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839749117958_7a971474ff2e95d2152c95056bf75c6d.jpg",
+          "title": "Tình yêu bất diệt",
+          "description": "Tình yêu đẹp như một bức tranh hoàn mỹ"
+        },
+        {
+          "id": "wedding-beautiful-45",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839749117957_4030d66f091fc4a601f8f1f8a106de8a.jpg",
+          "title": "Khoảnh khắc thiêng liêng",
+          "description": "Những giây phút hạnh phúc không thể nào quên"
+        },
+        {
+          "id": "wedding-beautiful-46",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839749143750_8449aab12ecfba23ae2ff6e0e97d5dae.jpg",
+          "title": "Tình yêu vĩnh cửu",
+          "description": "Khoảnh khắc tình yêu được ghi lại mãi mãi"
+        },
+        {
+          "id": "wedding-beautiful-47",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839749143751_99b54052dba550900775866be80860b1.jpg",
+          "title": "Hạnh phúc trọn vẹn",
+          "description": "Nụ cười rạng rỡ của tình yêu đích thực"
+        },
+        {
+          "id": "wedding-beautiful-48",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839749190859_230d37376d6205550a0927bad92bc6af.jpg",
+          "title": "Duyên phận trời ban",
+          "description": "Những khoảnh khắc ngọt ngào của đôi lứa"
+        },
+        {
+          "id": "wedding-beautiful-49",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839749190860_5652f617aefa9cab478087f342182d69.jpg",
+          "title": "Tình yêu thuần khiết",
+          "description": "Ánh mắt và nụ cười nói lên tất cả"
+        },
+        {
+          "id": "wedding-beautiful-50",
+          "url": "assets/images/albums/hinh-cuoi-dep/z6839748525510_085d4586f5e49f5e9ac19ae074e6a9d7.jpg",
+          "title": "Khoảnh khắc yêu thương",
+          "description": "Tình yêu đẹp như một bức tranh hoàn hảo"
+        }
+      ]
+    },
+    {
       "id": "wedding-day",
       "title": "Ngày Cưới 03/2022",
       "description": "Những khoảnh khắc hạnh phúc trong ngày trọng đại của chúng mình",
