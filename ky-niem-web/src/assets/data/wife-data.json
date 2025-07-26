@@ -7,9 +7,9 @@
     "tags": ["Vợ Yêu", "Cá Tính", "Người bạn đời", "Forever"]
   },
   "wifeBasicInfo": [
-    { "icon": "pi pi-calendar", "label": "Năm sinh", "value": "199x" },
-    { "icon": "pi pi-home", "label": "Sinh sống", "value": "TP. Hồ Chí Minh" },
-    { "icon": "pi pi-heart", "label": "Tình trạng", "value": "Đã có chồng 💕" }
+    { "icon": "pi pi-calendar", "label": "Năm sinh", "value": "Bí mật nhỏ xinh 🎀" },
+    { "icon": "pi pi-home", "label": "Sinh sống", "value": "Một góc nhỏ trên Trái Đất 🌍" },
+    { "icon": "pi pi-heart", "label": "Tình trạng", "value": "Đã bị Bé Báo bắt về làm vợ rồi 🐆💝" }
   ],
   "wifeTraits": [
     { "icon": "pi pi-heart-fill", "title": "Dịu dàng", "description": "Luôn nhẹ nhàng và ân cần" },
@@ -52,7 +52,7 @@
     { "title": "Điều thú vị", "description": "Có thể nấu được nhiều món ăn ngon từ nguyên liệu đơn giản" }
   ],
   "wifeBeautyStyle": {
-    "description": "Phong cách của Heo Bỉm Sửa là sự kết hợp hoàn hảo giữa vẻ đẹp tự nhiên và sự tinh tế trong việc chăm sóc bản thân. Luôn ưu tiên sự thoải mái nhưng không kém phần thanh lịch, em thích những trang phục đơn giản nhưng chất lượng, phù hợp với nhiều hoàn cảnh khác nhau.",
+    "description": "Phong cách của Bé \"Shi\" là sự kết hợp hoàn hảo giữa vẻ đẹp tự nhiên và sự tinh tế trong việc chăm sóc bản thân. Luôn ưu tiên sự thoải mái nhưng không kém phần thanh lịch, em thích những trang phục đơn giản nhưng chất lượng, phù hợp với nhiều hoàn cảnh khác nhau.",
     "categories": [
       { "title": "Trang điểm", "description": "Theo đuổi phong cách trang điểm tự nhiên, nhẹ nhàng" },
       { "title": "Thời trang", "description": "Yêu thích những items basic, dễ phối đồ và thanh lịch" },

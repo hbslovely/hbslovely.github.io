@@ -10,17 +10,17 @@
       {
         "icon": "pi pi-calendar",
         "label": "Năm sinh",
-        "value": "199x"
+        "value": "Chưa được 1 tỷ giây tuổi 🤖"
       },
       {
         "icon": "pi pi-map-marker",
         "label": "Nơi sinh",
-        "value": "TP. Hồ Chí Minh"
+        "value": "Nơi có nhiều code và ước mơ 💫"
       },
       {
         "icon": "pi pi-briefcase",
         "label": "Nghề nghiệp",
-        "value": "Developer"
+        "value": "Người dịch ngôn ngữ máy tính 💻"
       }
     ]
   },
