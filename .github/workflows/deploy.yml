@@ -16,9 +16,7 @@ jobs:
       - name: 📦 Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
-          cache: 'npm'
-          cache-dependency-path: 'ky-niem-web/package-lock.json'
+          node-version: 20
 
       - name: 📥 Install dependencies
         working-directory: ky-niem-web
@@ -33,7 +31,6 @@ jobs:
         with:
           name: memories
           path: ky-niem-web/dist
-          retention-days: 1
 
   build-profile:
     runs-on: ubuntu-latest
@@ -44,9 +41,7 @@ jobs:
       - name: 📦 Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
-          cache: 'npm'
-          cache-dependency-path: 'my-working-profile/package-lock.json'
+          node-version: 20
 
       - name: 📥 Install dependencies
         working-directory: my-working-profile
@@ -61,7 +56,6 @@ jobs:
         with:
           name: profile
           path: my-working-profile/dist
-          retention-days: 1
 
   deploy:
     needs: [build-ky-niem, build-profile]
