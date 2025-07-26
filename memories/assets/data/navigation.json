@@ -31,10 +31,10 @@
       "description": "Những khoảnh khắc hạnh phúc của chúng ta"
     },
     {
-      "text": "Bí Quyết Hạnh Phúc",
-      "link": "/tips-vo-chong",
-      "icon": "pi pi-heart-fill",
-      "description": "Những điều nhỏ nhặt tạo nên hạnh phúc lớn lao"
+      "text": "Địa Điểm Kỷ Niệm",
+      "link": "/dia-diem",
+      "icon": "pi pi-map-marker",
+      "description": "Những nơi chúng ta đã đến cùng nhau"
     }
   ]
 } 

@@ -2,28 +2,28 @@
   "basicInfo": {
     "name": "Bé Báo",
     "title": "Chồng Yêu Của Em",
-    "description": "Bé Báo - chàng IT boy thế hệ 9x với vibe năng động và tư duy nhạy bén. Không chỉ là một developer cực xịn với khả năng 'fix bug' thần sầu, anh còn là người bạn đời cực kỳ đáng yêu với khả năng biến mọi khoảnh khắc thành những memory đặc biệt. Với ánh mắt tràn ngập yêu thương và trái tim ấm áp, anh chính là best version của một người chồng trong mơ 💝",
-    "loveMessage": "Em yêu anh Bé Báo không chỉ vì những điều anh làm, mà vì chính con người anh - một người đàn ông biết cách yêu thương bằng cả trái tim và lý trí. Anh là người kiến tạo hạnh phúc trong cuộc đời em, là người đồng hành trên mọi chặng đường, và là tác giả của câu chuyện tình yêu ngọt ngào nhất em từng được trải qua.",
+    "description": "Xin chào, anh là Bé Báo - một chàng developer với trái tim ấm áp và đôi bàn tay biết 'code' nên những điều kỳ diệu. Trong thế giới công nghệ đầy số liệu và logic, anh vẫn luôn dành một góc nhỏ trong tim để chứa đựng những điều lãng mạn và ngọt ngào dành cho em. 💻💝\n\nLà một IT boy thế hệ 9x, anh tự hào về khả năng biến những dòng code khô khan thành những ứng dụng sống động, cũng như cách anh biến những khoảnh khắc đời thường thành những memory đặc biệt với em. Với tư duy nhạy bén và tinh thần không ngừng học hỏi, anh luôn cố gắng trở thành phiên bản tốt hơn của chính mình mỗi ngày. 🌟\n\nDù đôi khi hơi cẩu thả trong một số việc nhỏ, nhưng với những điều quan trọng - đặc biệt là tình yêu dành cho em, anh luôn đặt cả trái tim và tâm huyết vào đó. Bởi vì em chính là project quan trọng nhất trong cuộc đời anh, là người truyền cảm hứng để anh trở thành best version của một người chồng trong mơ. ✨💑",
+    "loveMessage": "Gửi em - người làm cho code của anh có ý nghĩa hơn 💝\n\nEm có biết không, trong cuộc đời của một developer như anh, mọi thứ đều được quy về những con số và logic. Nhưng từ khi có em, anh đã học được rằng những điều đẹp đẽ nhất trong cuộc sống không thể giải thích bằng bất kỳ thuật toán nào - như cách tim anh đập nhanh mỗi khi nhìn thấy nụ cười của em, hay cách mà mọi bug trong ngày đều tan biến khi được em ôm.\n\nCó người nói rằng developer chỉ biết yêu laptop, nhưng với anh, em mới là người anh luôn muốn refresh trang web đầu tiên mỗi sáng thức dậy. Em là notification quan trọng nhất mà anh không bao giờ muốn dismiss, là file không bao giờ bị delete trong trái tim anh.\n\nCảm ơn em đã debug những lỗi lầm của anh với tất cả sự kiên nhẫn và yêu thương. Anh hứa sẽ luôn commit những điều tốt đẹp nhất cho em, merge những khoảnh khắc hạnh phúc vào branch cuộc đời của chúng ta, và deploy tình yêu này theo phiên bản vĩnh cửu. 👨‍💻❤️\n\nYêu em nhiều,\nBé Báo của em",
     "avatar": "assets/images/phat/phat-portrait.png",
-    "tags": ["Bé Báo", "Chồng Yêu", "Developer"]
+    "tags": ["Bé Báo", "Chồng Yêu", "Developer"],
+    "stats": [
+      {
+        "icon": "pi pi-calendar",
+        "label": "Năm sinh",
+        "value": "199x"
+      },
+      {
+        "icon": "pi pi-map-marker",
+        "label": "Nơi sinh",
+        "value": "TP. Hồ Chí Minh"
+      },
+      {
+        "icon": "pi pi-briefcase",
+        "label": "Nghề nghiệp",
+        "value": "Developer"
+      }
+    ]
   },
-  "personalInfo": [
-    {
-      "icon": "pi pi-calendar",
-      "label": "Năm sinh",
-      "value": "199x"
-    },
-    {
-      "icon": "pi pi-map-marker",
-      "label": "Nơi sinh",
-      "value": "TP. Hồ Chí Minh"
-    },
-    {
-      "icon": "pi pi-briefcase",
-      "label": "Nghề nghiệp",
-      "value": "Developer"
-    }
-  ],
   "traits": [
     {
       "icon": "pi pi-heart",
@@ -61,6 +61,42 @@
       "icon": "pi pi-heart",
       "name": "Ẩm thực",
       "description": "Yêu thích khám phá các món ăn ngon"
+    }
+  ],
+  "professionalSkillCategories": [
+    {
+      "category": "Kỹ năng lập trình",
+      "skills": [
+        "JavaScript/TypeScript",
+        "Angular",
+        "React",
+        "Node.js",
+        "HTML/CSS",
+        "SQL",
+        "Git"
+      ]
+    },
+    {
+      "category": "Kỹ năng chuyên môn",
+      "skills": [
+        "Phân tích yêu cầu",
+        "Thiết kế hệ thống",
+        "Tối ưu hiệu suất",
+        "Kiểm thử",
+        "CI/CD",
+        "Agile/Scrum"
+      ]
+    },
+    {
+      "category": "Kỹ năng mềm",
+      "skills": [
+        "Giao tiếp hiệu quả",
+        "Làm việc nhóm",
+        "Quản lý thời gian",
+        "Giải quyết vấn đề",
+        "Tư duy logic",
+        "Học hỏi nhanh"
+      ]
     }
   ],
   "photos": [
