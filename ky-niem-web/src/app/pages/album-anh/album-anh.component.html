@@ -55,17 +55,6 @@
       </button>
     </div>
 
-    <!-- Grid View -->
-    <div class="photos-grid" *ngIf="detailViewMode === 'grid'">
-      <div class="photo-card" *ngFor="let photo of selectedAlbum.photos" (click)="openPhotoViewer(photo)">
-        <img [src]="photo.url" [alt]="photo.title">
-        <div class="photo-info">
-          <h4>{{ photo.title }}</h4>
-          <p *ngIf="photo.description">{{ photo.description }}</p>
-        </div>
-      </div>
-    </div>
-
     <!-- Masonry View -->
     <div class="photos-masonry" *ngIf="detailViewMode === 'masonry'">
       <div class="masonry-column" *ngFor="let column of getMasonryColumns()">

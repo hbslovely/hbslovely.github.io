@@ -12,41 +12,16 @@
       <p class="section-subtitle">Mỗi món quà là một kỷ niệm, một câu chuyện về tình yêu của chúng ta</p>
     </div>
 
-    <!-- Featured Gift -->
-    <div class="featured-gift">
-      <div class="gift-icon">
-        <i class="pi pi-heart-fill"></i>
-      </div>
-      <div class="gift-content">
-        <p class="gift-message">
-          "Món quà lớn nhất trong tình yêu không phải là những món đồ đắt tiền, 
-          mà là những khoảnh khắc ý nghĩa ta dành cho nhau"
-        </p>
-      </div>
-    </div>
-
-    <!-- Gifts List -->
-    <div class="gifts-list">
-      <div class="gift-item" *ngFor="let gift of gifts">
-        <div class="gift-header">
-          <div class="occasion-tag">
-            <i class="pi pi-calendar"></i>
-            <span>{{ gift.occasion }}</span>
-          </div>
-          <div class="emotion-tag">
-            <i class="pi pi-star"></i>
-            <span>{{ gift.emotion }}</span>
-          </div>
+    <!-- Gifts Timeline -->
+    <div class="gifts-timeline">
+      <div class="gift-card" *ngFor="let gift of gifts">
+        <div class="gift-number">{{ gift.id }}</div>
+        <div class="gift-image">
+          <img [src]="gift.image" [alt]="gift.title">
         </div>
-
-        <div class="gift-main">
-          <div class="gift-icon">
-            <i class="pi pi-gift"></i>
-          </div>
-          <div class="gift-details">
-            <h3 class="gift-title">{{ gift.gift }}</h3>
-            <p class="gift-meaning">{{ gift.meaning }}</p>
-          </div>
+        <div class="gift-content">
+          <h3 class="gift-title">{{ gift.title }}</h3>
+          <p class="gift-description">{{ gift.description }}</p>
         </div>
       </div>
     </div>

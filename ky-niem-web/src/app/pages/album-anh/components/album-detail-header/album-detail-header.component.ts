@@ -1,9 +1,13 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-album-detail-header',
   templateUrl: './album-detail-header.component.html',
-  styleUrls: ['./album-detail-header.component.scss']
+  imports: [
+    CommonModule
+  ],
+  styleUrls: [ './album-detail-header.component.scss' ]
 })
 export class AlbumDetailHeaderComponent {
   @Input() title: string = '';
@@ -13,4 +17,4 @@ export class AlbumDetailHeaderComponent {
   @Input() date: Date = new Date();
   @Input() previewPhotos: string[] = [];
   @Output() onBack = new EventEmitter<void>();
-} 
+}
