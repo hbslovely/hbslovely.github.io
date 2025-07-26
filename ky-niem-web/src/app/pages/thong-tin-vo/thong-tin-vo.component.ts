@@ -1,14 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { FunFactsCardComponent } from '../../shared/components/fun-facts-card/fun-facts-card.component';
 import { WifeData } from '../../shared/models';
 
 @Component({
   selector: 'app-thong-tin-vo',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FunFactsCardComponent],
   templateUrl: './thong-tin-vo.component.html',
-  styleUrls: ['./thong-tin-vo.component.scss']
+  styleUrls: ['./thong-tin-vo.component.scss'],
+  host: {
+    'class': 'wife-profile'
+  }
 })
 export class ThongTinVoComponent implements OnInit {
   wifeData: Partial<WifeData> = {};

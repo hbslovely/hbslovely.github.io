@@ -19,13 +19,13 @@ import { ParallaxHeaderComponent } from '../../shared/components/parallax-header
 import { LoveStatisticsComponent } from '../../shared/components/love-statistics/love-statistics.component';
 import { SpecialMomentsComponent } from '../../shared/components/special-moments/special-moments.component';
 import { OurSongsComponent } from '../../shared/components/our-songs/our-songs.component';
-import { LoveQuotesComponent } from '../../shared/components/love-quotes/love-quotes.component';
 import { MeaningfulGiftsComponent } from '../../shared/components/meaningful-gifts/meaningful-gifts.component';
 import { FavoriteFoodsComponent } from '../../shared/components/favorite-foods/favorite-foods.component';
 import { MemoryGalleryComponent } from '../../shared/components/memory-gallery/memory-gallery.component';
 import { GratitudeMessagesComponent } from '../../shared/components/gratitude-messages/gratitude-messages.component';
 import { LoveTimelineComponent } from '../../shared/components/love-timeline/love-timeline.component';
 import { FuturePromisesComponent } from '../../shared/components/future-promises/future-promises.component';
+import { RandomMemoryComponent } from '../../shared/components/random-memory/random-memory.component';
 
 @Component({
   selector: 'app-chao-mung',
@@ -37,13 +37,13 @@ import { FuturePromisesComponent } from '../../shared/components/future-promises
     LoveStatisticsComponent,
     SpecialMomentsComponent,
     OurSongsComponent,
-    LoveQuotesComponent,
     MeaningfulGiftsComponent,
     FavoriteFoodsComponent,
     MemoryGalleryComponent,
     GratitudeMessagesComponent,
     LoveTimelineComponent,
-    FuturePromisesComponent
+    FuturePromisesComponent,
+    RandomMemoryComponent,
   ],
   templateUrl: './chao-mung.component.html',
   styleUrls: ['./chao-mung.component.scss']

@@ -32,44 +32,16 @@
       </div>
     </div>
 
-    <!-- Goals Timeline -->
-    <div class="goals-timeline">
-      <div class="timeline-header">
-        <div class="line"></div>
-        <div class="header-content">
-          <i class="pi pi-flag"></i>
-          <h3>Mục Tiêu Chung</h3>
-        </div>
-        <div class="line"></div>
-      </div>
-
-      <div class="timeline-content">
-        <div class="timeline-item" *ngFor="let goal of goals; let isEven = even"
-             [class.right-aligned]="isEven">
-          <div class="timeline-marker">
-            <i [class]="'pi ' + goal.icon"></i>
-          </div>
-          <div class="timeline-body">
-            <h4>{{ goal.title }}</h4>
-            <div class="timeline-time">
-              <i class="pi pi-calendar"></i>
-              <span>{{ goal.timeframe }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Footer Quote -->
     <div class="footer-section">
       <div class="quote-box">
         <i class="pi pi-heart"></i>
         <blockquote>
-          "Love is not about how many days, months, or years you have been together. 
+          "Love is not about how many days, months, or years you have been together.
           Love is about how much you love each other every single day"
         </blockquote>
         <span class="author">- Steve Maraboli</span>
       </div>
     </div>
   </div>
-</div> 
+</div>

@@ -62,4 +62,29 @@ export interface MemoryPlace {
   location: string;
   image: string;
   description: string;
+  detailedDescription: string;
+  region: string;
+  features: string[];
+  bestTimeToVisit?: string;
+  seasonalTips?: string[];
+  howToGet?: string;
+  localFood?: any[];
+  recommendedFood?: any[];
+  nearbyAttractions?: any[];
+}
+
+export interface LoveTimelineEvent {
+  date: string;
+  icon: string;
+  title: string;
+  description: string;
+}
+
+export interface LoveTimelineData {
+  sectionTitle: string;
+  quote: {
+    content: string;
+    author: string;
+  };
+  events: LoveTimelineEvent[];
 }

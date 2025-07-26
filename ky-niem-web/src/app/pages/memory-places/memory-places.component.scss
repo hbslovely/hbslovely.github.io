@@ -291,6 +291,24 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
+
+  /* Ensure all cards in a row have the same height */
+  ::ng-deep app-place-card {
+    height: 100%;
+    display: block;
+
+    .place-card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+  }
 }
 
 .loading, .no-results {

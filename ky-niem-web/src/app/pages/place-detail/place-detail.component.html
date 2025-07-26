@@ -5,31 +5,69 @@
     <img src="assets/images/anh-chu-dao/avatar-couple.png" alt="Our Journey Together">
     <div class="overlay-text">
       <div class="header-content">
-        <h1>{{ place.name }}</h1>
-        <div class="location-badge">
-          <i class="pi pi-map-marker"></i>
-          <span>{{ place.location }}</span>
+        <div class="title-section">
+          <button class="back-button" (click)="goBack()">
+            <i class="pi pi-arrow-left"></i>
+          </button>
+          <h1>{{ place.name }}</h1>
+          <div class="tags-container">
+            <!-- Region Tag -->
+            <ng-container *ngIf="getPlaceRegion() as region">
+              <div class="tag region" (click)="navigateToRegion(region)" role="button" tabindex="0">
+                <i class="pi pi-map"></i>
+                <span>{{ getRegionLabel(region) }}</span>
+              </div>
+            </ng-container>
+            
+            <!-- Feature Tags -->
+            <ng-container *ngFor="let feature of getPlaceFeatures()">
+              <div class="tag feature" (click)="navigateToFeature(feature)" role="button" tabindex="0">
+                <i [class]="feature.icon"></i>
+                <span>{{ feature.label }}</span>
+              </div>
+            </ng-container>
+          </div>
+          <div class="location-badge">
+            <i class="pi pi-map-marker"></i>
+            <span>{{ place.location }}</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <button class="back-button" (click)="goBack()">
-    <i class="pi pi-arrow-left"></i>
-    <span>Quay lại</span>
-  </button>
 </div>
 
 <!-- Place Image -->
 <div class="place-image-section">
   <figure class="place-figure">
-    <img [src]="$any(place)?.image" [alt]="$any(place)?.name" class="main-image">
-    <figcaption class="image-caption">
-      <div class="caption-content">
-        <i class="pi pi-info-circle"></i>
-        <p>{{ $any(place)?.description }}</p>
+    <div class="corner-top-left"></div>
+    <div class="corner-top-right"></div>
+    <div class="corner-bottom-left"></div>
+    <div class="corner-bottom-right"></div>
+    <div class="image-container">
+      <img [src]="$any(place)?.image" [alt]="$any(place)?.name" class="main-image">
+      <div class="fullscreen-hint" (click)="toggleFullscreen()">
+        <i class="pi pi-window-maximize"></i>
+        <span>Nhấn để xem ảnh đầy đủ</span>
       </div>
-    </figcaption>
+      <div class="image-caption">
+        <div class="caption-content">
+          <i class="pi pi-info-circle"></i>
+          <p>{{ $any(place)?.description }}</p>
+        </div>
+      </div>
+    </div>
   </figure>
+</div>
+
+<!-- Fullscreen Image Modal -->
+<div class="fullscreen-modal" *ngIf="isFullscreen" (click)="toggleFullscreen()">
+  <div class="modal-content">
+    <img [src]="$any(place)?.image" [alt]="$any(place)?.name">
+    <button class="close-button" (click)="toggleFullscreen(); $event.stopPropagation()">
+      <i class="pi pi-times"></i>
+    </button>
+  </div>
 </div>
 
 <!-- Place Content -->
@@ -41,7 +79,7 @@
       <!-- Detailed Description -->
       <div class="detail-section">
         <div class="section-header">
-          <i class="pi pi-book"></i>
+          <i class="pi pi-info-circle"></i>
           <h3>Giới thiệu</h3>
         </div>
         <p>{{ place.detailedDescription }}</p>
@@ -50,7 +88,7 @@
       <!-- Best Time to Visit -->
       <div class="detail-section" *ngIf="place.bestTimeToVisit">
         <div class="section-header">
-          <i class="pi pi-sun"></i>
+          <i class="pi pi-calendar"></i>
           <h3>Thời điểm lý tưởng</h3>
         </div>
         <div class="best-time-content">
@@ -67,7 +105,7 @@
       <!-- How to Get There -->
       <div class="detail-section" *ngIf="$any(place)?.howToGet">
         <div class="section-header">
-          <i class="pi pi-compass"></i>
+          <i class="pi pi-directions"></i>
           <h3>Cách đến đây</h3>
         </div>
         <div class="driving-instructions">
@@ -80,7 +118,7 @@
       <!-- Food Section -->
       <div class="detail-section" *ngIf="(place.localFood && place.localFood.length > 0) || (place.recommendedFood && place.recommendedFood.length > 0)">
         <div class="section-header">
-          <i class="pi pi-star"></i>
+          <i class="pi pi-shopping-bag"></i>
           <h3>Ẩm thực địa phương</h3>
         </div>
 
@@ -146,7 +184,7 @@
       <!-- Nearby Attractions -->
       <div class="detail-section" *ngIf="place.nearbyAttractions && place.nearbyAttractions.length > 0">
         <div class="section-header">
-          <i class="pi pi-map-marker"></i>
+          <i class="pi pi-map"></i>
           <h3>Địa điểm lân cận</h3>
         </div>
         <div class="attractions-grid">
@@ -166,7 +204,7 @@
       <!-- Other Places -->
       <div class="detail-section" *ngIf="otherPlaces.length > 0">
         <div class="section-header">
-          <i class="pi pi-globe"></i>
+          <i class="pi pi-images"></i>
           <h3>Các địa điểm khác</h3>
         </div>
         <div class="places-grid">

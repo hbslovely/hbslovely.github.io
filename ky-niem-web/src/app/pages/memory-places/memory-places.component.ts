@@ -7,6 +7,7 @@ import { forkJoin, Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { FormsModule } from '@angular/forms';
 import { removeVietnameseTones } from '../../shared/utils/string.utils';
+import { ActivatedRoute, Router } from '@angular/router';
 
 interface Filter {
   region: string[];
@@ -67,11 +68,11 @@ export class MemoryPlacesComponent implements OnInit {
   ];
 
   features = [
-    { label: 'Biển', value: 'sea', icon: 'pi pi-sun' },
-    { label: 'Núi', value: 'mountain', icon: 'pi pi-arrow-up' },
-    { label: 'Di tích', value: 'historical', icon: 'pi pi-home' },
-    { label: 'Chợ', value: 'market', icon: 'pi pi-shopping-bag' },
-    { label: 'Ẩm thực', value: 'food', icon: 'pi pi-heart' }
+    { label: 'Biển', value: 'sea', icon: 'pi pi-cloud' },
+    { label: 'Núi', value: 'mountain', icon: 'pi pi-chart-line' },
+    { label: 'Di tích', value: 'historical', icon: 'pi pi-building' },
+    { label: 'Chợ', value: 'market', icon: 'pi pi-shopping-cart' },
+    { label: 'Ẩm thực', value: 'food', icon: 'pi pi-star' }
   ];
 
   selectedFilters: Filter = {
@@ -80,9 +81,14 @@ export class MemoryPlacesComponent implements OnInit {
     locationType: []
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit() {
+    // First load the data
     forkJoin({
       config: this.http.get<PlaceListConfig>('assets/data/memory-place-list/config.json'),
       locations: this.http.get<LocationMappings>('assets/data/region-mappings.json')
@@ -101,6 +107,17 @@ export class MemoryPlacesComponent implements OnInit {
         this.places = results.flat();
         this.applyFilters();
         this.loading = false;
+
+        // After data is loaded, handle query params
+        this.route.queryParams.subscribe(params => {
+          if (params['region']) {
+            this.selectedFilters.region = [params['region']];
+          }
+          if (params['feature']) {
+            this.selectedFilters.features = [params['feature']];
+          }
+          this.applyFilters();
+        });
       },
       error: (error) => {
         console.error('Error loading data:', error);
@@ -118,6 +135,21 @@ export class MemoryPlacesComponent implements OnInit {
     } else {
       filters.splice(index, 1);
     }
+    
+    // Update URL query params
+    const queryParams: any = {};
+    if (this.selectedFilters.region.length > 0) {
+      queryParams.region = this.selectedFilters.region[0];
+    }
+    if (this.selectedFilters.features.length > 0) {
+      queryParams.feature = this.selectedFilters.features[0];
+    }
+    
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams,
+      queryParamsHandling: 'merge'
+    });
     
     this.applyFilters();
   }
@@ -260,6 +292,13 @@ export class MemoryPlacesComponent implements OnInit {
         locationType: []
       };
       this.searchText = '';
+      
+      // Clear URL query params
+      this.router.navigate([], {
+        relativeTo: this.route,
+        queryParams: {}
+      });
+      
       this.applyFilters();
       this.isResetting = false;
     }, 300);

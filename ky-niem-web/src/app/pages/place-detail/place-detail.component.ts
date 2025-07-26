@@ -24,6 +24,26 @@ export class PlaceDetailComponent implements OnInit {
   place: MemoryPlace | null = null;
   otherPlaces: MemoryPlace[] = [];
   loading = true;
+  isFullscreen = false;
+
+  locationTypes = [
+    { label: 'Trong nước', value: 'domestic', icon: 'pi pi-flag' },
+    { label: 'Quốc tế', value: 'international', icon: 'pi pi-globe' }
+  ];
+
+  regions = [
+    { label: 'Miền Bắc', value: 'north' },
+    { label: 'Miền Trung', value: 'central' },
+    { label: 'Miền Nam', value: 'south' }
+  ];
+
+  features = [
+    { label: 'Biển', value: 'sea', icon: 'pi pi-cloud' },
+    { label: 'Núi', value: 'mountain', icon: 'pi pi-chart-line' },
+    { label: 'Di tích', value: 'historical', icon: 'pi pi-building' },
+    { label: 'Chợ', value: 'market', icon: 'pi pi-shopping-cart' },
+    { label: 'Ẩm thực', value: 'food', icon: 'pi pi-star' }
+  ];
 
   constructor(
     private route: ActivatedRoute,
@@ -65,6 +85,91 @@ export class PlaceDetailComponent implements OnInit {
     }
 
     return 'đường chính';
+  }
+
+  toggleFullscreen() {
+    this.isFullscreen = !this.isFullscreen;
+    if (this.isFullscreen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }
+
+  getPlaceFeatures() {
+    if (!this.place) return [];
+    
+    return this.features.filter(feature => {
+      switch (feature.value) {
+        case 'sea':
+          return this.place?.description.toLowerCase().includes('biển') || 
+                 this.place?.name.toLowerCase().includes('biển') ||
+                 this.place?.detailedDescription?.toLowerCase().includes('biển');
+        case 'mountain':
+          return this.place?.description.toLowerCase().includes('núi') || 
+                 this.place?.name.toLowerCase().includes('núi') ||
+                 this.place?.detailedDescription?.toLowerCase().includes('núi') ||
+                 this.place?.name.toLowerCase().includes('đèo');
+        case 'historical':
+          return this.place?.description.toLowerCase().includes('di tích') || 
+                 this.place?.description.toLowerCase().includes('lịch sử') ||
+                 this.place?.name.toLowerCase().includes('đền') ||
+                 this.place?.name.toLowerCase().includes('chùa') ||
+                 this.place?.name.toLowerCase().includes('lăng');
+        case 'market':
+          return this.place?.name.toLowerCase().includes('chợ');
+        case 'food':
+          return !!this.place?.recommendedFood?.length || 
+                 !!this.place?.localFood?.length;
+        default:
+          return false;
+      }
+    });
+  }
+
+  getPlaceRegion(): string | null {
+    if (!this.place) return null;
+    
+    // This is a simplified version - you might want to use the same region-mappings.json logic
+    // that the memory-places component uses for more accurate results
+    const location = this.place.location.toLowerCase();
+    if (location.includes('hà nội') || location.includes('hải phòng') || location.includes('quảng ninh')) {
+      return 'north';
+    } else if (location.includes('đà nẵng') || location.includes('huế') || location.includes('quảng nam')) {
+      return 'central';
+    } else if (location.includes('sài gòn') || location.includes('hồ chí minh') || location.includes('vũng tàu')) {
+      return 'south';
+    }
+    return null;
+  }
+
+  getRegionLabel(region: string): string {
+    switch (region) {
+      case 'north':
+        return 'Miền Bắc';
+      case 'central':
+        return 'Miền Trung';
+      case 'south':
+        return 'Miền Nam';
+      default:
+        return '';
+    }
+  }
+
+  navigateToRegion(region: string) {
+    this.router.navigate(['/dia-diem'], {
+      queryParams: {
+        region: region
+      }
+    });
+  }
+
+  navigateToFeature(feature: any) {
+    this.router.navigate(['/dia-diem'], {
+      queryParams: {
+        feature: feature.value
+      }
+    });
   }
 
   private loadPlaceDetails(placeId: string) {
