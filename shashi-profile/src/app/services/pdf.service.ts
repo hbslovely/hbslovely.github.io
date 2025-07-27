@@ -22,13 +22,8 @@ export class PdfService {
 
   private setupPdfFonts(pdf: jsPDF): void {
     try {
-      // Add Inter font files
-      pdf.addFont('assets/fonts/Inter-Regular.ttf', 'Inter', 'normal');
-      pdf.addFont('assets/fonts/Inter-Bold.ttf', 'Inter', 'bold');
-      pdf.addFont('assets/fonts/Inter-Medium.ttf', 'Inter', 'medium');
-
-      // Set default font
-      pdf.setFont('Inter', 'normal');
+      // Set default font to Helvetica for better Unicode support
+      pdf.setFont('helvetica');
       pdf.setFontSize(12);
 
       pdf.setProperties({
@@ -40,8 +35,6 @@ export class PdfService {
       });
     } catch (error) {
       console.error('Error setting up font:', error);
-      // Fallback to built-in font if Inter fails to load
-      pdf.setFont('helvetica');
     }
   }
 
@@ -121,7 +114,7 @@ export class PdfService {
       compress: true
     });
 
-    // Setup fonts with Unicode support
+    // Setup fonts
     this.setupPdfFonts(pdf);
 
     // Define colors - using lighter shades
