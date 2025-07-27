@@ -1,34 +1,16 @@
-export interface Project {
-  name: string;
-  company?: string;
-  duration: string;
-  description: string;
-  scope?: string;
-  technologies: string[];
-  environment: string[];
-  role: string;
-  status?: 'active' | 'completed' | 'maintenance';
-  teamSize?: number;
-  image?: string;
-  github?: string;
-  demo?: string;
-  achievements?: string[];
-}
-
 export interface PersonalInfo {
+  prefix: string;
   name: string;
   title: string;
   dateOfBirth: string;
   location: {
     address: string;
-    district: string;
     city: string;
     country: string;
   };
   contact: {
     phone: string;
     email: string;
-    linkedin: string;
     github: string;
   };
   languages: Array<{
@@ -37,7 +19,6 @@ export interface PersonalInfo {
   }>;
   summary: string;
   shortSummary: string;
-  professionalHighlights: string[];
   interests: string[];
   availability: {
     status: string;
@@ -66,6 +47,7 @@ export interface WorkExperience {
 
 export interface Education {
   institution: string;
+  location: string;
   degree: string;
   field: string;
   startDate: string;
@@ -97,7 +79,4 @@ export interface CV {
     education: Education[];
   };
   skills: Skills;
-  projects: {
-    projects: Project[];
-  }
 } 

@@ -40,8 +40,7 @@ export class CvService {
       personalInfo: this.http.get<any>(`assets/json/personal-info${langPrefix}.json`),
       experience: this.http.get<any>(`assets/json/experience${langPrefix}.json`),
       education: this.http.get<any>(`assets/json/education${langPrefix}.json`),
-      skills: this.http.get<any>(`assets/json/skills${langPrefix}.json`),
-      projects: this.http.get<any>(`assets/json/projects${langPrefix}.json`)
+      skills: this.http.get<any>(`assets/json/skills${langPrefix}.json`)
     }).subscribe({
       next: (data) => {
         this.cvData.set(data);
@@ -65,8 +64,7 @@ export class CvService {
       personalInfo: this.http.get<any>('assets/json/personal-info.json'),
       experience: this.http.get<any>('assets/json/experience.json'),
       education: this.http.get<any>('assets/json/education.json'),
-      skills: this.http.get<any>('assets/json/skills.json'),
-      projects: this.http.get<any>('assets/json/projects.json')
+      skills: this.http.get<any>('assets/json/skills.json')
     }).subscribe({
       next: (data) => {
         this.cvData.set(data);

@@ -5,9 +5,9 @@
         <span class="logo">NQ</span>
       </a>
 
-      <button 
-        class="mobile-menu-button" 
-        nz-button 
+      <button
+        class="mobile-menu-button"
+        nz-button
         nzType="text"
         (click)="toggleMobileMenu()"
       >
@@ -17,11 +17,11 @@
       <div class="nav-content" [class.mobile-open]="isMobileMenuOpen">
         <ul class="nav-links" [class.mobile]="isMobile">
           <li *ngFor="let item of navItems">
-            <a [routerLink]="item.path" 
-               routerLinkActive="active" 
+            <a [routerLink]="item.path"
+               routerLinkActive="active"
                [routerLinkActiveOptions]="{ exact: item.exact }"
                (click)="isMobile && closeMobileMenu()">
-              <span nz-icon [nzType]="item.icon" nzTheme="outline"></span>
+              <span nz-icon [nzType]="$any(item)?.icon" nzTheme="outline"></span>
               {{ item.label | translate }}
             </a>
           </li>

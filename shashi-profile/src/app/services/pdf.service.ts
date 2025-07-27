@@ -1,13 +1,13 @@
 import { inject, Injectable } from '@angular/core';
 import { jsPDF } from 'jspdf';
-import { CVService } from './cv.service';
+import { CvService } from './cv.service';
 import { LanguageService } from './language.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PdfService {
-  private readonly cvService = inject(CVService);
+  private readonly cvService = inject(CvService);
   private readonly languageService = inject(LanguageService);
 
   // A4 dimensions in points (72 points per inch)
@@ -17,7 +17,7 @@ export class PdfService {
   private readonly CONTENT_WIDTH = this.A4_WIDTH - (this.MARGIN * 2);
   private readonly SECTION_SPACING = 30; // Increased from 15 to 30 for better section separation
   private readonly HEADER_SPACING = 25; // Increased from 20 to 25 for consistent header spacing
-  private readonly AVATAR_SIZE = 180;
+  private readonly AVATAR_SIZE = 150; // Reduced from 180 to make it more compact
   private readonly SUB_SECTION_SPACING = 20; // New constant for spacing between items within a section
 
   private defineVietnameseFont(pdf: jsPDF): void {
@@ -73,12 +73,12 @@ export class PdfService {
   private addSectionHeader(pdf: jsPDF, text: string, yPos: number, colors: any): number {
     // Add extra spacing before section header
     yPos += this.SECTION_SPACING;
-    
+
     pdf.setFont('Times-Roman', 'bold');
     pdf.setFontSize(18);
     pdf.setTextColor(colors.primary);
     pdf.text(text, this.MARGIN, yPos);
-    
+
     // Return position after header with consistent spacing
     return yPos + this.HEADER_SPACING;
   }
@@ -111,13 +111,13 @@ export class PdfService {
   }
 
   private getFormattedFileName(): string {
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const months = [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ];
     const now = new Date();
     const currentMonth = months[now.getMonth()];
     const currentYear = now.getFullYear();
     const language = this.languageService.getCurrentLanguage().toUpperCase();
 
-    return `CV_Ninh_Quyen_${currentMonth}_${currentYear}_${language}.pdf`;
+    return `CV_Ninh_Quyen_${ currentMonth }_${ currentYear }_${ language }.pdf`;
   }
 
   async generateBeautifulPdf(): Promise<void> {
@@ -139,24 +139,36 @@ export class PdfService {
 
     // Define colors - using lighter shades
     const colors = {
-      primary: '#2563eb',    // Changed from #3b82f6 to a darker blue
+      primary: '#2563eb',    // Main blue
       text: '#1f2937',       // Dark text
-      link: '#1d4ed8',       // Changed from #60a5fa to a darker blue for links
-      subtext: '#4b5563',    // Dark gray for subtext
+      link: '#1d4ed8',       // Dark blue for links
+      subtext: '#60a5fa',    // Light blue for dates/locations
       background: '#ffffff',  // White background
-      accent: '#3b82f6'      // Changed from #93c5fd to a medium-dark blue for accents
+      accent: '#3b82f6'      // Medium blue for accents
     };
 
     let yPos = this.MARGIN + 20; // Start with some padding from top
 
-    // Add name
-    pdf.setFont('Times-Roman', 'bold');
-    pdf.setFontSize(28);
-    pdf.setTextColor(colors.text);
-    pdf.text(cv.personalInfo.name || '', this.MARGIN, yPos);
+    // Calculate font sizes to match web view proportions
+    const nameSize = 28;
+    const prefixSize = nameSize * 0.6; // Prefix is 60% of name size, matching web view
 
-    // Add title
-    yPos += this.getLineHeight(28);
+    // Add prefix
+    pdf.setFont('Times-Roman', 'normal');
+    pdf.setFontSize(prefixSize);
+    pdf.setTextColor(colors.subtext); // Gray color for prefix
+    const prefix = cv.personalInfo.prefix || '';
+    pdf.text(prefix, this.MARGIN, yPos);
+    const prefixWidth = pdf.getTextWidth(prefix);
+
+    // Add name (with spacing after prefix)
+    pdf.setFont('Times-Roman', 'bold');
+    pdf.setFontSize(nameSize);
+    pdf.setTextColor(colors.primary); // Blue color for name
+    pdf.text(cv.personalInfo.name || '', this.MARGIN + prefixWidth + 10, yPos); // Reduced gap to 10pt for better proportion
+
+    // Add title with reduced spacing
+    yPos += this.getLineHeight(nameSize) * 0.6; // Reduced from 1 to 0.6
     pdf.setFont('Times-Roman', 'normal');
     pdf.setFontSize(20);
     pdf.setTextColor(colors.text);
@@ -168,15 +180,15 @@ export class PdfService {
       const avatarY = this.MARGIN;
       const img = new Image();
       img.src = 'assets/images/avatar.png';
-      pdf.addImage(img, 'PNG', avatarX, avatarY, this.AVATAR_SIZE, this.AVATAR_SIZE);
+      pdf.addImage(img, 'PNG', avatarX, avatarY, this.AVATAR_SIZE, this.AVATAR_SIZE, undefined, 'NONE');
     } catch (error) {
       console.error('Error adding avatar:', error);
     }
 
-    // Add personal info in vertical layout
-    yPos += this.getLineHeight(20);
+    // Add personal info with reduced spacing
+    yPos += this.getLineHeight(20) * 0.7; // Reduced from 1 to 0.7
     pdf.setFont('Times-Roman', 'normal');
-    pdf.setFontSize(13); // Slightly smaller font for contact info
+    pdf.setFontSize(13);
     pdf.setTextColor(colors.text);
 
     // Add DOB
@@ -190,27 +202,19 @@ export class PdfService {
 
     // Add phone with label
     yPos += this.getLineHeight(13);
-    pdf.text(`${ cv.personalInfo.contact.phone } (Phone/Zalo/WhatsApp)`, this.MARGIN, yPos);
+    pdf.text(`${cv.personalInfo.contact.phone} (Phone/Zalo/WhatsApp)`, this.MARGIN, yPos);
 
     // Add email as clickable link
     yPos += this.getLineHeight(13);
     pdf.setTextColor(colors.link);
     pdf.setDrawColor(colors.link);
     pdf.textWithLink(cv.personalInfo.contact.email || '', this.MARGIN, yPos, {
-      url: `mailto:${ cv.personalInfo.contact.email }`
+      url: `mailto:${cv.personalInfo.contact.email}`
     });
     pdf.line(this.MARGIN, yPos + 2, this.MARGIN + pdf.getTextWidth(cv.personalInfo.contact.email || ''), yPos + 2);
 
-    // Add LinkedIn
-    yPos += this.getLineHeight(13);
-    const linkedInUrl = cv.personalInfo.contact.linkedin || '';
-    pdf.textWithLink(linkedInUrl, this.MARGIN, yPos, {
-      url: linkedInUrl
-    });
-    pdf.line(this.MARGIN, yPos + 2, this.MARGIN + pdf.getTextWidth(linkedInUrl), yPos + 2);
-
-    // Add extra spacing before Summary section
-    yPos = Math.max(yPos + this.getLineHeight(13), this.MARGIN + this.AVATAR_SIZE + this.SECTION_SPACING);
+    // Add extra spacing before Summary section (reduced)
+    yPos = Math.max(yPos + this.getLineHeight(13), this.MARGIN + this.AVATAR_SIZE + this.SECTION_SPACING * 0.7);
     yPos = this.addSectionHeader(pdf, 'Summary', yPos, colors);
 
     // Add summary content
@@ -241,18 +245,18 @@ export class PdfService {
         pdf.setFont('Times-Roman', 'normal');
         pdf.text(separator, this.MARGIN + companyWidth - pdf.getTextWidth(separator), yPos);
 
-        // Position (smaller size)
-        pdf.setFont('Times-Roman', 'bold');
-        pdf.setFontSize(13); // Reduced from 15 to 13
-        const positionY = yPos + 1; // Slight adjustment to align with company name
+        // Position (normal weight)
+        pdf.setFont('Times-Roman', 'normal'); // Changed from bold to normal
+        pdf.setFontSize(13);
+        const positionY = yPos + 1;
         pdf.text(exp.position, this.MARGIN + companyWidth, positionY);
 
-        // Duration and location with lighter color
-        yPos += this.getLineHeight(15);
+        // Duration and location with light blue color
+        yPos += this.getLineHeight(15) * 0.8; // Reduced spacing
         pdf.setFont('Times-Roman', 'normal');
         pdf.setFontSize(13);
-        pdf.setTextColor(colors.subtext);
-        const duration = `${ exp.startDate } - ${ exp.endDate || 'Present' } | ${ exp.location }`;
+        pdf.setTextColor(colors.subtext); // Changed to light blue
+        const duration = `${exp.startDate} - ${exp.endDate || 'Present'} | ${exp.location}`;
         pdf.text(duration, this.MARGIN, yPos);
 
         // Achievements without bullets
@@ -323,6 +327,7 @@ export class PdfService {
     yPos = this.addSectionHeader(pdf, 'Education', yPos, colors);
     yPos += this.getLineHeight(18);
 
+    // Update Education Section
     if (cv.education?.education) {
       cv.education.education.forEach((edu, index) => {
         yPos = this.checkPageBreak(pdf, yPos, 80);
@@ -331,99 +336,17 @@ export class PdfService {
         pdf.setFont('Times-Roman', 'bold');
         pdf.setFontSize(14);
         pdf.setTextColor(colors.text);
-        pdf.text(`${ edu.degree } in ${ edu.field }`, this.MARGIN, yPos);
+        pdf.text(`${edu.degree} in ${edu.field}`, this.MARGIN, yPos);
 
-        // Institution and Duration
-        yPos += this.getLineHeight(14);
+        // Institution and Duration with light blue color
+        yPos += this.getLineHeight(14) * 0.8; // Reduced spacing
         pdf.setFont('Times-Roman', 'normal');
         pdf.setFontSize(13);
-        pdf.setTextColor(colors.subtext);
-        pdf.text(`${ edu.institution } (${ edu.startDate } - ${ edu.endDate })`, this.MARGIN + 15, yPos);
-        yPos += this.getLineHeight(13) + 20;
+        pdf.setTextColor(colors.subtext); // Changed to light blue
+        pdf.text(`${edu.institution} – ${edu.location} (${edu.startDate} - ${edu.endDate})`, this.MARGIN + 15, yPos);
+        yPos += this.getLineHeight(13) * 0.8; // Reduced spacing
         // Add spacing between education items
         yPos += this.SUB_SECTION_SPACING;
-      });
-    }
-
-    // Add Projects Section
-    yPos = this.checkPageBreak(pdf, yPos);
-    yPos = this.addSectionHeader(pdf, 'Notable Projects', yPos, colors);
-    yPos += this.getLineHeight(18);
-
-    if (cv.projects?.projects) {
-      cv.projects.projects.forEach((project, index) => {
-        yPos = this.checkPageBreak(pdf, yPos, 100);
-
-        // Project name and duration
-        pdf.setFont('Times-Roman', 'bold');
-        pdf.setFontSize(15);
-        pdf.setTextColor(colors.text);
-        pdf.text(project.name, this.MARGIN, yPos);
-
-        // Duration (italics)
-        yPos += this.getLineHeight(15);
-        pdf.setFont('Times-Roman', 'italic');
-        pdf.setFontSize(14);
-        pdf.setTextColor(colors.subtext);
-        pdf.text(project.duration || '', this.MARGIN, yPos);
-
-        // Description with reduced spacing
-        if (project.description) {
-          yPos += this.getLineHeight(14) - 2;
-          pdf.setFont('Times-Roman', 'normal');
-          pdf.setFontSize(13);
-          pdf.setTextColor(colors.text);
-          const descLines = pdf.splitTextToSize(project.description, this.CONTENT_WIDTH - 20);
-          pdf.text(descLines, this.MARGIN, yPos);
-          yPos += descLines.length * this.getLineHeight(13) - 5;
-        }
-
-        // Project details with reduced spacing
-        const detailSpacing = this.getLineHeight(13) - 3;
-
-        // Scope
-        if (project.scope) {
-          yPos += detailSpacing;
-          const labelWidth = this.addUnderlinedItalicLabel(pdf, 'Mainly Scope:', this.MARGIN, yPos, colors);
-          pdf.setFont('Times-Roman', 'normal');
-          pdf.text(` ${ project.scope }`, this.MARGIN + labelWidth, yPos);
-        }
-
-        // Technologies
-        if (project.technologies?.length) {
-          yPos += detailSpacing;
-          const labelWidth = this.addUnderlinedItalicLabel(pdf, 'Technologies:', this.MARGIN, yPos, colors);
-          pdf.setFont('Times-Roman', 'normal');
-          const techText = project.technologies.join(', ');
-          pdf.text(` ${ techText }`, this.MARGIN + labelWidth, yPos);
-        }
-
-        // Environment
-        if (project.environment?.length) {
-          yPos += detailSpacing;
-          const labelWidth = this.addUnderlinedItalicLabel(pdf, 'Environment:', this.MARGIN, yPos, colors);
-          pdf.setFont('Times-Roman', 'normal');
-          const envText = project.environment.join(', ');
-          pdf.text(` ${ envText }`, this.MARGIN + labelWidth, yPos);
-        }
-
-        // Role
-        if (project.role) {
-          yPos += detailSpacing;
-          const labelWidth = this.addUnderlinedItalicLabel(pdf, 'Role:', this.MARGIN, yPos, colors);
-          pdf.setFont('Times-Roman', 'normal');
-          pdf.text(` ${ project.role }`, this.MARGIN + labelWidth, yPos);
-        }
-
-        // Add consistent spacing between projects
-        yPos += this.SUB_SECTION_SPACING;
-
-        // Add a subtle separator line between projects (except for the last one)
-        if (index < cv.projects.projects.length - 1) {
-          pdf.setDrawColor(colors.accent);
-          pdf.setLineWidth(0.2);
-          pdf.line(this.MARGIN + 40, yPos - 12, this.A4_WIDTH - this.MARGIN - 40, yPos - 12);
-        }
       });
     }
 

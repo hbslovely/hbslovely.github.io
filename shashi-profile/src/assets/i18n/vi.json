@@ -1,32 +1,16 @@
 {
-  "COMMON": {
-    "LOADING": "Đang tải...",
-    "DOWNLOAD_CV": "Tải CV",
-    "LANGUAGE": "Ngôn ngữ"
-  },
   "NAV": {
     "ABOUT": "Giới thiệu",
     "EXPERIENCE": "Kinh nghiệm",
     "PROJECTS": "Dự án",
-    "SKILLS": "Kỹ năng"
+    "SKILLS": "Kỹ năng",
+    "EXPORT_PDF": "Xuất PDF"
   },
-  "ABOUT": {
-    "TITLE": "Về tôi",
-    "DESCRIPTION": "Một lập trình viên đam mê với kinh nghiệm trong phát triển web và tập trung vào việc tạo ra các ứng dụng thân thiện với người dùng."
+  "ACTIONS": {
+    "EXPORT_PDF": "Xuất PDF"
   },
   "EXPERIENCE": {
-    "TITLE": "Kinh nghiệm làm việc",
-    "PRESENT": "Hiện tại",
-    "TECHNOLOGIES": "Công nghệ"
-  },
-  "PROJECTS": {
-    "TITLE": "Dự án",
-    "VIEW_PROJECT": "Xem dự án"
-  },
-  "SKILLS": {
-    "TITLE": "Kỹ năng",
-    "PROGRAMMING": "Ngôn ngữ lập trình",
-    "FRAMEWORKS": "Framework & Thư viện",
-    "TOOLS": "Công cụ & Công nghệ"
+    "KEY_ACHIEVEMENTS": "Thành tích nổi bật",
+    "RESPONSIBILITIES": "Trách nhiệm công việc"
   }
 } 

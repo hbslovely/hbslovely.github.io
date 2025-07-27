@@ -1,11 +1,12 @@
 {
   "education": [
     {
-      "institution": "FPT University, Ho Chi Minh, Vietnam",
-      "degree": "Bachelor of Information Technology",
-      "field": "Software Engineering",
-      "startDate": "2018",
-      "endDate": "2022"
+      "institution": "Dong A University",
+      "location": "Da Nang",
+      "degree": "Bachelor's Degree",
+      "field": "Financial Accounting",
+      "startDate": "2013",
+      "endDate": "2017"
     }
   ]
 } 

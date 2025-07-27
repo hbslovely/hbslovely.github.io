@@ -1,44 +1,40 @@
 {
   "technicalSkills": {
-    "programmingLanguages": [
-      "HTML5",
-      "JavaScript/TypeScript",
-      "CSS/SCSS"
+    "accounting": [
+      "Financial Reporting",
+      "Tax Accounting",
+      "General Ledger",
+      "Cost Accounting",
+      "Financial Analysis",
+      "Audit Preparation"
     ],
-    "frameworks": [
-      "Angular",
-      "React",
-      "Bootstrap",
-      "Material UI"
+    "humanResources": [
+      "HR Policies & Procedures",
+      "Recruitment & Selection",
+      "Performance Management",
+      "Training & Development",
+      "Labor Law Compliance"
     ],
-    "libraries": [
-      "RxJS",
-      "NgRx",
-      "jQuery",
-      "Lodash",
-      "Moment.js"
+    "software": [
+      "Accounting Software",
+      "ERP Systems",
+      "HRIS",
+      "Microsoft Office Suite",
+      "Tax Declaration Software"
     ],
-    "testing": [
-      "Jasmine",
-      "Karma",
-      "Jest",
-      "Cypress"
+    "compliance": [
+      "Vietnamese Accounting Standards",
+      "Tax Regulations",
+      "Labor Laws",
+      "Internal Control",
+      "Audit Procedures"
     ],
-    "methodologies": [
-      "Agile/Scrum",
-      "Git Flow"
-    ],
-    "tools": [
-      "Git",
-      "VS Code",
-      "Angular CLI",
-      "npm/yarn"
-    ],
-    "environments": [
-      "Visual Studio Code",
-      "Chrome DevTools",
-      "Windows",
-      "MacOS"
+    "softSkills": [
+      "Leadership",
+      "Problem Solving",
+      "Communication",
+      "Analytical Thinking",
+      "Time Management"
     ]
   }
 } 

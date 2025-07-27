@@ -1,16 +1,16 @@
 {
-  "name": "Ninh Quyen",
-  "title": "Frontend Developer",
-  "dateOfBirth": "01 Jan 1995",
+  "prefix": "Ms.",
+  "name": "Ninh Thi Quyen",
+  "title": "Accounting & HR Professional",
+  "dateOfBirth": "1994",
   "location": {
-    "address": "District 12",
+    "address": "Binh Thoi",
     "city": "Ho Chi Minh City",
     "country": "Vietnam"
   },
   "contact": {
-    "phone": "+84 123 456 789",
-    "email": "ninhquyen@gmail.com",
-    "linkedin": "https://www.linkedin.com/in/ninhquyen/",
+    "phone": "+84 365 246 392",
+    "email": "quyenninh720@gmail.com",
     "github": "https://github.com/ninhquyen"
   },
   "languages": [
@@ -23,18 +23,18 @@
       "level": "Professional Working Proficiency"
     }
   ],
-  "summary": "Frontend Developer with expertise in Angular and modern web technologies. Experienced in building responsive and user-friendly web applications. Strong focus on clean code and best practices.",
-  "shortSummary": "Frontend Developer specializing in Angular and modern web technologies. Passionate about creating responsive and user-friendly web applications.",
+  "summary": "Experienced professional in Accounting, Administration, and Human Resources with a strong focus on organizational efficiency and employee management. Skilled in financial reporting, HR policies, and administrative operations.",
+  "shortSummary": "Accounting and HR professional with expertise in financial management, administrative operations, and human resources. Dedicated to maintaining organizational efficiency and fostering positive workplace environments.",
   "interests": [
-    "Web Development",
-    "UI/UX Design",
-    "Frontend Architecture",
-    "Performance Optimization",
-    "Technical Learning"
+    "Financial Management",
+    "HR Development",
+    "Administrative Operations",
+    "Employee Relations",
+    "Process Optimization"
   ],
   "availability": {
     "status": "Open to opportunities",
     "preferredWorkType": ["Full-time", "Contract"],
-    "remoteWork": "Available for remote work"
+    "remoteWork": "Available for hybrid work"
   }
 } 

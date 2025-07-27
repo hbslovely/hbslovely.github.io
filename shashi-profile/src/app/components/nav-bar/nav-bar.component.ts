@@ -1,38 +1,291 @@
-import { Component, inject } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterModule } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { LanguageService } from '../../services/language.service';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { ExportPdfComponent } from '../export-pdf/export-pdf.component';
+import { LanguageSwitcherComponent } from '../language-switcher/language-switcher.component';
 
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
   imports: [
     CommonModule,
-    RouterModule,
-    TranslateModule
+    RouterLink,
+    RouterLinkActive,
+    TranslateModule,
+    NzButtonModule,
+    NzIconModule,
+    ExportPdfComponent,
+    LanguageSwitcherComponent
   ],
-  templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.scss']
+  template: `
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a routerLink="/" class="navbar-brand">
+          <span class="logo">NQ</span>
+        </a>
+
+        <button 
+          class="mobile-menu-button" 
+          nz-button 
+          nzType="text"
+          (click)="toggleMobileMenu()"
+        >
+          <span nz-icon [nzType]="isMobileMenuOpen ? 'close' : 'menu'" nzTheme="outline"></span>
+        </button>
+
+        <div class="nav-content" [class.mobile-open]="isMobileMenuOpen">
+          <ul class="nav-links" [class.mobile]="isMobile">
+            <li *ngFor="let item of navItems">
+              <a [routerLink]="item.path" 
+                 routerLinkActive="active" 
+                 [routerLinkActiveOptions]="{ exact: item.exact }"
+                 (click)="isMobile && closeMobileMenu()">
+                <span nz-icon [nzType]="item.icon" nzTheme="outline"></span>
+                {{ item.label | translate }}
+              </a>
+            </li>
+          </ul>
+
+          <div class="nav-actions" [class.mobile]="isMobile">
+            <app-export-pdf></app-export-pdf>
+            <app-language-switcher></app-language-switcher>
+          </div>
+        </div>
+      </div>
+    </nav>
+  `,
+  styles: [`
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: var(--card-bg);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+      padding: 0.75rem 0;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      position: relative;
+
+      .navbar-brand {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        
+        .logo {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: var(--primary-color);
+          padding: 0.5rem 1rem;
+          background: var(--primary-lightest);
+          border-radius: var(--border-radius);
+          transition: all 0.2s ease;
+
+          &:hover {
+            background: var(--primary-lighter);
+          }
+        }
+      }
+    }
+
+    .mobile-menu-button {
+      display: none; // Hidden by default
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      
+      [nz-icon] {
+        font-size: 24px;
+        color: var(--text-color);
+      }
+
+      &:hover {
+        background: var(--primary-lightest);
+        [nz-icon] {
+          color: var(--primary-color);
+        }
+      }
+    }
+
+    .nav-content {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex: 1;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      flex: 1;
+      justify-content: center;
+
+      li {
+        a {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.5rem 1rem;
+          color: var(--text-color);
+          text-decoration: none;
+          border-radius: var(--border-radius);
+          transition: all 0.2s ease;
+
+          [nz-icon] {
+            font-size: 1.2rem;
+          }
+
+          &:hover {
+            background: var(--primary-lightest);
+            color: var(--primary-color);
+          }
+
+          &.active {
+            background: var(--primary-lightest);
+            color: var(--primary-color);
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    @media (max-width: 767px) {
+      .navbar-content {
+        gap: 1rem;
+      }
+
+      .mobile-menu-button {
+        display: flex !important; // Force display on mobile
+        order: 3; // Move to the right side
+      }
+
+      .nav-content {
+        position: fixed;
+        top: 73px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100vw;
+        min-height: calc(100vh - 73px);
+        background: rgba(235, 245, 255, 0.95);
+        backdrop-filter: blur(8px);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 2rem 1rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        gap: 2rem;
+        overflow-y: auto;
+        margin: 0;
+        z-index: 999;
+
+        &.mobile-open {
+          transform: translateX(0);
+        }
+      }
+
+      .nav-links.mobile {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+        margin: 0;
+        padding: 0;
+
+        li {
+          width: 100%;
+          margin: 0;
+
+          a {
+            width: 100%;
+            padding: 1rem;
+            justify-content: flex-start;
+            font-size: 1.1rem;
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(24, 144, 255, 0.1);
+
+            &:hover, &.active {
+              background: rgba(24, 144, 255, 0.1);
+              color: var(--primary-color);
+            }
+          }
+        }
+      }
+
+      .nav-actions.mobile {
+        width: 100%;
+        justify-content: center;
+        border-top: 1px solid rgba(24, 144, 255, 0.2);
+        padding-top: 2rem;
+        margin: 0;
+      }
+
+      // Hide desktop nav items on mobile
+      .nav-content:not(.mobile-open) {
+        display: none;
+      }
+    }
+  `]
 })
 export class NavBarComponent {
-  private router = inject(Router);
-  public languageService = inject(LanguageService);
-
-  isMobile = window.innerWidth < 768;
   isMobileMenuOpen = false;
+  isMobile = false;
 
   navItems = [
-    { path: '', label: 'NAV.ABOUT', exact: true },
-    { path: 'experience', label: 'NAV.EXPERIENCE', exact: false },
-    { path: 'skills', label: 'NAV.SKILLS', exact: false }
+    { path: '/', label: 'NAV.ABOUT', icon: 'user', exact: true },
+    { path: '/experience', label: 'NAV.EXPERIENCE', icon: 'history', exact: false },
+    { path: '/skills', label: 'NAV.SKILLS', icon: 'tool', exact: false }
   ];
 
-  toggleMobileMenu(): void {
+  @HostListener('window:resize')
+  onResize() {
+    this.checkMobile();
+  }
+
+  constructor() {
+    this.checkMobile();
+  }
+
+  private checkMobile() {
+    this.isMobile = window.innerWidth < 768;
+    if (!this.isMobile) {
+      this.isMobileMenuOpen = false;
+    }
+  }
+
+  toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
 
-  closeMobileMenu(): void {
+  closeMobileMenu() {
     this.isMobileMenuOpen = false;
   }
 }
