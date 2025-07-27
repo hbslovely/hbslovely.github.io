@@ -20,41 +20,28 @@ export class PdfService {
   private readonly AVATAR_SIZE = 150; // Reduced from 180 to make it more compact
   private readonly SUB_SECTION_SPACING = 20; // New constant for spacing between items within a section
 
-  private defineVietnameseFont(pdf: jsPDF): void {
-    // Add Vietnamese font definition
-    pdf.addFileToVFS('VNFont.ttf', 'VN_TOKEN');
-    pdf.addFont('VNFont.ttf', 'VNFont', 'normal');
-  }
-
   private setupPdfFonts(pdf: jsPDF): void {
     try {
-      const currentLang = this.languageService.getCurrentLanguage();
+      // Add Inter font files
+      pdf.addFont('assets/fonts/Inter-Regular.ttf', 'Inter', 'normal');
+      pdf.addFont('assets/fonts/Inter-Bold.ttf', 'Inter', 'bold');
+      pdf.addFont('assets/fonts/Inter-Medium.ttf', 'Inter', 'medium');
 
-      if (currentLang === 'vi') {
-        // Setup Vietnamese font
-        this.defineVietnameseFont(pdf);
-        pdf.setFont('VNFont');
-
-        // Enable Unicode encoding for Vietnamese characters
-        (pdf as any).setLanguage("vi");
-        (pdf as any).setR2L(false);
-      } else {
-        // For English, use Inter font which has good Unicode support
-        pdf.setFont('Inter');
-      }
-
+      // Set default font
+      pdf.setFont('Inter', 'normal');
       pdf.setFontSize(12);
+
       pdf.setProperties({
-        title: 'CV',
+        title: 'Ms. Ninh Thi Quyen - Accounting & HR Professional',
         subject: 'Curriculum Vitae',
-        author: 'Ninh Quyen',
-        keywords: 'CV, Resume',
+        author: 'Ms. Ninh Thi Quyen',
+        keywords: 'CV, Resume, Accounting, HR, Professional',
         creator: 'CV Generator'
       });
     } catch (error) {
       console.error('Error setting up font:', error);
-      // Fallback to built-in font if custom font fails to load
-      pdf.setFont('Helvetica');
+      // Fallback to built-in font if Inter fails to load
+      pdf.setFont('helvetica');
     }
   }
 
@@ -74,7 +61,7 @@ export class PdfService {
     // Add extra spacing before section header
     yPos += this.SECTION_SPACING;
 
-    pdf.setFont('Times-Roman', 'bold');
+    pdf.setFont('Inter', 'bold');
     pdf.setFontSize(18);
     pdf.setTextColor(colors.primary);
     pdf.text(text, this.MARGIN, yPos);
@@ -97,7 +84,7 @@ export class PdfService {
   }
 
   private addUnderlinedItalicLabel(pdf: jsPDF, text: string, xPos: number, yPos: number, colors: any): number {
-    pdf.setFont('Times-Roman', 'italic');
+    pdf.setFont('Inter', 'italic');
     pdf.setTextColor(colors.text);
     const textWidth = pdf.getTextWidth(text);
     pdf.text(text, xPos, yPos);
@@ -111,13 +98,13 @@ export class PdfService {
   }
 
   private getFormattedFileName(): string {
-    const months = [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ];
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     const now = new Date();
     const currentMonth = months[now.getMonth()];
     const currentYear = now.getFullYear();
     const language = this.languageService.getCurrentLanguage().toUpperCase();
 
-    return `CV_Ninh_Quyen_${ currentMonth }_${ currentYear }_${ language }.pdf`;
+    return `CV_Ninh_Thi_Quyen_${currentMonth}_${currentYear}_${language}.pdf`;
   }
 
   async generateBeautifulPdf(): Promise<void> {
@@ -154,22 +141,22 @@ export class PdfService {
     const prefixSize = nameSize * 0.6; // Prefix is 60% of name size, matching web view
 
     // Add prefix
-    pdf.setFont('Times-Roman', 'normal');
+    pdf.setFont('Inter', 'normal');
     pdf.setFontSize(prefixSize);
-    pdf.setTextColor(colors.subtext); // Gray color for prefix
+    pdf.setTextColor(colors.text); // Changed to black color for prefix
     const prefix = cv.personalInfo.prefix || '';
     pdf.text(prefix, this.MARGIN, yPos);
     const prefixWidth = pdf.getTextWidth(prefix);
 
     // Add name (with spacing after prefix)
-    pdf.setFont('Times-Roman', 'bold');
+    pdf.setFont('Inter', 'bold');
     pdf.setFontSize(nameSize);
     pdf.setTextColor(colors.primary); // Blue color for name
-    pdf.text(cv.personalInfo.name || '', this.MARGIN + prefixWidth + 10, yPos); // Reduced gap to 10pt for better proportion
+    pdf.text(cv.personalInfo.name || '', this.MARGIN + prefixWidth + 10, yPos);
 
     // Add title with reduced spacing
-    yPos += this.getLineHeight(nameSize) * 0.6; // Reduced from 1 to 0.6
-    pdf.setFont('Times-Roman', 'normal');
+    yPos += this.getLineHeight(nameSize) * 0.6;
+    pdf.setFont('Inter', 'normal');
     pdf.setFontSize(20);
     pdf.setTextColor(colors.text);
     pdf.text(cv.personalInfo.title || '', this.MARGIN, yPos);
@@ -187,7 +174,7 @@ export class PdfService {
 
     // Add personal info with reduced spacing
     yPos += this.getLineHeight(20) * 0.7; // Reduced from 1 to 0.7
-    pdf.setFont('Times-Roman', 'normal');
+    pdf.setFont('Inter', 'normal');
     pdf.setFontSize(13);
     pdf.setTextColor(colors.text);
 
@@ -218,7 +205,7 @@ export class PdfService {
     yPos = this.addSectionHeader(pdf, 'Summary', yPos, colors);
 
     // Add summary content
-    pdf.setFont('Times-Roman', 'normal');
+    pdf.setFont('Inter', 'normal');
     pdf.setFontSize(13);
     pdf.setTextColor(colors.text);
     const summaryLines = pdf.splitTextToSize(cv.personalInfo.shortSummary || '', this.CONTENT_WIDTH);
@@ -234,7 +221,7 @@ export class PdfService {
         yPos = this.checkPageBreak(pdf, yPos, 100);
 
         // Company name and position on same line
-        pdf.setFont('Times-Roman', 'bold');
+        pdf.setFont('Inter', 'bold');
         pdf.setFontSize(15);
         pdf.setTextColor(colors.text);
         pdf.text(exp.company, this.MARGIN, yPos);
@@ -242,18 +229,18 @@ export class PdfService {
         // Add separator
         const separator = " | ";
         const companyWidth = pdf.getTextWidth(exp.company + separator);
-        pdf.setFont('Times-Roman', 'normal');
+        pdf.setFont('Inter', 'normal');
         pdf.text(separator, this.MARGIN + companyWidth - pdf.getTextWidth(separator), yPos);
 
         // Position (normal weight)
-        pdf.setFont('Times-Roman', 'normal'); // Changed from bold to normal
+        pdf.setFont('Inter', 'normal'); // Changed from bold to normal
         pdf.setFontSize(13);
         const positionY = yPos + 1;
         pdf.text(exp.position, this.MARGIN + companyWidth, positionY);
 
         // Duration and location with light blue color
         yPos += this.getLineHeight(15) * 0.8; // Reduced spacing
-        pdf.setFont('Times-Roman', 'normal');
+        pdf.setFont('Inter', 'normal');
         pdf.setFontSize(13);
         pdf.setTextColor(colors.subtext); // Changed to light blue
         const duration = `${exp.startDate} - ${exp.endDate || 'Present'} | ${exp.location}`;
@@ -265,7 +252,7 @@ export class PdfService {
           exp.achievements.forEach(achievement => {
             if (achievement) {
               yPos = this.checkPageBreak(pdf, yPos, 30);
-              pdf.setFont('Times-Roman', 'normal');
+              pdf.setFont('Inter', 'normal');
               pdf.setFontSize(13);
               pdf.setTextColor(colors.text);
               const achievementLines = pdf.splitTextToSize(achievement, this.CONTENT_WIDTH - 40);
@@ -296,13 +283,13 @@ export class PdfService {
           const x = isLeftColumn ? this.MARGIN : this.MARGIN + columnWidth + 10;
 
           // Category name as header
-          pdf.setFont('Times-Roman', 'bold');
+          pdf.setFont('Inter', 'bold');
           pdf.setFontSize(14);
           pdf.setTextColor(colors.text);
           pdf.text(this.formatCategory(category), x, currentY);
 
           // Skills with lighter color and smaller font
-          pdf.setFont('Times-Roman', 'normal');
+          pdf.setFont('Inter', 'normal');
           pdf.setFontSize(12); // Smaller font size
           pdf.setTextColor(colors.subtext); // Lighter color
           const skillText = skills.join(' • ');
@@ -333,14 +320,14 @@ export class PdfService {
         yPos = this.checkPageBreak(pdf, yPos, 80);
 
         // Degree and Field
-        pdf.setFont('Times-Roman', 'bold');
+        pdf.setFont('Inter', 'bold');
         pdf.setFontSize(14);
         pdf.setTextColor(colors.text);
         pdf.text(`${edu.degree} in ${edu.field}`, this.MARGIN, yPos);
 
         // Institution and Duration with light blue color
         yPos += this.getLineHeight(14) * 0.8; // Reduced spacing
-        pdf.setFont('Times-Roman', 'normal');
+        pdf.setFont('Inter', 'normal');
         pdf.setFontSize(13);
         pdf.setTextColor(colors.subtext); // Changed to light blue
         pdf.text(`${edu.institution} – ${edu.location} (${edu.startDate} - ${edu.endDate})`, this.MARGIN + 15, yPos);
@@ -354,7 +341,7 @@ export class PdfService {
     const totalPages = pdf.getNumberOfPages();
     for (let i = 1; i <= totalPages; i++) {
       pdf.setPage(i);
-      pdf.setFont('Times-Roman', 'normal');
+      pdf.setFont('Inter', 'normal');
       pdf.setFontSize(10);
       pdf.setTextColor(colors.subtext);
       pdf.text(

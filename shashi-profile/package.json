@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve --port 3002",
     "build": "ng build",
-    "build:prod": "ng build --configuration production --aot --optimization --build-optimizer --vendor-chunk --progress",
+    "build:prod": "ng build --configuration production --aot --optimization --progress",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
