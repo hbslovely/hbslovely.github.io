@@ -1,76 +1,40 @@
 {
   "technicalSkills": {
     "accounting": [
-      "Báo cáo Tài chính",
-      "Kế toán Thuế (GTGT, TNCN, TNDN)",
-      "Sổ Cái",
-      "Công nợ Phải thu/Phải trả",
-      "Kế toán Chi phí",
-      "Quản lý Hàng tồn kho",
-      "Quản lý Tài sản",
-      "Đối chiếu Ngân hàng",
-      "Phân tích Tài chính",
-      "Chuẩn bị Kiểm toán"
+      "SKILLS.ITEMS.Financial_Reporting",
+      "SKILLS.ITEMS.Tax_Accounting",
+      "SKILLS.ITEMS.General_Ledger",
+      "SKILLS.ITEMS.Cost_Accounting",
+      "SKILLS.ITEMS.Financial_Analysis",
+      "SKILLS.ITEMS.Audit_Preparation"
     ],
     "humanResources": [
-      "Chính sách & Quy trình Nhân sự",
-      "Tuyển dụng & Lựa chọn",
-      "Quản lý Hiệu suất",
-      "Quan hệ Lao động",
-      "Hồ sơ Nhân viên",
-      "Quản lý Phúc lợi",
-      "Đào tạo & Phát triển",
-      "Quản lý KPI",
-      "Bảo hiểm Xã hội",
-      "Tuân thủ Luật Lao động"
-    ],
-    "administration": [
-      "Quản lý Tài liệu",
-      "Quản trị Văn phòng",
-      "Cải tiến Quy trình",
-      "Quản lý Hợp đồng",
-      "Quản lý Cơ sở vật chất",
-      "Lập kế hoạch Ngân sách",
-      "Kiểm soát Chi phí",
-      "Giám sát Nhóm",
-      "Điều phối Dự án",
-      "Quản lý Rủi ro"
+      "SKILLS.ITEMS.HR_Policies",
+      "SKILLS.ITEMS.Recruitment",
+      "SKILLS.ITEMS.Performance_Management",
+      "SKILLS.ITEMS.Training",
+      "SKILLS.ITEMS.Labor_Law"
     ],
     "software": [
-      "Phần mềm Kế toán",
-      "Hệ thống ERP",
-      "Hệ thống HRIS",
-      "Bộ Microsoft Office",
-      "Phần mềm Kê khai Thuế",
-      "Hệ thống Quản lý Kho",
-      "Hệ thống Quản lý Tài liệu",
-      "Hệ thống Tính lương",
-      "Phần mềm Ngân hàng",
-      "Công cụ Phân tích Kinh doanh"
+      "SKILLS.ITEMS.Accounting_Software",
+      "SKILLS.ITEMS.ERP_Systems",
+      "SKILLS.ITEMS.HRIS",
+      "SKILLS.ITEMS.MS_Office",
+      "SKILLS.ITEMS.Tax_Software"
     ],
     "compliance": [
-      "Chuẩn mực Kế toán Việt Nam",
-      "Quy định Thuế",
-      "Luật Lao động",
-      "Quy định Bảo hiểm Xã hội",
-      "Kiểm soát Nội bộ",
-      "Thủ tục Kiểm toán",
-      "Quản trị Doanh nghiệp",
-      "Đánh giá Rủi ro",
-      "Hồ sơ Pháp lý",
-      "Báo cáo Tuân thủ"
+      "SKILLS.ITEMS.VAS",
+      "SKILLS.ITEMS.Tax_Regulations",
+      "SKILLS.ITEMS.Labor_Laws",
+      "SKILLS.ITEMS.Internal_Control",
+      "SKILLS.ITEMS.Audit_Procedures"
     ],
     "softSkills": [
-      "Lãnh đạo",
-      "Giải quyết Vấn đề",
-      "Giao tiếp",
-      "Quản lý Nhóm",
-      "Ra quyết định",
-      "Tư duy Phân tích",
-      "Chú ý Chi tiết",
-      "Quản lý Thời gian",
-      "Đàm phán",
-      "Quản lý Các bên liên quan"
+      "SKILLS.ITEMS.Leadership",
+      "SKILLS.ITEMS.Problem_Solving",
+      "SKILLS.ITEMS.Communication",
+      "SKILLS.ITEMS.Analytical_Thinking",
+      "SKILLS.ITEMS.Time_Management"
     ]
   }
 } 

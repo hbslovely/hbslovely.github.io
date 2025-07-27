@@ -2,6 +2,13 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem 1rem;
+
+  .section-title {
+    color: var(--nav-text);
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+  }
 }
 
 .skills-content {
@@ -11,22 +18,26 @@
 }
 
 .skill-category {
-  background: #f8f9fa;
+  background: #f0f7ff;
   padding: 1.5rem;
-  border-radius: 4px;
+  border-radius: 8px;
+  border: 1px solid #e6f4ff;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
 
   .category-header {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 
     h3 {
       position: relative;
-      color: var(--text-color);
+      color: var(--nav-text);
       margin: 0;
-      font-size: 1.1rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      padding-bottom: 0.5rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+      padding-bottom: 0.75rem;
       display: inline-block;
 
       &::after {
@@ -34,7 +45,7 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        width: 20px;
+        width: 30px;
         height: 2px;
         background: var(--nav-text);
         transition: width 0.3s ease;
@@ -50,22 +61,20 @@
 .skills-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 .skill-item {
-  background: white;
-  padding: 0.4rem 0.75rem;
-  border-radius: 3px;
+  background: #e6f4ff;
+  color: var(--nav-text);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
   font-size: 0.9rem;
-  color: var(--text-color);
-  border: 1px solid #e6f4ff;
-  transition: all 0.2s ease;
-
-  &:hover {
-    border-color: var(--nav-text);
-    transform: translateY(-1px);
-  }
+  font-weight: 500;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 992px) {
@@ -73,14 +82,39 @@
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+
+  .skill-category {
+    &:hover {
+      transform: none;
+    }
+  }
 }
 
 @media (max-width: 768px) {
   .skills-section {
     padding: 1rem;
+
+    .section-title {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
   }
 
   .skill-category {
-    padding: 1rem;
+    padding: 1.25rem;
+
+    .category-header h3 {
+      font-size: 1.1rem;
+      padding-bottom: 0.5rem;
+    }
+  }
+
+  .skills-list {
+    gap: 0.5rem;
+  }
+
+  .skill-item {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.9rem;
   }
 }

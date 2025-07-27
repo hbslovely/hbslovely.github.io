@@ -2,6 +2,13 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem 1rem;
+
+  .section-title {
+    color: var(--nav-text);
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+  }
 }
 
 .work-experience {
@@ -10,47 +17,93 @@
   ::ng-deep .ant-timeline {
     color: var(--text-color);
 
+    .ant-timeline-item {
+      padding-bottom: 2.5rem;
+
+      &:last-child {
+        padding-bottom: 0;
+
+        .ant-timeline-item-tail {
+          display: none;
+        }
+      }
+    }
+
     .ant-timeline-item-tail {
-      border-left: 2px solid #e6f4ff;
+      border-left: none;
+      background: linear-gradient(180deg, #bae0ff 0%, #e6f4ff 100%);
+      width: 2px;
+      left: 5px;
     }
 
     .ant-timeline-item-head {
-      background: #fff;
+      background: #f0f7ff;
       border: 2px solid var(--nav-text);
+      width: 14px;
+      height: 14px;
+      left: -1px;
+    }
+
+    .ant-timeline-item-head-blue {
+      color: var(--nav-text);
+      border-color: var(--nav-text);
+      background: #f0f7ff;
+    }
+
+    .ant-timeline-item-content {
+      margin-left: 28px;
     }
   }
 
   .timeline-content {
+    position: relative;
     padding: 1.5rem;
-    background: #f8f9fa;
-    border-radius: 4px;
+    background: #f0f7ff;
+    border-radius: 8px;
     margin-bottom: 1rem;
+    border: 1px solid #e6f4ff;
+
+    .job-meta {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.5rem;
+      color: #595959;
+
+      .duration, .location {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.9rem;
+
+        [nz-icon] {
+          font-size: 1rem;
+          color: var(--nav-text);
+        }
+      }
+    }
 
     .job-header {
-      margin-bottom: 0.75rem;
+      padding-right: 200px;
+      margin-bottom: 1.5rem;
 
       h3 {
         position: relative;
-        color: var(--text-color);
+        color: var(--nav-text);
         margin: 0;
         font-size: 1.25rem;
-        font-weight: 500;
+        font-weight: 600;
         padding-bottom: 0.2rem;
       }
 
       .company {
-        color: var(--text-color);
+        color: #595959;
         font-weight: 500;
         font-size: 1.1rem;
       }
-    }
-
-    .job-meta {
-      display: flex;
-      gap: 1.5rem;
-      color: var(--nav-text-light);
-      margin-bottom: 1.5rem;
-      font-size: 0.95rem;
     }
 
     .responsibilities, .achievements {
@@ -98,44 +151,72 @@
 }
 
 .education {
+  .section-title {
+    color: var(--nav-text);
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+  }
+
   .education-item {
+    position: relative;
     padding: 1.5rem;
-    background: #f8f9fa;
-    border-radius: 4px;
+    background: #f0f7ff;
+    border-radius: 8px;
     margin-bottom: 1.5rem;
+    border: 1px solid #e6f4ff;
 
     &:last-child {
       margin-bottom: 0;
     }
 
+    .edu-meta {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.5rem;
+      color: #595959;
+
+      .duration, .location {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.9rem;
+
+        [nz-icon] {
+          font-size: 1rem;
+          color: var(--nav-text);
+        }
+      }
+    }
+
     .edu-header {
+      padding-right: 200px;
       margin-bottom: 0.75rem;
 
       h3 {
         position: relative;
-        color: var(--text-color);
+        color: var(--nav-text);
         margin: 0;
         font-size: 1.25rem;
-        font-weight: 500;
+        font-weight: 600;
         padding-bottom: 0.5rem;
       }
 
-      .field {
-        color: var(--text-color);
+      .institution {
+        display: block;
+        color: #595959;
         font-weight: 500;
         font-size: 1.1rem;
       }
     }
 
-    .institution {
-      color: var(--text-color);
-      margin-bottom: 0.5rem;
+    .degree {
+      color: #595959;
       font-size: 1rem;
-    }
-
-    .duration {
-      color: var(--nav-text-light);
-      font-size: 0.95rem;
     }
   }
 }
@@ -143,6 +224,11 @@
 @media (max-width: 768px) {
   .experience-section {
     padding: 1rem;
+
+    .section-title {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
   }
 
   .work-experience {
@@ -152,15 +238,35 @@
       padding: 1rem;
 
       .job-meta {
-        flex-direction: column;
-        gap: 0.5rem;
+        position: static;
+        margin-bottom: 1rem;
+        align-items: flex-start;
+      }
+
+      .job-header {
+        padding-right: 0;
       }
     }
   }
 
   .education {
+    .section-title {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
     .education-item {
       padding: 1rem;
+
+      .edu-meta {
+        position: static;
+        margin-bottom: 1rem;
+        align-items: flex-start;
+      }
+
+      .edu-header {
+        padding-right: 0;
+      }
     }
   }
 }

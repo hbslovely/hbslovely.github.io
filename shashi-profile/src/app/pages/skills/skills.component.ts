@@ -19,12 +19,5 @@ export class SkillsComponent {
   protected getCategories(skills: Record<string, string[]>): string[] {
     return Object.keys(skills);
   }
-
-  protected formatCategory(category: string): string {
-    return category
-      .split(/(?=[A-Z])/)
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
-  }
 }
 

@@ -1,8 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
-import { CvService } from '../../services/cv.service';
 import { NzTimelineModule } from 'ng-zorro-antd/timeline';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { CvService } from '../../services/cv.service';
 
 @Component({
   selector: 'app-experience',
@@ -10,7 +11,8 @@ import { NzTimelineModule } from 'ng-zorro-antd/timeline';
   imports: [
     CommonModule,
     TranslateModule,
-    NzTimelineModule
+    NzTimelineModule,
+    NzIconModule
   ],
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.scss']

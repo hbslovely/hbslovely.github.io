@@ -4,8 +4,8 @@
   "title": "Chuyên viên Kế toán & Nhân sự",
   "dateOfBirth": "1994",
   "location": {
-    "address": "Bình Thới",
-    "city": "Thành phố Hồ Chí Minh",
+    "address": "",
+    "city": "TP. Hồ Chí Minh",
     "country": "Việt Nam"
   },
   "contact": {
@@ -20,7 +20,7 @@
     },
     {
       "name": "Tiếng Anh",
-      "level": "Khá"
+      "level": "Nghe nói"
     }
   ],
   "summary": "Chuyên viên có kinh nghiệm trong lĩnh vực Kế toán, Hành chính và Nhân sự với trọng tâm về hiệu quả tổ chức và quản lý nhân sự. Thành thạo trong báo cáo tài chính, chính sách nhân sự và hoạt động hành chính.",
