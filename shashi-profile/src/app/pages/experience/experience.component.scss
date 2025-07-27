@@ -35,24 +35,7 @@
         margin: 0;
         font-size: 1.25rem;
         font-weight: 500;
-        padding-bottom: 0.5rem;
-
-        &::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 30px;
-          height: 2px;
-          background: var(--nav-text);
-          opacity: 0;
-          transition: all 0.3s ease;
-        }
-
-        &:hover::after {
-          opacity: 1;
-          width: 60px;
-        }
+        padding-bottom: 0.2rem;
       }
 
       .company {
@@ -135,23 +118,6 @@
         font-size: 1.25rem;
         font-weight: 500;
         padding-bottom: 0.5rem;
-
-        &::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 30px;
-          height: 2px;
-          background: var(--nav-text);
-          opacity: 0;
-          transition: all 0.3s ease;
-        }
-
-        &:hover::after {
-          opacity: 1;
-          width: 60px;
-        }
       }
 
       .field {
