@@ -57,8 +57,33 @@ jobs:
           name: profile
           path: my-working-profile/dist
 
+  build-shashi:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚀 Checkout code
+        uses: actions/checkout@v3
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: 📥 Install dependencies
+        working-directory: shashi-profile
+        run: npm install --force
+
+      - name: 🔨 Build Angular shashi profile
+        working-directory: shashi-profile
+        run: npm run build -- --configuration production --aot --optimization --build-optimizer --vendor-chunk --output-path=dist --base-href=/shashi/
+
+      - name: 📁 Upload shashi build
+        uses: actions/upload-artifact@v4
+        with:
+          name: shashi
+          path: shashi-profile/dist
+
   deploy:
-    needs: [build-ky-niem, build-profile]
+    needs: [build-ky-niem, build-profile, build-shashi]
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -78,6 +103,12 @@ jobs:
           name: profile
           path: cv
 
+      - name: 📥 Download shashi build
+        uses: actions/download-artifact@v4
+        with:
+          name: shashi
+          path: shashi
+
       - name: 🚀 Deploy to GitHub Pages
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
@@ -86,5 +117,6 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add -f cv
           git add -f memories
+          git add -f shashi
           git commit -m "Deploy production build to GitHub Pages"
           git push origin main

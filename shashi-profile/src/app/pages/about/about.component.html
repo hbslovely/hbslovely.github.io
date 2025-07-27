@@ -1,0 +1,32 @@
+<div class="about-page">
+  <div class="profile-header">
+    <h1>{{ personalInfo.name }}</h1>
+    <h2>{{ personalInfo.title }}</h2>
+  </div>
+
+  <div class="profile-summary">
+    <p>{{ personalInfo.summary }}</p>
+  </div>
+
+  <div class="contact-info">
+    <h3>Contact Information</h3>
+    <ul>
+      <li>
+        <strong>Email:</strong>
+        <a [href]="'mailto:' + personalInfo.contact.email">{{ personalInfo.contact.email }}</a>
+      </li>
+      <li>
+        <strong>Phone:</strong>
+        <a [href]="'tel:' + personalInfo.contact.phone">{{ personalInfo.contact.phone }}</a>
+      </li>
+      <li>
+        <strong>LinkedIn:</strong>
+        <a [href]="personalInfo.contact.linkedin" target="_blank">View Profile</a>
+      </li>
+      <li>
+        <strong>GitHub:</strong>
+        <a [href]="personalInfo.contact.github" target="_blank">View Projects</a>
+      </li>
+    </ul>
+  </div>
+</div>

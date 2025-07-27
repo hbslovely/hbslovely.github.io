@@ -1,0 +1,32 @@
+{
+  "COMMON": {
+    "LOADING": "Loading...",
+    "DOWNLOAD_CV": "Download CV",
+    "LANGUAGE": "Language"
+  },
+  "NAV": {
+    "ABOUT": "About",
+    "EXPERIENCE": "Experience",
+    "PROJECTS": "Projects",
+    "SKILLS": "Skills"
+  },
+  "ABOUT": {
+    "TITLE": "About Me",
+    "DESCRIPTION": "A passionate software developer with experience in web development and a strong focus on creating user-friendly applications."
+  },
+  "EXPERIENCE": {
+    "TITLE": "Work Experience",
+    "PRESENT": "Present",
+    "TECHNOLOGIES": "Technologies"
+  },
+  "PROJECTS": {
+    "TITLE": "Projects",
+    "VIEW_PROJECT": "View Project"
+  },
+  "SKILLS": {
+    "TITLE": "Skills",
+    "PROGRAMMING": "Programming Languages",
+    "FRAMEWORKS": "Frameworks & Libraries",
+    "TOOLS": "Tools & Technologies"
+  }
+} 
