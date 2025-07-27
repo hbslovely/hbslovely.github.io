@@ -79,7 +79,6 @@ export class ChaoMungComponent implements OnInit {
       next: (data) => {
         this.memories = data.memoriesGallery;
         this.timeline = data.timeline;
-        this.loveStatistics = data.loveStatistics;
         this.specialMoments = data.specialMoments;
         this.ourSongs = data.ourSongs;
         this.meaningfulGifts = data.meaningfulGifts;

@@ -11,17 +11,16 @@
     <div class="section-header">
       <h2 class="section-title">
         <i class="pi pi-heart-fill"></i>
-        Những Khoảnh Khắc Đặc Biệt
+        {{ data.sectionTitle }}
       </h2>
-      <p class="section-subtitle">"Mỗi khoảnh khắc bên nhau là một kỷ niệm đáng trân trọng"</p>
+      <p class="section-subtitle">"{{ data.sectionSubtitle }}"</p>
     </div>
 
     <div class="content-wrapper">
       <div class="moments-grid">
-        <!-- Kỷ niệm quen nhau -->
-        <div class="moment-card">
+        <div class="moment-card" *ngFor="let moment of data.moments">
           <div class="moment-image">
-            <img src="assets/images/ki-niem/ky-niem-quen-nhau.png" alt="Kỷ niệm quen nhau">
+            <img [src]="moment.image" [alt]="moment.imageAlt">
             <div class="moment-overlay">
               <i class="pi pi-heart"></i>
             </div>
@@ -29,64 +28,10 @@
           <div class="moment-content">
             <div class="moment-date">
               <i class="pi pi-calendar"></i>
-              Tháng 5/2021
+              {{ moment.date }}
             </div>
-            <h3>Lần Đầu Gặp Gỡ</h3>
-            <p>Khoảnh khắc định mệnh khi hai trái tim tìm thấy nhau</p>
-          </div>
-        </div>
-
-        <!-- Lần đầu gặp nhau -->
-        <div class="moment-card">
-          <div class="moment-image">
-            <img src="assets/images/ki-niem/lan-dau-gap-nhau.png" alt="Lần đầu gặp nhau">
-            <div class="moment-overlay">
-              <i class="pi pi-heart"></i>
-            </div>
-          </div>
-          <div class="moment-content">
-            <div class="moment-date">
-              <i class="pi pi-calendar"></i>
-              Tháng 7/2021
-            </div>
-            <h3>Buổi Hẹn Đầu Tiên</h3>
-            <p>Những ánh mắt, nụ cười và câu chuyện đầu tiên</p>
-          </div>
-        </div>
-
-        <!-- Trao duyên -->
-        <div class="moment-card">
-          <div class="moment-image">
-            <img src="assets/images/ki-niem/trao-duyen.png" alt="Trao duyên">
-            <div class="moment-overlay">
-              <i class="pi pi-heart"></i>
-            </div>
-          </div>
-          <div class="moment-content">
-            <div class="moment-date">
-              <i class="pi pi-calendar"></i>
-              Tháng 12/2021
-            </div>
-            <h3>Ngày Trao Duyên</h3>
-            <p>Khoảnh khắc thiêng liêng khi ta nói lời yêu</p>
-          </div>
-        </div>
-
-        <!-- Cưới hỏi -->
-        <div class="moment-card">
-          <div class="moment-image">
-            <img src="assets/images/ki-niem/dam-cuoi-nha-hang.png" alt="Cưới hỏi">
-            <div class="moment-overlay">
-              <i class="pi pi-heart"></i>
-            </div>
-          </div>
-          <div class="moment-content">
-            <div class="moment-date">
-              <i class="pi pi-calendar"></i>
-              Tháng 3/2022
-            </div>
-            <h3>Ngày Trọng Đại</h3>
-            <p>Hạnh phúc vỡ òa trong ngày chung đôi</p>
+            <h3>{{ moment.title }}</h3>
+            <p>{{ moment.description }}</p>
           </div>
         </div>
       </div>
@@ -94,8 +39,8 @@
       <div class="section-footer">
         <div class="footer-quote">
           <i class="pi pi-heart-fill"></i>
-          <p>"Tình yêu là khi hạnh phúc của người kia trở thành hạnh phúc của chính mình"</p>
-          <span class="quote-author">- Lev Tolstoy</span>
+          <p>"{{ data.footerQuote.text }}"</p>
+          <span class="quote-author">- {{ data.footerQuote.author }}</span>
         </div>
       </div>
     </div>

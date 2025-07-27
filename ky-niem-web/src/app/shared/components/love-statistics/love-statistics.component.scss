@@ -105,6 +105,7 @@
 .featured-memory {
   max-width: 1000px;
   margin: 4rem auto;
+  position: relative; // Add this to position the stamp
 
   .memory-content {
     display: flex;
@@ -156,7 +157,168 @@
       justify-content: center;
       border-radius: 5px;
       font-size: 5rem;
-      color: #ff69b4;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+
+      .heart-main {
+        font-size: 5rem;
+        transform: rotate(-5deg);
+        transition: all 0.3s ease;
+        color: rgba(255, 182, 193, 0.9); // Lighter pink
+        
+        &:hover {
+          transform: rotate(5deg) scale(1.1);
+          color: rgba(255, 105, 180, 0.8); // Slightly darker on hover
+        }
+      }
+
+      .heart-float {
+        position: absolute;
+        opacity: 0;
+        transition: all 0.5s ease;
+        color: rgba(255, 192, 203, 0.7); // Very light pink
+      }
+
+      .heart-1 {
+        font-size: 2rem;
+        top: 20%;
+        left: 20%;
+        transform: rotate(-15deg);
+      }
+
+      .heart-2 {
+        font-size: 2.5rem;
+        top: 15%;
+        right: 25%;
+        transform: rotate(20deg);
+      }
+
+      .heart-3 {
+        font-size: 1.8rem;
+        bottom: 25%;
+        left: 30%;
+        transform: rotate(-25deg);
+      }
+
+      .heart-4 {
+        font-size: 2.2rem;
+        bottom: 20%;
+        right: 20%;
+        transform: rotate(15deg);
+      }
+
+      .heart-5 {
+        font-size: 1.5rem;
+        top: 50%;
+        right: 15%;
+        transform: rotate(-10deg);
+      }
+    }
+
+    &:hover .image-overlay {
+      opacity: 1;
+
+      .heart-main {
+        animation: pulseHeart 1.5s ease-in-out infinite;
+      }
+
+      .heart-float {
+        opacity: 1;
+      }
+
+      .heart-1 { 
+        animation: floatHeartDiagonal 3s ease-in-out infinite;
+        animation-delay: 0.2s;
+      }
+      .heart-2 { 
+        animation: floatHeartCircular 4s ease-in-out infinite;
+        animation-delay: 0.4s;
+      }
+      .heart-3 { 
+        animation: floatHeartDiagonal 3.5s ease-in-out infinite reverse;
+        animation-delay: 0.6s;
+      }
+      .heart-4 { 
+        animation: floatHeartCircular 3.8s ease-in-out infinite reverse;
+        animation-delay: 0.8s;
+      }
+      .heart-5 { 
+        animation: floatHeartDiagonal 3.2s ease-in-out infinite;
+        animation-delay: 1s;
+      }
+    }
+  }
+
+  .memory-stamp {
+    position: absolute;
+    right: -40px;
+    bottom: -40px;
+    width: 120px;
+    height: 120px;
+    z-index: 10;
+    transform: rotate(15deg);
+
+    .stamp-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .stamp-border {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 2px solid rgba(205, 92, 92, 0.85);  // Indian red with slight transparency
+      border-radius: 50%;
+    }
+
+    .stamp-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: rgba(205, 92, 92, 0.85);  // Matching Indian red
+      font-size: 0.9rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+
+      i {
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+        color: rgba(205, 92, 92, 0.85);  // Matching Indian red
+      }
+
+      span {
+        line-height: 1.2;
+      }
+    }
+  }
+
+  @keyframes stampFloat {
+    0%, 100% {
+      transform: rotate(15deg) translateY(0);
+    }
+    50% {
+      transform: rotate(15deg) translateY(-5px);
+    }
+  }
+
+  @keyframes stampRotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
     }
   }
 }
@@ -242,5 +404,66 @@
 
   .mini-stat-label {
     font-size: 0.8rem;
+  }
+
+  .featured-memory {
+    .memory-stamp {
+      right: -20px;
+      bottom: -20px;
+      width: 100px;
+      height: 100px;
+
+      .stamp-content {
+        width: 80px;
+        height: 80px;
+        font-size: 0.8rem;
+
+        i {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+} 
+
+@keyframes pulseHeart {
+  0% {
+    transform: scale(1) rotate(-5deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(5deg);
+  }
+  100% {
+    transform: scale(1) rotate(-5deg);
+  }
+}
+
+@keyframes floatHeartDiagonal {
+  0% {
+    transform: translate(0, 0) rotate(var(--rotation));
+  }
+  50% {
+    transform: translate(10px, -10px) rotate(calc(var(--rotation) + 10deg));
+  }
+  100% {
+    transform: translate(0, 0) rotate(var(--rotation));
+  }
+}
+
+@keyframes floatHeartCircular {
+  0% {
+    transform: translate(0, 0) rotate(var(--rotation));
+  }
+  25% {
+    transform: translate(8px, -8px) rotate(calc(var(--rotation) + 5deg));
+  }
+  50% {
+    transform: translate(0, -12px) rotate(calc(var(--rotation) + 10deg));
+  }
+  75% {
+    transform: translate(-8px, -8px) rotate(calc(var(--rotation) + 5deg));
+  }
+  100% {
+    transform: translate(0, 0) rotate(var(--rotation));
   }
 } 
