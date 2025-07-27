@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { PlaceDetailComponent } from './pages/place-detail/place-detail.component';
 
 export const routes: Routes = [
   {
@@ -29,10 +28,6 @@ export const routes: Routes = [
   {
     path: 'dia-diem',
     loadChildren: () => import('./pages/memory-places/memory-places.routes').then(m => m.MEMORY_PLACES_ROUTES)
-  },
-  {
-    path: 'place/:id',
-    component: PlaceDetailComponent
   },
   {
     path: '',
