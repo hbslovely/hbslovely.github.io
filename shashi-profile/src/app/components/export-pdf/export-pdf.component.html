@@ -1,1 +1,13 @@
-<p>export-pdf works!</p>
+<button 
+  nz-button 
+  nzType="text"
+  class="export-button"
+  [nzLoading]="isExporting"
+  (click)="exportToPDF()" 
+  [disabled]="isExporting"
+  *ngIf="languageService.getCurrentLanguage() === 'en'"
+  nz-tooltip
+  [nzTooltipTitle]="'ACTIONS.EXPORT_PDF' | translate"
+>
+  <span nz-icon [nzType]="'file-pdf'" nzTheme="outline"></span>
+</button>

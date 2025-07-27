@@ -69,3 +69,28 @@ html, body {
     border-radius: var(--border-radius);
   }
 }
+
+.section-title {
+  position: relative;
+  color: var(--text-color);
+  margin: 0 0 2rem 0;
+  padding-bottom: 0.75rem;
+  font-size: 1.75rem;
+  font-weight: 500;
+  border-bottom: 2px solid var(--nav-text-light);
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 80px;
+    height: 2px;
+    background: var(--nav-text);
+    transition: width 0.3s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
