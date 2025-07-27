@@ -2,7 +2,7 @@
   --nav-bg: #f0f7ff;
   --nav-hover: #e6f4ff;
   --nav-active: #bae0ff;
-  --nav-text: #1890ff;
+  --nav-text: #006aca;
   --nav-text-light: #69b1ff;
   --nav-border: #e6f4ff;
 }
@@ -33,7 +33,7 @@
     display: flex;
     align-items: center;
     text-decoration: none;
-    
+
     .logo {
       font-size: 1.5rem;
       font-weight: 700;
@@ -60,7 +60,7 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  
+
   [nz-icon] {
     font-size: 24px;
     color: var(--nav-text);

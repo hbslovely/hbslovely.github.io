@@ -10,12 +10,12 @@
   --text-secondary: #64748b;
   --card-bg: rgba(255, 255, 255, 0.9);
   --border-radius: 8px;
-  
+
   /* Navigation variables */
   --nav-bg: #f0f7ff;
   --nav-hover: #e6f4ff;
   --nav-active: #bae0ff;
-  --nav-text: #1890ff;
+  --nav-text: #1672c3;
   --nav-text-light: #69b1ff;
   --nav-border: #e6f4ff;
 }
@@ -95,7 +95,6 @@ html, body {
   padding-bottom: 0.75rem;
   font-size: 1.75rem;
   font-weight: 500;
-  border-bottom: 3px solid var(--nav-text-light);
   display: inline-block;
   min-width: 200px;
 
