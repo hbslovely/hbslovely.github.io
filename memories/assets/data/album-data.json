@@ -5,7 +5,7 @@
       "title": "Nàng Thơ Của Anh",
       "description": "Những khoảnh khắc đáng yêu và xinh đẹp của em - người con gái anh yêu thương nhất",
       "coverImage": "assets/images/quyen/quyen-portrait.png",
-      "photoCount": 45,
+      "photoCount": 31,
       "photos": [
         {
           "id": "quyen-1",
@@ -188,85 +188,85 @@
           "description": "Em đáng yêu qua ảnh chụp màn hình"
         },
         {
-          "id": "quyen-32",
+          "id": "quyen-32-a",
           "url": "assets/images/quyen/z6843528165353_bec6048cfea8af58ebb1da382d4a357d.jpg",
           "title": "Nụ Cười Rạng Rỡ",
           "description": "Em tươi tắn trong trang phục công sở"
         },
         {
-          "id": "quyen-33",
+          "id": "quyen-33-a",
           "url": "assets/images/quyen/z6843524186042_f86e79a1ecf2ca5a44fe4a4b07c9af2c.jpg",
           "title": "Duyên Dáng Văn Phòng",
           "description": "Em duyên dáng trong môi trường làm việc"
         },
         {
-          "id": "quyen-34",
+          "id": "quyen-34-a",
           "url": "assets/images/quyen/z6843515658578_a4a2821f16bb3911c1d1165772b30eae.jpg",
           "title": "Xinh Đẹp Mỗi Ngày",
           "description": "Em xinh đẹp trong cuộc sống hàng ngày"
         },
         {
-          "id": "quyen-35",
+          "id": "quyen-35-a",
           "url": "assets/images/quyen/z6843511376185_67cbe1ac795e387c8dbf309efcf326f8.jpg",
           "title": "Nét Đẹp Tự Nhiên",
           "description": "Em dịu dàng với nét đẹp tự nhiên"
         },
         {
-          "id": "quyen-36",
+          "id": "quyen-36-a",
           "url": "assets/images/quyen/z6843508203125_4da060882f1c88efb6147fe56573ea1f.jpg",
           "title": "Khoảnh Khắc Đáng Yêu",
           "description": "Em đáng yêu trong những phút giây đời thường"
         },
         {
-          "id": "quyen-37",
+          "id": "quyen-37-a",
           "url": "assets/images/quyen/z6843505637575_d6f149a3635a65e03e5f3f08ce24cc0b.jpg",
           "title": "Dịu Dàng Trong Nắng",
           "description": "Em dịu dàng trong ánh nắng văn phòng"
         },
         {
-          "id": "quyen-38",
+          "id": "quyen-38-a",
           "url": "assets/images/quyen/z6843488897657_bbf00d4751379b63b8dc7ad1bf03fbf0.jpg",
           "title": "Nụ Cười Tỏa Nắng",
           "description": "Nụ cười tươi tắn của em"
         },
         {
-          "id": "quyen-39",
+          "id": "quyen-39-a",
           "url": "assets/images/quyen/z6843474414777_ba24be1484ec56131cbdafa916cb7a68.jpg",
           "title": "Xinh Tươi Mỗi Ngày",
           "description": "Em xinh tươi trong công việc"
         },
         {
-          "id": "quyen-40",
+          "id": "quyen-40-a",
           "url": "assets/images/quyen/z6843464036239_417682cbd09b61d0ad7b71a7daed623f.jpg",
           "title": "Khoảnh Khắc Đời Thường",
           "description": "Em trong những phút giây bình thường"
         },
         {
-          "id": "quyen-41",
+          "id": "quyen-41-a",
           "url": "assets/images/quyen/z6843551866623_ebf56a0d86f9f579fd7cd4d8797c814b.jpg",
           "title": "Duyên Dáng Công Sở",
           "description": "Em duyên dáng trong môi trường làm việc"
         },
         {
-          "id": "quyen-42",
+          "id": "quyen-42-a",
           "url": "assets/images/quyen/img_4.png",
           "title": "Nét Đẹp Tinh Khôi",
           "description": "Em với nét đẹp tinh khôi"
         },
         {
-          "id": "quyen-43",
+          "id": "quyen-43-a",
           "url": "assets/images/quyen/img_3.png",
           "title": "Dịu Dàng Trong Gió",
           "description": "Em dịu dàng như cơn gió nhẹ"
         },
         {
-          "id": "quyen-44",
+          "id": "quyen-44-a",
           "url": "assets/images/quyen/img_2.png",
           "title": "Nụ Cười Hạnh Phúc",
           "description": "Nụ cười hạnh phúc của em"
         },
         {
-          "id": "quyen-45",
+          "id": "quyen-45-a",
           "url": "assets/images/quyen/img_1.png",
           "title": "Khoảnh Khắc Yêu Thương",
           "description": "Những khoảnh khắc yêu thương của em"
@@ -587,7 +587,7 @@
       "title": "Ngày Cưới 01/2022",
       "description": "Những khoảnh khắc hạnh phúc trong ngày trọng đại của chúng mình",
       "coverImage": "assets/images/hinh-cuoi/dam-cuoi-01-2022.png",
-      "photoCount": 10,
+      "photoCount": 15,
       "photos": [
         {
           "id": "wedding-2",
@@ -618,106 +618,73 @@
           "url": "assets/images/albums/ngay-cuoi_3-2022/10.png",
           "title": "Kết thúc hoàn hảo",
           "description": "Khoảnh khắc cuối của một ngày trọn vẹn"
-        }
-      ]
-    },
-    {
-      "id": "memories",
-      "title": "Kỷ Niệm Đáng Nhớ",
-      "description": "Những khoảnh khắc đặc biệt của chúng mình",
-      "coverImage": "assets/images/ki-niem/lan-dau-gap-nhau.png",
-      "photoCount": 15,
-      "photos": [
-        {
-          "id": "first-meet",
-          "url": "assets/images/ki-niem/lan-dau-gap-nhau.png",
-          "title": "Lần đầu gặp nhau",
-          "description": "Khoảnh khắc định mệnh"
         },
         {
-          "id": "engagement",
-          "url": "assets/images/ki-niem/trao-duyen.png",
-          "title": "Trao duyên",
-          "description": "Những ngày đầu yêu nhau"
+          "id": "wedding-new-1",
+          "url": "assets/images/albums/ngay-cuoi_3-2022/z6844797974573_5cb2ed7ae7d96bb9e3876d7bc211c667.jpg",
+          "title": "Khoảnh Khắc Hạnh Phúc",
+          "description": "Nụ cười rạng rỡ trong ngày trọng đại"
         },
         {
-          "id": "anniversary",
-          "url": "assets/images/ki-niem/ky-niem-quen-nhau.png",
-          "title": "Kỷ niệm ngày quen nhau",
-          "description": "Ngày đặc biệt của chúng mình"
+          "id": "wedding-new-2",
+          "url": "assets/images/albums/ngay-cuoi_3-2022/z6844797975580_51265a695fa2e5d8c1612ac8151f144c.jpg",
+          "title": "Giây Phút Thiêng Liêng",
+          "description": "Những khoảnh khắc đáng nhớ trong lễ cưới"
         },
         {
-          "id": "wedding-ceremony",
-          "url": "assets/images/ki-niem/cuoi-hoi.png",
-          "title": "Lễ cưới",
-          "description": "Ngày trọng đại và hạnh phúc"
+          "id": "wedding-new-3",
+          "url": "assets/images/albums/ngay-cuoi_3-2022/z6844797976413_f08bdecc6347ca5acc8d8504c1e62b78.jpg",
+          "title": "Tình Yêu Vĩnh Cửu",
+          "description": "Khoảnh khắc ngọt ngào của đôi uyên ương"
         },
         {
-          "id": "together",
-          "url": "assets/images/ki-niem/cung-nhau.jpg",
-          "title": "Bên nhau",
-          "description": "Những phút giây hạnh phúc"
+          "id": "wedding-new-4",
+          "url": "assets/images/albums/ngay-cuoi_3-2022/z6844797977167_68c4659841cc2ace93467aefa6b96843.jpg",
+          "title": "Hạnh Phúc Bên Nhau",
+          "description": "Những giây phút hạnh phúc không thể quên"
         },
         {
-          "id": "family-meet",
-          "url": "assets/images/ki-niem/gap-mat-gia-dinh.png",
-          "title": "Gặp gỡ gia đình",
-          "description": "Khoảnh khắc gia đình sum vầy"
+          "id": "wedding-new-5",
+          "url": "assets/images/albums/ngay-cuoi_3-2022/z6844797977893_8004fe2373b7009568aba7230cde50c4.jpg",
+          "title": "Ngày Trọng Đại",
+          "description": "Khoảnh khắc đặc biệt trong ngày cưới"
         },
         {
-          "id": "durian",
-          "url": "assets/images/ki-niem/sau-rieng-vo-gui.png",
-          "title": "Quà từ Đắk Lắk",
-          "description": "Sầu riêng vợ gửi từ Đắk Lắk - 8/2021"
+          "id": "wedding-new-6",
+          "url": "assets/images/albums/ngay-cuoi_3-2022/z6844797978038_b9caa8107837e49fdf56dcb0c48a2486.jpg",
+          "title": "Tình Yêu Và Hạnh Phúc",
+          "description": "Nụ cười hạnh phúc của cô dâu chú rể"
         },
         {
-          "id": "hoi-an-memory",
-          "url": "assets/images/places/checkin_hoi-an_quang-nam.jpg",
-          "title": "Phố Cổ Hội An",
-          "description": "Kỷ niệm dạo bước trong phố cổ Hội An - Quảng Nam"
+          "id": "wedding-new-7",
+          "url": "assets/images/albums/ngay-cuoi_3-2022/z6844797978878_e2812da4d5a84834b30d47ac74b92e39.jpg",
+          "title": "Khoảnh Khắc Yêu Thương",
+          "description": "Những giây phút ngọt ngào trong ngày cưới"
         },
         {
-          "id": "sam-son-memory",
-          "url": "assets/images/places/checkin_bai-bien-sam-son_thanh-hoa.jpg",
-          "title": "Biển Sầm Sơn",
-          "description": "Những khoảnh khắc hạnh phúc tại bãi biển Sầm Sơn - Thanh Hóa"
+          "id": "wedding-new-8",
+          "url": "assets/images/albums/ngay-cuoi_3-2022/z6844797979751_71c83c51ae86e2e971ef4efb831c1bc5.jpg",
+          "title": "Duyên Phận Trời Ban",
+          "description": "Khoảnh khắc hạnh phúc của đôi lứa yêu nhau"
         },
         {
-          "id": "da-lat-memory",
-          "url": "assets/images/places/checkin-cho-da-lat-lam-dong.jpg",
-          "title": "Đà Lạt Thành Phố Mộng Mơ",
-          "description": "Những kỷ niệm ngọt ngào tại thành phố Đà Lạt"
+          "id": "wedding-new-9",
+          "url": "assets/images/albums/ngay-cuoi_3-2022/z6844797979936_49a80eedfe5d8a4c4365006919e4dc97.jpg",
+          "title": "Tình Yêu Vĩnh Hằng",
+          "description": "Những khoảnh khắc đẹp như mơ"
         },
         {
-          "id": "fansipan-memory",
-          "url": "assets/images/places/checkin-dinh-fansipan-lao-cai.jpg",
-          "title": "Chinh Phục Fansipan",
-          "description": "Khoảnh khắc đáng nhớ trên đỉnh Fansipan - Nóc nhà Đông Dương"
-        },
-        {
-          "id": "chua-huong-memory",
-          "url": "assets/images/places/checkin-chua-huong-ha-noi.jpg",
-          "title": "Chùa Hương",
-          "description": "Hành trình về với đất Phật tại Chùa Hương"
-        },
-        {
-          "id": "lang-bac-memory",
-          "url": "assets/images/places/checkin-lang-bac-ha-noi.jpg",
-          "title": "Lăng Bác",
-          "description": "Thăm Lăng Bác - Khoảnh khắc trang nghiêm và ý nghĩa"
-        },
-        {
-          "id": "ba-den-memory",
-          "url": "assets/images/places/checkin-nui-ba-den-tay-ninh.jpg",
-          "title": "Núi Bà Đen",
-          "description": "Chinh phục đỉnh Núi Bà Đen - Tây Ninh"
+          "id": "wedding-new-10",
+          "url": "assets/images/albums/ngay-cuoi_3-2022/z6844797981003_59a9e4b86409f37aee7a7dbf3af7b2a4.jpg",
+          "title": "Hạnh Phúc Trọn Vẹn",
+          "description": "Giây phút hạnh phúc viên mãn"
         }
       ]
     },
     {
       "id": "couple",
       "title": "Chúng Mình",
-      "description": "Chân dung của chúng mình",
+      "description": "Những khoảnh khắc đặc biệt của chúng mình",
       "coverImage": "assets/images/anh-chu-dao/avatar-couple.png",
       "photoCount": 15,
       "photos": [
@@ -810,6 +777,90 @@
           "url": "assets/images/phat/phat-nau-an-cho-vo.png",
           "title": "Nấu Ăn Cho Em",
           "description": "Những món ăn tình yêu"
+        },
+        {
+          "id": "first-meet",
+          "url": "assets/images/ki-niem/lan-dau-gap-nhau.png",
+          "title": "Lần đầu gặp nhau",
+          "description": "Khoảnh khắc định mệnh"
+        },
+        {
+          "id": "engagement",
+          "url": "assets/images/ki-niem/trao-duyen.png",
+          "title": "Trao duyên",
+          "description": "Những ngày đầu yêu nhau"
+        },
+        {
+          "id": "anniversary",
+          "url": "assets/images/ki-niem/ky-niem-quen-nhau.png",
+          "title": "Kỷ niệm ngày quen nhau",
+          "description": "Ngày đặc biệt của chúng mình"
+        },
+        {
+          "id": "wedding-ceremony",
+          "url": "assets/images/ki-niem/cuoi-hoi.png",
+          "title": "Lễ cưới",
+          "description": "Ngày trọng đại và hạnh phúc"
+        },
+        {
+          "id": "together",
+          "url": "assets/images/ki-niem/cung-nhau.jpg",
+          "title": "Bên nhau",
+          "description": "Những phút giây hạnh phúc"
+        },
+        {
+          "id": "family-meet",
+          "url": "assets/images/ki-niem/gap-mat-gia-dinh.png",
+          "title": "Gặp gỡ gia đình",
+          "description": "Khoảnh khắc gia đình sum vầy"
+        },
+        {
+          "id": "durian",
+          "url": "assets/images/ki-niem/sau-rieng-vo-gui.png",
+          "title": "Quà từ Đắk Lắk",
+          "description": "Sầu riêng vợ gửi từ Đắk Lắk - 8/2021"
+        },
+        {
+          "id": "hoi-an-memory",
+          "url": "assets/images/places/checkin_hoi-an_quang-nam.jpg",
+          "title": "Phố Cổ Hội An",
+          "description": "Kỷ niệm dạo bước trong phố cổ Hội An - Quảng Nam"
+        },
+        {
+          "id": "sam-son-memory",
+          "url": "assets/images/places/checkin_bai-bien-sam-son_thanh-hoa.jpg",
+          "title": "Biển Sầm Sơn",
+          "description": "Những khoảnh khắc hạnh phúc tại bãi biển Sầm Sơn - Thanh Hóa"
+        },
+        {
+          "id": "da-lat-memory",
+          "url": "assets/images/places/checkin-cho-da-lat-lam-dong.jpg",
+          "title": "Đà Lạt Thành Phố Mộng Mơ",
+          "description": "Những kỷ niệm ngọt ngào tại thành phố Đà Lạt"
+        },
+        {
+          "id": "fansipan-memory",
+          "url": "assets/images/places/checkin-dinh-fansipan-lao-cai.jpg",
+          "title": "Chinh Phục Fansipan",
+          "description": "Khoảnh khắc đáng nhớ trên đỉnh Fansipan - Nóc nhà Đông Dương"
+        },
+        {
+          "id": "chua-huong-memory",
+          "url": "assets/images/places/checkin-chua-huong-ha-noi.jpg",
+          "title": "Chùa Hương",
+          "description": "Hành trình về với đất Phật tại Chùa Hương"
+        },
+        {
+          "id": "lang-bac-memory",
+          "url": "assets/images/places/checkin-lang-bac-ha-noi.jpg",
+          "title": "Lăng Bác",
+          "description": "Thăm Lăng Bác - Khoảnh khắc trang nghiêm và ý nghĩa"
+        },
+        {
+          "id": "ba-den-memory",
+          "url": "assets/images/places/checkin-nui-ba-den-tay-ninh.jpg",
+          "title": "Núi Bà Đen",
+          "description": "Chinh phục đỉnh Núi Bà Đen - Tây Ninh"
         }
       ]
     },

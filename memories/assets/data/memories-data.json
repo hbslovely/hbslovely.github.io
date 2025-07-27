@@ -113,19 +113,5 @@
       "meaning": "Ghi lại từng khoảnh khắc đẹp của chúng ta",
       "emotion": "Ngọt ngào và ấm áp"
     }
-  ],
-  "favoriteFoods": [
-    {
-      "dish": "Cơm tấm",
-      "person": "Chồng",
-      "story": "Món ăn truyền thống mà anh yêu thích nhất, đặc biệt là vào buổi sáng",
-      "feeling": "Hạnh phúc"
-    },
-    {
-      "dish": "Bún bò Huế",
-      "person": "Vợ",
-      "story": "Hương vị quê hương mà em không thể quên, nhất là vị sả và ớt cay nồng",
-      "feeling": "Nhớ nhà"
-    }
   ]
 }
