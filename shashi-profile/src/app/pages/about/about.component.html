@@ -1,32 +1,48 @@
-<div class="about-page">
-  <div class="profile-header">
-    <h1>{{ personalInfo.name }}</h1>
-    <h2>{{ personalInfo.title }}</h2>
-  </div>
-
-  <div class="profile-summary">
-    <p>{{ personalInfo.summary }}</p>
-  </div>
-
-  <div class="contact-info">
-    <h3>Contact Information</h3>
-    <ul>
-      <li>
+<div class="about-section">
+  <div class="personal-info" *ngIf="cvService.cv()?.personalInfo as info">
+    <div class="info-header">
+      <div class="info-text">
+        <h1>
+          <span class="prefix">{{ info.prefix }}</span>
+          {{ info.name }}
+        </h1>
+        <h2>{{ info.title }}</h2>
+        <p class="summary">{{ info.shortSummary }}</p>
+      </div>
+      <div class="avatar">
+        <img src="assets/images/avatar.png" alt="Profile picture">
+      </div>
+    </div>
+    <div class="contact-info">
+      <div class="info-item">
+        <strong>Location:</strong>
+        <span>{{ info.location.address }}, {{ info.location.city }}, {{ info.location.country }}</span>
+      </div>
+      <div class="info-item">
         <strong>Email:</strong>
-        <a [href]="'mailto:' + personalInfo.contact.email">{{ personalInfo.contact.email }}</a>
-      </li>
-      <li>
+        <a [href]="'mailto:' + info.contact.email">{{ info.contact.email }}</a>
+      </div>
+      <div class="info-item">
         <strong>Phone:</strong>
-        <a [href]="'tel:' + personalInfo.contact.phone">{{ personalInfo.contact.phone }}</a>
-      </li>
-      <li>
-        <strong>LinkedIn:</strong>
-        <a [href]="personalInfo.contact.linkedin" target="_blank">View Profile</a>
-      </li>
-      <li>
-        <strong>GitHub:</strong>
-        <a [href]="personalInfo.contact.github" target="_blank">View Projects</a>
-      </li>
-    </ul>
+        <a [href]="'tel:' + info.contact.phone">{{ info.contact.phone }}</a>
+      </div>
+    </div>
+    <div class="additional-info">
+      <div class="languages">
+        <h3 class="section-title">Languages</h3>
+        <div class="language-item" *ngFor="let lang of info.languages">
+          <span class="language-name">{{ lang.name }}</span>
+          <span class="language-level">{{ lang.level }}</span>
+        </div>
+      </div>
+      <div class="interests">
+        <h3 class="section-title">Interests</h3>
+        <div class="interest-tags">
+          <span class="interest-tag" *ngFor="let interest of info.interests">
+            {{ interest }}
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

@@ -1,1 +1,43 @@
-<p>experience works!</p>
+<div class="experience-section">
+  <div class="work-experience" *ngIf="cvService.cv()?.experience as exp">
+    <h2 class="section-title">{{ 'NAV.EXPERIENCE' | translate }}</h2>
+    <nz-timeline>
+      <nz-timeline-item *ngFor="let job of exp.workExperience">
+        <div class="timeline-content">
+          <div class="job-header">
+            <h3>{{ job.position }}</h3>
+            <span class="company">{{ job.company }}</span>
+          </div>
+          <div class="job-meta">
+            <span class="duration">{{ job.startDate }} - {{ job.endDate || 'Present' }}</span>
+            <span class="location">{{ job.location }}</span>
+          </div>
+          <div class="responsibilities">
+            <h4>{{ 'EXPERIENCE.RESPONSIBILITIES' | translate }}:</h4>
+            <ul>
+              <li *ngFor="let resp of job.responsibilities">{{ resp }}</li>
+            </ul>
+          </div>
+          <div class="achievements" *ngIf="job.achievements?.length">
+            <h4>{{ 'EXPERIENCE.KEY_ACHIEVEMENTS' | translate }}:</h4>
+            <ul>
+              <li *ngFor="let achievement of job.achievements">{{ achievement }}</li>
+            </ul>
+          </div>
+        </div>
+      </nz-timeline-item>
+    </nz-timeline>
+  </div>
+
+  <div class="education" *ngIf="cvService.cv()?.education as edu">
+    <h2 class="section-title">Education</h2>
+    <div class="education-item" *ngFor="let item of edu.education">
+      <div class="edu-header">
+        <h3>{{ item.degree }}</h3>
+        <span class="field">{{ item.field }}</span>
+      </div>
+      <div class="institution">{{ item.institution }} – {{ item.location }}</div>
+      <div class="duration">{{ item.startDate }} - {{ item.endDate }}</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,225 @@
+.section-title {
+  position: relative;
+  color: var(--text-color);
+  margin: 0 0 2rem 0;
+  padding-bottom: 0.75rem;
+  font-size: 1.75rem;
+  font-weight: 500;
+  border-bottom: 2px solid var(--nav-text-light);
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 80px;
+    height: 2px;
+    background: var(--nav-text);
+  }
+}
+
+.experience-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.work-experience {
+  margin-bottom: 4rem;
+
+  ::ng-deep .ant-timeline {
+    color: var(--text-color);
+
+    .ant-timeline-item-tail {
+      border-left: 2px solid #e6f4ff;
+    }
+
+    .ant-timeline-item-head {
+      background: #fff;
+      border: 2px solid var(--nav-text);
+    }
+  }
+
+  .timeline-content {
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+
+    .job-header {
+      margin-bottom: 0.75rem;
+
+      h3 {
+        position: relative;
+        color: var(--text-color);
+        margin: 0;
+        font-size: 1.25rem;
+        font-weight: 500;
+        padding-bottom: 0.5rem;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 30px;
+          height: 2px;
+          background: var(--nav-text);
+          opacity: 0;
+          transition: all 0.3s ease;
+        }
+
+        &:hover::after {
+          opacity: 1;
+          width: 60px;
+        }
+      }
+
+      .company {
+        color: var(--text-color);
+        font-weight: 500;
+        font-size: 1.1rem;
+      }
+    }
+
+    .job-meta {
+      display: flex;
+      gap: 1.5rem;
+      color: var(--nav-text-light);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .responsibilities, .achievements {
+      h4 {
+        position: relative;
+        color: var(--text-color);
+        margin: 1.5rem 0 1rem;
+        font-size: 1.1rem;
+        font-weight: 500;
+        padding-bottom: 0.5rem;
+        display: inline-block;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 20px;
+          height: 2px;
+          background: var(--nav-text);
+          transition: width 0.3s ease;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 1.25rem;
+
+        li {
+          color: var(--text-color);
+          margin-bottom: 0.75rem;
+          line-height: 1.5;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.education {
+  .education-item {
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .edu-header {
+      margin-bottom: 0.75rem;
+
+      h3 {
+        position: relative;
+        color: var(--text-color);
+        margin: 0;
+        font-size: 1.25rem;
+        font-weight: 500;
+        padding-bottom: 0.5rem;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 30px;
+          height: 2px;
+          background: var(--nav-text);
+          opacity: 0;
+          transition: all 0.3s ease;
+        }
+
+        &:hover::after {
+          opacity: 1;
+          width: 60px;
+        }
+      }
+
+      .field {
+        color: var(--text-color);
+        font-weight: 500;
+        font-size: 1.1rem;
+      }
+    }
+
+    .institution {
+      color: var(--text-color);
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .duration {
+      color: var(--nav-text-light);
+      font-size: 0.95rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 1rem;
+
+    .section-title {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .work-experience {
+    margin-bottom: 3rem;
+
+    .timeline-content {
+      padding: 1rem;
+
+      .job-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  }
+
+  .education {
+    .education-item {
+      padding: 1rem;
+    }
+  }
+}
