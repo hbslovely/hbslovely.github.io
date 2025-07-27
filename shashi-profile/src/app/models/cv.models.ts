@@ -1,26 +1,103 @@
+export interface Project {
+  name: string;
+  company?: string;
+  duration: string;
+  description: string;
+  scope?: string;
+  technologies: string[];
+  environment: string[];
+  role: string;
+  status?: 'active' | 'completed' | 'maintenance';
+  teamSize?: number;
+  image?: string;
+  github?: string;
+  demo?: string;
+  achievements?: string[];
+}
+
 export interface PersonalInfo {
   name: string;
   title: string;
-  summary: string;
+  dateOfBirth: string;
+  location: {
+    address: string;
+    district: string;
+    city: string;
+    country: string;
+  };
   contact: {
-    email: string;
     phone: string;
+    email: string;
     linkedin: string;
     github: string;
+  };
+  languages: Array<{
+    name: string;
+    level: string;
+  }>;
+  summary: string;
+  shortSummary: string;
+  professionalHighlights: string[];
+  interests: string[];
+  availability: {
+    status: string;
+    preferredWorkType: string[];
+    remoteWork: string;
   };
 }
 
 export interface Experience {
-  company: string;
-  position: string;
-  location: string;
-  startDate: string;
-  endDate: string;
-  responsibilities: string[];
-  achievements: string[];
+  workExperience: WorkExperience[];
+  education?: Education[];
 }
 
-export interface Skill {
+export interface WorkExperience {
+  company: string;
+  position: string;
+  startDate: string;
+  type: string;
+  location: string;
+  endDate?: string;
+  current?: boolean;
+  description: string;
+  achievements?: string[];
+  responsibilities: string[];
+}
+
+export interface Education {
+  institution: string;
+  degree: string;
+  field: string;
+  startDate: string;
+  endDate: string;
+  description?: string;
+}
+
+export interface Skills {
+  technicalSkills: { [category: string]: string[] };
+  softSkills?: string[];
+  languages?: { [language: string]: string };
+  certifications?: Certification[];
+}
+
+export interface Certification {
   name: string;
-  level: number;
+  issuer: string;
+  date: string;
+  expires?: string;
+  description?: string;
+}
+
+export interface CV {
+  personalInfo: PersonalInfo;
+  experience: {
+    workExperience: WorkExperience[];
+  };
+  education: {
+    education: Education[];
+  };
+  skills: Skills;
+  projects: {
+    projects: Project[];
+  }
 } 

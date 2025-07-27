@@ -1,17 +1,17 @@
 {
   "name": "Ninh Quyen",
-  "title": "Senior Software Developer",
-  "dateOfBirth": "30 Sep 1992",
+  "title": "Frontend Developer",
+  "dateOfBirth": "01 Jan 1995",
   "location": {
-    "address": "Binh Thoi",
+    "address": "District 12",
     "city": "Ho Chi Minh City",
     "country": "Vietnam"
   },
   "contact": {
-    "phone": "+84 764 74 99 64",
-    "email": "hpphat1992@gmail.com",
-    "linkedin": "https://www.linkedin.com/in/hpphat1992/",
-    "github": "https://github.com/hpphat92"
+    "phone": "+84 123 456 789",
+    "email": "ninhquyen@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/ninhquyen/",
+    "github": "https://github.com/ninhquyen"
   },
   "languages": [
     {
@@ -20,16 +20,17 @@
     },
     {
       "name": "English",
-      "level": "Professional Working Proficiency (IELTS 6.0)"
+      "level": "Professional Working Proficiency"
     }
   ],
-  "summary": "Results-driven Senior Web Developer with over 10 years of expertise in front-end development and modern web technologies. Demonstrated track record of delivering high-quality solutions across diverse sectors including social networks, data management systems, and travel platforms. Proficient in HTML5, JavaScript, CSS, and various modern frameworks such as Angular and React.",
-  "shortSummary": "Senior Web Developer with 10+ years of expertise in front-end development. Proven track record in delivering high-quality solutions using Angular and React.",
+  "summary": "Frontend Developer with expertise in Angular and modern web technologies. Experienced in building responsive and user-friendly web applications. Strong focus on clean code and best practices.",
+  "shortSummary": "Frontend Developer specializing in Angular and modern web technologies. Passionate about creating responsive and user-friendly web applications.",
   "interests": [
-    "Web Architecture & Design Patterns",
+    "Web Development",
+    "UI/UX Design",
+    "Frontend Architecture",
     "Performance Optimization",
-    "Team Leadership",
-    "Emerging Technologies"
+    "Technical Learning"
   ],
   "availability": {
     "status": "Open to opportunities",
