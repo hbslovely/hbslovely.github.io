@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -20,11 +20,20 @@ interface PlaceListConfig {
   standalone: true,
   imports: [CommonModule, RouterModule, PlaceCardComponent]
 })
-export class PlaceDetailComponent implements OnInit {
+export class PlaceDetailComponent implements OnInit, OnDestroy {
   place: MemoryPlace | null = null;
   otherPlaces: MemoryPlace[] = [];
   loading = true;
   isFullscreen = false;
+  showDescription = false;
+  zoomLevel = 1;
+  isDragging = false;
+  startX = 0;
+  startY = 0;
+  translateX = 0;
+  translateY = 0;
+  lastTranslateX = 0;
+  lastTranslateY = 0;
 
   locationTypes = [
     { label: 'Trong nước', value: 'domestic', icon: 'pi pi-flag' },
@@ -59,8 +68,104 @@ export class PlaceDetailComponent implements OnInit {
     });
   }
 
+  ngOnDestroy() {
+    // Clean up any resources if necessary
+  }
+
   goBack() {
     this.location.back();
+  }
+
+  @HostListener('window:keydown.escape')
+  handleEscKey() {
+    if (this.isFullscreen) {
+      this.toggleFullscreen();
+    }
+  }
+
+  @HostListener('window:wheel', ['$event'])
+  handleScroll(event: WheelEvent) {
+    // Check if the event target is within the description panel
+    const descriptionPanel = document.querySelector('.description-panel');
+    if (descriptionPanel && event.target instanceof Node && descriptionPanel.contains(event.target)) {
+      // If scrolling in description panel, don't zoom
+      return;
+    }
+
+    if (this.isFullscreen) {
+      event.preventDefault();
+      const delta = event.deltaY * -0.001; // Make zoom more subtle
+      this.zoom(delta);
+    }
+  }
+
+  zoom(delta: number) {
+    const prevZoom = this.zoomLevel;
+    const newZoom = this.zoomLevel + delta;
+    // Limit zoom between 0.5 and 4
+    this.zoomLevel = Math.min(Math.max(newZoom, 0.5), 4);
+    
+    // If zoom level changed, update the transform
+    if (prevZoom !== this.zoomLevel) {
+      this.updateImageTransform();
+    }
+  }
+
+  startDrag(event: MouseEvent) {
+    if (this.zoomLevel > 1) {
+      this.isDragging = true;
+      this.startX = event.clientX - this.lastTranslateX;
+      this.startY = event.clientY - this.lastTranslateY;
+      event.preventDefault();
+    }
+  }
+
+  onDrag(event: MouseEvent) {
+    if (this.isDragging) {
+      event.preventDefault();
+      this.translateX = event.clientX - this.startX;
+      this.translateY = event.clientY - this.startY;
+      this.updateImageTransform();
+    }
+  }
+
+  stopDrag() {
+    if (this.isDragging) {
+      this.isDragging = false;
+      this.lastTranslateX = this.translateX;
+      this.lastTranslateY = this.translateY;
+    }
+  }
+
+  resetZoom() {
+    this.zoomLevel = 1;
+    this.translateX = 0;
+    this.translateY = 0;
+    this.lastTranslateX = 0;
+    this.lastTranslateY = 0;
+    this.updateImageTransform();
+  }
+
+  updateImageTransform() {
+    const image = document.querySelector('.fullscreen-modal img') as HTMLElement;
+    if (image) {
+      image.style.transform = `scale(${this.zoomLevel}) translate(${this.translateX / this.zoomLevel}px, ${this.translateY / this.zoomLevel}px)`;
+    }
+  }
+
+  toggleDescription() {
+    this.showDescription = !this.showDescription;
+  }
+
+  toggleFullscreen() {
+    this.isFullscreen = !this.isFullscreen;
+    if (this.isFullscreen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+      this.resetZoom();
+      this.showDescription = false;
+    }
   }
 
   getDirectionText(attraction: any): string {
@@ -85,15 +190,6 @@ export class PlaceDetailComponent implements OnInit {
     }
 
     return 'đường chính';
-  }
-
-  toggleFullscreen() {
-    this.isFullscreen = !this.isFullscreen;
-    if (this.isFullscreen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
   }
 
   getPlaceFeatures() {

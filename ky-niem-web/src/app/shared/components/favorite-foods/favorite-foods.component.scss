@@ -1,48 +1,170 @@
 // Menu Variables
-$menu-green: #4CAF50;
-$menu-light-green: #E8F5E9;
-$menu-border: #2E7D32;
-$menu-text: #1B5E20;
-$menu-bg: #FFFFFF;
-$price-color: #2E7D32;
+$menu-primary: #4CAF50;    // Main green
+$menu-secondary: #81C784;  // Light green
+$menu-accent: #2E7D32;     // Dark green
+$menu-text: #1B5E20;       // Dark green text
+$menu-bg: #F1F8E9;        // Very light green background
+$gold-accent: #FFC107;     // Gold accents for special elements
+$border-color: #2E7D32;    // Border color
+
+// Animation keyframes
+@keyframes floatingIcon {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+    opacity: 0.03;
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(10deg);
+    opacity: 0.07;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+    opacity: 0.03;
+  }
+}
+
+// Mixins for repeated patterns
+@mixin menu-corner($rotate: 0) {
+  content: '✿';
+  position: absolute;
+  font-size: 24px;
+  color: $menu-accent;
+  transform: rotate($rotate + deg);
+}
 
 .menu-frame {
-  padding: 2rem;
-  background: $menu-light-green;
+  padding: 3rem;
+  background: linear-gradient(135deg, #E8F5E9 0%, #F1F8E9 100%);
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+      rgba(76, 175, 80, 0.1),
+      rgba(129, 199, 132, 0.2),
+      rgba(46, 125, 50, 0.1)
+    );
+    animation: gradientMove 15s ease infinite;
+    background-size: 400% 400%;
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .menu-border {
-  background: $menu-bg;
-  padding: 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 3rem;
   position: relative;
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
+  border: 2px solid $border-color;
   
-  // Menu Border Design
-  &::before {
+  // Ornate frame
+  &::before, &::after {
     content: '';
     position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    border: 1px solid $border-color;
+    pointer-events: none;
+  }
+
+  &::after {
     top: 15px;
     left: 15px;
     right: 15px;
     bottom: 15px;
-    border: 2px solid $menu-border;
-    pointer-events: none;
+    border: 1px dashed $menu-secondary;
   }
 
-  // Corner Decorations
-  &::after {
-    content: '❀';
+  // Corner decorations
+  .corner {
     position: absolute;
-    color: $menu-border;
-    font-size: 1.5rem;
-    top: 5px;
-    left: 5px;
+    width: 50px;
+    height: 50px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 2px solid $border-color;
+    }
+
+    &.top-left {
+      top: 5px;
+      left: 5px;
+      &::after { @include menu-corner(0); top: -5px; left: -5px; }
+    }
+
+    &.top-right {
+      top: 5px;
+      right: 5px;
+      &::after { @include menu-corner(90); top: -5px; right: -5px; }
+    }
+
+    &.bottom-left {
+      bottom: 5px;
+      left: 5px;
+      &::after { @include menu-corner(270); bottom: -5px; left: -5px; }
+    }
+
+    &.bottom-right {
+      bottom: 5px;
+      right: 5px;
+      &::after { @include menu-corner(180); bottom: -5px; right: -5px; }
+    }
+  }
+
+  // Decorative side borders
+  .border-decoration {
+    position: absolute;
+    pointer-events: none;
+
+    &.left, &.right {
+      top: 70px;
+      bottom: 70px;
+      width: 20px;
+      background-repeat: repeat-y;
+      background-size: 20px 40px;
+      background-image: radial-gradient(circle at center, $menu-secondary 2px, transparent 2px);
+    }
+
+    &.top, &.bottom {
+      left: 70px;
+      right: 70px;
+      height: 20px;
+      background-repeat: repeat-x;
+      background-size: 40px 20px;
+      background-image: radial-gradient(circle at center, $menu-secondary 2px, transparent 2px);
+    }
+
+    &.left { left: 10px; }
+    &.right { right: 10px; }
+    &.top { top: 10px; }
+    &.bottom { bottom: 10px; }
   }
 }
 
@@ -50,35 +172,60 @@ $price-color: #2E7D32;
   text-align: center;
   margin-bottom: 3rem;
   padding: 1rem;
+  position: relative;
+
+  &::before, &::after {
+    content: '~';
+    position: absolute;
+    color: $menu-accent;
+    font-size: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &::before { left: 20%; }
+  &::after { right: 20%; }
 
   .title {
-    color: $menu-text;
-    font-size: 2.5rem;
+    color: $menu-accent;
+    font-size: 2.8rem;
     font-weight: 600;
     margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Playfair Display', serif;
   }
 
   .divider {
-    color: $menu-green;
-    font-size: 1.5rem;
+    color: $gold-accent;
+    font-size: 1.8rem;
     margin: 1rem 0;
+    position: relative;
+    
+    &::before, &::after {
+      content: '•';
+      color: $menu-secondary;
+      margin: 0 1rem;
+    }
   }
 
   .subtitle {
     color: $menu-text;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-style: italic;
     margin-bottom: 0.5rem;
+    font-family: 'Playfair Display', serif;
   }
 
   .currency-note {
-    color: $price-color;
+    color: $menu-primary;
     font-size: 0.9rem;
     font-style: italic;
     margin-top: 1rem;
-    padding: 0.5rem;
-    border: 1px dashed $menu-border;
+    padding: 0.8rem 1.5rem;
+    border: 1px dashed $menu-secondary;
     display: inline-block;
+    border-radius: 20px;
+    background: rgba(129, 199, 132, 0.1);
   }
 }
 
@@ -94,19 +241,58 @@ $price-color: #2E7D32;
 }
 
 .menu-section {
+  position: relative;
+  padding: 2rem;
+  overflow: hidden;
+
+  // Watermark background
+  &::before {
+    content: '🍽️';
+    position: absolute;
+    font-size: 120px;
+    top: 50%;
+    left: 50%;
+    pointer-events: none;
+    z-index: 0;
+    animation: floatingIcon 6s ease-in-out infinite;
+  }
+
   .section-header {
     margin-bottom: 2rem;
     text-align: center;
+    position: relative;
+    z-index: 2;
 
-    .emoji {
-      font-size: 2rem;
-      margin-right: 0.5rem;
+    &::before, &::after {
+      content: '•';
+      position: absolute;
+      color: $menu-secondary;
+      font-size: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
     }
 
+    &::before { left: 30%; }
+    &::after { right: 30%; }
+
     h2 {
-      color: $menu-text;
+      color: $menu-primary;
       font-size: 1.8rem;
       margin: 0.5rem 0;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      font-family: 'Playfair Display', serif;
+      display: inline-block;
+      padding: 0 2rem;
+      position: relative;
+      background: linear-gradient(
+        to right,
+        $menu-accent,
+        $menu-primary,
+        $menu-accent
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
   }
 }
@@ -114,11 +300,18 @@ $price-color: #2E7D32;
 .menu-items {
   display: grid;
   gap: 1.5rem;
+  position: relative;
+  z-index: 2;
 }
 
 .menu-item {
-  padding: 1rem 0;
-  border-bottom: 1px dotted $menu-border;
+  padding: 1.2rem;
+  border-bottom: 1px dotted $menu-secondary;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(5px);
 
   .item-header {
     display: flex;
@@ -127,39 +320,49 @@ $price-color: #2E7D32;
 
     .item-name {
       color: $menu-text;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: 500;
       padding-right: 0.5rem;
       min-width: 30%;
+      background: linear-gradient(
+        to right,
+        $menu-text,
+        $menu-accent
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
     .dots {
       flex: 1;
-      border-bottom: 1px dotted $menu-border;
+      border-bottom: 1px dotted $menu-secondary;
       margin: 0 0.5rem;
     }
 
     .price {
-      color: $price-color;
+      color: $gold-accent;
       font-weight: 600;
       font-size: 1.1rem;
       letter-spacing: 1px;
       min-width: 50px;
       text-align: right;
+      text-shadow: 0 0 3px rgba(255, 215, 0, 0.3);
     }
   }
 
   .item-description {
     color: $menu-text;
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.6;
-    margin: 0.5rem 0;
+    margin: 0.8rem 0;
     padding-left: 1rem;
+    font-style: italic;
   }
 
   .item-note {
-    color: $menu-green;
-    font-size: 0.9rem;
+    color: $menu-primary;
+    font-size: 0.95rem;
     font-style: italic;
     display: flex;
     align-items: center;
@@ -167,7 +370,8 @@ $price-color: #2E7D32;
     padding-left: 1rem;
 
     i {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
+      color: $menu-accent;
     }
   }
 }
@@ -175,13 +379,26 @@ $price-color: #2E7D32;
 .menu-footer {
   text-align: center;
   margin-top: 3rem;
-  padding-top: 1rem;
-  border-top: 2px solid $menu-border;
+  padding-top: 1.5rem;
+  border-top: 2px solid $menu-secondary;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, $menu-primary, transparent);
+  }
 
   .divider {
-    color: $menu-green;
-    font-size: 1.5rem;
+    color: $gold-accent;
+    font-size: 1.8rem;
     margin: 1rem 0;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
   }
 
   .quote {
@@ -189,17 +406,37 @@ $price-color: #2E7D32;
     margin: 0 auto;
     color: $menu-text;
     font-style: italic;
+    padding: 1.5rem;
+    background: rgba(129, 199, 132, 0.1);
+    border-radius: 15px;
+    position: relative;
+
+    // Watermark for quote
+    &::before {
+      content: '❝';
+      position: absolute;
+      font-size: 80px;
+      opacity: 0.1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
 
     i {
-      color: $menu-green;
-      font-size: 1.2rem;
+      color: $menu-accent;
+      font-size: 1.3rem;
       margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
     }
 
     p {
-      font-size: 1rem;
+      font-size: 1.1rem;
       line-height: 1.8;
       margin: 1rem 0 0;
+      position: relative;
+      z-index: 1;
     }
   }
 }
@@ -207,12 +444,12 @@ $price-color: #2E7D32;
 // Responsive adjustments
 @media (max-width: 767px) {
   .menu-border {
-    padding: 1rem;
+    padding: 1.5rem;
   }
 
   .menu-header {
     .title {
-      font-size: 2rem;
+      font-size: 2.2rem;
     }
   }
 
@@ -225,6 +462,14 @@ $price-color: #2E7D32;
       .item-name {
         min-width: 40%;
       }
+    }
+  }
+
+  .menu-section {
+    padding: 1.5rem;
+
+    &::before {
+      font-size: 80px;
     }
   }
 }

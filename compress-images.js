@@ -3,6 +3,20 @@ const fs = require('fs');
 const path = require('path');
 
 const imagesToCompress = [
+    // Newly added large images
+    'ky-niem-web/src/assets/images/places/checkin_nui-ba-den-tay-ninh.png',         // 3.4MB
+    'ky-niem-web/src/assets/images/places/checkin-cot-co-ca-mau.png',               // 3.6MB
+    'ky-niem-web/src/assets/images/gallery/ben-nhau.png',                           // 3.5MB
+    'ky-niem-web/src/assets/images/gallery/check-in-cung-duong-moi.png',            // 6.0MB
+    'ky-niem-web/src/assets/images/gallery/phuot-khap-noi.png',                     // 10MB
+    'ky-niem-web/src/assets/images/gallery/vuot-qua-bao-giong.png',                 // 7.8MB
+    'ky-niem-web/src/assets/images/gallery/nam-tay-yeu-thuong.png',                 // 12MB
+    'ky-niem-web/src/assets/images/ki-niem/lan-dau-gap-nhau.png',                   // 5.8MB
+    'ky-niem-web/src/assets/images/ki-niem/dam-cuoi-nha-hang.png',                  // 3.9MB
+    'ky-niem-web/src/assets/images/hinh-cuoi/dam-cuoi-hcm-03-2022.png',            // 3.2MB
+    'ky-niem-web/src/assets/images/albums/ngay-cuoi_3-2022/9.png',                  // 3.4MB
+    'ky-niem-web/src/assets/images/albums/ngay-cuoi_3-2022/5.png',                  // 3.5MB
+
     // Images from ky-niem-web
     'ky-niem-web/src/assets/images/anh-chu-dao/avatar-couple.png',                    // 5.5MB
     'ky-niem-web/src/assets/images/anh-chu-dao/avatar-couple-back.png',               // 11MB
@@ -12,7 +26,6 @@ const imagesToCompress = [
     'ky-niem-web/src/assets/images/mon-qua/mon-qua-dau-tien-4-buc-tuong-chu-tieu.png', // 7.5MB
     'ky-niem-web/src/assets/images/places/checkin-mui-dien-phu-yen.png',              // 5.0MB
     'ky-niem-web/src/assets/images/gallery/su-an-ui.png',                             // 6.6MB
-    'ky-niem-web/src/assets/images/gallery/nam-tay-yeu-thuong.png',                   // 4.6MB
     'ky-niem-web/src/assets/images/gallery/nuoc-mat-hanh-phuc.png',                   // 6.3MB
     'ky-niem-web/src/assets/images/gallery/chuyen-di-dau-tien.png',                   // 6.6MB
     'ky-niem-web/src/assets/images/gallery/ngay-dau-ben-nhau.png',                    // 5.1MB

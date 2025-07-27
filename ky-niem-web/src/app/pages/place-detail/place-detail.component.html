@@ -18,7 +18,7 @@
                 <span>{{ getRegionLabel(region) }}</span>
               </div>
             </ng-container>
-            
+
             <!-- Feature Tags -->
             <ng-container *ngFor="let feature of getPlaceFeatures()">
               <div class="tag feature" (click)="navigateToFeature(feature)" role="button" tabindex="0">
@@ -44,9 +44,9 @@
     <div class="corner-top-right"></div>
     <div class="corner-bottom-left"></div>
     <div class="corner-bottom-right"></div>
-    <div class="image-container">
+    <div class="image-container" (click)="toggleFullscreen()">
       <img [src]="$any(place)?.image" [alt]="$any(place)?.name" class="main-image">
-      <div class="fullscreen-hint" (click)="toggleFullscreen()">
+      <div class="fullscreen-hint">
         <i class="pi pi-window-maximize"></i>
         <span>Nhấn để xem ảnh đầy đủ</span>
       </div>
@@ -61,12 +61,150 @@
 </div>
 
 <!-- Fullscreen Image Modal -->
-<div class="fullscreen-modal" *ngIf="isFullscreen" (click)="toggleFullscreen()">
+<div class="fullscreen-modal" [class.with-description]="showDescription" *ngIf="isFullscreen">
   <div class="modal-content">
-    <img [src]="$any(place)?.image" [alt]="$any(place)?.name">
-    <button class="close-button" (click)="toggleFullscreen(); $event.stopPropagation()">
+    <img [src]="$any(place)?.image" [alt]="$any(place)?.name"
+         (mousedown)="startDrag($event)"
+         (mousemove)="onDrag($event)"
+         (mouseup)="stopDrag()"
+         (mouseleave)="stopDrag()">
+  </div>
+
+  <!-- Fixed Position Controls -->
+  <button class="close-button" (click)="toggleFullscreen()" data-tooltip="Đóng">
+    <i class="pi pi-times"></i>
+  </button>
+
+  <div class="location-tag">
+    <i class="pi pi-map-marker"></i>
+    <span>{{ place?.location }}</span>
+  </div>
+
+  <div class="zoom-controls">
+    <button (click)="zoom(0.1)" data-tooltip="Phóng to">
+      <i class="pi pi-plus"></i>
+    </button>
+    <button (click)="resetZoom()" class="reset-button" data-tooltip="Khôi phục kích thước gốc">
+      <i class="pi pi-arrows-alt"></i>
+    </button>
+    <button (click)="zoom(-0.1)" data-tooltip="Thu nhỏ">
+      <i class="pi pi-minus"></i>
+    </button>
+    <div class="controls-separator"></div>
+    <button class="description-button" 
+            [class.active]="showDescription"
+            (click)="toggleDescription()" 
+            data-tooltip="Thông tin ảnh">
+      <i class="pi pi-info-circle"></i>
+    </button>
+  </div>
+
+  <!-- Description Panel -->
+  <div class="description-panel" [class.show]="showDescription">
+    <button class="panel-close" (click)="toggleDescription()" data-tooltip="Đóng thông tin">
       <i class="pi pi-times"></i>
     </button>
+    <div class="description-content">
+      <div class="section">
+        <h3>{{ place?.name }}</h3>
+        <div class="location-info">
+          <i class="pi pi-map-marker"></i>
+          <span>{{ place?.location }}</span>
+        </div>
+        <p class="main-description">{{ place?.description }}</p>
+      </div>
+
+      <div class="section" *ngIf="place?.detailedDescription">
+        <h4>Chi tiết</h4>
+        <p>{{ place?.detailedDescription }}</p>
+      </div>
+
+      <div class="section" *ngIf="place?.bestTimeToVisit">
+        <h4>Thời điểm lý tưởng</h4>
+        <div class="time-info">
+          <i class="pi pi-calendar"></i>
+          <p>{{ place?.bestTimeToVisit }}</p>
+        </div>
+      </div>
+
+      <div class="section" *ngIf="place?.howToGet">
+        <h4>Cách đến đây</h4>
+        <div class="direction-info">
+          <i class="pi pi-directions"></i>
+          <p>{{ place?.howToGet }}</p>
+        </div>
+      </div>
+
+      <div class="section" *ngIf="place?.nearbyAttractions?.length">
+        <h4>Địa điểm lân cận</h4>
+        <div class="nearby-places">
+          <div class="nearby-place" *ngFor="let attraction of place?.nearbyAttractions">
+            <div class="place-name">
+              <i class="pi pi-map"></i>
+              <span>{{ attraction.name }}</span>
+            </div>
+            <p>{{ attraction.description }}</p>
+            <div class="distance-info">
+              <i class="pi pi-clock"></i>
+              <span>{{ attraction.distance }} • {{ attraction.travelTime }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section" *ngIf="place?.recommendedFood?.length || place?.localFood?.length">
+        <h4>Ẩm thực địa phương</h4>
+        <div class="food-list">
+          <ng-container *ngIf="place?.recommendedFood?.length">
+            <div class="food-category">
+              <h5>Món ăn nên thử</h5>
+              <div class="food-item" *ngFor="let food of place?.recommendedFood">
+                <div class="food-name">
+                  <i class="pi pi-star-fill"></i>
+                  <span>{{ food.name }}</span>
+                </div>
+                <p>{{ food.description }}</p>
+                <div class="food-meta" *ngIf="food.restaurant || food.price">
+                  <span *ngIf="food.restaurant">
+                    <i class="pi pi-home"></i> {{ food.restaurant }}
+                  </span>
+                  <span *ngIf="food.price">
+                    <i class="pi pi-tag"></i> {{ food.price }}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+
+          <ng-container *ngIf="place?.localFood?.length">
+            <div class="food-category">
+              <h5>Đặc sản địa phương</h5>
+              <div class="food-item" *ngFor="let food of place?.localFood">
+                <div class="food-name">
+                  <i class="pi pi-heart-fill"></i>
+                  <span>{{ food.name }}</span>
+                </div>
+                <p>{{ food.description }}</p>
+                <div class="food-meta" *ngIf="food.restaurant || food.price">
+                  <span *ngIf="food.restaurant">
+                    <i class="pi pi-home"></i> {{ food.restaurant }}
+                  </span>
+                  <span *ngIf="food.price">
+                    <i class="pi pi-tag"></i> {{ food.price }}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Zoom Hint -->
+  <div class="zoom-hint" *ngIf="zoomLevel === 1">
+    <i class="pi pi-info-circle"></i>
+    <span>Cuộn chuột để phóng to/thu nhỏ</span>
   </div>
 </div>
 
