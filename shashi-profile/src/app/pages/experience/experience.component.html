@@ -30,7 +30,7 @@
   </div>
 
   <div class="education" *ngIf="cvService.cv()?.education as edu">
-    <h2 class="section-title">Education</h2>
+    <h2 class="section-title">{{ 'EDUCATION' | translate }}</h2>
     <div class="education-item" *ngFor="let item of edu.education">
       <div class="edu-header">
         <h3>{{ item.degree }}</h3>
