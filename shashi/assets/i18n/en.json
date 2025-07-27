@@ -12,5 +12,54 @@
   "EXPERIENCE": {
     "KEY_ACHIEVEMENTS": "Key Achievements",
     "RESPONSIBILITIES": "Responsibilities"
+  },
+  "FOOTER": {
+    "RIGHTS": "All rights reserved."
+  },
+  "EDUCATION": {
+    "TITLE": "Education",
+    "DEGREE": "Degree",
+    "MAJOR": "Major",
+    "UNIVERSITY": "University",
+    "GRADUATION_YEAR": "Graduation Year",
+    "GPA": "GPA"
+  },
+  "SKILLS": {
+    "CATEGORIES": {
+      "accounting": "Accounting",
+      "humanResources": "Human Resources",
+      "software": "Software",
+      "compliance": "Compliance",
+      "softSkills": "Soft Skills",
+      "administration": "Administration"
+    },
+    "ITEMS": {
+      "Financial_Reporting": "Financial Reporting",
+      "Tax_Accounting": "Tax Accounting",
+      "General_Ledger": "General Ledger",
+      "Cost_Accounting": "Cost Accounting",
+      "Financial_Analysis": "Financial Analysis",
+      "Audit_Preparation": "Audit Preparation",
+      "HR_Policies": "HR Policies & Procedures",
+      "Recruitment": "Recruitment & Selection",
+      "Performance_Management": "Performance Management",
+      "Training": "Training & Development",
+      "Labor_Law": "Labor Law Compliance",
+      "Accounting_Software": "Accounting Software",
+      "ERP_Systems": "ERP Systems",
+      "HRIS": "HRIS",
+      "MS_Office": "Microsoft Office Suite",
+      "Tax_Software": "Tax Declaration Software",
+      "VAS": "Vietnamese Accounting Standards",
+      "Tax_Regulations": "Tax Regulations",
+      "Labor_Laws": "Labor Laws",
+      "Internal_Control": "Internal Control",
+      "Audit_Procedures": "Audit Procedures",
+      "Leadership": "Leadership",
+      "Problem_Solving": "Problem Solving",
+      "Communication": "Communication",
+      "Analytical_Thinking": "Analytical Thinking",
+      "Time_Management": "Time Management"
+    }
   }
 } 
