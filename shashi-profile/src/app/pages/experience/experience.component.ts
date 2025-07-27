@@ -15,7 +15,7 @@ import { NzTimelineModule } from 'ng-zorro-antd/timeline';
   template: `
     <div class="experience-section">
       <div class="work-experience" *ngIf="cvService.cv()?.experience as exp">
-        <h2>{{ 'NAV.EXPERIENCE' | translate }}</h2>
+        <h2 class="section-header">{{ 'NAV.EXPERIENCE' | translate }}</h2>
         <nz-timeline>
           <nz-timeline-item *ngFor="let job of exp.workExperience">
             <div class="timeline-content">
@@ -45,7 +45,7 @@ import { NzTimelineModule } from 'ng-zorro-antd/timeline';
       </div>
 
       <div class="education" *ngIf="cvService.cv()?.education as edu">
-        <h2>Education</h2>
+        <h2 class="section-header">Education</h2>
         <div class="education-item" *ngFor="let item of edu.education">
           <div class="edu-header">
             <h3>{{ item.degree }}</h3>
@@ -58,29 +58,49 @@ import { NzTimelineModule } from 'ng-zorro-antd/timeline';
     </div>
   `,
   styles: [`
+    .section-header {
+      position: relative;
+      color: var(--text-color);
+      margin-bottom: 2rem;
+      padding-bottom: 0.75rem;
+      font-size: 1.75rem;
+      font-weight: 500;
+      cursor: default;
+
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        height: 2px;
+        width: 0;
+        transition: width 0.4s ease-in-out;
+      }
+
+      &::before {
+        left: 0;
+        background: var(--nav-text);
+      }
+
+      &::after {
+        right: 0;
+        background: var(--nav-active);
+        transition-delay: 0.2s;
+      }
+
+      &:hover {
+        &::before {
+          width: 60%;
+        }
+        &::after {
+          width: 40%;
+        }
+      }
+    }
+
     .experience-section {
       max-width: 1000px;
       margin: 0 auto;
       padding: 2rem 1rem;
-
-      h2 {
-        color: var(--text-color);
-        margin-bottom: 2.5rem;
-        font-size: 2rem;
-        font-weight: 500;
-        position: relative;
-        padding-bottom: 0.5rem;
-
-        &:after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 40px;
-          height: 2px;
-          background: var(--text-color);
-        }
-      }
     }
 
     .work-experience {
@@ -90,12 +110,12 @@ import { NzTimelineModule } from 'ng-zorro-antd/timeline';
         color: var(--text-color);
 
         .ant-timeline-item-tail {
-          border-left: 2px solid #eee;
+          border-left: 2px solid #e6f4ff;
         }
 
         .ant-timeline-item-head {
           background: #fff;
-          border: 2px solid var(--text-color);
+          border: 2px solid var(--nav-text);
         }
       }
 
@@ -109,10 +129,29 @@ import { NzTimelineModule } from 'ng-zorro-antd/timeline';
           margin-bottom: 0.75rem;
 
           h3 {
+            position: relative;
             color: var(--text-color);
             margin: 0;
             font-size: 1.25rem;
             font-weight: 500;
+            padding-bottom: 0.5rem;
+
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 30px;
+              height: 2px;
+              background: var(--nav-text);
+              opacity: 0;
+              transition: all 0.3s ease;
+            }
+
+            &:hover::after {
+              opacity: 1;
+              width: 60px;
+            }
           }
 
           .company {
@@ -125,17 +164,35 @@ import { NzTimelineModule } from 'ng-zorro-antd/timeline';
         .job-meta {
           display: flex;
           gap: 1.5rem;
-          color: var(--text-secondary);
+          color: var(--nav-text-light);
           margin-bottom: 1.5rem;
           font-size: 0.95rem;
         }
 
         .responsibilities, .achievements {
           h4 {
+            position: relative;
             color: var(--text-color);
             margin: 1.5rem 0 1rem;
             font-size: 1.1rem;
             font-weight: 500;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 20px;
+              height: 2px;
+              background: var(--nav-text);
+              transition: width 0.3s ease;
+            }
+
+            &:hover::after {
+              width: 100%;
+            }
           }
 
           ul {
@@ -171,10 +228,29 @@ import { NzTimelineModule } from 'ng-zorro-antd/timeline';
           margin-bottom: 0.75rem;
 
           h3 {
+            position: relative;
             color: var(--text-color);
             margin: 0;
             font-size: 1.25rem;
             font-weight: 500;
+            padding-bottom: 0.5rem;
+
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 30px;
+              height: 2px;
+              background: var(--nav-text);
+              opacity: 0;
+              transition: all 0.3s ease;
+            }
+
+            &:hover::after {
+              opacity: 1;
+              width: 60px;
+            }
           }
 
           .field {
@@ -191,7 +267,7 @@ import { NzTimelineModule } from 'ng-zorro-antd/timeline';
         }
 
         .duration {
-          color: var(--text-secondary);
+          color: var(--nav-text-light);
           font-size: 0.95rem;
         }
       }
@@ -201,9 +277,9 @@ import { NzTimelineModule } from 'ng-zorro-antd/timeline';
       .experience-section {
         padding: 1rem;
 
-        h2 {
-          font-size: 1.75rem;
-          margin-bottom: 2rem;
+        .section-header {
+          font-size: 1.5rem;
+          margin-bottom: 1.5rem;
         }
       }
 

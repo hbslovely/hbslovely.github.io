@@ -58,17 +58,25 @@ import { LanguageSwitcherComponent } from '../language-switcher/language-switche
     </nav>
   `,
   styles: [`
+    :host {
+      --nav-bg: #f0f7ff;
+      --nav-hover: #e6f4ff;
+      --nav-active: #bae0ff;
+      --nav-text: #1890ff;
+      --nav-text-light: #69b1ff;
+      --nav-border: #e6f4ff;
+    }
+
     .navbar {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       z-index: 1000;
-      background: var(--card-bg);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+      background: var(--nav-bg);
       padding: 0.75rem 0;
       transition: all 0.3s ease;
+      border-bottom: 1px solid var(--nav-border);
     }
 
     .navbar-content {
@@ -89,40 +97,37 @@ import { LanguageSwitcherComponent } from '../language-switcher/language-switche
         .logo {
           font-size: 1.5rem;
           font-weight: 700;
-          color: var(--primary-color);
+          color: var(--nav-text);
           padding: 0.5rem 1rem;
-          background: var(--primary-lightest);
-          border-radius: var(--border-radius);
+          background: var(--nav-hover);
+          border-radius: 4px;
           transition: all 0.2s ease;
 
           &:hover {
-            background: var(--primary-lighter);
+            background: var(--nav-active);
           }
         }
       }
     }
 
     .mobile-menu-button {
-      display: none; // Hidden by default
+      display: none;
       align-items: center;
       justify-content: center;
       width: 40px;
       height: 40px;
-      border-radius: 50%;
+      border-radius: 4px;
       background: transparent;
       border: none;
       cursor: pointer;
       
       [nz-icon] {
         font-size: 24px;
-        color: var(--text-color);
+        color: var(--nav-text);
       }
 
       &:hover {
-        background: var(--primary-lightest);
-        [nz-icon] {
-          color: var(--primary-color);
-        }
+        background: var(--nav-hover);
       }
     }
 
@@ -149,24 +154,23 @@ import { LanguageSwitcherComponent } from '../language-switcher/language-switche
           align-items: center;
           gap: 0.5rem;
           padding: 0.5rem 1rem;
-          color: var(--text-color);
+          color: var(--nav-text);
           text-decoration: none;
-          border-radius: var(--border-radius);
+          border-radius: 4px;
           transition: all 0.2s ease;
+          font-weight: 500;
 
           [nz-icon] {
             font-size: 1.2rem;
           }
 
           &:hover {
-            background: var(--primary-lightest);
-            color: var(--primary-color);
+            background: var(--nav-hover);
           }
 
           &.active {
-            background: var(--primary-lightest);
-            color: var(--primary-color);
-            font-weight: 500;
+            background: var(--nav-active);
+            color: var(--nav-text);
           }
         }
       }
@@ -184,8 +188,8 @@ import { LanguageSwitcherComponent } from '../language-switcher/language-switche
       }
 
       .mobile-menu-button {
-        display: flex !important; // Force display on mobile
-        order: 3; // Move to the right side
+        display: flex !important;
+        order: 3;
       }
 
       .nav-content {
@@ -196,8 +200,7 @@ import { LanguageSwitcherComponent } from '../language-switcher/language-switche
         bottom: 0;
         width: 100vw;
         min-height: calc(100vh - 73px);
-        background: rgba(235, 245, 255, 0.95);
-        backdrop-filter: blur(8px);
+        background: var(--nav-bg);
         flex-direction: column;
         justify-content: flex-start;
         padding: 2rem 1rem;
@@ -229,12 +232,10 @@ import { LanguageSwitcherComponent } from '../language-switcher/language-switche
             padding: 1rem;
             justify-content: flex-start;
             font-size: 1.1rem;
-            background: rgba(255, 255, 255, 0.5);
-            border: 1px solid rgba(24, 144, 255, 0.1);
+            background: var(--nav-hover);
 
             &:hover, &.active {
-              background: rgba(24, 144, 255, 0.1);
-              color: var(--primary-color);
+              background: var(--nav-active);
             }
           }
         }
@@ -243,12 +244,11 @@ import { LanguageSwitcherComponent } from '../language-switcher/language-switche
       .nav-actions.mobile {
         width: 100%;
         justify-content: center;
-        border-top: 1px solid rgba(24, 144, 255, 0.2);
+        border-top: 1px solid var(--nav-border);
         padding-top: 2rem;
         margin: 0;
       }
 
-      // Hide desktop nav items on mobile
       .nav-content:not(.mobile-open) {
         display: none;
       }

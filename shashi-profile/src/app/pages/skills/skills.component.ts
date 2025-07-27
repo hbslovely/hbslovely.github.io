@@ -12,7 +12,7 @@ import { CvService } from '../../services/cv.service';
   ],
   template: `
     <div class="skills-section" *ngIf="cvService.cv()?.skills as skills">
-      <h2>{{ 'NAV.SKILLS' | translate }}</h2>
+      <h2 class="section-header">{{ 'NAV.SKILLS' | translate }}</h2>
       <div class="skills-content">
         <div class="skill-category" *ngFor="let category of getCategories(skills.technicalSkills)">
           <div class="category-header">
@@ -28,29 +28,49 @@ import { CvService } from '../../services/cv.service';
     </div>
   `,
   styles: [`
+    .section-header {
+      position: relative;
+      color: var(--text-color);
+      margin-bottom: 2rem;
+      padding-bottom: 0.75rem;
+      font-size: 1.75rem;
+      font-weight: 500;
+      cursor: default;
+
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        height: 2px;
+        width: 0;
+        transition: width 0.4s ease-in-out;
+      }
+
+      &::before {
+        left: 0;
+        background: var(--nav-text);
+      }
+
+      &::after {
+        right: 0;
+        background: var(--nav-active);
+        transition-delay: 0.2s;
+      }
+
+      &:hover {
+        &::before {
+          width: 60%;
+        }
+        &::after {
+          width: 40%;
+        }
+      }
+    }
+
     .skills-section {
       max-width: 1000px;
       margin: 0 auto;
       padding: 2rem 1rem;
-
-      h2 {
-        color: var(--text-color);
-        margin-bottom: 2rem;
-        font-size: 1.75rem;
-        font-weight: 500;
-        position: relative;
-        padding-bottom: 0.5rem;
-
-        &:after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 40px;
-          height: 2px;
-          background: var(--text-color);
-        }
-      }
     }
 
     .skills-content {
@@ -68,12 +88,30 @@ import { CvService } from '../../services/cv.service';
         margin-bottom: 1rem;
 
         h3 {
+          position: relative;
           color: var(--text-color);
           margin: 0;
           font-size: 1.1rem;
           font-weight: 500;
           text-transform: uppercase;
           letter-spacing: 0.5px;
+          padding-bottom: 0.5rem;
+          display: inline-block;
+
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 20px;
+            height: 2px;
+            background: var(--nav-text);
+            transition: width 0.3s ease;
+          }
+
+          &:hover::after {
+            width: 100%;
+          }
         }
       }
     }
@@ -90,11 +128,11 @@ import { CvService } from '../../services/cv.service';
       border-radius: 3px;
       font-size: 0.9rem;
       color: var(--text-color);
-      border: 1px solid #e9ecef;
+      border: 1px solid #e6f4ff;
       transition: all 0.2s ease;
 
       &:hover {
-        border-color: #dee2e6;
+        border-color: var(--nav-text);
         transform: translateY(-1px);
       }
     }
@@ -110,7 +148,7 @@ import { CvService } from '../../services/cv.service';
       .skills-section {
         padding: 1rem;
 
-        h2 {
+        .section-header {
           font-size: 1.5rem;
           margin-bottom: 1.5rem;
         }

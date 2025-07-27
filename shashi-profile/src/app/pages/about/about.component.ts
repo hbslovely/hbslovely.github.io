@@ -61,6 +61,45 @@ import { CvService } from '../../services/cv.service';
     </div>
   `,
   styles: [`
+    .section-header {
+      position: relative;
+      color: var(--text-color);
+      margin-bottom: 2rem;
+      padding-bottom: 0.75rem;
+      font-size: 1.75rem;
+      font-weight: 500;
+      cursor: default;
+
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        height: 2px;
+        width: 0;
+        transition: width 0.4s ease-in-out;
+      }
+
+      &::before {
+        left: 0;
+        background: var(--nav-text);
+      }
+
+      &::after {
+        right: 0;
+        background: var(--nav-active);
+        transition-delay: 0.2s;
+      }
+
+      &:hover {
+        &::before {
+          width: 60%;
+        }
+        &::after {
+          width: 40%;
+        }
+      }
+    }
+
     .about-section {
       max-width: 1000px;
       margin: 0 auto;
@@ -162,21 +201,26 @@ import { CvService } from '../../services/cv.service';
         margin-top: 2rem;
 
         h3 {
+          position: relative;
           color: var(--text-color);
           margin: 0 0 1.5rem 0;
           font-size: 1.25rem;
           font-weight: 500;
-          position: relative;
           padding-bottom: 0.5rem;
 
-          &:after {
+          &::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 40px;
+            width: 30px;
             height: 2px;
-            background: var(--text-color);
+            background: var(--nav-text);
+            transition: width 0.3s ease;
+          }
+
+          &:hover::after {
+            width: 60px;
           }
         }
 
