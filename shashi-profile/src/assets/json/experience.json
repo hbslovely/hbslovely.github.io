@@ -1,85 +1,54 @@
 {
   "workExperience": [
     {
-      "company": "Backbase",
-      "position": "Senior Software Engineer",
-      "department": "R&D AI Team",
-      "location": "District 3 - HCM",
-      "type": "Hybrid",
-      "startDate": "Nov 2024",
+      "company": "Freelancer",
+      "position": "Frontend Developer",
+      "location": "District 12 - HCM",
+      "type": "Remote",
+      "startDate": "Jan 2024",
       "endDate": "Present",
       "responsibilities": [
-        "Collaborate closely with project managers and the AI team to develop and implement AI-powered solutions for the banking sector",
-        "Implement ideas and ensure it is following the release schedule"
+        "Develop and maintain web applications using Angular and modern web technologies",
+        "Collaborate with clients to understand requirements and deliver solutions",
+        "Implement responsive designs and ensure cross-browser compatibility"
       ],
       "achievements": [
-        "Worked as part of an R&D team in a product-focused company, where the process and workflow emphasized innovation and idea development over traditional delivery timelines"
+        "Successfully delivered multiple projects on time and within budget",
+        "Received positive feedback from clients for quality of work and communication"
       ]
     },
     {
-      "company": "HCL Technologies Limited",
-      "position": "Senior Software Engineer",
+      "company": "Tech Company A",
+      "position": "Junior Frontend Developer",
       "location": "District 1 - HCM",
-      "type": "Remote",
-      "startDate": "Dec 2021",
-      "endDate": "Nov 2024",
-      "responsibilities": [
-        "Work with a team from a multi-country company to develop a DMS for managing documents of whole aerospace company using technologies: Angular 11-14, GoJS",
-        "Joining meetings in the Agile/Scrum process to understand, report and contribute to the development process",
-        "Raising some new ideas to improve the current UI/UX of the application"
-      ],
-      "achievements": [
-        "Learn a new scope of business in managing the documents",
-        "Work with other team members from other countries with different countries and timezones"
-      ]
-    },
-    {
-      "company": "Saigon Technology Solution",
-      "position": "Senior Software Engineer",
-      "location": "Tan Binh - HCM",
       "type": "Hybrid",
-      "startDate": "Oct 2020",
-      "endDate": "Dec 2021",
+      "startDate": "Jun 2022",
+      "endDate": "Dec 2023",
       "responsibilities": [
-        "Work in a team to develop a wealth management application using Angular, Ruby on Rails, SOLID principles",
-        "Joining meetings in the Agile/Scrum process",
-        "Contribution in the development process"
+        "Developed and maintained web applications using Angular and TypeScript",
+        "Collaborated with backend developers to integrate APIs",
+        "Participated in code reviews and team meetings"
       ],
       "achievements": [
-        "Have some contribution in the working process and code quality improvement"
+        "Improved application performance by optimizing code and implementing lazy loading",
+        "Contributed to the development of reusable components used across multiple projects"
       ]
     },
     {
-      "company": "Nashtech Vietnam",
-      "position": "Senior Software Engineer",
-      "location": "Tan Binh - HCM",
+      "company": "Tech Company B",
+      "position": "Web Developer Intern",
+      "location": "District 3 - HCM",
       "type": "Onsite",
-      "startDate": "Dec 2018",
-      "endDate": "Oct 2020",
+      "startDate": "Jan 2022",
+      "endDate": "May 2022",
       "responsibilities": [
-        "Joined the team to develop a web application for the wealth management domain of a bank",
-        "Joined meetings and followed the Agile/Scrum process",
-        "Using modern technologies at the running time: Kendo UI, moment, lodash"
+        "Assisted in developing and maintaining web applications",
+        "Learned and applied modern web development practices",
+        "Participated in team meetings and training sessions"
       ],
       "achievements": [
-        "Learned many new things from new business scope in wealth management and Agile/Scrum process"
-      ]
-    },
-    {
-      "company": "New Ocean Information System Co., Ltd",
-      "position": "Software Engineer",
-      "location": "Tan Binh - HCM",
-      "type": "Onsite",
-      "startDate": "Sep 2014",
-      "endDate": "Dec 2018",
-      "responsibilities": [
-        "Joined a team to develop an application based on Qt to send and receive data on a big network",
-        "Joined a team to develop applications using modern technologies at that time (AngularJS, Angular, Reactjs)",
-        "Helped to support other teams to review code",
-        "Helped companies train for new comers"
-      ],
-      "achievements": [
-        "Archived knowledge of web development and had some basic knowledge on Javascript"
+        "Successfully completed assigned tasks and received positive feedback from senior developers",
+        "Gained practical experience in web development and teamwork"
       ]
     }
   ]

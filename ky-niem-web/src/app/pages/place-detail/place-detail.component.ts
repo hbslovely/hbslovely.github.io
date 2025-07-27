@@ -104,7 +104,7 @@ export class PlaceDetailComponent implements OnInit, OnDestroy {
     const newZoom = this.zoomLevel + delta;
     // Limit zoom between 0.5 and 4
     this.zoomLevel = Math.min(Math.max(newZoom, 0.5), 4);
-    
+
     // If zoom level changed, update the transform
     if (prevZoom !== this.zoomLevel) {
       this.updateImageTransform();
@@ -170,7 +170,7 @@ export class PlaceDetailComponent implements OnInit, OnDestroy {
 
   getDirectionText(attraction: any): string {
     const distance = attraction.distance?.toLowerCase() || '';
-    
+
     if (distance.includes('bắc')) {
       return 'hướng Bắc';
     } else if (distance.includes('nam')) {
@@ -194,20 +194,20 @@ export class PlaceDetailComponent implements OnInit, OnDestroy {
 
   getPlaceFeatures() {
     if (!this.place) return [];
-    
+
     return this.features.filter(feature => {
       switch (feature.value) {
         case 'sea':
-          return this.place?.description.toLowerCase().includes('biển') || 
+          return this.place?.description.toLowerCase().includes('biển') ||
                  this.place?.name.toLowerCase().includes('biển') ||
                  this.place?.detailedDescription?.toLowerCase().includes('biển');
         case 'mountain':
-          return this.place?.description.toLowerCase().includes('núi') || 
+          return this.place?.description.toLowerCase().includes('núi') ||
                  this.place?.name.toLowerCase().includes('núi') ||
                  this.place?.detailedDescription?.toLowerCase().includes('núi') ||
                  this.place?.name.toLowerCase().includes('đèo');
         case 'historical':
-          return this.place?.description.toLowerCase().includes('di tích') || 
+          return this.place?.description.toLowerCase().includes('di tích') ||
                  this.place?.description.toLowerCase().includes('lịch sử') ||
                  this.place?.name.toLowerCase().includes('đền') ||
                  this.place?.name.toLowerCase().includes('chùa') ||
@@ -215,7 +215,7 @@ export class PlaceDetailComponent implements OnInit, OnDestroy {
         case 'market':
           return this.place?.name.toLowerCase().includes('chợ');
         case 'food':
-          return !!this.place?.recommendedFood?.length || 
+          return !!this.place?.recommendedFood?.length ||
                  !!this.place?.localFood?.length;
         default:
           return false;
@@ -225,7 +225,7 @@ export class PlaceDetailComponent implements OnInit, OnDestroy {
 
   getPlaceRegion(): string | null {
     if (!this.place) return null;
-    
+
     // This is a simplified version - you might want to use the same region-mappings.json logic
     // that the memory-places component uses for more accurate results
     const location = this.place.location.toLowerCase();
@@ -253,7 +253,7 @@ export class PlaceDetailComponent implements OnInit, OnDestroy {
   }
 
   navigateToRegion(region: string) {
-    this.router.navigate(['/dia-diem'], {
+    this.router.navigate(['/place'], {
       queryParams: {
         region: region
       }
@@ -261,7 +261,7 @@ export class PlaceDetailComponent implements OnInit, OnDestroy {
   }
 
   navigateToFeature(feature: any) {
-    this.router.navigate(['/dia-diem'], {
+    this.router.navigate(['/place'], {
       queryParams: {
         feature: feature.value
       }
@@ -272,7 +272,7 @@ export class PlaceDetailComponent implements OnInit, OnDestroy {
     this.http.get<PlaceListConfig>('assets/data/memory-place-list/config.json')
       .pipe(
         switchMap(config => {
-          const requests = config.files.map(filename => 
+          const requests = config.files.map(filename =>
             this.http.get<{places: MemoryPlace[]}>(`${config.basePath}/${filename}`).pipe(
               map(response => response.places)
             )
@@ -283,7 +283,7 @@ export class PlaceDetailComponent implements OnInit, OnDestroy {
           // Combine all places from different files
           const allPlaces = results.flat();
           const selectedPlace = allPlaces.find(p => p.id === placeId);
-          const otherPlaces = selectedPlace 
+          const otherPlaces = selectedPlace
             ? allPlaces
                 .filter(p => p.id !== placeId)
                 .sort(() => Math.random() - 0.5)

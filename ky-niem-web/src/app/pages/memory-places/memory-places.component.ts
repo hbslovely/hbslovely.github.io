@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { MemoryPlace } from '../../shared/models';
-import { PlaceCardComponent } from '../../shared/components/place-card/place-card.component';
 import { forkJoin, Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { FormsModule } from '@angular/forms';
 import { removeVietnameseTones } from '../../shared/utils/string.utils';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PlaceCardComponent } from '../../shared/components/place-card/place-card.component';
 
 interface Filter {
   region: string[];
@@ -95,7 +95,7 @@ export class MemoryPlacesComponent implements OnInit {
     }).pipe(
       switchMap(({ config, locations }) => {
         this.locationMappings = locations;
-        const requests = config.files.map(filename => 
+        const requests = config.files.map(filename =>
           this.http.get<{places: MemoryPlace[]}>(`${config.basePath}/${filename}`).pipe(
             map(response => response.places)
           )
@@ -129,13 +129,13 @@ export class MemoryPlacesComponent implements OnInit {
   toggleFilter(type: keyof Filter, value: string) {
     const filters = this.selectedFilters[type];
     const index = filters.indexOf(value);
-    
+
     if (index === -1) {
       filters.push(value);
     } else {
       filters.splice(index, 1);
     }
-    
+
     // Update URL query params
     const queryParams: any = {};
     if (this.selectedFilters.region.length > 0) {
@@ -144,20 +144,20 @@ export class MemoryPlacesComponent implements OnInit {
     if (this.selectedFilters.features.length > 0) {
       queryParams.feature = this.selectedFilters.features[0];
     }
-    
+
     this.router.navigate([], {
       relativeTo: this.route,
       queryParams,
       queryParamsHandling: 'merge'
     });
-    
+
     this.applyFilters();
   }
 
   private applyFilters() {
     this.filteredPlaces = this.places.filter(place => {
       // If no filters are selected and no search text, show all places
-      if (this.selectedFilters.region.length === 0 && 
+      if (this.selectedFilters.region.length === 0 &&
           this.selectedFilters.features.length === 0 &&
           this.selectedFilters.locationType.length === 0 &&
           !this.searchText.trim()) {
@@ -177,7 +177,7 @@ export class MemoryPlacesComponent implements OnInit {
         const descriptionNormalized = removeVietnameseTones(place.description);
         const detailedDescriptionNormalized = place.detailedDescription ? removeVietnameseTones(place.detailedDescription) : '';
 
-        matchesSearch = 
+        matchesSearch =
           nameNormalized.includes(searchLower) ||
           locationNormalized.includes(searchLower) ||
           descriptionNormalized.includes(searchLower) ||
@@ -222,7 +222,7 @@ export class MemoryPlacesComponent implements OnInit {
     const { international } = this.locationMappings.locations;
     const continents = ['asia', 'europe', 'america'] as const;
 
-    return continents.some(continent => 
+    return continents.some(continent =>
       Object.values(international[continent]).some(countryNames =>
         countryNames.some(name => location.toLowerCase().includes(name.toLowerCase()))
       )
@@ -242,16 +242,16 @@ export class MemoryPlacesComponent implements OnInit {
     return this.selectedFilters.features.some(feature => {
       switch (feature) {
         case 'sea':
-          return place.description.toLowerCase().includes('biển') || 
+          return place.description.toLowerCase().includes('biển') ||
                  place.name.toLowerCase().includes('biển') ||
                  place.detailedDescription?.toLowerCase().includes('biển');
         case 'mountain':
-          return place.description.toLowerCase().includes('núi') || 
+          return place.description.toLowerCase().includes('núi') ||
                  place.name.toLowerCase().includes('núi') ||
                  place.detailedDescription?.toLowerCase().includes('núi') ||
                  place.name.toLowerCase().includes('đèo');
         case 'historical':
-          return place.description.toLowerCase().includes('di tích') || 
+          return place.description.toLowerCase().includes('di tích') ||
                  place.description.toLowerCase().includes('lịch sử') ||
                  place.name.toLowerCase().includes('đền') ||
                  place.name.toLowerCase().includes('chùa') ||
@@ -259,7 +259,7 @@ export class MemoryPlacesComponent implements OnInit {
         case 'market':
           return place.name.toLowerCase().includes('chợ');
         case 'food':
-          return !!place.recommendedFood?.length || 
+          return !!place.recommendedFood?.length ||
                  !!place.localFood?.length;
         default:
           return false;
@@ -283,7 +283,7 @@ export class MemoryPlacesComponent implements OnInit {
 
   resetFilters(): void {
     this.isResetting = true;
-    
+
     // Add a small delay to show the loading state
     setTimeout(() => {
       this.selectedFilters = {
@@ -292,15 +292,15 @@ export class MemoryPlacesComponent implements OnInit {
         locationType: []
       };
       this.searchText = '';
-      
+
       // Clear URL query params
       this.router.navigate([], {
         relativeTo: this.route,
         queryParams: {}
       });
-      
+
       this.applyFilters();
       this.isResetting = false;
     }, 300);
   }
-} 
+}
