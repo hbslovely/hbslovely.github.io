@@ -8,5 +8,9 @@
   },
   "ACTIONS": {
     "EXPORT_PDF": "Export PDF"
+  },
+  "EXPERIENCE": {
+    "KEY_ACHIEVEMENTS": "Key Achievements",
+    "RESPONSIBILITIES": "Responsibilities"
   }
 } 
