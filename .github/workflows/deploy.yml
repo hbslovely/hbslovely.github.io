@@ -74,7 +74,7 @@ jobs:
 
       - name: 🔨 Build Angular shashi profile
         working-directory: shashi-profile
-        run: npm run build -- --configuration production --aot --optimization --build-optimizer --vendor-chunk --output-path=dist --base-href=/shashi/
+        run: npm run build -- --configuration production --aot --optimization --output-path=dist --base-href=/shashi/
 
       - name: 📁 Upload shashi build
         uses: actions/upload-artifact@v4

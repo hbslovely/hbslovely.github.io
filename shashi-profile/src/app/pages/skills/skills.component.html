@@ -3,7 +3,7 @@
   <div class="skills-content">
     <div class="skill-category" *ngFor="let category of getCategories(skills.technicalSkills)">
       <div class="category-header">
-        <h3>{{ formatCategory(category) }}</h3>
+        <h3 class="section-title">{{ formatCategory(category) }}</h3>
       </div>
       <div class="skills-list">
         <div class="skill-item" *ngFor="let skill of skills.technicalSkills[category]">

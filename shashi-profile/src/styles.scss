@@ -2,6 +2,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import 'ng-zorro-antd/ng-zorro-antd.min.css';
 
+:root {
+  --primary-color: #1890ff;
+  --primary-lighter: #69b1ff;
+  --primary-lightest: #e6f7ff;
+  --text-color: #2c3e50;
+  --text-secondary: #64748b;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --border-radius: 8px;
+  
+  /* Navigation variables */
+  --nav-bg: #f0f7ff;
+  --nav-hover: #e6f4ff;
+  --nav-active: #bae0ff;
+  --nav-text: #1890ff;
+  --nav-text-light: #69b1ff;
+  --nav-border: #e6f4ff;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -77,20 +95,44 @@ html, body {
   padding-bottom: 0.75rem;
   font-size: 1.75rem;
   font-weight: 500;
-  border-bottom: 2px solid var(--nav-text-light);
+  border-bottom: 3px solid var(--nav-text-light);
+  display: inline-block;
+  min-width: 200px;
 
   &::after {
     content: '';
     position: absolute;
-    bottom: -2px;
+    bottom: -3px;
     left: 0;
-    width: 80px;
-    height: 2px;
+    width: 60px;
+    height: 3px;
     background: var(--nav-text);
     transition: width 0.3s ease;
   }
 
   &:hover::after {
     width: 100%;
+  }
+}
+
+h3.section-title {
+  font-size: 1.25rem;
+  margin: 0 0 1.5rem 0;
+  min-width: 150px;
+
+  &::after {
+    width: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  h3.section-title {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
   }
 }
