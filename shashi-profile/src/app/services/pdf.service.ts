@@ -398,7 +398,7 @@ export class PdfService {
       Object.entries(cv.skills.technicalSkills).forEach(([category, skills]) => {
         if (Array.isArray(skills) && skills.length > 0) {
           let currentY;
-          let x;
+          let x: any;
 
           switch(currentColumn) {
             case 0:
