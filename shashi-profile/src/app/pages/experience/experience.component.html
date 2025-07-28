@@ -1,6 +1,9 @@
 <div class="experience-section">
   <div class="work-experience" *ngIf="cvService.cv()?.experience as exp">
-    <h2 class="section-title">{{ 'NAV.EXPERIENCE' | translate }}</h2>
+    <h2 class="section-title">
+      <span nz-icon nzType="history" nzTheme="outline"></span>
+      {{ 'NAV.EXPERIENCE' | translate }}
+    </h2>
     <nz-timeline>
       <nz-timeline-item *ngFor="let job of exp.workExperience">
         <div class="timeline-content">
@@ -19,15 +22,27 @@
             <span class="company">{{ job.company }}</span>
           </div>
           <div class="responsibilities">
-            <h4>{{ 'EXPERIENCE.RESPONSIBILITIES' | translate }}:</h4>
+            <h4>
+              <span nz-icon nzType="profile" nzTheme="outline"></span>
+              {{ 'EXPERIENCE.RESPONSIBILITIES' | translate }}:
+            </h4>
             <ul>
-              <li *ngFor="let resp of job.responsibilities">{{ resp }}</li>
+              <li *ngFor="let resp of job.responsibilities">
+                <span nz-icon nzType="check-circle" nzTheme="outline"></span>
+                {{ resp }}
+              </li>
             </ul>
           </div>
           <div class="achievements" *ngIf="job.achievements?.length">
-            <h4>{{ 'EXPERIENCE.KEY_ACHIEVEMENTS' | translate }}:</h4>
+            <h4>
+              <span nz-icon nzType="trophy" nzTheme="outline"></span>
+              {{ 'EXPERIENCE.KEY_ACHIEVEMENTS' | translate }}:
+            </h4>
             <ul>
-              <li *ngFor="let achievement of job.achievements">{{ achievement }}</li>
+              <li *ngFor="let achievement of job.achievements">
+                <span nz-icon nzType="star" nzTheme="outline"></span>
+                {{ achievement }}
+              </li>
             </ul>
           </div>
         </div>
@@ -36,7 +51,10 @@
   </div>
 
   <div class="education" *ngIf="cvService.cv()?.education as edu">
-    <h2 class="section-title">{{ 'EDUCATION.TITLE' | translate }}</h2>
+    <h2 class="section-title">
+      <span nz-icon nzType="book" nzTheme="outline"></span>
+      {{ 'EDUCATION.TITLE' | translate }}
+    </h2>
     <div class="education-item" *ngFor="let item of edu.education">
       <div class="edu-meta">
         <span class="duration">
@@ -49,10 +67,19 @@
         </span>
       </div>
       <div class="edu-header">
-        <h3>{{ item.field }}</h3>
-        <span class="institution">{{ item.institution }}</span>
+        <h3>
+          <span nz-icon nzType="read" nzTheme="outline"></span>
+          {{ item.field }}
+        </h3>
+        <span class="institution">
+          <span nz-icon nzType="bank" nzTheme="outline"></span>
+          {{ item.institution }}
+        </span>
       </div>
-      <div class="degree">{{ item.degree }}</div>
+      <div class="degree">
+        <span nz-icon nzType="safety-certificate" nzTheme="outline"></span>
+        {{ item.degree }}
+      </div>
     </div>
   </div>
 </div>

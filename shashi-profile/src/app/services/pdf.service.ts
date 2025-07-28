@@ -2,6 +2,9 @@ import { inject, Injectable } from '@angular/core';
 import { jsPDF } from 'jspdf';
 import { CvService } from './cv.service';
 import { LanguageService } from './language.service';
+import { addInterFont } from "./jspdf-font";
+import { TranslateService } from '@ngx-translate/core';
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,21 +12,27 @@ import { LanguageService } from './language.service';
 export class PdfService {
   private readonly cvService = inject(CvService);
   private readonly languageService = inject(LanguageService);
+  private readonly translateService = inject(TranslateService);
 
   // A4 dimensions in points (72 points per inch)
   private readonly A4_WIDTH = 595.28;  // 8.27 × 72
   private readonly A4_HEIGHT = 841.89; // 11.69 × 72
   private readonly MARGIN = 40;
   private readonly CONTENT_WIDTH = this.A4_WIDTH - (this.MARGIN * 2);
-  private readonly SECTION_SPACING = 30; // Increased from 15 to 30 for better section separation
-  private readonly HEADER_SPACING = 25; // Increased from 20 to 25 for consistent header spacing
-  private readonly AVATAR_SIZE = 150; // Reduced from 180 to make it more compact
-  private readonly SUB_SECTION_SPACING = 20; // New constant for spacing between items within a section
+  private readonly SECTION_SPACING = 10; // Increased from 30 for better section separation
+  private readonly HEADER_SPACING = 25; // Reduced from 30 for better compactness
+  private readonly AVATAR_SIZE = 130; // Reduced from 150 to make it more compact
+  private readonly SUB_SECTION_SPACING = 25; // Increased from 20 for better item separation
+  private readonly SECTION_HEADER_HEIGHT = 42; // New constant for header height
+  private readonly CONTENT_LEFT_MARGIN = 40; // Reduced from 60 to 45
+  private readonly SUMMARY_LINE_HEIGHT = 1.4; // New constant for summary line height
+  private readonly BULLET_INDENT = 15; // New constant for bullet point indentation
+  private readonly TEXT_INDENT = 25; // New constant for text after bullet point
 
   private setupPdfFonts(pdf: jsPDF): void {
     try {
-      // Set default font to Helvetica for better Unicode support
-      pdf.setFont('helvetica');
+      // Set default font to Inter
+      pdf.setFont('Inter', 'normal');
       pdf.setFontSize(12);
 
       pdf.setProperties({
@@ -39,7 +48,7 @@ export class PdfService {
   }
 
   private getLineHeight(fontSize: number): number {
-    return fontSize * 1.5;
+    return fontSize * 1.7; // Increased from 1.5 to 1.7 for better readability
   }
 
   private checkPageBreak(pdf: jsPDF, yPos: number, requiredSpace: number = 100): number {
@@ -51,16 +60,20 @@ export class PdfService {
   }
 
   private addSectionHeader(pdf: jsPDF, text: string, yPos: number, colors: any): number {
-    // Add extra spacing before section header
     yPos += this.SECTION_SPACING;
 
-    pdf.setFont('Inter', 'bold');
-    pdf.setFontSize(18);
-    pdf.setTextColor(colors.primary);
-    pdf.text(text, this.MARGIN, yPos);
+    // Add full-width background
+    pdf.setFillColor(colors.headerBg);
+    pdf.rect(0, yPos - this.SECTION_HEADER_HEIGHT/2, this.A4_WIDTH, this.SECTION_HEADER_HEIGHT, 'F');
 
-    // Return position after header with consistent spacing
-    return yPos + this.HEADER_SPACING;
+    // Add section text - vertically centered
+    pdf.setFont('Inter', 'bold');
+    pdf.setFontSize(16);
+    pdf.setTextColor(colors.primary);
+    const textY = yPos + 5; // Adjust for vertical centering
+    pdf.text(text.toUpperCase(), this.MARGIN, textY);
+
+    return yPos + this.HEADER_SPACING + 15; // Increased spacing after header
   }
 
   private formatLocation(location: any): string {
@@ -91,13 +104,24 @@ export class PdfService {
   }
 
   private getFormattedFileName(): string {
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const months = [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ];
     const now = new Date();
     const currentMonth = months[now.getMonth()];
     const currentYear = now.getFullYear();
     const language = this.languageService.getCurrentLanguage().toUpperCase();
 
-    return `CV_Ninh_Thi_Quyen_${currentMonth}_${currentYear}_${language}.pdf`;
+    return `CV_Ninh_Thi_Quyen_${ currentMonth }_${ currentYear }_${ language }.pdf`;
+  }
+
+  private drawBackgroundBox(pdf: jsPDF, x: number, y: number, width: number, height: number, colors: any): void {
+    // Draw background
+    pdf.setFillColor('#f0f7ff'); // Very light blue background
+    pdf.rect(x, y, width, height, 'F');
+
+    // Draw border
+    pdf.setDrawColor(colors.subtext);
+    pdf.setLineWidth(0.5);
+    pdf.rect(x, y, width, height, 'S');
   }
 
   async generateBeautifulPdf(): Promise<void> {
@@ -114,50 +138,71 @@ export class PdfService {
       compress: true
     });
 
+    addInterFont(pdf);
+
     // Setup fonts
     this.setupPdfFonts(pdf);
 
-    // Define colors - using lighter shades
+    // Define colors - using light blue theme to match web interface
     const colors = {
-      primary: '#2563eb',    // Main blue
-      text: '#1f2937',       // Dark text
-      link: '#1d4ed8',       // Dark blue for links
-      subtext: '#60a5fa',    // Light blue for dates/locations
-      background: '#ffffff',  // White background
-      accent: '#3b82f6'      // Medium blue for accents
+      primary: '#006aca',    // Main blue from nav-bar
+      text: '#1e293b',       // Dark text for readability
+      link: '#69b1ff',       // Light blue for links
+      subtext: '#64748b',    // Medium gray for secondary text
+      background: '#ffffff', // White background
+      accent: '#e6f4ff',    // Very light blue for accents/lines
+      headerBg: '#ebf5ff',   // Lighter blue background for section headers
+      companyName: '#0f172a', // Near black for company names
+      titleGrey: '#4b5563'   // Grey color for title/position
     };
 
-    let yPos = this.MARGIN + 20; // Start with some padding from top
+    let yPos = this.MARGIN + 20;
 
-    // Calculate font sizes to match web view proportions
-    const nameSize = 28;
-    const prefixSize = nameSize * 0.6; // Prefix is 60% of name size, matching web view
+    // Add header background with light blue color
+    pdf.setFillColor(colors.headerBg);
+    pdf.rect(0, 0, this.A4_WIDTH, this.MARGIN * 6, 'F');
 
-    // Add prefix
+    // Add subtle border at the bottom of header
+    pdf.setDrawColor(colors.accent);
+    pdf.setLineWidth(1);
+    pdf.line(0, this.MARGIN * 6, this.A4_WIDTH, this.MARGIN * 6);
+
+    // Add name section
     pdf.setFont('Inter', 'normal');
-    pdf.setFontSize(prefixSize);
-    pdf.setTextColor(colors.text); // Changed to black color for prefix
+    pdf.setFontSize(16);
+    pdf.setTextColor(colors.text);
     const prefix = cv.personalInfo.prefix || '';
     pdf.text(prefix, this.MARGIN, yPos);
     const prefixWidth = pdf.getTextWidth(prefix);
 
-    // Add name (with spacing after prefix)
+    // Add name
     pdf.setFont('Inter', 'bold');
-    pdf.setFontSize(nameSize);
-    pdf.setTextColor(colors.primary); // Blue color for name
-    pdf.text(cv.personalInfo.name || '', this.MARGIN + prefixWidth + 10, yPos);
+    pdf.setFontSize(28);
+    pdf.setTextColor(colors.primary);
+    const name = cv.personalInfo.name || '';
+    pdf.text(name, this.MARGIN + prefixWidth + 10, yPos);
 
     // Add title with reduced spacing
-    yPos += this.getLineHeight(nameSize) * 0.6;
-    pdf.setFont('Inter', 'normal');
-    pdf.setFontSize(20);
-    pdf.setTextColor(colors.text);
+    yPos += this.getLineHeight(28) * 0.7;
+    pdf.setFont('Inter', 'medium');
+    pdf.setFontSize(18);
+    pdf.setTextColor(colors.titleGrey);  // Using grey color for title
     pdf.text(cv.personalInfo.title || '', this.MARGIN, yPos);
 
-    // Add avatar on the right
+    // Add avatar with border
     try {
       const avatarX = this.A4_WIDTH - this.MARGIN - this.AVATAR_SIZE;
       const avatarY = this.MARGIN;
+
+      // Add white background for avatar
+      pdf.setFillColor(255, 255, 255);
+      pdf.rect(avatarX - 2, avatarY - 2, this.AVATAR_SIZE + 4, this.AVATAR_SIZE + 4, 'F');
+
+      // Add border
+      pdf.setDrawColor('#e6f4ff');
+      pdf.setLineWidth(1);
+      pdf.rect(avatarX - 2, avatarY - 2, this.AVATAR_SIZE + 4, this.AVATAR_SIZE + 4, 'S');
+
       const img = new Image();
       img.src = 'assets/images/avatar.png';
       pdf.addImage(img, 'PNG', avatarX, avatarY, this.AVATAR_SIZE, this.AVATAR_SIZE, undefined, 'NONE');
@@ -165,147 +210,89 @@ export class PdfService {
       console.error('Error adding avatar:', error);
     }
 
-    // Add personal info with reduced spacing
-    yPos += this.getLineHeight(20) * 0.7; // Reduced from 1 to 0.7
+    // Add contact info in a more organized layout
+    yPos += this.getLineHeight(18) * 0.8;
+    const contactStartY = yPos;
+
+    // Create two columns for contact info
+    const contactColumnWidth = (this.A4_WIDTH - (this.MARGIN * 2) - this.AVATAR_SIZE - 40) / 2;
+
+    // Left column
+    let contactX = this.MARGIN;
+    let contactY = contactStartY;
+
+    // DOB
+    pdf.setFont('Inter', 'bold');
+    pdf.setFontSize(11);
+    pdf.setTextColor(colors.primary);
+    pdf.text('Date of Birth:', contactX, contactY);
     pdf.setFont('Inter', 'normal');
-    pdf.setFontSize(13);
     pdf.setTextColor(colors.text);
+    pdf.text(cv.personalInfo.dateOfBirth || '', contactX + 80, contactY);
 
-    // Add DOB
-    yPos += this.getLineHeight(13);
-    pdf.text(cv.personalInfo.dateOfBirth || '', this.MARGIN, yPos);
-
-    // Add address
-    yPos += this.getLineHeight(13);
-    const location = this.formatLocation(cv.personalInfo.location);
-    pdf.text(location, this.MARGIN, yPos);
-
-    // Add phone with label
-    yPos += this.getLineHeight(13);
-    pdf.text(`${cv.personalInfo.contact.phone} (Phone/Zalo/WhatsApp)`, this.MARGIN, yPos);
-
-    // Add email as clickable link
-    yPos += this.getLineHeight(13);
+    // Email
+    contactY += this.getLineHeight(11) * 1.2;
+    pdf.setFont('Inter', 'bold');
+    pdf.setTextColor(colors.primary);
+    pdf.text('Email:', contactX, contactY);
+    pdf.setFont('Inter', 'normal');
     pdf.setTextColor(colors.link);
-    pdf.setDrawColor(colors.link);
-    pdf.textWithLink(cv.personalInfo.contact.email || '', this.MARGIN, yPos, {
-      url: `mailto:${cv.personalInfo.contact.email}`
+    const email = cv.personalInfo.contact.email || '';
+    pdf.textWithLink(email, contactX + 80, contactY, {
+      url: `mailto:${email}`
     });
-    pdf.line(this.MARGIN, yPos + 2, this.MARGIN + pdf.getTextWidth(cv.personalInfo.contact.email || ''), yPos + 2);
+    // Add subtle underline for email
+    pdf.setDrawColor(colors.link);
+    pdf.setLineWidth(0.5);
+    pdf.line(contactX + 80, contactY + 1, contactX + 80 + pdf.getTextWidth(email), contactY + 1);
 
-    // Add extra spacing before Summary section (reduced)
-    yPos = Math.max(yPos + this.getLineHeight(13), this.MARGIN + this.AVATAR_SIZE + this.SECTION_SPACING * 0.7);
-    yPos = this.addSectionHeader(pdf, 'Summary', yPos, colors);
-
-    // Add summary content
+    // Phone
+    contactY += this.getLineHeight(11) * 1.2;
+    pdf.setFont('Inter', 'bold');
+    pdf.setTextColor(colors.primary);
+    pdf.text('Phone:', contactX, contactY);
     pdf.setFont('Inter', 'normal');
-    pdf.setFontSize(13);
     pdf.setTextColor(colors.text);
-    const summaryLines = pdf.splitTextToSize(cv.personalInfo.shortSummary || '', this.CONTENT_WIDTH);
-    pdf.text(summaryLines, this.MARGIN, yPos);
-    yPos += summaryLines.length * this.getLineHeight(13);
+    pdf.text(`${cv.personalInfo.contact.phone}`, contactX + 80, contactY);
+    pdf.setFontSize(10);
+    pdf.text('(Phone/Zalo/WhatsApp)', contactX + 80, contactY + this.getLineHeight(11) * 0.8);
 
-    // Add Experience Section
-    yPos = this.addSectionHeader(pdf, 'Professional Experience', yPos, colors);
+    // Add address on new line
+    contactY += this.getLineHeight(11) * 2;
+    pdf.setFont('Inter', 'bold');
+    pdf.setFontSize(11);
+    pdf.setTextColor(colors.primary);
+    pdf.text('Address:', contactX, contactY);
+    pdf.setFont('Inter', 'normal');
+    pdf.setTextColor(colors.text);
+    const location = this.formatLocation(cv.personalInfo.location);
+    pdf.text(location, contactX + 80, contactY);
 
-    // Update Experience section
-    if (cv.experience?.workExperience) {
-      cv.experience.workExperience.forEach((exp, index) => {
-        yPos = this.checkPageBreak(pdf, yPos, 100);
+    // Add summary section without header
+    yPos = Math.max(contactY + this.getLineHeight(11) * 2, this.MARGIN * 6 + 20);
 
-        // Company name and position on same line
-        pdf.setFont('Inter', 'bold');
-        pdf.setFontSize(15);
-        pdf.setTextColor(colors.text);
-        pdf.text(exp.company, this.MARGIN, yPos);
+    // Add summary content with adjusted line height
+    pdf.setFont('Inter', 'normal');
+    pdf.setFontSize(12);
+    pdf.setTextColor(colors.text);
 
-        // Add separator
-        const separator = " | ";
-        const companyWidth = pdf.getTextWidth(exp.company + separator);
-        pdf.setFont('Inter', 'normal');
-        pdf.text(separator, this.MARGIN + companyWidth - pdf.getTextWidth(separator), yPos);
+    // Split text into lines with full width
+    const summaryText = cv.personalInfo.shortSummary || '';
+    const summaryLines = pdf.splitTextToSize(summaryText, this.CONTENT_WIDTH);
 
-        // Position (normal weight)
-        pdf.setFont('Inter', 'normal'); // Changed from bold to normal
-        pdf.setFontSize(13);
-        const positionY = yPos + 1;
-        pdf.text(exp.position, this.MARGIN + companyWidth, positionY);
+    // Calculate line height for summary
+    const summaryLineHeight = this.getLineHeight(12) * this.SUMMARY_LINE_HEIGHT;
 
-        // Duration and location with light blue color
-        yPos += this.getLineHeight(15) * 0.8; // Reduced spacing
-        pdf.setFont('Inter', 'normal');
-        pdf.setFontSize(13);
-        pdf.setTextColor(colors.subtext); // Changed to light blue
-        const duration = `${exp.startDate} - ${exp.endDate || 'Present'} | ${exp.location}`;
-        pdf.text(duration, this.MARGIN, yPos);
+    // Add each line with custom spacing
+    summaryLines.forEach((line: string, index: number) => {
+      pdf.text(line, this.MARGIN, yPos + (index * summaryLineHeight));
+    });
 
-        // Achievements without bullets
-        if (exp.achievements?.length) {
-          yPos += this.getLineHeight(13);
-          exp.achievements.forEach(achievement => {
-            if (achievement) {
-              yPos = this.checkPageBreak(pdf, yPos, 30);
-              pdf.setFont('Inter', 'normal');
-              pdf.setFontSize(13);
-              pdf.setTextColor(colors.text);
-              const achievementLines = pdf.splitTextToSize(achievement, this.CONTENT_WIDTH - 40);
-              pdf.text(achievementLines, this.MARGIN + 20, yPos);
-              yPos += achievementLines.length * this.getLineHeight(13);
-            }
-          });
-        }
-
-        yPos += 15;
-        // Add spacing between experience items
-        yPos += this.SUB_SECTION_SPACING;
-      });
-    }
-
-    // Update Skills section with header and lighter skills
-    yPos = this.addSectionHeader(pdf, 'Technical Skills', yPos, colors);
-
-    if (cv.skills?.technicalSkills) {
-      const columnWidth = (this.CONTENT_WIDTH - 20) / 2;
-      let leftColumnY = yPos;
-      let rightColumnY = yPos;
-      let isLeftColumn = true;
-
-      Object.entries(cv.skills.technicalSkills).forEach(([ category, skills ]) => {
-        if (Array.isArray(skills) && skills.length > 0) {
-          const currentY = isLeftColumn ? leftColumnY : rightColumnY;
-          const x = isLeftColumn ? this.MARGIN : this.MARGIN + columnWidth + 10;
-
-          // Category name as header
-          pdf.setFont('Inter', 'bold');
-          pdf.setFontSize(14);
-          pdf.setTextColor(colors.text);
-          pdf.text(this.formatCategory(category), x, currentY);
-
-          // Skills with lighter color and smaller font
-          pdf.setFont('Inter', 'normal');
-          pdf.setFontSize(12); // Smaller font size
-          pdf.setTextColor(colors.subtext); // Lighter color
-          const skillText = skills.join(' • ');
-          const skillLines = pdf.splitTextToSize(skillText, columnWidth - 15);
-          pdf.text(skillLines, x + 10, currentY + this.getLineHeight(14) - 2);
-
-          const heightUsed = this.getLineHeight(14) + (skillLines.length * this.getLineHeight(12)) + 5;
-          if (isLeftColumn) {
-            leftColumnY += heightUsed;
-          } else {
-            rightColumnY += heightUsed;
-          }
-          isLeftColumn = !isLeftColumn;
-        }
-      });
-
-      yPos = Math.max(leftColumnY, rightColumnY) + this.SUB_SECTION_SPACING;
-    }
+    // Calculate final yPos after summary
+    yPos += (summaryLines.length * summaryLineHeight) + this.SECTION_SPACING;
 
     // Add Education Section
-    yPos = this.checkPageBreak(pdf, yPos);
-    yPos = this.addSectionHeader(pdf, 'Education', yPos, colors);
-    yPos += this.getLineHeight(18);
+    yPos = this.addSectionHeader(pdf, 'Education', yPos - this.SECTION_SPACING, colors);
 
     // Update Education Section
     if (cv.education?.education) {
@@ -315,19 +302,158 @@ export class PdfService {
         // Degree and Field
         pdf.setFont('Inter', 'bold');
         pdf.setFontSize(14);
-        pdf.setTextColor(colors.text);
+        pdf.setTextColor(colors.primary);
         pdf.text(`${edu.degree} in ${edu.field}`, this.MARGIN, yPos);
 
         // Institution and Duration with light blue color
-        yPos += this.getLineHeight(14) * 0.8; // Reduced spacing
+        yPos += this.getLineHeight(14);
         pdf.setFont('Inter', 'normal');
         pdf.setFontSize(13);
-        pdf.setTextColor(colors.subtext); // Changed to light blue
+        pdf.setTextColor(colors.subtext);
         pdf.text(`${edu.institution} – ${edu.location} (${edu.startDate} - ${edu.endDate})`, this.MARGIN + 15, yPos);
-        yPos += this.getLineHeight(13) * 0.8; // Reduced spacing
+        yPos += this.getLineHeight(13);
         // Add spacing between education items
+        yPos += this.SUB_SECTION_SPACING * 0.7;
+      });
+    }
+
+    // Add Experience Section
+    yPos = this.addSectionHeader(pdf, 'Professional Experience', yPos - this.SECTION_SPACING / 2, colors);
+
+    // Update Experience section with adjusted layout
+    if (cv.experience?.workExperience) {
+      cv.experience.workExperience.forEach((exp, index) => {
+        yPos = this.checkPageBreak(pdf, yPos, 100);
+
+        // Company name (left) and Location (right) on the same line
+        pdf.setFont('Inter', 'bold');
+        pdf.setFontSize(14); // Reduced from 15
+        pdf.setTextColor(colors.primary);
+        pdf.text(exp.company, this.CONTENT_LEFT_MARGIN, yPos);
+
+        // Add location (right-aligned)
+        pdf.setFont('Inter', 'normal');
+        pdf.setFontSize(13);
+        pdf.setTextColor(colors.subtext);
+        const locationText = exp.location;
+        const locationWidth = pdf.getTextWidth(locationText);
+        pdf.text(locationText, this.A4_WIDTH - this.MARGIN - locationWidth, yPos);
+
+        // Position (left) and date (right) on next line
+        yPos += this.getLineHeight(14) * 0.8;
+
+        // Add position (left)
+        pdf.setFont('Inter', 'medium');
+        pdf.setFontSize(13);
+        pdf.setTextColor(colors.text);
+        const position = exp.position;
+        pdf.text(position, this.CONTENT_LEFT_MARGIN, yPos);
+
+        // Add date (right-aligned) with smaller font
+        pdf.setFont('Inter', 'normal');
+        pdf.setFontSize(11); // Smaller than location
+        pdf.setTextColor(colors.subtext);
+        const dateText = `${exp.startDate} - ${exp.endDate || 'Present'}`;
+        const dateWidth = pdf.getTextWidth(dateText);
+        pdf.text(dateText, this.A4_WIDTH - this.MARGIN - dateWidth, yPos);
+
+        // Add responsibilities
+        if (exp.responsibilities?.length) {
+          yPos += this.getLineHeight(13);
+          exp.responsibilities.forEach(responsibility => {
+            if (responsibility) {
+              yPos = this.checkPageBreak(pdf, yPos, 30);
+              pdf.setFont('Inter', 'normal');
+              pdf.setFontSize(11);
+              pdf.setTextColor(colors.text);
+
+              // Add bullet point
+              pdf.setFont('Inter', 'bold');
+              pdf.text('•', this.CONTENT_LEFT_MARGIN + this.BULLET_INDENT, yPos);
+
+              // Add responsibility text
+              pdf.setFont('Inter', 'normal');
+              const responsibilityLines = pdf.splitTextToSize(responsibility, this.CONTENT_WIDTH - this.CONTENT_LEFT_MARGIN - this.TEXT_INDENT);
+              pdf.text(responsibilityLines, this.CONTENT_LEFT_MARGIN + this.TEXT_INDENT, yPos);
+              yPos += responsibilityLines.length * this.getLineHeight(11);
+            }
+          });
+        }
+
         yPos += this.SUB_SECTION_SPACING;
       });
+    }
+
+    // Update Skills section with better formatting
+    if (cv.skills?.technicalSkills) {
+      yPos = this.addSectionHeader(pdf, 'Skills', yPos, colors);
+      yPos += this.getLineHeight(18) * 0.5;
+
+      const columnWidth = (this.CONTENT_WIDTH) / 3; // Changed from 2 to 3 columns
+      let column1Y = yPos;
+      let column2Y = yPos;
+      let column3Y = yPos;
+      let currentColumn = 0; // 0, 1, or 2 for three columns
+
+      Object.entries(cv.skills.technicalSkills).forEach(([category, skills]) => {
+        if (Array.isArray(skills) && skills.length > 0) {
+          let currentY;
+          let x;
+
+          switch(currentColumn) {
+            case 0:
+              currentY = column1Y;
+              x = this.MARGIN;
+              break;
+            case 1:
+              currentY = column2Y;
+              x = this.MARGIN + columnWidth + 10;
+              break;
+            default:
+              currentY = column3Y;
+              x = this.MARGIN + (columnWidth * 2) + 20;
+              break;
+          }
+
+          // Category name as header
+          pdf.setFont('Inter', 'bold');
+          pdf.setFontSize(12); // Reduced from 14 to 12
+          pdf.setTextColor(colors.primary);
+          const formattedCategory = this.translateService.instant('SKILLS.CATEGORIES.' + category);
+          pdf.text(formattedCategory, x, currentY);
+
+          // Skills with bullet points
+          pdf.setFont('Inter', 'normal');
+          pdf.setFontSize(10); // Reduced from 12 to 10
+          pdf.setTextColor(colors.text);
+
+          let skillY = currentY + this.getLineHeight(12);
+          skills.forEach(skill => {
+            const bulletPoint = '•';
+            pdf.text(bulletPoint, x, skillY);
+            const translatedSkill = this.translateService.instant(skill);
+            pdf.text(translatedSkill, x + 10, skillY); // Reduced indent from 15 to 10
+            skillY += this.getLineHeight(10);
+          });
+
+          const heightUsed = skillY - currentY + this.getLineHeight(10) * 0.5;
+          switch(currentColumn) {
+            case 0:
+              column1Y += heightUsed;
+              break;
+            case 1:
+              column2Y += heightUsed;
+              break;
+            case 2:
+              column3Y += heightUsed;
+              break;
+          }
+
+          currentColumn = (currentColumn + 1) % 3;
+        }
+      });
+
+      yPos = Math.max(column1Y, column2Y, column3Y) + this.SUB_SECTION_SPACING;
     }
 
     // Add footer with page numbers
@@ -338,7 +464,7 @@ export class PdfService {
       pdf.setFontSize(10);
       pdf.setTextColor(colors.subtext);
       pdf.text(
-        `Page ${ i } of ${ totalPages }`,
+        `Page ${i} of ${totalPages}`,
         this.A4_WIDTH / 2,
         this.A4_HEIGHT - 20,
         { align: 'center' }
@@ -350,9 +476,6 @@ export class PdfService {
   }
 
   private formatCategory(category: string): string {
-    return category
-      .split(/(?=[A-Z])/)
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
+    return this.translateService.instant(category);
   }
 }
