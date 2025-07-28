@@ -4,7 +4,7 @@
   "title": "Accounting & HR Professional",
   "dateOfBirth": "1994",
   "location": {
-    "address": "Binh Thoi",
+    "address": "",
     "city": "Ho Chi Minh City",
     "country": "Vietnam"
   },
@@ -20,7 +20,7 @@
     },
     {
       "name": "English",
-      "level": "Professional Working Proficiency"
+      "level": "Conversational"
     }
   ],
   "summary": "Experienced professional in Accounting, Administration, and Human Resources with a strong focus on organizational efficiency and employee management. Skilled in financial reporting, HR policies, and administrative operations.",
