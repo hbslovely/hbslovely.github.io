@@ -1,0 +1,714 @@
+{
+  "places": [
+    {
+      "id": "cho-ky-lua-lang-son",
+      "name": "Chợ Kỳ Lừa",
+      "location": "Lạng Sơn",
+      "image": "assets/images/places/checkin-cho-ky-lua-lang-son.jpg",
+      "description": "Khu chợ truyền thống nổi tiếng của vùng biên giới, trung tâm thương mại sầm uất bậc nhất của Lạng Sơn, nơi hội tụ văn hóa ẩm thực và mua sắm độc đáo của vùng Đông Bắc",
+      "detailedDescription": "Chợ Kỳ Lừa là một trong những khu chợ lớn nhất và nổi tiếng nhất tại Lạng Sơn, có lịch sử hình thành từ thế kỷ XIX. Đây là trung tâm thương mại sầm uất, nơi tập trung đa dạng các mặt hàng từ đặc sản địa phương đến hàng hóa nhập khẩu từ Trung Quốc. Chợ được chia thành nhiều khu vực chuyên biệt như khu bán đồ khô, khu hàng thời trang, khu ẩm thực với những món ăn đặc trưng của vùng biên giới. Đặc biệt, tại đây du khách có thể tìm thấy những sản phẩm độc đáo như vịt quay Lạng Sơn, hoa quả theo mùa, các loại thảo dược và đồ lưu niệm mang đậm bản sắc vùng Đông Bắc.",
+      "howToGet": "Chợ nằm ở trung tâm thành phố Lạng Sơn, dễ dàng di chuyển bằng xe máy hoặc taxi. Từ bến xe Lạng Sơn đi khoảng 2km.",
+      "bestTimeToVisit": "Chợ họp từ sáng sớm đến chiều tối, nhưng sầm uất nhất là vào buổi sáng từ 6h-11h. Nên đến sớm để mua được hàng tươi ngon và tránh đông đúc.",
+      "attractions": {
+        "shopping": [
+          {
+            "name": "Khu chợ truyền thống",
+            "description": "Nơi tập trung nhiều mặt hàng đặc sản và hàng hóa đa dạng, với kiến trúc đặc trưng của chợ vùng biên",
+            "image": "assets/images/places/checkin-cho-ky-lua-lang-son.jpg"
+          },
+          {
+            "name": "Khu ẩm thực",
+            "description": "Khu vực tập trung các quầy ăn uống với nhiều món đặc sản Lạng Sơn",
+            "image": "assets/images/places/khu-am-thuc-ky-lua.jpg"
+          }
+        ],
+        "cultural": [
+          {
+            "name": "Phố đi bộ Kỳ Lừa",
+            "description": "Khu phố đi bộ sầm uất vào buổi tối với nhiều hoạt động văn hóa",
+            "image": "assets/images/places/pho-di-bo-ky-lua.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Vịt quay Kỳ Lừa",
+          "description": "Vịt quay theo công thức đặc biệt của người Lạng Sơn, da giòn, thịt mềm",
+          "image": "assets/images/foods/vit-quay-ky-lua.jpg"
+        },
+        {
+          "name": "Khau nhục",
+          "description": "Món thịt heo kho đặc trưng của người Tày, Nùng",
+          "image": "assets/images/foods/khau-nhuc.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Đền Kỳ Cùng",
+          "description": "Ngôi đền linh thiêng thờ thành hoàng bản địa",
+          "distance": "0.5km",
+          "travelTime": "7 phút đi bộ"
+        },
+        {
+          "name": "Công viên Chi Lăng",
+          "description": "Không gian xanh rộng rãi, địa điểm vui chơi giải trí",
+          "distance": "1km",
+          "travelTime": "15 phút đi bộ"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Phở chua Lạng Sơn",
+          "description": "Món phở đặc trưng với vị chua thanh đặc biệt",
+          "restaurant": "Quán phở chua Kỳ Lừa - Trong chợ",
+          "price": "35000-45000 VND/bát"
+        },
+        {
+          "name": "Vịt quay Kỳ Lừa",
+          "description": "Vịt quay truyền thống với da giòn rụm",
+          "restaurant": "Quán vịt quay Bà Mai - Khu ẩm thực chợ",
+          "price": "250000-300000 VND/con"
+        }
+      ]
+    },
+    {
+      "id": "chua-tam-thanh-lang-son",
+      "name": "Chùa Tam Thanh",
+      "location": "Lạng Sơn",
+      "image": "assets/images/places/checkin-chua-tam-thanh-lang-son.jpg",
+      "description": "Ngôi chùa cổ trong lòng núi đá, một trong những danh thắng nổi tiếng nhất của Lạng Sơn, nơi hội tụ giữa tâm linh và vẻ đẹp thiên nhiên kỳ thú",
+      "detailedDescription": "Chùa Tam Thanh là một quần thể hang động tự nhiên được kiến tạo thành chùa, nằm trong lòng núi đá vôi có tuổi đời hàng triệu năm. Đây là một trong những điểm du lịch tâm linh nổi tiếng của Lạng Sơn, kết hợp hoàn hảo giữa cảnh quan thiên nhiên và kiến trúc tôn giáo. Chùa được xây dựng từ thời nhà Mạc (thế kỷ XVI) và được trùng tu nhiều lần qua các triều đại. Bên trong hang động có nhiều nhũ đá với những hình thù kỳ thú, các bức tượng Phật được tạc tinh xảo và những bức tranh phật giáo cổ quý giá. Đặc biệt, từ chùa có thể ngắm toàn cảnh thành phố Lạng Sơn và dãy núi đá vôi hùng vĩ xung quanh.",
+      "howToGet": "Từ trung tâm thành phố Lạng Sơn đi khoảng 2km theo đường Tam Thanh. Có thể đi bộ, xe máy hoặc taxi, có bãi đỗ xe rộng rãi tại chân núi.",
+      "bestTimeToVisit": "Có thể thăm quan quanh năm, đẹp nhất vào mùa xuân và thu khi thời tiết mát mẻ. Nên đến sớm buổi sáng để tránh đông người và ngắm cảnh bình minh.",
+      "attractions": {
+        "religious": [
+          {
+            "name": "Hang động chùa",
+            "description": "Hang động tự nhiên được tạo thành chùa với nhiều tượng Phật cổ và các bức tranh phật giáo quý giá",
+            "image": "assets/images/places/checkin-chua-tam-thanh-lang-son.jpg"
+          },
+          {
+            "name": "Điện thờ chính",
+            "description": "Nơi thờ Phật trang nghiêm với kiến trúc độc đáo trong lòng núi",
+            "image": "assets/images/places/dien-tho-tam-thanh.jpg"
+          }
+        ],
+        "natural": [
+          {
+            "name": "Thung lũng Tam Thanh",
+            "description": "Cảnh quan thiên nhiên tuyệt đẹp với những dãy núi đá vôi và thảm thực vật phong phú",
+            "image": "assets/images/places/thung-lung-tam-thanh.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Cơm chay Tam Thanh",
+          "description": "Món ăn chay thanh tịnh được chế biến từ rau củ địa phương",
+          "image": "assets/images/foods/com-chay-tam-thanh.jpg"
+        },
+        {
+          "name": "Trà núi Tam Thanh",
+          "description": "Loại trà đặc biệt được trồng trên núi đá vôi Tam Thanh",
+          "image": "assets/images/foods/tra-nui.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Động Nhị Thanh",
+          "description": "Hang động tự nhiên với nhiều nhũ đá đẹp, cách Tam Thanh không xa",
+          "distance": "0.5km",
+          "travelTime": "10 phút đi bộ"
+        },
+        {
+          "name": "Núi Tô Thị",
+          "description": "Danh thắng gắn với truyền thuyết về tình mẫu tử",
+          "distance": "1.5km",
+          "travelTime": "20 phút đi bộ"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Cơm chay Tam Thanh",
+          "description": "Set cơm chay với các món từ rau củ địa phương",
+          "restaurant": "Nhà hàng chay Tâm Thiện - Khuôn viên chùa",
+          "price": "50000-80000 VND/suất"
+        },
+        {
+          "name": "Chè hạt sen",
+          "description": "Món tráng miệng thanh mát từ hạt sen và đường phèn",
+          "restaurant": "Quán chè Bà Phương - Gần cổng chùa",
+          "price": "20000-30000 VND/bát"
+        }
+      ]
+    },
+    {
+      "id": "dong-tam-tanh-lang-son",
+      "name": "Động Tam Thánh",
+      "location": "Lạng Sơn",
+      "image": "assets/images/places/checkin-dong-tam-tanh-lang-son.jpg",
+      "description": "Hang động tự nhiên với kiến trúc độc đáo, một phần của quần thể di tích Nhị Thanh - Tam Thanh, nơi hội tụ vẻ đẹp của tạo hóa và dấu ấn văn hóa lịch sử",
+      "detailedDescription": "Động Tam Thánh là một hang động tự nhiên kỳ vĩ thuộc quần thể di tích Nhị Thanh - Tam Thanh, được hình thành từ hàng triệu năm trước. Bên trong động có nhiều nhũ đá với hình thù độc đáo, tạo nên những khung cảnh huyền ảo như những bức tranh thiên nhiên tuyệt đẹp. Động được chia thành nhiều ngách với các tầng cao thấp khác nhau, mỗi khu vực đều mang những nét đặc trưng riêng. Đặc biệt, ánh sáng tự nhiên xuyên qua các khe đá tạo nên những hiệu ứng ánh sáng kỳ thú. Nơi đây còn lưu giữ nhiều dấu tích văn hóa lịch sử qua các thời kỳ, là điểm đến hấp dẫn cho những ai yêu thích khám phá và tìm hiểu về địa chất học.",
+      "howToGet": "Từ trung tâm thành phố Lạng Sơn đi khoảng 2.5km theo đường Tam Thanh. Có thể đi bộ, xe máy hoặc taxi. Từ chùa Tam Thanh đi bộ khoảng 10 phút.",
+      "bestTimeToVisit": "Có thể thăm quan quanh năm, nhưng đẹp nhất vào mùa xuân và thu khi thời tiết mát mẻ. Nên đến vào buổi sáng sớm để tận hưởng không khí trong lành và ánh sáng đẹp nhất.",
+      "attractions": {
+        "natural": [
+          {
+            "name": "Hang động tự nhiên",
+            "description": "Hang động với nhiều nhũ đá và kiến trúc tự nhiên độc đáo, tạo nên những hình thù kỳ thú như rồng, phượng, hoa, nấm",
+            "image": "assets/images/places/checkin-dong-tam-tanh-lang-son.jpg"
+          },
+          {
+            "name": "Thạch nhũ",
+            "description": "Hệ thống măng đá, nhũ đá với nhiều hình thù độc đáo được hình thành qua hàng triệu năm",
+            "image": "assets/images/places/thach-nhu-tam-thanh.jpg"
+          }
+        ],
+        "historical": [
+          {
+            "name": "Bia ký cổ",
+            "description": "Những văn bia cổ ghi lại lịch sử phát triển của hang động qua các thời kỳ",
+            "image": "assets/images/places/bia-ky-tam-thanh.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Nước suối Tam Thanh",
+          "description": "Nước suối trong lành từ các mạch nước ngầm trong núi đá vôi",
+          "image": "assets/images/foods/nuoc-suoi-tam-thanh.jpg"
+        },
+        {
+          "name": "Rau rừng Tam Thanh",
+          "description": "Các loại rau rừng đặc trưng mọc trong khu vực núi đá vôi",
+          "image": "assets/images/foods/rau-rung.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Chùa Tam Thanh",
+          "description": "Ngôi chùa cổ nằm trong hang động tự nhiên",
+          "distance": "0.5km",
+          "travelTime": "10 phút đi bộ"
+        },
+        {
+          "name": "Đỉnh núi Tam Thanh",
+          "description": "Điểm ngắm cảnh toàn thành phố Lạng Sơn",
+          "distance": "1km",
+          "travelTime": "30 phút leo núi"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Cơm hộp leo núi",
+          "description": "Suất cơm đầy đủ dinh dưỡng cho chuyến khám phá hang động",
+          "restaurant": "Quán cơm Đông Tây - Chân núi Tam Thanh",
+          "price": "40000-60000 VND/suất"
+        },
+        {
+          "name": "Trà thảo mộc",
+          "description": "Đồ uống từ các loại thảo mộc địa phương",
+          "restaurant": "Quán nước Hang Động - Lối vào động",
+          "price": "15000-25000 VND/ly"
+        }
+      ]
+    },
+    {
+      "id": "uong-bi-quang-ninh",
+      "name": "Thành phố Uông Bí",
+      "location": "Quảng Ninh",
+      "image": "assets/images/places/checkin-thanh-pho-uong-bi-quang-ninh.jpg",
+      "description": "Thành phố công nghiệp với nhiều di tích tâm linh, nơi hội tụ giữa phát triển hiện đại và giá trị văn hóa truyền thống, đặc biệt nổi tiếng với quần thể di tích và danh thắng Yên Tử",
+      "detailedDescription": "Uông Bí là thành phố công nghiệp năng động của tỉnh Quảng Ninh, nhưng đồng thời cũng là một trung tâm văn hóa tâm linh quan trọng của cả nước. Nổi bật nhất là quần thể di tích và danh thắng Yên Tử - nơi khởi nguồn của thiền phái Trúc Lâm Yên Tử do vua Trần Nhân Tông sáng lập. Quần thể này bao gồm hệ thống chùa, am, tháp cổ nằm dọc theo dãy núi Yên Tử, trong đó có nhiều công trình kiến trúc độc đáo như chùa Đồng trên đỉnh núi, chùa Hoa Yên, tháp Huệ Quang. Ngoài giá trị tâm linh, Yên Tử còn sở hữu cảnh quan thiên nhiên tuyệt đẹp với những cánh rừng nguyên sinh và thảm thực vật phong phú. Thành phố cũng là điểm đến hấp dẫn với nhiều lễ hội truyền thống, đặc biệt là lễ hội Yên Tử kéo dài suốt mùa xuân.",
+      "howToGet": "Từ Hà Nội đi xe khách hoặc tàu hỏa đến Uông Bí (khoảng 130km). Có nhiều chuyến xe khách chạy thường xuyên từ bến xe Mỹ Đình và Giáp Bát.",
+      "bestTimeToVisit": "Thời điểm tốt nhất để thăm Uông Bí là từ tháng 1 đến tháng 3 (mùa lễ hội Yên Tử), hoặc mùa thu (tháng 9-11) khi thời tiết mát mẻ, thuận lợi cho việc leo núi và chiêm bái.",
+      "attractions": {
+        "religious": [
+          {
+            "name": "Quần thể Yên Tử",
+            "description": "Trung tâm Phật giáo với nhiều chùa chiền và cảnh quan đẹp, nơi khởi nguồn của thiền phái Trúc Lâm",
+            "image": "assets/images/places/checkin-thanh-pho-uong-bi-quang-ninh.jpg"
+          },
+          {
+            "name": "Chùa Đồng",
+            "description": "Ngôi chùa bằng đồng trên đỉnh Yên Tử, công trình độc đáo ở độ cao 1068m",
+            "image": "assets/images/places/chua-dong.jpg"
+          }
+        ],
+        "natural": [
+          {
+            "name": "Rừng quốc gia Yên Tử",
+            "description": "Khu rừng nguyên sinh với hệ động thực vật phong phú và những cảnh quan hùng vĩ",
+            "image": "assets/images/places/rung-yen-tu.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Chè dưỡng sinh Yên Tử",
+          "description": "Loại chè đặc biệt được làm từ các loại thảo mộc trên núi Yên Tử",
+          "image": "assets/images/foods/che-yen-tu.jpg"
+        },
+        {
+          "name": "Bánh chưng gấc",
+          "description": "Đặc sản truyền thống của vùng với màu đỏ tự nhiên từ quả gấc",
+          "image": "assets/images/foods/banh-chung-gac.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Vịnh Hạ Long",
+          "description": "Di sản thiên nhiên thế giới với những hòn đảo đá vôi kỳ thú",
+          "distance": "50km",
+          "travelTime": "1 giờ đi ô tô"
+        },
+        {
+          "name": "Chùa Ba Vàng",
+          "description": "Quần thể chùa lớn với kiến trúc độc đáo",
+          "distance": "5km",
+          "travelTime": "15 phút đi xe máy"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Cơm chay Yên Tử",
+          "description": "Set cơm chay truyền thống của vùng núi Yên Tử",
+          "restaurant": "Nhà hàng chay Tâm Đức - Khu du lịch Yên Tử",
+          "price": "80000-120000 VND/suất"
+        },
+        {
+          "name": "Nước giải khát thảo mộc",
+          "description": "Đồ uống từ các loại thảo mộc núi Yên Tử",
+          "restaurant": "Quán nước Thiền Trà - Đường lên Yên Tử",
+          "price": "20000-35000 VND/ly"
+        }
+      ]
+    },
+    {
+      "id": "bach-dang-giang-hai-phong",
+      "name": "Di tích Bạch Đằng Giang",
+      "location": "Hải Phòng",
+      "image": "assets/images/places/checkin-di-tich-bach-dang-giang-hai-phong.jpg",
+      "description": "Di tích lịch sử của ba lần chiến thắng giặc ngoại xâm, minh chứng cho trí tuệ và lòng dũng cảm của dân tộc Việt Nam trong việc bảo vệ chủ quyền đất nước",
+      "detailedDescription": "Bạch Đằng Giang là di tích lịch sử quốc gia đặc biệt, nơi ghi dấu ba lần chiến thắng vẻ vang của dân tộc Việt Nam trước giặc ngoại xâm: năm 938 (Ngô Quyền đánh thắng quân Nam Hán), năm 981 (Lê Hoàn đánh bại quân Tống) và năm 1288 (Trần Hưng Đạo đại phá quân Nguyên Mông). Đặc biệt, chiến thắng Bạch Đằng năm 938 với trận đánh cọc ngầm nổi tiếng của Ngô Quyền đã mở ra thời kỳ độc lập tự chủ của dân tộc. Di tích còn lưu giữ hệ thống cọc gỗ cổ dưới lòng sông, các di vật khảo cổ quý giá và đền thờ các vị anh hùng dân tộc. Khu di tích không chỉ có giá trị về mặt lịch sử mà còn là một công trình kiến trúc nghệ thuật độc đáo, kết hợp hài hòa giữa cảnh quan thiên nhiên và các công trình tâm linh.",
+      "howToGet": "Từ trung tâm Hải Phòng đi khoảng 15km theo hướng Quảng Ninh. Có thể đi bằng xe máy, ô tô hoặc taxi, có bãi đỗ xe rộng rãi tại khu di tích.",
+      "bestTimeToVisit": "Có thể thăm quan quanh năm, tốt nhất vào mùa khô (tháng 10-4). Đặc biệt nên đến vào dịp lễ hội Bạch Đằng (tháng 8 âm lịch) để tham gia các hoạt động văn hóa truyền thống.",
+      "attractions": {
+        "historical": [
+          {
+            "name": "Bãi cọc Bạch Đằng",
+            "description": "Di tích lịch sử với hệ thống cọc gỗ cổ dưới lòng sông, minh chứng cho chiến thuật thủy chiến độc đáo của người Việt",
+            "image": "assets/images/places/checkin-di-tich-bach-dang-giang-hai-phong.jpg"
+          },
+          {
+            "name": "Đền thờ Ngô Quyền",
+            "description": "Công trình kiến trúc tâm linh thờ vị vua đầu tiên của thời kỳ độc lập tự chủ",
+            "image": "assets/images/places/den-ngo-quyen.jpg"
+          }
+        ],
+        "cultural": [
+          {
+            "name": "Bảo tàng Bạch Đằng",
+            "description": "Nơi trưng bày các hiện vật lịch sử và tư liệu về các trận thủy chiến",
+            "image": "assets/images/places/bao-tang-bach-dang.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Bánh đa cua Hải Phòng",
+          "description": "Món ăn đặc trưng của vùng với bánh đa đỏ và thịt cua biển",
+          "image": "assets/images/foods/banh-da-cua.jpg"
+        },
+        {
+          "name": "Hải sản Bạch Đằng",
+          "description": "Các món hải sản tươi sống đánh bắt từ vùng cửa sông",
+          "image": "assets/images/foods/hai-san-bach-dang.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Cảng Hải Phòng",
+          "description": "Cảng biển lớn nhất miền Bắc với hoạt động thương mại sôi động",
+          "distance": "10km",
+          "travelTime": "20 phút đi ô tô"
+        },
+        {
+          "name": "Đảo Cát Bà",
+          "description": "Quần đảo du lịch nổi tiếng với bãi biển đẹp và rừng quốc gia",
+          "distance": "30km",
+          "travelTime": "45 phút đi ô tô và phà"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Bánh đa cua đặc biệt",
+          "description": "Bánh đa cua truyền thống với nước dùng đậm đà và cua biển tươi",
+          "restaurant": "Quán Bánh đa cua Bà Cúc - Gần di tích",
+          "price": "35000-50000 VND/bát"
+        },
+        {
+          "name": "Cháo hàu Bạch Đằng",
+          "description": "Cháo nấu với hàu tươi và gia vị đặc trưng",
+          "restaurant": "Quán Cháo hàu Bình - Bến sông Bạch Đằng",
+          "price": "40000-60000 VND/bát"
+        }
+      ]
+    },
+    {
+      "id": "bao-tang-quang-ninh",
+      "name": "Bảo tàng Quảng Ninh",
+      "location": "Quảng Ninh",
+      "image": "assets/images/places/checkin-bao-tang-quang-ninh.jpg",
+      "description": "Công trình kiến trúc hiện đại lưu giữ di sản văn hóa, một biểu tượng mới của thành phố Hạ Long với thiết kế độc đáo lấy cảm hứng từ than đá và vịnh Hạ Long",
+      "detailedDescription": "Bảo tàng Quảng Ninh là công trình kiến trúc độc đáo với thiết kế hiện đại, nằm bên bờ vịnh Hạ Long thơ mộng. Được khánh thành năm 2013, bảo tàng có tổng diện tích trưng bày hơn 12.000m2, với kiến trúc độc đáo mô phỏng những khối than đen bóng - đặc trưng của vùng mỏ Quảng Ninh. Bên trong trưng bày hơn 5000 hiện vật quý về lịch sử, văn hóa và thiên nhiên của vùng đất Quảng Ninh, được tổ chức theo các chủ đề: Thiên nhiên Quảng Ninh, Lịch sử văn hóa, Con người Quảng Ninh và Kinh tế - Xã hội. Đặc biệt, bảo tàng sử dụng công nghệ trưng bày hiện đại với các màn hình tương tác, mô hình 3D và hệ thống âm thanh, ánh sáng tiên tiến, tạo trải nghiệm thú vị cho người tham quan.",
+      "howToGet": "Bảo tàng nằm ở trung tâm thành phố Hạ Long, dễ dàng di chuyển bằng taxi hoặc xe máy. Từ cầu Bãi Cháy đi khoảng 2km theo đường Trần Quốc Nghiễn.",
+      "bestTimeToVisit": "Mở cửa từ 8h00-17h00 các ngày trong tuần, nghỉ thứ Hai. Nên đến vào buổi sáng để tránh đông người và có đủ thời gian tham quan kỹ các khu trưng bày.",
+      "attractions": {
+        "cultural": [
+          {
+            "name": "Khu trưng bày chính",
+            "description": "Nơi trưng bày các hiện vật về lịch sử và văn hóa Quảng Ninh, với không gian hiện đại và công nghệ tương tác",
+            "image": "assets/images/places/checkin-bao-tang-quang-ninh.jpg"
+          },
+          {
+            "name": "Phòng trưng bày than đá",
+            "description": "Khu vực giới thiệu lịch sử khai thác than và phát triển công nghiệp mỏ của Quảng Ninh",
+            "image": "assets/images/places/trung-bay-than.jpg"
+          }
+        ],
+        "architectural": [
+          {
+            "name": "Kiến trúc bảo tàng",
+            "description": "Công trình kiến trúc độc đáo với thiết kế lấy cảm hứng từ than đá và vịnh Hạ Long",
+            "image": "assets/images/places/kien-truc-bao-tang.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Chả mực Hạ Long",
+          "description": "Đặc sản nổi tiếng được chế biến từ mực tươi vịnh Hạ Long",
+          "image": "assets/images/foods/cha-muc.jpg"
+        },
+        {
+          "name": "Sá sùng",
+          "description": "Đặc sản biển quý hiếm của vùng biển Quảng Ninh",
+          "image": "assets/images/foods/sa-sung.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Vịnh Hạ Long",
+          "description": "Di sản thiên nhiên thế giới với hàng nghìn hòn đảo đá vôi",
+          "distance": "1km",
+          "travelTime": "5 phút đi bộ"
+        },
+        {
+          "name": "Quảng trường 30/10",
+          "description": "Quảng trường lớn nhất Quảng Ninh với nhiều hoạt động văn hóa",
+          "distance": "0.5km",
+          "travelTime": "3 phút đi bộ"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Cơm chả mực",
+          "description": "Cơm với chả mực Hạ Long truyền thống",
+          "restaurant": "Nhà hàng Hương Biển - Gần bảo tàng",
+          "price": "70000-100000 VND/suất"
+        },
+        {
+          "name": "Bún hải sản",
+          "description": "Bún với các loại hải sản tươi sống",
+          "restaurant": "Quán Bún cá Hạ Long - Đường Trần Quốc Nghiễn",
+          "price": "40000-60000 VND/bát"
+        }
+      ]
+    },
+    {
+      "id": "deo-da-trang-son-la",
+      "name": "Đèo Dải Trắng",
+      "location": "Sơn La",
+      "image": "assets/images/places/checkin-deo-da-trang-son-la.jpg",
+      "description": "Cung đường đèo uốn lượn với cảnh quan hùng vĩ, một trong những cung đường đẹp nhất Tây Bắc, nơi mây trời và núi non hòa quyện tạo nên khung cảnh tuyệt đẹp như dải lụa trắng vắt ngang trời",
+      "detailedDescription": "Đèo Dải Trắng là một trong những cung đường đèo đẹp nhất miền Bắc, nằm trên quốc lộ 6 đoạn qua tỉnh Sơn La. Với độ cao trên 1000m so với mực nước biển, đèo có chiều dài khoảng 12km với những khúc cua uốn lượn như dải lụa trắng vắt ngang sườn núi. Từ đỉnh đèo, du khách có thể ngắm nhìn toàn cảnh thung lũng Sơn La với những thửa ruộng bậc thang tầng tầng lớp lớp và những bản làng của đồng bào dân tộc thiểu số nằm ẩn hiện trong sương mù. Vào những ngày đẹp trời, mây trắng bao phủ tạo nên khung cảnh huyền ảo như chốn bồng lai. Đèo không chỉ nổi tiếng về cảnh đẹp mà còn là thử thách hấp dẫn cho những người yêu thích phượt xe máy.",
+      "howToGet": "Đèo nằm trên quốc lộ 6, đoạn qua tỉnh Sơn La, cách trung tâm thành phố Sơn La khoảng 30km. Có thể đi bằng xe máy hoặc ô tô từ Hà Nội theo quốc lộ 6.",
+      "bestTimeToVisit": "Thời điểm đẹp nhất là mùa thu (tháng 9-11) khi thời tiết mát mẻ, bầu trời trong xanh. Nên đến vào sáng sớm hoặc chiều tà để ngắm bình minh hoặc hoàng hôn và tránh sương mù dày đặc.",
+      "attractions": {
+        "natural": [
+          {
+            "name": "Đèo Dải Trắng",
+            "description": "Cung đường đèo với cảnh quan thiên nhiên tuyệt đẹp, nổi tiếng với những khúc cua tay áo và tầm nhìn panorama",
+            "image": "assets/images/places/checkin-deo-da-trang-son-la.jpg"
+          },
+          {
+            "name": "Đỉnh đèo",
+            "description": "Điểm cao nhất của đèo với tầm nhìn bao quát toàn bộ thung lũng và dãy núi Tây Bắc",
+            "image": "assets/images/places/dinh-deo.jpg"
+          }
+        ],
+        "cultural": [
+          {
+            "name": "Bản làng dân tộc",
+            "description": "Những bản làng của đồng bào dân tộc Thái, Mông nằm dọc theo sườn núi",
+            "image": "assets/images/places/ban-lang-dan-toc.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Cơm lam",
+          "description": "Đặc sản cơm nếp nấu trong ống tre của người Thái",
+          "image": "assets/images/foods/com-lam.jpg"
+        },
+        {
+          "name": "Thịt trâu gác bếp",
+          "description": "Món thịt trâu hun khói truyền thống của vùng núi Tây Bắc",
+          "image": "assets/images/foods/thit-trau-gac-bep.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Thác Dải Yếm",
+          "description": "Thác nước tự nhiên với độ cao 100m, tạo nên cảnh quan đẹp",
+          "distance": "15km",
+          "travelTime": "30 phút đi xe máy"
+        },
+        {
+          "name": "Rừng thông bản Áng",
+          "description": "Khu rừng thông xanh mát với không khí trong lành",
+          "distance": "10km",
+          "travelTime": "20 phút đi xe máy"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Cơm lam thịt nướng",
+          "description": "Set cơm lam với thịt nướng và rau rừng",
+          "restaurant": "Quán Cơm Tây Bắc - Chân đèo",
+          "price": "80000-120000 VND/suất"
+        },
+        {
+          "name": "Lẩu cá hồi",
+          "description": "Lẩu cá hồi tươi từ các trại nuôi địa phương",
+          "restaurant": "Nhà hàng Đèo Cao - Gần đỉnh đèo",
+          "price": "250000-350000 VND/nồi"
+        }
+      ]
+    },
+    {
+      "id": "cho-son-la",
+      "name": "Chợ Sơn La",
+      "location": "Sơn La",
+      "image": "assets/images/places/checkin-cho-son-la.jpg",
+      "description": "Khu chợ truyền thống của người dân Tây Bắc, nơi hội tụ văn hóa và ẩm thực đặc sắc của các dân tộc vùng cao, là trung tâm giao thương sầm uất nhất của thành phố Sơn La",
+      "detailedDescription": "Chợ Sơn La là trung tâm thương mại lớn nhất của thành phố, nơi hội tụ văn hóa và đời sống của các dân tộc Thái, Mông, Mường, Dao. Chợ được chia thành nhiều khu vực chuyên biệt: khu bán đồ thổ cẩm với những tấm vải thổ cẩm rực rỡ sắc màu, khu nông sản với các đặc sản địa phương như mận tam hoa, xoài tròn, cà phê Sơn La, khu ẩm thực với những món ăn đặc trưng của vùng cao. Đặc biệt vào những phiên chợ phiên, đồng bào các dân tộc từ các bản làng xa xôi đổ về đây trao đổi hàng hóa, tạo nên không khí nhộn nhịp và đầy màu sắc văn hóa. Chợ không chỉ là nơi mua bán mà còn là điểm hẹn văn hóa, nơi du khách có thể tìm hiểu về đời sống và phong tục tập quán của đồng bào các dân tộc Tây Bắc.",
+      "howToGet": "Chợ nằm ở trung tâm thành phố Sơn La, dễ dàng di chuyển bằng các phương tiện công cộng. Từ bến xe Sơn La đi khoảng 1km theo đường Tô Hiệu.",
+      "bestTimeToVisit": "Chợ họp sớm nhất vào buổi sáng từ 5h00, đặc biệt nhộn nhịp vào các ngày phiên (mùng 5, 10, 15, 20, 25, 30 âm lịch). Nên đến sớm để mua được hàng tươi ngon và trải nghiệm không khí chợ sáng vùng cao.",
+      "attractions": {
+        "cultural": [
+          {
+            "name": "Khu chợ truyền thống",
+            "description": "Nơi giao thương của người dân các dân tộc Tây Bắc, với nhiều gian hàng đặc sản và thổ cẩm truyền thống",
+            "image": "assets/images/places/checkin-cho-son-la.jpg"
+          },
+          {
+            "name": "Khu ẩm thực dân tộc",
+            "description": "Khu vực tập trung các món ăn đặc trưng của đồng bào dân tộc vùng cao",
+            "image": "assets/images/places/am-thuc-dan-toc.jpg"
+          }
+        ],
+        "shopping": [
+          {
+            "name": "Khu thổ cẩm",
+            "description": "Nơi bày bán các sản phẩm thổ cẩm, trang phục truyền thống của các dân tộc",
+            "image": "assets/images/places/khu-tho-cam.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Xôi nếp nương",
+          "description": "Xôi được nấu từ gạo nếp nương thơm ngon của vùng cao",
+          "image": "assets/images/foods/xoi-nep-nuong.jpg"
+        },
+        {
+          "name": "Cá nướng suối",
+          "description": "Cá suối tươi nướng với gia vị đặc trưng của người Thái",
+          "image": "assets/images/foods/ca-nuong-suoi.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Bảo tàng Sơn La",
+          "description": "Nơi trưng bày các hiện vật văn hóa các dân tộc Tây Bắc",
+          "distance": "0.5km",
+          "travelTime": "7 phút đi bộ"
+        },
+        {
+          "name": "Quảng trường Tây Bắc",
+          "description": "Không gian công cộng rộng lớn, nơi tổ chức các sự kiện văn hóa",
+          "distance": "0.3km",
+          "travelTime": "5 phút đi bộ"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Phở chua Sơn La",
+          "description": "Món phở đặc trưng với vị chua thanh của chanh và các loại rau thơm",
+          "restaurant": "Quán phở chua Bà Đức - Trong chợ",
+          "price": "35000-45000 VND/bát"
+        },
+        {
+          "name": "Lợn cắp nách",
+          "description": "Thịt lợn đen nướng theo cách truyền thống của người Thái",
+          "restaurant": "Quán ăn dân tộc Tây Bắc - Khu ẩm thực chợ",
+          "price": "150000-200000 VND/suất"
+        }
+      ]
+    },
+    {
+      "id": "nha-tu-son-la",
+      "name": "Nhà tù Sơn La",
+      "location": "Sơn La",
+      "image": "assets/images/places/checkin-nha-tu-son-la.jpg",
+      "description": "Di tích lịch sử cách mạng cấp quốc gia đặc biệt, chứng tích của tinh thần đấu tranh kiên cường và bất khuất của các chiến sĩ cách mạng trong thời kỳ đấu tranh giành độc lập",
+      "detailedDescription": "Nhà tù Sơn La là một trong những nhà tù kiên cố nhất Đông Dương thời Pháp thuộc, được xây dựng từ năm 1908 đến 1910. Nơi đây đã giam giữ nhiều chiến sĩ cách mạng tiêu biểu như Tô Hiệu, Trường Chinh, Nguyễn Lương Bằng. Di tích bao gồm khu nhà giam chính với 4 dãy nhà xây bằng đá, tường dày 60cm, các xà lim biệt giam, khu nhà tra tấn, và khu tưởng niệm các chiến sĩ đã hy sinh. Đặc biệt, trong điều kiện giam cầm khắc nghiệt, các chiến sĩ cách mạng vẫn tổ chức được các hoạt động học tập, tuyên truyền và đấu tranh. Nhiều hiện vật, tài liệu quý giá về phong trào cách mạng được lưu giữ và trưng bày tại đây, giúp người tham quan hiểu rõ hơn về một giai đoạn lịch sử đấu tranh hào hùng của dân tộc.",
+      "howToGet": "Di tích nằm ở trung tâm thành phố Sơn La, cách chợ Sơn La khoảng 1km theo đường Tô Hiệu. Có thể đi bộ hoặc xe máy từ trung tâm thành phố.",
+      "bestTimeToVisit": "Có thể tham quan quanh năm, mở cửa cả ngày từ 7h00-17h00. Nên đến vào buổi sáng sớm hoặc chiều mát để tránh nắng nóng. Đặc biệt vào các dịp lễ lớn, di tích thường tổ chức các hoạt động tưởng niệm ý nghĩa.",
+      "attractions": {
+        "historical": [
+          {
+            "name": "Nhà tù lịch sử",
+            "description": "Di tích lịch sử cách mạng với kiến trúc thời Pháp thuộc, nơi ghi dấu tinh thần đấu tranh kiên cường của các chiến sĩ cách mạng",
+            "image": "assets/images/places/checkin-nha-tu-son-la.jpg"
+          },
+          {
+            "name": "Khu tưởng niệm",
+            "description": "Nơi tưởng nhớ các chiến sĩ cách mạng đã hy sinh, với bia tưởng niệm và khu vườn tưởng niệm",
+            "image": "assets/images/places/khu-tuong-niem.jpg"
+          }
+        ],
+        "cultural": [
+          {
+            "name": "Bảo tàng nhà tù",
+            "description": "Trưng bày các hiện vật, tài liệu về hoạt động cách mạng và cuộc sống của các chiến sĩ trong tù",
+            "image": "assets/images/places/bao-tang-nha-tu.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Chè sơn tra",
+          "description": "Món chè đặc trưng được làm từ quả sơn tra (táo mèo) của vùng núi Tây Bắc",
+          "image": "assets/images/foods/che-son-tra.jpg"
+        },
+        {
+          "name": "Bánh chưng đen",
+          "description": "Đặc sản bánh chưng làm từ gạo nếp cẩm của người Thái đen",
+          "image": "assets/images/foods/banh-chung-den.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Bảo tàng Sơn La",
+          "description": "Nơi lưu giữ và trưng bày các hiện vật văn hóa, lịch sử của tỉnh",
+          "distance": "0.5km",
+          "travelTime": "7 phút đi bộ"
+        },
+        {
+          "name": "Công viên Tô Hiệu",
+          "description": "Công viên tưởng niệm anh hùng Tô Hiệu với không gian xanh mát",
+          "distance": "0.3km",
+          "travelTime": "5 phút đi bộ"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Cơm lam Pa Khoang",
+          "description": "Cơm lam truyền thống với thịt nướng và rau rừng",
+          "restaurant": "Quán cơm Tây Bắc - Gần di tích",
+          "price": "50000-70000 VND/suất"
+        },
+        {
+          "name": "Canh cá suối nấu măng",
+          "description": "Món canh đặc trưng của người Thái với cá suối tươi",
+          "restaurant": "Nhà hàng Sơn La Xưa - Đường Tô Hiệu",
+          "price": "80000-120000 VND/bát"
+        }
+      ]
+    },
+    {
+      "id": "ba-vi-ha-noi",
+      "name": "Huyện Ba Vì",
+      "location": "Hà Nội",
+      "image": "assets/images/places/checkin-huyen-ba-vi-ha-noi.jpg",
+      "description": "Vùng đất với cảnh quan thiên nhiên đẹp và nhiều di tích lịch sử, nổi tiếng với núi Ba Vì hùng vĩ và không khí trong lành, là điểm đến lý tưởng cho du lịch sinh thái và tâm linh",
+      "detailedDescription": "Ba Vì là huyện ngoại thành Hà Nội, nổi tiếng với dãy núi Ba Vì và Vườn quốc gia Ba Vì rộng hơn 7.377 ha. Đỉnh núi cao nhất đạt 1.296m so với mực nước biển, tạo nên một khí hậu mát mẻ quanh năm. Vườn quốc gia Ba Vì là nơi bảo tồn đa dạng sinh học với hơn 1.200 loài thực vật và nhiều loài động vật quý hiếm. Ngoài giá trị về sinh thái, Ba Vì còn là vùng đất giàu truyền thống văn hóa với nhiều di tích lịch sử như đền Thượng, đền Trung, đền Hạ thờ Chủ tịch Hồ Chí Minh và các vị thần núi Ba Vì. Khu vực này cũng nổi tiếng với các trang trại chăn nuôi bò sữa, các khu resort nghỉ dưỡng và các điểm du lịch sinh thái hấp dẫn.",
+      "howToGet": "Từ trung tâm Hà Nội đi khoảng 50km theo quốc lộ 32 hoặc đường Láng - Hòa Lạc. Có thể đi xe máy, ô tô riêng hoặc xe khách từ bến xe Mỹ Đình.",
+      "bestTimeToVisit": "Thời điểm đẹp nhất là mùa xuân (tháng 2-4) khi hoa rừng nở rộ và mùa thu (tháng 9-11) với khí hậu mát mẻ, trong lành. Nên đi sớm để tránh sương mù vào buổi chiều.",
+      "attractions": {
+        "natural": [
+          {
+            "name": "Núi Ba Vì",
+            "description": "Dãy núi với ba đỉnh cao và hệ sinh thái đa dạng, là biểu tượng của vùng đất Ba Vì",
+            "image": "assets/images/places/checkin-huyen-ba-vi-ha-noi.jpg"
+          },
+          {
+            "name": "Thác Đa",
+            "description": "Thác nước tự nhiên cao 50m với cảnh quan hoang sơ tuyệt đẹp",
+            "image": "assets/images/places/thac-da.jpg"
+          }
+        ],
+        "religious": [
+          {
+            "name": "Đền Thượng",
+            "description": "Ngôi đền linh thiêng trên đỉnh núi Ba Vì, thờ Sơn Tinh - Thần Núi Tản Viên",
+            "image": "assets/images/places/den-thuong.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Sữa chua Ba Vì",
+          "description": "Sữa chua được làm từ sữa bò tươi của vùng Ba Vì nổi tiếng",
+          "image": "assets/images/foods/sua-chua-ba-vi.jpg"
+        },
+        {
+          "name": "Gà đồi Ba Vì",
+          "description": "Gà thả đồi được nuôi tự nhiên với hương vị đặc trưng",
+          "image": "assets/images/foods/ga-doi.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Khu du lịch sinh thái Ao Vua",
+          "description": "Khu du lịch với nhiều hoạt động giải trí và nghỉ dưỡng",
+          "distance": "5km",
+          "travelTime": "15 phút đi xe máy"
+        },
+        {
+          "name": "Trang trại bò sữa Ba Vì",
+          "description": "Nơi tham quan và thưởng thức các sản phẩm từ sữa tươi",
+          "distance": "3km",
+          "travelTime": "10 phút đi xe máy"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Lẩu gà đồi",
+          "description": "Lẩu gà thả đồi nấu với nấm và rau rừng",
+          "restaurant": "Nhà hàng Rừng Xanh - Chân núi Ba Vì",
+          "price": "300000-400000 VND/nồi"
+        },
+        {
+          "name": "Cơm lam sườn nướng",
+          "description": "Cơm lam với sườn nướng và các loại rau rừng",
+          "restaurant": "Quán Núi Rừng - Đường lên núi Ba Vì",
+          "price": "100000-150000 VND/suất"
+        }
+      ]
+    }
+  ]
+} 

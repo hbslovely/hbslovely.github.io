@@ -1,0 +1,26 @@
+<section class="fun-facts-section" *ngIf="facts">
+  <h2 class="section-title">
+    <span class="emoji">✨</span>
+    {{ title }}
+    <span class="emoji">✨</span>
+  </h2>
+  <div class="fun-facts-grid">
+    <div class="fun-fact-card" *ngFor="let fact of facts">
+      <div class="fun-fact-content">
+        <h3 class="fun-fact-title">
+          <i [class]="fact.icon"></i>
+          {{ fact.title }}
+          <span class="title-emoji">✨</span>
+        </h3>
+        <p class="fun-fact-description">
+          {{ fact.description }}
+          <span class="money-rain">
+            <i class="pi pi-dollar"></i>
+            <i class="pi pi-dollar"></i>
+            <i class="pi pi-dollar"></i>
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section> 

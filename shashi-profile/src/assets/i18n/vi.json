@@ -1,0 +1,65 @@
+{
+  "NAV": {
+    "ABOUT": "Giới thiệu",
+    "EXPERIENCE": "Kinh nghiệm",
+    "PROJECTS": "Dự án",
+    "SKILLS": "Kỹ năng",
+    "EXPORT_PDF": "Xuất PDF"
+  },
+  "ACTIONS": {
+    "EXPORT_PDF": "Xuất PDF"
+  },
+  "EXPERIENCE": {
+    "KEY_ACHIEVEMENTS": "Thành tích nổi bật",
+    "RESPONSIBILITIES": "Trách nhiệm công việc"
+  },
+  "FOOTER": {
+    "RIGHTS": "Đã đăng ký bản quyền."
+  },
+  "EDUCATION": {
+    "TITLE": "Học vấn",
+    "DEGREE": "Bằng cấp",
+    "MAJOR": "Chuyên ngành",
+    "UNIVERSITY": "Trường",
+    "GRADUATION_YEAR": "Năm tốt nghiệp",
+    "GPA": "Điểm trung bình"
+  },
+  "SKILLS": {
+    "CATEGORIES": {
+      "accounting": "Kế toán",
+      "humanResources": "Nhân sự",
+      "software": "Phần mềm",
+      "compliance": "Pháp lý",
+      "softSkills": "Kỹ năng mềm",
+      "administration": "Hành chính"
+    },
+    "ITEMS": {
+      "Financial_Reporting": "Báo cáo Tài chính",
+      "Tax_Accounting": "Kế toán Thuế",
+      "General_Ledger": "Sổ Cái",
+      "Cost_Accounting": "Kế toán Chi phí",
+      "Financial_Analysis": "Phân tích Tài chính",
+      "Audit_Preparation": "Chuẩn bị Kiểm toán",
+      "HR_Policies": "Chính sách & Quy trình Nhân sự",
+      "Recruitment": "Tuyển dụng & Lựa chọn",
+      "Performance_Management": "Quản lý Hiệu suất",
+      "Training": "Đào tạo & Phát triển",
+      "Labor_Law": "Tuân thủ Luật Lao động",
+      "Accounting_Software": "Phần mềm Kế toán",
+      "ERP_Systems": "Hệ thống ERP",
+      "HRIS": "Hệ thống HRIS",
+      "MS_Office": "Bộ Microsoft Office",
+      "Tax_Software": "Phần mềm Kê khai Thuế",
+      "VAS": "Chuẩn mực Kế toán Việt Nam",
+      "Tax_Regulations": "Quy định Thuế",
+      "Labor_Laws": "Luật Lao động",
+      "Internal_Control": "Kiểm soát Nội bộ",
+      "Audit_Procedures": "Thủ tục Kiểm toán",
+      "Leadership": "Lãnh đạo",
+      "Problem_Solving": "Giải quyết Vấn đề",
+      "Communication": "Giao tiếp",
+      "Analytical_Thinking": "Tư duy Phân tích",
+      "Time_Management": "Quản lý Thời gian"
+    }
+  }
+} 

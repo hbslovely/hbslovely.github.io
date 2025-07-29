@@ -1,26 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {
-  HappyMoment,
   Promise,
   Goal,
   LoveStatistics,
-  MomentCategory
-} from '../../shared/models/love.model';
+  MomentCategory,
+  Memory,
+  SpecialMoment,
+  Song,
+  Place,
+  Quote,
+  Gift,
+  Food
+} from '../../shared/models';
 import { CommonModule } from '@angular/common';
 import { CarouselModule } from 'primeng/carousel';
 import { ParallaxHeaderComponent } from '../../shared/components/parallax-header/parallax-header.component';
 import { LoveStatisticsComponent } from '../../shared/components/love-statistics/love-statistics.component';
 import { SpecialMomentsComponent } from '../../shared/components/special-moments/special-moments.component';
 import { OurSongsComponent } from '../../shared/components/our-songs/our-songs.component';
-import { LoveQuotesComponent } from '../../shared/components/love-quotes/love-quotes.component';
 import { MeaningfulGiftsComponent } from '../../shared/components/meaningful-gifts/meaningful-gifts.component';
 import { FavoriteFoodsComponent } from '../../shared/components/favorite-foods/favorite-foods.component';
 import { MemoryGalleryComponent } from '../../shared/components/memory-gallery/memory-gallery.component';
 import { GratitudeMessagesComponent } from '../../shared/components/gratitude-messages/gratitude-messages.component';
 import { LoveTimelineComponent } from '../../shared/components/love-timeline/love-timeline.component';
-import { LoveMilestonesComponent } from '../../shared/components/love-milestones/love-milestones.component';
-import { HappyMomentsComponent } from '../../shared/components/happy-moments/happy-moments.component';
 import { FuturePromisesComponent } from '../../shared/components/future-promises/future-promises.component';
 
 @Component({
@@ -33,34 +36,32 @@ import { FuturePromisesComponent } from '../../shared/components/future-promises
     LoveStatisticsComponent,
     SpecialMomentsComponent,
     OurSongsComponent,
-    LoveQuotesComponent,
     MeaningfulGiftsComponent,
     FavoriteFoodsComponent,
     MemoryGalleryComponent,
     GratitudeMessagesComponent,
     LoveTimelineComponent,
-    LoveMilestonesComponent,
-    HappyMomentsComponent,
-    FuturePromisesComponent
+    FuturePromisesComponent,
   ],
   templateUrl: './chao-mung.component.html',
   styleUrls: ['./chao-mung.component.scss']
 })
 export class ChaoMungComponent implements OnInit {
-  memories: any[] = [];
-  timeline: any[] = [];
-  loveStatistics: any = {};
-  specialMoments: any[] = [];
-  ourSongs: any[] = [];
-  memoryPlaces: any[] = [];
-  loveQuotes: any[] = [];
-  meaningfulGifts: any[] = [];
-  favoriteFoods: any[] = [];
+  memories: Memory[] = [];
+  timeline: SpecialMoment[] = [];
+  loveStatistics: LoveStatistics = {
+    daysTogether: 0,
+    photosTaken: 0,
+    placesVisited: 0
+  };
+  specialMoments: SpecialMoment[] = [];
+  ourSongs: Song[] = [];
+  meaningfulGifts: Gift[] = [];
+  favoriteFoods: Food[] = [];
 
   // Array for floating hearts
   floatingHearts = Array(15).fill(0).map((_, i) => i + 1);
 
-  happyMoments: HappyMoment[] = [];
   momentCategories: MomentCategory[] = [];
   futurePromises: Promise[] = [];
   commonGoals: Goal[] = [];
@@ -69,7 +70,6 @@ export class ChaoMungComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadLoveStatistics();
-    this.loadHappyMoments();
     this.loadFutureGoals();
     this.loadMemoriesData();
   }
@@ -79,15 +79,13 @@ export class ChaoMungComponent implements OnInit {
       next: (data) => {
         this.memories = data.memoriesGallery;
         this.timeline = data.timeline;
-        this.loveStatistics = data.loveStatistics;
         this.specialMoments = data.specialMoments;
         this.ourSongs = data.ourSongs;
-        this.memoryPlaces = data.memoryPlaces;
-        this.loveQuotes = data.loveQuotes;
         this.meaningfulGifts = data.meaningfulGifts;
         this.favoriteFoods = data.favoriteFoods;
       },
       error: (error) => {
+        console.error('Error loading memories data:', error);
       }
     });
   }
@@ -96,14 +94,6 @@ export class ChaoMungComponent implements OnInit {
     this.http.get<LoveStatistics>('assets/data/love-statistics.json')
       .subscribe(data => {
         this.loveStatistics = data;
-      });
-  }
-
-  private loadHappyMoments(): void {
-    this.http.get<{happyMoments: HappyMoment[], momentCategories: MomentCategory[]}>('assets/data/happy-moments.json')
-      .subscribe(data => {
-        this.happyMoments = data.happyMoments;
-        this.momentCategories = data.momentCategories;
       });
   }
 

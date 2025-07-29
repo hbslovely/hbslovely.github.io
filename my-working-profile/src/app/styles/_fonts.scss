@@ -113,3 +113,28 @@ $line-height-relaxed: 1.75;
   font-size: $font-size-base;
   line-height: $line-height-normal;
 }
+
+// Shared section header styles
+.section-header {
+  margin-bottom: 2rem;
+  
+  h2 {
+    font-size: 1.75rem;
+    color: var(--heading-color);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    [nz-icon] {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+    }
+  }
+
+  .section-subtitle {
+    margin-top: 0.5rem;
+    color: var(--text-color-secondary);
+    font-size: 1rem;
+  }
+}

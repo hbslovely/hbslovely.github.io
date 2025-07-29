@@ -2,454 +2,617 @@ import { inject, Injectable } from '@angular/core';
 import { jsPDF } from 'jspdf';
 import { CVService } from './cv.service';
 import { LanguageService } from './language.service';
+import { addCandaraFont } from "./jspdf-font";
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class PdfService {
-  private readonly cvService = inject(CVService);
-  private readonly languageService = inject(LanguageService);
+    private readonly cvService = inject(CVService);
+    private readonly languageService = inject(LanguageService);
 
-  // A4 dimensions in points (72 points per inch)
-  private readonly A4_WIDTH = 595.28;  // 8.27 × 72
-  private readonly A4_HEIGHT = 841.89; // 11.69 × 72
-  private readonly MARGIN = 40;
-  private readonly CONTENT_WIDTH = this.A4_WIDTH - (this.MARGIN * 2);
-  private readonly SECTION_SPACING = 30; // Increased from 15 to 30 for better section separation
-  private readonly HEADER_SPACING = 25; // Increased from 20 to 25 for consistent header spacing
-  private readonly AVATAR_SIZE = 180;
-  private readonly SUB_SECTION_SPACING = 20; // New constant for spacing between items within a section
+    // A4 dimensions in points (72 points per inch)
+    private readonly A4_WIDTH = 595.28;  // 8.27 × 72
+    private readonly A4_HEIGHT = 841.89; // 11.69 × 72
+    private readonly MARGIN = 40;
+    private readonly CONTENT_WIDTH = this.A4_WIDTH - (this.MARGIN * 2);
+    private readonly SECTION_SPACING = 10; // Increased from 30 for better section separation
+    private readonly HEADER_SPACING = 25; // Reduced from 30 for better compactness
+    private readonly AVATAR_SIZE = 130; // Reduced from 150 to make it more compact
+    private readonly SUB_SECTION_SPACING = 25; // Increased from 20 for better item separation
+    private readonly SECTION_HEADER_HEIGHT = 42; // New constant for header height
+    private readonly CONTENT_LEFT_MARGIN = 40; // Left margin for content
+    private readonly SUMMARY_LINE_HEIGHT = 1.4; // Line height for summary text
+    private readonly BULLET_INDENT = 15; // Indentation for bullet points
+    private readonly TEXT_INDENT = 25; // Indentation for text after bullet points
 
-  private defineVietnameseFont(pdf: jsPDF): void {
-    // Add Vietnamese font definition
-    pdf.addFileToVFS('VNFont.ttf', 'VN_TOKEN');
-    pdf.addFont('VNFont.ttf', 'VNFont', 'normal');
-  }
+    private setupPdfFonts(pdf: jsPDF): void {
+        try {
+            const currentLang = this.languageService.getCurrentLanguage();
 
-  private setupPdfFonts(pdf: jsPDF): void {
-    try {
-      const currentLang = this.languageService.getCurrentLanguage();
+            if (currentLang === 'vi') {
+                // Setup Vietnamese font
+                this.defineVietnameseFont(pdf);
+                pdf.setFont('VNFont');
 
-      if (currentLang === 'vi') {
-        // Setup Vietnamese font
-        this.defineVietnameseFont(pdf);
-        pdf.setFont('VNFont');
-
-        // Enable Unicode encoding for Vietnamese characters
-        (pdf as any).setLanguage("vi");
-        (pdf as any).setR2L(false);
-      } else {
-        // For English, use Inter font which has good Unicode support
-        pdf.setFont('Inter');
-      }
-
-      pdf.setFontSize(12);
-      pdf.setProperties({
-        title: 'CV',
-        subject: 'Curriculum Vitae',
-        author: 'Hong Phung Phat',
-        keywords: 'CV, Resume',
-        creator: 'CV Generator'
-      });
-    } catch (error) {
-      console.error('Error setting up font:', error);
-      // Fallback to built-in font if custom font fails to load
-      pdf.setFont('Helvetica');
-    }
-  }
-
-  private getLineHeight(fontSize: number): number {
-    return fontSize * 1.5;
-  }
-
-  private checkPageBreak(pdf: jsPDF, yPos: number, requiredSpace: number = 100): number {
-    if (yPos + requiredSpace > this.A4_HEIGHT - this.MARGIN) {
-      pdf.addPage();
-      return this.MARGIN;
-    }
-    return yPos;
-  }
-
-  private addSectionHeader(pdf: jsPDF, text: string, yPos: number, colors: any): number {
-    // Add extra spacing before section header
-    yPos += this.SECTION_SPACING;
-    
-    pdf.setFont('Times-Roman', 'bold');
-    pdf.setFontSize(18);
-    pdf.setTextColor(colors.primary);
-    pdf.text(text, this.MARGIN, yPos);
-    
-    // Return position after header with consistent spacing
-    return yPos + this.HEADER_SPACING;
-  }
-
-  private formatLocation(location: any): string {
-    if (!location) return '';
-    if (typeof location === 'string') return location;
-
-    const parts = [];
-    if (location.address) parts.push(location.address);
-    if (location.district) parts.push(location.district);
-    if (location.city) parts.push(location.city);
-    if (location.country) parts.push(location.country);
-
-    return parts.join(', ');
-  }
-
-  private addUnderlinedItalicLabel(pdf: jsPDF, text: string, xPos: number, yPos: number, colors: any): number {
-    pdf.setFont('Times-Roman', 'italic');
-    pdf.setTextColor(colors.text);
-    const textWidth = pdf.getTextWidth(text);
-    pdf.text(text, xPos, yPos);
-
-    // Add underline
-    pdf.setDrawColor(colors.text);
-    pdf.setLineWidth(0.5);
-    pdf.line(xPos, yPos + 2, xPos + textWidth, yPos + 2);
-
-    return textWidth;
-  }
-
-  private getFormattedFileName(): string {
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    const now = new Date();
-    const currentMonth = months[now.getMonth()];
-    const currentYear = now.getFullYear();
-    const language = this.languageService.getCurrentLanguage().toUpperCase();
-
-    return `CV_Phat_Hong_${currentMonth}_${currentYear}_${language}.pdf`;
-  }
-
-  async generateBeautifulPdf(): Promise<void> {
-    const cv = this.cvService.cv();
-    if (!cv) {
-      throw new Error('CV data not available');
-    }
-
-    const pdf = new jsPDF({
-      orientation: 'portrait',
-      unit: 'pt',
-      format: 'a4',
-      putOnlyUsedFonts: true,
-      compress: true
-    });
-
-    // Setup fonts with Unicode support
-    this.setupPdfFonts(pdf);
-
-    // Define colors - using lighter shades
-    const colors = {
-      primary: '#2563eb',    // Changed from #3b82f6 to a darker blue
-      text: '#1f2937',       // Dark text
-      link: '#1d4ed8',       // Changed from #60a5fa to a darker blue for links
-      subtext: '#4b5563',    // Dark gray for subtext
-      background: '#ffffff',  // White background
-      accent: '#3b82f6'      // Changed from #93c5fd to a medium-dark blue for accents
-    };
-
-    let yPos = this.MARGIN + 20; // Start with some padding from top
-
-    // Add name
-    pdf.setFont('Times-Roman', 'bold');
-    pdf.setFontSize(28);
-    pdf.setTextColor(colors.text);
-    pdf.text(cv.personalInfo.name || '', this.MARGIN, yPos);
-
-    // Add title
-    yPos += this.getLineHeight(28);
-    pdf.setFont('Times-Roman', 'normal');
-    pdf.setFontSize(20);
-    pdf.setTextColor(colors.text);
-    pdf.text(cv.personalInfo.title || '', this.MARGIN, yPos);
-
-    // Add avatar on the right
-    try {
-      const avatarX = this.A4_WIDTH - this.MARGIN - this.AVATAR_SIZE;
-      const avatarY = this.MARGIN;
-      const img = new Image();
-      img.src = 'assets/images/avatar.jpeg';
-      pdf.addImage(img, 'JPEG', avatarX, avatarY, this.AVATAR_SIZE, this.AVATAR_SIZE);
-    } catch (error) {
-      console.error('Error adding avatar:', error);
-    }
-
-    // Add personal info in vertical layout
-    yPos += this.getLineHeight(20);
-    pdf.setFont('Times-Roman', 'normal');
-    pdf.setFontSize(13); // Slightly smaller font for contact info
-    pdf.setTextColor(colors.text);
-
-    // Add DOB
-    yPos += this.getLineHeight(13);
-    pdf.text(cv.personalInfo.dateOfBirth || '', this.MARGIN, yPos);
-
-    // Add address
-    yPos += this.getLineHeight(13);
-    const location = this.formatLocation(cv.personalInfo.location);
-    pdf.text(location, this.MARGIN, yPos);
-
-    // Add phone with label
-    yPos += this.getLineHeight(13);
-    pdf.text(`${ cv.personalInfo.contact.phone } (Phone/Zalo/WhatsApp)`, this.MARGIN, yPos);
-
-    // Add email as clickable link
-    yPos += this.getLineHeight(13);
-    pdf.setTextColor(colors.link);
-    pdf.setDrawColor(colors.link);
-    pdf.textWithLink(cv.personalInfo.contact.email || '', this.MARGIN, yPos, {
-      url: `mailto:${ cv.personalInfo.contact.email }`
-    });
-    pdf.line(this.MARGIN, yPos + 2, this.MARGIN + pdf.getTextWidth(cv.personalInfo.contact.email || ''), yPos + 2);
-
-    // Add LinkedIn
-    yPos += this.getLineHeight(13);
-    const linkedInUrl = cv.personalInfo.contact.linkedin || '';
-    pdf.textWithLink(linkedInUrl, this.MARGIN, yPos, {
-      url: linkedInUrl
-    });
-    pdf.line(this.MARGIN, yPos + 2, this.MARGIN + pdf.getTextWidth(linkedInUrl), yPos + 2);
-
-    // Add extra spacing before Summary section
-    yPos = Math.max(yPos + this.getLineHeight(13), this.MARGIN + this.AVATAR_SIZE + this.SECTION_SPACING);
-    yPos = this.addSectionHeader(pdf, 'Summary', yPos, colors);
-
-    // Add summary content
-    pdf.setFont('Times-Roman', 'normal');
-    pdf.setFontSize(13);
-    pdf.setTextColor(colors.text);
-    const summaryLines = pdf.splitTextToSize(cv.personalInfo.shortSummary || '', this.CONTENT_WIDTH);
-    pdf.text(summaryLines, this.MARGIN, yPos);
-    yPos += summaryLines.length * this.getLineHeight(13);
-
-    // Add Experience Section
-    yPos = this.addSectionHeader(pdf, 'Professional Experience', yPos, colors);
-
-    // Update Experience section
-    if (cv.experience?.workExperience) {
-      cv.experience.workExperience.forEach((exp, index) => {
-        yPos = this.checkPageBreak(pdf, yPos, 100);
-
-        // Company name and position on same line
-        pdf.setFont('Times-Roman', 'bold');
-        pdf.setFontSize(15);
-        pdf.setTextColor(colors.text);
-        pdf.text(exp.company, this.MARGIN, yPos);
-
-        // Add separator
-        const separator = " | ";
-        const companyWidth = pdf.getTextWidth(exp.company + separator);
-        pdf.setFont('Times-Roman', 'normal');
-        pdf.text(separator, this.MARGIN + companyWidth - pdf.getTextWidth(separator), yPos);
-
-        // Position (smaller size)
-        pdf.setFont('Times-Roman', 'bold');
-        pdf.setFontSize(13); // Reduced from 15 to 13
-        const positionY = yPos + 1; // Slight adjustment to align with company name
-        pdf.text(exp.position, this.MARGIN + companyWidth, positionY);
-
-        // Duration and location with lighter color
-        yPos += this.getLineHeight(15);
-        pdf.setFont('Times-Roman', 'normal');
-        pdf.setFontSize(13);
-        pdf.setTextColor(colors.subtext);
-        const duration = `${ exp.startDate } - ${ exp.endDate || 'Present' } | ${ exp.location }`;
-        pdf.text(duration, this.MARGIN, yPos);
-
-        // Achievements without bullets
-        if (exp.achievements?.length) {
-          yPos += this.getLineHeight(13);
-          exp.achievements.forEach(achievement => {
-            if (achievement) {
-              yPos = this.checkPageBreak(pdf, yPos, 30);
-              pdf.setFont('Times-Roman', 'normal');
-              pdf.setFontSize(13);
-              pdf.setTextColor(colors.text);
-              const achievementLines = pdf.splitTextToSize(achievement, this.CONTENT_WIDTH - 40);
-              pdf.text(achievementLines, this.MARGIN + 20, yPos);
-              yPos += achievementLines.length * this.getLineHeight(13);
+                // Enable Unicode encoding for Vietnamese characters
+                (pdf as any).setLanguage("vi");
+                (pdf as any).setR2L(false);
+            } else {
+                // For English, use Times-Roman for now
+                pdf.setFont('Times-Roman');
             }
-          });
-        }
 
-        yPos += 15;
-        // Add spacing between experience items
-        yPos += this.SUB_SECTION_SPACING;
-      });
+            pdf.setFontSize(12);
+            pdf.setProperties({
+                title: 'CV',
+                subject: 'Curriculum Vitae',
+                author: 'Hong Phung Phat',
+                keywords: 'CV, Resume',
+                creator: 'CV Generator'
+            });
+        } catch (error) {
+            console.error('Error setting up font:', error);
+            // Fallback to built-in font if custom font fails to load
+            pdf.setFont('Helvetica');
+        }
     }
 
-    // Update Skills section with header and lighter skills
-    yPos = this.addSectionHeader(pdf, 'Technical Skills', yPos, colors);
-
-    if (cv.skills?.technicalSkills) {
-      const columnWidth = (this.CONTENT_WIDTH - 20) / 2;
-      let leftColumnY = yPos;
-      let rightColumnY = yPos;
-      let isLeftColumn = true;
-
-      Object.entries(cv.skills.technicalSkills).forEach(([ category, skills ]) => {
-        if (Array.isArray(skills) && skills.length > 0) {
-          const currentY = isLeftColumn ? leftColumnY : rightColumnY;
-          const x = isLeftColumn ? this.MARGIN : this.MARGIN + columnWidth + 10;
-
-          // Category name as header
-          pdf.setFont('Times-Roman', 'bold');
-          pdf.setFontSize(14);
-          pdf.setTextColor(colors.text);
-          pdf.text(this.formatCategory(category), x, currentY);
-
-          // Skills with lighter color and smaller font
-          pdf.setFont('Times-Roman', 'normal');
-          pdf.setFontSize(12); // Smaller font size
-          pdf.setTextColor(colors.subtext); // Lighter color
-          const skillText = skills.join(' • ');
-          const skillLines = pdf.splitTextToSize(skillText, columnWidth - 15);
-          pdf.text(skillLines, x + 10, currentY + this.getLineHeight(14) - 2);
-
-          const heightUsed = this.getLineHeight(14) + (skillLines.length * this.getLineHeight(12)) + 5;
-          if (isLeftColumn) {
-            leftColumnY += heightUsed;
-          } else {
-            rightColumnY += heightUsed;
-          }
-          isLeftColumn = !isLeftColumn;
-        }
-      });
-
-      yPos = Math.max(leftColumnY, rightColumnY) + this.SUB_SECTION_SPACING;
+    private defineVietnameseFont(pdf: jsPDF): void {
+        // Add Vietnamese font definition
+        pdf.addFileToVFS('VNFont.ttf', 'VN_TOKEN');
+        pdf.addFont('VNFont.ttf', 'VNFont', 'normal');
     }
 
-    // Add Education Section
-    yPos = this.checkPageBreak(pdf, yPos);
-    yPos = this.addSectionHeader(pdf, 'Education', yPos, colors);
-    yPos += this.getLineHeight(18);
+    private getLineHeight(fontSize: number): number {
+        return fontSize * 1.2;
+    }
 
-    if (cv.education?.education) {
-      cv.education.education.forEach((edu, index) => {
-        yPos = this.checkPageBreak(pdf, yPos, 80);
+    private formatLocation(location: any): string {
+        if (!location) return '';
+        return `${ location.city }, ${ location.country }`;
+    }
 
-        // Degree and Field
+    private addSectionHeader(pdf: jsPDF, title: string, yPos: number, colors: any): number {
+        yPos += this.SECTION_SPACING;
+
+        // Add section header background
+        pdf.setFillColor(colors.headerBg);
+        pdf.rect(0, yPos - 15, this.A4_WIDTH, this.SECTION_HEADER_HEIGHT, 'F');
+
+        // Add subtle border at the bottom of header
+        pdf.setDrawColor(colors.accent);
+        pdf.setLineWidth(1);
+        pdf.line(0, yPos + this.SECTION_HEADER_HEIGHT - 15, this.A4_WIDTH, yPos + this.SECTION_HEADER_HEIGHT - 15);
+
+        // Add section title
         pdf.setFont('Times-Roman', 'bold');
-        pdf.setFontSize(14);
-        pdf.setTextColor(colors.text);
-        pdf.text(`${ edu.degree } in ${ edu.field }`, this.MARGIN, yPos);
+        pdf.setFontSize(16);
+        pdf.setTextColor(colors.primary);
+        pdf.text(title, this.MARGIN, yPos + 5);
 
-        // Institution and Duration
-        yPos += this.getLineHeight(14);
+        return yPos + this.HEADER_SPACING + 10;
+    }
+
+    private checkPageBreak(pdf: jsPDF, yPos: number, requiredSpace: number = 100): number {
+      if (yPos + requiredSpace > this.A4_HEIGHT - this.MARGIN) {
+        pdf.addPage();
+        return this.MARGIN + 20;
+      }
+      return yPos;
+    }
+
+    async generateBeautifulPdf(): Promise<void> {
+        const cv = this.cvService.cv();
+        if (!cv) {
+            throw new Error('CV data not available');
+        }
+
+        const pdf = new jsPDF({
+            orientation: 'portrait',
+            unit: 'pt',
+            format: 'a4',
+            putOnlyUsedFonts: true,
+            compress: true
+        });
+
+        addCandaraFont(pdf);
+
+        // Setup fonts
+        this.setupPdfFonts(pdf);
+
+        // Define colors - using light blue theme to match web interface
+        const colors = {
+            primary: '#006aca',    // Main blue from nav-bar
+            text: '#1e293b',       // Dark text for readability
+            link: '#69b1ff',       // Light blue for links
+            subtext: '#64748b',    // Medium gray for secondary text
+            background: '#ffffff', // White background
+            accent: '#e6f4ff',    // Very light blue for accents/lines
+            headerBg: '#ebf5ff',   // Lighter blue background for section headers
+            companyName: '#0f172a', // Near black for company names
+            titleGrey: '#4b5563'   // Grey color for title/position
+        };
+
+        let yPos = this.MARGIN + 20;
+
+        // Add header background with light blue color
+        pdf.setFillColor(colors.headerBg);
+        pdf.rect(0, 0, this.A4_WIDTH, this.MARGIN * 6, 'F');
+
+        // Add subtle border at the bottom of header
+        pdf.setDrawColor(colors.accent);
+        pdf.setLineWidth(1);
+        pdf.line(0, this.MARGIN * 6, this.A4_WIDTH, this.MARGIN * 6);
+
+        // Add name section
+        // Add prefix
         pdf.setFont('Times-Roman', 'normal');
-        pdf.setFontSize(13);
-        pdf.setTextColor(colors.subtext);
-        pdf.text(`${ edu.institution } (${ edu.startDate } - ${ edu.endDate })`, this.MARGIN + 15, yPos);
-        yPos += this.getLineHeight(13) + 20;
-        // Add spacing between education items
-        yPos += this.SUB_SECTION_SPACING;
-      });
-    }
-
-    // Add Projects Section
-    yPos = this.checkPageBreak(pdf, yPos);
-    yPos = this.addSectionHeader(pdf, 'Notable Projects', yPos, colors);
-    yPos += this.getLineHeight(18);
-
-    if (cv.projects?.projects) {
-      cv.projects.projects.forEach((project, index) => {
-        yPos = this.checkPageBreak(pdf, yPos, 100);
-
-        // Project name and duration
-        pdf.setFont('Times-Roman', 'bold');
-        pdf.setFontSize(15);
-        pdf.setTextColor(colors.text);
-        pdf.text(project.name, this.MARGIN, yPos);
-
-        // Duration (italics)
-        yPos += this.getLineHeight(15);
-        pdf.setFont('Times-Roman', 'italic');
         pdf.setFontSize(14);
-        pdf.setTextColor(colors.subtext);
-        pdf.text(project.duration || '', this.MARGIN, yPos);
+        pdf.setTextColor(colors.titleGrey);
+        pdf.text('Mr.', this.MARGIN, yPos);
+        const prefixWidth = pdf.getTextWidth('Mr. ');
 
-        // Description with reduced spacing
-        if (project.description) {
-          yPos += this.getLineHeight(14) - 2;
-          pdf.setFont('Times-Roman', 'normal');
-          pdf.setFontSize(13);
-          pdf.setTextColor(colors.text);
-          const descLines = pdf.splitTextToSize(project.description, this.CONTENT_WIDTH - 20);
-          pdf.text(descLines, this.MARGIN, yPos);
-          yPos += descLines.length * this.getLineHeight(13) - 5;
+        // Add name in caps with smaller font size
+        pdf.setFont('Times-Roman', 'bold');
+        pdf.setFontSize(24); // Reduced from 32 to 24
+        pdf.setTextColor(colors.primary);
+        const name = (cv.personalInfo.name || '').toUpperCase();
+        pdf.text(name, this.MARGIN + prefixWidth, yPos);
+
+        // Add title with reduced spacing
+        yPos += this.getLineHeight(24) * 0.7; // Adjusted line height to match new font size
+        pdf.setFont('Times-Roman', 'medium');
+        pdf.setFontSize(16); // Smaller font for position
+        pdf.setTextColor(colors.titleGrey);
+        pdf.text(cv.personalInfo.title || '', this.MARGIN, yPos);
+
+        // Add extra space after position
+        yPos += 8;
+
+        // Add avatar with border
+        try {
+            const avatarX = this.A4_WIDTH - this.MARGIN - this.AVATAR_SIZE;
+            const avatarY = this.MARGIN;
+
+            // Add white background for avatar
+            pdf.setFillColor(255, 255, 255);
+            pdf.rect(avatarX - 2, avatarY - 2, this.AVATAR_SIZE + 4, this.AVATAR_SIZE + 4, 'F');
+
+            // Add border
+            pdf.setDrawColor('#e6f4ff');
+            pdf.setLineWidth(1);
+            pdf.rect(avatarX - 2, avatarY - 2, this.AVATAR_SIZE + 4, this.AVATAR_SIZE + 4, 'S');
+
+            const img = new Image();
+            img.src = 'assets/images/avatar.jpeg';
+            pdf.addImage(img, 'JPEG', avatarX, avatarY, this.AVATAR_SIZE, this.AVATAR_SIZE, undefined, 'NONE');
+        } catch (error) {
+            console.error('Error adding avatar:', error);
         }
 
-        // Project details with reduced spacing
-        const detailSpacing = this.getLineHeight(13) - 3;
+        // Add contact info in single row layout with increased spacing
+        yPos += this.getLineHeight(16) * 0.8; // Reduced space after position
+        const contactStartY = yPos;
+        let contactY = contactStartY;
 
-        // Scope
-        if (project.scope) {
-          yPos += detailSpacing;
-          const labelWidth = this.addUnderlinedItalicLabel(pdf, 'Mainly Scope:', this.MARGIN, yPos, colors);
-          pdf.setFont('Times-Roman', 'normal');
-          pdf.text(` ${ project.scope }`, this.MARGIN + labelWidth, yPos);
+        const lineSpacing = this.getLineHeight(11) * 1.5; // Increased line spacing
+
+        // DOB
+        pdf.setFont('Times-Roman', 'bold');
+        pdf.setFontSize(11);
+        pdf.setTextColor(colors.primary);
+        pdf.text('Date of Birth:', this.MARGIN, contactY);
+        pdf.setFont('Times-Roman', 'normal');
+        pdf.setTextColor(colors.text);
+        pdf.text(cv.personalInfo.dateOfBirth || '', this.MARGIN + 80, contactY);
+
+        // Phone
+        contactY += lineSpacing;
+        pdf.setFont('Times-Roman', 'bold');
+        pdf.setTextColor(colors.primary);
+        pdf.text('Phone:', this.MARGIN, contactY);
+        pdf.setFont('Times-Roman', 'normal');
+        pdf.setTextColor(colors.text);
+        pdf.text(cv.personalInfo.contact.phone || '', this.MARGIN + 80, contactY);
+
+        // Email
+        contactY += lineSpacing;
+        pdf.setFont('Times-Roman', 'bold');
+        pdf.setTextColor(colors.primary);
+        pdf.text('Email:', this.MARGIN, contactY);
+        pdf.setFont('Times-Roman', 'normal');
+        pdf.setTextColor(colors.link);
+        const email = cv.personalInfo.contact.email || '';
+        pdf.textWithLink(email, this.MARGIN + 80, contactY, {
+            url: `mailto:${ email }`
+        });
+
+        // LinkedIn
+        contactY += lineSpacing;
+        pdf.setFont('Times-Roman', 'bold');
+        pdf.setTextColor(colors.primary);
+        pdf.text('LinkedIn:', this.MARGIN, contactY);
+        pdf.setFont('Times-Roman', 'normal');
+        pdf.setTextColor(colors.link);
+        const linkedInUrl = cv.personalInfo.contact.linkedin || '';
+        pdf.textWithLink(linkedInUrl, this.MARGIN + 80, contactY, {
+            url: linkedInUrl
+        });
+
+        // Address
+        contactY += lineSpacing;
+        pdf.setFont('Times-Roman', 'bold');
+        pdf.setTextColor(colors.primary);
+        pdf.text('Address:', this.MARGIN, contactY);
+        pdf.setFont('Times-Roman', 'normal');
+        pdf.setTextColor(colors.text);
+        const location = cv.personalInfo.location;
+        const formattedLocation = location ? `${location.address} - ${location.city} - ${location.country}` : '';
+        pdf.text(formattedLocation, this.MARGIN + 80, contactY);
+
+        // Add extra space after basic information
+        contactY += 10;
+
+        // Add summary content directly without header
+        yPos = Math.max(contactY + this.getLineHeight(11) * 1.2, this.MARGIN + this.AVATAR_SIZE + this.SECTION_SPACING);
+
+        // Add summary content
+        pdf.setFont('Times-Roman', 'normal');
+        pdf.setFontSize(12);
+        pdf.setTextColor(colors.text);
+
+        // Add short summary first
+        const shortSummaryLines = pdf.splitTextToSize(cv.personalInfo.shortSummary || '', this.CONTENT_WIDTH);
+        shortSummaryLines.forEach((line: string, index: number) => {
+            pdf.text(line, this.MARGIN, yPos + (index * this.getLineHeight(12)));
+        });
+        yPos += shortSummaryLines.length * this.getLineHeight(12) + this.getLineHeight(12);
+
+        // Add detailed summary if available
+        if (cv.personalInfo.summary) {
+            const summaryLines = pdf.splitTextToSize(cv.personalInfo.summary, this.CONTENT_WIDTH);
+            summaryLines.forEach((line: string, index: number) => {
+                pdf.text(line, this.MARGIN, yPos + (index * this.getLineHeight(12)));
+            });
+            yPos += summaryLines.length * this.getLineHeight(12) + this.getLineHeight(12);
         }
 
-        // Technologies
-        if (project.technologies?.length) {
-          yPos += detailSpacing;
-          const labelWidth = this.addUnderlinedItalicLabel(pdf, 'Technologies:', this.MARGIN, yPos, colors);
-          pdf.setFont('Times-Roman', 'normal');
-          const techText = project.technologies.join(', ');
-          pdf.text(` ${ techText }`, this.MARGIN + labelWidth, yPos);
+        // Add Professional Highlights if available
+        if (cv.personalInfo.professionalHighlights?.length) {
+            pdf.setFont('Times-Roman', 'bold');
+            pdf.setFontSize(12);
+            pdf.setTextColor(colors.primary);
+            pdf.text('Professional Highlights:', this.MARGIN, yPos);
+            yPos += this.getLineHeight(12) * 1.2;
+
+            pdf.setFont('Times-Roman', 'normal');
+            pdf.setTextColor(colors.text);
+
+            cv.personalInfo.professionalHighlights.forEach((highlight: string) => {
+                // Add bullet point
+                pdf.text('•', this.MARGIN + 5, yPos);
+                
+                // Add highlight text with proper wrapping
+                const lines = pdf.splitTextToSize(highlight, this.CONTENT_WIDTH - 25);
+                lines.forEach((line: string, lineIndex: number) => {
+                    pdf.text(line, this.MARGIN + 25, yPos + (lineIndex * this.getLineHeight(12)));
+                });
+                
+                yPos += lines.length * this.getLineHeight(12) + 8;
+            });
         }
 
-        // Environment
-        if (project.environment?.length) {
-          yPos += detailSpacing;
-          const labelWidth = this.addUnderlinedItalicLabel(pdf, 'Environment:', this.MARGIN, yPos, colors);
-          pdf.setFont('Times-Roman', 'normal');
-          const envText = project.environment.join(', ');
-          pdf.text(` ${ envText }`, this.MARGIN + labelWidth, yPos);
-        }
-
-        // Role
-        if (project.role) {
-          yPos += detailSpacing;
-          const labelWidth = this.addUnderlinedItalicLabel(pdf, 'Role:', this.MARGIN, yPos, colors);
-          pdf.setFont('Times-Roman', 'normal');
-          pdf.text(` ${ project.role }`, this.MARGIN + labelWidth, yPos);
-        }
-
-        // Add consistent spacing between projects
         yPos += this.SUB_SECTION_SPACING;
 
-        // Add a subtle separator line between projects (except for the last one)
-        if (index < cv.projects.projects.length - 1) {
-          pdf.setDrawColor(colors.accent);
-          pdf.setLineWidth(0.2);
-          pdf.line(this.MARGIN + 40, yPos - 12, this.A4_WIDTH - this.MARGIN - 40, yPos - 12);
+        // Add Education Section
+        yPos = this.addSectionHeader(pdf, 'Education', yPos, colors);
+
+        if (cv.education?.education) {
+            cv.education.education.forEach((edu, index) => {
+                // School/University name in blue
+                pdf.setFont('Times-Roman', 'bold');
+                pdf.setFontSize(14);
+                pdf.setTextColor(colors.primary);
+                pdf.text(edu.institution, this.MARGIN, yPos);
+
+                // Duration right-aligned
+                const duration = `${edu.startDate} - ${edu.endDate}`;
+                const durationWidth = pdf.getTextWidth(duration);
+                pdf.setFont('Times-Roman', 'normal');
+                pdf.setFontSize(11);
+                pdf.setTextColor(colors.subtext);
+                pdf.text(duration, this.A4_WIDTH - this.MARGIN - durationWidth, yPos);
+
+                // Degree and Field
+                yPos += this.getLineHeight(12);
+                pdf.setFont('Times-Roman', 'normal');
+                pdf.setFontSize(12);
+                pdf.setTextColor(colors.titleGrey);
+                pdf.text(`${edu.degree} in ${edu.field}`, this.MARGIN + 15, yPos);
+
+                // Add spacing between education items
+                yPos += this.SUB_SECTION_SPACING;
+
+                // Add a subtle separator line between education items (except for the last one)
+                if (index < cv.education.education.length - 1) {
+                    pdf.setDrawColor(colors.accent);
+                    pdf.setLineWidth(0.5);
+                    pdf.line(this.MARGIN + 40, yPos - 10, this.A4_WIDTH - this.MARGIN - 40, yPos - 10);
+                }
+            });
         }
-      });
+
+        // Add Experience section
+        yPos = this.addSectionHeader(pdf, 'Experience', yPos, colors);
+
+        // Add work experience entries
+        cv.experience.workExperience.forEach((exp, index) => {
+            // Check if we need a new page for this experience entry
+            yPos = this.checkPageBreak(pdf, yPos, 150); // Estimated minimum space needed for an experience entry
+
+            // Company name in blue, larger font
+            pdf.setFont('Times-Roman', 'bold');
+            pdf.setFontSize(18);
+            pdf.setTextColor(colors.primary);
+            pdf.text(exp.company, this.MARGIN, yPos);
+
+            // Position right below company name
+            yPos += this.getLineHeight(18) * 0.8;
+            pdf.setFont('Times-Roman', 'normal');
+            pdf.setFontSize(14);
+            pdf.setTextColor(colors.text);
+            pdf.text(exp.position, this.MARGIN, yPos);
+
+            // Duration right-aligned on same line as position
+            const duration = `${ exp.startDate } - ${ exp.endDate || 'Present' }`;
+            const durationWidth = pdf.getTextWidth(duration);
+            pdf.setFontSize(12);
+            pdf.setTextColor(colors.subtext);
+            pdf.text(duration, this.A4_WIDTH - this.MARGIN - durationWidth, yPos);
+
+            // Add some space before responsibilities
+            yPos += this.getLineHeight(14) * 1.2;
+
+            // Responsibilities with proper bullet points
+            pdf.setFont('Times-Roman', 'normal');
+            pdf.setFontSize(12);
+            pdf.setTextColor(colors.text);
+
+            exp.responsibilities.forEach((resp: string) => {
+                // Check if we need a new page for this responsibility
+                yPos = this.checkPageBreak(pdf, yPos, 50); // Estimated minimum space needed for a responsibility
+
+                // Add bullet point with proper bullet character
+                pdf.text('•', this.MARGIN + 5, yPos);
+
+                // Add responsibility text with proper wrapping
+                const lines = pdf.splitTextToSize(resp, this.CONTENT_WIDTH - 25);
+                lines.forEach((line: string, lineIndex: number) => {
+                    // Check if we need a new page for the next line
+                    yPos = this.checkPageBreak(pdf, yPos + (lineIndex * this.getLineHeight(12)), this.getLineHeight(12));
+                    pdf.text(line, this.MARGIN + 25, yPos + (lineIndex * this.getLineHeight(12)));
+                });
+
+                yPos += lines.length * this.getLineHeight(12) + 8;
+            });
+
+            // Add more spacing between experiences
+            yPos += this.SUB_SECTION_SPACING;
+
+            // Add a subtle separator line between experiences (except for the last one)
+            if (index < cv.experience.workExperience.length - 1) {
+                yPos += 5;
+                pdf.setDrawColor(colors.accent);
+                pdf.setLineWidth(0.5);
+                pdf.line(this.MARGIN, yPos, this.A4_WIDTH - this.MARGIN, yPos);
+                yPos += 15;
+            }
+        });
+
+        // Add Skills section with page break check
+        yPos = this.checkPageBreak(pdf, yPos, 150);
+        yPos = this.addSectionHeader(pdf, 'Technical Skills', yPos, colors);
+
+        // Create three columns for skills
+        const columnWidth = (this.CONTENT_WIDTH - 40) / 3;
+        let column1Y = yPos;
+        let column2Y = yPos;
+        let column3Y = yPos;
+        let currentColumn = 0;
+
+        Object.entries(cv.skills.technicalSkills).forEach(([ category, skills ]) => {
+            let currentY: any;
+            let startX: any;
+
+            switch (currentColumn) {
+                case 0:
+                    currentY = column1Y;
+                    startX = this.MARGIN;
+                    break;
+                case 1:
+                    currentY = column2Y;
+                    startX = this.MARGIN + columnWidth + 20;
+                    break;
+                case 2:
+                    currentY = column3Y;
+                    startX = this.MARGIN + (columnWidth + 20) * 2;
+                    break;
+                default:
+                    currentY = yPos;
+                    startX = this.MARGIN;
+            }
+
+            // Check if we need a new page for this skill category
+            if (currentColumn === 0) {
+                currentY = this.checkPageBreak(pdf, currentY, 100);
+                column1Y = column2Y = column3Y = currentY;
+            }
+
+            // Add category
+            pdf.setFont('Times-Roman', 'bold');
+            pdf.setFontSize(12);
+            pdf.setTextColor(colors.primary);
+            pdf.text(category, startX, currentY);
+
+            // Add skills
+            currentY += this.getLineHeight(12);
+            pdf.setFont('Times-Roman', 'normal');
+            pdf.setFontSize(11);
+            pdf.setTextColor(colors.text);
+
+            const skillText = Array.isArray(skills) ? skills.join(', ') : skills;
+            const skillLines = pdf.splitTextToSize(skillText, columnWidth - 10);
+
+            skillLines.forEach((line: string, index: number) => {
+                pdf.text(line, startX, currentY + (index * this.getLineHeight(11)));
+            });
+
+            const heightUsed = (skillLines.length * this.getLineHeight(11)) + this.SUB_SECTION_SPACING;
+
+            switch (currentColumn) {
+                case 0:
+                    column1Y += heightUsed;
+                    break;
+                case 1:
+                    column2Y += heightUsed;
+                    break;
+                case 2:
+                    column3Y += heightUsed;
+                    break;
+            }
+
+            currentColumn = (currentColumn + 1) % 3;
+        });
+
+        yPos = Math.max(column1Y, column2Y, column3Y) + this.SUB_SECTION_SPACING;
+
+        // Add Projects Section with page break check
+        yPos = this.checkPageBreak(pdf, yPos, 150);
+        yPos = this.addSectionHeader(pdf, 'Notable Projects', yPos, colors);
+
+        if (cv.projects?.projects) {
+            cv.projects.projects.forEach((project, index) => {
+                // Check if we need a new page for this project
+                yPos = this.checkPageBreak(pdf, yPos, 150);
+
+                // Project name in blue
+                pdf.setFont('Times-Roman', 'bold');
+                pdf.setFontSize(14);
+                pdf.setTextColor(colors.primary);
+                pdf.text(project.name, this.MARGIN, yPos);
+
+                // Duration right-aligned
+                const duration = project.duration || '';
+                const durationWidth = pdf.getTextWidth(duration);
+                pdf.setFont('Times-Roman', 'normal');
+                pdf.setFontSize(11);
+                pdf.setTextColor(colors.subtext);
+                pdf.text(duration, this.A4_WIDTH - this.MARGIN - durationWidth, yPos);
+
+                // Description
+                if (project.description) {
+                    yPos += this.getLineHeight(12);
+                    yPos = this.checkPageBreak(pdf, yPos, 50);
+                    pdf.setFont('Times-Roman', 'normal');
+                    pdf.setFontSize(11);
+                    pdf.setTextColor(colors.text);
+                    const descLines = pdf.splitTextToSize(project.description, this.CONTENT_WIDTH - 30);
+                    descLines.forEach((line: string, lineIndex: number) => {
+                        yPos = this.checkPageBreak(pdf, yPos + (lineIndex * this.getLineHeight(11)), this.getLineHeight(11));
+                        pdf.text(line, this.MARGIN + 15, yPos + (lineIndex * this.getLineHeight(11)));
+                    });
+                    yPos += descLines.length * this.getLineHeight(11);
+                }
+
+                // Project details with consistent styling
+                const detailSpacing = this.getLineHeight(11) * 1.2;
+
+                // Technologies
+                if (project.technologies?.length) {
+                    yPos += detailSpacing;
+                    yPos = this.checkPageBreak(pdf, yPos, 50);
+                    pdf.setFont('Times-Roman', 'bold');
+                    pdf.setTextColor(colors.primary);
+                    pdf.text('Technologies:', this.MARGIN + 15, yPos);
+                    pdf.setFont('Times-Roman', 'normal');
+                    pdf.setTextColor(colors.text);
+                    const techText = project.technologies.join(', ');
+                    const techLines = pdf.splitTextToSize(techText, this.CONTENT_WIDTH - this.TEXT_INDENT - 30);
+                    techLines.forEach((line: string, lineIndex: number) => {
+                        yPos = this.checkPageBreak(pdf, yPos + (lineIndex * this.getLineHeight(11)), this.getLineHeight(11));
+                        pdf.text(line, this.MARGIN + this.TEXT_INDENT + 15, yPos + (lineIndex * this.getLineHeight(11)));
+                    });
+                    yPos += techLines.length * this.getLineHeight(11);
+                }
+
+                // Environment
+                if (project.environment?.length) {
+                    yPos += detailSpacing;
+                    yPos = this.checkPageBreak(pdf, yPos, 50);
+                    pdf.setFont('Times-Roman', 'bold');
+                    pdf.setTextColor(colors.primary);
+                    pdf.text('Environment:', this.MARGIN + 15, yPos);
+                    pdf.setFont('Times-Roman', 'normal');
+                    pdf.setTextColor(colors.text);
+                    const envText = project.environment.join(', ');
+                    const envLines = pdf.splitTextToSize(envText, this.CONTENT_WIDTH - this.TEXT_INDENT - 30);
+                    envLines.forEach((line: string, lineIndex: number) => {
+                        yPos = this.checkPageBreak(pdf, yPos + (lineIndex * this.getLineHeight(11)), this.getLineHeight(11));
+                        pdf.text(line, this.MARGIN + this.TEXT_INDENT + 15, yPos + (lineIndex * this.getLineHeight(11)));
+                    });
+                    yPos += envLines.length * this.getLineHeight(11);
+                }
+
+                // Role
+                if (project.role) {
+                    yPos += detailSpacing;
+                    yPos = this.checkPageBreak(pdf, yPos, 50);
+                    pdf.setFont('Times-Roman', 'bold');
+                    pdf.setTextColor(colors.primary);
+                    pdf.text('Role:', this.MARGIN + 15, yPos);
+                    pdf.setFont('Times-Roman', 'normal');
+                    pdf.setTextColor(colors.text);
+                    const roleLines = pdf.splitTextToSize(project.role, this.CONTENT_WIDTH - this.TEXT_INDENT - 30);
+                    roleLines.forEach((line: string, lineIndex: number) => {
+                        yPos = this.checkPageBreak(pdf, yPos + (lineIndex * this.getLineHeight(11)), this.getLineHeight(11));
+                        pdf.text(line, this.MARGIN + this.TEXT_INDENT + 15, yPos + (lineIndex * this.getLineHeight(11)));
+                    });
+                    yPos += roleLines.length * this.getLineHeight(11);
+                }
+
+                // Add spacing between projects
+                yPos += this.SUB_SECTION_SPACING;
+
+                // Add a subtle separator line between projects (except for the last one)
+                if (index < cv.projects.projects.length - 1) {
+                    yPos += 5;
+                    pdf.setDrawColor(colors.accent);
+                    pdf.setLineWidth(0.5);
+                    pdf.line(this.MARGIN, yPos, this.A4_WIDTH - this.MARGIN, yPos);
+                    yPos += 15;
+                }
+            });
+        }
+
+        // Add footer with page numbers
+        const totalPages = pdf.getNumberOfPages();
+        for (let i = 1; i <= totalPages; i++) {
+            pdf.setPage(i);
+            pdf.setFont('Times-Roman', 'normal');
+            pdf.setFontSize(10);
+            pdf.setTextColor(colors.subtext);
+            pdf.text(
+                `Page ${ i } of ${ totalPages }`,
+                this.A4_WIDTH / 2,
+                this.A4_HEIGHT - 20,
+                { align: 'center' }
+            );
+        }
+
+        // Save the PDF
+        const timestamp = new Date().toISOString().split('T')[0];
+        const filename = `CV_${ cv.personalInfo.name.replace(/\s+/g, '_') }_${ timestamp }.pdf`;
+        pdf.save(filename);
     }
-
-    // Add footer with page numbers
-    const totalPages = pdf.getNumberOfPages();
-    for (let i = 1; i <= totalPages; i++) {
-      pdf.setPage(i);
-      pdf.setFont('Times-Roman', 'normal');
-      pdf.setFontSize(10);
-      pdf.setTextColor(colors.subtext);
-      pdf.text(
-        `Page ${ i } of ${ totalPages }`,
-        this.A4_WIDTH / 2,
-        this.A4_HEIGHT - 20,
-        { align: 'center' }
-      );
-    }
-
-    // Save the PDF with the dynamic filename
-    pdf.save(this.getFormattedFileName());
-  }
-
-  private formatCategory(category: string): string {
-    return category
-      .split(/(?=[A-Z])/)
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
-  }
 }

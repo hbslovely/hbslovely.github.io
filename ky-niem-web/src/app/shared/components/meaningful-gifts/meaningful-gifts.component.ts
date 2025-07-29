@@ -1,20 +1,32 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
-interface MeaningfulGift {
-  gift: string;
-  occasion: string;
-  meaning: string;
-  emotion: string;
+interface Gift {
+  id: number;
+  title: string;
+  date: string;
+  image: string;
+  description: string;
 }
 
 @Component({
   selector: 'app-meaningful-gifts',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './meaningful-gifts.component.html',
-  styleUrls: ['./meaningful-gifts.component.scss']
+  imports: [
+    CommonModule
+  ],
+  styleUrls: [ './meaningful-gifts.component.scss' ]
 })
-export class MeaningfulGiftsComponent {
-  @Input() gifts: MeaningfulGift[] = [];
-} 
+export class MeaningfulGiftsComponent implements OnInit {
+  gifts: Gift[] = [];
+
+  constructor(private http: HttpClient) {}
+
+  ngOnInit() {
+    this.http.get<{gifts: Gift[]}>('assets/data/meaningful-gifts.json')
+      .subscribe(data => {
+        this.gifts = data.gifts;
+      });
+  }
+}

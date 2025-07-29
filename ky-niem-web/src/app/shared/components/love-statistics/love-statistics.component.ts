@@ -1,11 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-interface LoveStatistics {
-  daysTogether: number;
-  photosTaken: number;
-  placesVisited: number;
-}
+import { LoveStatistics } from '../../models';
 
 @Component({
   selector: 'app-love-statistics',
@@ -20,6 +15,4 @@ export class LoveStatisticsComponent {
     photosTaken: 0,
     placesVisited: 0
   };
-
-  // Remove unused methods since we're using direct properties now
 }

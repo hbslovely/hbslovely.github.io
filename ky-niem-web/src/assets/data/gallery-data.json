@@ -24,14 +24,14 @@
           "description": "Nụ cười rạng ngời trên gương mặt cô dâu chú rể, phản chiếu niềm hạnh phúc vô bờ trong ngày trọng đại. Một khoảnh khắc đẹp đẽ đánh dấu khởi đầu cho hành trình yêu thương."
         },
         {
-          "src": "assets/images/hinh-cuoi/dam-cuoi-03-2022.png",
+          "src": "assets/images/hinh-cuoi/dam-cuoi-01-2022.png",
           "name": "Lễ thành hôn",
-          "description": "Lễ thành hôn tháng 3/2022 - Ngày hai trái tim chính thức về chung một nhà. Không gian tràn ngập hoa tươi và những lời chúc phúc từ người thân, bạn bè thân thiết."
+          "description": "Lễ thành hôn tại Nam Định tháng 1/2022 - Ngày hai trái tim chính thức về chung một nhà. Không gian tràn ngập hoa tươi và những lời chúc phúc từ người thân, bạn bè thân thiết."
         },
         {
           "src": "assets/images/hinh-cuoi/dam-cuoi-hcm-03-2022.png",
           "name": "Tiệc cưới",
-          "description": "Tiệc cưới tại TP.HCM - Đêm tiệc ngập tràn tiếng cười, âm nhạc và những cái ôm thân thương. Khoảnh khắc đặc biệt khi hai gia đình chính thức trở thành một."
+          "description": "Tiệc cưới tại TP.HCM - Tháng 2/2022 -  Đêm tiệc ngập tràn tiếng cười, âm nhạc và những cái ôm thân thương. Khoảnh khắc đặc biệt khi hai gia đình chính thức trở thành một."
         }
       ]
     },
@@ -60,11 +60,6 @@
           "description": "Những cái nắm tay thật chặt, cùng nhau đi qua mọi nẻo đường. Mỗi bước chân có nhau, mỗi khoảnh khắc đều trở nên ý nghĩa hơn."
         },
         {
-          "src": "assets/images/gallery/ngay-ben-nhau.png",
-          "name": "Ngày bên nhau",
-          "description": "Những ngày hạnh phúc bên nhau, từ những bữa ăn đơn giản đến những buổi dạo phố. Mỗi phút giây đều là khoảnh khắc đáng nhớ của tình yêu."
-        },
-        {
           "src": "assets/images/gallery/ngay-dau-ben-nhau.png",
           "name": "Khởi đầu tình yêu",
           "description": "Những ngày đầu tiên bên nhau - Ngại ngùng, vụng về nhưng đầy ngọt ngào. Những ánh mắt đầu tiên, những nụ cười rạng rỡ khi mới yêu."
@@ -86,44 +81,44 @@
       "title": "Địa Điểm Yêu Thích",
       "images": [
         {
-          "src": "assets/images/dia-diem/da-lat.png",
-          "name": "Đà Lạt mộng mơ",
-          "description": "Thành phố ngàn hoa - nơi chúng tôi đã cùng nhau ngắm những đồi thông xanh ngát, thưởng thức cà phê trong sương sớm và dạo bước trên những con đường đầy hoa."
+          "src": "assets/images/places/checkin_hoi-an_quang-nam.jpg",
+          "name": "Phố cổ Hội An",
+          "description": "Dạo bước trong không gian cổ kính của phố Hội, nơi mỗi góc phố đều mang đậm dấu ấn thời gian và văn hóa đặc trưng."
         },
         {
-          "src": "assets/images/dia-diem/da-nang.png",
-          "name": "Đà Nẵng năng động",
-          "description": "Thành phố đáng sống với những bãi biển tuyệt đẹp, cầu Rồng rực rỡ về đêm và những bữa hải sản ngon khó quên. Nơi chúng tôi có những kỷ niệm đẹp không thể nào quên."
+          "src": "assets/images/places/checkin_ngu-hanh-son_da-nang.jpg",
+          "name": "Ngũ Hành Sơn",
+          "description": "Chiêm ngưỡng vẻ đẹp của Ngũ Hành Sơn - Đà Nẵng, nơi có những hang động kỳ bí và cảnh quan tuyệt đẹp."
         },
         {
-          "src": "assets/images/dia-diem/hue.png",
-          "name": "Huế thơ mộng",
-          "description": "Cố đô Huế - nơi chúng tôi cùng nhau khám phá vẻ đẹp cổ kính của di sản, thưởng thức ẩm thực cung đình và đi thuyền trên sông Hương thơ mộng."
+          "src": "assets/images/places/checkin-chua-thien-mu.jpg",
+          "name": "Chùa Thiên Mụ",
+          "description": "Thăm chùa Thiên Mụ - Biểu tượng của xứ Huế, nơi mang đậm dấu ấn lịch sử và văn hóa Việt Nam."
         },
         {
-          "src": "assets/images/dia-diem/nha-trang.png",
-          "name": "Nha Trang biển xanh",
-          "description": "Thành phố biển với bãi cát trắng mịn, nước biển xanh trong và những buổi hoàng hôn tuyệt đẹp. Nơi chúng tôi cùng nhau tận hưởng những phút giây lãng mạn bên bờ biển."
+          "src": "assets/images/places/checkin_dai-noi_hue.jpg",
+          "name": "Đại Nội Huế",
+          "description": "Khám phá Hoàng cung xưa - Đại Nội Huế, nơi lưu giữ những giá trị văn hóa và lịch sử của triều Nguyễn."
         },
         {
-          "src": "assets/images/dia-diem/sapa.png",
-          "name": "Sa Pa hùng vĩ",
-          "description": "Thị trấn trong sương với những thửa ruộng bậc thang tuyệt đẹp, những đỉnh núi cao vút và văn hóa độc đáo của đồng bào dân tộc. Nơi chúng tôi cùng chinh phục và khám phá."
+          "src": "assets/images/places/checkin_bai-bien-sam-son_thanh-hoa.jpg",
+          "name": "Bãi biển Sầm Sơn",
+          "description": "Thư giãn tại bãi biển Sầm Sơn - Thanh Hóa, nơi có những bãi cát trắng mịn và sóng biển dịu êm."
         },
         {
-          "src": "assets/images/dia-diem/vung-tau.png",
-          "name": "Vũng Tàu gần gũi",
-          "description": "Thành phố biển thân thương - điểm đến cuối tuần yêu thích của chúng tôi. Nơi có những bữa hải sản ngon lành, những buổi picnic bên bờ biển và ngọn hải đăng cổ kính."
+          "src": "assets/images/places/checkin_deo-ngang.jpg",
+          "name": "Đèo Ngang",
+          "description": "Chinh phục đèo Ngang - Cung đường đèo hùng vĩ nối liền Hà Tĩnh và Quảng Bình."
         },
         {
-          "src": "assets/images/dia-diem/thai-lan.png",
-          "name": "Thái Lan đầy màu sắc",
-          "description": "Xứ sở chùa vàng với những ngôi đền rực rỡ, ẩm thực đường phố đặc sắc và những khu chợ nổi nhộn nhịp. Chuyến đi nước ngoài đầu tiên đáng nhớ của đôi ta."
+          "src": "assets/images/places/checkin_quang-binh.jpg",
+          "name": "Quảng Bình",
+          "description": "Khám phá Quảng Bình - Vùng đất của những hang động kỳ vĩ và những bãi biển hoang sơ."
         },
         {
-          "src": "assets/images/dia-diem/campuchia.png",
-          "name": "Campuchia huyền bí",
-          "description": "Đất nước chùa tháp với quần thể Angkor Wat hùng vĩ, những con đường làng yên bình và nụ cười thân thiện của người dân. Nơi chúng tôi cùng khám phá nền văn hóa độc đáo."
+          "src": "assets/images/places/checkin_tuy-hoa_phu-yen.jpg",
+          "name": "Tuy Hòa",
+          "description": "Thành phố biển Tuy Hòa - Phú Yên, nơi có những bãi biển đẹp và ẩm thực đặc sắc."
         }
       ]
     },
@@ -154,4 +149,4 @@
       ]
     }
   ]
-} 
+}

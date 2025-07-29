@@ -2,6 +2,18 @@
 <div class="menu-frame">
   <!-- Menu Border -->
   <div class="menu-border">
+    <!-- Corner Decorations -->
+    <div class="corner top-left"></div>
+    <div class="corner top-right"></div>
+    <div class="corner bottom-left"></div>
+    <div class="corner bottom-right"></div>
+
+    <!-- Border Decorations -->
+    <div class="border-decoration left"></div>
+    <div class="border-decoration right"></div>
+    <div class="border-decoration top"></div>
+    <div class="border-decoration bottom"></div>
+
     <!-- Menu Header -->
     <div class="menu-header">
       <h1 class="title">Món Ăn Yêu Thích</h1>
@@ -15,23 +27,22 @@
       <!-- His Foods -->
       <div class="menu-section">
         <div class="section-header">
-          <span class="emoji">👨</span>
           <h2>Món Anh Yêu Thích</h2>
         </div>
 
         <div class="menu-items">
-          <div class="menu-item" *ngFor="let food of foods | filter:'Chồng'">
+          <div class="menu-item" *ngFor="let food of $any(foods) | filter:'Chồng'">
             <div class="item-header">
-              <span class="item-name">{{ food.dish }}</span>
+              <span class="item-name">{{ $any(food).dish }}</span>
               <span class="dots"></span>
               <span class="price">$$$</span>
             </div>
             <div class="item-description">
-              {{ food.story }}
+              {{ $any(food).story }}
             </div>
             <div class="item-note">
               <i class="pi pi-heart"></i>
-              {{ food.feeling }}
+              {{ $any(food).feeling }}
             </div>
           </div>
         </div>
@@ -40,12 +51,11 @@
       <!-- Her Foods -->
       <div class="menu-section">
         <div class="section-header">
-          <span class="emoji">👩</span>
           <h2>Món Em Yêu Thích</h2>
         </div>
 
         <div class="menu-items">
-          <div class="menu-item" *ngFor="let food of foods | filter:'Vợ'">
+          <div class="menu-item" *ngFor="let food of $any(foods) | filter:'Vợ'">
             <div class="item-header">
               <span class="item-name">{{ food.dish }}</span>
               <span class="dots"></span>

@@ -1,11 +1,29 @@
 <!-- Hero Section -->
 <section class="hero-banner">
   <div class="hero-content">
+    <!-- Add Hero Background Decorations -->
+    <div class="hero-decorations">
+      <div class="hero-floating-icons">
+        <i class="pi pi-heart-fill"></i>
+        <i class="pi pi-heart"></i>
+        <i class="pi pi-star-fill"></i>
+        <i class="pi pi-star"></i>
+        <i class="pi pi-gift"></i>
+      </div>
+      <div class="hero-watermarks">
+        <i class="pi pi-heart-fill watermark-left"></i>
+        <i class="pi pi-heart-fill watermark-right"></i>
+      </div>
+    </div>
+
     <div class="hero-image-container">
-      <img class="hero-image" src="assets/images/quyen/quyen-portrait.png" alt="Profile Photo" />
+      <img class="hero-image" src="assets/images/albums/hinh-cuoi-dep/z6839748857055_94d59ff46b0106fd9046389fbe8f46c8.jpg" alt="Profile Photo" />
       <div class="hero-image-overlay"></div>
     </div>
     <div class="hero-text">
+      <div class="avatar-container">
+        <img src="assets/images/quyen/quyen_1.png" alt="Avatar" class="avatar" />
+      </div>
       <h1>{{ wifeData.wifeInfo?.name }}</h1>
       <h2>{{ wifeData.wifeInfo?.title }}</h2>
       <div class="hero-tags">
@@ -28,42 +46,142 @@
 
 <!-- Main Content -->
 <div class="main-content">
+  <!-- Background Decorations -->
+  <div class="content-background">
+    <div class="floating-icons">
+      <i class="pi pi-heart"></i>
+      <i class="pi pi-star"></i>
+      <i class="pi pi-camera"></i>
+      <i class="pi pi-gift"></i>
+      <i class="pi pi-map"></i>
+    </div>
+    <div class="static-watermark">
+      <i class="pi pi-heart"></i>
+    </div>
+  </div>
+
   <!-- About Section -->
   <section class="about-section">
-    <div class="about-grid">
+    <div class="masonry-grid">
       <!-- Profile Card -->
-      <div class="profile-card">
+      <div class="masonry-item profile-card">
         <div class="card-header">
-          <h3>Về Tôi</h3>
+          <i class="pi pi-heart-fill"></i>
+          <h3>Chuyện Về Nàng</h3>
         </div>
         <div class="card-content">
           <p>{{ wifeData.wifeInfo?.description }}</p>
         </div>
         <div class="card-footer">
-          <img src="assets/images/quyen/quyen.jpeg" alt="About Photo" />
+          <img src="assets/images/albums/hinh-cuoi-dep/z6839748875465_0773b7cf057f4189a2768cca296aaa53.jpg" alt="About Photo" />
         </div>
       </div>
 
       <!-- Love Message Card -->
-      <div class="love-message-card">
+      <div class="masonry-item love-message-card">
         <div class="card-header">
-          <h3>Thông Điệp Tình Yêu</h3>
+          <i class="pi pi-heart"></i>
+          <h3>Thư Gửi Người Yêu Thương</h3>
         </div>
         <div class="card-content">
           <p>{{ wifeData.wifeInfo?.loveMessage }}</p>
+          <div class="love-decoration">
+            <i class="pi pi-heart-fill"></i>
+          </div>
         </div>
       </div>
 
-      <!-- Photo Gallery Card -->
-      <div class="gallery-card">
+      <!-- Love Quote Card -->
+      <div class="masonry-item love-quote-card">
         <div class="card-header">
-          <h3>Khoảnh Khắc</h3>
+          <i class="pi pi-heart"></i>
+          <h3>Lời Yêu Thương</h3>
         </div>
         <div class="card-content">
-          <div class="photo-grid">
-            <div class="photo-item" *ngFor="let photo of wifeData.wifePhotos">
-              <img [src]="photo.url" [alt]="photo.caption" />
-              <div class="photo-caption">{{ photo.caption }}</div>
+          <p class="quote">"Khi chạm ngưỡng cuối cùng của kiếp người,chẳng gì theo ta ngoài những ký ức chúng mình từng có. Và tình yêu em dành cho anh, vẫn lặng thầm cháy sáng."</p>
+          <p class="author">- Bé "Shi" -</p>
+        </div>
+      </div>
+
+      <!-- Daily Life Card -->
+      <div class="masonry-item daily-life-card">
+        <div class="card-header">
+          <i class="pi pi-calendar"></i>
+          <h3>Một Ngày Của Em</h3>
+        </div>
+        <div class="card-content">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="time">6:00 AM</div>
+              <div class="event">Thức dậy, chuẩn bị bữa sáng cho gia đình</div>
+            </div>
+            <div class="timeline-item">
+              <div class="time">8:00 AM</div>
+              <div class="event">Bắt đầu công việc với năng lượng tràn đầy</div>
+            </div>
+            <div class="timeline-item">
+              <div class="time">12:00 PM</div>
+              <div class="event">Nghỉ trưa, lướt TikTok xem món ngon</div>
+            </div>
+            <div class="timeline-item">
+              <div class="time">4:00 PM</div>
+              <div class="event">Chạy bộ tập thể dục</div>
+            </div>
+            <div class="timeline-item">
+              <div class="time">7:00 PM</div>
+              <div class="event">Về nhà, nấu ăn và chăm sóc gia đình</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Favorite Things Card -->
+      <div class="masonry-item favorites-card">
+        <div class="card-header">
+          <i class="pi pi-star"></i>
+          <h3>Những Điều Em Yêu</h3>
+        </div>
+        <div class="card-content">
+          <div class="favorites-grid">
+            <div class="favorite-item">
+              <i class="pi pi-heart"></i>
+              <span>Được chồng ôm mỗi ngày</span>
+            </div>
+            <div class="favorite-item">
+              <i class="pi pi-camera"></i>
+              <span>Chụp ảnh kỷ niệm cùng nhau</span>
+            </div>
+            <div class="favorite-item">
+              <i class="pi pi-map"></i>
+              <span>Khám phá những vùng đất mới</span>
+            </div>
+            <div class="favorite-item">
+              <i class="pi pi-shopping-cart"></i>
+              <span>Mua sắm với chồng yêu</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dreams Card -->
+      <div class="masonry-item dreams-card">
+        <div class="card-header">
+          <i class="pi pi-star"></i>
+          <h3>Ước Mơ Của Em</h3>
+        </div>
+        <div class="card-content">
+          <div class="dreams-list">
+            <div class="dream-item">
+              <i class="pi pi-home"></i>
+              <p>Xây dựng một tổ ấm hạnh phúc cùng anh</p>
+            </div>
+            <div class="dream-item">
+              <i class="pi pi-globe"></i>
+              <p>Du lịch khắp thế giới, khám phá những điều mới</p>
+            </div>
+            <div class="dream-item">
+              <i class="pi pi-heart"></i>
+              <p>Cùng nhau già đi trong tình yêu và hạnh phúc</p>
             </div>
           </div>
         </div>
@@ -126,450 +244,58 @@
     </div>
   </section>
 
-  <!-- Memorable Moments -->
-  <section class="moments-section">
-    <h2>Khoảnh Khắc Đáng Nhớ</h2>
-    <div class="moments-timeline">
-      <div class="moment-card" *ngFor="let fact of wifeData.wifeFunFacts; let i = index">
-        <div class="moment-number">{{ i + 1 }}</div>
-        <div class="moment-content">
-          <h4>{{ fact.title }}</h4>
-          <p>{{ fact.description }}</p>
-        </div>
+<!-- Photo Gallery Section -->
+<section class="photo-gallery-section">
+  <h2>Những Khoảnh Khắc Ngọt Ngào</h2>
+  <div class="gallery-masonry">
+    <div class="gallery-item wide">
+      <img src="assets/images/quyen/1.png" alt="Khoảnh khắc yêu thương" />
+      <div class="gallery-overlay">
+        <h4>Nụ Cười Hạnh Phúc</h4>
+        <p>Nụ cười tỏa nắng của em trong những khoảnh khắc bên anh</p>
       </div>
     </div>
-  </section>
+    <div class="gallery-item">
+      <img src="assets/images/quyen/2.png" alt="Khoảnh khắc yêu thương" />
+      <div class="gallery-overlay">
+        <h4>Ánh Mắt Yêu Thương</h4>
+        <p>Ánh mắt ngọt ngào khi nhìn về phía anh</p>
+      </div>
+    </div>
+    <div class="gallery-item tall">
+      <img src="assets/images/quyen/3.png" alt="Khoảnh khắc yêu thương" />
+      <div class="gallery-overlay">
+        <h4>Duyên Dáng Nàng Thơ</h4>
+        <p>Em duyên dáng trong từng khoảnh khắc</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="assets/images/quyen/img.png" alt="Khoảnh khắc yêu thương" />
+      <div class="gallery-overlay">
+        <h4>Ngọt Ngào Bên Nhau</h4>
+        <p>Những phút giây hạnh phúc bên người thương</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="assets/images/quyen/img_1.png" alt="Khoảnh khắc yêu thương" />
+      <div class="gallery-overlay">
+        <h4>Nét Đẹp Tinh Khôi</h4>
+        <p>Em xinh đẹp trong từng khoảnh khắc</p>
+      </div>
+    </div>
+    <div class="gallery-item wide">
+      <img src="assets/images/quyen/img_2.png" alt="Khoảnh khắc yêu thương" />
+      <div class="gallery-overlay">
+        <h4>Hạnh Phúc Bên Nhau</h4>
+        <p>Những giây phút đáng nhớ của đôi ta</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Fun Facts Section -->
+<app-fun-facts-card
+  [facts]="$any(wifeData.wifeFunFacts)"
+  title="Những điều thú vị về vợ yêu">
+</app-fun-facts-card>
 </div>
-
-<style>
-:host {
-  display: block;
-  background: #fafafa;
-  min-height: 100vh;
-}
-
-/* Hero Section */
-.hero-banner {
-  position: relative;
-  height: 70vh;
-  min-height: 500px;
-  background: linear-gradient(135deg, #ff69b4, #ff1493);
-  overflow: hidden;
-}
-
-.hero-content {
-  position: relative;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-align: center;
-  z-index: 2;
-}
-
-.hero-image-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-.hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.3;
-}
-
-.hero-image-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(255,105,180,0.8), rgba(255,20,147,0.8));
-}
-
-.hero-text {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  padding: 2rem;
-}
-
-.hero-text h1 {
-  font-size: 4rem;
-  margin: 0;
-  font-family: 'Dancing Script', cursive;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-}
-
-.hero-text h2 {
-  font-size: 1.5rem;
-  margin: 1rem 0;
-  font-weight: 300;
-}
-
-.hero-tags {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 2rem;
-}
-
-.hero-tags span {
-  background: rgba(255,255,255,0.2);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-}
-
-/* Quick Stats */
-.quick-stats {
-  background: white;
-  padding: 2rem 0;
-  margin-top: -50px;
-  position: relative;
-  z-index: 3;
-}
-
-.stats-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  padding: 0 2rem;
-}
-
-.stat-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 1.5rem;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.stat-item:hover {
-  transform: translateY(-5px);
-}
-
-.stat-item i {
-  font-size: 2rem;
-  color: #ff69b4;
-  margin-bottom: 1rem;
-}
-
-.stat-label {
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 0.5rem;
-}
-
-.stat-value {
-  font-size: 1.1rem;
-  color: #333;
-  font-weight: 600;
-}
-
-/* Main Content */
-.main-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-}
-
-/* About Section */
-.about-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 4rem;
-}
-
-.profile-card,
-.love-message-card,
-.gallery-card {
-  background: white;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.card-header {
-  padding: 1.5rem;
-  background: #ff69b4;
-  color: white;
-}
-
-.card-header h3 {
-  margin: 0;
-  font-size: 1.5rem;
-}
-
-.card-content {
-  padding: 1.5rem;
-}
-
-.card-footer img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-/* Photo Grid */
-.photo-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1rem;
-}
-
-.photo-item {
-  position: relative;
-  aspect-ratio: 1;
-  overflow: hidden;
-  border-radius: 10px;
-}
-
-.photo-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.photo-item:hover img {
-  transform: scale(1.1);
-}
-
-.photo-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 0.5rem;
-  background: rgba(0,0,0,0.7);
-  color: white;
-  font-size: 0.8rem;
-  transform: translateY(100%);
-  transition: transform 0.3s ease;
-}
-
-.photo-item:hover .photo-caption {
-  transform: translateY(0);
-}
-
-/* Personality Grid */
-.traits-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.trait-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.trait-card:hover {
-  transform: translateY(-5px);
-}
-
-.trait-card i {
-  font-size: 2.5rem;
-  color: #ff69b4;
-  margin-bottom: 1rem;
-}
-
-/* Interests Grid */
-.interests-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.interest-card {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  background: white;
-  padding: 1.5rem;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.interest-icon {
-  width: 60px;
-  height: 60px;
-  background: #ff69b4;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 1.5rem;
-}
-
-/* Skills Section */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.skill-category {
-  background: white;
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.skill-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.skill-tag {
-  background: #ffe5f0;
-  color: #ff69b4;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-}
-
-/* Style Section */
-.style-content {
-  background: white;
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  margin-top: 2rem;
-}
-
-.style-categories {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.style-card {
-  padding: 1.5rem;
-  background: #ffe5f0;
-  border-radius: 10px;
-}
-
-/* Moments Timeline */
-.moments-timeline {
-  position: relative;
-  margin-top: 2rem;
-}
-
-.moment-card {
-  display: flex;
-  gap: 2rem;
-  background: white;
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  margin-bottom: 2rem;
-}
-
-.moment-number {
-  width: 40px;
-  height: 40px;
-  background: #ff69b4;
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-/* Section Headers */
-section h2 {
-  color: #333;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  text-align: center;
-  position: relative;
-  padding-bottom: 1rem;
-}
-
-section h2::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background: #ff69b4;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero-text h1 {
-    font-size: 3rem;
-  }
-
-  .hero-text h2 {
-    font-size: 1.2rem;
-  }
-
-  .main-content {
-    padding: 2rem 1rem;
-  }
-
-  .moment-card {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1.5rem;
-  }
-
-  .interest-card {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-text h1 {
-    font-size: 2.5rem;
-  }
-
-  .stats-container {
-    grid-template-columns: 1fr;
-  }
-
-  .photo-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-</style>
-
-<script>
-function getRandomEmoji() {
-  const emojis = ['🌸', '🎀', '💝', '💖', '✨', '🌟', '🦋', '🌺', '🎵', '💫'];
-  return emojis[Math.floor(Math.random() * emojis.length)];
-}
-</script>

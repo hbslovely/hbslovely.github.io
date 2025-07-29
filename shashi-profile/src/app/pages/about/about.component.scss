@@ -1,0 +1,302 @@
+.about-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.personal-info {
+  .info-header {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    align-items: center;
+    padding: 2rem;
+    background: #f0f7ff;
+    border-radius: 8px;
+    border: 1px solid #e6f4ff;
+
+    .info-text {
+      flex: 1;
+
+      h1 {
+        font-size: 2.5rem;
+        margin: 0;
+        color: var(--nav-text);
+        font-weight: 500;
+        display: flex;
+        align-items: baseline;
+        gap: 0.5rem;
+
+        .prefix {
+          font-size: 1.5rem;
+          color: #595959;
+          font-weight: normal;
+        }
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        margin: 0.75rem 0;
+        color: #595959;
+        font-weight: normal;
+      }
+
+      .summary {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: var(--text-color);
+        margin: 1.5rem 0 0 0;
+      }
+    }
+
+    .avatar {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid #fff;
+      box-shadow: 0 4px 12px rgba(0, 106, 202, 0.1);
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: scale(1.02);
+
+        .avatar-overlay {
+          opacity: 1;
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+      }
+
+      .avatar-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+
+        [nz-icon] {
+          font-size: 24px;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .contact-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #f0f7ff;
+    border-radius: 8px;
+    border: 1px solid #e6f4ff;
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: #595959;
+      font-size: 0.95rem;
+
+      [nz-icon] {
+        font-size: 1.2rem;
+        color: var(--nav-text);
+        flex-shrink: 0;
+      }
+
+      a {
+        color: #595959;
+        text-decoration: none;
+        transition: color 0.2s;
+
+        &:hover {
+          color: var(--nav-text);
+        }
+      }
+
+      span {
+        line-height: 1.4;
+      }
+    }
+  }
+
+  .additional-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+
+    .section-title {
+      color: var(--nav-text);
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .languages {
+      padding: 1.5rem;
+      background: #f0f7ff;
+      border-radius: 8px;
+      border: 1px solid #e6f4ff;
+
+      .language-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 0;
+        border-bottom: 1px solid #e6f4ff;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        .language-name {
+          font-weight: 500;
+          color: var(--nav-text);
+        }
+
+        .language-level {
+          color: #595959;
+        }
+      }
+    }
+
+    .interests {
+      padding: 1.5rem;
+      background: #f0f7ff;
+      border-radius: 8px;
+      border: 1px solid #e6f4ff;
+
+      .interest-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+
+        .interest-tag {
+          background: #e6f4ff;
+          color: var(--nav-text);
+          padding: 0.5rem 1rem;
+          border-radius: 4px;
+          font-size: 0.9rem;
+          font-weight: 500;
+          border: none;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+// Add global styles for the avatar modal
+:host ::ng-deep {
+  .avatar-preview-modal {
+    .ant-modal-content {
+      padding: 0;
+      overflow: hidden;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .ant-modal-close {
+      top: -30px;
+      right: -30px;
+
+      .ant-modal-close-x {
+        color: #fff;
+        font-size: 20px;
+      }
+    }
+
+    .avatar-modal {
+      img {
+        max-width: 90vw;
+        max-height: 90vh;
+        object-fit: contain;
+        border-radius: 8px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 1rem;
+  }
+
+  .personal-info {
+    .info-header {
+      flex-direction: column-reverse;
+      gap: 2rem;
+      text-align: center;
+      padding: 1.5rem;
+
+      .avatar {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto;
+      }
+
+      .info-text {
+        h1 {
+          font-size: 2rem;
+          justify-content: center;
+
+          .prefix {
+            font-size: 1.25rem;
+          }
+        }
+
+        h2 {
+          font-size: 1.25rem;
+        }
+      }
+    }
+
+    .contact-info {
+      grid-template-columns: 1fr;
+      padding: 1.5rem;
+      text-align: left;
+
+      .info-item {
+        justify-content: flex-start;
+      }
+    }
+
+    .additional-info {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+
+      .languages, .interests {
+        padding: 1.5rem;
+      }
+
+      h3 {
+        text-align: left;
+      }
+
+      .languages .language-item {
+        text-align: left;
+      }
+
+      .interests .interest-tags {
+        justify-content: flex-start;
+      }
+    }
+  }
+}

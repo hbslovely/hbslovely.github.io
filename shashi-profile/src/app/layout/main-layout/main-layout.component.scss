@@ -1,0 +1,69 @@
+// Variables
+$navbar-height: 73px; // Match the navbar height
+$navbar-height-scrolled: 60px;
+$container-max-width: 1200px;
+$border-radius: 8px;
+$transition: all 0.3s ease;
+
+// Colors
+$color-primary: var(--primary-color);
+$color-text: #262626;
+$color-text-secondary: #595959;
+$color-text-light: #8c8c8c;
+$color-border: #e8e8e8;
+$color-bg-hover: rgba(0, 0, 0, 0.04);
+$color-bg-active: #e6f7ff;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin icon-button {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  @include flex-center;
+  border-radius: $border-radius;
+  transition: $transition;
+  color: $color-text-secondary;
+
+  &:hover {
+    color: $color-primary;
+    background: $color-bg-hover;
+  }
+}
+
+// Layout
+.main-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: $navbar-height; // Add padding to account for fixed navbar
+
+  main {
+    flex: 1;
+    padding: 2rem 0;
+    width: 100%;
+    max-width: $container-max-width;
+    margin: 0 auto;
+  }
+
+  .content-wrapper {
+    animation: fadeIn 0.5s ease-out;
+    padding: 0 1rem; // Add horizontal padding
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,57 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-
-interface WifeData {
-  wifeInfo: {
-    name: string;
-    title: string;
-    description: string;
-    loveMessage: string;
-    tags: string[];
-  };
-  wifeBasicInfo: Array<{
-    icon: string;
-    label: string;
-    value: string;
-  }>;
-  wifeTraits: Array<{
-    icon: string;
-    title: string;
-    description: string;
-  }>;
-  wifeHobbies: Array<{
-    icon: string;
-    name: string;
-    description: string;
-  }>;
-  wifePhotos: Array<{
-    url: string;
-    caption: string;
-  }>;
-  wifeFunFacts: Array<{
-    title: string;
-    description: string;
-  }>;
-  wifeBeautyStyle: {
-    description: string;
-    categories: Array<{
-      title: string;
-      description: string;
-    }>;
-  };
-  wifeProfessionalSkills: Array<{
-    category: string;
-    skills: string[];
-  }>;
-}
+import { FunFactsCardComponent } from '../../shared/components/fun-facts-card/fun-facts-card.component';
+import { WifeData } from '../../shared/models';
 
 @Component({
   selector: 'app-thong-tin-vo',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FunFactsCardComponent],
   templateUrl: './thong-tin-vo.component.html',
-  styleUrls: ['./thong-tin-vo.component.scss']
+  styleUrls: ['./thong-tin-vo.component.scss'],
+  host: {
+    'class': 'wife-profile'
+  }
 })
 export class ThongTinVoComponent implements OnInit {
   wifeData: Partial<WifeData> = {};

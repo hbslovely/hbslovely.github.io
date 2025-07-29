@@ -1,311 +1,429 @@
 @import 'src/assets/scss/mixins';
 
-// Keyframes for background animation
-@keyframes gradientAnimation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+// Variables
+$primary-green: #4CAF50;
+$light-green: #E8F5E9;
+$lighter-green: #F1F8E9;
+$hover-green: #81C784;
+$text-color: #2E7D32;
+$dark-green: #57955a;
+$white: #fff;
+$border-color: $primary-green;
 
-@keyframes floatingBubbles {
+@keyframes floatQuoteIcon {
   0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 0;
+    transform: translate(0, 0) rotate(0deg);
   }
-  50% { opacity: 0.15; }
+  50% {
+    transform: translate(-5px, -5px) rotate(-5deg);
+  }
   100% {
-    transform: translateY(-1000px) rotate(720deg);
-    opacity: 0;
+    transform: translate(0, 0) rotate(0deg);
   }
 }
 
-// Color variables
-$primary: #3498db;
-$text-primary: #2c3e50;
-$text-secondary: #34495e;
-$background: #ecf0f1;
+@keyframes pulseOpacity {
+  0% { opacity: 0.03; }
+  50% { opacity: 0.05; }
+  100% { opacity: 0.03; }
+}
 
 .promises-section {
-  position: relative;
-  min-height: 100vh;
+  background-color: $light-green;
   padding: 4rem 2rem;
-  background: linear-gradient(-45deg, #e8f4f8, #ecf0f1);
-  background-size: 400% 400%;
-  animation: gradientAnimation 15s ease infinite;
-  overflow: hidden;
+  min-height: 100vh;
+}
 
-  // Animated background elements
-  .bubble {
-    position: absolute;
-    bottom: -100px;
-    background: rgba($primary, 0.05);
-    border-radius: 50%;
-    animation: floatingBubbles 12s linear infinite;
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-    @for $i from 1 through 15 {
-      &:nth-child(#{$i}) {
-        $size: random(60) + 20px;
-        width: $size;
-        height: $size;
-        left: random(100) * 1%;
-        animation-delay: random(8000) * -1ms;
-        animation-duration: (random(5000) + 8000) * 1ms;
-      }
-    }
-  }
+// Header Styles
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
 
-  .content-container {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    z-index: 1;
-  }
+  .title-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
 
-  .section-header {
-    text-align: center;
-    margin-bottom: 4rem;
-    
     i {
-      color: $primary;
+      color: $primary-green;
       font-size: 2rem;
-      margin-bottom: 1rem;
     }
 
     h2 {
-      color: $text-primary;
+      color: $dark-green;
       font-size: 2.5rem;
-      margin: 1rem 0;
-    }
-
-    .header-line {
-      width: 100px;
-      height: 2px;
-      background: $primary;
-      margin: 1rem auto;
-      opacity: 0.5;
+      font-weight: 600;
+      margin: 0;
     }
   }
 
-  .promises-flow {
-    .promise-group {
-      .flow-item {
-        margin-bottom: 3rem;
-        padding: 2rem 0;
-        transition: transform 0.3s ease;
+  .header-quote {
+    position: relative;
+    background: linear-gradient(135deg, $lighter-green 0%, white 100%);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+    overflow: hidden;
 
-        &:hover {
-          transform: translateX(10px);
-        }
-
-        .flow-content {
-          display: flex;
-          gap: 2rem;
-          align-items: flex-start;
-
-          .icon-circle {
-            width: 50px;
-            height: 50px;
-            min-width: 50px;
-            background: $primary;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            i {
-              color: white;
-              font-size: 1.5rem;
-            }
-          }
-
-          .flow-text {
-            h3 {
-              color: $text-primary;
-              margin: 0 0 1rem;
-              font-size: 1.3rem;
-            }
-
-            p {
-              color: $text-secondary;
-              line-height: 1.6;
-              margin-bottom: 1rem;
-            }
-
-            .tags-flow {
-              display: flex;
-              flex-wrap: wrap;
-              gap: 0.8rem;
-
-              .tag {
-                color: $primary;
-                padding: 0.3rem 0.8rem;
-                border: 1px solid $primary;
-                border-radius: 20px;
-                font-size: 0.9rem;
-              }
-            }
-          }
-        }
-
-        .flow-line {
-          height: 50px;
-          width: 2px;
-          background: $primary;
-          margin: 1rem 0 1rem 25px;
-          opacity: 0.3;
-        }
-
-        &:last-child .flow-line {
-          display: none;
-        }
-      }
-    }
-  }
-
-  .goals-flow {
-    margin-top: 5rem;
-
-    .flow-title {
-      text-align: center;
-      color: $text-primary;
-      font-size: 2rem;
-      margin-bottom: 3rem;
+    &::before {
+      content: '\e908'; // PrimeIcons quote-left
+      font-family: 'PrimeIcons';
+      position: absolute;
+      font-size: 150px;
+      color: $primary-green;
+      opacity: 0.03;
+      left: -20px;
+      top: -20px;
+      z-index: 0;
+      animation: floatQuoteIcon 6s ease-in-out infinite, pulseOpacity 4s ease-in-out infinite;
     }
 
-    .goals-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-
-      .goal-flow-item {
-        padding: 1.5rem;
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
-        transition: transform 0.3s ease;
-        border-left: 3px solid $primary;
-
-        &:hover {
-          transform: translateX(10px);
-        }
-
-        .goal-icon {
-          width: 40px;
-          height: 40px;
-          min-width: 40px;
-          background: $primary;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          i {
-            color: white;
-            font-size: 1.2rem;
-          }
-        }
-
-        .goal-content {
-          h4 {
-            color: $text-primary;
-            margin: 0 0 0.5rem;
-            font-size: 1.1rem;
-          }
-
-          .timeframe {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: $text-secondary;
-            font-size: 0.9rem;
-
-            i {
-              color: $primary;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .quote-section {
-    text-align: center;
-    margin-top: 5rem;
-    padding: 3rem 0;
-
-    .quote-line {
-      width: 100px;
-      height: 2px;
-      background: $primary;
-      margin: 0 auto 2rem;
-      opacity: 0.3;
+    &::after {
+      content: '\e909'; // PrimeIcons quote-right
+      font-family: 'PrimeIcons';
+      position: absolute;
+      font-size: 150px;
+      color: $primary-green;
+      opacity: 0.03;
+      right: -20px;
+      bottom: -20px;
+      z-index: 0;
+      transform: rotate(180deg);
+      animation: floatQuoteIcon 6s ease-in-out infinite reverse, pulseOpacity 4s ease-in-out infinite;
+      animation-delay: 2s;
     }
 
-    blockquote {
-      color: $text-primary;
+    p {
+      position: relative;
+      z-index: 1;
       font-size: 1.2rem;
-      font-style: italic;
       line-height: 1.6;
-      margin: 0 0 1rem;
-      max-width: 800px;
-      margin: 0 auto;
+      color: $text-color;
+      font-style: italic;
+      text-align: center;
+      margin: 0;
     }
 
-    .author {
-      color: $text-secondary;
-      font-size: 0.9rem;
-      margin-top: 1rem;
+    span {
       display: block;
+      text-align: right;
+      color: $text-color;
+      font-weight: 500;
+      margin-top: 1rem;
     }
   }
 }
 
-// Mobile Responsive
+// Promises Grid
+.promises-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.promise-item {
+  background: $white;
+  padding: 2rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: $primary-green;
+  }
+
+  .promise-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    i {
+      color: $primary-green;
+      font-size: 1.5rem;
+    }
+
+    h3 {
+      color: $dark-green;
+      font-size: 1.3rem;
+      margin: 0;
+    }
+  }
+
+  .promise-line {
+    width: 50px;
+    height: 2px;
+    background: $border-color;
+    margin: 1rem 0;
+  }
+
+  .promise-text {
+    color: $dark-green;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .promise-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+
+    .tag {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.8rem;
+      background: $light-green;
+      color: $dark-green;
+      font-size: 0.9rem;
+
+      i {
+        font-size: 0.8rem;
+        color: $primary-green;
+      }
+    }
+  }
+}
+
+// Timeline Section
+.goals-timeline {
+  margin: 4rem 0;
+  padding: 2rem 0;
+  position: relative;
+}
+
+.timeline-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+
+  .line {
+    flex: 1;
+    height: 1px;
+    background: $border-color;
+  }
+
+  .header-content {
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: $dark-green;
+
+    i {
+      font-size: 1.5rem;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.timeline-content {
+  position: relative;
+  padding: 2rem 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: $border-color;
+  }
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+  position: relative;
+  width: 50%;
+
+  &.right-aligned {
+    margin-left: 50%;
+    flex-direction: row-reverse;
+
+    .timeline-body {
+      text-align: right;
+    }
+  }
+
+  .timeline-marker {
+    background: $white;
+    border: 2px solid $primary-green;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: -20px;
+    z-index: 1;
+
+    i {
+      color: $primary-green;
+      font-size: 1rem;
+    }
+  }
+
+  .timeline-body {
+    background: $white;
+    padding: 1.5rem;
+    margin: 0 2rem;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+    &:nth-child(3n+1) {
+      animation: floatingCard1 2s ease-in-out infinite;
+    }
+
+    &:nth-child(3n+2) {
+      animation: floatingCard2 1.8s ease-in-out infinite;
+      animation-delay: 0.3s;
+    }
+
+    &:nth-child(3n) {
+      animation: floatingCard3 2.2s ease-in-out infinite;
+      animation-delay: 0.6s;
+    }
+
+    h4 {
+      color: $dark-green;
+      margin: 0 0 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .timeline-time {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: $primary-green;
+      font-size: 0.9rem;
+
+      i {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+// Footer Quote
+.footer-section {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.quote-box {
+  position: relative;
+  background: linear-gradient(135deg, $lighter-green 0%, white 100%);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem 0;
+  overflow: hidden;
+
+  &::before {
+    content: '\e908'; // PrimeIcons quote-left
+    font-family: 'PrimeIcons';
+    position: absolute;
+    font-size: 180px;
+    color: $primary-green;
+    opacity: 0.03;
+    left: -25px;
+    top: -25px;
+    z-index: 0;
+    animation: floatQuoteIcon 6s ease-in-out infinite, pulseOpacity 4s ease-in-out infinite;
+  }
+
+  &::after {
+    content: '\e909'; // PrimeIcons quote-right
+    font-family: 'PrimeIcons';
+    position: absolute;
+    font-size: 180px;
+    color: $primary-green;
+    opacity: 0.03;
+    right: -25px;
+    bottom: -25px;
+    z-index: 0;
+    transform: rotate(180deg);
+    animation: floatQuoteIcon 6s ease-in-out infinite reverse, pulseOpacity 4s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+
+  .pi-heart {
+    color: $primary-green;
+    font-size: 2rem;
+    opacity: 0.7;
+    display: block;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  blockquote {
+    position: relative;
+    z-index: 1;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: $text-color;
+    font-style: italic;
+    text-align: center;
+    margin: 0;
+  }
+
+  .author {
+    display: block;
+    text-align: right;
+    color: $text-color;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+}
+
+// Responsive Design
 @media (max-width: 768px) {
-  .promises-section {
-    padding: 2rem 1rem;
-
-    .section-header {
-      h2 {
-        font-size: 2rem;
-      }
+  .timeline-content {
+    &::before {
+      left: 0;
     }
+  }
 
-    .promises-flow {
-      .flow-item {
-        .flow-content {
-          flex-direction: column;
-          text-align: center;
-          gap: 1rem;
+  .timeline-item {
+    width: 100%;
+    margin-left: 0 !important;
+    padding-left: 3rem;
 
-          .icon-circle {
-            margin: 0 auto;
-          }
+    &.right-aligned {
+      flex-direction: row;
 
-          .flow-line {
-            margin: 1rem auto;
-          }
-        }
-      }
-    }
-
-    .goals-flow {
-      .goals-list {
-        grid-template-columns: 1fr;
-      }
-
-      .goal-flow-item {
+      .timeline-body {
         text-align: left;
       }
     }
 
-    .quote-section {
-      padding: 2rem 0;
+    .timeline-marker {
+      left: 0;
+    }
 
-      blockquote {
-        font-size: 1rem;
-        padding: 0 1rem;
-      }
+    .timeline-body {
+      margin-left: 0;
     }
   }
-} 
+}

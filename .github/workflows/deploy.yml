@@ -1,0 +1,122 @@
+name: Build Angular and copy to ky-niem-web
+
+on:
+  push:
+    branches:
+      - main
+      - profile
+
+jobs:
+  build-ky-niem:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚀 Checkout code
+        uses: actions/checkout@v3
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: 📥 Install dependencies
+        working-directory: ky-niem-web
+        run: npm install --force
+
+      - name: 🔨 Build Angular ky-niem-web
+        working-directory: ky-niem-web
+        run: npm run build -- --configuration production --aot --optimization --build-optimizer --vendor-chunk --output-path=dist --base-href=/memories/
+
+      - name: 📁 Upload memories build
+        uses: actions/upload-artifact@v4
+        with:
+          name: memories
+          path: ky-niem-web/dist
+
+  build-profile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚀 Checkout code
+        uses: actions/checkout@v3
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: 📥 Install dependencies
+        working-directory: my-working-profile
+        run: npm install --force
+
+      - name: 🔨 Build Angular profile
+        working-directory: my-working-profile
+        run: npm run build -- --configuration production --aot --optimization --build-optimizer --vendor-chunk --output-path=dist --base-href=/cv/
+
+      - name: 📁 Upload profile build
+        uses: actions/upload-artifact@v4
+        with:
+          name: profile
+          path: my-working-profile/dist
+
+  build-shashi:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚀 Checkout code
+        uses: actions/checkout@v3
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: 📥 Install dependencies
+        working-directory: shashi-profile
+        run: npm install --force
+
+      - name: 🔨 Build Angular shashi profile
+        working-directory: shashi-profile
+        run: npm run build -- --configuration production --aot --optimization --output-path=dist --base-href=/shashi/
+
+      - name: 📁 Upload shashi build
+        uses: actions/upload-artifact@v4
+        with:
+          name: shashi
+          path: shashi-profile/dist
+
+  deploy:
+    needs: [build-ky-niem, build-profile, build-shashi]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: 🚀 Checkout code
+        uses: actions/checkout@v3
+
+      - name: 📥 Download memories build
+        uses: actions/download-artifact@v4
+        with:
+          name: memories
+          path: memories
+
+      - name: 📥 Download profile build
+        uses: actions/download-artifact@v4
+        with:
+          name: profile
+          path: cv
+
+      - name: 📥 Download shashi build
+        uses: actions/download-artifact@v4
+        with:
+          name: shashi
+          path: shashi
+
+      - name: 🚀 Deploy to GitHub Pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f cv
+          git add -f memories
+          git add -f shashi
+          git commit -m "Deploy production build to GitHub Pages"
+          git push origin main

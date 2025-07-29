@@ -1,0 +1,136 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import 'ng-zorro-antd/ng-zorro-antd.min.css';
+
+:root {
+  --primary-color: #1890ff;
+  --primary-lighter: #69b1ff;
+  --primary-lightest: #e6f7ff;
+  --text-color: #2c3e50;
+  --text-secondary: #64748b;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --border-radius: 8px;
+
+  /* Navigation variables */
+  --nav-bg: #f0f7ff;
+  --nav-hover: #e6f4ff;
+  --nav-active: #bae0ff;
+  --nav-text: #1672c3;
+  --nav-text-light: #69b1ff;
+  --nav-border: #e6f4ff;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
+  min-height: 100vh;
+  color: var(--text-color);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+// Ant Design customization
+.ant-card {
+  border-radius: var(--border-radius) !important;
+}
+
+.ant-tag {
+  border-radius: var(--border-radius) !important;
+}
+
+.ant-timeline-item-tail {
+  border-inline-start: 2px solid var(--border-color) !important;
+}
+
+.ant-timeline-item-head {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+// Ant Design Button customization
+.ant-btn {
+  border-radius: var(--border-radius);
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Ant Design Dropdown customization
+.ant-dropdown {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+  .ant-dropdown-menu {
+    border-radius: var(--border-radius);
+  }
+}
+
+.section-title {
+  position: relative;
+  color: var(--text-color);
+  margin: 0 0 2rem 0;
+  padding-bottom: 0.75rem;
+  font-size: 1.75rem;
+  font-weight: 500;
+  display: inline-block;
+  min-width: 200px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--nav-text);
+    transition: width 0.3s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+h3.section-title {
+  font-size: 1.25rem;
+  margin: 0 0 1.5rem 0;
+  min-width: 150px;
+
+  &::after {
+    width: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  h3.section-title {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+}

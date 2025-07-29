@@ -2,7 +2,7 @@
   "happyMoments": [
     {
       "id": 1,
-      "image": "assets/images/moments/first-date.jpg",
+      "image": "assets/images/ki-niem/lan-dau-gap-nhau.png",
       "title": "Buổi Hẹn Đầu Tiên",
       "date": "10/5/2021",
       "description": "Ngày đầu tiên chúng ta gặp nhau, mọi thứ đều rất đặc biệt và đáng nhớ.",
@@ -35,4 +35,4 @@
       "count": 30
     }
   ]
-} 
+}

@@ -36,15 +36,27 @@
 }
 
 // Base Styles
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   color: var(--text-primary);
   line-height: 1.6;
   min-height: 100vh;
+  width: 100%;
   background: #f0fdfa;
   position: relative;
   overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
 // Animated Background

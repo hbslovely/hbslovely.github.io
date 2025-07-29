@@ -1,0 +1,51 @@
+<div class="about-section">
+  <div class="personal-info" *ngIf="cvService.cv()?.personalInfo as info">
+    <div class="info-header">
+      <div class="info-text">
+        <h1>
+          <span class="prefix">{{ info.prefix }}</span>
+          {{ info.name }}
+        </h1>
+        <h2>{{ info.title }}</h2>
+        <p class="summary">{{ info.shortSummary }}</p>
+      </div>
+      <div class="avatar" (click)="showAvatar()">
+        <img src="assets/images/avatar.png" alt="Profile picture">
+        <div class="avatar-overlay">
+          <span nz-icon nzType="zoom-in" nzTheme="outline"></span>
+        </div>
+      </div>
+    </div>
+    <div class="contact-info">
+      <div class="info-item">
+        <span nz-icon nzType="environment" nzTheme="outline"></span>
+        <span>{{ info.location.city }}, {{ info.location.country }}</span>
+      </div>
+      <div class="info-item">
+        <span nz-icon nzType="mail" nzTheme="outline"></span>
+        <a [href]="'mailto:' + info.contact.email">{{ info.contact.email }}</a>
+      </div>
+      <div class="info-item">
+        <span nz-icon nzType="phone" nzTheme="outline"></span>
+        <a [href]="'tel:' + info.contact.phone">{{ info.contact.phone }}</a>
+      </div>
+    </div>
+    <div class="additional-info">
+      <div class="languages">
+        <h2 class="section-title">Languages</h2>
+        <div class="language-item" *ngFor="let lang of info.languages">
+          <span class="language-name">{{ lang.name }}</span>
+          <span class="language-level">{{ lang.level }}</span>
+        </div>
+      </div>
+      <div class="interests">
+        <h2 class="section-title">Interests</h2>
+        <div class="interest-tags">
+          <span class="interest-tag" *ngFor="let interest of info.interests">
+            {{ interest }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

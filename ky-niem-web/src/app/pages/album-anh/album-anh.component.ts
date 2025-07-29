@@ -1,142 +1,49 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AlbumGalleryComponent, AlbumGalleryImage } from '../../shared/components/album-gallery/album-gallery.component';
-
-interface Photo {
-  id: string | number;
-  url: string;
-  title: string;
-  description?: string;
-}
-
-interface Album {
-  id: string;
-  title: string;
-  description: string;
-  coverImage: string;
-  photoCount: number;
-  photos: Photo[];
-}
+import { Router } from '@angular/router';
+import { AlbumHeaderComponent } from './components/album-header/album-header.component';
+import { Album, AlbumData, AlbumDataResponse } from '../../shared/models';
 
 @Component({
   selector: 'app-album-anh',
   standalone: true,
-  imports: [CommonModule, AlbumGalleryComponent],
+  imports: [ CommonModule, AlbumHeaderComponent ],
   templateUrl: './album-anh.component.html',
   styleUrls: ['./album-anh.component.scss']
 })
 export class AlbumAnhComponent implements OnInit {
   albums: Album[] = [];
-  selectedAlbumId: string | null = null;
-  selectedAlbum: Album | null = null;
-  selectedAlbumPhotos: AlbumGalleryImage[] = [];
-  selectedPhoto: Photo | null = null;
   viewMode: 'grid' | 'list' = 'grid';
-  detailViewMode: 'grid' | 'masonry' | 'carousel' = 'grid';
-  currentSlide = 0;
+
+  constructor(private router: Router) {}
 
   async ngOnInit() {
     try {
       const response = await fetch('assets/data/album-data.json');
-      const data = await response.json();
-      this.albums = data.albums;
+      const data: AlbumDataResponse = await response.json();
+      this.albums = data.albums.map((album: AlbumData) => ({
+        id: album.id,
+        title: album.title,
+        description: album.description,
+        coverImage: album.coverImage,
+        photoCount: album.photos.length
+      }));
     } catch (error) {
       console.error('Error loading album data:', error);
     }
   }
 
   getTotalPhotos(): number {
-    return this.albums.reduce((total, album) => total + album.photoCount, 0);
+    return this.albums.reduce((total, album) => total + (album.photoCount || 0), 0);
   }
 
-  openAlbum(albumId: string) {
-    this.selectedAlbumId = albumId;
-    this.selectedAlbum = this.albums.find(album => album.id === albumId) || null;
-    if (this.selectedAlbum) {
-      this.selectedAlbumPhotos = this.selectedAlbum.photos.map(photo => ({
-        src: photo.url,
-        name: photo.title,
-        description: photo.description
-      }));
-    } else {
-      this.selectedAlbumPhotos = [];
-    }
-    this.currentSlide = 0;
+  getRandomPreviewPhotos(count: number): string[] {
+    const allPhotos = this.albums.flatMap(album => [album.coverImage]);
+    const shuffled = [...allPhotos].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, count);
   }
 
-  goBack() {
-    this.selectedAlbumId = null;
-    this.selectedAlbum = null;
-    this.selectedAlbumPhotos = [];
-    this.selectedPhoto = null;
-  }
-
-  setDetailViewMode(mode: 'grid' | 'masonry' | 'carousel') {
-    this.detailViewMode = mode;
-    if (mode === 'carousel') {
-      this.currentSlide = 0;
-    }
-  }
-
-  openPhotoViewer(photo: Photo) {
-    this.selectedPhoto = photo;
-  }
-
-  closePhotoViewer() {
-    this.selectedPhoto = null;
-  }
-
-  prevPhoto(event: Event) {
-    event.stopPropagation();
-    const currentIndex = this.selectedAlbum?.photos.findIndex(photo => photo.id === this.selectedPhoto?.id) ?? -1;
-    if (currentIndex > 0 && this.selectedAlbum) {
-      this.selectedPhoto = this.selectedAlbum.photos[currentIndex - 1];
-    }
-  }
-
-  nextPhoto(event: Event) {
-    event.stopPropagation();
-    const currentIndex = this.selectedAlbum?.photos.findIndex(photo => photo.id === this.selectedPhoto?.id) ?? -1;
-    if (this.selectedAlbum && currentIndex < this.selectedAlbum.photos.length - 1) {
-      this.selectedPhoto = this.selectedAlbum.photos[currentIndex + 1];
-    }
-  }
-
-  canNavigatePrev(): boolean {
-    if (!this.selectedPhoto || !this.selectedAlbum) return false;
-    const currentIndex = this.selectedAlbum.photos.findIndex(photo => photo.id === this.selectedPhoto?.id);
-    return currentIndex > 0;
-  }
-
-  canNavigateNext(): boolean {
-    if (!this.selectedPhoto || !this.selectedAlbum) return false;
-    const currentIndex = this.selectedAlbum.photos.findIndex(photo => photo.id === this.selectedPhoto?.id);
-    return currentIndex < this.selectedAlbum.photos.length - 1;
-  }
-
-  getMasonryColumns(): Photo[][] {
-    const columns: Photo[][] = [[], [], []];
-    if (this.selectedAlbum) {
-      this.selectedAlbum.photos.forEach((photo, index) => {
-        columns[index % 3].push(photo);
-      });
-    }
-    return columns;
-  }
-
-  prevSlide() {
-    if (this.currentSlide > 0) {
-      this.currentSlide--;
-    }
-  }
-
-  nextSlide() {
-    if (this.selectedAlbumPhotos && this.currentSlide < this.selectedAlbumPhotos.length - 1) {
-      this.currentSlide++;
-    }
-  }
-
-  goToSlide(index: number) {
-    this.currentSlide = index;
+  openAlbum(id: string) {
+    this.router.navigate(['/album-anh', id]);
   }
 }

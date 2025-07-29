@@ -1,12 +1,52 @@
 {
   "favoritePhotos": [
-    { "id": 1, "src": "assets/images/ki-niem/lan-dau-gap-nhau.png", "title": "Lần đầu gặp nhau", "reason": "Khoảnh khắc định mệnh khiến chúng em yêu nhau từ cái nhìn đầu tiên" },
-    { "id": 2, "src": "assets/images/ki-niem/trao-duyen.png", "title": "Trao duyên", "reason": "Những ngày đầu hẹn hò ngọt ngào và đầy cảm xúc" },
-    { "id": 3, "src": "assets/images/ki-niem/ky-niem-quen-nhau.png", "title": "Kỷ niệm quen nhau", "reason": "Ngày chính thức quen nhau - cột mốc quan trọng của tình yêu" },
-    { "id": 4, "src": "assets/images/ki-niem/cuoi-hoi.png", "title": "Ngày cưới", "reason": "Ngày hạnh phúc nhất trong đời - lời thề ước trước mặt mọi người" },
-    { "id": 5, "src": "assets/images/hinh-cuoi/mang-thai.png", "title": "Mang thai", "reason": "Niềm hạnh phúc khi biết tin sắp có em bé" },
-    { "id": 6, "src": "assets/images/hinh-cuoi/cung-nhau.png", "title": "Cùng nhau", "reason": "Hạnh phúc đơn giản khi được ở bên nhau mỗi ngày" },
-    { "id": 7, "src": "assets/images/phat/phat-portrait.png", "title": "Chồng yêu", "reason": "Ảnh chân dung đẹp trai của Ba Heo Nhỏ" },
-    { "id": 8, "src": "assets/images/quyen/quyen-portrait.png", "title": "Vợ yêu", "reason": "Heo Bỉm Sửa xinh đẹp rạng rỡ" }
+    {
+      "id": "wedding-1",
+      "src": "assets/images/hinh-cuoi/dam-cuoi-01-2022.png",
+      "caption": "Ngày cưới hạnh phúc",
+      "description": "Lễ thành hôn tháng 1/2022"
+    },
+    {
+      "id": "first-meet",
+      "src": "assets/images/ki-niem/lan-dau-gap-nhau.png",
+      "caption": "Lần đầu gặp nhau",
+      "description": "Khoảnh khắc định mệnh"
+    },
+    {
+      "id": "couple-avatar",
+      "src": "assets/images/anh-chu-dao/avatar-couple.png",
+      "caption": "Chúng mình",
+      "description": "Hạnh phúc bên nhau"
+    },
+    {
+      "id": "hoi-an",
+      "src": "assets/images/bucket/checkin_hoi-an_quang-nam.jpg",
+      "caption": "Phố cổ Hội An",
+      "description": "Dạo bước trong không gian cổ kính của phố Hội"
+    },
+    {
+      "id": "happy-moment",
+      "src": "assets/images/gallery/nu-cuoi.png",
+      "caption": "Nụ cười hạnh phúc",
+      "description": "Nụ cười rạng rỡ trong ngày vui"
+    },
+    {
+      "id": "together",
+      "src": "assets/images/gallery/ben-nhau.png",
+      "caption": "Bên nhau",
+      "description": "Những khoảnh khắc bên nhau"
+    },
+    {
+      "id": "phat-portrait",
+      "src": "assets/images/phat/phat-portrait.png",
+      "caption": "Anh Phát",
+      "description": "Chân dung anh"
+    },
+    {
+      "id": "quyen-portrait",
+      "src": "assets/images/quyen/quyen-portrait.png",
+      "caption": "Em Quyên",
+      "description": "Chân dung em"
+    }
   ]
-} 
+}

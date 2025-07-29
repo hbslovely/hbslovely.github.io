@@ -19,15 +19,15 @@ export const routes: Routes = [
   },
   {
     path: 'album-anh',
-    loadChildren: () => import('./pages/album-anh/album-anh.routes').then(m => m.AlbumAnhRoutes)
+    loadChildren: () => import('./pages/album-anh/album-anh.routes').then(m => m.ALBUM_ANH_ROUTES)
   },
   {
     path: 'album-anh/:id',
-    loadChildren: () => import('./pages/album-anh/album-anh.routes').then(m => m.AlbumAnhRoutes)
+    loadChildren: () => import('./pages/album-anh/album-anh.routes').then(m => m.ALBUM_ANH_ROUTES)
   },
   {
-    path: 'tips-vo-chong',
-    loadChildren: () => import('./pages/tips-vo-chong/tips-vo-chong.routes').then(m => m.TipsVoChongRoutes)
+    path: 'place',
+    loadChildren: () => import('./pages/memory-places/memory-places.routes').then(m => m.MEMORY_PLACES_ROUTES)
   },
   {
     path: '',

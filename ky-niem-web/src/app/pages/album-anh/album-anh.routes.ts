@@ -1,12 +1,14 @@
 import { Routes } from '@angular/router';
+import { AlbumAnhComponent } from './album-anh.component';
+import { AlbumDetailComponent } from './components/album-detail/album-detail.component';
 
-export const AlbumAnhRoutes: Routes = [
+export const ALBUM_ANH_ROUTES: Routes = [
   {
     path: '',
-    loadComponent: () => import('./album-anh.component').then(m => m.AlbumAnhComponent)
+    component: AlbumAnhComponent
   },
   {
     path: ':id',
-    loadComponent: () => import('./album-anh.component').then(m => m.AlbumAnhComponent)
+    component: AlbumDetailComponent
   }
 ]; 

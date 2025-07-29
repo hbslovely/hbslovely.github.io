@@ -1,13 +1,35 @@
 {
   "memoriesGallery": [
-    { "id": 1, "src": "assets/images/ki-niem/lan-dau-gap-nhau.png", "description": "Lần đầu gặp nhau - Khoảnh khắc định mệnh" },
-    { "id": 2, "src": "assets/images/ki-niem/trao-duyen.png", "description": "Trao duyên - Những ngày đầu yêu nhau" },
-    { "id": 3, "src": "assets/images/ki-niem/ky-niem-quen-nhau.png", "description": "Kỷ niệm ngày quen nhau" },
-    { "id": 4, "src": "assets/images/ki-niem/cuoi-hoi.png", "description": "Cưới hỏi - Ngày trọng đại" },
-    { "id": 5, "src": "assets/images/hinh-cuoi/mang-thai.png", "description": "Mang thai - Chờ đón thiên thần nhỏ" },
-    { "id": 6, "src": "assets/images/hinh-cuoi/cung-nhau.png", "description": "Cùng nhau - Hạnh phúc mỗi ngày" },
-    { "id": 7, "src": "assets/images/bucket/DongHuyenKhong_DaNang_Thang5-2024.png", "description": "Du lịch Đà Nẵng - Tháng 5/2024" },
-    { "id": 8, "src": "assets/images/bucket/dapxedap_Thang8-2024.jpg", "description": "Đạp xe cùng nhau - Tháng 8/2024" }
+    {
+      "id": 1,
+      "src": "assets/images/ki-niem/lan-dau-gap-nhau.png",
+      "description": "Lần đầu gặp nhau - Khoảnh khắc định mệnh"
+    },
+    {
+      "id": 2,
+      "src": "assets/images/ki-niem/trao-duyen.png",
+      "description": "Trao duyên - Những ngày đầu yêu nhau"
+    },
+    {
+      "id": 3,
+      "src": "assets/images/ki-niem/ky-niem-quen-nhau.png",
+      "description": "Kỷ niệm ngày quen nhau"
+    },
+    {
+      "id": 4,
+      "src": "assets/images/ki-niem/cuoi-hoi.png",
+      "description": "Cưới hỏi - Ngày trọng đại"
+    },
+    {
+      "id": 5,
+      "src": "assets/images/hinh-cuoi/mang-thai.png",
+      "description": "Mang thai - Chờ đón thiên thần nhỏ"
+    },
+    {
+      "id": 6,
+      "src": "assets/images/hinh-cuoi/cung-nhau.png",
+      "description": "Cùng nhau - Hạnh phúc mỗi ngày"
+    }
   ],
   "timeline": [
     {
@@ -41,71 +63,12 @@
       "description": "Ngày cưới của chúng ta - một ngày đặc biệt nhất trong đời. Với sự chứng kiến của gia đình và bạn bè, chúng ta đã hứa sẽ yêu thương nhau trọn đời.",
       "image": "assets/images/ki-niem/cuoi-hoi.png",
       "icon": "pi pi-home"
-    },
-    {
-      "phase": "Mang thai",
-      "date": "06/2023",
-      "title": "Chờ đón thiên thần nhỏ 👶",
-      "description": "Niềm hạnh phúc tràn đầy khi biết tin sắp có em bé. Những tháng ngày chờ đợi đầy hồi hộp và yêu thương, chuẩn bị đón chào thành viên mới của gia đình.",
-      "image": "assets/images/hinh-cuoi/mang-thai.png",
-      "icon": "pi pi-heart-fill"
-    },
-    {
-      "phase": "Cùng nhau",
-      "date": "Hiện tại",
-      "title": "Hạnh phúc mỗi ngày 🏠",
-      "description": "Ngày nào cũng là một kỷ niệm đẹp khi được ở bên nhau. Chúng ta cùng nhau xây dựng tổ ấm hạnh phúc và tạo ra những kỷ niệm không thể nào quên.",
-      "image": "assets/images/hinh-cuoi/cung-nhau.png",
-      "icon": "pi pi-sun"
-    },
-    {
-      "phase": "Du lịch Đà Nẵng",
-      "date": "05/2024",
-      "title": "Khám phá Đà Nẵng cùng nhau 🌊",
-      "description": "Chuyến du lịch đến Đà Nẵng, nơi chúng ta cùng nhau khám phá Động Huyền Không và những địa điểm tuyệt đẹp khác.",
-      "image": "assets/images/bucket/DongHuyenKhong_DaNang_Thang5-2024.png",
-      "icon": "pi pi-map-marker"
-    },
-    {
-      "phase": "Đạp xe cùng nhau",
-      "date": "08/2024",
-      "title": "Hành trình đạp xe 🚲",
-      "description": "Kỷ niệm đáng nhớ khi hai vợ chồng cùng nhau đạp xe từ nhà ra quận 1, tận hưởng không khí trong lành và cảnh đẹp thành phố.",
-      "image": "assets/images/bucket/dapxedap_Thang8-2024.jpg",
-      "icon": "pi pi-heart"
-    }
-  ],
-  "loveQuotes": [
-    {
-      "quote": "Trong vô vàn con người trên thế giới này, anh đã tìm thấy em - người duy nhất làm cho trái tim anh rung động.",
-      "author": "Ba Heo Nhỏ",
-      "icon": "pi pi-heart"
-    },
-    {
-      "quote": "Em yêu anh không phải vì anh hoàn hảo, mà vì anh làm cho cuộc sống của em trở nên hoàn hảo.",
-      "author": "Heo Bỉm Sửa",
-      "icon": "pi pi-star"
-    },
-    {
-      "quote": "Tình yêu của chúng ta như những ngôi sao - có thể không nhìn thấy ban ngày, nhưng luôn tồn tại và tỏa sáng.",
-      "author": "Cùng nhau",
-      "icon": "pi pi-sparkles"
-    },
-    {
-      "quote": "Mỗi ngày trôi qua, anh càng yêu em nhiều hơn. Em chính là ý nghĩa của cuộc đời anh.",
-      "author": "Ba Heo Nhỏ",
-      "icon": "pi pi-sun"
     }
   ],
   "loveStatistics": {
     "daysTogether": "1,531",
-    "photosShared": "12,457",
-    "tripsTaken": "18",
-    "smilesShared": "∞",
-    "hugsTight": "6,000+",
-    "laughsLoud": "Vô số",
-    "tearsOfJoy": "Rất nhiều",
-    "comfortMoments": "Mỗi ngày"
+    "photosTaken": "12,457",
+    "placesVisited": "+18"
   },
   "specialMoments": [
     {
@@ -121,20 +84,6 @@
       "date": "07/2021",
       "icon": "pi pi-map",
       "color": "#2196f3"
-    },
-    {
-      "title": "Gặp gia đình nhau",
-      "description": "Ngày được gia đình chính thức chấp nhận và yêu thương",
-      "date": "12/2021",
-      "icon": "pi pi-users",
-      "color": "#4caf50"
-    },
-    {
-      "title": "Mua nhà chung",
-      "description": "Tổ ấm đầu tiên của hai đứa, nơi bắt đầu cuộc sống mới",
-      "date": "01/2023",
-      "icon": "pi pi-home",
-      "color": "#ff9800"
     }
   ],
   "ourSongs": [
@@ -145,86 +94,10 @@
       "moment": "Khi nghe nhạc cùng nhau"
     },
     {
-      "title": "Chờ Anh Nhé",
-      "artist": "Hoàng Dũng",
-      "description": "Lời hứa sẽ luôn chờ đợi nhau dù ở đâu, dù bao lâu",
-      "moment": "Lúc xa nhau"
-    },
-    {
-      "title": "Làm Vợ Anh Nhé",
-      "artist": "Chi Dân",
-      "description": "Lời cầu hôn ngọt ngào và ước mơ về một tương lai bên nhau",
-      "moment": "Khi anh cầu hôn em"
-    },
-    {
-      "title": "Ngày Đầu Tiên",
-      "artist": "Đức Phúc",
-      "description": "Kỷ niệm về những ngày đầu tiên yêu nhau, ngọt ngào và trong trẻo",
-      "moment": "Nhớ lại ngày đầu quen nhau"
-    },
-    {
       "title": "Beautiful in White",
       "artist": "Shane Filan",
       "description": "Bài hát tiếng Anh lãng mạn về ngày cưới và tình yêu vĩnh cửu",
       "moment": "Ngày cưới của chúng ta"
-    }
-  ],
-  "memoryPlaces": [
-    {
-      "name": "Đà Nẵng",
-      "description": "Thành phố biển xinh đẹp với cầu Rồng, Bà Nà Hills và Động Huyền Không tuyệt đẹp",
-      "significance": "Chuyến du lịch đáng nhớ tháng 5/2024",
-      "icon": "pi pi-map-marker",
-      "image": "assets/images/dia-diem/da-nang.png"
-    },
-    {
-      "name": "Sapa",
-      "description": "Thành phố trong sương với những thửa ruộng bậc thang và văn hóa dân tộc độc đáo",
-      "significance": "Khám phá vẻ đẹp Tây Bắc",
-      "icon": "pi pi-mountain",
-      "image": "assets/images/dia-diem/sapa.png"
-    },
-    {
-      "name": "Thái Lan",
-      "description": "Xứ sở chùa vàng với văn hóa độc đáo, món ăn ngon và những kỷ niệm tuyệt vời",
-      "significance": "Du lịch nước ngoài cùng nhau",
-      "icon": "pi pi-globe",
-      "image": "assets/images/dia-diem/thai-lan.png"
-    },
-    {
-      "name": "Đà Lạt",
-      "description": "Thành phố ngàn hoa với khí hậu mát mẻ, những con đường hoa và café ấm cúng",
-      "significance": "Tháng mật ngọt ngào",
-      "icon": "pi pi-heart",
-      "image": "assets/images/dia-diem/da-lat.png"
-    },
-    {
-      "name": "Vũng Tàu",
-      "description": "Bãi biển đầu tiên chúng ta cùng nhau đến, nơi có biển xanh, cát trắng và những kỷ niệm ngọt ngào",
-      "significance": "Chuyến đi biển đầu tiên",
-      "icon": "pi pi-sun",
-      "image": "assets/images/dia-diem/vung-tau.png"
-    },
-    {
-      "name": "Campuchia",
-      "description": "Đất nước của những ngôi đền Angkor huyền bí và văn hóa Khmer độc đáo",
-      "significance": "Khám phá di sản thế giới",
-      "icon": "pi pi-globe",
-      "image": "assets/images/dia-diem/campuchia.png"
-    },
-    {
-      "name": "Huế",
-      "description": "Cố đô với những di tích lịch sử, ẩm thực cung đình và dòng sông Hương thơ mộng",
-      "significance": "Hành trình về miền di sản",
-      "icon": "pi pi-building",
-      "image": "assets/images/dia-diem/hue.png"
-    },
-    {
-      "name": "Nha Trang",
-      "description": "Thành phố biển với bãi cát trắng mịn, những hòn đảo xinh đẹp và ẩm thực hải sản phong phú",
-      "significance": "Thiên đường biển đảo",
-      "icon": "pi pi-sun",
-      "image": "assets/images/dia-diem/nha-trang.png"
     }
   ],
   "meaningfulGifts": [
@@ -239,104 +112,6 @@
       "occasion": "Sinh nhật em",
       "meaning": "Ghi lại từng khoảnh khắc đẹp của chúng ta",
       "emotion": "Ngọt ngào và ấm áp"
-    },
-    {
-      "gift": "Chuyến du lịch Đà Lạt",
-      "occasion": "Ngày Valentine",
-      "meaning": "Khám phá thế giới bên nhau",
-      "emotion": "Phấn khích và lãng mạn"
-    },
-    {
-      "gift": "Chiếc áo couple",
-      "occasion": "Không lý do gì cả",
-      "meaning": "Muốn cả thế giới biết chúng ta thuộc về nhau",
-      "emotion": "Tự hào và hạnh phúc"
-    }
-  ],
-  "favoriteFoods": [
-    {
-      "dish": "Cơm tấm",
-      "person": "Chồng",
-      "story": "Món ăn truyền thống mà anh yêu thích nhất, đặc biệt là vào buổi sáng",
-      "feeling": "Hạnh phúc"
-    },
-    {
-      "dish": "Bún bò Huế",
-      "person": "Vợ",
-      "story": "Hương vị quê hương mà em không thể quên, nhất là vị sả và ớt cay nồng",
-      "feeling": "Nhớ nhà"
-    },
-    {
-      "dish": "Canh chua",
-      "person": "Chồng",
-      "story": "Món canh ngon tuyệt mà anh thích nhất, đặc biệt là khi ăn cùng cá kho",
-      "feeling": "Ngon miệng"
-    },
-    {
-      "dish": "Canh cua rau đay",
-      "person": "Vợ",
-      "story": "Món canh thanh mát mà em yêu thích, nhất là trong những ngày hè nóng bức",
-      "feeling": "Mát lành"
-    },
-    {
-      "dish": "Chè tươi",
-      "person": "Vợ",
-      "story": "Món tráng miệng em thích nhất, đặc biệt là sau những bữa ăn ngon",
-      "feeling": "Ngọt ngào"
-    },
-    {
-      "dish": "Sầu riêng",
-      "person": "Chồng",
-      "story": "Món trái cây vua mà anh không thể cưỡng lại được, dù em không thích mùi",
-      "feeling": "Thích thú"
-    }
-  ],
-  "futureDreams": [
-    {
-      "dream": "Du lịch khắp thế giới",
-      "description": "Cùng nhau khám phá 50 quốc gia, chụp ảnh tại mọi nơi đẹp trên thế giới",
-      "timeline": "10 năm tới",
-      "icon": "pi pi-globe"
-    },
-    {
-      "dream": "Xây nhà riêng",
-      "description": "Một ngôi nhà nhỏ với khu vườn, nơi chúng ta có thể già đi bên nhau",
-      "timeline": "5 năm tới",
-      "icon": "pi pi-home"
-    },
-    {
-      "dream": "Có con yêu",
-      "description": "Những thiên thần nhỏ sẽ làm gia đình chúng ta thêm tràn đầy tiếng cười",
-      "timeline": "Sắp tới rồi",
-      "icon": "pi pi-heart"
-    },
-    {
-      "dream": "Mở quán café",
-      "description": "Một quán café nhỏ xinh, nơi chúng ta có thể làm việc cùng nhau mỗi ngày",
-      "timeline": "7 năm tới",
-      "icon": "pi pi-coffee"
-    }
-  ],
-  "gratitudeMessages": [
-    {
-      "to": "Gia đình anh",
-      "message": "Cảm ơn bác chú đã sinh ra anh - người đàn ông tuyệt vời nhất thế giới này",
-      "icon": "pi pi-users"
-    },
-    {
-      "to": "Gia đình em",
-      "message": "Cảm ơn bố mẹ đã nuôi dưỡng em thành người phụ nữ tuyệt vời như hôm nay",
-      "icon": "pi pi-heart"
-    },
-    {
-      "to": "Bạn bè",
-      "message": "Cảm ơn những người bạn đã luôn ủng hộ tình yêu của chúng ta",
-      "icon": "pi pi-users"
-    },
-    {
-      "to": "Số phận",
-      "message": "Cảm ơn vì đã sắp xếp để hai đứa gặp nhau trong đúng thời điểm tuyệt vời nhất",
-      "icon": "pi pi-star"
     }
   ]
 }

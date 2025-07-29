@@ -1,0 +1,313 @@
+.experience-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+
+  .section-title {
+    color: #1f2937;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    [nz-icon] {
+      color: #2563eb;
+      font-size: 1.25em;
+    }
+  }
+}
+
+.work-experience {
+  margin-bottom: 4rem;
+
+  ::ng-deep .ant-timeline {
+    color: var(--text-color);
+
+    .ant-timeline-item {
+      padding-bottom: 2.5rem;
+
+      &:last-child {
+        padding-bottom: 0;
+
+        .ant-timeline-item-tail {
+          display: none;
+        }
+      }
+    }
+
+    .ant-timeline-item-tail {
+      border-left: none;
+      background: linear-gradient(180deg, #bae0ff 0%, #e6f4ff 100%);
+      width: 2px;
+      left: 5px;
+    }
+
+    .ant-timeline-item-head {
+      background: #f0f7ff;
+      border: 2px solid var(--nav-text);
+      width: 14px;
+      height: 14px;
+      left: -1px;
+    }
+
+    .ant-timeline-item-head-blue {
+      color: var(--nav-text);
+      border-color: var(--nav-text);
+      background: #f0f7ff;
+    }
+
+    .ant-timeline-item-content {
+      margin-left: 28px;
+    }
+  }
+
+  .timeline-content {
+    position: relative;
+    padding: 1rem;
+    background: #f0f7ff;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border: 1px solid #e6f4ff;
+
+    .job-meta {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.5rem;
+      color: #4b5563;
+
+      .duration, .location {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.9rem;
+
+        [nz-icon] {
+          font-size: 1rem;
+          color: #2563eb;
+        }
+      }
+    }
+
+    .job-header {
+      margin-bottom: 1.5rem;
+
+      h3 {
+        font-size: 1.25rem;
+        margin: 0 0 0.5rem;
+        color: #1f2937;
+        font-weight: 600;
+      }
+
+      .company {
+        color: #4b5563;
+        font-size: 1rem;
+        font-weight: 500;
+      }
+    }
+
+    .responsibilities, .achievements {
+      h4 {
+        position: relative;
+        color: #1f2937;
+        margin: 1.5rem 0 1rem;
+        font-size: 1.1rem;
+        font-weight: 500;
+        padding-bottom: 0.5rem;
+        display: inline-block;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 20px;
+          height: 2px;
+          background: var(--nav-text);
+          transition: width 0.3s ease;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+
+        [nz-icon] {
+          color: #2563eb;
+        }
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 1.25rem;
+
+        li {
+          color: var(--text-color);
+          margin-bottom: 0.75rem;
+          line-height: 1.5;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          [nz-icon] {
+            color: #2563eb;
+            font-size: 1em;
+            margin-top: 0.25em;
+          }
+        }
+      }
+    }
+  }
+}
+
+.education {
+  margin-top: 3rem;
+
+  .section-title {
+    color: var(--nav-text);
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+  }
+
+  .education-item {
+    position: relative;
+    padding: 1.5rem;
+    background: #f0f7ff;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #e6f4ff;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .edu-meta {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.5rem;
+      color: #4b5563;
+
+      .duration, .location {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.9rem;
+
+        [nz-icon] {
+          font-size: 1rem;
+          color: #2563eb;
+        }
+      }
+    }
+
+    .edu-header {
+      padding-right: 200px;
+      margin-bottom: 0.75rem;
+
+      h3 {
+        position: relative;
+        color: #1f2937;
+        margin: 0 0 0.5rem;
+        font-size: 1.25rem;
+        font-weight: 600;
+        padding-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        [nz-icon] {
+          color: #2563eb;
+          font-size: 1em;
+        }
+      }
+
+      .institution {
+        display: block;
+        color: #4b5563;
+        font-weight: 500;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        [nz-icon] {
+          color: #2563eb;
+        }
+      }
+    }
+
+    .degree {
+      color: #4b5563;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      [nz-icon] {
+        color: #2563eb;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 1rem;
+
+    .section-title {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .work-experience {
+    margin-bottom: 3rem;
+
+    .timeline-content {
+      padding: 1rem;
+
+      .job-meta {
+        position: static;
+        margin-bottom: 1rem;
+        align-items: flex-start;
+      }
+
+      .job-header {
+        padding-right: 0;
+      }
+    }
+  }
+
+  .education {
+    .section-title {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .education-item {
+      padding: 1rem;
+
+      .edu-meta {
+        position: static;
+        margin-bottom: 1rem;
+        align-items: flex-start;
+      }
+
+      .edu-header {
+        padding-right: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "NAV": {
+    "ABOUT": "About",
+    "EXPERIENCE": "Experience",
+    "PROJECTS": "Projects",
+    "SKILLS": "Skills",
+    "EXPORT_PDF": "Export PDF"
+  },
+  "ACTIONS": {
+    "EXPORT_PDF": "Export PDF"
+  },
+  "EXPERIENCE": {
+    "KEY_ACHIEVEMENTS": "Key Achievements",
+    "RESPONSIBILITIES": "Responsibilities"
+  }
+} 

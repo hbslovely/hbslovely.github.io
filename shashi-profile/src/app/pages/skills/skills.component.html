@@ -1,0 +1,22 @@
+<div class="skills-section" *ngIf="cvService.cv()?.skills as skills">
+  <h2 class="section-title">
+    <span nz-icon nzType="tool" nzTheme="outline"></span>
+    {{ 'NAV.SKILLS' | translate }}
+  </h2>
+  <div class="skills-content">
+    <div class="skill-category" *ngFor="let category of getCategories(skills.technicalSkills)">
+      <div class="category-header">
+        <h3 class="section-title">
+          <span nz-icon [nzType]="getCategoryIcon(category)" nzTheme="outline"></span>
+          {{ 'SKILLS.CATEGORIES.' + category | translate }}
+        </h3>
+      </div>
+      <div class="skills-list">
+        <div class="skill-item" *ngFor="let skill of skills.technicalSkills[category]">
+          <span nz-icon nzType="check" nzTheme="outline"></span>
+          {{ skill | translate }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

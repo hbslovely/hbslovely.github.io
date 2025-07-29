@@ -1664,27 +1664,61 @@
 
 // Section Header
 .section-header {
-  text-align: center;
-  margin-bottom: 3rem;
+  display: flex;
+  align-items: baseline; // Changed from center to baseline
+  justify-content: center;
+  margin: 3rem 0;
+  padding: 1rem 0;
+  position: relative;
+  cursor: pointer;
 
   i {
-    font-size: 2.5rem;
-    color: #10b981;
-    margin-bottom: 1rem;
+    color: #ff69b4;
+    font-size: 1.8rem; // Slightly increased size
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.3s ease;
+    margin-right: 0.8rem;
+    margin-top: -0.2rem; // Fine-tune vertical alignment
+    line-height: 1;
   }
 
   h2 {
-    font-size: 2.5rem;
-    color: #065f46;
-    margin-bottom: 1rem;
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Lora', serif;
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin: 0;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 0.5rem;
+    transition: all 0.3s ease;
+    line-height: 1.2;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(to right, #ff69b4, #ff1493);
+      transition: width 0.3s ease;
+    }
   }
 
-  p {
-    font-size: 1.2rem;
-    color: #374151;
-    max-width: 800px;
-    margin: 0 auto;
+  &:hover {
+    i {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    h2 {
+      transform: translateX(0);
+      
+      &::after {
+        width: 100%;
+      }
+    }
   }
 }
 
@@ -2309,19 +2343,23 @@
 
 // Header
 .post-header {
-  margin-bottom: 4rem;
   text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem 0;
 
   h1 {
-    font-size: 3.5rem;
-    color: #1a202c;
+    font-family: 'Crimson Text', serif;
+    font-size: 3.8rem;
+    color: #2c3e50;
     margin-bottom: 1rem;
-    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+    letter-spacing: -0.5px;
   }
 
   .post-meta {
-    color: #718096;
-    font-size: 1rem;
+    color: #666;
+    font-style: italic;
+    font-family: 'Lora', serif;
   }
 }
 
@@ -2584,8 +2622,8 @@ blockquote {
 
 .love-quote {
   font-family: 'Roboto', sans-serif;
-  background-color: #f8f9fa;
-  border-left: 3px solid #e83e8c;
+  background-color: rgba(241, 248, 245, 0.22);
+  border-left: 3px solid #2F855AFF;
   margin: 2em auto;
   padding: 1em 1.5em;
   position: relative;

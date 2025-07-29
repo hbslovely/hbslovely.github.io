@@ -1,64 +1,47 @@
 <!-- Future Promises Section -->
 <div class="promises-section">
-  <!-- Animated Background Bubbles -->
-  <div class="bubble" *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]"></div>
-
+  <!-- Main Content -->
   <div class="content-container">
     <!-- Header -->
     <div class="section-header">
-      <i class="pi pi-heart-fill"></i>
-      <h2>Lời Hứa Cho Tương Lai</h2>
-      <div class="header-line"></div>
-    </div>
-
-    <!-- Promises Flow -->
-    <div class="promises-flow">
-      <div class="promise-group">
-        <div class="flow-item" *ngFor="let promise of promises">
-          <div class="flow-content">
-            <div class="icon-circle">
-              <i [class]="'pi ' + promise.icon"></i>
-            </div>
-            <div class="flow-text">
-              <h3>{{ promise.title }}</h3>
-              <p>{{ promise.description }}</p>
-              <div class="tags-flow">
-                <span class="tag" *ngFor="let tag of promise.tags">{{ tag }}</span>
-              </div>
-            </div>
-          </div>
-          <div class="flow-line"></div>
-        </div>
+      <div class="title-group">
+        <i class="pi pi-heart-fill"></i>
+        <h2>Lời Hứa Cho Tương Lai</h2>
+      </div>
+      <div class="header-quote">
+        <p>"The future belongs to those who believe in the beauty of their dreams"</p>
+        <span>- Eleanor Roosevelt</span>
       </div>
     </div>
 
-    <!-- Goals Flow -->
-    <div class="goals-flow">
-      <h3 class="flow-title">Mục Tiêu Chung</h3>
-      <div class="goals-list">
-        <div class="goal-flow-item" *ngFor="let goal of goals">
-          <div class="goal-icon">
-            <i [class]="'pi ' + goal.icon"></i>
-          </div>
-          <div class="goal-content">
-            <h4>{{ goal.title }}</h4>
-            <span class="timeframe">
-              <i class="pi pi-calendar"></i>
-              {{ goal.timeframe }}
-            </span>
+    <!-- Promises Grid -->
+    <div class="promises-grid">
+      <div class="promise-item" *ngFor="let promise of promises">
+        <div class="promise-header">
+          <i [class]="'pi ' + promise.icon"></i>
+          <h3>{{ promise.title }}</h3>
+        </div>
+        <div class="promise-line"></div>
+        <p class="promise-text">{{ promise.description }}</p>
+        <div class="promise-tags">
+          <div class="tag" *ngFor="let tag of promise.tags">
+            <i class="pi pi-check"></i>
+            <span>{{ tag }}</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Inspiration Quote -->
-    <div class="quote-section">
-      <div class="quote-line"></div>
-      <blockquote>
-        "Love is not about how many days, months, or years you have been together. 
-        Love is about how much you love each other every single day"
-      </blockquote>
-      <span class="author">- Steve Maraboli</span>
+    <!-- Footer Quote -->
+    <div class="footer-section">
+      <div class="quote-box">
+        <i class="pi pi-heart"></i>
+        <blockquote>
+          "Love is not about how many days, months, or years you have been together.
+          Love is about how much you love each other every single day"
+        </blockquote>
+        <span class="author">- Steve Maraboli</span>
+      </div>
     </div>
   </div>
-</div> 
+</div>

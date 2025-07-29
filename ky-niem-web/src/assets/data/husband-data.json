@@ -2,28 +2,28 @@
   "basicInfo": {
     "name": "Bé Báo",
     "title": "Chồng Yêu Của Em",
-    "description": "Bé Báo - chàng IT boy thế hệ 9x với vibe năng động và tư duy nhạy bén. Không chỉ là một developer cực xịn với khả năng 'fix bug' thần sầu, anh còn là người bạn đời cực kỳ đáng yêu với khả năng biến mọi khoảnh khắc thành những memory đặc biệt. Với ánh mắt tràn ngập yêu thương và trái tim ấm áp, anh chính là best version của một người chồng trong mơ 💝",
-    "loveMessage": "Em yêu anh Bé Báo không chỉ vì những điều anh làm, mà vì chính con người anh - một người đàn ông biết cách yêu thương bằng cả trái tim và lý trí. Anh là người kiến tạo hạnh phúc trong cuộc đời em, là người đồng hành trên mọi chặng đường, và là tác giả của câu chuyện tình yêu ngọt ngào nhất em từng được trải qua.",
+    "description": "Xin chào, anh là Bé Báo - một chàng developer với trái tim ấm áp và đôi bàn tay biết 'code' nên những điều kỳ diệu. Trong thế giới công nghệ đầy số liệu và logic, anh vẫn luôn dành một góc nhỏ trong tim để chứa đựng những điều lãng mạn và ngọt ngào dành cho em. 💻💝\n\nLà một IT boy thế hệ 9x, anh tự hào về khả năng biến những dòng code khô khan thành những ứng dụng sống động, cũng như cách anh biến những khoảnh khắc đời thường thành những memory đặc biệt với em. Với tư duy nhạy bén và tinh thần không ngừng học hỏi, anh luôn cố gắng trở thành phiên bản tốt hơn của chính mình mỗi ngày. 🌟\n\nDù đôi khi hơi cẩu thả trong một số việc nhỏ, nhưng với những điều quan trọng - đặc biệt là tình yêu dành cho em, anh luôn đặt cả trái tim và tâm huyết vào đó. Bởi vì em chính là project quan trọng nhất trong cuộc đời anh, là người truyền cảm hứng để anh trở thành best version của một người chồng trong mơ. ✨💑",
+    "loveMessage": "Gửi em - người vợ yêu dấu của anh 💝\n\nNgày đầu tiên gặp em, anh đã biết rằng cuộc đời anh sẽ thay đổi mãi mãi. Em không chỉ là người yêu, mà còn là người bạn đồng hành tuyệt vời nhất của anh. Mỗi ngày bên em là một ngày anh thấy mình may mắn và hạnh phúc hơn.\n\nAnh yêu tất cả những điều về em - từ nụ cười ấm áp mỗi sáng thức dậy, đến cách em chăm sóc cho gia đình nhỏ của chúng ta. Em là động lực để anh cố gắng mỗi ngày, là niềm vui khi anh trở về nhà, và là người anh muốn chia sẻ mọi khoảnh khắc trong đời.\n\nCó thể anh không phải là người hoàn hảo, đôi khi vẫn còn những thiếu sót. Nhưng anh hứa sẽ luôn cố gắng là người chồng tốt nhất có thể, yêu thương và bảo vệ em suốt cuộc đời này. Cảm ơn em đã luôn ở bên anh, thấu hiểu và nâng đỡ anh trong mọi hoàn cảnh.\n\nMong rằng chúng ta sẽ cùng nhau đi thật xa, xây dựng một tổ ấm thật hạnh phúc, và tạo nên thật nhiều kỷ niệm đẹp. Anh yêu em nhiều lắm - người vợ, người bạn đời, và là một nửa hoàn hảo của anh. ❤️\n\nYêu em vô cùng,\nBé Báo của em",
     "avatar": "assets/images/phat/phat-portrait.png",
-    "tags": ["Bé Báo", "Chồng Yêu", "Developer"]
+    "tags": ["Bé Báo", "Chồng Yêu", "Developer"],
+    "stats": [
+      {
+        "icon": "pi pi-calendar",
+        "label": "Năm sinh",
+        "value": "Chưa được 1 tỷ giây tuổi 🤖"
+      },
+      {
+        "icon": "pi pi-map-marker",
+        "label": "Nơi sinh",
+        "value": "Nơi có nhiều code và ước mơ 💫"
+      },
+      {
+        "icon": "pi pi-briefcase",
+        "label": "Nghề nghiệp",
+        "value": "Người dịch ngôn ngữ máy tính 💻"
+      }
+    ]
   },
-  "personalInfo": [
-    {
-      "icon": "pi pi-calendar",
-      "label": "Năm sinh",
-      "value": "199x"
-    },
-    {
-      "icon": "pi pi-map-marker",
-      "label": "Nơi sinh",
-      "value": "TP. Hồ Chí Minh"
-    },
-    {
-      "icon": "pi pi-briefcase",
-      "label": "Nghề nghiệp",
-      "value": "Developer"
-    }
-  ],
   "traits": [
     {
       "icon": "pi pi-heart",
@@ -63,6 +63,42 @@
       "description": "Yêu thích khám phá các món ăn ngon"
     }
   ],
+  "professionalSkillCategories": [
+    {
+      "category": "Kỹ năng lập trình",
+      "skills": [
+        "JavaScript/TypeScript",
+        "Angular",
+        "React",
+        "Node.js",
+        "HTML/CSS",
+        "SQL",
+        "Git"
+      ]
+    },
+    {
+      "category": "Kỹ năng chuyên môn",
+      "skills": [
+        "Phân tích yêu cầu",
+        "Thiết kế hệ thống",
+        "Tối ưu hiệu suất",
+        "Kiểm thử",
+        "CI/CD",
+        "Agile/Scrum"
+      ]
+    },
+    {
+      "category": "Kỹ năng mềm",
+      "skills": [
+        "Giao tiếp hiệu quả",
+        "Làm việc nhóm",
+        "Quản lý thời gian",
+        "Giải quyết vấn đề",
+        "Tư duy logic",
+        "Học hỏi nhanh"
+      ]
+    }
+  ],
   "photos": [
     {
       "url": "assets/images/phat/phat-portrait.png",
@@ -99,7 +135,7 @@
     {
       "icon": "pi pi-compass",
       "title": "Ước mơ tương lai",
-      "description": "Phát triển sự nghiệp kinh doanh và xây dựng tổ ấm hạnh phúc với căn nhà mơ ước"
+      "description": "Có thiệt nhiều tiền để mua nhà đẹp, xe xịn và đưa vợ đi du lịch khắp nơi 🏠🚗✈️"
     },
     {
       "icon": "pi pi-check",
@@ -109,12 +145,12 @@
     {
       "icon": "pi pi-exclamation-circle",
       "title": "Điểm yếu",
-      "description": "Đôi khi hơi cẩu thả trong một số việc"
+      "description": "Sợ gián và mê vợ quá nhiều 🪳💝"
     },
     {
       "icon": "pi pi-flag",
       "title": "Mục tiêu",
-      "description": "Xây dựng gia đình êm ấm, hạnh phúc và sớm có căn nhà của riêng mình"
+      "description": "Cùng vợ yêu trở nên giàu có và xây dựng một cuộc sống thật hạnh phúc, sung túc 💖💰✨"
     }
   ]
 } 

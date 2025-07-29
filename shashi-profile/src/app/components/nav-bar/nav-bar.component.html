@@ -1,0 +1,35 @@
+<nav class="navbar">
+  <div class="navbar-content">
+    <a routerLink="/" class="navbar-brand">
+      <span class="logo">NQ</span>
+    </a>
+
+    <button 
+      class="mobile-menu-button" 
+      nz-button 
+      nzType="text"
+      (click)="toggleMobileMenu()"
+    >
+      <span nz-icon [nzType]="isMobileMenuOpen ? 'close' : 'menu'" nzTheme="outline"></span>
+    </button>
+
+    <div class="nav-content" [class.mobile-open]="isMobileMenuOpen">
+      <ul class="nav-links" [class.mobile]="isMobile">
+        <li *ngFor="let item of navItems">
+          <a [routerLink]="item.path" 
+             routerLinkActive="active" 
+             [routerLinkActiveOptions]="{ exact: item.exact }"
+             (click)="isMobile && closeMobileMenu()">
+            <span nz-icon [nzType]="item.icon" nzTheme="outline"></span>
+            {{ item.label | translate }}
+          </a>
+        </li>
+      </ul>
+
+      <div class="nav-actions" [class.mobile]="isMobile">
+        <app-export-pdf></app-export-pdf>
+        <app-language-switcher></app-language-switcher>
+      </div>
+    </div>
+  </div>
+</nav>
