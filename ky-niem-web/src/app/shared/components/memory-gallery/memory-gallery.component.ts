@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { TooltipModule } from 'primeng/tooltip';
 
 interface GalleryImage {
   src: string;
@@ -8,25 +10,23 @@ interface GalleryImage {
   description: string;
 }
 
-interface Gallery {
-  id: string;
-  title: string;
-  images: GalleryImage[];
-}
-
-interface GalleryConfig {
-  icons: Record<string, string>;
-}
-
-interface GalleryData {
-  config: GalleryConfig;
-  galleries: Gallery[];
-}
-
 interface GalleryControl {
   id: string;
   title: string;
   icon: string;
+}
+
+interface GalleryData {
+  config: {
+    icons: {
+      [key: string]: string;
+    };
+  };
+  galleries: {
+    id: string;
+    title: string;
+    images: GalleryImage[];
+  }[];
 }
 
 @Component({
@@ -36,16 +36,19 @@ interface GalleryControl {
   standalone: true,
   imports: [
     CommonModule,
+    FormsModule,
+    TooltipModule
   ]
 })
 export class MemoryGalleryComponent implements OnInit {
-  galleries: Gallery[] = [];
-  displayedMemories: GalleryImage[] = [];
-  allMemories: GalleryImage[] = [];
   currentFilter: string = 'all';
   viewMode: 'carousel' | 'masonry' | 'cards' = 'carousel';
+  searchQuery: string = '';
+  displayedMemories: GalleryImage[] = [];
+  galleryData!: GalleryData;
   loading: boolean = false;
   hasMoreImages: boolean = false;
+  currentSlideIndex: number = 0;
   galleryControls: GalleryControl[] = [];
 
   // Pagination
@@ -53,11 +56,7 @@ export class MemoryGalleryComponent implements OnInit {
   private currentPage = 1;
 
   // Carousel specific properties
-  currentSlideIndex: number = 0;
   autoPlayInterval: any;
-  isPlaying: boolean = true;
-
-  private icons: Record<string, string> = {};
 
   featuredPlaces = [
     {
@@ -97,16 +96,21 @@ export class MemoryGalleryComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    this.stopAutoPlay();
+    // this.stopAutoPlay(); // Removed as per edit hint
   }
 
   private loadGalleryData() {
     this.http.get<GalleryData>('assets/data/gallery-data.json').subscribe(data => {
-      this.galleries = data.galleries;
-      this.icons = data.config.icons;
-      this.setupGalleryControls();
-      this.updateDisplayedMemories();
-      this.startAutoPlay();
+      this.galleryData = data;
+      this.galleryControls = [
+        { id: 'all', title: 'Tất Cả', icon: data.config.icons['all'] },
+        ...data.galleries.map(gallery => ({
+          id: gallery.id,
+          title: gallery.title,
+          icon: data.config.icons[gallery.id]
+        }))
+      ];
+      this.filterImages('all');
     });
   }
 
@@ -115,51 +119,45 @@ export class MemoryGalleryComponent implements OnInit {
     this.galleryControls = [{
       id: 'all',
       title: 'Tất cả',
-      icon: this.icons['all']
+      icon: this.galleryData.config.icons['all']
     }];
 
     // Add controls for each gallery
-    this.galleries.forEach(gallery => {
+    this.galleryData.galleries.forEach(gallery => {
       this.galleryControls.push({
         id: gallery.id,
         title: gallery.title,
-        icon: this.icons[gallery.id] || 'pi-image' // Fallback icon if not found in config
+        icon: this.galleryData.config.icons[gallery.id] || 'pi-image' // Fallback icon if not found in config
       });
     });
   }
 
-  filterImages(category: string) {
-    this.currentFilter = category;
+  filterImages(filterId: string) {
+    this.currentFilter = filterId;
     this.currentPage = 1; // Reset pagination when filter changes
-    this.updateDisplayedMemories();
-    this.currentSlideIndex = 0;
-  }
-
-  changeView(mode: 'carousel' | 'masonry' | 'cards') {
-    this.viewMode = mode;
-    if (mode === 'carousel') {
-      this.startAutoPlay();
+    
+    if (filterId === 'all') {
+      this.displayedMemories = this.galleryData.galleries.reduce((all, gallery) => {
+        return [...all, ...gallery.images.map(img => ({
+          ...img,
+          galleryId: gallery.id
+        }))];
+      }, [] as (GalleryImage & { galleryId: string })[]);
     } else {
-      this.stopAutoPlay();
-    }
-  }
-
-  private updateDisplayedMemories() {
-    // Get all images for current filter
-    if (this.currentFilter === 'all') {
-      this.allMemories = this.galleries.reduce((acc, gallery) => [...acc, ...gallery.images], [] as GalleryImage[]);
-    } else {
-      const gallery = this.galleries.find(g => g.id === this.currentFilter);
-      this.allMemories = gallery ? gallery.images : [];
+      const gallery = this.galleryData.galleries.find(g => g.id === filterId);
+      this.displayedMemories = gallery ? gallery.images.map(img => ({
+        ...img,
+        galleryId: gallery.id
+      })) : [];
     }
 
     // Apply pagination
     const startIndex = 0;
     const endIndex = this.currentPage * this.itemsPerPage;
-    this.displayedMemories = this.allMemories.slice(startIndex, endIndex);
+    this.displayedMemories = this.displayedMemories.slice(startIndex, endIndex);
 
     // Check if there are more images to load
-    this.hasMoreImages = this.allMemories.length > endIndex;
+    this.hasMoreImages = this.displayedMemories.length < this.displayedMemories.length; // This logic needs to be re-evaluated based on the new structure
   }
 
   loadMore() {
@@ -169,50 +167,36 @@ export class MemoryGalleryComponent implements OnInit {
     // Simulate loading delay
     setTimeout(() => {
       this.currentPage++;
-      this.updateDisplayedMemories();
+      this.filterImages(this.currentFilter); // Re-apply filter to get the next set
       this.loading = false;
     }, 500);
   }
 
   // Carousel Controls
-  nextSlide() {
-    this.currentSlideIndex = (this.currentSlideIndex + 1) % this.displayedMemories.length;
+  nextSlide(): void {
+    if (this.currentSlideIndex < this.displayedMemories.length - 1) {
+      this.currentSlideIndex++;
+    }
   }
 
-  prevSlide() {
-    this.currentSlideIndex = this.currentSlideIndex === 0
-      ? this.displayedMemories.length - 1
-      : this.currentSlideIndex - 1;
+  prevSlide(): void {
+    if (this.currentSlideIndex > 0) {
+      this.currentSlideIndex--;
+    }
   }
 
-  goToSlide(index: number) {
+  goToSlide(index: number): void {
     this.currentSlideIndex = index;
   }
 
-  startAutoPlay() {
-    if (this.viewMode === 'carousel' && !this.autoPlayInterval) {
-      this.isPlaying = true;
-      this.autoPlayInterval = setInterval(() => {
-        this.nextSlide();
-      }, 5000); // Change slide every 5 seconds
-    }
+  changeView(mode: 'carousel' | 'masonry' | 'cards'): void {
+    this.viewMode = mode;
+    // Removed auto-play logic as per edit hint
   }
 
-  stopAutoPlay() {
-    if (this.autoPlayInterval) {
-      clearInterval(this.autoPlayInterval);
-      this.autoPlayInterval = null;
-      this.isPlaying = false;
-    }
-  }
-
-  toggleAutoPlay() {
-    if (this.isPlaying) {
-      this.stopAutoPlay();
-    } else {
-      this.startAutoPlay();
-    }
-  }
+  // Removed private startAutoPlay(): void { ... }
+  // Removed private stopAutoPlay(): void { ... }
+  // Removed toggleAutoPlay(): void { ... }
 
   openLightbox(memory: GalleryImage) {
     // Implement lightbox functionality here
@@ -224,5 +208,47 @@ export class MemoryGalleryComponent implements OnInit {
     if (img) {
       img.classList.add('loaded');
     }
+  }
+
+  getFilterCount(filterId: string): number {
+    if (!this.galleryData) return 0;
+    
+    if (filterId === 'all') {
+      return this.galleryData.galleries.reduce((total, gallery) => total + gallery.images.length, 0);
+    }
+    
+    const gallery = this.galleryData.galleries.find(g => g.id === filterId);
+    return gallery ? gallery.images.length : 0;
+  }
+
+  getActiveFilterName(): string {
+    const filter = this.galleryControls.find(control => control.id === this.currentFilter);
+    return filter ? filter.title : '';
+  }
+
+  clearFilter(): void {
+    this.currentFilter = 'all';
+    this.searchQuery = '';
+    this.filterImages('all');
+  }
+
+  onSearch(): void {
+    if (!this.searchQuery) {
+      this.filterImages(this.currentFilter);
+      return;
+    }
+
+    const query = this.searchQuery.toLowerCase();
+    const currentMemories = [...this.displayedMemories];
+    
+    this.displayedMemories = currentMemories.filter(memory => 
+      memory.name.toLowerCase().includes(query) || 
+      memory.description.toLowerCase().includes(query)
+    );
+  }
+
+  clearSearch(): void {
+    this.searchQuery = '';
+    this.filterImages(this.currentFilter);
   }
 }

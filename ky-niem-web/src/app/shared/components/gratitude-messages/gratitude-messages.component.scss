@@ -149,18 +149,102 @@ $ribbon-blue: #00ACC1;
     }
   }
 
+  .letter-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+
+    .tab-button {
+      background: none;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      color: #666;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Playfair Display', serif;
+
+      i {
+        font-size: 1.2rem;
+        color: #ff4081;
+        transition: all 0.3s ease;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: #ff4081;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+
+      &:hover {
+        color: #333;
+
+        i {
+          transform: scale(1.1);
+        }
+
+        &::after {
+          transform: scaleX(0.5);
+        }
+      }
+
+      &.active {
+        color: #ff4081;
+        font-weight: 600;
+
+        i {
+          transform: scale(1.2);
+        }
+
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+
   .letters-container {
     position: relative;
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px; // Increased from 800px
     margin: 0 auto;
     padding: 2rem 0;
     overflow: visible;
+    perspective: 1200px;
 
     .swiper-slide {
       opacity: 0;
       transition: opacity 0.3s ease;
-      
+      background-position: center;
+      background-size: cover;
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+
+      &-shadow {
+        background: rgba(0, 0, 0, 0.15);
+      }
+
+      &-shadow-left {
+        background-image: linear-gradient(to left, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0));
+      }
+
+      &-shadow-right {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0));
+      }
+
       &.swiper-slide-active {
         opacity: 1;
       }
@@ -179,10 +263,16 @@ $ribbon-blue: #00ACC1;
       &:hover {
         background-color: #fff;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transform: scale(1.1);
       }
 
       &::after {
         font-size: 20px;
+      }
+
+      &.swiper-button-disabled {
+        opacity: 0.35;
+        cursor: not-allowed;
       }
     }
 
@@ -206,61 +296,125 @@ $ribbon-blue: #00ACC1;
   }
 
   .gratitude-letter {
-    transform: none !important;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
     margin: 0 auto;
-    max-width: 600px;
+    max-width: 850px; // Increased from 600px
+    padding: 0 1rem;
   }
 
   .letter-frame {
     background: #fff;
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 
-      0 10px 30px rgba(0,0,0,0.1),
-      0 1px 8px rgba(0,0,0,0.06);
+    padding: 3rem;
+    border-radius: 16px;
     position: relative;
     overflow: hidden;
+    box-shadow:
+      0 10px 30px rgba(0,0,0,0.08),
+      0 15px 40px rgba(205, 92, 92, 0.04);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
 
+    // Add page edge effect
     &::before {
       content: '';
       position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 30px;
+      background: linear-gradient(to right,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.1) 100%);
+      transform: translateZ(-1px);
+      pointer-events: none;
+    }
+
+    // Add page curl effect
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.1) 50%,
+        rgba(0, 0, 0, 0) 100%);
+      transform: translateZ(-1px);
+      pointer-events: none;
+      border-radius: 0 0 16px 0;
+    }
+
+    // Decorative corner flourishes
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-image:
+        radial-gradient(circle at 0 0, transparent 70%, rgba(205, 92, 92, 0.1) 71%),
+        radial-gradient(circle at 100% 0, transparent 70%, rgba(205, 92, 92, 0.1) 71%),
+        radial-gradient(circle at 0 100%, transparent 70%, rgba(205, 92, 92, 0.1) 71%),
+        radial-gradient(circle at 100% 100%, transparent 70%, rgba(205, 92, 92, 0.1) 71%);
+      pointer-events: none;
+    }
+
+    &::before {
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background: 
-        linear-gradient(45deg, transparent 48%, rgba(0,0,0,0.03) 49%, rgba(0,0,0,0.03) 51%, transparent 52%),
-        linear-gradient(-45deg, transparent 48%, rgba(0,0,0,0.03) 49%, rgba(0,0,0,0.03) 51%, transparent 52%);
-      background-size: 40px 40px;
+      background-size: 50% 50%;
+      background-position: 0 0, 100% 0, 0 100%, 100% 100%;
+      background-repeat: no-repeat;
       opacity: 0.5;
     }
 
     .frame-border {
       border: none;
-      padding: 2rem;
+      padding: 2.5rem;
       background: #fff;
       position: relative;
-      
+      transform-style: preserve-3d;
+
+      // Inner decorative border
       &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 2px solid rgba(205, 92, 92, 0.15);
+        border-radius: 12px;
+        background:
+          linear-gradient(45deg, transparent 48%, rgba(205, 92, 92, 0.08) 49%, rgba(205, 92, 92, 0.08) 51%, transparent 52%),
+          linear-gradient(-45deg, transparent 48%, rgba(205, 92, 92, 0.08) 49%, rgba(205, 92, 92, 0.08) 51%, transparent 52%);
+        background-size: 30px 30px;
+        opacity: 0.3;
+        transform: translateZ(1px);
+      }
+
+      // Outer decorative border
+      &::after {
         content: '';
         position: absolute;
         top: -8px;
         left: -8px;
         right: -8px;
         bottom: -8px;
-        border: 2px solid rgba(205, 92, 92, 0.15);
-        border-radius: 8px;
-      }
-      
-      &::after {
-        content: '';
-        position: absolute;
-        top: -4px;
-        left: -4px;
-        right: -4px;
-        bottom: -4px;
         border: 1px solid rgba(205, 92, 92, 0.1);
-        border-radius: 6px;
+        border-radius: 14px;
+        background: linear-gradient(to right,
+          transparent,
+          rgba(205, 92, 92, 0.05) 15%,
+          rgba(205, 92, 92, 0.05) 85%,
+          transparent
+        );
+        transform: translateZ(2px);
       }
     }
   }
@@ -307,12 +461,12 @@ $ribbon-blue: #00ACC1;
 
     span {
       position: relative;
-      
+
       &::before {
         content: '"';
         margin-right: 2px;
       }
-      
+
       &::after {
         content: '"';
         margin-left: 2px;
@@ -328,7 +482,7 @@ $ribbon-blue: #00ACC1;
 
     p {
       margin: 0.2rem 0;
-      
+
       &:last-child {
         font-weight: bold;
         color: #333;
@@ -384,20 +538,21 @@ $ribbon-blue: #00ACC1;
 
 .letter-content {
   position: relative;
-  padding: 20px;
-  
+  padding: 1rem;
+  z-index: 1;
+
   &.handwritten {
     font-family: 'Great Vibes', cursive;
     font-size: 1.5rem;
     line-height: 1.8;
     color: #2c3e50;
-    
+
     .gratitude-paragraph {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.25rem;
       line-height: 1.8;
       letter-spacing: 0.02em;
-      
+
       span {
         font-style: italic;
       }
@@ -408,7 +563,7 @@ $ribbon-blue: #00ACC1;
 .gratitude-paragraph {
   margin-bottom: 1.5rem;
   text-align: justify;
-  
+
   span {
     display: inline-block;
   }
@@ -419,14 +574,14 @@ $ribbon-blue: #00ACC1;
   margin-top: 2rem;
   position: relative; // Add this to establish positioning context
   padding-right: 30px; // Add space for stamp overlap
-  
+
   &.handwritten-signature {
     font-family: 'Great Vibes', cursive;
     font-size: 1.8rem;
     color: #2c3e50;
     line-height: 1.4;
   }
-  
+
   p {
     margin: 0.3rem 0;
     position: relative; // For proper z-index
@@ -483,12 +638,12 @@ $ribbon-blue: #00ACC1;
 
     span {
       line-height: 1;
-      
+
       &:first-child {
         font-size: 0.85rem;
         margin-bottom: 3px;
       }
-      
+
       &:nth-child(2) {
         font-size: 0.75rem;
         margin-bottom: 8px; // Increased space before icon
@@ -527,6 +682,43 @@ $ribbon-blue: #00ACC1;
   }
 }
 
+@media (max-width: 992px) {
+  .gratitude-section {
+    .letters-container {
+      max-width: 90%;
+      perspective: 800px;
+    }
+
+    .gratitude-letter {
+      max-width: 100%;
+      padding: 0;
+    }
+
+    .letter-frame {
+      padding: 2rem;
+
+      &::before {
+        width: 20px;
+      }
+
+      &::after {
+        width: 30px;
+        height: 30px;
+      }
+
+      .frame-border {
+        padding: 1.5rem;
+      }
+    }
+
+    .letter-content.handwritten {
+      .gratitude-paragraph {
+        padding: 0 1rem;
+      }
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .gratitude-section {
     padding: 3rem 0;
@@ -542,16 +734,31 @@ $ribbon-blue: #00ACC1;
         font-size: 2rem;
       }
     }
+
+    .letter-tabs {
+      flex-direction: row;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+
+      .tab-button {
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+
+        i {
+          font-size: 1rem;
+        }
+      }
+    }
   }
 
   .letter-content.handwritten {
     font-size: 1.3rem;
-    
+
     .gratitude-paragraph {
       font-size: 1.15rem;
     }
   }
-  
+
   .gratitude-signature.handwritten-signature {
     font-size: 1.6rem;
   }
@@ -579,7 +786,7 @@ $ribbon-blue: #00ACC1;
         &:first-child {
           font-size: 0.75rem;
         }
-        
+
         &:nth-child(2) {
           font-size: 0.65rem;
           margin-bottom: 6px; // Adjusted for mobile

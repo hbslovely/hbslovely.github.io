@@ -2,31 +2,25 @@
 <div class="travel-header">
   <div class="travel-header-image">
     <div class="header-overlay"></div>
-    <img src="assets/images/places/checkin_hoi-an_quang-nam.jpg" alt="Travel Memories Header">
-    <div class="overlay-text">
-      <h1>Hành Trình Kỷ Niệm</h1>
-      <p>"Không phải đích đến, mà là hành trình cùng nhau mới là điều ý nghĩa nhất"</p>
-    </div>
-  </div>
-</div>
-<!-- Gallery Section -->
-<div class="gallery-background">
-  <!-- Animated background circles -->
-  <div class="background-circle"></div>
-  <div class="background-circle"></div>
-  <div class="background-circle"></div>
-
-  <div class="gallery-section">
-    <div class="container" style="padding: 0 8rem;">
-      <!-- Filter Controls -->
-      <div class="gallery-controls">
-        <div class="filter-buttons">
-          <button class="filter-btn"
+    <img src="assets/images/places/checkin_deo-ngang.jpg" alt="Travel Memories Header">
+    <div class="overlay-content">
+      <div class="overlay-text">
+        <h1>Hành Trình Kỷ Niệm</h1>
+        <p>"Không phải đích đến, mà là hành trình cùng nhau mới là điều ý nghĩa nhất"</p>
+      </div>
+      
+      <!-- Filter Controls moved to header -->
+      <div class="header-controls">
+        <div class="filter-chips">
+          <button class="filter-chip"
                   *ngFor="let control of galleryControls"
                   [class.active]="currentFilter === control.id"
                   (click)="filterImages(control.id)">
             <i class="pi" [ngClass]="control.icon"></i>
-            {{ control.title }}
+            <span>{{ control.title }}</span>
+            <span class="count" *ngIf="getFilterCount(control.id) > 0">
+              {{ getFilterCount(control.id) }}
+            </span>
           </button>
         </div>
 
@@ -34,128 +28,142 @@
           <button class="view-btn"
                   [class.active]="viewMode === 'carousel'"
                   (click)="changeView('carousel')"
-                  title="Xem dạng trình chiếu">
+                  pTooltip="Xem dạng trình chiếu"
+                  tooltipPosition="top">
             <i class="pi pi-images"></i>
           </button>
           <button class="view-btn"
                   [class.active]="viewMode === 'masonry'"
                   (click)="changeView('masonry')"
-                  title="Xem dạng thác nước">
+                  pTooltip="Xem dạng thác nước"
+                  tooltipPosition="top">
             <i class="pi pi-th-large"></i>
           </button>
           <button class="view-btn"
                   [class.active]="viewMode === 'cards'"
                   (click)="changeView('cards')"
-                  title="Xem dạng thẻ">
+                  pTooltip="Xem dạng thẻ"
+                  tooltipPosition="top">
             <i class="pi pi-id-card"></i>
           </button>
         </div>
       </div>
+    </div>
+  </div>
+</div>
 
-      <!-- Album Frame -->
-      <div class="album-frame">
-        <div class="album-spine"></div>
+<!-- Gallery Section -->
+<div class="gallery-section">
+  <div class="container" style="padding: 0 8rem;">
+    <!-- Active Filters -->
+    <div class="active-filters" *ngIf="currentFilter !== 'all' || searchQuery">
+      <div class="filter-tag" *ngIf="currentFilter !== 'all'">
+        {{ getActiveFilterName() }}
+        <i class="pi pi-times" (click)="clearFilter()"></i>
+      </div>
+      <div class="filter-tag" *ngIf="searchQuery">
+        "{{ searchQuery }}"
+        <i class="pi pi-times" (click)="clearSearch()"></i>
+      </div>
+    </div>
 
-        <!-- Carousel View -->
-        <div class="gallery-carousel" *ngIf="viewMode === 'carousel'">
-          <div class="carousel-container">
-            <!-- Progress Bar -->
-            <div class="carousel-progress">
-              <div class="progress-bar" [style.width.%]="(currentSlideIndex + 1) / displayedMemories.length * 100"></div>
-            </div>
-
-            <!-- Main Carousel -->
-            <div class="carousel-track">
-              <div class="carousel-slide" *ngFor="let memory of displayedMemories; let i = index"
-                   [class.active]="i === currentSlideIndex"
-                   [class.next]="i === (currentSlideIndex + 1) % displayedMemories.length"
-                   [class.prev]="i === (currentSlideIndex - 1 + displayedMemories.length) % displayedMemories.length">
-                <div class="slide-content">
-                  <div class="image-container">
-                    <img [src]="memory.src" [alt]="memory.description" (load)="onImageLoad($event)">
+    <!-- Album Frame -->
+    <div class="album-frame">
+      <!-- Carousel View -->
+      <div class="gallery-carousel" *ngIf="viewMode === 'carousel'">
+        <div class="carousel-container">
+          <!-- Main Carousel -->
+          <div class="carousel-track">
+            <div class="carousel-slide" *ngFor="let memory of displayedMemories; let i = index"
+                 [class.active]="i === currentSlideIndex"
+                 [class.next]="i === (currentSlideIndex + 1) % displayedMemories.length"
+                 [class.prev]="i === (currentSlideIndex - 1 + displayedMemories.length) % displayedMemories.length">
+              <div class="slide-content">
+                <div class="image-container">
+                  <img [src]="memory.src" [alt]="memory.description" (load)="onImageLoad($event)">
+                  
+                  <!-- Navigation Arrows -->
+                  <div class="carousel-navigation">
+                    <button class="nav-btn prev" (click)="prevSlide()" [class.disabled]="currentSlideIndex === 0">
+                      <i class="pi pi-chevron-left"></i>
+                    </button>
+                    <button class="nav-btn next" (click)="nextSlide()" [class.disabled]="currentSlideIndex === displayedMemories.length - 1">
+                      <i class="pi pi-chevron-right"></i>
+                    </button>
                   </div>
-                  <div class="slide-caption">
-                    <span class="slide-number">{{i + 1}}/{{displayedMemories.length}}</span>
-                    <h3>{{ memory.name }}</h3>
-                    <p>{{ memory.description }}</p>
+
+                  <!-- Progress Bar -->
+                  <div class="carousel-progress">
+                    <div class="progress-bar" [style.width.%]="(currentSlideIndex + 1) / displayedMemories.length * 100"></div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- Navigation Arrows -->
-            <div class="carousel-navigation">
-              <button class="nav-btn prev" (click)="prevSlide()" [class.disabled]="currentSlideIndex === 0">
-                <i class="pi pi-chevron-left"></i>
-              </button>
-              <button class="nav-btn next" (click)="nextSlide()" [class.disabled]="currentSlideIndex === displayedMemories.length - 1">
-                <i class="pi pi-chevron-right"></i>
+          <!-- Image Info -->
+          <div class="slide-info" *ngIf="displayedMemories[currentSlideIndex]">
+            <h3>{{ displayedMemories[currentSlideIndex].name }}</h3>
+            <p>{{ displayedMemories[currentSlideIndex].description }}</p>
+          </div>
+
+          <!-- Thumbnail Navigation -->
+          <div class="carousel-thumbnails">
+            <div class="thumbnails-track">
+              <button *ngFor="let memory of displayedMemories; let i = index"
+                      class="thumbnail-item"
+                      [class.active]="i === currentSlideIndex"
+                      (click)="goToSlide(i)">
+                <img [src]="memory.src" [alt]="memory.name">
               </button>
             </div>
-
-            <!-- Thumbnail Navigation -->
-            <div class="carousel-thumbnails">
-              <div class="thumbnails-track">
-                <button *ngFor="let memory of displayedMemories; let i = index"
-                        class="thumbnail-item"
-                        [class.active]="i === currentSlideIndex"
-                        (click)="goToSlide(i)">
-                  <img [src]="memory.src" [alt]="memory.name">
-                </button>
-              </div>
-            </div>
-
-            <!-- Autoplay Control -->
-            <button class="autoplay-btn" (click)="toggleAutoPlay()" [class.playing]="isPlaying">
-              <i class="pi" [ngClass]="isPlaying ? 'pi-pause' : 'pi-play'"></i>
-            </button>
           </div>
         </div>
+      </div>
 
-        <!-- Masonry View -->
-        <div class="gallery-masonry" *ngIf="viewMode === 'masonry'">
-          <ng-container *ngFor="let memory of displayedMemories">
-            <div class="gallery-item" (click)="openLightbox(memory)">
-              <div class="image-wrapper">
-                <img [src]="memory.src"
-                     [alt]="memory.description"
-                     loading="lazy"
-                     (load)="onImageLoad($event)">
-                <div class="hover-overlay">
-                  <p class="memory-description">{{ memory.description }}</p>
-                  <div class="zoom-icon">
-                    <i class="pi pi-search-plus"></i>
-                  </div>
+      <!-- Masonry View -->
+      <div class="gallery-masonry" *ngIf="viewMode === 'masonry'">
+        <ng-container *ngFor="let memory of displayedMemories">
+          <div class="gallery-item" (click)="openLightbox(memory)">
+            <div class="image-wrapper">
+              <img [src]="memory.src"
+                   [alt]="memory.description"
+                   loading="lazy"
+                   (load)="onImageLoad($event)">
+              <div class="hover-overlay">
+                <p class="memory-description">{{ memory.description }}</p>
+                <div class="zoom-icon">
+                  <i class="pi pi-search-plus"></i>
                 </div>
               </div>
             </div>
-          </ng-container>
-        </div>
+          </div>
+        </ng-container>
+      </div>
 
-        <!-- Cards View -->
-        <div class="gallery-cards" *ngIf="viewMode === 'cards'">
-          <ng-container *ngFor="let memory of displayedMemories">
-            <div class="memory-card">
-              <div class="card-image">
-                <img [src]="memory.src" [alt]="memory.description">
-              </div>
-              <div class="card-content">
-                <h3>{{ memory.name }}</h3>
-                <p class="card-description">{{ memory.description }}</p>
-              </div>
+      <!-- Cards View -->
+      <div class="gallery-cards" *ngIf="viewMode === 'cards'">
+        <ng-container *ngFor="let memory of displayedMemories">
+          <div class="memory-card">
+            <div class="card-image">
+              <img [src]="memory.src" [alt]="memory.description">
             </div>
-          </ng-container>
-        </div>
+            <div class="card-content">
+              <h3>{{ memory.name }}</h3>
+              <p class="card-description">{{ memory.description }}</p>
+            </div>
+          </div>
+        </ng-container>
+      </div>
 
-        <!-- Load More Button - Hidden in carousel view -->
-        <div class="load-more" *ngIf="hasMoreImages && viewMode !== 'carousel'">
-          <button class="load-more-btn"
-                  (click)="loadMore()"
-                  [disabled]="loading">
-            <i class="pi pi-spinner pi-spin" *ngIf="loading"></i>
-            <span>{{ loading ? 'Đang tải...' : 'Xem thêm kỷ niệm' }}</span>
-          </button>
-        </div>
+      <!-- Load More Button - Hidden in carousel view -->
+      <div class="load-more" *ngIf="hasMoreImages && viewMode !== 'carousel'">
+        <button class="load-more-btn"
+                (click)="loadMore()"
+                [disabled]="loading">
+          <i class="pi pi-spinner pi-spin" *ngIf="loading"></i>
+          <span>{{ loading ? 'Đang tải...' : 'Xem thêm kỷ niệm' }}</span>
+        </button>
       </div>
     </div>
   </div>
@@ -183,8 +191,8 @@
   width: 100%;
   height: 100%;
   background: linear-gradient(
-    rgba(0, 0, 0, 0.3),
-    rgba(0, 0, 0, 0.4)
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.3)
   );
   z-index: 1;
 }
@@ -260,6 +268,8 @@
 .places-preview {
   padding: 4rem 0;
   background-color: #f8f9fa;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .places-grid {
@@ -273,7 +283,6 @@
   position: relative;
   overflow: hidden;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
@@ -335,5 +344,127 @@
   .travel-header {
     height: 40vh;
   }
+}
+
+/* Search Input Styles */
+.search-wrapper {
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search-input {
+  flex: 1;
+  position: relative;
+  max-width: 400px;
+}
+
+.search-input i {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+}
+
+.search-input input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 30px;
+  background: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.search-input input:focus {
+  outline: none;
+  border-color: #86efac;
+}
+
+.active-filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #86efac;
+  color: #166534;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  border: 1px solid #86efac;
+}
+
+.filter-tag i {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.filter-tag i:hover {
+  transform: scale(1.1);
+}
+
+.count-badge {
+  background: #f3f4f6;
+  color: #166534;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+.controls-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .controls-wrapper {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .search-input {
+    max-width: 100%;
+  }
+}
+
+.memory-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.memory-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-content {
+  padding: 1rem;
+  background: white;
+}
+
+.card-content h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  color: #1f2937;
+}
+
+.card-description {
+  color: #4b5563;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
 }
 </style>

@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import Swiper from 'swiper';
-import { Navigation, Pagination, EffectFade } from 'swiper/modules';
+import { EffectFade } from 'swiper/modules';
 
 @Component({
   selector: 'app-gratitude-messages',
@@ -21,27 +21,30 @@ export class GratitudeMessagesComponent implements OnInit, AfterViewInit {
 
   private initSwiper(): void {
     this.swiper = new Swiper('.swiper-container', {
-      modules: [Navigation, Pagination, EffectFade],
+      modules: [EffectFade],
       effect: 'fade',
       fadeEffect: {
         crossFade: true
       },
       slidesPerView: 1,
       spaceBetween: 30,
-      loop: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      speed: 800,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
+      speed: 600,
+      allowTouchMove: false // Disable touch/swipe since we're using tabs
     });
+  }
+
+  switchLetter(index: number): void {
+    if (this.swiper) {
+      this.swiper.slideTo(index);
+      // Update active tab
+      const tabs = document.querySelectorAll('.tab-button');
+      tabs.forEach((tab, i) => {
+        if (i === index) {
+          tab.classList.add('active');
+        } else {
+          tab.classList.remove('active');
+        }
+      });
+    }
   }
 } 
