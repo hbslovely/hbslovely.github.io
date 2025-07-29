@@ -39,16 +39,51 @@ export class FuturePromisesComponent implements OnInit {
       title: 'Du Lịch Châu Âu',
       timeframe: 'Trong 3 năm tới',
       icon: 'pi-globe'
-    },
-    {
-      id: 3,
-      title: 'Sinh Em Bé',
-      timeframe: 'Trong 1 năm tới',
-      icon: 'pi-heart'
     }
   ];
+
+  selectedFilter: string = 'all';
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  getFilterIcon(): string {
+    switch (this.selectedFilter) {
+      case 'love':
+        return 'pi-heart';
+      case 'family':
+        return 'pi-home';
+      case 'travel':
+        return 'pi-globe';
+      default:
+        return 'pi-filter';
+    }
+  }
+
+  getFilterLabel(): string {
+    switch (this.selectedFilter) {
+      case 'love':
+        return 'Tình Yêu';
+      case 'family':
+        return 'Gia Đình';
+      case 'travel':
+        return 'Du Lịch';
+      default:
+        return 'Tất Cả';
+    }
+  }
+
+  setFilter(filter: string): void {
+    this.selectedFilter = filter;
+  }
+
+  getFilteredPromises(): Promise[] {
+    if (this.selectedFilter === 'all') {
+      return this.promises;
+    }
+    return this.promises.filter(promise => 
+      promise.tags.some(tag => tag.toLowerCase().includes(this.selectedFilter))
+    );
+  }
 } 

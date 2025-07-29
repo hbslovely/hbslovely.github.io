@@ -1,44 +1,39 @@
 <!-- Happy Moments Section -->
-<div class="moments-section">
+<section class="happy-moments">
+  <div class="animated-background"></div>
   <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">
-        <i class="pi pi-heart-fill"></i>
-        Những Khoảnh Khắc Hạnh Phúc Của Chúng Ta
-      </h2>
-      <div class="quote-wrapper">
-        <p class="section-subtitle">"Hạnh phúc không phải là thứ có sẵn. Nó đến từ chính những hành động của bạn"</p>
-        <span class="quote-author">- Dalai Lama</span>
+    <!-- Header -->
+    <header class="section-header">
+      <div class="title-wrapper">
+        <i class="pi pi-heart"></i>
+        <h2>Khoảnh Khắc Hạnh Phúc</h2>
       </div>
-    </div>
+    </header>
 
     <!-- Featured Moment -->
     <div class="featured-moment">
       <div class="featured-image">
-        <img src="assets/images/gallery/nam-tay-yeu-thuong.png" alt="Khoảnh khắc đặc biệt">
-        <div class="featured-overlay">
-          <h3>Khoảnh Khắc Đặc Biệt</h3>
-          <p>Những giây phút bên nhau đều là những kỷ niệm đáng nhớ</p>
+        <img src="assets/images/gallery/su-ben-nhau-moi-luc.png" alt="Khoảnh khắc đặc biệt">
+        <div class="featured-text">
+          <h3>Những Giây Phút Bên Nhau</h3>
+          <p>Mỗi khoảnh khắc bên nhau đều là những kỷ niệm đáng nhớ và đáng trân trọng</p>
         </div>
       </div>
     </div>
 
-    <div class="moments-content">
-      <!-- Moments Grid -->
-      <div class="moments-grid">
-        <div class="moment-item" *ngFor="let moment of happyMoments">
+    <!-- Timeline Flow -->
+    <div class="timeline-flow">
+      <div class="timeline-item" *ngFor="let moment of happyMoments">
+        <div class="moment-content">
           <div class="moment-image">
             <img [src]="moment.image" [alt]="moment.title">
-            <div class="moment-date">
-              <i class="pi pi-calendar"></i>
-              {{ moment.date }}
-            </div>
+            <span class="moment-date">{{ moment.date }}</span>
           </div>
-          <div class="moment-info">
-            <h3 class="moment-title">{{ moment.title }}</h3>
-            <p class="moment-description">{{ moment.description }}</p>
-            <div class="moment-emotions">
-              <span class="emotion" *ngFor="let emotion of moment.emotions">
+          <div class="moment-text">
+            <h3>{{ moment.title }}</h3>
+            <p>{{ moment.description }}</p>
+            <div class="emotion-tags">
+              <span class="tag" *ngFor="let emotion of moment.emotions">
                 <i [class]="'pi ' + emotion.icon"></i>
                 {{ emotion.text }}
               </span>
@@ -46,108 +41,47 @@
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Memory Timeline -->
-      <div class="memory-timeline">
-        <div class="timeline-header">
-          <h3>Dòng Thời Gian Kỷ Niệm</h3>
-          <p>Những mốc thời gian đáng nhớ của chúng ta</p>
-        </div>
-        
-        <div class="timeline-items">
-          <div class="timeline-item">
-            <div class="timeline-image">
-              <img src="assets/images/gallery/ngay-dau-ben-nhau.png" alt="Ngày đầu bên nhau">
-            </div>
-            <div class="timeline-content">
-              <h4>Ngày Đầu Gặp Nhau</h4>
-              <p>Khoảnh khắc đầu tiên khi ta bắt đầu câu chuyện tình yêu của mình</p>
-            </div>
-          </div>
-          
-          <div class="timeline-item">
-            <div class="timeline-image">
-              <img src="assets/images/gallery/chuyen-di-dau-tien.png" alt="Chuyến đi đầu tiên">
-            </div>
-            <div class="timeline-content">
-              <h4>Chuyến Đi Đầu Tiên</h4>
-              <p>Những kỷ niệm đẹp trong chuyến đi đầu tiên của chúng ta</p>
-            </div>
-          </div>
-          
-          <div class="timeline-item">
-            <div class="timeline-image">
-              <img src="assets/images/gallery/ben-nhau.png" alt="Bên nhau">
-            </div>
-            <div class="timeline-content">
-              <h4>Những Ngày Bên Nhau</h4>
-              <p>Mỗi ngày bên nhau đều là một kỷ niệm đáng trân trọng</p>
-            </div>
-          </div>
+    <!-- Categories Strip -->
+    <div class="categories-strip">
+      <div class="category" *ngFor="let category of categories">
+        <i [class]="'pi ' + category.icon"></i>
+        <span class="category-text">
+          <strong>{{ category.title }}</strong>
+          <small>{{ category.count }} khoảnh khắc</small>
+        </span>
+      </div>
+    </div>
+
+    <!-- Photo Grid -->
+    <div class="photo-grid">
+      <div class="photo-item">
+        <img src="assets/images/gallery/nu-cuoi.png" alt="Nụ cười hạnh phúc">
+        <div class="photo-overlay">
+          <span>Nụ Cười Hạnh Phúc</span>
         </div>
       </div>
-
-      <!-- Categories Section -->
-      <div class="categories-section">
-        <div class="section-divider">
-          <span class="line"></span>
-          <i class="pi pi-heart-fill"></i>
-          <span class="line"></span>
-        </div>
-
-        <div class="categories-grid">
-          <div class="category-item" *ngFor="let category of categories">
-            <div class="category-icon">
-              <i [class]="'pi ' + category.icon"></i>
-            </div>
-            <div class="category-info">
-              <h4 class="category-title">{{ category.title }}</h4>
-              <p class="category-count">{{ category.count }} khoảnh khắc</p>
-            </div>
-          </div>
+      <div class="photo-item">
+        <img src="assets/images/gallery/su-an-ui.png" alt="Sự an ủi">
+        <div class="photo-overlay">
+          <span>Sự An Ủi</span>
         </div>
       </div>
-
-      <!-- Photo Gallery -->
-      <div class="photo-gallery">
-        <h3 class="gallery-title">Bộ Sưu Tập Ảnh</h3>
-        <div class="gallery-grid">
-          <div class="gallery-item">
-            <img src="assets/images/gallery/nu-cuoi.png" alt="Nụ cười hạnh phúc">
-          </div>
-          <div class="gallery-item">
-            <img src="assets/images/gallery/su-an-ui.png" alt="Sự an ủi">
-          </div>
-          <div class="gallery-item">
-            <img src="assets/images/gallery/su-ben-nhau-moi-luc.png" alt="Bên nhau mọi lúc">
-          </div>
-        </div>
-      </div>
-
-      <!-- Emotional Quotes -->
-      <div class="emotional-quotes">
-        <div class="quote-card">
-          <i class="pi pi-heart"></i>
-          <p>"Yêu không phải là nhìn nhau, mà là cùng nhìn về một hướng"</p>
-          <span>- Antoine de Saint-Exupéry</span>
-        </div>
-        <div class="quote-card">
-          <i class="pi pi-star"></i>
-          <p>"Tình yêu không làm cho thế giới quay, tình yêu làm cho chuyến đi đáng giá"</p>
-          <span>- Franklin P. Jones</span>
-        </div>
-      </div>
-
-      <!-- Footer Quote -->
-      <div class="section-footer">
-        <div class="quote-wrapper">
-          <i class="pi pi-quote-left"></i>
-          <p class="footer-quote">
-            Những khoảnh khắc đẹp nhất trong cuộc đời là những phút giây nhỏ bé, không tên khi bạn mỉm cười bên người mình yêu thương
-          </p>
-          <span class="quote-author">- Ritu Ghatourey</span>
+      <div class="photo-item">
+        <img src="assets/images/gallery/su-ben-nhau-moi-luc.png" alt="Bên nhau mọi lúc">
+        <div class="photo-overlay">
+          <span>Bên Nhau Mọi Lúc</span>
         </div>
       </div>
     </div>
+
+    <!-- Inspirational Quote -->
+    <div class="quote-strip">
+      <blockquote>
+        "Yêu không phải là nhìn nhau, mà là cùng nhìn về một hướng"
+        <cite>- Antoine de Saint-Exupéry</cite>
+      </blockquote>
+    </div>
   </div>
-</div>
+</section>
