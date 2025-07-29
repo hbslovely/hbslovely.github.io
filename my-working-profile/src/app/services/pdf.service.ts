@@ -263,15 +263,15 @@ export class PdfService {
     pdf.setFont('Candara', 'normal');
     pdf.setFontSize(12);
     pdf.setTextColor(colors.text);
-
-    // First paragraph - short summary
-    if (cv.personalInfo.shortSummary) {
-      const shortSummaryLines = pdf.splitTextToSize(cv.personalInfo.shortSummary || '', this.CONTENT_WIDTH);
-      shortSummaryLines.forEach((line: string, index: number) => {
-        pdf.text(line, this.MARGIN, yPos + (index * this.getLineHeight(14)));
-      });
-      yPos += shortSummaryLines.length * this.getLineHeight(12) + this.getLineHeight(12);
-    }
+    //
+    // // First paragraph - short summary
+    // if (cv.personalInfo.shortSummary) {
+    //   const shortSummaryLines = pdf.splitTextToSize(cv.personalInfo.shortSummary || '', this.CONTENT_WIDTH);
+    //   shortSummaryLines.forEach((line: string, index: number) => {
+    //     pdf.text(line, this.MARGIN, yPos + (index * this.getLineHeight(14)));
+    //   });
+    //   yPos += shortSummaryLines.length * this.getLineHeight(12) + this.getLineHeight(12);
+    // }
 
     // Second paragraph - first part of detailed summary
     if (cv.personalInfo.summary) {
@@ -599,6 +599,16 @@ export class PdfService {
         }
       });
     }
+
+    // Add centered text about additional projects
+    yPos += 20;
+    pdf.setFont('Candara', 'normal');
+    pdf.setFontSize(11);
+    pdf.setTextColor(colors.subtext);
+    const additionalProjectsText = 'There is 10+ projects which is not showing here.';
+    const textWidth = pdf.getTextWidth(additionalProjectsText);
+    pdf.text(additionalProjectsText, (this.A4_WIDTH - textWidth) / 2, yPos);
+    yPos += 25;
 
     // Add footer with page numbers
     const totalPages = pdf.getNumberOfPages();
