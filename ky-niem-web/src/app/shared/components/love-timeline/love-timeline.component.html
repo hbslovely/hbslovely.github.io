@@ -1,42 +1,30 @@
 <!-- Love Timeline Section -->
-<div class="timeline-section">
-  <!-- Background watermarks -->
-  <div class="watermark-container">
-    <i class="pi pi-clock watermark-icon"></i>
-    <i class="pi pi-heart-fill watermark-icon"></i>
-    <i class="pi pi-calendar watermark-icon"></i>
-    <i class="pi pi-heart watermark-icon"></i>
-  </div>
-
+<section class="timeline-section">
   <div class="container" *ngIf="timelineData">
-    <div class="section-header">
+    <!-- Section Header -->
+    <header class="section-header">
       <h2 class="section-title">
         <i class="pi pi-heart-fill"></i>
         {{ timelineData.sectionTitle }}
       </h2>
-      <div class="main-quote-wrapper">
-        <div class="quote-content">
-          <i class="pi pi-quote-left quote-icon"></i>
-          <p class="section-subtitle">{{ timelineData.quote.content }}</p>
-          <i class="pi pi-quote-right quote-icon"></i>
-        </div>
-        <span class="quote-author">- {{ timelineData.quote.author }}</span>
-      </div>
-    </div>
+      <blockquote class="main-quote">
+        <p class="quote-content">{{ timelineData.quote.content }}</p>
+        <footer class="quote-author">- {{ timelineData.quote.author }}</footer>
+      </blockquote>
+    </header>
 
+    <!-- Timeline -->
     <div class="timeline-container">
       <div class="timeline-item" *ngFor="let event of timelineData.events">
+        <time class="timeline-date">
+          <i [class]="event.icon"></i>
+          {{ event.date }}
+        </time>
         <div class="timeline-content">
-          <div class="content-wrapper">
-            <div class="timeline-date">
-              <i [class]="event.icon"></i>
-              {{ event.date }}
-            </div>
-            <h3 class="timeline-title">{{ event.title }}</h3>
-            <p class="timeline-description">{{ event.description }}</p>
-          </div>
+          <h3 class="timeline-title">{{ event.title }}</h3>
+          <p class="timeline-description">{{ event.description }}</p>
         </div>
       </div>
     </div>
   </div>
-</div> 
+</section> 

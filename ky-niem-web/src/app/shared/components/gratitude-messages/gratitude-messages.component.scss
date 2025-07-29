@@ -1,6 +1,12 @@
 // Import mixins
 @import 'src/assets/scss/mixins';
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Kalam:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
+
+// Import Swiper styles
+@import 'swiper/scss';
+@import 'swiper/scss/navigation';
+@import 'swiper/scss/pagination';
+@import 'swiper/scss/effect-fade';
 
 // Custom variables
 $mint-blue: #E0F7FA;
@@ -144,44 +150,74 @@ $ribbon-blue: #00ACC1;
   }
 
   .letters-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-    padding: 2rem;
     position: relative;
-    z-index: 1;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+    overflow: visible;
+
+    .swiper-slide {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      
+      &.swiper-slide-active {
+        opacity: 1;
+      }
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #16a34a;
+      width: 44px;
+      height: 44px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 50%;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #fff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      &::after {
+        font-size: 20px;
+      }
+    }
+
+    .swiper-pagination {
+      position: relative;
+      margin-top: 2rem;
+
+      .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        background-color: rgba(22, 163, 74, 0.3);
+        opacity: 1;
+        transition: all 0.3s ease;
+
+        &-active {
+          background-color: #16a34a;
+          transform: scale(1.2);
+        }
+      }
+    }
   }
 
   .gratitude-letter {
-    flex: 1;
-    min-width: 300px;
-    max-width: 500px;
-    position: relative;
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: scale(1.02) rotate(0deg) !important;
-      z-index: 2;
-    }
-
-    &.husband-letter {
-      transform: rotate(-2deg);
-    }
-
-    &.wife-letter {
-      transform: rotate(2deg);
-    }
+    transform: none !important;
+    margin: 0 auto;
+    max-width: 600px;
   }
 
   .letter-frame {
     background: #fff;
-    padding: 2rem;
-    border-radius: 8px;
+    padding: 2.5rem;
+    border-radius: 12px;
     box-shadow: 
-      0 1px 3px rgba(0,0,0,0.12),
-      0 1px 2px rgba(0,0,0,0.24),
-      0 0 8px rgba(0,0,0,0.1);
+      0 10px 30px rgba(0,0,0,0.1),
+      0 1px 8px rgba(0,0,0,0.06);
     position: relative;
     overflow: hidden;
 
@@ -193,27 +229,38 @@ $ribbon-blue: #00ACC1;
       right: 0;
       bottom: 0;
       background: 
-        linear-gradient(45deg, transparent 48%, #f0f0f0 49%, #f0f0f0 51%, transparent 52%),
-        linear-gradient(-45deg, transparent 48%, #f0f0f0 49%, #f0f0f0 51%, transparent 52%);
-      background-size: 30px 30px;
-      opacity: 0.3;
+        linear-gradient(45deg, transparent 48%, rgba(0,0,0,0.03) 49%, rgba(0,0,0,0.03) 51%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, rgba(0,0,0,0.03) 49%, rgba(0,0,0,0.03) 51%, transparent 52%);
+      background-size: 40px 40px;
+      opacity: 0.5;
     }
 
     .frame-border {
-      border: 1px solid rgba(0,0,0,0.1);
-      padding: 1.5rem;
+      border: none;
+      padding: 2rem;
       background: #fff;
       position: relative;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: -8px;
+        left: -8px;
+        right: -8px;
+        bottom: -8px;
+        border: 2px solid rgba(205, 92, 92, 0.15);
+        border-radius: 8px;
+      }
       
       &::after {
         content: '';
         position: absolute;
-        top: -5px;
-        left: -5px;
-        right: -5px;
-        bottom: -5px;
-        border: 1px solid rgba(0,0,0,0.05);
-        pointer-events: none;
+        top: -4px;
+        left: -4px;
+        right: -4px;
+        bottom: -4px;
+        border: 1px solid rgba(205, 92, 92, 0.1);
+        border-radius: 6px;
       }
     }
   }
@@ -340,10 +387,21 @@ $ribbon-blue: #00ACC1;
   padding: 20px;
   
   &.handwritten {
-    font-family: 'Dancing Script', cursive;
-    font-size: 1.2rem;
-    line-height: 1.6;
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.5rem;
+    line-height: 1.8;
     color: #2c3e50;
+    
+    .gratitude-paragraph {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      line-height: 1.8;
+      letter-spacing: 0.02em;
+      
+      span {
+        font-style: italic;
+      }
+    }
   }
 }
 
@@ -363,10 +421,10 @@ $ribbon-blue: #00ACC1;
   padding-right: 30px; // Add space for stamp overlap
   
   &.handwritten-signature {
-    font-family: 'Kalam', cursive;
-    font-weight: 700;
-    font-size: 1.3rem;
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.8rem;
     color: #2c3e50;
+    line-height: 1.4;
   }
   
   p {
@@ -487,11 +545,15 @@ $ribbon-blue: #00ACC1;
   }
 
   .letter-content.handwritten {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+    
+    .gratitude-paragraph {
+      font-size: 1.15rem;
+    }
   }
-
+  
   .gratitude-signature.handwritten-signature {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 
   .gratitude-signature {

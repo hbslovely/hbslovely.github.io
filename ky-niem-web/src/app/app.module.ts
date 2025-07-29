@@ -1,18 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-
 import { AppComponent } from './app.component';
-import { MemoryPlacesComponent } from './shared/components/memory-places/memory-places.component';
+import { RouterModule } from '@angular/router';
+import { AppRoutes } from './app.routes';
+import { GratitudeMessagesComponent } from './shared/components/gratitude-messages/gratitude-messages.component';
+
+// Import Swiper styles in your styles.scss instead of here
 
 @NgModule({
   declarations: [
     AppComponent,
-    MemoryPlacesComponent
+    GratitudeMessagesComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    RouterModule.forRoot(AppRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
