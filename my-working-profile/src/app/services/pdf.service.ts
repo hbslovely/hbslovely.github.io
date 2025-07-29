@@ -3,6 +3,7 @@ import { jsPDF } from 'jspdf';
 import { CVService } from './cv.service';
 import { LanguageService } from './language.service';
 import { addCandaraFont } from "./jspdf-font";
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,7 @@ import { addCandaraFont } from "./jspdf-font";
 export class PdfService {
   private readonly cvService = inject(CVService);
   private readonly languageService = inject(LanguageService);
+  private readonly translateService = inject(TranslateService);
 
   // A4 dimensions in points (72 points per inch)
   private readonly A4_WIDTH = 595.28;  // 8.27 × 72
@@ -18,13 +20,15 @@ export class PdfService {
   private readonly CONTENT_WIDTH = this.A4_WIDTH - (this.MARGIN * 2);
   private readonly SECTION_SPACING = 30; // Space before section headers
   private readonly AVATAR_SIZE = 130;
-  private readonly SUB_SECTION_SPACING = 10; // Space between items within sections
+  private readonly SUB_SECTION_SPACING = 30; // Space between items within sections
   private readonly SECTION_HEADER_HEIGHT = 32;
   private readonly HEADER_SPACING = this.SECTION_HEADER_HEIGHT + 16; // Space after section headers
   private readonly CONTENT_LEFT_MARGIN = 40;
   private readonly SUMMARY_LINE_HEIGHT = 1.4;
   private readonly BULLET_INDENT = 15;
   private readonly TEXT_INDENT = 25;
+  private readonly LABEL_WIDTH = 100; // Width for labels like "Technologies:", "Environment:", etc.
+  private readonly PROJECT_LINE_HEIGHT = 1; // Add this new constant for project descriptions
 
   private setupPdfFonts(pdf: jsPDF): void {
     try {
@@ -64,8 +68,8 @@ export class PdfService {
     pdf.addFont('VNFont.ttf', 'VNFont', 'normal');
   }
 
-  private getLineHeight(fontSize: number): number {
-    return fontSize * 1.2;
+  private getLineHeight(fontSize: number, isProjectContent: boolean = false): number {
+    return fontSize * (isProjectContent ? this.PROJECT_LINE_HEIGHT : 1.1);
   }
 
   private formatLocation(location: any): string {
@@ -84,11 +88,12 @@ export class PdfService {
     pdf.setDrawColor(colors.accent);
     pdf.setLineWidth(1);
 
-    // Add section title
+    // Add section title - translate if needed
     pdf.setFont('Candara', 'bold');
     pdf.setFontSize(16);
     pdf.setTextColor(colors.primary);
-    pdf.text(title, this.MARGIN, yPos + 10);
+    const translatedTitle = this.translateService.instant(title);
+    pdf.text(translatedTitle, this.MARGIN, yPos + 10);
 
     return yPos + this.HEADER_SPACING;
   }
@@ -114,6 +119,7 @@ export class PdfService {
       putOnlyUsedFonts: true,
       compress: true
     });
+
 
     addCandaraFont(pdf);
 
@@ -433,11 +439,12 @@ export class PdfService {
         column1Y = column2Y = column3Y = currentY;
       }
 
-      // Add category
+      // Add category with translation
       pdf.setFont('Candara', 'bold');
       pdf.setFontSize(12);
       pdf.setTextColor(colors.primary);
-      pdf.text(category, startX, currentY);
+      const formatedCategory = this.formatCategory(category);
+      pdf.text(formatedCategory, startX, currentY);
 
       // Add skills
       currentY += this.getLineHeight(12);
@@ -469,11 +476,11 @@ export class PdfService {
       currentColumn = (currentColumn + 1) % 3;
     });
 
-    yPos = Math.max(column1Y, column2Y, column3Y) + this.SUB_SECTION_SPACING;
+    yPos = Math.max(column1Y, column2Y, column3Y);
 
     // Add Projects Section with page break check
     yPos = this.checkPageBreak(pdf, yPos, 150);
-    yPos = this.addSectionHeader(pdf, 'Notable Projects', yPos, colors);
+    yPos = this.addSectionHeader(pdf, 'Projects', yPos, colors);
 
     if (cv.projects?.projects) {
       cv.projects.projects.forEach((project, index) => {
@@ -496,21 +503,21 @@ export class PdfService {
 
         // Description
         if (project.description) {
-          yPos += this.getLineHeight(12);
+          yPos += this.getLineHeight(12, true) + 4; // Use project line height
           yPos = this.checkPageBreak(pdf, yPos, 50);
           pdf.setFont('Candara', 'normal');
           pdf.setFontSize(11);
           pdf.setTextColor(colors.text);
-          const descLines = pdf.splitTextToSize(project.description, this.CONTENT_WIDTH - 30);
+          const descLines = pdf.splitTextToSize(project.description, this.CONTENT_WIDTH - 10);
           descLines.forEach((line: string, lineIndex: number) => {
-            yPos = this.checkPageBreak(pdf, yPos + (lineIndex * this.getLineHeight(11)), this.getLineHeight(11));
-            pdf.text(line, this.MARGIN + 15, yPos + (lineIndex * this.getLineHeight(11)));
+            yPos = this.checkPageBreak(pdf, yPos + (lineIndex * this.getLineHeight(11, true)), this.getLineHeight(11, true));
+            pdf.text(line, this.MARGIN, yPos + (lineIndex * this.getLineHeight(11, true))); // Use project line height
           });
-          yPos += descLines.length * this.getLineHeight(11);
+          yPos += descLines.length * this.getLineHeight(11, true);
         }
 
         // Project details with consistent styling
-        const detailSpacing = this.getLineHeight(11) * 1.2;
+        const detailSpacing = this.getLineHeight(11, true) * 1.1; // Reduced from 1.2
 
         // Technologies
         if (project.technologies?.length) {
@@ -518,16 +525,22 @@ export class PdfService {
           yPos = this.checkPageBreak(pdf, yPos, 50);
           pdf.setFont('Candara', 'bold');
           pdf.setTextColor(colors.primary);
-          pdf.text('Technologies:', this.MARGIN + 15, yPos);
+          const techLabel = this.translateService.instant('Technologies') + ':';
+          pdf.text(techLabel, this.MARGIN, yPos); // Aligned with project name
+
+          // Calculate where to start the technologies text
+          const labelWidth = pdf.getTextWidth(techLabel);
+          const techStartX = this.MARGIN + this.LABEL_WIDTH;
+
           pdf.setFont('Candara', 'normal');
           pdf.setTextColor(colors.text);
           const techText = project.technologies.join(', ');
-          const techLines = pdf.splitTextToSize(techText, this.CONTENT_WIDTH - this.TEXT_INDENT - 30);
+          const techLines = pdf.splitTextToSize(techText, this.CONTENT_WIDTH - this.LABEL_WIDTH - 30);
           techLines.forEach((line: string, lineIndex: number) => {
-            yPos = this.checkPageBreak(pdf, yPos + (lineIndex * this.getLineHeight(11)), this.getLineHeight(11));
-            pdf.text(line, this.MARGIN + this.TEXT_INDENT + 15, yPos + (lineIndex * this.getLineHeight(11)));
+            yPos = this.checkPageBreak(pdf, yPos + (lineIndex * this.getLineHeight(11, true)), this.getLineHeight(11, true));
+            pdf.text(line, techStartX, yPos + (lineIndex * this.getLineHeight(11, true)));
           });
-          yPos += techLines.length * this.getLineHeight(11);
+          yPos += techLines.length * this.getLineHeight(11, true);
         }
 
         // Environment
@@ -536,16 +549,20 @@ export class PdfService {
           yPos = this.checkPageBreak(pdf, yPos, 50);
           pdf.setFont('Candara', 'bold');
           pdf.setTextColor(colors.primary);
-          pdf.text('Environment:', this.MARGIN + 15, yPos);
+          const envLabel = this.translateService.instant('Environment') + ':';
+          pdf.text(envLabel, this.MARGIN, yPos);
+
+          const envStartX = this.MARGIN + this.LABEL_WIDTH;
+
           pdf.setFont('Candara', 'normal');
           pdf.setTextColor(colors.text);
           const envText = project.environment.join(', ');
-          const envLines = pdf.splitTextToSize(envText, this.CONTENT_WIDTH - this.TEXT_INDENT - 30);
+          const envLines = pdf.splitTextToSize(envText, this.CONTENT_WIDTH - this.LABEL_WIDTH - 30);
           envLines.forEach((line: string, lineIndex: number) => {
-            yPos = this.checkPageBreak(pdf, yPos + (lineIndex * this.getLineHeight(11)), this.getLineHeight(11));
-            pdf.text(line, this.MARGIN + this.TEXT_INDENT + 15, yPos + (lineIndex * this.getLineHeight(11)));
+            yPos = this.checkPageBreak(pdf, yPos + (lineIndex * this.getLineHeight(11, true)), this.getLineHeight(11, true));
+            pdf.text(line, envStartX, yPos + (lineIndex * this.getLineHeight(11, true)));
           });
-          yPos += envLines.length * this.getLineHeight(11);
+          yPos += envLines.length * this.getLineHeight(11, true);
         }
 
         // Role
@@ -554,15 +571,19 @@ export class PdfService {
           yPos = this.checkPageBreak(pdf, yPos, 50);
           pdf.setFont('Candara', 'bold');
           pdf.setTextColor(colors.primary);
-          pdf.text('Role:', this.MARGIN + 15, yPos);
+          const roleLabel = this.translateService.instant('Role') + ':';
+          pdf.text(roleLabel, this.MARGIN, yPos);
+
+          const roleStartX = this.MARGIN + this.LABEL_WIDTH;
+
           pdf.setFont('Candara', 'normal');
           pdf.setTextColor(colors.text);
-          const roleLines = pdf.splitTextToSize(project.role, this.CONTENT_WIDTH - this.TEXT_INDENT - 30);
+          const roleLines = pdf.splitTextToSize(project.role, this.CONTENT_WIDTH - this.LABEL_WIDTH - 30);
           roleLines.forEach((line: string, lineIndex: number) => {
-            yPos = this.checkPageBreak(pdf, yPos + (lineIndex * this.getLineHeight(11)), this.getLineHeight(11));
-            pdf.text(line, this.MARGIN + this.TEXT_INDENT + 15, yPos + (lineIndex * this.getLineHeight(11)));
+            yPos = this.checkPageBreak(pdf, yPos + (lineIndex * this.getLineHeight(11, true)), this.getLineHeight(11, true));
+            pdf.text(line, roleStartX, yPos + (lineIndex * this.getLineHeight(11, true)));
           });
-          yPos += roleLines.length * this.getLineHeight(11);
+          yPos += roleLines.length * this.getLineHeight(11, true);
         }
 
         // Add spacing between projects
@@ -598,5 +619,12 @@ export class PdfService {
     const timestamp = new Date().toISOString().split('T')[0];
     const filename = `CV_${ cv.personalInfo.name.replace(/\s+/g, '_') }_${ timestamp }.pdf`;
     pdf.save(filename);
+  }
+
+  private formatCategory(category: string): string {
+    return category
+      .split(/(?=[A-Z])/)
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
   }
 }
