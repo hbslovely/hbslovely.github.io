@@ -46,7 +46,7 @@
       "company": "HCL",
       "duration": "Dec 2021 - Dec 2023",
       "description": "Develop a DMS system for storing the document regarding to aerospace scope",
-      "scope": "Aerospace, DMS",
+      "scope": "Aerospace",
       "technologies": [
         "Angular 11-14",
         "GoJS",
@@ -67,7 +67,7 @@
       "company": "Nashtech",
       "duration": "Dec 2018 – Oct 2020",
       "description": "An applicant for manage the orders/invoices/payments. Also, other bankers, or wealth managers can use to introduce / demonstrate the plan to customer",
-      "scope": "ODC – Finance, Banking, Insurance, Wealth management",
+      "scope": "FinTech",
       "technologies": [
         "Angularjs",
         "Angular 7",
