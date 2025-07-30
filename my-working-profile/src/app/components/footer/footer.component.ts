@@ -20,12 +20,12 @@ export class FooterComponent {
   socialLinks = [
     {
       icon: 'github',
-      url: 'https://github.com/hbslovely',
+      url: 'https://github.com/hpphat92',
       label: 'GitHub'
     },
     {
       icon: 'linkedin',
-      url: 'https://www.linkedin.com/in/phat-ho-ba8b0b1b4/',
+      url: 'https://www.linkedin.com/in/hpphat1992/',
       label: 'LinkedIn'
     }
   ];

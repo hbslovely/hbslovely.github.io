@@ -7,31 +7,37 @@
     </app-section-header>
 
     <div class="skills-layout">
-      <!-- Word Cloud Section - Left Side -->
+      <!-- Interactive Word Cloud -->
       <div class="word-cloud-section">
-        <div class="word-cloud-container" #wordCloudContainer>
-          <canvas #wordCloud></canvas>
+        <div class="word-cloud-wrapper">
+          <div class="word-cloud-container" #wordCloudContainer>
+            <canvas #wordCloud></canvas>
+          </div>
         </div>
       </div>
 
-      <!-- Skills List Section - Right Side -->
+      <!-- Organized Skills Grid -->
       <div class="skills-content">
         @for (category of Object.keys(cv()?.skills?.technicalSkills || {}); track category) {
           <div class="skill-category">
             <div class="skill-category-header">
-              <span nz-icon [nzType]="getTechnologyIcon(category)" nzTheme="outline"></span>
+              <div class="category-icon">
+                <span nz-icon [nzType]="getTechnologyIcon(category)" nzTheme="outline"></span>
+              </div>
               <h3>{{ formatCategory(category) }}</h3>
             </div>
             
             <div class="skill-list">
               @for (skill of cv()?.skills?.technicalSkills?.[category]; track skill) {
-                <div class="skill-item">
-                  <span class="skill-name">{{ skill }}</span>
-                  @if (getSkillExperience(skill)) {
-                    <span class="experience-level" [style.backgroundColor]="getTagColor(skill)">
-                      {{ getSkillExperience(skill) }}
-                    </span>
-                  }
+                <div class="skill-item" [class.has-experience]="getSkillExperience(skill)">
+                  <div class="skill-content">
+                    <span class="skill-name">{{ skill }}</span>
+                    @if (getSkillExperience(skill)) {
+                      <span class="experience-badge" [style.backgroundColor]="getTagColor(skill)">
+                        {{ getSkillExperience(skill) }}
+                      </span>
+                    }
+                  </div>
                 </div>
               }
             </div>

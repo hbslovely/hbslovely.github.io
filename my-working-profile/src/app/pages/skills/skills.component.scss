@@ -1,5 +1,5 @@
 .skills-page {
-  padding: 0 1rem 2rem;
+  padding: 0 1.5rem 3rem;
 
   .container {
     margin: 0 auto;
@@ -7,14 +7,21 @@
 
   .skills-layout {
     display: flex;
-    gap: 3rem;
-    margin-top: 2rem;
+    gap: 4rem;
+    margin-top: 2.5rem;
 
-    // Word Cloud Section - Left Side
+    // Interactive Word Cloud
     .word-cloud-section {
       flex: 1;
       min-width: 300px;
       max-width: 500px;
+
+      .word-cloud-wrapper {
+        background: var(--component-background);
+        border-radius: 8px;
+        padding: 1.5rem;
+        border: 1px solid var(--border-color);
+      }
 
       .word-cloud-container {
         position: sticky;
@@ -30,53 +37,68 @@
       }
     }
 
-    // Skills List Section - Right Side
+    // Organized Skills Grid
     .skills-content {
       flex: 1;
       min-width: 300px;
 
       .skill-category {
+        background: var(--component-background);
+        border-radius: 8px;
+        padding: 1.5rem;
+        border: 1px solid var(--border-color);
+
         &:not(:last-child) {
-          margin-bottom: 1.5rem;
+          margin-bottom: 2rem;
         }
 
         .skill-category-header {
           display: flex;
           align-items: center;
-          gap: 0.75rem;
-          margin-bottom: 0.75rem;
-          padding-bottom: 0.25rem;
+          gap: 1rem;
+          margin-bottom: 1.25rem;
+          padding-bottom: 0.75rem;
           border-bottom: 1px solid var(--border-color);
 
-          [nz-icon] {
-            font-size: 1.25rem;
-            color: var(--primary-color);
+          .category-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            background: var(--primary-color);
+            border-radius: 6px;
+
+            [nz-icon] {
+              font-size: 1.25rem;
+              color: white;
+            }
           }
 
           h3 {
             margin: 0;
-            font-size: 1.125rem;
+            font-size: 1.25rem;
             font-weight: 600;
             color: var(--heading-color);
+            letter-spacing: -0.02em;
           }
         }
 
         .skill-list {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+          gap: 1rem;
 
           .skill-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0.5rem 0.75rem;
             background: var(--background-color);
-            border-radius: var(--border-radius);
-            transition: all 0.2s ease;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
 
-            &:hover {
-              background: var(--hover-bg);
+            .skill-content {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              padding: 0.75rem 1rem;
             }
 
             .skill-name {
@@ -85,12 +107,13 @@
               color: var(--text-color);
             }
 
-            .experience-level {
+            .experience-badge {
               font-size: 0.8rem;
               color: #ffffff;
-              padding: 0.15rem 0.5rem;
-              border-radius: var(--border-radius);
-              opacity: 0.9;
+              padding: 0.2rem 0.6rem;
+              border-radius: 4px;
+              font-weight: 500;
+              letter-spacing: 0.02em;
             }
           }
         }
@@ -102,12 +125,15 @@
 // Dark mode adjustments
 :host-context(.dark-theme) {
   .skills-page {
-    .skill-item {
-      background: transparent;
+    .word-cloud-wrapper,
+    .skill-category {
+      background: var(--component-background);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
 
-      &:hover {
-        background: rgba(255, 255, 255, 0.05);
-      }
+    .skill-item {
+      background: rgba(255, 255, 255, 0.02);
+      border-color: rgba(255, 255, 255, 0.1);
     }
   }
 }
@@ -117,7 +143,7 @@
   .skills-page {
     .skills-layout {
       flex-direction: column;
-      gap: 2rem;
+      gap: 2.5rem;
 
       .word-cloud-section {
         max-width: none;
@@ -128,19 +154,27 @@
           height: 400px;
         }
       }
+
+      .skills-content .skill-list {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      }
     }
   }
 }
 
 @media (max-width: 768px) {
   .skills-page {
-    padding: 1rem;
+    padding: 0 1rem 2rem;
 
     .skills-layout {
-      margin-top: 1rem;
-      gap: 1rem;
+      margin-top: 1.5rem;
+      gap: 1.5rem;
 
       .word-cloud-section {
+        .word-cloud-wrapper {
+          padding: 1rem;
+        }
+
         .word-cloud-container {
           height: 300px;
         }
@@ -148,29 +182,42 @@
 
       .skills-content {
         .skill-category {
-          margin-bottom: 1rem;
+          padding: 1rem;
+          margin-bottom: 1.5rem;
 
           .skill-category-header {
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
 
-            [nz-icon] {
-              font-size: 1.125rem;
+            .category-icon {
+              width: 2rem;
+              height: 2rem;
+
+              [nz-icon] {
+                font-size: 1rem;
+              }
             }
 
             h3 {
-              font-size: 1rem;
+              font-size: 1.125rem;
             }
           }
 
           .skill-list {
-            gap: 0.25rem;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 0.75rem;
 
             .skill-item {
-              padding: 0.35rem 0.5rem;
+              .skill-content {
+                padding: 0.5rem 0.75rem;
+              }
 
-              .experience-level {
+              .skill-name {
+                font-size: 0.875rem;
+              }
+
+              .experience-badge {
                 font-size: 0.75rem;
-                padding: 0.1rem 0.4rem;
+                padding: 0.15rem 0.5rem;
               }
             }
           }

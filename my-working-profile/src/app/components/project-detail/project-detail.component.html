@@ -24,17 +24,29 @@
   <!-- Project Footer -->
   <div class="project-footer">
     <div class="tech-preview">
-      @for (tech of project.technologies.slice(0, 2); track tech) {
-        <nz-tag 
-          class="tech-tag"
-          [nzColor]="selectedTechnologies.includes(tech) ? 'processing' : 'default'"
-          (click)="$event.stopPropagation(); technologyClick.emit(tech)"
-        >
-          <span [innerHTML]="highlightText(tech)"></span>
-        </nz-tag>
-      }
-      @if (project.technologies.length > 2) {
-        <span class="more-count">+{{ project.technologies.length - 2 }}</span>
+      @if (viewType === 'list') {
+        @for (tech of project.technologies; track tech) {
+          <nz-tag 
+            class="tech-tag"
+            [nzColor]="selectedTechnologies.includes(tech) ? 'processing' : 'default'"
+            (click)="$event.stopPropagation(); technologyClick.emit(tech)"
+          >
+            <span [innerHTML]="highlightText(tech)"></span>
+          </nz-tag>
+        }
+      } @else {
+        @for (tech of project.technologies.slice(0, 2); track tech) {
+          <nz-tag 
+            class="tech-tag"
+            [nzColor]="selectedTechnologies.includes(tech) ? 'processing' : 'default'"
+            (click)="$event.stopPropagation(); technologyClick.emit(tech)"
+          >
+            <span [innerHTML]="highlightText(tech)"></span>
+          </nz-tag>
+        }
+        @if (project.technologies.length > 2) {
+          <span class="more-count">+{{ project.technologies.length - 2 }}</span>
+        }
       }
     </div>
   </div>
@@ -69,7 +81,7 @@
         @for (tech of project.technologies; track tech) {
           <nz-tag 
             [nzColor]="selectedTechnologies.includes(tech) ? 'processing' : 'default'"
-            (click)="technologyClick.emit(tech)"
+            (click)="$event.stopPropagation(); technologyClick.emit(tech)"
           >
             {{ tech }}
           </nz-tag>
