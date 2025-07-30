@@ -32,7 +32,7 @@
     "Performance"
   ],
   "availability": {
-    "preferredWorkType": ["Full-time", "Contract"],
-    "remoteWork": "Available for remote work"
+    "workType": "Full-time",
+    "workLocation": "Remote"
   }
 }
