@@ -10,7 +10,7 @@
       background-color: var(--component-background);
       border-radius: 12px;
       box-shadow: var(--card-shadow);
-      padding: 2rem;
+      padding: 0 !important;
       margin-bottom: 2rem;
 
       @media (max-width: 768px) {

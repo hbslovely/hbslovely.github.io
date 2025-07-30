@@ -58,6 +58,7 @@ $color-bg-active: #e6f7ff;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   padding: 1.5rem 0;
   margin-top: auto;
+  z-index: 2;
 
   .footer-content {
     display: flex;
@@ -105,7 +106,7 @@ $color-bg-active: #e6f7ff;
     opacity: 1;
     transform: translateY(0);
   }
-} 
+}
 
 :host {
   display: block;
@@ -115,6 +116,7 @@ $color-bg-active: #e6f7ff;
 
 main {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 2rem 1rem;
   position: relative;
@@ -129,4 +131,4 @@ main {
   main {
     padding: 1.5rem 1rem;
   }
-} 
+}

@@ -5,16 +5,9 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-watermark',
   standalone: true,
-  imports: [CommonModule, NzIconModule],
-  template: `
-    <div class="watermark-container">
-      <span 
-        nz-icon 
-        class="watermark-icon" 
-        nzType="code-sandbox" 
-        nzTheme="outline">
-      </span>
-    </div>
-  `
+  imports: [ CommonModule, NzIconModule ],
+  templateUrl: './watermark.component.html',
+  styleUrls: [ './watermark.component.scss' ]
 })
-export class WatermarkComponent {} 
+export class WatermarkComponent {
+}

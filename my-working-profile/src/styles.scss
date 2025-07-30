@@ -24,27 +24,6 @@ body {
   position: relative;
 }
 
-.watermark-container {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 300px;
-  height: 300px;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.1;
-  overflow: hidden;
-
-  .watermark-icon {
-    position: absolute;
-    bottom: -50px;
-    right: -50px;
-    width: 100%;
-    height: 100%;
-    color: #1890ff;
-  }
-}
-
 // Global card styles
 .card {
   background: var(--card-bg);
