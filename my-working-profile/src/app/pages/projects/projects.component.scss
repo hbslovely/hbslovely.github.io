@@ -1,5 +1,5 @@
 .projects-page {
-  padding: 80px 1rem 2rem; // Add top padding to account for fixed navbar
+  padding: 0 1rem 2rem; // Add top padding to account for fixed navbar
   min-height: 100vh;
   background-color: rgba(235, 245, 255, 0.6);
   position: relative;
@@ -121,7 +121,7 @@
         justify-content: space-between;
         align-items: center;
         margin-bottom: 2rem;
-        
+
         h3 {
           font-size: 1.2rem;
           color: var(--heading-color);
@@ -293,7 +293,7 @@
       }
     }
   }
-} 
+}
 
 .filter-tag, .tech-tag {
   display: inline-flex;
@@ -344,7 +344,7 @@
       opacity: 1;
     }
   }
-} 
+}
 
 // Dark mode adjustments
 :host-context(.dark-theme) {
@@ -414,4 +414,4 @@
       }
     }
   }
-} 
+}

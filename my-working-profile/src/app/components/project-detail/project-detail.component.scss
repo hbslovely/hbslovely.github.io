@@ -1,0 +1,356 @@
+:host {
+  --project-border-color: #1e3a8a; // Dark blue border
+  --project-hover-border: #2563eb; // Slightly lighter blue for hover
+  --section-divider: rgba(0, 0, 0, 0.06);
+  --project-bg: rgba(243, 244, 246, 0.5); // Light gray background
+  --project-hover-bg: rgba(243, 244, 246, 0.8); // Slightly darker on hover
+
+  .project-detail {
+    background: var(--project-bg);
+    border: 1px solid var(--project-border-color);
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    position: relative;
+
+    &:hover {
+      border-color: var(--project-hover-border);
+      transform: translateY(-2px);
+      background: var(--project-hover-bg);
+    }
+
+    // Project Header
+    .project-header {
+      padding: 1.75rem;
+      border-bottom: 1px solid var(--section-divider);
+      background: linear-gradient(to bottom, rgba(0,0,0,0.01), transparent);
+
+      .header-main {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1.25rem;
+
+        .title-section {
+          flex: 1;
+          margin-right: 1.5rem;
+
+          h3 {
+            margin: 0 0 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--heading-color);
+            letter-spacing: -0.02em;
+          }
+
+          .project-status {
+            margin-top: 0.75rem;
+          }
+        }
+
+        .project-links {
+          display: flex;
+          gap: 0.875rem;
+
+          .link-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.25rem;
+            height: 2.25rem;
+            color: var(--text-secondary);
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            border: 1px solid var(--project-border-color);
+
+            &:hover {
+              color: var(--primary-color);
+              background: var(--hover-bg);
+              border-color: var(--project-hover-border);
+            }
+
+            [nz-icon] {
+              font-size: 1.25rem;
+            }
+          }
+        }
+      }
+
+      .project-meta {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1rem;
+        margin-top: 1.25rem;
+        padding-top: 1.25rem;
+        border-top: 1px solid var(--section-divider);
+
+        .meta-item {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          color: var(--text-secondary);
+          font-size: 0.9375rem;
+
+          [nz-icon] {
+            font-size: 1.125rem;
+            color: var(--primary-color);
+            opacity: 0.9;
+          }
+        }
+      }
+    }
+
+    // Project Content
+    .project-content {
+      padding: 1.75rem;
+
+      .description {
+        color: var(--text-color);
+        line-height: 1.7;
+        margin-bottom: 2rem;
+        font-size: 1rem;
+      }
+
+      // Tech Stack
+      .tech-stack {
+        margin-bottom: 2rem;
+
+        h4 {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          margin-bottom: 1.25rem;
+          font-size: 1.125rem;
+          color: var(--heading-color);
+          font-weight: 500;
+
+          [nz-icon] {
+            color: var(--primary-color);
+            opacity: 0.9;
+          }
+        }
+
+        .tech-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.875rem;
+
+          .tech-tag {
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+            padding: 0.5rem 1rem;
+            background: var(--tag-bg);
+            border: 1px solid var(--project-border-color);
+            border-radius: 8px;
+            font-size: 0.9375rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+
+            &:hover {
+              background: var(--hover-bg);
+              border-color: var(--project-hover-border);
+            }
+
+            &.active {
+              background: var(--primary-color);
+              color: white;
+              border-color: transparent;
+
+              [nz-icon] {
+                color: white;
+              }
+            }
+
+            [nz-icon] {
+              font-size: 1.125rem;
+              color: var(--primary-color);
+            }
+          }
+        }
+      }
+
+      // Expand Toggle
+      .expand-toggle {
+        display: flex;
+        align-items: center;
+        gap: 0.625rem;
+        padding: 0.625rem 1rem;
+        border: 1px solid var(--project-border-color);
+        background: var(--background-color);
+        color: var(--primary-color);
+        font-weight: 500;
+        cursor: pointer;
+        margin: 1.25rem 0;
+        border-radius: 8px;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background: var(--hover-bg);
+          border-color: var(--project-hover-border);
+        }
+
+        [nz-icon] {
+          font-size: 0.9375rem;
+        }
+      }
+
+      // Detailed Content
+      .detailed-content {
+        display: none;
+        margin-top: 2rem;
+        border-top: 1px solid var(--section-divider);
+        padding-top: 2rem;
+
+        &.visible {
+          display: block;
+          animation: fadeIn 0.3s ease;
+        }
+
+        .role-section,
+        .scope-section,
+        .environment-section,
+        .achievements-section {
+          margin-bottom: 2rem;
+          padding: 1.5rem;
+          border: 1px solid var(--project-border-color);
+          border-radius: 8px;
+          background: linear-gradient(to bottom, rgba(0,0,0,0.01), transparent);
+
+          h4 {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+            font-size: 1.125rem;
+            color: var(--heading-color);
+            font-weight: 500;
+
+            [nz-icon] {
+              color: var(--primary-color);
+              opacity: 0.9;
+            }
+          }
+        }
+
+        .role-section p {
+          color: var(--text-color);
+          line-height: 1.7;
+          margin: 0;
+        }
+
+        .env-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.75rem;
+        }
+
+        .achievements-section {
+          ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+              display: flex;
+              align-items: flex-start;
+              gap: 1rem;
+              color: var(--text-color);
+              line-height: 1.7;
+              margin-bottom: 1rem;
+              padding: 0.75rem;
+              border-radius: 6px;
+              background: var(--tag-bg);
+              border: 1px solid var(--project-border-color);
+
+              &:last-child {
+                margin-bottom: 0;
+              }
+
+              [nz-icon] {
+                color: var(--primary-color);
+                margin-top: 0.25rem;
+                opacity: 0.9;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // List View Modifications
+    &.list-view {
+      .project-header {
+        padding: 1.5rem;
+      }
+
+      .project-content {
+        padding: 1.5rem;
+
+        .description {
+          margin-bottom: 1.5rem;
+        }
+
+        .tech-stack {
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Responsive Adjustments
+@media (max-width: 768px) {
+  .project-detail {
+    .project-header {
+      padding: 1.25rem;
+
+      .header-main {
+        flex-direction: column;
+        gap: 1.25rem;
+
+        .project-links {
+          justify-content: flex-start;
+        }
+
+        .title-section {
+          margin-right: 0;
+        }
+      }
+
+      .project-meta {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+
+    .project-content {
+      padding: 1.25rem;
+
+      .tech-tags {
+        gap: 0.625rem;
+      }
+
+      .detailed-content {
+        .role-section,
+        .scope-section,
+        .environment-section,
+        .achievements-section {
+          padding: 1.25rem;
+        }
+      }
+    }
+  }
+}

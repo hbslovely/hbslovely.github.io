@@ -1,6 +1,6 @@
 .skills-page {
-  padding: 2rem 1rem;
-  
+  padding: 0 1rem 2rem;
+
   .container {
     margin: 0 auto;
   }
@@ -15,14 +15,14 @@
       flex: 1;
       min-width: 300px;
       max-width: 500px;
-      
+
       .word-cloud-container {
         position: sticky;
         top: 2rem;
         width: 100%;
         height: 500px;
         max-height: calc(100vh - 200px);
-        
+
         canvas {
           width: 100%;
           height: 100%;
@@ -104,7 +104,7 @@
   .skills-page {
     .skill-item {
       background: transparent;
-      
+
       &:hover {
         background: rgba(255, 255, 255, 0.05);
       }
@@ -121,7 +121,7 @@
 
       .word-cloud-section {
         max-width: none;
-        
+
         .word-cloud-container {
           position: relative;
           top: 0;
@@ -178,4 +178,4 @@
       }
     }
   }
-} 
+}

@@ -1,7 +1,7 @@
 import { ExperienceSection } from './experience.types';
 
 export const EXPERIENCE_PAGE_CONFIG = {
-  maxWidth: 1000,
+  maxWidth: 1200,
   className: 'experience-page'
 } as const;
 
@@ -21,4 +21,4 @@ export const EXPERIENCE_SECTIONS: ExperienceSection[] = [
 export const TIMELINE_CONFIG = {
   mode: 'left',
   pending: false
-} as const; 
+} as const;
