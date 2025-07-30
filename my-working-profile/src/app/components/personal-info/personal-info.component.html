@@ -10,7 +10,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="name-title">
         <h1><span class="name-prefix">{{ info?.prefix }}</span>{{ info?.name }}</h1>
         <h2>{{ info?.title }}</h2>
@@ -100,17 +100,17 @@
         </h3>
         <div class="preferences-grid">
           <div class="preference-item" *ngIf="info?.availability?.preferredWorkType">
-            <span class="label">Type:</span>
+            <span class="label">Type:</span> &nbsp;
             <div class="values">
               <nz-tag *ngFor="let type of info?.availability?.preferredWorkType">{{ type }}</nz-tag>
             </div>
           </div>
           <div class="preference-item" *ngIf="info?.availability?.remoteWork">
-            <span class="label">Remote:</span>
+            <span class="label">Remote:</span> &nbsp;
             <nz-tag [nzColor]="'green'">{{ info?.availability?.remoteWork }}</nz-tag>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div> 
+</div>

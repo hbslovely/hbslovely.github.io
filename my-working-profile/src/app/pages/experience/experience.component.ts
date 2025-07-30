@@ -12,6 +12,7 @@ import {
 import { SectionHeaderComponent } from '../../components/section-header/section-header.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { ExperienceCardComponent } from '../../components/experience-card/experience-card.component';
+import { EducationCardComponent } from '../../components/education-card/education-card.component';
 
 @Component({
   selector: 'app-experience-page',
@@ -22,7 +23,8 @@ import { ExperienceCardComponent } from '../../components/experience-card/experi
     NzIconModule,
     SectionHeaderComponent,
     TranslateModule,
-    ExperienceCardComponent
+    ExperienceCardComponent,
+    EducationCardComponent
   ],
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.scss']

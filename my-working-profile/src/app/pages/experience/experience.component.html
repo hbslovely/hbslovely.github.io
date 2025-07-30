@@ -8,26 +8,7 @@
 
       <div class="education-list">
         @for (edu of cv()?.education?.education; track edu) {
-          <div class="education-card">
-            <div class="card-header">
-              <div class="degree-institution">
-                <h3>{{ edu.degree }} in {{ edu.field }}</h3>
-                <div class="institution">{{ edu.institution }}</div>
-              </div>
-              <div class="meta-info">
-                <span class="duration">
-                  <span nz-icon nzType="calendar" nzTheme="outline"></span>
-                  {{ edu.startDate }} - {{ edu.endDate }}
-                </span>
-              </div>
-            </div>
-
-            @if (edu.description) {
-              <div class="card-content">
-                <p class="description">{{ edu.description }}</p>
-              </div>
-            }
-          </div>
+          <app-education-card [education]="edu"></app-education-card>
         }
       </div>
     </section>

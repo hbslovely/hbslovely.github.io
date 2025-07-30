@@ -1,8 +1,9 @@
 .footer {
-  background-color: #1f1f1f;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1.5rem 0;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 2rem 0;
   margin-top: auto;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
 
   .container {
     max-width: 1200px;
@@ -14,7 +15,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
 
     @media (min-width: 768px) {
       flex-direction: row;
@@ -24,25 +25,28 @@
 
   .social-links {
     display: flex;
-    gap: 1rem;
+    gap: 1.25rem;
     
     .social-link {
-      color: rgba(255, 255, 255, 0.85);
+      color: rgba(255, 255, 255, 0.9);
       font-size: 1.5rem;
-      transition: color 0.2s ease;
+      transition: all 0.3s ease;
 
       &:hover {
-        color: var(--primary-color);
+        color: #ffffff;
+        transform: translateY(-2px);
       }
     }
   }
 
   .copyright {
-    color: rgba(255, 255, 255, 0.65);
+    color: rgba(255, 255, 255, 0.85);
     font-size: 0.875rem;
+    text-align: center;
 
     p {
       margin: 0;
+      line-height: 1.5;
     }
   }
 } 

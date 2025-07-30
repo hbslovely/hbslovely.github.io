@@ -1,6 +1,6 @@
 .personal-info {
   padding: 2rem;
-  background: #f8fafc;
+  background: transparent;
   border-radius: 16px;
 
   .info-container {
@@ -14,9 +14,8 @@
     gap: 2rem;
     margin-bottom: 2.5rem;
     padding: 2rem;
-    background: white;
+    background: transparent;
     border-radius: 12px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 
     .avatar-container {
       flex-shrink: 0;
@@ -113,9 +112,8 @@
     gap: 1rem;
     margin-bottom: 2.5rem;
     padding: 1.5rem;
-    background: white;
+    background: transparent;
     border-radius: 12px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 
     .contact-item {
       display: flex;
@@ -123,7 +121,7 @@
       gap: 1rem;
       padding: 1rem;
       border-radius: 8px;
-      background: #f8fafc;
+      background: #ffffff;
       transition: all 0.2s ease;
       text-decoration: none;
       color: inherit;
@@ -160,9 +158,8 @@
   .professional-summary {
     margin-bottom: 2.5rem;
     padding: 2rem;
-    background: white;
+    background: transparent;
     border-radius: 12px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 
     h3 {
       display: flex;
@@ -196,9 +193,8 @@
 
     .info-section {
       padding: 2rem;
-      background: white;
+      background: transparent;
       border-radius: 12px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 
       h3 {
         display: flex;
@@ -225,7 +221,6 @@
           justify-content: space-between;
           align-items: center;
           padding: 0.75rem;
-          background: #f8fafc;
           border-radius: 8px;
 
           .lang-name {
@@ -260,7 +255,7 @@
       .preferences-grid {
         .preference-item {
           margin-bottom: 1rem;
-          
+
           &:last-child {
             margin-bottom: 0;
           }
