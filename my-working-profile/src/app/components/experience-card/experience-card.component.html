@@ -1,0 +1,58 @@
+<div class="experience-card">
+  <div class="card-header">
+    <div class="company-info">
+      <div class="company-logo">
+        <img [src]="'assets/images/companies/' + getCompanyLogo(experience.company)" [alt]="experience.company + ' logo'" 
+             onError="this.src='assets/images/companies/default-company.png'"/>
+      </div>
+      <div class="position-company">
+        <h3>{{ experience.position }}</h3>
+        <div class="company">{{ experience.company }}</div>
+      </div>
+    </div>
+    <div class="meta-info">
+      <span class="duration">
+        <span nz-icon nzType="calendar" nzTheme="outline"></span>
+        {{ experience.startDate }} - {{ experience.current ? 'Present' : experience.endDate }}
+      </span>
+      <span class="location">
+        <span nz-icon nzType="environment" nzTheme="outline"></span>
+        {{ experience.location }}
+      </span>
+      <span class="type">
+        <span nz-icon nzType="team" nzTheme="outline"></span>
+        {{ experience.type }}
+      </span>
+    </div>
+  </div>
+
+  <div class="card-content">
+    @if (experience.achievements?.length) {
+      <div class="achievements">
+        <h4>{{ 'SECTIONS.WORK_EXPERIENCE.NOTABLE_ACHIEVEMENTS' | translate }}</h4>
+        <ul>
+          @for (achievement of experience.achievements; track achievement) {
+            <li>
+              <span nz-icon nzType="trophy" nzTheme="outline"></span>
+              {{ achievement }}
+            </li>
+          }
+        </ul>
+      </div>
+    }
+
+    @if (experience.responsibilities?.length) {
+      <div class="responsibilities">
+        <h4>{{ 'SECTIONS.WORK_EXPERIENCE.CORE_RESPONSIBILITIES' | translate }}</h4>
+        <ul>
+          @for (responsibility of experience.responsibilities; track responsibility) {
+            <li>
+              <span nz-icon nzType="check-circle" nzTheme="outline"></span>
+              {{ responsibility }}
+            </li>
+          }
+        </ul>
+      </div>
+    }
+  </div>
+</div> 

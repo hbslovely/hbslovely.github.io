@@ -1,5 +1,6 @@
 <!-- Project Card -->
 <div class="project-card" [class.list-view]="viewType === 'list'" (click)="openProjectDialog()">
+  <app-watermark class="card-watermark" [customIcon]="'code-sandbox'"></app-watermark>
   <!-- Project Header -->
   <div class="project-header">
     <div class="project-meta">
@@ -42,6 +43,7 @@
 <!-- Project Detail Dialog -->
 <ng-template #projectDetailDialog>
   <div class="project-detail-dialog">
+    <app-watermark class="dialog-watermark" [customIcon]="'deployment-unit'"></app-watermark>
     <div class="dialog-header">
       <h2>{{ project.name }}</h2>
       <div class="dialog-tags">

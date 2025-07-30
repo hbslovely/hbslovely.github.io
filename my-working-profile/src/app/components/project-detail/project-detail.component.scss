@@ -1,9 +1,29 @@
 .project-card {
+  position: relative;
+  overflow: hidden;
+
+  .card-watermark {
+    position: absolute;
+    top: 50%;
+    right: -50px;
+    transform: translateY(-50%);
+    z-index: 0;
+    opacity: 0.03;
+    pointer-events: none;
+
+    ::ng-deep .watermark-container {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      animation: none !important;
+      transform: rotate(15deg);
+    }
+  }
+
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
-  overflow: hidden;
   margin-bottom: 1.5rem;
   height: 280px;
   display: flex;
@@ -26,6 +46,8 @@
 }
 
 .project-header {
+  position: relative;
+  z-index: 1;
   padding: 1.5rem;
   background: #fff;
   flex: 1;
@@ -89,6 +111,8 @@
 }
 
 .project-footer {
+  position: relative;
+  z-index: 1;
   padding: 1rem 1.5rem;
   background: #f8f9fa;
   border-top: 1px solid #edf0f2;
@@ -124,8 +148,28 @@
 
 // Dialog Styles
 .project-detail-dialog {
+  position: relative;
+  overflow: hidden;
   max-width: 800px;
   padding: 1rem;
+
+  .dialog-watermark {
+    position: absolute;
+    top: 50%;
+    right: -100px;
+    transform: translateY(-50%);
+    z-index: 0;
+    opacity: 0.02;
+    pointer-events: none;
+
+    ::ng-deep .watermark-container {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      animation: none !important;
+      transform: rotate(15deg);
+    }
+  }
 
   .dialog-header {
     margin-bottom: 1.5rem;
@@ -227,4 +271,12 @@
       }
     }
   }
+}
+
+.project-header,
+.project-footer,
+.dialog-header,
+.dialog-section {
+  position: relative;
+  z-index: 1;
 }

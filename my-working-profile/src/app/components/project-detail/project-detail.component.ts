@@ -6,6 +6,7 @@ import { NzModalModule, NzModalService } from 'ng-zorro-antd/modal';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { Project } from '../../models/cv.models';
 import { TranslateModule } from '@ngx-translate/core';
+import { WatermarkComponent } from '../watermark/watermark.component';
 
 @Component({
   selector: 'app-project-detail',
@@ -18,7 +19,8 @@ import { TranslateModule } from '@ngx-translate/core';
     NzTagModule,
     NzModalModule,
     NzButtonModule,
-    TranslateModule
+    TranslateModule,
+    WatermarkComponent
   ]
 })
 export class ProjectDetailComponent {

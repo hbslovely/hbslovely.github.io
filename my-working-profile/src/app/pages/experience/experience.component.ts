@@ -11,6 +11,7 @@ import {
 } from './experience.constants';
 import { SectionHeaderComponent } from '../../components/section-header/section-header.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { ExperienceCardComponent } from '../../components/experience-card/experience-card.component';
 
 @Component({
   selector: 'app-experience-page',
@@ -20,7 +21,8 @@ import { TranslateModule } from '@ngx-translate/core';
     NzTimelineModule,
     NzIconModule,
     SectionHeaderComponent,
-    TranslateModule
+    TranslateModule,
+    ExperienceCardComponent
   ],
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.scss']
