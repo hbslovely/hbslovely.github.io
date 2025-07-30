@@ -56,8 +56,8 @@ export interface PersonalInfo {
   interests: string[];
   availability: {
     status: string;
-    preferredWorkType: string[];
-    remoteWork: string;
+    workType: 'Full-time' | 'Part-time' | 'Contract';
+    workLocation: 'Remote' | 'Hybrid' | 'Onsite';
   };
 }
 

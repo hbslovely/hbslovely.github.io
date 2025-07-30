@@ -99,31 +99,8 @@
           {{ 'PERSONAL_INFO.WORK_PREFERENCES' | translate }}
         </h3>
         <div class="work-preferences">
-          <div class="preference-item" *ngIf="info?.availability?.preferredWorkType?.length">
-            <div class="preference-header">
-              <span nz-icon nzType="schedule" nzTheme="outline"></span>
-              <span class="label">Employment Type</span>
-            </div>
-            <div class="preference-values">
-              <nz-tag 
-                *ngFor="let type of info?.availability?.preferredWorkType"
-                [nzColor]="'processing'">
-                {{ type }}
-              </nz-tag>
-            </div>
-          </div>
-          
-          <div class="preference-item" *ngIf="info?.availability?.remoteWork">
-            <div class="preference-header">
-              <span nz-icon nzType="home" nzTheme="outline"></span>
-              <span class="label">Remote Work</span>
-            </div>
-            <div class="preference-values">
-              <nz-tag [nzColor]="'success'">
-                {{ info?.availability?.remoteWork }}
-              </nz-tag>
-            </div>
-          </div>
+          <nz-tag [nzColor]="'blue'">{{ info?.availability?.workType }}</nz-tag>
+          <nz-tag [nzColor]="'green'">{{ info?.availability?.workLocation }}</nz-tag>
         </div>
       </div>
     </div>
