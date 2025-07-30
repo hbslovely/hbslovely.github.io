@@ -52,8 +52,13 @@ export class SkillsComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
-    this.initWordCloud();
+    // Setup resize observer first
     this.setupResizeObserver();
+    
+    // Initial render with a small delay to ensure container is ready
+    setTimeout(() => {
+      this.initWordCloud();
+    }, 100);
   }
 
   ngOnDestroy() {
@@ -70,25 +75,33 @@ export class SkillsComponent implements AfterViewInit, OnDestroy {
   }
 
   private initWordCloud() {
-    const words = this.getAllSkills().map(skill => ({
-      text: skill,
-      size: this.getSkillSize(skill),
-      color: this.getTagColor(skill)
-    }));
+    // Ensure container is available and has dimensions
+    if (!this.container?.nativeElement) return;
 
-    const containerWidth = this.container.nativeElement.offsetWidth;
-    const containerHeight = Math.min(400, window.innerHeight * 0.4);
+    // Use requestAnimationFrame to ensure the container has been laid out
+    requestAnimationFrame(() => {
+      const containerWidth = this.container.nativeElement.offsetWidth;
+      // Skip if container width is 0
+      if (containerWidth === 0) return;
 
-    const layout = cloud()
-      .size([containerWidth, containerHeight])
-      .words(words)
-      .padding(5)
-      .rotate(() => 0)
-      .font('Arial')
-      .fontSize(d => d.size!)
-      .on('end', (words) => this.drawWordCloud(words as any));
+      const containerHeight = Math.min(400, window.innerHeight * 0.4);
+      const words = this.getAllSkills().map(skill => ({
+        text: skill,
+        size: this.getSkillSize(skill),
+        color: this.getTagColor(skill)
+      }));
 
-    layout.start();
+      const layout = cloud()
+        .size([containerWidth, containerHeight])
+        .words(words)
+        .padding(5)
+        .rotate(() => 0)
+        .font('Arial')
+        .fontSize(d => d.size!)
+        .on('end', (words) => this.drawWordCloud(words as any));
+
+      layout.start();
+    });
   }
 
   private drawWordCloud(words: WordCloudItem[]) {

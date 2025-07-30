@@ -44,13 +44,13 @@ export class ProjectDetailComponent {
   getStatusColor(status: string): string {
     switch (status.toLowerCase()) {
       case 'completed':
-        return 'success';
+        return 'green';
       case 'in progress':
-        return 'processing';
+        return 'blue';
       case 'planned':
         return 'default';
       case 'active':
-        return 'processing';
+        return 'volcano';
       default:
         return 'default';
     }

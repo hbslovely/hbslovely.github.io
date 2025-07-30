@@ -17,7 +17,7 @@
         "Nx"
       ],
       "role": "Front-end Developer",
-      "status": "Active"
+      "status": "active"
     },
     {
       "name": "Statrys",
@@ -41,7 +41,7 @@
         "Agile/Scrum"
       ],
       "role": "Front-end Developer",
-      "status": "Completed"
+      "status": "completed"
     },
     {
       "name": "PW",
@@ -63,7 +63,7 @@
         "Remote Desktop Connection"
       ],
       "role": "Front-end Developer",
-      "status": "Completed"
+      "status": "completed"
     },
     {
       "name": "Topicus - Web Application",
@@ -84,7 +84,7 @@
         "Agile/Scrum"
       ],
       "role": "Front-end Developer",
-      "status": "Completed"
+      "status": "completed"
     },
     {
       "name": "Finantix",
@@ -110,7 +110,7 @@
         "Agile/Scrum"
       ],
       "role": "Front-end Developer, Mobile App Developer (Minor)",
-      "status": "Completed"
+      "status": "completed"
     },
     {
       "name": "Trabble",
@@ -140,7 +140,7 @@
         "Trello"
       ],
       "role": "Front-end and Back-end developer",
-      "status": "Completed"
+      "status": "completed"
     },
     {
       "name": "Dairy NZ",
@@ -161,7 +161,7 @@
         "Phonegap"
       ],
       "role": "Front-end Developer",
-      "status": "Completed",
+      "status": "completed",
       "excludeFromPdf": true
     },
     {
@@ -184,7 +184,7 @@
         "Angular Cli"
       ],
       "role": "Front-end Developer",
-      "status": "Completed",
+      "status": "completed",
       "excludeFromPdf": true
     },
     {
@@ -210,7 +210,7 @@
         "Visual Studio 2017"
       ],
       "role": "Full-stack Developer",
-      "status": "Completed",
+      "status": "completed",
       "excludeFromPdf": true
     },
     {
@@ -233,7 +233,7 @@
         "Angular Cli"
       ],
       "role": "Front-end Developer",
-      "status": "Completed",
+      "status": "completed",
       "excludeFromPdf": true
     },
     {
@@ -256,7 +256,7 @@
         "Angular Cli"
       ],
       "role": "Front-end Developer",
-      "status": "Completed",
+      "status": "completed",
       "excludeFromPdf": true
     },
     {
@@ -279,7 +279,7 @@
         "Webpack"
       ],
       "role": "Front-end Developer",
-      "status": "Completed",
+      "status": "completed",
       "excludeFromPdf": true
     },
     {
@@ -302,7 +302,7 @@
         "Webpack"
       ],
       "role": "Front-end Developer",
-      "status": "Completed",
+      "status": "completed",
       "excludeFromPdf": true
     },
     {
@@ -327,7 +327,7 @@
         "Grunt"
       ],
       "role": "Front-end Developer",
-      "status": "Completed",
+      "status": "completed",
       "excludeFromPdf": true
     },
     {
@@ -352,7 +352,7 @@
         "Grunt"
       ],
       "role": "Front-end Developer",
-      "status": "Completed",
+      "status": "completed",
       "excludeFromPdf": true
     },
     {
@@ -378,7 +378,7 @@
         "Grunt"
       ],
       "role": "Front-end Developer",
-      "status": "Completed",
+      "status": "completed",
       "excludeFromPdf": true
     },
     {
@@ -402,7 +402,7 @@
         "Grunt"
       ],
       "role": "Front-end Developer",
-      "status": "Completed",
+      "status": "completed",
       "excludeFromPdf": true
     },
     {
@@ -432,7 +432,7 @@
         "Grunt"
       ],
       "role": "Front-end Developer",
-      "status": "Completed",
+      "status": "completed",
       "excludeFromPdf": true
     },
     {
@@ -457,7 +457,7 @@
         "Git"
       ],
       "role": "Full-stack Developer",
-      "status": "Completed",
+      "status": "completed",
       "excludeFromPdf": true
     }
   ]
