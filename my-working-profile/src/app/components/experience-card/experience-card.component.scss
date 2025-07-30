@@ -16,10 +16,13 @@
     .company-info {
       display: flex;
       align-items: center;
-      gap: 20px;
-      margin-bottom: 20px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #f0f0f0;
+      gap: 1rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &:hover {
+        transform: translateY(-1px);
+      }
 
       .company-logo {
         width: 64px;
@@ -113,6 +116,149 @@
             font-size: 1rem;
             margin-top: 4px;
           }
+        }
+      }
+    }
+  }
+}
+
+// Dialog Styles
+.company-detail-dialog {
+  position: relative;
+  overflow: hidden;
+  max-width: 800px;
+  padding: 0;
+
+  .dialog-watermark {
+    position: absolute;
+    top: 50%;
+    right: -100px;
+    transform: translateY(-50%);
+    z-index: 0;
+    opacity: 0.03;
+    pointer-events: none;
+
+    ::ng-deep .watermark-container {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      animation: none !important;
+      transform: rotate(15deg);
+    }
+  }
+
+  .dialog-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: #1890ff;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    .company-logo {
+      width: 100px;
+      height: 100px;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      flex-shrink: 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .company-info {
+      flex: 1;
+
+      h2 {
+        margin: 0 0 0.5rem;
+        font-size: 1.75rem;
+        color: white;
+      }
+
+      .position {
+        margin: 0 0 1rem;
+        font-size: 1.25rem;
+        font-weight: normal;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .meta-info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+
+        .duration {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          color: rgba(255, 255, 255, 0.9);
+          font-size: 0.9rem;
+
+          [nz-icon] {
+            color: rgba(255, 255, 255, 0.9);
+          }
+        }
+
+        .meta-tags {
+          display: flex;
+          gap: 0.5rem;
+        }
+      }
+    }
+  }
+
+  .dialog-section {
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #edf0f2;
+    background: white;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      color: #1890ff;
+      font-size: 1.1rem;
+
+      [nz-icon] {
+        font-size: 1.2rem;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 0.5rem;
+        padding-left: 1.5rem;
+        position: relative;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0.5rem;
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: #1890ff;
         }
       }
     }

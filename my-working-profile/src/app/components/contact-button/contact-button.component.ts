@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, inject, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { PersonalInfo } from '../../models/cv.models';
@@ -11,13 +11,65 @@ import { CVService } from '../../services/cv.service';
   templateUrl: './contact-button.component.html',
   styleUrls: ['./contact-button.component.scss']
 })
-export class ContactButtonComponent implements OnInit {
+export class ContactButtonComponent implements OnInit, OnDestroy {
   public cvService = inject(CVService);
   info: PersonalInfo | undefined;
   isMobile = false;
+  isShaking = false;
+  private shakeInterval: any;
+  private shakeTimeout: any;
 
   ngOnInit() {
     this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    this.setupShakeAnimation();
+  }
+
+  ngOnDestroy() {
+    this.clearTimers();
+  }
+
+  private clearTimers() {
+    if (this.shakeInterval) {
+      clearInterval(this.shakeInterval);
+    }
+    if (this.shakeTimeout) {
+      clearTimeout(this.shakeTimeout);
+    }
+  }
+
+  private setupShakeAnimation() {
+    // Shake every 10 seconds
+    this.shakeInterval = setInterval(() => {
+      this.startShake();
+    }, 10000); // Reduced from 30000 to 10000
+  }
+
+  private startShake() {
+    if (!this.isShaking) {
+      this.isShaking = true;
+      this.shakeTimeout = setTimeout(() => {
+        this.isShaking = false;
+      }, 1000);
+    }
+  }
+
+  @HostListener('mouseenter')
+  onMouseEnter() {
+    // Don't start a new shake if already shaking
+    if (!this.isShaking) {
+      this.startShake();
+    }
+  }
+
+  getIconType(): string {
+    return this.isShaking ? 'bell' : (this.isMobile ? 'phone' : 'mail');
+  }
+
+  getTooltipText(): string {
+    if (this.isShaking) {
+      return 'Contact me!';
+    }
+    return this.isMobile ? 'Call me' : 'Email me';
   }
 
   contact() {

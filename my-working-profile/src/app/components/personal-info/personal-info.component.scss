@@ -119,15 +119,15 @@
       align-items: center;
       gap: 1rem;
       padding: 1rem;
-      border-radius: 8px;
       background: #ffffff;
       transition: all 0.2s ease;
       text-decoration: none;
       color: inherit;
+      border-bottom: 3px solid #1990ff;
 
       &:hover {
-        background: #f1f5f9;
-        transform: translateY(-1px);
+        opacity: 0.8;
+        transform: translateY(-4px);
       }
 
       span[nz-icon] {
