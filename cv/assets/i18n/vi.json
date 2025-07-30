@@ -6,6 +6,10 @@
     "SKILLS": "Kỹ năng",
     "EXPORT_PDF": "Xuất PDF"
   },
+  "FOOTER": {
+    "COPYRIGHT": "Hồng Phụng Phát. Đã đăng ký bản quyền.",
+    "MADE_WITH": "Được tạo bằng Angular & AI️"
+  },
   "ACTIONS": {
     "EXPORT_PDF": "Xuất PDF"
   },

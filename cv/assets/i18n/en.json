@@ -6,6 +6,10 @@
     "SKILLS": "Skills",
     "EXPORT_PDF": "Export PDF"
   },
+  "FOOTER": {
+    "COPYRIGHT": "Hong Phung Phat. All rights reserved.",
+    "MADE_WITH": "Made with Angular & AI️"
+  },
   "ACTIONS": {
     "EXPORT_PDF": "Export PDF"
   },
@@ -50,4 +54,4 @@
     },
     "FILTER_BUTTON": "Filters"
   }
-} 
+}
