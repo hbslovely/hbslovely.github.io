@@ -9,12 +9,17 @@
       "technologies": [
         "Angular",
         "Bootstrap",
-        "Jest"
+        "Jest",
+        "Backbase",
+        "Rxjs"
       ],
       "environment": [
         "Webstorm",
         "Github",
-        "Nx"
+        "Nx",
+        "Git",
+        "MacOS",
+        "Agile/Scrum"
       ],
       "role": "Front-end Developer",
       "status": "active"
@@ -31,7 +36,8 @@
         "TailwindCSS",
         "Material",
         "GraphQL",
-        "Jasmine/Karma"
+        "Jasmine/Karma",
+        "AG Grid"
       ],
       "environment": [
         "VSC",
@@ -48,11 +54,11 @@
       "company": "HCL",
       "duration": "Dec 2021 - Dec 2023",
       "description": "Built a sophisticated Document Management System for aerospace using Angular 14. Implemented complex document workflows, version control, and interactive diagram features using GoJS. Focused on performance optimization and seamless user experience.",
-      "scope": "Aerospace, DMS",
+      "scope": "Aerospace",
       "technologies": [
-        "Angular 11-14",
+        "Angular",
         "GoJS",
-        "ASP NET"
+        "ASP.NET"
       ],
       "environment": [
         "Webstorm",
@@ -124,7 +130,7 @@
         "ReactJS",
         "Nativescript",
         "SignalR",
-        "ASP Net core",
+        "ASP.NET",
         "Facebook API",
         "Google Place API",
         "Angular Material",
