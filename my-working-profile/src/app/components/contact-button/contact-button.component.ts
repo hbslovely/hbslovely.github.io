@@ -41,7 +41,7 @@ export class ContactButtonComponent implements OnInit, OnDestroy {
     // Shake every 10 seconds
     this.shakeInterval = setInterval(() => {
       this.startShake();
-    }, 10000); // Reduced from 30000 to 10000
+    }, 10000);
   }
 
   private startShake() {
@@ -55,28 +55,23 @@ export class ContactButtonComponent implements OnInit, OnDestroy {
 
   @HostListener('mouseenter')
   onMouseEnter() {
-    // Don't start a new shake if already shaking
     if (!this.isShaking) {
       this.startShake();
     }
   }
 
   getIconType(): string {
-    return this.isShaking ? 'bell' : (this.isMobile ? 'phone' : 'mail');
+    return 'send';
   }
 
   getTooltipText(): string {
-    if (this.isShaking) {
-      return 'Contact me!';
-    }
-    return this.isMobile ? 'Call me' : 'Email me';
+    return 'Chat with me';
   }
 
   contact() {
-    if (this.isMobile) {
-      window.location.href = `tel:${this.cvService.cv()?.personalInfo?.contact.phone}`;
-    } else {
-      window.location.href = `mailto:${this.cvService.cv()?.personalInfo?.contact.email}`;
+    const linkedinUrl = this.cvService.cv()?.personalInfo?.contact?.linkedin;
+    if (linkedinUrl) {
+      window.open(linkedinUrl, '_blank');
     }
   }
 }

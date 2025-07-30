@@ -282,3 +282,142 @@
     }
   }
 }
+
+// Responsive styles
+@media (max-width: 768px) {
+  .personal-info {
+    .info-container {
+      padding: 0 1rem;
+    }
+
+    .profile-header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+      padding: 1.5rem 1rem;
+
+      .avatar-container {
+        .avatar {
+          width: 140px;
+          height: 140px;
+          margin: 0 auto;
+        }
+      }
+
+      .name-title {
+        h1 {
+          font-size: 2rem;
+        }
+
+        h2 {
+          font-size: 1.1rem;
+        }
+
+        .location {
+          justify-content: center;
+        }
+      }
+    }
+
+    .contact-grid {
+      grid-template-columns: 1fr;
+      padding: 1rem;
+      gap: 1rem;
+
+      .contact-item {
+        padding: 0.75rem;
+
+        span[nz-icon] {
+          font-size: 1.25rem;
+        }
+
+        .contact-details {
+          .label {
+            font-size: 0.8rem;
+          }
+
+          .value {
+            font-size: 0.95rem;
+          }
+        }
+      }
+    }
+
+    .professional-summary {
+      padding: 1.5rem 1rem;
+
+      h3 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.75rem;
+
+        span[nz-icon] {
+          font-size: 1.1rem;
+        }
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+    }
+
+    .additional-info {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+
+      .info-section {
+        padding: 1.5rem 1rem;
+
+        h3 {
+          font-size: 1.1rem;
+          margin-bottom: 1rem;
+          padding-bottom: 0.75rem;
+
+          span[nz-icon] {
+            font-size: 1.1rem;
+          }
+        }
+
+        .language-grid {
+          .language-item {
+            padding: 0.5rem;
+            
+            .lang-name {
+              font-size: 0.95rem;
+            }
+          }
+        }
+
+        .interests-grid {
+          justify-content: center;
+
+          ::ng-deep .ant-tag {
+            padding: 0.4rem 0.75rem;
+            font-size: 0.85rem;
+          }
+        }
+
+        .preferences-grid {
+          .preference-item {
+            margin-bottom: 0.75rem;
+
+            .label {
+              font-size: 0.85rem;
+            }
+
+            .values {
+              justify-content: center;
+            }
+
+            ::ng-deep .ant-tag {
+              padding: 0.4rem 0.75rem;
+              font-size: 0.85rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

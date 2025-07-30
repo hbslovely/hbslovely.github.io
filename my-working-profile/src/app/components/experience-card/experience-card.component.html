@@ -1,6 +1,6 @@
-<div class="experience-card">
+<div class="experience-card" (click)="openCompanyDialog()">
   <div class="card-header">
-    <div class="company-info" (click)="openCompanyDialog()">
+    <div class="company-info">
       <div class="company-logo">
         <img [src]="'assets/images/companies/' + getCompanyLogo(experience.company)" [alt]="experience.company + ' logo'" 
              onError="this.src='assets/images/companies/default-company.svg'"/>

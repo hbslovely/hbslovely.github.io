@@ -440,31 +440,58 @@
   .projects-page {
     padding: 1rem;
 
-    .toolbar-section {
-      flex-direction: column;
-      gap: 1rem;
-      align-items: stretch;
-      margin: 1rem 0;
+    .container {
+      .toolbar-section {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+        margin: 1rem 0;
 
-      .view-controls {
-        justify-content: center;
+        .search-box {
+          width: 100%;
+          min-width: 100%;
+          order: 1;
+        }
+
+        .view-controls {
+          order: 2;
+          justify-content: center;
+        }
+
+        .filter-toggle {
+          order: 3;
+          justify-content: center;
+        }
       }
 
-      .filter-toggle {
-        justify-content: center;
+      .filters-section {
+        .filters-header {
+          flex-direction: column;
+          gap: 1rem;
+          align-items: flex-start;
+
+          .clear-filters {
+            width: 100%;
+            justify-content: center;
+          }
+        }
+
+        .filter-tags {
+          justify-content: center;
+        }
       }
-    }
 
-    .projects-container {
-      grid-template-columns: 1fr;
-      gap: 1rem;
+      .projects-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
 
-      .project-card {
-        padding: 1rem;
+        .project-card {
+          padding: 1rem;
 
-        .card-header {
-          h3 {
-            font-size: 1.125rem;
+          .card-header {
+            h3 {
+              font-size: 1.125rem;
+            }
           }
         }
       }
