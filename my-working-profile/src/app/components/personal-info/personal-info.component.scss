@@ -1,324 +1,289 @@
 .personal-info {
-  min-height: 100vh;
-  padding: 0;
-  position: relative;
-  overflow: hidden;
-
-  // Background pattern
-  &::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('/assets/images/watermark.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 50%;
-    opacity: 0.02;
-    pointer-events: none;
-    z-index: 0;
-  }
+  padding: 2rem;
+  background: #f8fafc;
+  border-radius: 16px;
 
   .info-container {
-    padding: 0 2rem;
-    position: relative;
-    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
-    .profile-header {
-      display: flex;
-      gap: 3rem;
-      margin-bottom: 3rem;
-      align-items: center;
+  // Profile Header
+  .profile-header {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 
-      @media (max-width: 768px) {
-        flex-direction: column;
-        gap: 2rem;
-        text-align: center;
-      }
+    .avatar-container {
+      flex-shrink: 0;
 
-      .avatar-container {
+      .avatar {
+        width: 160px;
+        height: 160px;
+        border-radius: 12px;
+        overflow: hidden;
         position: relative;
-
-        .avatar {
-          width: 150px;
-          height: 150px;
-          border-radius: 50%;
-          overflow: hidden;
-          position: relative;
-          cursor: pointer;
-          transition: transform 0.2s ease;
-
-          &:hover {
-            transform: scale(1.05);
-
-            .avatar-overlay {
-              opacity: 1;
-            }
-          }
-
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-          }
-
-          .avatar-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.2s ease;
-
-            [nz-icon] {
-              color: white;
-              font-size: 24px;
-            }
-          }
-        }
-
-        .availability-badge {
-          position: absolute;
-          bottom: -10px;
-          left: 50%;
-          transform: translateX(-50%);
-          background: var(--primary-color);
-          color: white;
-          padding: 0.5rem 1rem;
-          border-radius: 20px;
-          font-size: 0.875rem;
-          white-space: nowrap;
-        }
-      }
-
-      .name-title {
-        flex: 1;
-
-        h1 {
-          font-size: 2.5rem;
-          color: var(--heading-color);
-          margin: 0 0 0.25rem 0;
-          font-weight: 600;
-
-          .name-prefix {
-            font-size: 1.5rem;
-            color: var(--text-color-secondary);
-            margin-right: 0.5rem;
-          }
-        }
-
-        h2 {
-          font-size: 1.5rem;
-          color: var(--primary-color);
-          margin: 0 0 1rem 0;
-          font-weight: 500;
-        }
-
-        .location {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          color: var(--text-color-secondary);
-          font-size: 1rem;
-
-          [nz-icon] {
-            color: var(--primary-color);
-          }
-        }
-      }
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1rem;
-      margin-bottom: 3rem;
-
-      .contact-item {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        padding: 1rem;
-        background: white;
-        border-radius: 8px;
-        border: 1px solid rgba(0, 0, 0, 0.05);
-        color: inherit;
-        text-decoration: none;
-        transition: all 0.2s ease;
+        cursor: pointer;
+        transition: transform 0.2s ease;
 
         &:hover {
-          border-color: var(--primary-color);
-          transform: translateY(-2px);
-        }
+          transform: scale(1.02);
 
-        [nz-icon] {
-          font-size: 1.5rem;
-          color: var(--primary-color);
-        }
-
-        .contact-details {
-          display: flex;
-          flex-direction: column;
-          gap: 0.25rem;
-
-          .label {
-            font-size: 0.875rem;
-            color: var(--text-color-secondary);
+          .avatar-overlay {
+            opacity: 1;
           }
+        }
 
-          .value {
-            color: var(--text-color);
-            font-weight: 500;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .avatar-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.4);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          opacity: 0;
+          transition: opacity 0.2s ease;
+
+          span {
+            color: white;
+            font-size: 24px;
           }
         }
       }
     }
 
-    .professional-summary {
-      background: white;
+    .name-title {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin: 0;
+        line-height: 1.2;
+
+        .name-prefix {
+          color: #64748b;
+          font-weight: 500;
+          margin-right: 0.5rem;
+        }
+      }
+
+      h2 {
+        font-size: 1.25rem;
+        color: #3498db;
+        margin: 0.5rem 0 1rem;
+        font-weight: 500;
+      }
+
+      .location {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #64748b;
+        font-size: 1rem;
+
+        span[nz-icon] {
+          color: #94a3b8;
+        }
+      }
+    }
+  }
+
+  // Contact Grid
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
       border-radius: 8px;
+      background: #f8fafc;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      color: inherit;
+
+      &:hover {
+        background: #f1f5f9;
+        transform: translateY(-1px);
+      }
+
+      span[nz-icon] {
+        font-size: 1.5rem;
+        color: #3498db;
+      }
+
+      .contact-details {
+        display: flex;
+        flex-direction: column;
+
+        .label {
+          font-size: 0.875rem;
+          color: #64748b;
+          margin-bottom: 0.25rem;
+        }
+
+        .value {
+          color: #1a1a1a;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  // Professional Summary
+  .professional-summary {
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+
+    h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.25rem;
+      color: #1a1a1a;
+      margin: 0 0 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #e2e8f0;
+
+      span[nz-icon] {
+        color: #3498db;
+        font-size: 1.25rem;
+      }
+    }
+
+    p {
+      color: #4a5568;
+      line-height: 1.8;
+      margin: 0;
+      font-size: 1.05rem;
+    }
+  }
+
+  // Additional Info
+  .additional-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+
+    .info-section {
       padding: 2rem;
-      margin-bottom: 3rem;
-      border: 1px solid rgba(0, 0, 0, 0.05);
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 
       h3 {
         display: flex;
         align-items: center;
         gap: 0.75rem;
-        color: var(--heading-color);
         font-size: 1.25rem;
-        margin-bottom: 1.5rem;
-        font-weight: 500;
+        color: #1a1a1a;
+        margin: 0 0 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #e2e8f0;
 
-        [nz-icon] {
-          color: var(--primary-color);
+        span[nz-icon] {
+          color: #3498db;
           font-size: 1.25rem;
         }
       }
 
-      p {
-        color: var(--text-color);
-        line-height: 1.7;
-        margin: 0;
-        font-size: 1.1rem;
-      }
-    }
+      .language-grid {
+        display: grid;
+        gap: 1rem;
 
-    .additional-info {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-
-      .info-section {
-        background: white;
-        border-radius: 8px;
-        padding: 1.5rem;
-        border: 1px solid rgba(0, 0, 0, 0.05);
-
-        h3 {
+        .language-item {
           display: flex;
+          justify-content: space-between;
           align-items: center;
-          gap: 0.75rem;
-          color: var(--heading-color);
-          font-size: 1.1rem;
-          margin-bottom: 1.25rem;
-          font-weight: 500;
+          padding: 0.75rem;
+          background: #f8fafc;
+          border-radius: 8px;
 
-          [nz-icon] {
-            color: var(--primary-color);
-            font-size: 1.1rem;
-          }
-        }
-
-        .language-grid {
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
-
-          .language-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            .lang-name {
-              font-weight: 500;
-              color: var(--text-color);
-            }
-          }
-        }
-
-        .interests-grid {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.5rem;
-        }
-
-        .preferences-grid {
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
-
-          .preference-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-
-            .label {
-              color: var(--text-color-secondary);
-              min-width: 80px;
-            }
-
-            .values {
-              display: flex;
-              flex-wrap: wrap;
-              gap: 0.5rem;
-            }
+          .lang-name {
+            color: #1a1a1a;
+            font-weight: 500;
           }
         }
       }
-    }
-  }
-}
 
-:host ::ng-deep {
-  .ant-tag {
-    margin: 0;
-    padding: 0.25rem 0.75rem;
-    border-radius: 4px;
-    font-size: 0.875rem;
-    border: none;
-  }
+      .interests-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
 
-  .avatar-modal {
-    .ant-modal-content {
-      background: transparent;
-      box-shadow: none;
-    }
+        ::ng-deep .ant-tag {
+          margin: 0;
+          padding: 0.5rem 1rem;
+          font-size: 0.9rem;
+          border-radius: 6px;
+          background: #f8fafc;
+          border: none;
+          color: #1a1a1a;
+          transition: all 0.2s ease;
 
-    .ant-modal-close {
-      color: white;
-      top: -30px;
-      right: -30px;
-
-      &:hover {
-        color: #f0f0f0;
+          &:hover {
+            background: #f1f5f9;
+            transform: translateY(-1px);
+          }
+        }
       }
-    }
 
-    .fullscreen-avatar {
-      img {
-        max-width: 90vw;
-        max-height: 90vh;
-        object-fit: contain;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      .preferences-grid {
+        .preference-item {
+          margin-bottom: 1rem;
+          
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          .label {
+            color: #64748b;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+          }
+
+          .values {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+          }
+
+          ::ng-deep .ant-tag {
+            margin: 0;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            border-radius: 6px;
+          }
+        }
       }
     }
   }

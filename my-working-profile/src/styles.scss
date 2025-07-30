@@ -3,13 +3,13 @@
 @import "/node_modules/ng-zorro-antd/ng-zorro-antd.min.css";
 
 :root {
-  --primary-color: #2563eb;
-  --primary-light: #60a5fa;
-  --primary-lighter: #93c5fd;
-  --primary-lightest: #dbeafe;
+  --primary-color: #0066cc;
+  --primary-light: #3399ff;
+  --primary-lighter: #66b3ff;
+  --primary-lightest: #e6f3ff;
   --text-color: #1f2937;
   --text-light: #4b5563;
-  --background: #f8fafc;
+  --background: #f0f7ff;
   --card-bg: rgba(255, 255, 255, 0.9);
   --border-radius: 12px;
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
@@ -19,7 +19,7 @@
 
 body {
   margin: 0;
-  background-color: #f0f9ff;
+  background-color: #f0f7ff;
   min-height: 100vh;
   position: relative;
 }
@@ -193,3 +193,4 @@ a {
 .mb-2 { margin-bottom: 0.5rem; }
 .mb-4 { margin-bottom: 1rem; }
 .mb-8 { margin-bottom: 2rem; }
+.ant-modal-body {padding: 0;}
