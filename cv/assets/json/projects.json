@@ -4,7 +4,7 @@
       "name": "Backbase",
       "company": "Backbase",
       "duration": "Nov 2024 - Now",
-      "description": "Working on the R&D department to implement the new AI-based ideas to collaborate the the main product of company",
+      "description": "Leading the development of AI-powered features in the company's main product using Angular. Implementing complex UI components and integrating AI services while maintaining high performance and accessibility standards.",
       "scope": "Banking",
       "technologies": [
         "Angular",
@@ -16,13 +16,14 @@
         "Github",
         "Nx"
       ],
-      "role": "Front-end Developer"
+      "role": "Front-end Developer",
+      "status": "active"
     },
     {
       "name": "Statrys",
       "company": "HCL",
       "duration": "Sep 2022 - Nov 2024",
-      "description": "Building the application for both Front users and admin user of a fintech company to allow user to make a money transfer in different currencies",
+      "description": "Developed a comprehensive fintech platform using both Angular and React. Led the migration of legacy components to modern Angular architecture while building new features in React. Implemented complex financial workflows and real-time currency conversion interfaces.",
       "scope": "FinTech",
       "technologies": [
         "Angular",
@@ -39,13 +40,14 @@
         "Windows",
         "Agile/Scrum"
       ],
-      "role": "Front-end Developer"
+      "role": "Front-end Developer",
+      "status": "completed"
     },
     {
       "name": "PW",
       "company": "HCL",
       "duration": "Dec 2021 - Dec 2023",
-      "description": "Develop a DMS system for storing the document regarding to aerospace scope",
+      "description": "Built a sophisticated Document Management System for aerospace using Angular 14. Implemented complex document workflows, version control, and interactive diagram features using GoJS. Focused on performance optimization and seamless user experience.",
       "scope": "Aerospace, DMS",
       "technologies": [
         "Angular 11-14",
@@ -60,13 +62,36 @@
         "Agile/Scrum",
         "Remote Desktop Connection"
       ],
-      "role": "Front-end Developer"
+      "role": "Front-end Developer",
+      "status": "completed"
+    },
+    {
+      "name": "Topicus - Web Application",
+      "company": "SaigonTech",
+      "duration": "Oct 2020 - Dec 2021",
+      "description": "Working for a Web application for managing entities relating to the Wealth management domain (order, invoice, payment, …). The solution helps the bankers or wealth managers attract new customers and reduce the amount of work that can be handled automatically by the system.",
+      "scope": "Banking, Insurance, Wealth management",
+      "technologies": [
+        "Angular 11",
+        "Ruby on Rails",
+        "Karma"
+      ],
+      "environment": [
+        "Webstorm",
+        "Git",
+        "Chrome",
+        "Windows",
+        "Agile/Scrum"
+      ],
+      "role": "Front-end Developer",
+      "status": "completed",
+      "excludeFromPdf": true
     },
     {
       "name": "Finantix",
       "company": "Nashtech",
       "duration": "Dec 2018 – Oct 2020",
-      "description": "An applicant for manage the orders/invoices/payments. Also, other bankers, or wealth managers can use to introduce / demonstrate the plan to customer",
+      "description": "Spearheaded the migration from AngularJS to Angular 7 for a comprehensive financial management platform. Developed responsive interfaces for order management, invoicing, and payment processing. Implemented wealth management demonstration tools for client presentations.",
       "scope": "ODC – Finance, Banking, Insurance, Wealth management",
       "technologies": [
         "Angularjs",
@@ -85,12 +110,38 @@
         "MacOS",
         "Agile/Scrum"
       ],
-      "role": "Front-end Developer, Mobile App Developer (Minor)"
+      "role": "Front-end Developer, Mobile App Developer (Minor)",
+      "status": "completed"
+    },
+    {
+      "name": "COBB and Coach Office",
+      "company": "NOIS",
+      "duration": "Oct 2014",
+      "description": "This page is a back-office project used to manage all the side of a oversea transport services company including customers management, quotations, orders, payrolls, etc.",
+      "scope": "Transport Management",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "jQuery",
+        "AngularJs 1.3",
+        "Angular UI Bootstrap",
+        "Underscore",
+        "ASP.NET"
+      ],
+      "environment": [
+        "Visual Studio",
+        "Firefox",
+        "SVN",
+        "Git"
+      ],
+      "role": "Front-end and Back-end developer",
+      "status": "completed",
+      "excludeFromPdf": true
     },
     {
       "name": "Trabble – chatbot",
       "duration": "Feb 2018 –Oct 2018",
-      "description": "A project to build a chat-bot for tourism to be able to understand about the destination (famous places, restaurants, hotels) in Singapore",
+      "description": "Developed a tourism chatbot platform using both Angular 5 and React, showcasing versatility in modern frontend frameworks. Integrated multiple APIs (Facebook, Google Places) and implemented real-time communication features using SignalR.",
       "technologies": [
         "HTML",
         "CSS",
@@ -113,7 +164,8 @@
         "Invision",
         "Trello"
       ],
-      "role": "Front-end and Back-end developer"
+      "role": "Front-end and Back-end developer",
+      "status": "completed"
     }
   ]
 }
