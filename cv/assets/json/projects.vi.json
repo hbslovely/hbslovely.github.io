@@ -78,7 +78,7 @@
       "description": "Làm việc trên ứng dụng Web quản lý các thực thể liên quan đến lĩnh vực Quản lý tài sản (đơn hàng, hóa đơn, thanh toán,...). Giải pháp giúp các nhân viên ngân hàng hoặc quản lý tài sản thu hút khách hàng mới và giảm thiểu khối lượng công việc có thể được xử lý tự động bởi hệ thống.",
       "scope": "Quản lý tài sản",
       "technologies": [
-        "Angular 11",
+        "Angular",
         "Ruby on Rails",
         "Karma"
       ],
@@ -99,8 +99,8 @@
       "description": "Dẫn dắt việc chuyển đổi từ AngularJS sang Angular 7 cho nền tảng quản lý tài chính toàn diện. Phát triển giao diện đáp ứng cho quản lý đơn hàng, lập hóa đơn và xử lý thanh toán. Triển khai công cụ demo quản lý tài sản cho các buổi thuyết trình khách hàng.",
       "scope": "Công nghệ tài chính",
       "technologies": [
-        "Angularjs",
-        "Angular 7",
+        "AngularJS",
+        "Angular",
         "Nodejs",
         "IOS (Swift)",
         "Android (Java)",
@@ -126,7 +126,7 @@
       "technologies": [
         "HTML",
         "CSS",
-        "Angular 5",
+        "Angular",
         "ReactJS",
         "Nativescript",
         "SignalR",
@@ -179,7 +179,7 @@
         "HTML",
         "CSS",
         "jQuery",
-        "Angular 4",
+        "Angular",
         "Handsontable"
       ],
       "environment": [
@@ -202,7 +202,7 @@
         "HTML",
         "CSS",
         "jQuery",
-        "Angular 4",
+        "Angular",
         "SignalR",
         "d3Js",
         "Dygraph",
@@ -228,7 +228,7 @@
         "HTML",
         "CSS",
         "jQuery",
-        "Angular 4",
+        "Angular",
         "Bootstrap"
       ],
       "environment": [
@@ -251,7 +251,7 @@
         "HTML",
         "CSS",
         "jQuery",
-        "Angular 4",
+        "Angular",
         "Bootstrap"
       ],
       "environment": [
@@ -275,7 +275,7 @@
         "HTML",
         "CSS",
         "jQuery",
-        "AngularJS 1.x",
+        "AngularJS",
         "Slick"
       ],
       "environment": [
@@ -298,7 +298,7 @@
         "HTML",
         "CSS",
         "jQuery",
-        "AngularJS 1.x",
+        "AngularJS",
         "Slick"
       ],
       "environment": [
@@ -321,7 +321,7 @@
         "HTML",
         "CSS",
         "jQuery",
-        "AngularJS 1.x",
+        "AngularJS",
         "Leaflet",
         "KendoUI",
         "Socket"
@@ -346,7 +346,7 @@
         "HTML",
         "CSS",
         "jQuery",
-        "AngularJS 1.x",
+        "AngularJS",
         "Leaflet",
         "KendoUI",
         "Socket"
@@ -372,7 +372,7 @@
         "CSS",
         "D3js",
         "jQuery",
-        "AngularJS 1.x",
+        "AngularJS",
         "Angular UI Bootstrap",
         "Lodash",
         "KendoUI"
@@ -397,7 +397,7 @@
         "HTML",
         "CSS",
         "jQuery",
-        "AngularJS 1.x",
+        "AngularJS",
         "Facebook API",
         "Google API"
       ],
@@ -422,7 +422,7 @@
         "CSS",
         "D3js",
         "jQuery",
-        "AngularJS 1.x",
+        "AngularJS",
         "Angular UI Bootstrap",
         "Lodash",
         "Scala",
@@ -451,7 +451,7 @@
         "HTML",
         "CSS",
         "jQuery",
-        "AngularJs 1.3",
+        "AngularJS",
         "Angular UI Bootstrap",
         "Underscore",
         "ASP.NET"
