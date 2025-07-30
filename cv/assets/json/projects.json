@@ -84,8 +84,7 @@
         "Agile/Scrum"
       ],
       "role": "Front-end Developer",
-      "status": "completed",
-      "excludeFromPdf": true
+      "status": "completed"
     },
     {
       "name": "Finantix",
@@ -114,32 +113,7 @@
       "status": "completed"
     },
     {
-      "name": "COBB and Coach Office",
-      "company": "NOIS",
-      "duration": "Oct 2014",
-      "description": "This page is a back-office project used to manage all the side of a oversea transport services company including customers management, quotations, orders, payrolls, etc.",
-      "scope": "Transport Management",
-      "technologies": [
-        "HTML",
-        "CSS",
-        "jQuery",
-        "AngularJs 1.3",
-        "Angular UI Bootstrap",
-        "Underscore",
-        "ASP.NET"
-      ],
-      "environment": [
-        "Visual Studio",
-        "Firefox",
-        "SVN",
-        "Git"
-      ],
-      "role": "Front-end and Back-end developer",
-      "status": "completed",
-      "excludeFromPdf": true
-    },
-    {
-      "name": "Trabble – chatbot",
+      "name": "Trabble",
       "duration": "Feb 2018 –Oct 2018",
       "description": "Developed a tourism chatbot platform using both Angular 5 and React, showcasing versatility in modern frontend frameworks. Integrated multiple APIs (Facebook, Google Places) and implemented real-time communication features using SignalR.",
       "technologies": [
@@ -166,6 +140,312 @@
       ],
       "role": "Front-end and Back-end developer",
       "status": "completed"
+    },
+    {
+      "name": "DairYnz",
+      "duration": "Jan 2018 - Mar 2018",
+      "description": "Project to build an app for using on Android and IOS devices to score the cows and allow other to score them also.",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "ReactJS",
+        "Ant Design"
+      ],
+      "environment": [
+        "Webstorm",
+        "Git",
+        "Chrome",
+        "Cordova",
+        "Phonegap"
+      ],
+      "role": "Front-end Developer",
+      "status": "completed",
+      "excludeFromPdf": true
+    },
+    {
+      "name": "Analytics Platform",
+      "duration": "Oct 2017 - Nov 2017",
+      "description": "Project for building table like Excel that allow to edit inline to manage data.",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "jQuery",
+        "Angular 4",
+        "Handsontable"
+      ],
+      "environment": [
+        "Webstorm",
+        "Git",
+        "Chrome",
+        "Webpack",
+        "Angular Cli"
+      ],
+      "role": "Front-end Developer",
+      "status": "completed",
+      "excludeFromPdf": true
+    },
+    {
+      "name": "Bitcoin Monitoring",
+      "duration": "Oct 2017 - Nov 2017",
+      "description": "Project for building page to manage the status of miners. It also manage some entity like (farms, users, owner)",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "jQuery",
+        "Angular 4",
+        "SignalR",
+        "d3Js",
+        "Dygraph",
+        ".NET Core"
+      ],
+      "environment": [
+        "Webstorm",
+        "Git",
+        "Chrome",
+        "Webpack",
+        "Visual Studio 2017"
+      ],
+      "role": "Full-stack Developer",
+      "status": "completed",
+      "excludeFromPdf": true
+    },
+    {
+      "name": "Alythex",
+      "duration": "Aug 2017 - Oct 2017",
+      "description": "Project for showing up reports from PowerBi. The whole page is just for showing up UI that is already built",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "jQuery",
+        "Angular 4",
+        "Bootstrap"
+      ],
+      "environment": [
+        "Webstorm",
+        "Git",
+        "Chrome",
+        "Webpack",
+        "Angular Cli"
+      ],
+      "role": "Front-end Developer",
+      "status": "completed",
+      "excludeFromPdf": true
+    },
+    {
+      "name": "Alythex Admin",
+      "duration": "Aug 2017 - Oct 2017",
+      "description": "Admin page for manage users, clients and embed codes from Alythex project",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "jQuery",
+        "Angular 4",
+        "Bootstrap"
+      ],
+      "environment": [
+        "Webstorm",
+        "Git",
+        "Chrome",
+        "Webpack",
+        "Angular Cli"
+      ],
+      "role": "Front-end Developer",
+      "status": "completed",
+      "excludeFromPdf": true
+    },
+    {
+      "name": "Cibos Portal",
+      "duration": "Apr 2017 - Jun 2017",
+      "description": "Project building a page allow user to login and upload foods. Other people also login, see these foods and take an order.",
+      "scope": "Management",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "jQuery",
+        "AngularJS 1.x",
+        "Slick"
+      ],
+      "environment": [
+        "Webstorm",
+        "Git",
+        "Chrome",
+        "Webpack"
+      ],
+      "role": "Front-end Developer",
+      "status": "completed",
+      "excludeFromPdf": true
+    },
+    {
+      "name": "Cibos Admin",
+      "duration": "Apr 2017 - Jul 2017",
+      "description": "Part of CIBOS Project for building the Admin management page",
+      "scope": "Management",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "jQuery",
+        "AngularJS 1.x",
+        "Slick"
+      ],
+      "environment": [
+        "Webstorm",
+        "Git",
+        "Chrome",
+        "Webpack"
+      ],
+      "role": "Front-end Developer",
+      "status": "completed",
+      "excludeFromPdf": true
+    },
+    {
+      "name": "AMS",
+      "duration": "Apr 2016",
+      "description": "One another project look like IMS but with more features (detecting the fault…).",
+      "scope": "Network Management",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "jQuery",
+        "AngularJS 1.x",
+        "Leaflet",
+        "KendoUI",
+        "Socket"
+      ],
+      "environment": [
+        "Webstorm",
+        "Git",
+        "Chrome",
+        "Grunt"
+      ],
+      "role": "Front-end Developer",
+      "status": "completed",
+      "excludeFromPdf": true
+    },
+    {
+      "name": "IMS",
+      "duration": "Apr 2016",
+      "description": "Part of project allow user to show data uploaded via map view and can integrate with map like adding more items, remove or marking items. It also allows user to view data summary via chart view.",
+      "scope": "Network Management",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "jQuery",
+        "AngularJS 1.x",
+        "Leaflet",
+        "KendoUI",
+        "Socket"
+      ],
+      "environment": [
+        "Webstorm",
+        "Git",
+        "Chrome",
+        "Grunt"
+      ],
+      "role": "Front-end Developer",
+      "status": "completed",
+      "excludeFromPdf": true
+    },
+    {
+      "name": "DMS",
+      "duration": "Jan 2016",
+      "description": "Page for manage document uploaded by users. It also manages some entity.",
+      "scope": "Management",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "D3js",
+        "jQuery",
+        "AngularJS 1.x",
+        "Angular UI Bootstrap",
+        "Lodash",
+        "KendoUI"
+      ],
+      "environment": [
+        "Webstorm",
+        "Git",
+        "Chrome",
+        "Grunt"
+      ],
+      "role": "Front-end Developer",
+      "status": "completed",
+      "excludeFromPdf": true
+    },
+    {
+      "name": "Soev App",
+      "duration": "Mar 2016 - Sep 2016",
+      "description": "A social network page for sharing places, contribute the feeling about places or events",
+      "scope": "Social network",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "jQuery",
+        "AngularJS 1.x",
+        "Facebook API",
+        "Google API"
+      ],
+      "environment": [
+        "Webstorm",
+        "SVN",
+        "Chrome",
+        "Grunt"
+      ],
+      "role": "Front-end Developer",
+      "status": "completed",
+      "excludeFromPdf": true
+    },
+    {
+      "name": "Sift Security",
+      "duration": "May 2015 - Jun 2016",
+      "description": "A page for manage devices in a network as well as using machine learning for detecting anomalies connections via graphic instance.",
+      "scope": "Network Management",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "D3js",
+        "jQuery",
+        "AngularJS 1.x",
+        "Angular UI Bootstrap",
+        "Lodash",
+        "Scala",
+        "Protractor",
+        "Karma",
+        "Chaijs",
+        "Sinon"
+      ],
+      "environment": [
+        "Webstorm",
+        "Git",
+        "Chrome",
+        "Grunt"
+      ],
+      "role": "Front-end Developer",
+      "status": "completed",
+      "excludeFromPdf": true
+    },
+    {
+      "name": "COBB and Coach Office",
+      "company": "NOIS",
+      "duration": "Oct 2014",
+      "description": "This page is a back-office project used to manage all the side of a oversea transport services company including customers management, quotations, orders, payrolls, etc.",
+      "scope": "Transport Management",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "jQuery",
+        "AngularJs 1.3",
+        "Angular UI Bootstrap",
+        "Underscore",
+        "ASP.NET"
+      ],
+      "environment": [
+        "Visual Studio",
+        "Firefox",
+        "SVN",
+        "Git"
+      ],
+      "role": "Full-stack Developer",
+      "status": "completed",
+      "excludeFromPdf": true
     }
   ]
 }
