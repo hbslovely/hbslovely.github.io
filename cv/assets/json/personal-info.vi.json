@@ -32,7 +32,7 @@
     "Hiệu suất"
   ],
   "availability": {
-    "preferredWorkType": ["Toàn thời gian", "Hợp đồng"],
-    "remoteWork": "Có thể làm việc từ xa"
+    "workType": "Full-time",
+    "workLocation": "Remote"
   }
 } 
