@@ -9,12 +9,17 @@
       "technologies": [
         "Angular",
         "Bootstrap",
-        "Jest"
+        "Jest",
+        "Backbase",
+        "Rxjs"
       ],
       "environment": [
         "Webstorm",
         "Github",
-        "Nx"
+        "Nx",
+        "Git",
+        "MacOS",
+        "Agile/Scrum"
       ],
       "role": "Lập trình viên Front-end",
       "status": "active"
@@ -31,7 +36,8 @@
         "TailwindCSS",
         "Material",
         "GraphQL",
-        "Jasmine/Karma"
+        "Jasmine/Karma",
+        "AG Grid"
       ],
       "environment": [
         "VSC",
@@ -50,9 +56,9 @@
       "description": "Xây dựng Hệ thống Quản lý Tài liệu tinh vi cho ngành hàng không sử dụng Angular 14. Triển khai quy trình tài liệu phức tạp, kiểm soát phiên bản và tính năng sơ đồ tương tác sử dụng GoJS. Tập trung vào tối ưu hóa hiệu suất và trải nghiệm người dùng mượt mà.",
       "scope": "Hàng không, Quản lý tài liệu",
       "technologies": [
-        "Angular 11-14",
+        "Angular",
         "GoJS",
-        "ASP NET"
+        "ASP.NET"
       ],
       "environment": [
         "Webstorm",
