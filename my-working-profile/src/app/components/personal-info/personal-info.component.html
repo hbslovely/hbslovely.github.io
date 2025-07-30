@@ -98,16 +98,31 @@
           <span nz-icon nzType="clock-circle" nzTheme="outline"></span>
           {{ 'PERSONAL_INFO.WORK_PREFERENCES' | translate }}
         </h3>
-        <div class="preferences-grid">
-          <div class="preference-item" *ngIf="info?.availability?.preferredWorkType">
-            <span class="label">Type:</span> &nbsp;
-            <div class="values">
-              <nz-tag *ngFor="let type of info?.availability?.preferredWorkType">{{ type }}</nz-tag>
+        <div class="work-preferences">
+          <div class="preference-item" *ngIf="info?.availability?.preferredWorkType?.length">
+            <div class="preference-header">
+              <span nz-icon nzType="schedule" nzTheme="outline"></span>
+              <span class="label">Employment Type</span>
+            </div>
+            <div class="preference-values">
+              <nz-tag 
+                *ngFor="let type of info?.availability?.preferredWorkType"
+                [nzColor]="'processing'">
+                {{ type }}
+              </nz-tag>
             </div>
           </div>
+          
           <div class="preference-item" *ngIf="info?.availability?.remoteWork">
-            <span class="label">Remote:</span> &nbsp;
-            <nz-tag [nzColor]="'green'">{{ info?.availability?.remoteWork }}</nz-tag>
+            <div class="preference-header">
+              <span nz-icon nzType="home" nzTheme="outline"></span>
+              <span class="label">Remote Work</span>
+            </div>
+            <div class="preference-values">
+              <nz-tag [nzColor]="'success'">
+                {{ info?.availability?.remoteWork }}
+              </nz-tag>
+            </div>
           </div>
         </div>
       </div>

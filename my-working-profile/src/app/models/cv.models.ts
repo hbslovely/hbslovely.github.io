@@ -61,9 +61,11 @@ export interface PersonalInfo {
   };
 }
 
-export interface Experience {
-  workExperience: WorkExperience[];
-  education?: Education[];
+export interface CompanyInfo {
+  description: string;
+  address: string;
+  website: string;
+  contact?: string;
 }
 
 export interface WorkExperience {
@@ -77,6 +79,7 @@ export interface WorkExperience {
   description: string;
   achievements?: string[];
   responsibilities: string[];
+  companyInfo?: CompanyInfo;
 }
 
 export interface Education {

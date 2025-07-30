@@ -112,5 +112,34 @@
         </ul>
       </div>
     }
+
+    <!-- Company Information Section -->
+    @if (experience.companyInfo) {
+      <div class="dialog-section company-details">
+        <h3>
+          <span nz-icon nzType="bank" nzTheme="outline"></span>
+          {{ 'SECTIONS.WORK_EXPERIENCE.ABOUT_COMPANY' | translate }}
+        </h3>
+        <div class="company-description">
+          {{ experience.companyInfo.description }}
+        </div>
+        <div class="company-contact-info">
+          <div class="contact-item">
+            <span nz-icon nzType="environment" nzTheme="outline"></span>
+            {{ experience.companyInfo.address }}
+          </div>
+          <div class="contact-item">
+            <span nz-icon nzType="global" nzTheme="outline"></span>
+            <a [href]="experience.companyInfo.website" target="_blank">{{ experience.companyInfo.website }}</a>
+          </div>
+          @if (experience.companyInfo.contact) {
+            <div class="contact-item">
+              <span nz-icon nzType="phone" nzTheme="outline"></span>
+              {{ experience.companyInfo.contact }}
+            </div>
+          }
+        </div>
+      </div>
+    }
   </div>
 </ng-template> 

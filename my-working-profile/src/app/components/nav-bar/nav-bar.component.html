@@ -6,17 +6,19 @@
       </a>
 
       <div class="nav-content" [class.mobile-open]="isMobileMenuOpen">
-        <ul class="nav-links" [class.mobile]="isMobile">
-          <li *ngFor="let item of navItems">
-            <a [routerLink]="item.path" 
-               routerLinkActive="active" 
-               [routerLinkActiveOptions]="{ exact: item.exact }"
-               (click)="isMobile && closeMobileMenu()">
-              <span nz-icon [nzType]="item.icon" nzTheme="outline"></span>
-              {{ item.label | translate }}
-            </a>
-          </li>
-        </ul>
+        <div class="nav-menu" [class.mobile]="isMobile">
+          <ul class="nav-links">
+            <li *ngFor="let item of navItems">
+              <a [routerLink]="item.path" 
+                 routerLinkActive="active" 
+                 [routerLinkActiveOptions]="{ exact: item.exact }"
+                 (click)="isMobile && closeMobileMenu()">
+                <span nz-icon [nzType]="item.icon" nzTheme="outline"></span>
+                {{ item.label | translate }}
+              </a>
+            </li>
+          </ul>
+        </div>
 
         <div class="nav-actions" [class.mobile]="isMobile">
           <app-export-pdf></app-export-pdf>

@@ -1,22 +1,11 @@
-import { Component, Input, ViewChild, TemplateRef } from '@angular/core';
+import { Component, Input, TemplateRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzModalModule, NzModalService } from 'ng-zorro-antd/modal';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { WatermarkComponent } from '../watermark/watermark.component';
-
-interface WorkExperience {
-  position: string;
-  company: string;
-  startDate: string;
-  endDate?: string;
-  current?: boolean;
-  location: string;
-  type: string;
-  achievements?: string[];
-  responsibilities?: string[];
-}
+import { WorkExperience } from '../../models/cv.models';
 
 @Component({
   selector: 'app-experience-card',
@@ -30,20 +19,21 @@ interface WorkExperience {
     WatermarkComponent
   ],
   templateUrl: './experience-card.component.html',
-  styleUrls: ['./experience-card.component.scss']
+  styleUrls: [ './experience-card.component.scss' ]
 })
 export class ExperienceCardComponent {
   @Input() experience!: WorkExperience;
   @ViewChild('companyDetailDialog') companyDetailDialog!: TemplateRef<any>;
 
-  constructor(private modalService: NzModalService) {}
+  constructor(private modalService: NzModalService) {
+  }
 
   getCompanyLogo(company: string): string {
     // Convert company name to lowercase and replace spaces/special chars with hyphens
     const filename = company.toLowerCase()
       .replace(/[^a-z0-9]+/g, '-') // Replace any non-alphanumeric chars with hyphen
       .replace(/^-+|-+$/g, ''); // Remove leading/trailing hyphens
-    return `${filename}.png`;
+    return `${ filename }.png`;
   }
 
   openCompanyDialog(): void {
@@ -57,4 +47,4 @@ export class ExperienceCardComponent {
       nzMaskClosable: true
     });
   }
-} 
+}

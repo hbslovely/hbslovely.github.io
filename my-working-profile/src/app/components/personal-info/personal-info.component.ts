@@ -34,15 +34,20 @@ export class PersonalInfoComponent {
       nzFooter: null,
       nzClosable: true,
       nzCentered: true,
-      nzWidth: 'auto',
-      nzClassName: 'avatar-modal',
+      nzWidth: '100%',
+      nzWrapClassName: 'avatar-modal',
       nzStyle: { 
-        top: '20px'
+        top: '0',
+        padding: '0',
+        maxWidth: '100vw',
+        margin: '0'
       },
       nzBodyStyle: {
         padding: '0',
         background: 'transparent'
-      }
+      },
+      nzMaskClosable: true,
+      nzKeyboard: true
     });
   }
 } 
