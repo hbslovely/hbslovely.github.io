@@ -1,21 +1,49 @@
 <div [class]="config.className">
   <div class="container" [style.maxWidth.px]="config.maxWidth">
-    <app-section-header title="Technical Skills" icon="tool"></app-section-header>
+    <app-section-header 
+      title="SECTIONS.TECHNICAL_SKILLS" 
+      icon="tool" 
+      subtitle="SECTIONS.SUBTITLES.TECHNICAL_SKILLS">
+    </app-section-header>
 
-    <div class="skills-grid">
-      @for (category of Object.keys(cv()?.skills?.technicalSkills || {}); track category) {
-        <div class="skill-category">
-          <h3>
-            <span nz-icon [nzType]="getTechnologyIcon(category)" nzTheme="outline"></span>
-            {{ formatCategory(category) }}
-          </h3>
-          <div class="skill-tags">
-            @for (skill of cv()?.skills?.technicalSkills?.[category]; track skill) {
-              <nz-tag [nzColor]="getTagColor(skill)">{{ skill }}</nz-tag>
-            }
+    <div class="skills-layout">
+      <!-- Interactive Word Cloud -->
+      <div class="word-cloud-section">
+        <div class="word-cloud-wrapper">
+          <div class="word-cloud-container" #wordCloudContainer>
+            <canvas #wordCloud></canvas>
           </div>
         </div>
-      }
+      </div>
+
+      <!-- Organized Skills Grid -->
+      <div class="skills-content">
+        @for (category of Object.keys(cv()?.skills?.technicalSkills || {}); track category) {
+          <div class="skill-category">
+            <div class="skill-category-header">
+              <div class="category-icon">
+                <span nz-icon [nzType]="getTechnologyIcon(category)" nzTheme="outline"></span>
+              </div>
+              <h3>{{ formatCategory(category) }}</h3>
+            </div>
+            
+            <div class="skill-list">
+              @for (skill of cv()?.skills?.technicalSkills?.[category]; track skill) {
+                <div class="skill-item" [class.has-experience]="getSkillExperience(skill)">
+                  <div class="skill-content">
+                    <span class="skill-name">{{ skill }}</span>
+                    @if (getSkillExperience(skill)) {
+                      <span class="experience-badge" [style.backgroundColor]="getTagColor(skill)">
+                        {{ getSkillExperience(skill) }}
+                      </span>
+                    }
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+        }
+      </div>
     </div>
   </div>
 </div>

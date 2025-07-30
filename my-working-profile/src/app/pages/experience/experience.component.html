@@ -1,113 +1,27 @@
 <div [class]="config.className">
   <div class="container" [style.maxWidth.px]="config.maxWidth">
-    <!-- Work Experience Section -->
-    <section [id]="sections[0].id" class="section">
-      <div class="section-header">
-        <h2>
-          <span nz-icon [nzType]="sections[0].icon" nzTheme="outline"></span>
-          {{ sections[0].title }}
-        </h2>
-        <div class="section-subtitle">My professional journey and achievements</div>
-      </div>
-      
-      <div class="experience-list">
-        @for (exp of cv()?.experience?.workExperience; track exp) {
-          <div class="experience-card">
-            <div class="card-header">
-              <div class="company-info">
-                <div class="company-logo">
-                  <img [src]="'assets/images/companies/' + getCompanyLogo(exp.company)" [alt]="exp.company + ' logo'" 
-                       onError="this.src='assets/images/companies/default-company.png'"/>
-                </div>
-                <div class="position-company">
-                  <div class="company">{{ exp.company }}</div>
-                  <h3>{{ exp.position }}</h3>
-                </div>
-              </div>
-              <div class="meta-info">
-                <span class="duration">
-                  <span nz-icon nzType="calendar" nzTheme="outline"></span>
-                  {{ exp.startDate }} - {{ exp.current ? 'Present' : exp.endDate }}
-                </span>
-                <span class="location">
-                  <span nz-icon nzType="environment" nzTheme="outline"></span>
-                  {{ exp.location }}
-                </span>
-                <span class="type">
-                  <span nz-icon nzType="team" nzTheme="outline"></span>
-                  {{ exp.type }}
-                </span>
-              </div>
-            </div>
+    <!-- Education Section -->
+    <section [id]="sections[1].id" class="section">
+      <app-section-header [title]="sections[1].title" [icon]="sections[1].icon">
+        <div class="section-subtitle">{{ 'SECTIONS.SUBTITLES.EDUCATION' | translate }}</div>
+      </app-section-header>
 
-            <div class="card-content">
-              <p class="description">{{ exp.description }}</p>
-
-              @if (exp.achievements?.length) {
-                <div class="achievements">
-                  <h4>Key Achievements</h4>
-                  <ul>
-                    @for (achievement of exp.achievements; track achievement) {
-                      <li>
-                        <span nz-icon nzType="trophy" nzTheme="outline"></span>
-                        {{ achievement }}
-                      </li>
-                    }
-                  </ul>
-                </div>
-              }
-
-              @if (exp.responsibilities?.length) {
-                <div class="responsibilities">
-                  <h4>Key Responsibilities</h4>
-                  <ul>
-                    @for (responsibility of exp.responsibilities; track responsibility) {
-                      <li>
-                        <span nz-icon nzType="check-circle" nzTheme="outline"></span>
-                        {{ responsibility }}
-                      </li>
-                    }
-                  </ul>
-                </div>
-              }
-            </div>
-          </div>
+      <div class="education-list">
+        @for (edu of cv()?.education?.education; track edu) {
+          <app-education-card [education]="edu"></app-education-card>
         }
       </div>
     </section>
 
-    <!-- Education Section -->
-    <section [id]="sections[1].id" class="section">
-      <div class="section-header">
-        <h2>
-          <span nz-icon [nzType]="sections[1].icon" nzTheme="outline"></span>
-          {{ sections[1].title }}
-        </h2>
-        <div class="section-subtitle">Academic background and qualifications</div>
-      </div>
-
-      <div class="education-list">
-        @for (edu of cv()?.education?.education; track edu) {
-          <div class="education-card">
-            <div class="card-header">
-              <div class="degree-institution">
-                <h3>{{ edu.degree }} in {{ edu.field }}</h3>
-                <div class="institution">{{ edu.institution }}</div>
-              </div>
-              <div class="meta-info">
-                <span class="duration">
-                  <span nz-icon nzType="calendar" nzTheme="outline"></span>
-                  {{ edu.startDate }} - {{ edu.endDate }}
-                </span>
-              </div>
-            </div>
-
-            @if (edu.description) {
-              <div class="card-content">
-                <p class="description">{{ edu.description }}</p>
-              </div>
-            }
-          </div>
+    <!-- Work Experience Section -->
+    <section [id]="sections[0].id" class="section">
+      <app-section-header [title]="sections[0].title" [icon]="sections[0].icon">
+        <div class="section-subtitle">{{ 'SECTIONS.SUBTITLES.WORK_EXPERIENCE' | translate }}</div>
+      </app-section-header>
+      
+      <div class="experience-list">
+        @for (exp of cv()?.experience?.workExperience; track exp) {
+          <app-experience-card [experience]="exp"></app-experience-card>
         }
       </div>
     </section>

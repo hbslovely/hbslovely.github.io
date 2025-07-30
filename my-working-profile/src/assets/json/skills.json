@@ -3,20 +3,21 @@
     "programmingLanguages": [
       "HTML5",
       "JavaScript",
-      "CSS"
+      "CSS",
+      "TypeScript"
     ],
     "frameworks": [
       "Angular",
       "AngularJS",
-      "ReactJS",
-      "Qt"
+      "ReactJS"
     ],
     "libraries": [
       "KendoUI",
       "D3.js",
       "jQuery",
-      "Lodash",
-      "Moment.js"
+      "Chart.js",
+      "RxJS",
+      "NgRx"
     ],
     "testing": [
       "Jest",

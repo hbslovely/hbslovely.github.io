@@ -9,6 +9,9 @@ import { PROJECTS_PAGE_CONFIG } from './projects.constants';
 import { Project } from '../../models/cv.models';
 import { NzIconService } from 'ng-zorro-antd/icon';
 import { SectionHeaderComponent } from '../../components/section-header/section-header.component';
+import { ProjectDetailComponent } from '../../components/project-detail/project-detail.component';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { TranslateModule } from '@ngx-translate/core';
 
 // Tag color mapping
 const TAG_COLORS = {
@@ -96,7 +99,7 @@ const TECH_ICONS: Record<string, string> = {
   'Gatsby': 'node-index',
 
   // Backend
-  'Node.js': 'nodejs',
+  'Node.js': 'code-sandbox',
   'ASP NET': 'windows',
   'Python': 'code',
   'Java': 'code',
@@ -135,6 +138,8 @@ const TECH_ICONS: Record<string, string> = {
   'TestNG': 'experiment',
 };
 
+type ViewType = 'grid' | 'list';
+
 @Component({
   selector: 'app-projects-page',
   standalone: true,
@@ -143,7 +148,9 @@ const TECH_ICONS: Record<string, string> = {
     NzIconModule,
     NzTagModule,
     FormsModule,
-    SectionHeaderComponent
+    SectionHeaderComponent,
+    ProjectDetailComponent,
+    TranslateModule
   ],
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
@@ -151,6 +158,7 @@ const TECH_ICONS: Record<string, string> = {
 export class ProjectsPageComponent {
   private readonly cvService = inject(CVService);
   private readonly iconService = inject(NzIconService);
+  private readonly sanitizer = inject(DomSanitizer);
 
   constructor() {
     // No need to register icons as we're using built-in Ant Design icons
@@ -166,6 +174,14 @@ export class ProjectsPageComponent {
   selectedTechnologies = signal<string[]>([]);
   selectedScopes = signal<string[]>([]);
   selectedStatuses = signal<string[]>([]);
+
+  // View type and filter visibility state
+  viewType = signal<ViewType>('grid');
+  isFilterVisible = signal<boolean>(false);
+  expandedProjects = signal<Set<string>>(new Set());
+
+  // Search state
+  searchText = signal<string>('');
 
   // Computed values for filter options
   readonly allTechnologies = computed(() => {
@@ -184,17 +200,24 @@ export class ProjectsPageComponent {
     return Array.from(scopes).sort();
   });
 
+  // Helper method to capitalize status
+  capitalizeStatus(status: string): string {
+    return status.charAt(0).toUpperCase() + status.slice(1);
+  }
+
   readonly allStatuses = computed(() => {
     const statuses = new Set<string>();
     this.cv()?.projects?.projects.forEach(project => {
-      if (project.status) statuses.add(project.status);
+      if (project.status) statuses.add(project.status.toLowerCase());
     });
-    return Array.from(statuses).sort();
+    return Array.from(statuses).sort().map(status => this.capitalizeStatus(status));
   });
 
   // Filtered projects
   readonly filteredProjects = computed(() => {
     const projects = this.cv()?.projects?.projects || [];
+    const searchTerm = this.searchText().toLowerCase().trim();
+
     return projects.filter(project => {
       const matchesTech = this.selectedTechnologies().length === 0 ||
         project.technologies.some(tech => this.selectedTechnologies().includes(tech));
@@ -203,9 +226,17 @@ export class ProjectsPageComponent {
         (project.scope && this.selectedScopes().includes(project.scope));
 
       const matchesStatus = this.selectedStatuses().length === 0 ||
-        (project.status && this.selectedStatuses().includes(project.status));
+        (project.status && this.selectedStatuses().includes(project.status.toLowerCase()));
 
-      return matchesTech && matchesScope && matchesStatus;
+      const matchesSearch = !searchTerm ||
+        project.name.toLowerCase().includes(searchTerm) ||
+        project.description.toLowerCase().includes(searchTerm) ||
+        project.technologies.some(tech => tech.toLowerCase().includes(searchTerm)) ||
+        (project.scope && project.scope.toLowerCase().includes(searchTerm)) ||
+        (project.status && project.status.toLowerCase().includes(searchTerm)) ||
+        (project.responsibilities && project.responsibilities.some(resp => resp.toLowerCase().includes(searchTerm)));
+
+      return matchesTech && matchesScope && matchesStatus && matchesSearch;
     });
   });
 
@@ -230,10 +261,11 @@ export class ProjectsPageComponent {
 
   toggleStatusFilter(status: string): void {
     const current = this.selectedStatuses();
-    if (current.includes(status)) {
-      this.selectedStatuses.set(current.filter(s => s !== status));
+    const statusLower = status.toLowerCase();
+    if (current.includes(statusLower)) {
+      this.selectedStatuses.set(current.filter(s => s !== statusLower));
     } else {
-      this.selectedStatuses.set([...current, status]);
+      this.selectedStatuses.set([...current, statusLower]);
     }
   }
 
@@ -253,7 +285,7 @@ export class ProjectsPageComponent {
   }
 
   isStatusSelected(status: string): boolean {
-    return this.selectedStatuses().includes(status);
+    return this.selectedStatuses().includes(status.toLowerCase());
   }
 
   // Helper method to get tag color based on selection state
@@ -275,5 +307,41 @@ export class ProjectsPageComponent {
   // Helper method to get technology icon
   getTechnologyIcon(tech: string): string {
     return TECH_ICONS[tech.trim()] || 'code';
+  }
+
+  // View type methods
+  setViewType(type: ViewType): void {
+    this.viewType.set(type);
+    // Reset expanded state when switching views
+    this.expandedProjects.set(new Set());
+  }
+
+  // Filter visibility methods
+  toggleFilters(): void {
+    this.isFilterVisible.update(visible => !visible);
+  }
+
+  getTotalFiltersCount(): number {
+    return this.selectedTechnologies().length +
+           this.selectedScopes().length +
+           this.selectedStatuses().length;
+  }
+
+  // Project expansion methods
+  toggleProjectExpansion(project: Project): void {
+    const currentExpanded = this.expandedProjects();
+    const newExpanded = new Set(currentExpanded);
+
+    if (currentExpanded.has(project.name)) {
+      newExpanded.delete(project.name);
+    } else {
+      newExpanded.add(project.name);
+    }
+
+    this.expandedProjects.set(newExpanded);
+  }
+
+  isProjectExpanded(project: Project): boolean {
+    return this.expandedProjects().has(project.name);
   }
 }

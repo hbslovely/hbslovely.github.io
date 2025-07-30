@@ -58,6 +58,7 @@ $color-bg-active: #e6f7ff;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   padding: 1.5rem 0;
   margin-top: auto;
+  z-index: 2;
 
   .footer-content {
     display: flex;
@@ -105,4 +106,29 @@ $color-bg-active: #e6f7ff;
     opacity: 1;
     transform: translateY(0);
   }
-} 
+}
+
+:host {
+  display: block;
+  min-height: 100vh;
+  padding-top: 64px; // Height of navbar
+}
+
+main {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 767px) {
+  :host {
+    padding-top: 56px; // Height of mobile navbar
+  }
+
+  main {
+    padding: 1.5rem 1rem;
+  }
+}

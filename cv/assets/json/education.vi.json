@@ -1,12 +1,12 @@
 {
   "education": [
     {
-      "institution": "Đại học Công nghệ Thông tin - ĐHQG TP.HCM",
-      "degree": "Cử nhân",
-      "field": "Công nghệ Thông tin",
+      "institution": "Đại học khoa học tự nhiên TP.HCM",
+      "degree": "Cử nhân khoa học máy tính",
+      "field": "Thị giác máy tính và khoa học rô-bốt",
       "startDate": "2010",
       "endDate": "2014",
-      "description": "Chuyên ngành Công nghệ Phần mềm, tập trung vào phát triển ứng dụng web và các công nghệ hiện đại."
+      "description": "Chuyên ngành: Thị giác máy tính và khoa học rô-bốt"
     }
   ]
 } 

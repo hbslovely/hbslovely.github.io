@@ -9,6 +9,7 @@
   padding: 2rem 0;
   border-top: 1px solid var(--footer-border);
   margin-top: auto;
+  z-index: 2;
 }
 
 .footer-content {
@@ -28,4 +29,4 @@
   p {
     margin: 0;
   }
-} 
+}

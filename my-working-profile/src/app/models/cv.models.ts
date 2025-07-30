@@ -7,15 +7,30 @@ export interface Project {
   technologies: string[];
   environment: string[];
   role: string;
-  status?: 'active' | 'completed' | 'maintenance';
+  status?: 'Active' | 'Completed' | 'Maintenance';
   teamSize?: number;
   image?: string;
   github?: string;
   demo?: string;
   achievements?: string[];
+  responsibilities?: string[];
+  links?: Array<{
+    type: string;
+    url: string;
+    label: string;
+  }>;
+  minor?: boolean; // Flag to indicate if this is a minor project
+  excludeFromPdf?: boolean; // Flag to indicate project should be excluded from PDF but isn't minor
+}
+
+export interface ProjectEnvironment {
+  name: string;
+  url?: string;
+  description?: string;
 }
 
 export interface PersonalInfo {
+  prefix?: string;
   name: string;
   title: string;
   dateOfBirth: string;
@@ -41,14 +56,16 @@ export interface PersonalInfo {
   interests: string[];
   availability: {
     status: string;
-    preferredWorkType: string[];
-    remoteWork: string;
+    workType: 'Full-time' | 'Part-time' | 'Contract';
+    workLocation: 'Remote' | 'Hybrid' | 'Onsite';
   };
 }
 
-export interface Experience {
-  workExperience: WorkExperience[];
-  education?: Education[];
+export interface CompanyInfo {
+  description: string;
+  address: string;
+  website: string;
+  contact?: string;
 }
 
 export interface WorkExperience {
@@ -62,6 +79,7 @@ export interface WorkExperience {
   description: string;
   achievements?: string[];
   responsibilities: string[];
+  companyInfo?: CompanyInfo;
 }
 
 export interface Education {

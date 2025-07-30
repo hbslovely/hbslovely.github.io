@@ -296,19 +296,19 @@ export class PdfService {
 
     if (cv.education?.education) {
       cv.education.education.forEach((edu, index) => {
-        // School/University name in blue
-        pdf.setFont('Candara', 'bold');
-        pdf.setFontSize(14);
-        pdf.setTextColor(colors.primary);
-        pdf.text(edu.institution, this.MARGIN, yPos);
-
-        // Duration right-aligned
+        // Duration left-aligned
         const duration = `${ edu.startDate } - ${ edu.endDate }`;
-        const durationWidth = pdf.getTextWidth(duration);
         pdf.setFont('Candara', 'normal');
         pdf.setFontSize(14);
         pdf.setTextColor(colors.subtext);
-        pdf.text(duration, this.A4_WIDTH - this.MARGIN - durationWidth, yPos);
+        pdf.text(duration, this.MARGIN, yPos);
+
+        // School/University name in blue, indented after duration
+        const durationWidth = pdf.getTextWidth(duration);
+        pdf.setFont('Candara', 'bold');
+        pdf.setFontSize(14);
+        pdf.setTextColor(colors.primary);
+        pdf.text(edu.institution, this.MARGIN + durationWidth + 15, yPos);
 
         // Degree and Field
         yPos += this.getLineHeight(14);
@@ -337,25 +337,26 @@ export class PdfService {
       // Check if we need a new page for this experience entry
       yPos = this.checkPageBreak(pdf, yPos, 150); // Estimated minimum space needed for an experience entry
 
-      // Company name in blue, larger font
+      // Duration left-aligned
+      const duration = `${ exp.startDate } - ${ exp.endDate || 'Present' }`;
+      pdf.setFont('Candara', 'normal');
+      pdf.setFontSize(12);
+      pdf.setTextColor(colors.subtext);
+      pdf.text(duration, this.MARGIN, yPos);
+
+      // Company name in blue, larger font, indented after duration
+      const durationWidth = pdf.getTextWidth(duration);
       pdf.setFont('Candara', 'bold');
       pdf.setFontSize(17);
       pdf.setTextColor(colors.primary);
-      pdf.text(exp.company, this.MARGIN, yPos);
+      pdf.text(exp.company, this.MARGIN + durationWidth + 15, yPos);
 
       // Position right below company name
       yPos += this.getLineHeight(17);
       pdf.setFont('Candara', 'normal');
       pdf.setFontSize(14);
       pdf.setTextColor(colors.text);
-      pdf.text(exp.position, this.MARGIN, yPos);
-
-      // Duration right-aligned on same line as position
-      const duration = `${ exp.startDate } - ${ exp.endDate || 'Present' }`;
-      const durationWidth = pdf.getTextWidth(duration);
-      pdf.setFontSize(12);
-      pdf.setTextColor(colors.subtext);
-      pdf.text(duration, this.A4_WIDTH - this.MARGIN - durationWidth, yPos);
+      pdf.text(exp.position, this.MARGIN + durationWidth + 15, yPos);
 
       // Add some space before responsibilities
       yPos += this.getLineHeight(14) * 1.2;
@@ -479,23 +480,26 @@ export class PdfService {
     yPos = this.addSectionHeader(pdf, 'Projects', yPos, colors);
 
     if (cv.projects?.projects) {
-      cv.projects.projects.forEach((project, index) => {
+      // Filter out projects marked with excludeFromPdf
+      const includedProjects = cv.projects.projects.filter(project => !project.excludeFromPdf);
+      
+      includedProjects.forEach((project, index) => {
         // Check if we need a new page for this project
         yPos = this.checkPageBreak(pdf, yPos, 150);
 
-        // Project name in blue
-        pdf.setFont('Candara', 'bold');
-        pdf.setFontSize(14);
-        pdf.setTextColor(colors.primary);
-        pdf.text(project.name, this.MARGIN, yPos);
-
-        // Duration right-aligned
+        // Duration left-aligned
         const duration = project.duration || '';
-        const durationWidth = pdf.getTextWidth(duration);
         pdf.setFont('Candara', 'normal');
         pdf.setFontSize(11);
         pdf.setTextColor(colors.subtext);
-        pdf.text(duration, this.A4_WIDTH - this.MARGIN - durationWidth, yPos);
+        pdf.text(duration, this.MARGIN, yPos);
+
+        // Project name in blue, indented after duration
+        const durationWidth = pdf.getTextWidth(duration);
+        pdf.setFont('Candara', 'bold');
+        pdf.setFontSize(14);
+        pdf.setTextColor(colors.primary);
+        pdf.text(project.name, this.MARGIN + durationWidth + 15, yPos);
 
         // Description
         if (project.description) {
@@ -590,7 +594,7 @@ export class PdfService {
         yPos += 0;
 
         // Add a subtle separator line between projects (except for the last one)
-        if (index < cv.projects.projects.length - 1) {
+        if (index < includedProjects.length - 1) {
           yPos += 5;
           pdf.setDrawColor(colors.accent);
           pdf.setLineWidth(1);
@@ -605,7 +609,7 @@ export class PdfService {
     pdf.setFont('Candara', 'normal');
     pdf.setFontSize(11);
     pdf.setTextColor(colors.subtext);
-    const additionalProjectsText = 'There is 10+ projects which is not showing here.';
+    const additionalProjectsText = 'There are additional projects not shown here.';
     const textWidth = pdf.getTextWidth(additionalProjectsText);
     pdf.text(additionalProjectsText, (this.A4_WIDTH - textWidth) / 2, yPos);
     yPos += 25;
