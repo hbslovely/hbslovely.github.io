@@ -13,6 +13,8 @@ export interface Project {
   github?: string;
   demo?: string;
   achievements?: string[];
+  minor?: boolean; // Flag to indicate if this is a minor project
+  excludeFromPdf?: boolean; // Flag to indicate project should be excluded from PDF but isn't minor
 }
 
 export interface PersonalInfo {

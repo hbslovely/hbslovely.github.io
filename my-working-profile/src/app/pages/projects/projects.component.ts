@@ -9,6 +9,7 @@ import { PROJECTS_PAGE_CONFIG } from './projects.constants';
 import { Project } from '../../models/cv.models';
 import { NzIconService } from 'ng-zorro-antd/icon';
 import { SectionHeaderComponent } from '../../components/section-header/section-header.component';
+import { ProjectDetailComponent } from '../../components/project-detail/project-detail.component';
 
 // Tag color mapping
 const TAG_COLORS = {
@@ -135,6 +136,8 @@ const TECH_ICONS: Record<string, string> = {
   'TestNG': 'experiment',
 };
 
+type ViewType = 'grid' | 'list';
+
 @Component({
   selector: 'app-projects-page',
   standalone: true,
@@ -143,7 +146,8 @@ const TECH_ICONS: Record<string, string> = {
     NzIconModule,
     NzTagModule,
     FormsModule,
-    SectionHeaderComponent
+    SectionHeaderComponent,
+    ProjectDetailComponent
   ],
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
@@ -166,6 +170,11 @@ export class ProjectsPageComponent {
   selectedTechnologies = signal<string[]>([]);
   selectedScopes = signal<string[]>([]);
   selectedStatuses = signal<string[]>([]);
+
+  // View type and filter visibility state
+  viewType = signal<ViewType>('grid');
+  isFilterVisible = signal<boolean>(false);
+  expandedProjects = signal<Set<string>>(new Set());
 
   // Computed values for filter options
   readonly allTechnologies = computed(() => {
@@ -275,5 +284,41 @@ export class ProjectsPageComponent {
   // Helper method to get technology icon
   getTechnologyIcon(tech: string): string {
     return TECH_ICONS[tech.trim()] || 'code';
+  }
+
+  // View type methods
+  setViewType(type: ViewType): void {
+    this.viewType.set(type);
+    // Reset expanded state when switching views
+    this.expandedProjects.set(new Set());
+  }
+
+  // Filter visibility methods
+  toggleFilters(): void {
+    this.isFilterVisible.update(visible => !visible);
+  }
+
+  getTotalFiltersCount(): number {
+    return this.selectedTechnologies().length +
+           this.selectedScopes().length +
+           this.selectedStatuses().length;
+  }
+
+  // Project expansion methods
+  toggleProjectExpansion(project: Project): void {
+    const currentExpanded = this.expandedProjects();
+    const newExpanded = new Set(currentExpanded);
+    
+    if (currentExpanded.has(project.name)) {
+      newExpanded.delete(project.name);
+    } else {
+      newExpanded.add(project.name);
+    }
+    
+    this.expandedProjects.set(newExpanded);
+  }
+
+  isProjectExpanded(project: Project): boolean {
+    return this.expandedProjects().has(project.name);
   }
 }

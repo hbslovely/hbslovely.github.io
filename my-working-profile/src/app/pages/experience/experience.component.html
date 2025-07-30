@@ -2,13 +2,9 @@
   <div class="container" [style.maxWidth.px]="config.maxWidth">
     <!-- Work Experience Section -->
     <section [id]="sections[0].id" class="section">
-      <div class="section-header">
-        <h2>
-          <span nz-icon [nzType]="sections[0].icon" nzTheme="outline"></span>
-          {{ sections[0].title }}
-        </h2>
-        <div class="section-subtitle">My professional journey and achievements</div>
-      </div>
+      <app-section-header [title]="sections[0].title" [icon]="sections[0].icon">
+        <div class="section-subtitle">Over a decade of proven expertise in web development and technical leadership</div>
+      </app-section-header>
       
       <div class="experience-list">
         @for (exp of cv()?.experience?.workExperience; track exp) {
@@ -45,7 +41,7 @@
 
               @if (exp.achievements?.length) {
                 <div class="achievements">
-                  <h4>Key Achievements</h4>
+                  <h4>Notable Impact & Achievements</h4>
                   <ul>
                     @for (achievement of exp.achievements; track achievement) {
                       <li>
@@ -59,7 +55,7 @@
 
               @if (exp.responsibilities?.length) {
                 <div class="responsibilities">
-                  <h4>Key Responsibilities</h4>
+                  <h4>Core Expertise & Responsibilities</h4>
                   <ul>
                     @for (responsibility of exp.responsibilities; track responsibility) {
                       <li>
@@ -78,13 +74,9 @@
 
     <!-- Education Section -->
     <section [id]="sections[1].id" class="section">
-      <div class="section-header">
-        <h2>
-          <span nz-icon [nzType]="sections[1].icon" nzTheme="outline"></span>
-          {{ sections[1].title }}
-        </h2>
-        <div class="section-subtitle">Academic background and qualifications</div>
-      </div>
+      <app-section-header [title]="sections[1].title" [icon]="sections[1].icon">
+        <div class="section-subtitle">Strong academic foundation supporting technical excellence</div>
+      </app-section-header>
 
       <div class="education-list">
         @for (edu of cv()?.education?.education; track edu) {

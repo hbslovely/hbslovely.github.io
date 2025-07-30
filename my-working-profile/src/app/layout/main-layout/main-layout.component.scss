@@ -106,3 +106,27 @@ $color-bg-active: #e6f7ff;
     transform: translateY(0);
   }
 } 
+
+:host {
+  display: block;
+  min-height: 100vh;
+  padding-top: 64px; // Height of navbar
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 767px) {
+  :host {
+    padding-top: 56px; // Height of mobile navbar
+  }
+
+  main {
+    padding: 1.5rem 1rem;
+  }
+} 

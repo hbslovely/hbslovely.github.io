@@ -1,43 +1,181 @@
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
+.skills-page {
+  padding: 2rem 1rem;
+  
+  .container {
+    margin: 0 auto;
+  }
 
-.skill-category {
-  background: var(--card-bg);
-  border-radius: var(--border-radius);
-  padding: 1.5rem;
-  box-shadow: var(--card-shadow);
-
-  h3 {
+  .skills-layout {
     display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin: 0 0 1rem;
-    color: var(--text-color);
-    font-size: 1.25rem;
-    font-weight: 600;
+    gap: 3rem;
+    margin-top: 2rem;
 
-    [nz-icon] {
-      color: var(--primary-color);
-      font-size: 1.25rem;
+    // Word Cloud Section - Left Side
+    .word-cloud-section {
+      flex: 1;
+      min-width: 300px;
+      max-width: 500px;
+      
+      .word-cloud-container {
+        position: sticky;
+        top: 2rem;
+        width: 100%;
+        height: 500px;
+        max-height: calc(100vh - 200px);
+        
+        canvas {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    // Skills List Section - Right Side
+    .skills-content {
+      flex: 1;
+      min-width: 300px;
+
+      .skill-category {
+        &:not(:last-child) {
+          margin-bottom: 1.5rem;
+        }
+
+        .skill-category-header {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          margin-bottom: 0.75rem;
+          padding-bottom: 0.25rem;
+          border-bottom: 1px solid var(--border-color);
+
+          [nz-icon] {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+          }
+
+          h3 {
+            margin: 0;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--heading-color);
+          }
+        }
+
+        .skill-list {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+
+          .skill-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 0.75rem;
+            background: var(--background-color);
+            border-radius: var(--border-radius);
+            transition: all 0.2s ease;
+
+            &:hover {
+              background: var(--hover-bg);
+            }
+
+            .skill-name {
+              font-weight: 500;
+              font-size: 0.95rem;
+              color: var(--text-color);
+            }
+
+            .experience-level {
+              font-size: 0.8rem;
+              color: #ffffff;
+              padding: 0.15rem 0.5rem;
+              border-radius: var(--border-radius);
+              opacity: 0.9;
+            }
+          }
+        }
+      }
     }
   }
 }
 
-.skill-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+// Dark mode adjustments
+:host-context(.dark-theme) {
+  .skills-page {
+    .skill-item {
+      background: transparent;
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.05);
+      }
+    }
+  }
+}
 
-  :host ::ng-deep {
-    .ant-tag {
-      margin: 0;
-      padding: 4px 12px;
-      font-size: 0.9rem;
-      border-radius: var(--border-radius);
+// Responsive adjustments
+@media (max-width: 1024px) {
+  .skills-page {
+    .skills-layout {
+      flex-direction: column;
+      gap: 2rem;
+
+      .word-cloud-section {
+        max-width: none;
+        
+        .word-cloud-container {
+          position: relative;
+          top: 0;
+          height: 400px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-page {
+    padding: 1rem;
+
+    .skills-layout {
+      margin-top: 1rem;
+      gap: 1rem;
+
+      .word-cloud-section {
+        .word-cloud-container {
+          height: 300px;
+        }
+      }
+
+      .skills-content {
+        .skill-category {
+          margin-bottom: 1rem;
+
+          .skill-category-header {
+            margin-bottom: 0.5rem;
+
+            [nz-icon] {
+              font-size: 1.125rem;
+            }
+
+            h3 {
+              font-size: 1rem;
+            }
+          }
+
+          .skill-list {
+            gap: 0.25rem;
+
+            .skill-item {
+              padding: 0.35rem 0.5rem;
+
+              .experience-level {
+                font-size: 0.75rem;
+                padding: 0.1rem 0.4rem;
+              }
+            }
+          }
+        }
+      }
     }
   }
 } 

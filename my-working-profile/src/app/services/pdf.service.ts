@@ -479,7 +479,10 @@ export class PdfService {
     yPos = this.addSectionHeader(pdf, 'Projects', yPos, colors);
 
     if (cv.projects?.projects) {
-      cv.projects.projects.forEach((project, index) => {
+      // Filter out projects marked with excludeFromPdf
+      const includedProjects = cv.projects.projects.filter(project => !project.excludeFromPdf);
+      
+      includedProjects.forEach((project, index) => {
         // Check if we need a new page for this project
         yPos = this.checkPageBreak(pdf, yPos, 150);
 
@@ -590,7 +593,7 @@ export class PdfService {
         yPos += 0;
 
         // Add a subtle separator line between projects (except for the last one)
-        if (index < cv.projects.projects.length - 1) {
+        if (index < includedProjects.length - 1) {
           yPos += 5;
           pdf.setDrawColor(colors.accent);
           pdf.setLineWidth(1);
@@ -605,7 +608,7 @@ export class PdfService {
     pdf.setFont('Candara', 'normal');
     pdf.setFontSize(11);
     pdf.setTextColor(colors.subtext);
-    const additionalProjectsText = 'There is 10+ projects which is not showing here.';
+    const additionalProjectsText = 'There are additional projects not shown here.';
     const textWidth = pdf.getTextWidth(additionalProjectsText);
     pdf.text(additionalProjectsText, (this.A4_WIDTH - textWidth) / 2, yPos);
     yPos += 25;
