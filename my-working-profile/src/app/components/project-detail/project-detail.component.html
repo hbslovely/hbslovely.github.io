@@ -1,140 +1,127 @@
-<div class="project-detail" [class.list-view]="viewType === 'list'">
+<!-- Project Card -->
+<div class="project-card" [class.list-view]="viewType === 'list'" (click)="openProjectDialog()">
   <!-- Project Header -->
   <div class="project-header">
-    <div class="header-main">
-      <div class="title-section">
-        <h3>{{ project.name }}</h3>
-        @if (project.status) {
-          <div class="project-status">
-            <nz-tag [nzColor]="getTagColor(capitalizeStatus(project.status), 'status')">
-              {{ capitalizeStatus(project.status) }}
-            </nz-tag>
-          </div>
-        }
-      </div>
-      <div class="project-links">
-        @if (project.github) {
-          <a [href]="project.github" target="_blank" class="link-icon" title="View Source on GitHub">
-            <span nz-icon nzType="github" nzTheme="outline"></span>
-          </a>
-        }
-        @if (project.demo) {
-          <a [href]="project.demo" target="_blank" class="link-icon" title="View Live Demo">
-            <span nz-icon nzType="link" nzTheme="outline"></span>
-          </a>
-        }
-      </div>
-    </div>
-
-    <!-- Project Meta Info -->
     <div class="project-meta">
-      @if (project.company) {
-        <div class="meta-item">
-          <span nz-icon nzType="team" nzTheme="outline"></span>
-          <span>{{ project.company }}</span>
+      <div class="project-title-row">
+        <div class="project-title">
+          <h3 [innerHTML]="highlightText(project.name)"></h3>
+          <div class="project-tags">
+            @if (project.scope) {
+              <nz-tag class="scope-tag" [nzColor]="'blue'">{{ project.scope }}</nz-tag>
+            }
+            @if (project.status) {
+              <nz-tag class="status-tag" [nzColor]="getStatusColor(project.status)">{{ getStatusTranslationKey(project.status) | translate }}</nz-tag>
+            }
+          </div>
         </div>
-      }
-      <div class="meta-item">
-        <span nz-icon nzType="calendar" nzTheme="outline"></span>
-        <span>{{ project.duration }}</span>
       </div>
-      @if (project.teamSize) {
-        <div class="meta-item">
-          <span nz-icon nzType="user" nzTheme="outline"></span>
-          <span>Team Size: {{ project.teamSize }}</span>
-        </div>
-      }
+      <p class="project-brief" [innerHTML]="highlightText(project.description)"></p>
     </div>
   </div>
 
-  <!-- Project Content -->
-  <div class="project-content" [class.expanded]="isExpanded">
-    <!-- Description -->
-    <div class="description">
+  <!-- Project Footer -->
+  <div class="project-footer">
+    <div class="tech-preview">
+      @for (tech of project.technologies.slice(0, 2); track tech) {
+        <nz-tag 
+          class="tech-tag"
+          [nzColor]="selectedTechnologies.includes(tech) ? 'processing' : 'default'"
+          (click)="$event.stopPropagation(); technologyClick.emit(tech)"
+        >
+          <span [innerHTML]="highlightText(tech)"></span>
+        </nz-tag>
+      }
+      @if (project.technologies.length > 2) {
+        <span class="more-count">+{{ project.technologies.length - 2 }}</span>
+      }
+    </div>
+  </div>
+</div>
+
+<!-- Project Detail Dialog -->
+<ng-template #projectDetailDialog>
+  <div class="project-detail-dialog">
+    <div class="dialog-header">
+      <h2>{{ project.name }}</h2>
+      <div class="dialog-tags">
+        @if (project.scope) {
+          <nz-tag [nzColor]="'blue'">{{ project.scope }}</nz-tag>
+        }
+        @if (project.status) {
+          <nz-tag [nzColor]="getStatusColor(project.status)">{{ getStatusTranslationKey(project.status) | translate }}</nz-tag>
+        }
+      </div>
+    </div>
+
+    <div class="dialog-description">
       <p>{{ project.description }}</p>
     </div>
 
-    <!-- Tech Stack -->
-    <div class="tech-stack">
-      <h4>
+    <div class="dialog-section">
+      <h3>
         <span nz-icon nzType="code" nzTheme="outline"></span>
-        Technologies Used
-      </h4>
+        Technologies
+      </h3>
       <div class="tech-tags">
         @for (tech of project.technologies; track tech) {
-          <div
-            class="tech-tag"
-            [class.active]="isTechnologySelected(tech)"
+          <nz-tag 
+            [nzColor]="selectedTechnologies.includes(tech) ? 'processing' : 'default'"
             (click)="technologyClick.emit(tech)"
           >
-            <span nz-icon [nzType]="getTechnologyIcon(tech)" nzTheme="outline"></span>
             {{ tech }}
-          </div>
+          </nz-tag>
         }
       </div>
     </div>
 
-    <!-- Expandable Content -->
-    @if (viewType === 'list') {
-      <button class="expand-toggle" (click)="toggleExpand.emit()">
-        <span>{{ isExpanded ? 'Show Less' : 'Show More' }}</span>
-        <span nz-icon [nzType]="isExpanded ? 'up' : 'down'" nzTheme="outline"></span>
-      </button>
+    @if (project.environment?.length) {
+      <div class="dialog-section">
+        <h3>
+          <span nz-icon nzType="cluster" nzTheme="outline"></span>
+          Environments
+        </h3>
+        <div class="environments-list">
+          @for (env of project.environment; track env) {
+            <nz-tag>{{ env }}</nz-tag>
+          }
+        </div>
+      </div>
     }
 
-    <div class="detailed-content" [class.visible]="viewType === 'grid' || isExpanded">
-      <!-- Role & Responsibilities -->
-      <div class="role-section">
-        <h4>
-          <span nz-icon nzType="user" nzTheme="outline"></span>
-          Role & Responsibilities
-        </h4>
-        <p>{{ project.role }}</p>
+    @if (project.responsibilities?.length) {
+      <div class="dialog-section">
+        <h3>
+          <span nz-icon nzType="check-circle" nzTheme="outline"></span>
+          Key Responsibilities
+        </h3>
+        <ul>
+          @for (resp of project.responsibilities; track resp) {
+            <li>{{ resp }}</li>
+          }
+        </ul>
       </div>
+    }
 
-      <!-- Project Scope -->
-      @if (project.scope) {
-        <div class="scope-section">
-          <h4>
-            <span nz-icon nzType="aim" nzTheme="outline"></span>
-            Project Scope
-          </h4>
-          <nz-tag [nzColor]="getTagColor(project.scope, 'scope')">{{ project.scope }}</nz-tag>
+    @if (project.links?.length) {
+      <div class="dialog-section">
+        <h3>
+          <span nz-icon nzType="link" nzTheme="outline"></span>
+          Project Links
+        </h3>
+        <div class="link-list">
+          @for (link of project.links; track link) {
+            <a 
+              [href]="link.url" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <span nz-icon [nzType]="getLinkIcon(link.type)" nzTheme="outline"></span>
+              {{ link.label }}
+            </a>
+          }
         </div>
-      }
-
-      <!-- Development Environment -->
-      @if (project.environment?.length) {
-        <div class="environment-section">
-          <h4>
-            <span nz-icon nzType="cluster" nzTheme="outline"></span>
-            Development Environment
-          </h4>
-          <div class="env-tags">
-            @for (env of project.environment; track env) {
-              <nz-tag [nzColor]="getTagColor(env)">{{ env }}</nz-tag>
-            }
-          </div>
-        </div>
-      }
-
-      <!-- Key Achievements -->
-      @if (project.achievements?.length) {
-        <div class="achievements-section">
-          <h4>
-            <span nz-icon nzType="trophy" nzTheme="outline"></span>
-            Key Achievements
-          </h4>
-          <ul>
-            @for (achievement of project.achievements; track achievement) {
-              <li>
-                <span nz-icon nzType="check" nzTheme="outline"></span>
-                {{ achievement }}
-              </li>
-            }
-          </ul>
-        </div>
-      }
-    </div>
+      </div>
+    }
   </div>
-</div> 
+</ng-template> 

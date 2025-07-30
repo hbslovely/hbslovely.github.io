@@ -8,12 +8,12 @@ export const EXPERIENCE_PAGE_CONFIG = {
 export const EXPERIENCE_SECTIONS: ExperienceSection[] = [
   {
     id: 'work',
-    title: 'Work Experience',
+    title: 'SECTIONS.WORK_EXPERIENCE',
     icon: 'laptop'
   },
   {
     id: 'education',
-    title: 'Education',
+    title: 'SECTIONS.EDUCATION',
     icon: 'book'
   }
 ] as const;

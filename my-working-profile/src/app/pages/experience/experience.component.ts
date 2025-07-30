@@ -10,6 +10,7 @@ import {
   TIMELINE_CONFIG
 } from './experience.constants';
 import { SectionHeaderComponent } from '../../components/section-header/section-header.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-experience-page',
@@ -18,7 +19,8 @@ import { SectionHeaderComponent } from '../../components/section-header/section-
     CommonModule,
     NzTimelineModule,
     NzIconModule,
-    SectionHeaderComponent
+    SectionHeaderComponent,
+    TranslateModule
   ],
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.scss']

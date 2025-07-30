@@ -17,7 +17,7 @@
         "Nx"
       ],
       "role": "Front-end Developer",
-      "status": "active"
+      "status": "Active"
     },
     {
       "name": "Statrys",
@@ -41,7 +41,7 @@
         "Agile/Scrum"
       ],
       "role": "Front-end Developer",
-      "status": "completed"
+      "status": "Completed"
     },
     {
       "name": "PW",
@@ -63,14 +63,14 @@
         "Remote Desktop Connection"
       ],
       "role": "Front-end Developer",
-      "status": "completed"
+      "status": "Completed"
     },
     {
       "name": "Topicus - Web Application",
       "company": "SaigonTech",
       "duration": "Oct 2020 - Dec 2021",
       "description": "Working for a Web application for managing entities relating to the Wealth management domain (order, invoice, payment, …). The solution helps the bankers or wealth managers attract new customers and reduce the amount of work that can be handled automatically by the system.",
-      "scope": "Banking, Insurance, Wealth management",
+      "scope": "Wealth management",
       "technologies": [
         "Angular 11",
         "Ruby on Rails",
@@ -84,14 +84,14 @@
         "Agile/Scrum"
       ],
       "role": "Front-end Developer",
-      "status": "completed"
+      "status": "Completed"
     },
     {
       "name": "Finantix",
       "company": "Nashtech",
       "duration": "Dec 2018 – Oct 2020",
       "description": "Spearheaded the migration from AngularJS to Angular 7 for a comprehensive financial management platform. Developed responsive interfaces for order management, invoicing, and payment processing. Implemented wealth management demonstration tools for client presentations.",
-      "scope": "ODC – Finance, Banking, Insurance, Wealth management",
+      "scope": "Fintech",
       "technologies": [
         "Angularjs",
         "Angular 7",
@@ -110,10 +110,11 @@
         "Agile/Scrum"
       ],
       "role": "Front-end Developer, Mobile App Developer (Minor)",
-      "status": "completed"
+      "status": "Completed"
     },
     {
       "name": "Trabble",
+      "company": "NOIS",
       "duration": "Feb 2018 –Oct 2018",
       "description": "Developed a tourism chatbot platform using both Angular 5 and React, showcasing versatility in modern frontend frameworks. Integrated multiple APIs (Facebook, Google Places) and implemented real-time communication features using SignalR.",
       "technologies": [
@@ -139,10 +140,11 @@
         "Trello"
       ],
       "role": "Front-end and Back-end developer",
-      "status": "completed"
+      "status": "Completed"
     },
     {
-      "name": "DairYnz",
+      "name": "Dairy NZ",
+      "company": "NOIS",
       "duration": "Jan 2018 - Mar 2018",
       "description": "Project to build an app for using on Android and IOS devices to score the cows and allow other to score them also.",
       "technologies": [
@@ -159,11 +161,12 @@
         "Phonegap"
       ],
       "role": "Front-end Developer",
-      "status": "completed",
+      "status": "Completed",
       "excludeFromPdf": true
     },
     {
       "name": "Analytics Platform",
+      "company": "NOIS",
       "duration": "Oct 2017 - Nov 2017",
       "description": "Project for building table like Excel that allow to edit inline to manage data.",
       "technologies": [
@@ -181,11 +184,12 @@
         "Angular Cli"
       ],
       "role": "Front-end Developer",
-      "status": "completed",
+      "status": "Completed",
       "excludeFromPdf": true
     },
     {
       "name": "Bitcoin Monitoring",
+      "company": "NOIS",
       "duration": "Oct 2017 - Nov 2017",
       "description": "Project for building page to manage the status of miners. It also manage some entity like (farms, users, owner)",
       "technologies": [
@@ -206,11 +210,12 @@
         "Visual Studio 2017"
       ],
       "role": "Full-stack Developer",
-      "status": "completed",
+      "status": "Completed",
       "excludeFromPdf": true
     },
     {
       "name": "Alythex",
+      "company": "NOIS",
       "duration": "Aug 2017 - Oct 2017",
       "description": "Project for showing up reports from PowerBi. The whole page is just for showing up UI that is already built",
       "technologies": [
@@ -228,11 +233,12 @@
         "Angular Cli"
       ],
       "role": "Front-end Developer",
-      "status": "completed",
+      "status": "Completed",
       "excludeFromPdf": true
     },
     {
       "name": "Alythex Admin",
+      "company": "NOIS",
       "duration": "Aug 2017 - Oct 2017",
       "description": "Admin page for manage users, clients and embed codes from Alythex project",
       "technologies": [
@@ -250,11 +256,12 @@
         "Angular Cli"
       ],
       "role": "Front-end Developer",
-      "status": "completed",
+      "status": "Completed",
       "excludeFromPdf": true
     },
     {
-      "name": "Cibos Portal",
+      "name": "CIBOS Portal",
+      "company": "NOIS",
       "duration": "Apr 2017 - Jun 2017",
       "description": "Project building a page allow user to login and upload foods. Other people also login, see these foods and take an order.",
       "scope": "Management",
@@ -272,11 +279,12 @@
         "Webpack"
       ],
       "role": "Front-end Developer",
-      "status": "completed",
+      "status": "Completed",
       "excludeFromPdf": true
     },
     {
-      "name": "Cibos Admin",
+      "name": "CIBOS Admin",
+      "company": "NOIS",
       "duration": "Apr 2017 - Jul 2017",
       "description": "Part of CIBOS Project for building the Admin management page",
       "scope": "Management",
@@ -294,11 +302,12 @@
         "Webpack"
       ],
       "role": "Front-end Developer",
-      "status": "completed",
+      "status": "Completed",
       "excludeFromPdf": true
     },
     {
       "name": "AMS",
+      "company": "NOIS",
       "duration": "Apr 2016",
       "description": "One another project look like IMS but with more features (detecting the fault…).",
       "scope": "Network Management",
@@ -318,11 +327,12 @@
         "Grunt"
       ],
       "role": "Front-end Developer",
-      "status": "completed",
+      "status": "Completed",
       "excludeFromPdf": true
     },
     {
       "name": "IMS",
+      "company": "NOIS",
       "duration": "Apr 2016",
       "description": "Part of project allow user to show data uploaded via map view and can integrate with map like adding more items, remove or marking items. It also allows user to view data summary via chart view.",
       "scope": "Network Management",
@@ -342,11 +352,12 @@
         "Grunt"
       ],
       "role": "Front-end Developer",
-      "status": "completed",
+      "status": "Completed",
       "excludeFromPdf": true
     },
     {
       "name": "DMS",
+      "company": "NOIS",
       "duration": "Jan 2016",
       "description": "Page for manage document uploaded by users. It also manages some entity.",
       "scope": "Management",
@@ -367,11 +378,12 @@
         "Grunt"
       ],
       "role": "Front-end Developer",
-      "status": "completed",
+      "status": "Completed",
       "excludeFromPdf": true
     },
     {
       "name": "Soev App",
+      "company": "NOIS",
       "duration": "Mar 2016 - Sep 2016",
       "description": "A social network page for sharing places, contribute the feeling about places or events",
       "scope": "Social network",
@@ -390,11 +402,12 @@
         "Grunt"
       ],
       "role": "Front-end Developer",
-      "status": "completed",
+      "status": "Completed",
       "excludeFromPdf": true
     },
     {
-      "name": "Sift Security",
+      "name": "SIFT Security",
+      "company": "NOIS",
       "duration": "May 2015 - Jun 2016",
       "description": "A page for manage devices in a network as well as using machine learning for detecting anomalies connections via graphic instance.",
       "scope": "Network Management",
@@ -419,7 +432,7 @@
         "Grunt"
       ],
       "role": "Front-end Developer",
-      "status": "completed",
+      "status": "Completed",
       "excludeFromPdf": true
     },
     {
@@ -444,7 +457,7 @@
         "Git"
       ],
       "role": "Full-stack Developer",
-      "status": "completed",
+      "status": "Completed",
       "excludeFromPdf": true
     }
   ]

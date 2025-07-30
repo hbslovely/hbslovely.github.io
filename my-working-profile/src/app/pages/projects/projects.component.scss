@@ -30,12 +30,71 @@
     // Toolbar Section
     .toolbar-section {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      margin: 2rem 0;
-      padding: 0.5rem;
-      background: var(--background-color);
-      border-radius: var(--border-radius);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+
+      .search-box {
+        flex: 1;
+        position: relative;
+        min-width: 200px;
+
+        span[nz-icon] {
+          position: absolute;
+          left: 12px;
+          top: 50%;
+          transform: translateY(-50%);
+          color: #8c8c8c;
+        }
+
+        input {
+          width: 100%;
+          padding: 8px 32px;
+          border: 1px solid #d9d9d9;
+          border-radius: 6px;
+          font-size: 14px;
+          transition: all 0.3s;
+
+          &:focus {
+            border-color: #40a9ff;
+            box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+            outline: none;
+          }
+
+          &::placeholder {
+            color: #bfbfbf;
+          }
+        }
+
+        .clear-search {
+          position: absolute;
+          right: 12px;
+          top: 50%;
+          transform: translateY(-50%);
+          background: none;
+          border: none;
+          padding: 4px;
+          cursor: pointer;
+          color: #8c8c8c;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          width: 20px;
+          height: 20px;
+          transition: all 0.2s ease;
+
+          &:hover {
+            color: #595959;
+            background-color: rgba(0, 0, 0, 0.04);
+          }
+
+          [nz-icon] {
+            font-size: 14px;
+          }
+        }
+      }
 
       .view-controls {
         display: flex;
@@ -93,13 +152,11 @@
         }
 
         .filter-badge {
-          background: var(--danger-color);
+          background: #1890ff;
           color: white;
-          padding: 0.1rem 0.4rem;
-          border-radius: 1rem;
-          font-size: 0.75rem;
-          min-width: 1.2rem;
-          text-align: center;
+          padding: 2px 8px;
+          border-radius: 10px;
+          font-size: 12px;
         }
       }
     }
@@ -414,4 +471,11 @@
       }
     }
   }
+}
+
+// Highlight styles
+:host ::ng-deep mark {
+  background-color: #fffb8f;
+  padding: 0;
+  border-radius: 2px;
 }

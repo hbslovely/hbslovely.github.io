@@ -1,354 +1,228 @@
-:host {
-  --project-border-color: #1e3a8a; // Dark blue border
-  --project-hover-border: #2563eb; // Slightly lighter blue for hover
-  --section-divider: rgba(0, 0, 0, 0.06);
-  --project-bg: rgba(243, 244, 246, 0.5); // Light gray background
-  --project-hover-bg: rgba(243, 244, 246, 0.8); // Slightly darker on hover
+.project-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
 
-  .project-detail {
-    background: var(--project-bg);
-    border: 1px solid var(--project-border-color);
-    border-radius: 12px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden;
-    position: relative;
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+  }
+
+  &.list-view {
+    height: auto;
+    min-height: 280px;
+
+    .project-header {
+      padding: 1.5rem;
+    }
+  }
+}
+
+.project-header {
+  padding: 1.5rem;
+  background: #fff;
+  flex: 1;
+  overflow: hidden;
+}
+
+.project-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.project-title {
+  flex: 1;
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0 0 0.5rem;
+    line-height: 1.4;
+
+    ::ng-deep mark {
+      background-color: #fff3cd;
+      padding: 0;
+      border-radius: 2px;
+    }
+  }
+}
+
+.project-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+
+  .scope-tag, .status-tag {
+    font-size: 0.8rem;
+    padding: 0 0.75rem;
+    border-radius: 4px;
+  }
+}
+
+.project-brief {
+  color: #5a6c7d;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0.75rem 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  ::ng-deep mark {
+    background-color: #fff3cd;
+    padding: 0;
+    border-radius: 2px;
+  }
+}
+
+.project-footer {
+  padding: 1rem 1.5rem;
+  background: #f8f9fa;
+  border-top: 1px solid #edf0f2;
+}
+
+.tech-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+
+  .tech-tag {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.85rem;
 
     &:hover {
-      border-color: var(--project-hover-border);
-      transform: translateY(-2px);
-      background: var(--project-hover-bg);
+      transform: translateY(-1px);
+    }
+  }
+
+  .more-count {
+    font-size: 0.85rem;
+    color: #666;
+    background: #e6e8eb;
+    padding: 0 8px;
+    border-radius: 4px;
+    height: 24px;
+    line-height: 24px;
+    display: inline-block;
+  }
+}
+
+// Dialog Styles
+.project-detail-dialog {
+  max-width: 800px;
+  padding: 1rem;
+
+  .dialog-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #edf0f2;
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin: 0 0 1rem;
     }
 
-    // Project Header
-    .project-header {
-      padding: 1.75rem;
-      border-bottom: 1px solid var(--section-divider);
-      background: linear-gradient(to bottom, rgba(0,0,0,0.01), transparent);
+    .dialog-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+  }
 
-      .header-main {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 1.25rem;
+  .dialog-description {
+    color: #5a6c7d;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
 
-        .title-section {
-          flex: 1;
-          margin-right: 1.5rem;
+  .dialog-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #edf0f2;
 
-          h3 {
-            margin: 0 0 0.75rem;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--heading-color);
-            letter-spacing: -0.02em;
-          }
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
 
-          .project-status {
-            margin-top: 0.75rem;
-          }
-        }
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #2c3e50;
+      margin: 0 0 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
 
-        .project-links {
-          display: flex;
-          gap: 0.875rem;
-
-          .link-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 2.25rem;
-            height: 2.25rem;
-            color: var(--text-secondary);
-            border-radius: 8px;
-            transition: all 0.2s ease;
-            border: 1px solid var(--project-border-color);
-
-            &:hover {
-              color: var(--primary-color);
-              background: var(--hover-bg);
-              border-color: var(--project-hover-border);
-            }
-
-            [nz-icon] {
-              font-size: 1.25rem;
-            }
-          }
-        }
-      }
-
-      .project-meta {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 1rem;
-        margin-top: 1.25rem;
-        padding-top: 1.25rem;
-        border-top: 1px solid var(--section-divider);
-
-        .meta-item {
-          display: flex;
-          align-items: center;
-          gap: 0.75rem;
-          color: var(--text-secondary);
-          font-size: 0.9375rem;
-
-          [nz-icon] {
-            font-size: 1.125rem;
-            color: var(--primary-color);
-            opacity: 0.9;
-          }
-        }
+      span[nz-icon] {
+        color: #3498db;
       }
     }
 
-    // Project Content
-    .project-content {
-      padding: 1.75rem;
+    .tech-tags, .environments-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
 
-      .description {
-        color: var(--text-color);
-        line-height: 1.7;
-        margin-bottom: 2rem;
-        font-size: 1rem;
-      }
+    ul {
+      margin: 0;
+      padding-left: 1.5rem;
+      color: #5a6c7d;
 
-      // Tech Stack
-      .tech-stack {
-        margin-bottom: 2rem;
+      li {
+        margin-bottom: 0.75rem;
+        line-height: 1.6;
 
-        h4 {
-          display: flex;
-          align-items: center;
-          gap: 0.75rem;
-          margin-bottom: 1.25rem;
-          font-size: 1.125rem;
-          color: var(--heading-color);
-          font-weight: 500;
-
-          [nz-icon] {
-            color: var(--primary-color);
-            opacity: 0.9;
-          }
-        }
-
-        .tech-tags {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.875rem;
-
-          .tech-tag {
-            display: flex;
-            align-items: center;
-            gap: 0.625rem;
-            padding: 0.5rem 1rem;
-            background: var(--tag-bg);
-            border: 1px solid var(--project-border-color);
-            border-radius: 8px;
-            font-size: 0.9375rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-
-            &:hover {
-              background: var(--hover-bg);
-              border-color: var(--project-hover-border);
-            }
-
-            &.active {
-              background: var(--primary-color);
-              color: white;
-              border-color: transparent;
-
-              [nz-icon] {
-                color: white;
-              }
-            }
-
-            [nz-icon] {
-              font-size: 1.125rem;
-              color: var(--primary-color);
-            }
-          }
+        &:last-child {
+          margin-bottom: 0;
         }
       }
+    }
 
-      // Expand Toggle
-      .expand-toggle {
-        display: flex;
+    .link-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      a {
+        display: inline-flex;
         align-items: center;
-        gap: 0.625rem;
-        padding: 0.625rem 1rem;
-        border: 1px solid var(--project-border-color);
-        background: var(--background-color);
-        color: var(--primary-color);
-        font-weight: 500;
-        cursor: pointer;
-        margin: 1.25rem 0;
-        border-radius: 8px;
+        gap: 0.5rem;
+        color: #3498db;
+        text-decoration: none;
+        padding: 0.5rem 0.75rem;
+        border-radius: 6px;
+        background: #f8f9fa;
         transition: all 0.2s ease;
+        font-size: 0.9rem;
 
         &:hover {
-          background: var(--hover-bg);
-          border-color: var(--project-hover-border);
+          background: #edf7ff;
+          transform: translateY(-1px);
         }
 
-        [nz-icon] {
-          font-size: 0.9375rem;
-        }
-      }
-
-      // Detailed Content
-      .detailed-content {
-        display: none;
-        margin-top: 2rem;
-        border-top: 1px solid var(--section-divider);
-        padding-top: 2rem;
-
-        &.visible {
-          display: block;
-          animation: fadeIn 0.3s ease;
-        }
-
-        .role-section,
-        .scope-section,
-        .environment-section,
-        .achievements-section {
-          margin-bottom: 2rem;
-          padding: 1.5rem;
-          border: 1px solid var(--project-border-color);
-          border-radius: 8px;
-          background: linear-gradient(to bottom, rgba(0,0,0,0.01), transparent);
-
-          h4 {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1.25rem;
-            font-size: 1.125rem;
-            color: var(--heading-color);
-            font-weight: 500;
-
-            [nz-icon] {
-              color: var(--primary-color);
-              opacity: 0.9;
-            }
-          }
-        }
-
-        .role-section p {
-          color: var(--text-color);
-          line-height: 1.7;
-          margin: 0;
-        }
-
-        .env-tags {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.75rem;
-        }
-
-        .achievements-section {
-          ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-
-            li {
-              display: flex;
-              align-items: flex-start;
-              gap: 1rem;
-              color: var(--text-color);
-              line-height: 1.7;
-              margin-bottom: 1rem;
-              padding: 0.75rem;
-              border-radius: 6px;
-              background: var(--tag-bg);
-              border: 1px solid var(--project-border-color);
-
-              &:last-child {
-                margin-bottom: 0;
-              }
-
-              [nz-icon] {
-                color: var(--primary-color);
-                margin-top: 0.25rem;
-                opacity: 0.9;
-              }
-            }
-          }
-        }
-      }
-    }
-
-    // List View Modifications
-    &.list-view {
-      .project-header {
-        padding: 1.5rem;
-      }
-
-      .project-content {
-        padding: 1.5rem;
-
-        .description {
-          margin-bottom: 1.5rem;
-        }
-
-        .tech-stack {
-          margin-bottom: 1.5rem;
-        }
-      }
-    }
-  }
-}
-
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-// Responsive Adjustments
-@media (max-width: 768px) {
-  .project-detail {
-    .project-header {
-      padding: 1.25rem;
-
-      .header-main {
-        flex-direction: column;
-        gap: 1.25rem;
-
-        .project-links {
-          justify-content: flex-start;
-        }
-
-        .title-section {
-          margin-right: 0;
-        }
-      }
-
-      .project-meta {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-    }
-
-    .project-content {
-      padding: 1.25rem;
-
-      .tech-tags {
-        gap: 0.625rem;
-      }
-
-      .detailed-content {
-        .role-section,
-        .scope-section,
-        .environment-section,
-        .achievements-section {
-          padding: 1.25rem;
+        span[nz-icon] {
+          font-size: 1rem;
         }
       }
     }

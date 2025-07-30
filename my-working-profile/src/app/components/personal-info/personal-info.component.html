@@ -12,7 +12,7 @@
       </div>
       
       <div class="name-title">
-        <h1>{{ info?.name }}</h1>
+        <h1><span class="name-prefix">{{ info?.prefix }}</span>{{ info?.name }}</h1>
         <h2>{{ info?.title }}</h2>
         <div class="location">
           <span nz-icon nzType="environment" nzTheme="outline"></span>
@@ -60,7 +60,7 @@
     <div class="professional-summary">
       <h3>
         <span nz-icon nzType="user" nzTheme="outline"></span>
-        Professional Summary
+        {{ 'PERSONAL_INFO.PROFESSIONAL_SUMMARY' | translate }}
       </h3>
       <p>{{ info?.summary }}</p>
     </div>
@@ -71,7 +71,7 @@
       <div class="info-section" *ngIf="info?.languages?.length">
         <h3>
           <span nz-icon nzType="global" nzTheme="outline"></span>
-          Languages
+          {{ 'PERSONAL_INFO.LANGUAGES' | translate }}
         </h3>
         <div class="language-grid">
           <div class="language-item" *ngFor="let lang of info?.languages">
@@ -85,7 +85,7 @@
       <div class="info-section" *ngIf="info?.interests?.length">
         <h3>
           <span nz-icon nzType="star" nzTheme="outline"></span>
-          Areas of Interest
+          {{ 'PERSONAL_INFO.AREAS_OF_INTEREST' | translate }}
         </h3>
         <div class="interests-grid">
           <nz-tag *ngFor="let interest of info?.interests">{{ interest }}</nz-tag>
@@ -96,7 +96,7 @@
       <div class="info-section" *ngIf="info?.availability">
         <h3>
           <span nz-icon nzType="clock-circle" nzTheme="outline"></span>
-          Work Preferences
+          {{ 'PERSONAL_INFO.WORK_PREFERENCES' | translate }}
         </h3>
         <div class="preferences-grid">
           <div class="preference-item" *ngIf="info?.availability?.preferredWorkType">

@@ -1,70 +1,94 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewChild, TemplateRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NzModalModule, NzModalService } from 'ng-zorro-antd/modal';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 import { Project } from '../../models/cv.models';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-project-detail',
+  templateUrl: './project-detail.component.html',
+  styleUrls: ['./project-detail.component.scss'],
   standalone: true,
   imports: [
     CommonModule,
     NzIconModule,
-    NzTagModule
-  ],
-  templateUrl: './project-detail.component.html',
-  styleUrls: ['./project-detail.component.scss']
+    NzTagModule,
+    NzModalModule,
+    NzButtonModule,
+    TranslateModule
+  ]
 })
 export class ProjectDetailComponent {
   @Input() project!: Project;
   @Input() viewType: 'grid' | 'list' = 'grid';
-  @Input() isExpanded = false;
   @Input() selectedTechnologies: string[] = [];
+  @Input() highlightedText = '';
+  @Input() isExpanded = false;
 
-  @Output() toggleExpand = new EventEmitter<void>();
   @Output() technologyClick = new EventEmitter<string>();
 
-  getTagColor(tag: string, type: 'technology' | 'scope' | 'status' = 'technology'): string {
-    const isSelected = type === 'technology' ? this.isTechnologySelected(tag) : false;
-    const colorMap: Record<string, string> = {
-      'Angular': '#DD0031',
-      'React': '#61DAFB',
-      'TypeScript': '#3178C6',
-      'JavaScript': '#F7DF1E',
-      'Frontend': '#1890ff',
-      'Backend': '#52c41a',
-      'Full Stack': '#722ed1',
-      'Active': '#52c41a',
-      'Completed': '#1890ff',
-      'Maintenance': '#faad14'
-    };
+  @ViewChild('projectDetailDialog') projectDetailDialog!: TemplateRef<any>;
 
-    if (isSelected) {
-      return colorMap[tag] || 'processing';
+  constructor(private modalService: NzModalService) {}
+
+  highlightText(text: string): string {
+    if (!text || !this.highlightedText) return text;
+    
+    const searchRegex = new RegExp(this.highlightedText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+    return text.replace(searchRegex, match => `<mark>${match}</mark>`).trim();
+  }
+
+  getStatusColor(status: string): string {
+    switch (status.toLowerCase()) {
+      case 'completed':
+        return 'success';
+      case 'in progress':
+        return 'processing';
+      case 'planned':
+        return 'default';
+      case 'active':
+        return 'processing';
+      default:
+        return 'default';
     }
-    return colorMap[tag] || 'default';
   }
 
-  getTechnologyIcon(tech: string): string {
-    const iconMap: Record<string, string> = {
-      'Angular': 'code-sandbox',
-      'React': 'code-sandbox',
-      'TypeScript': 'code',
-      'JavaScript': 'code',
-      'Node.js': 'api',
-      'HTML': 'html5',
-      'CSS': 'bg-colors',
-      'SCSS': 'bg-colors'
-    };
-    return iconMap[tech] || 'code';
+  getStatusTranslationKey(status: string): string {
+    switch (status.toLowerCase()) {
+      case 'active':
+        return 'STATUS.ACTIVE';
+      case 'completed':
+        return 'STATUS.COMPLETED';
+      default:
+        return status;
+    }
   }
 
-  isTechnologySelected(tech: string): boolean {
-    return this.selectedTechnologies.includes(tech);
+  getLinkIcon(type: string): string {
+    switch (type.toLowerCase()) {
+      case 'github':
+        return 'github';
+      case 'demo':
+        return 'play-circle';
+      case 'documentation':
+        return 'book';
+      default:
+        return 'link';
+    }
   }
 
-  // Helper method to capitalize status
-  capitalizeStatus(status: string): string {
-    return status.charAt(0).toUpperCase() + status.slice(1);
+  openProjectDialog(): void {
+    this.modalService.create({
+      nzTitle: '',
+      nzContent: this.projectDetailDialog,
+      nzFooter: null,
+      nzWidth: 800,
+      nzClassName: 'project-detail-modal',
+      nzCentered: true,
+      nzMaskClosable: true
+    });
   }
-} 
+}

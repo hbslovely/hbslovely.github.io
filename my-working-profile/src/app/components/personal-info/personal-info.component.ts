@@ -5,6 +5,7 @@ import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzModalModule, NzModalService } from 'ng-zorro-antd/modal';
 import { PersonalInfo } from '../../models/cv.models';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-personal-info',
@@ -14,7 +15,8 @@ import { PersonalInfo } from '../../models/cv.models';
     NzIconModule, 
     NzTypographyModule, 
     NzTagModule,
-    NzModalModule
+    NzModalModule,
+    TranslateModule
   ],
   templateUrl: './personal-info.component.html',
   styleUrls: ['./personal-info.component.scss']

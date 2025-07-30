@@ -18,41 +18,8 @@ import { LanguageService } from '../../services/language.service';
     NzToolTipModule,
     TranslateModule
   ],
-  template: `
-    <button 
-      nz-button 
-      nzType="text"
-      class="export-button"
-      [nzLoading]="isExporting"
-      (click)="exportToPDF()" 
-      [disabled]="isExporting"
-      *ngIf="languageService.getCurrentLanguage() === 'en'"
-      nz-tooltip
-      [nzTooltipTitle]="'ACTIONS.EXPORT_PDF' | translate"
-    >
-      <span nz-icon [nzType]="'file-pdf'" nzTheme="outline"></span>
-    </button>
-  `,
-  styles: [`
-    .export-button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      transition: all 0.3s ease;
-
-      &:hover {
-        background-color: var(--primary-lightest);
-        color: var(--primary-color);
-      }
-
-      [nz-icon] {
-        font-size: 20px;
-      }
-    }
-  `]
+  templateUrl: './export-pdf.component.html',
+  styleUrls: ['./export-pdf.component.scss']
 })
 export class ExportPdfComponent {
   private pdfService = inject(PdfService);

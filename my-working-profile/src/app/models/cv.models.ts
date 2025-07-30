@@ -7,17 +7,30 @@ export interface Project {
   technologies: string[];
   environment: string[];
   role: string;
-  status?: 'active' | 'completed' | 'maintenance';
+  status?: 'Active' | 'Completed' | 'Maintenance';
   teamSize?: number;
   image?: string;
   github?: string;
   demo?: string;
   achievements?: string[];
+  responsibilities?: string[];
+  links?: Array<{
+    type: string;
+    url: string;
+    label: string;
+  }>;
   minor?: boolean; // Flag to indicate if this is a minor project
   excludeFromPdf?: boolean; // Flag to indicate project should be excluded from PDF but isn't minor
 }
 
+export interface ProjectEnvironment {
+  name: string;
+  url?: string;
+  description?: string;
+}
+
 export interface PersonalInfo {
+  prefix?: string;
   name: string;
   title: string;
   dateOfBirth: string;

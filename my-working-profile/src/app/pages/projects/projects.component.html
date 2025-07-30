@@ -1,19 +1,33 @@
 <div [class]="config.className">
   <div class="container" [style.maxWidth.px]="config.maxWidth">
-    <app-section-header title="Featured Projects" icon="project">
-      <div class="section-subtitle">
-        Specialized in Angular development with 4+ years of experience, and proficient in React with 2+ years of hands-on expertise
-      </div>
+    <app-section-header 
+      title="SECTIONS.FEATURED_PROJECTS" 
+      icon="project"
+      subtitle="SECTIONS.SUBTITLES.FEATURED_PROJECTS">
     </app-section-header>
 
     <!-- Toolbar Section -->
     <div class="toolbar-section">
+      <div class="search-box">
+        <span nz-icon nzType="search" nzTheme="outline"></span>
+        <input 
+          type="text" 
+          [ngModel]="searchText()" 
+          [placeholder]="'PROJECTS.SEARCH_PLACEHOLDER' | translate"
+          (ngModelChange)="searchText.set($event)"
+        >
+        @if (searchText()) {
+          <button class="clear-search" (click)="searchText.set('')">
+            <span nz-icon nzType="close-circle" nzTheme="outline"></span>
+          </button>
+        }
+      </div>
       <div class="view-controls">
         <button 
           class="view-toggle" 
           [class.active]="viewType() === 'grid'"
           (click)="setViewType('grid')" 
-          title="Grid View"
+          [title]="'PROJECTS.VIEWS.GRID' | translate"
         >
           <span nz-icon nzType="appstore" nzTheme="outline"></span>
         </button>
@@ -21,7 +35,7 @@
           class="view-toggle" 
           [class.active]="viewType() === 'list'"
           (click)="setViewType('list')" 
-          title="List View"
+          [title]="'PROJECTS.VIEWS.LIST' | translate"
         >
           <span nz-icon nzType="unordered-list" nzTheme="outline"></span>
         </button>
@@ -30,10 +44,10 @@
         class="filter-toggle" 
         [class.active]="isFilterVisible()"
         (click)="toggleFilters()" 
-        title="Toggle Filters"
+        [title]="'PROJECTS.FILTERS.TITLE' | translate"
       >
         <span nz-icon nzType="filter" nzTheme="outline"></span>
-        Filters
+        {{ 'PROJECTS.FILTER_BUTTON' | translate }}
         @if (selectedTechnologies().length || selectedScopes().length || selectedStatuses().length) {
           <span class="filter-badge">{{ getTotalFiltersCount() }}</span>
         }
@@ -43,11 +57,11 @@
     <!-- Filter Section -->
     <div class="filters-section" [class.visible]="isFilterVisible()">
       <div class="filters-header">
-        <h3>Filter Projects</h3>
+        <h3>{{ 'PROJECTS.FILTERS.TITLE' | translate }}</h3>
         @if (selectedTechnologies().length || selectedScopes().length || selectedStatuses().length) {
           <button class="clear-filters" (click)="clearFilters()">
             <span nz-icon nzType="clear" nzTheme="outline"></span>
-            Clear All
+            {{ 'PROJECTS.FILTERS.CLEAR_ALL' | translate }}
           </button>
         }
       </div>
@@ -56,7 +70,7 @@
       <div class="filter-group">
         <div class="group-header">
           <span nz-icon nzType="code" nzTheme="outline"></span>
-          Technologies
+          {{ 'PROJECTS.FILTERS.TECHNOLOGIES' | translate }}
         </div>
         <div class="filter-tags">
           @for (tech of allTechnologies(); track tech) {
@@ -77,7 +91,7 @@
         <div class="filter-group">
           <div class="group-header">
             <span nz-icon nzType="aim" nzTheme="outline"></span>
-            Project Scope
+            {{ 'PROJECTS.FILTERS.PROJECT_SCOPE' | translate }}
           </div>
           <div class="filter-tags">
             @for (scope of allScopes(); track scope) {
@@ -98,7 +112,7 @@
         <div class="filter-group">
           <div class="group-header">
             <span nz-icon nzType="check-circle" nzTheme="outline"></span>
-            Project Status
+            {{ 'PROJECTS.FILTERS.PROJECT_STATUS' | translate }}
           </div>
           <div class="filter-tags">
             @for (status of allStatuses(); track status) {
@@ -123,6 +137,7 @@
           [viewType]="viewType()"
           [isExpanded]="isProjectExpanded(project)"
           [selectedTechnologies]="selectedTechnologies()"
+          [highlightedText]="searchText()"
           (toggleExpand)="toggleProjectExpansion(project)"
           (technologyClick)="toggleTechnologyFilter($event)"
         ></app-project-detail>

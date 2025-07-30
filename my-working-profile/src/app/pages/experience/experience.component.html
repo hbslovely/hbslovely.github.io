@@ -3,7 +3,7 @@
     <!-- Work Experience Section -->
     <section [id]="sections[0].id" class="section">
       <app-section-header [title]="sections[0].title" [icon]="sections[0].icon">
-        <div class="section-subtitle">Over a decade of proven expertise in web development and technical leadership</div>
+        <div class="section-subtitle">{{ 'SECTIONS.SUBTITLES.WORK_EXPERIENCE' | translate }}</div>
       </app-section-header>
       
       <div class="experience-list">
@@ -41,7 +41,7 @@
 
               @if (exp.achievements?.length) {
                 <div class="achievements">
-                  <h4>Notable Impact & Achievements</h4>
+                  <h4>{{ 'SECTIONS.WORK_EXPERIENCE.NOTABLE_ACHIEVEMENTS' | translate }}</h4>
                   <ul>
                     @for (achievement of exp.achievements; track achievement) {
                       <li>
@@ -55,7 +55,7 @@
 
               @if (exp.responsibilities?.length) {
                 <div class="responsibilities">
-                  <h4>Core Expertise & Responsibilities</h4>
+                  <h4>{{ 'SECTIONS.WORK_EXPERIENCE.CORE_RESPONSIBILITIES' | translate }}</h4>
                   <ul>
                     @for (responsibility of exp.responsibilities; track responsibility) {
                       <li>
@@ -75,7 +75,7 @@
     <!-- Education Section -->
     <section [id]="sections[1].id" class="section">
       <app-section-header [title]="sections[1].title" [icon]="sections[1].icon">
-        <div class="section-subtitle">Strong academic foundation supporting technical excellence</div>
+        <div class="section-subtitle">{{ 'SECTIONS.SUBTITLES.EDUCATION' | translate }}</div>
       </app-section-header>
 
       <div class="education-list">
