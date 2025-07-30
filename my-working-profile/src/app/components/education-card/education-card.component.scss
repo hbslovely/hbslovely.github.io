@@ -68,32 +68,19 @@
 
     .meta-info {
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      padding: 16px;
-      background: #f8f9fa;
-      border-radius: 8px;
-      margin-top: 4px;
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+      color: #666;
+      font-size: 0.9rem;
 
-      span {
+      .meta-item {
         display: flex;
         align-items: center;
-        gap: 8px;
-        background: #fff;
-        padding: 6px 12px;
-        border-radius: 20px;
-        border: 1px solid #e8e8e8;
-        transition: all 0.2s ease;
-        color: #666;
-
-        &:hover {
-          border-color: #1890ff;
-          transform: translateY(-1px);
-        }
+        gap: 0.5rem;
 
         [nz-icon] {
-          color: #1890ff;
           font-size: 1rem;
+          color: #1890ff;
         }
       }
     }

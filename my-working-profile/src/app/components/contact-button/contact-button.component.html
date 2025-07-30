@@ -1,0 +1,4 @@
+<button class="contact-button" (click)="contact()" *ngIf="cvService.cv()?.personalInfo?.contact">
+  <span nz-icon [nzType]="isMobile ? 'phone' : 'mail'" nzTheme="outline"></span>
+  <span class="tooltip">{{ isMobile ? 'Call me' : 'Email me' }}</span>
+</button>

@@ -1,14 +1,13 @@
 .experience-card {
-  background: #fff;
+  padding: 1.5rem;
+  border: 1px solid #e8e8e8;
   border-radius: 8px;
-  padding: 24px;
-  margin-bottom: 24px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: #fff;
+  transition: all 0.3s ease;
 
   &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
   .card-header {
@@ -62,33 +61,29 @@
 
     .meta-info {
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      padding: 16px 0;
-      background: #f0f2f5;
-      border-radius: 8px;
-      margin-top: 4px;
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+      color: #666;
+      font-size: 0.9rem;
 
-      span {
+      .meta-item {
         display: flex;
         align-items: center;
-        gap: 8px;
-        background: #fff;
-        padding: 6px 12px;
-        border-radius: 20px;
-        transition: all 0.2s ease;
-
-        &:hover {
-          transform: translateY(-1px);
-          background: #e6f7ff;
-        }
+        gap: 0.5rem;
 
         [nz-icon] {
-          color: #1890ff;
           font-size: 1rem;
+          color: #1890ff;
         }
       }
     }
+  }
+
+  .decorative-line {
+    height: 1px;
+    background: linear-gradient(to right, #e8e8e8 0%, #1890ff 50%, #e8e8e8 100%);
+    margin: 1.5rem 0;
+    opacity: 0.6;
   }
 
   .card-content {

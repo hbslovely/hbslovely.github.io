@@ -11,20 +11,22 @@
       </div>
     </div>
     <div class="meta-info">
-      <span class="duration">
+      <div class="meta-item">
         <span nz-icon nzType="calendar" nzTheme="outline"></span>
         {{ experience.startDate }} - {{ experience.current ? 'Present' : experience.endDate }}
-      </span>
-      <span class="location">
+      </div>
+      <div class="meta-item">
         <span nz-icon nzType="environment" nzTheme="outline"></span>
         {{ experience.location }}
-      </span>
-      <span class="type">
+      </div>
+      <div class="meta-item">
         <span nz-icon nzType="team" nzTheme="outline"></span>
         {{ experience.type }}
-      </span>
+      </div>
     </div>
   </div>
+
+  <div class="decorative-line"></div>
 
   <div class="card-content">
     @if (experience.achievements?.length) {

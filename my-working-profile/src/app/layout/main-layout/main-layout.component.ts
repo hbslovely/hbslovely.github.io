@@ -1,14 +1,22 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { NavBarComponent } from '../../components/nav-bar/nav-bar.component';
-import { WatermarkComponent } from '../../components/watermark/watermark.component';
 import { FooterComponent } from '../../components/footer/footer.component';
-import { NzIconModule } from 'ng-zorro-antd/icon';
+import { ContactButtonComponent } from '../../components/contact-button/contact-button.component';
+import { WatermarkComponent } from '../../components/watermark/watermark.component';
 
 @Component({
   selector: 'app-main-layout',
   standalone: true,
-  imports: [RouterOutlet, NavBarComponent, WatermarkComponent, FooterComponent, NzIconModule],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    NavBarComponent,
+    FooterComponent,
+    ContactButtonComponent,
+    WatermarkComponent
+  ],
   templateUrl: './main-layout.component.html',
   styleUrls: ['./main-layout.component.scss']
 })

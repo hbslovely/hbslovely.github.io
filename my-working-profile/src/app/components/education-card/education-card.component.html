@@ -13,15 +13,15 @@
       </div>
     </div>
     <div class="meta-info">
-      <span class="duration">
+      <div class="meta-item">
         <span nz-icon nzType="calendar" nzTheme="outline"></span>
         {{ education.startDate }} - {{ education.endDate }}
-      </span>
+      </div>
       @if (education.grade) {
-        <span class="grade">
+        <div class="meta-item">
           <span nz-icon nzType="trophy" nzTheme="outline"></span>
           {{ education.grade }}
-        </span>
+        </div>
       }
     </div>
   </div>
