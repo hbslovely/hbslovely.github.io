@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { removeVietnameseTones } from '../../shared/utils/string.utils';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PlaceCardComponent } from '../../shared/components/place-card/place-card.component';
+import { MemoryPlacesFilterComponent } from '../../shared/components/memory-places-filter/memory-places-filter.component';
 
 interface Filter {
   region: string[];
@@ -44,7 +45,7 @@ interface LocationMappings {
 @Component({
   selector: 'app-memory-places',
   standalone: true,
-  imports: [CommonModule, PlaceCardComponent, FormsModule],
+  imports: [CommonModule, PlaceCardComponent, FormsModule, MemoryPlacesFilterComponent],
   templateUrl: './memory-places.component.html',
   styleUrls: ['./memory-places.component.scss']
 })
@@ -126,30 +127,15 @@ export class MemoryPlacesComponent implements OnInit {
     });
   }
 
-  toggleFilter(type: keyof Filter, value: string) {
-    const filters = this.selectedFilters[type];
-    const index = filters.indexOf(value);
+  toggleFilter(type: string, value: string): void {
+    const filterArray = (this.selectedFilters as any)[type];
+    const index = filterArray.indexOf(value);
 
     if (index === -1) {
-      filters.push(value);
+      filterArray.push(value);
     } else {
-      filters.splice(index, 1);
+      filterArray.splice(index, 1);
     }
-
-    // Update URL query params
-    const queryParams: any = {};
-    if (this.selectedFilters.region.length > 0) {
-      queryParams.region = this.selectedFilters.region[0];
-    }
-    if (this.selectedFilters.features.length > 0) {
-      queryParams.feature = this.selectedFilters.features[0];
-    }
-
-    this.router.navigate([], {
-      relativeTo: this.route,
-      queryParams,
-      queryParamsHandling: 'merge'
-    });
 
     this.applyFilters();
   }
@@ -267,8 +253,8 @@ export class MemoryPlacesComponent implements OnInit {
     });
   }
 
-  onSearch(event: Event): void {
-    this.searchText = (event.target as HTMLInputElement).value;
+  onSearch(searchText: string): void {
+    this.searchText = searchText;
     this.applyFilters();
   }
 
