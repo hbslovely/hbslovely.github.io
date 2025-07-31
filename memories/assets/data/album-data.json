@@ -1037,6 +1037,75 @@
           "description": "Những phút giây trầm tư"
         }
       ]
+    },
+    {
+      "id": "our-moments",
+      "title": "Khoảnh Khắc Đôi Ta",
+      "description": "Những khoảnh khắc ngọt ngào của hai chúng mình bên nhau - Từ những ngày đầu quen biết đến hiện tại, mỗi bức ảnh là một câu chuyện tình yêu đẹp",
+      "coverImage": "assets/images/phat/phat-quyen-ben-nhau.png",
+      "photoCount": 10,
+      "photos": [
+        {
+          "id": "together-1",
+          "url": "assets/images/phat/phat-quyen-ben-nhau.png",
+          "title": "Hạnh Phúc Bên Nhau",
+          "description": "Khoảnh khắc ngọt ngào của đôi ta trong cuộc sống hàng ngày"
+        },
+        {
+          "id": "together-2",
+          "url": "assets/images/ki-niem/cung-nhau.jpg",
+          "title": "Những Ngày Đầu",
+          "description": "Những khoảnh khắc đầu tiên khi chúng mình mới yêu nhau"
+        },
+        {
+          "id": "together-3",
+          "url": "assets/images/ki-niem/cuoi-hoi.png",
+          "title": "Ngày Vui Trọng Đại",
+          "description": "Khoảnh khắc hạnh phúc trong ngày cưới của chúng mình"
+        },
+        {
+          "id": "together-4",
+          "url": "assets/images/ki-niem/dam-cuoi-nha-hang.png",
+          "title": "Tiệc Cưới Hạnh Phúc",
+          "description": "Niềm vui ngập tràn trong tiệc cưới của đôi ta"
+        },
+        {
+          "id": "together-5",
+          "url": "assets/images/ki-niem/gap-mat-gia-dinh.png",
+          "title": "Gặp Gỡ Gia Đình",
+          "description": "Những buổi sum vầy ấm áp cùng gia đình hai bên"
+        },
+        {
+          "id": "together-6",
+          "url": "assets/images/ki-niem/ky-niem-quen-nhau.png",
+          "title": "Kỷ Niệm Quen Nhau",
+          "description": "Nhìn lại những kỷ niệm đẹp từ ngày đầu quen biết"
+        },
+        {
+          "id": "together-7",
+          "url": "assets/images/ki-niem/lan-dau-gap-nhau.png",
+          "title": "Lần Đầu Gặp Gỡ",
+          "description": "Khoảnh khắc đáng nhớ của lần đầu tiên gặp nhau"
+        },
+        {
+          "id": "together-8",
+          "url": "assets/images/ki-niem/trao-duyen.png",
+          "title": "Trao Duyên",
+          "description": "Giây phút thiêng liêng khi chúng mình trao nhau lời hẹn ước"
+        },
+        {
+          "id": "together-9",
+          "url": "assets/images/gallery/ben-nhau.png",
+          "title": "Bên Nhau Mỗi Ngày",
+          "description": "Những khoảnh khắc bình dị nhưng đầy ý nghĩa khi ở bên nhau"
+        },
+        {
+          "id": "together-10",
+          "url": "assets/images/gallery/nam-tay-yeu-thuong.png",
+          "title": "Nắm Tay Nhau",
+          "description": "Cùng nắm tay nhau đi qua mọi khoảnh khắc của cuộc sống"
+        }
+      ]
     }
   ]
 }
