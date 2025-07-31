@@ -599,3 +599,89 @@ body::before {
 html {
   scroll-behavior: smooth;
 }
+
+/* Custom Shepherd Tour Styles */
+.shepherd-theme-custom {
+  max-width: 300px !important;  // Limit maximum width
+  font-size: 14px !important;   // Smaller base font size
+
+  .shepherd-content {
+    padding: 0 !important;      // Remove default padding
+    border-radius: 8px !important;
+  }
+
+  .shepherd-text {
+    padding: 1rem !important;   // Add padding to text content
+
+    h3 {
+      font-size: 16px !important;
+      margin-bottom: 8px !important;
+    }
+
+    p {
+      font-size: 14px !important;
+      margin-bottom: 8px !important;
+      line-height: 1.4 !important;
+    }
+
+    ul {
+      margin: 8px 0 !important;
+      padding-left: 20px !important;
+
+      li {
+        font-size: 14px !important;
+        margin-bottom: 4px !important;
+      }
+    }
+  }
+
+  .shepherd-footer {
+    padding: 0.5rem !important;  // Smaller padding for footer
+
+    .shepherd-button {
+      margin: 0 0.25rem !important;
+      padding: 0.4rem 0.8rem !important;
+      font-size: 13px !important;
+    }
+  }
+
+  .tour-checkbox {
+    margin-top: 8px !important;
+    font-size: 13px !important;
+
+    label {
+      display: flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+    }
+  }
+}
+
+// Responsive adjustments for tour
+@media (max-width: 480px) {
+  .shepherd-theme-custom {
+    max-width: 280px !important;
+    font-size: 13px !important;
+
+    .shepherd-text {
+      padding: 0.8rem !important;
+
+      h3 {
+        font-size: 15px !important;
+      }
+
+      p, ul li {
+        font-size: 13px !important;
+      }
+    }
+
+    .shepherd-footer {
+      padding: 0.4rem !important;
+
+      .shepherd-button {
+        padding: 0.3rem 0.6rem !important;
+        font-size: 12px !important;
+      }
+    }
+  }
+}

@@ -1,14 +1,16 @@
-// Color variables
-$primary-green: #4ade80;
-$light-green: #f0fdf4;
-$lighter-green: #dcfce7;
-$text-green: #166534;
-$border-green: #bbf7d0;
+@import '../../../../assets/scss/mixins';
 
 .special-moments-section {
   position: relative;
-  padding: 4rem 0;
-  background: $light-green;
+  padding: 3rem 0;
+  overflow: hidden;
+  background: #fff;
+}
+
+.container {
+  max-width: 1400px; // Increased max-width to accommodate 4 cards
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
 .watermark-bg {
@@ -17,42 +19,28 @@ $border-green: #bbf7d0;
   left: 0;
   right: 0;
   bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  opacity: 0.03;
   pointer-events: none;
   z-index: 0;
 
   i {
-    position: absolute;
-    font-size: 8rem;
-    color: #ff4b6e;
-    opacity: 0.03;
-
-    &:nth-child(1) { top: 10%; left: 5%; }
-    &:nth-child(2) { top: 40%; right: 10%; }
-    &:nth-child(3) { bottom: 15%; left: 15%; }
+    font-size: 15rem;
+    transform: rotate(-15deg);
   }
-}
-
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  position: relative;
-  z-index: 1;
-}
-
-.content-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
 
   .section-title {
     font-size: 2.5rem;
-    color: $text-green;
+    color: #333;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
@@ -60,87 +48,138 @@ $border-green: #bbf7d0;
     gap: 1rem;
 
     i {
-      color: $primary-green;
+      color: #22c55e;
     }
   }
 
   .section-subtitle {
     font-size: 1.2rem;
-    color: adjust-color($text-green, $alpha: -0.3);
+    color: #666;
     font-style: italic;
+    max-width: 700px;
+    margin: 0 auto;
   }
 }
 
 .moments-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
   margin-bottom: 4rem;
 }
 
 .moment-card {
-  background: $lighter-green;
-  border-radius: 8px;
+  position: relative;
+  border-radius: 12px;
   overflow: hidden;
-  border: 1px solid $border-green;
+  background: #fff;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    .moment-image {
+      img {
+        transform: scale(1.05);
+      }
+
+      .moment-overlay {
+        opacity: 1;
+        backdrop-filter: blur(3px);
+
+        .overlay-content {
+          transform: translateY(0);
+          opacity: 1;
+        }
+
+        i {
+          transform: scale(1) rotate(0);
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
 
 .moment-image {
   position: relative;
-  height: 250px;
+  aspect-ratio: 4/3;
   overflow: hidden;
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.5s ease;
   }
 
   .moment-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.3));
+    inset: 0;
+    background: rgba(34, 197, 94, 0.2);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    opacity: 0;
+    transition: all 0.4s ease;
+
+    .overlay-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: all 0.4s ease;
+    }
 
     i {
-      display: none;
+      font-size: 2.5rem;
+      color: #fff;
+      transform: scale(0.5) rotate(-180deg);
+      opacity: 0;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-bottom: 0.5rem;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    }
+
+    .view-text {
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 0.5rem;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     }
   }
 }
 
 .moment-content {
-  padding: 1.8rem;
-  background: $lighter-green;
+  padding: 1.5rem;
+  background: #fff;
 
   .moment-date {
-    font-size: 0.9rem;
-    color: adjust-color($text-green, $alpha: -0.3);
-    margin-bottom: 1rem;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    color: #22c55e;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
 
     i {
-      color: $primary-green;
       font-size: 1rem;
     }
   }
 
   h3 {
-    font-size: 1.4rem;
-    color: $text-green;
-    margin-bottom: 1rem;
-    font-weight: 500;
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
     line-height: 1.4;
   }
 
   p {
-    color: adjust-color($text-green, $alpha: -0.3);
+    color: #666;
     line-height: 1.6;
     margin: 0;
   }
@@ -149,43 +188,35 @@ $border-green: #bbf7d0;
 .section-footer {
   text-align: center;
   margin-top: 4rem;
+  position: relative;
+  z-index: 1;
 
   .footer-quote {
     max-width: 800px;
     margin: 0 auto;
-    padding: 2.5rem 2rem;
-    background: $lighter-green;
-    border-radius: 8px;
-    border: 1px solid $border-green;
+    position: relative;
+    padding: 2rem;
 
     i {
-      color: $primary-green;
       font-size: 2rem;
-      margin-bottom: 1.5rem;
+      color: #22c55e;
+      opacity: 0.2;
+      margin-bottom: 1rem;
     }
 
     p {
-      font-size: 1.3rem;
-      color: $text-green;
-      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      color: #333;
       font-style: italic;
       line-height: 1.6;
+      margin-bottom: 1rem;
     }
 
     .quote-author {
-      color: adjust-color($text-green, $alpha: -0.3);
+      color: #666;
       font-size: 1rem;
+      font-style: normal;
     }
-  }
-}
-
-@media (max-width: 1200px) {
-  .container {
-    padding: 0 1.5rem;
-  }
-
-  .content-wrapper {
-    padding: 0 1rem;
   }
 }
 
@@ -194,17 +225,7 @@ $border-green: #bbf7d0;
     padding: 3rem 0;
   }
 
-  .container {
-    padding: 0 1rem;
-  }
-
-  .content-wrapper {
-    padding: 0 0.5rem;
-  }
-
   .section-header {
-    margin-bottom: 3rem;
-
     .section-title {
       font-size: 2rem;
     }
@@ -215,27 +236,13 @@ $border-green: #bbf7d0;
   }
 
   .moments-grid {
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
   }
 
-  .moment-image {
-    height: 200px;
-  }
-
-  .moment-content {
-    padding: 1.5rem;
-
-    h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.8rem;
-    }
-  }
-
-  .section-footer .footer-quote {
-    padding: 2rem 1.5rem;
-
+  .footer-quote {
     p {
-      font-size: 1.1rem;
+      font-size: 1.25rem;
     }
   }
 }

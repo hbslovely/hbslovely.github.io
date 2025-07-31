@@ -101,7 +101,7 @@
 
   <!-- Description Panel -->
   <div class="description-panel" [class.show]="showDescription">
-    <button class="panel-close" (click)="toggleDescription()" data-tooltip="Đóng thông tin">
+    <button class="panel-close" (click)="toggleDescription()">
       <i class="pi pi-times"></i>
     </button>
     <div class="description-content">
@@ -115,7 +115,7 @@
       </div>
 
       <div class="section" *ngIf="place?.detailedDescription">
-        <h4>Chi tiết</h4>
+        <h4>Chi tiết địa điểm</h4>
         <p>{{ place?.detailedDescription }}</p>
       </div>
 
@@ -166,10 +166,12 @@
                 <p>{{ food.description }}</p>
                 <div class="food-meta" *ngIf="food.restaurant || food.price">
                   <span *ngIf="food.restaurant">
-                    <i class="pi pi-home"></i> {{ food.restaurant }}
+                    <i class="pi pi-home"></i>
+                    {{ food.restaurant }}
                   </span>
                   <span *ngIf="food.price">
-                    <i class="pi pi-tag"></i> {{ food.price }}
+                    <i class="pi pi-tag"></i>
+                    {{ food.price }}
                   </span>
                 </div>
               </div>
@@ -187,10 +189,12 @@
                 <p>{{ food.description }}</p>
                 <div class="food-meta" *ngIf="food.restaurant || food.price">
                   <span *ngIf="food.restaurant">
-                    <i class="pi pi-home"></i> {{ food.restaurant }}
+                    <i class="pi pi-home"></i>
+                    {{ food.restaurant }}
                   </span>
                   <span *ngIf="food.price">
-                    <i class="pi pi-tag"></i> {{ food.price }}
+                    <i class="pi pi-tag"></i>
+                    {{ food.price }}
                   </span>
                 </div>
               </div>

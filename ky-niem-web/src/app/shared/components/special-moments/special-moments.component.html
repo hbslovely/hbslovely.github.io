@@ -1,48 +1,68 @@
 <!-- Special Moments Section -->
-<div class="special-moments-section">
+<section class="special-moments-section" aria-labelledby="special-moments-title">
   <!-- Watermark Background -->
-  <div class="watermark-bg">
+  <div class="watermark-bg" aria-hidden="true">
     <i class="pi pi-heart"></i>
     <i class="pi pi-camera"></i>
     <i class="pi pi-calendar"></i>
   </div>
 
   <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">
-        <i class="pi pi-heart-fill"></i>
+    <header class="section-header">
+      <h2 id="special-moments-title" class="section-title">
+        <i class="pi pi-heart-fill" aria-hidden="true"></i>
         {{ data.sectionTitle }}
       </h2>
-      <p class="section-subtitle">"{{ data.sectionSubtitle }}"</p>
-    </div>
+      <p class="section-subtitle" [attr.aria-label]="data.sectionSubtitle">
+        "{{ data.sectionSubtitle }}"
+      </p>
+    </header>
 
     <div class="content-wrapper">
-      <div class="moments-grid">
-        <div class="moment-card" *ngFor="let moment of data.moments">
+      <!-- Moments Grid -->
+      <div class="moments-grid" role="list">
+        <article 
+          class="moment-card" 
+          *ngFor="let moment of data.moments; let i = index" 
+          role="listitem"
+          [attr.aria-label]="moment.title"
+          [attr.data-aos]="'fade-up'"
+          [attr.data-aos-delay]="i * 100">
+          
           <div class="moment-image">
-            <img [src]="moment.image" [alt]="moment.imageAlt">
-            <div class="moment-overlay">
-              <i class="pi pi-heart"></i>
+            <img 
+              #momentImg
+              [src]="moment.image" 
+              [alt]="moment.imageAlt"
+              loading="lazy"
+              (error)="momentImg.src = 'assets/images/placeholder.jpg'">
+            <div class="moment-overlay" aria-hidden="true">
+              <div class="overlay-content">
+                <i class="pi pi-heart"></i>
+                <span class="view-text">Khoảnh khắc đẹp</span>
+              </div>
             </div>
           </div>
+
           <div class="moment-content">
-            <div class="moment-date">
-              <i class="pi pi-calendar"></i>
+            <time class="moment-date" [attr.datetime]="moment.date">
+              <i class="pi pi-calendar" aria-hidden="true"></i>
               {{ moment.date }}
-            </div>
+            </time>
             <h3>{{ moment.title }}</h3>
             <p>{{ moment.description }}</p>
           </div>
-        </div>
+        </article>
       </div>
 
-      <div class="section-footer">
-        <div class="footer-quote">
-          <i class="pi pi-heart-fill"></i>
+      <!-- Footer Quote -->
+      <footer class="section-footer" [attr.data-aos]="'fade-up'">
+        <blockquote class="footer-quote">
+          <i class="pi pi-heart-fill" aria-hidden="true"></i>
           <p>"{{ data.footerQuote.text }}"</p>
-          <span class="quote-author">- {{ data.footerQuote.author }}</span>
-        </div>
-      </div>
+          <cite class="quote-author">- {{ data.footerQuote.author }}</cite>
+        </blockquote>
+      </footer>
     </div>
   </div>
-</div>
+</section>
