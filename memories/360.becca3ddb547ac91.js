@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkky_niem_web=self.webpackChunkky_niem_web||[]).push([[360],{8360:(t,o,n)=>{n.r(o),n.d(o,{TipsVoChongRoutes:()=>s});const s=[{path:"",loadComponent:()=>n.e(734).then(n.bind(n,734)).then(h=>h.TipsVoChongComponent)}]}}]);
