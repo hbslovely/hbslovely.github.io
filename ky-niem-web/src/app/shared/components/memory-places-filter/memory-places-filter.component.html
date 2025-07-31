@@ -1,18 +1,26 @@
 <div class="filters-container">
-  <div class="filters-content">
-    <div class="filters-header">
-      <h2>Bộ lọc</h2>
-      <button 
-        class="reset-button" 
-        (click)="onResetFilters()"
-        *ngIf="hasActiveFilters()"
-        [class.resetting]="isResetting"
-        [disabled]="isResetting">
-        <i class="pi" [class.pi-spin]="isResetting" [class.pi-spinner]="isResetting" [class.pi-refresh]="!isResetting"></i>
-        {{ isResetting ? 'Đang đặt lại...' : 'Đặt lại' }}
+  <div class="filters-header">
+    <div class="header-left">
+      <button class="toggle-button" (click)="toggleExpand()">
+        <i class="pi" [class.pi-chevron-down]="isExpanded" [class.pi-chevron-right]="!isExpanded"></i>
+        <h2>Bộ lọc</h2>
+        <span class="filter-count" *ngIf="getActiveFiltersCount() > 0">
+          {{ getActiveFiltersCount() }}
+        </span>
       </button>
     </div>
+    <button 
+      class="reset-button" 
+      (click)="onResetFilters()"
+      *ngIf="hasActiveFilters()"
+      [class.resetting]="isResetting"
+      [disabled]="isResetting">
+      <i class="pi" [class.pi-spin]="isResetting" [class.pi-spinner]="isResetting" [class.pi-refresh]="!isResetting"></i>
+      {{ isResetting ? 'Đang đặt lại...' : 'Đặt lại' }}
+    </button>
+  </div>
 
+  <div class="filters-content" [@expandCollapse]="isExpanded ? 'expanded' : 'collapsed'">
     <!-- Search Input -->
     <div class="filter-section search-section">
       <h3 class="filter-label">Tìm kiếm</h3>

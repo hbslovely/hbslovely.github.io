@@ -1,13 +1,23 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-memory-places-filter',
   templateUrl: './memory-places-filter.component.html',
   styleUrls: ['./memory-places-filter.component.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule]
+  imports: [CommonModule, FormsModule],
+  animations: [
+    trigger('expandCollapse', [
+      state('expanded', style({ height: '*', opacity: 1 })),
+      state('collapsed', style({ height: '0', opacity: 0 })),
+      transition('expanded <=> collapsed', [
+        animate('200ms ease-in-out')
+      ])
+    ])
+  ]
 })
 export class MemoryPlacesFilterComponent {
   @Input() locationTypes: any[] = [];
@@ -20,6 +30,8 @@ export class MemoryPlacesFilterComponent {
   @Output() filterChange = new EventEmitter<{type: string, value: string}>();
   @Output() searchChange = new EventEmitter<string>();
   @Output() resetFilters = new EventEmitter<void>();
+
+  isExpanded: boolean = true;
 
   hasActiveFilters(): boolean {
     return this.selectedFilters.locationType.length > 0 ||
@@ -38,5 +50,18 @@ export class MemoryPlacesFilterComponent {
 
   onResetFilters(): void {
     this.resetFilters.emit();
+  }
+
+  toggleExpand(): void {
+    this.isExpanded = !this.isExpanded;
+  }
+
+  getActiveFiltersCount(): number {
+    return (
+      this.selectedFilters.locationType.length +
+      this.selectedFilters.region.length +
+      this.selectedFilters.features.length +
+      (this.searchText ? 1 : 0)
+    );
   }
 } 
