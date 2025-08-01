@@ -1,0 +1,51 @@
+{
+  "technicalSkills": {
+    "frontEnd": [
+      "Angular", "React", "TypeScript", "JavaScript", "HTML5", "CSS3", "SCSS", "Bootstrap", "Material Design", "Ant Design"
+    ],
+    "backEnd": [
+      "Node.js", "Express.js", "NestJS", "RESTful APIs", "GraphQL"
+    ],
+    "testing": [
+      "Jest", "Jasmine", "Karma", "Cypress", "Testing Library"
+    ],
+    "devOps": [
+      "Git", "Docker", "Jenkins", "CI/CD", "AWS", "Azure"
+    ],
+    "database": [
+      "MongoDB", "PostgreSQL", "MySQL", "Redis"
+    ],
+    "tools": [
+      "VS Code", "WebStorm", "Jira", "Confluence", "Postman"
+    ],
+    "methodologies": [
+      "Agile", "Scrum", "Kanban", "TDD", "Clean Code", "Design Patterns"
+    ]
+  },
+  "softSkills": [
+    "Lãnh đạo nhóm",
+    "Giao tiếp hiệu quả",
+    "Giải quyết vấn đề",
+    "Quản lý thời gian",
+    "Làm việc nhóm",
+    "Tư duy phân tích",
+    "Khả năng thích nghi"
+  ],
+  "languages": {
+    "Tiếng Việt": "Bản ngữ",
+    "Tiếng Anh": "Chuyên nghiệp (IELTS 6.0)"
+  },
+  "certifications": [
+    {
+      "name": "AWS Certified Developer - Associate",
+      "issuer": "Amazon Web Services",
+      "date": "2023",
+      "expires": "2026"
+    },
+    {
+      "name": "Professional Scrum Master I",
+      "issuer": "Scrum.org",
+      "date": "2022"
+    }
+  ]
+} 

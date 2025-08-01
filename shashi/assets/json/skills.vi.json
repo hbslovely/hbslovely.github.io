@@ -1,0 +1,40 @@
+{
+  "technicalSkills": {
+    "accounting": [
+      "SKILLS.ITEMS.Financial_Reporting",
+      "SKILLS.ITEMS.Tax_Accounting",
+      "SKILLS.ITEMS.General_Ledger",
+      "SKILLS.ITEMS.Cost_Accounting",
+      "SKILLS.ITEMS.Financial_Analysis",
+      "SKILLS.ITEMS.Audit_Preparation"
+    ],
+    "humanResources": [
+      "SKILLS.ITEMS.HR_Policies",
+      "SKILLS.ITEMS.Recruitment",
+      "SKILLS.ITEMS.Performance_Management",
+      "SKILLS.ITEMS.Training",
+      "SKILLS.ITEMS.Labor_Law"
+    ],
+    "software": [
+      "SKILLS.ITEMS.Accounting_Software",
+      "SKILLS.ITEMS.ERP_Systems",
+      "SKILLS.ITEMS.HRIS",
+      "SKILLS.ITEMS.MS_Office",
+      "SKILLS.ITEMS.Tax_Software"
+    ],
+    "compliance": [
+      "SKILLS.ITEMS.VAS",
+      "SKILLS.ITEMS.Tax_Regulations",
+      "SKILLS.ITEMS.Labor_Laws",
+      "SKILLS.ITEMS.Internal_Control",
+      "SKILLS.ITEMS.Audit_Procedures"
+    ],
+    "softSkills": [
+      "SKILLS.ITEMS.Leadership",
+      "SKILLS.ITEMS.Problem_Solving",
+      "SKILLS.ITEMS.Communication",
+      "SKILLS.ITEMS.Analytical_Thinking",
+      "SKILLS.ITEMS.Time_Management"
+    ]
+  }
+} 
