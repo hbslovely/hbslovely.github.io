@@ -1,14 +1,14 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-memory-places-filter',
   templateUrl: './memory-places-filter.component.html',
-  styleUrls: ['./memory-places-filter.component.scss'],
+  styleUrls: [ './memory-places-filter.component.scss' ],
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [ CommonModule, FormsModule ],
   animations: [
     trigger('expandCollapse', [
       state('expanded', style({ height: '*', opacity: 1 })),
@@ -27,7 +27,7 @@ export class MemoryPlacesFilterComponent {
   @Input() searchText: string = '';
   @Input() isResetting: boolean = false;
 
-  @Output() filterChange = new EventEmitter<{type: string, value: string}>();
+  @Output() filterChange = new EventEmitter<{ type: string, value: string }>();
   @Output() searchChange = new EventEmitter<string>();
   @Output() resetFilters = new EventEmitter<void>();
 
@@ -35,17 +35,23 @@ export class MemoryPlacesFilterComponent {
 
   hasActiveFilters(): boolean {
     return this.selectedFilters.locationType.length > 0 ||
-           this.selectedFilters.region.length > 0 ||
-           this.selectedFilters.features.length > 0 ||
-           !!this.searchText;
+      this.selectedFilters.region.length > 0 ||
+      this.selectedFilters.features.length > 0 ||
+      !!this.searchText;
   }
 
-  onSearch(event: any): void {
+  onSearchInput(event: any): void {
+    this.searchText = event.target.value;
+    this.searchChange.emit(this.searchText);
+  }
+
+  onSearchClear(): void {
+    this.searchText = '';
     this.searchChange.emit(this.searchText);
   }
 
   toggleFilter(type: string, value: string): void {
-    this.filterChange.emit({type, value});
+    this.filterChange.emit({ type, value });
   }
 
   onResetFilters(): void {
@@ -64,4 +70,4 @@ export class MemoryPlacesFilterComponent {
       (this.searchText ? 1 : 0)
     );
   }
-} 
+}

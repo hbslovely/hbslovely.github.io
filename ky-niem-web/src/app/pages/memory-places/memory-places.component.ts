@@ -42,6 +42,12 @@ interface LocationMappings {
   };
 }
 
+interface FilterTag {
+  type: string;
+  value: string;
+  label: string;
+}
+
 @Component({
   selector: 'app-memory-places',
   standalone: true,
@@ -259,12 +265,76 @@ export class MemoryPlacesComponent implements OnInit {
   }
 
   hasActiveFilters(): boolean {
-    return (
-      this.selectedFilters.region.length > 0 ||
-      this.selectedFilters.features.length > 0 ||
-      this.selectedFilters.locationType.length > 0 ||
-      !!this.searchText.trim()
-    );
+    return Object.values(this.selectedFilters).some(filters => filters.length > 0) || !!this.searchText;
+  }
+
+  getActiveFilters(): FilterTag[] {
+    const tags: FilterTag[] = [];
+    
+    // Add location type filters
+    this.selectedFilters.locationType?.forEach(type => {
+      const locationTypeObj = this.locationTypes.find(t => t.value === type);
+      if (locationTypeObj) {
+        tags.push({
+          type: 'locationType',
+          value: type,
+          label: `Loại: ${locationTypeObj.label}`
+        });
+      }
+    });
+
+    // Add region filters
+    this.selectedFilters.region?.forEach(region => {
+      const regionObj = this.regions.find(r => r.value === region);
+      if (regionObj) {
+        tags.push({
+          type: 'region',
+          value: region,
+          label: `Khu vực: ${regionObj.label}`
+        });
+      }
+    });
+
+    // Add feature filters
+    this.selectedFilters.features?.forEach(feature => {
+      const featureObj = this.features.find(f => f.value === feature);
+      if (featureObj) {
+        tags.push({
+          type: 'feature',
+          value: feature,
+          label: `Đặc điểm: ${featureObj.label}`
+        });
+      }
+    });
+
+    // Add search text if present
+    if (this.searchText) {
+      tags.push({
+        type: 'search',
+        value: this.searchText,
+        label: `Tìm kiếm: ${this.searchText}`
+      });
+    }
+
+    return tags;
+  }
+
+  removeFilter(filter: FilterTag): void {
+    switch (filter.type) {
+      case 'locationType':
+        this.selectedFilters.locationType = this.selectedFilters.locationType.filter(t => t !== filter.value);
+        break;
+      case 'region':
+        this.selectedFilters.region = this.selectedFilters.region.filter(r => r !== filter.value);
+        break;
+      case 'feature':
+        this.selectedFilters.features = this.selectedFilters.features.filter(f => f !== filter.value);
+        break;
+      case 'search':
+        this.searchText = '';
+        break;
+    }
+    this.applyFilters();
   }
 
   resetFilters(): void {
@@ -288,5 +358,9 @@ export class MemoryPlacesComponent implements OnInit {
       this.applyFilters();
       this.isResetting = false;
     }, 300);
+  }
+
+  getAllPlaceNames(): string[] {
+    return this.places.map(place => place.name);
   }
 }

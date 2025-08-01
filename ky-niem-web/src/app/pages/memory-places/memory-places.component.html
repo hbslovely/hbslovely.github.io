@@ -9,6 +9,7 @@
       [selectedFilters]="selectedFilters"
       [searchText]="searchText"
       [isResetting]="isResetting"
+      [allPlaceNames]="getAllPlaceNames()"
       (filterChange)="toggleFilter($event.type, $event.value)"
       (searchChange)="onSearch($event)"
       (resetFilters)="resetFilters()">
@@ -23,6 +24,18 @@
         <span class="place-count">{{ filteredPlaces.length }} địa điểm</span>
       </div>
       <p>Những nơi chúng ta đã đến cùng nhau</p>
+    </div>
+
+    <!-- Selected Filters Tags -->
+    <div class="selected-filters" *ngIf="hasActiveFilters()">
+      <div class="filter-tag" *ngFor="let filter of getActiveFilters()">
+        <span>{{ filter.label }}</span>
+        <i class="pi pi-times" (click)="removeFilter(filter)"></i>
+      </div>
+      <button class="clear-all" (click)="resetFilters()">
+        <i class="pi pi-trash"></i>
+        Xóa tất cả
+      </button>
     </div>
 
     <!-- Places Grid -->

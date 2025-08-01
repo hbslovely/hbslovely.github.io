@@ -26,17 +26,18 @@
       <h3 class="filter-label">Tìm kiếm</h3>
       <div class="search-container">
         <i class="pi pi-search search-icon"></i>
-        <input 
-          type="text" 
-          class="search-input"
-          placeholder="Tìm theo tên, địa điểm..."
+        <input
+          type="text"
           [(ngModel)]="searchText"
-          (input)="onSearch($event)"
-        >
+          (input)="onSearchInput($event)"
+          placeholder="Tìm theo tên, địa điểm..."
+          class="search-input"
+        />
         <button 
-          *ngIf="searchText"
-          class="clear-search"
-          (click)="searchText = ''; onSearch($event)">
+          *ngIf="searchText" 
+          class="clear-button" 
+          (click)="onSearchClear()"
+        >
           <i class="pi pi-times"></i>
         </button>
       </div>

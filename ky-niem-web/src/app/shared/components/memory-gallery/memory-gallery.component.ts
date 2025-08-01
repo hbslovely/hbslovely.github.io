@@ -43,7 +43,6 @@ interface GalleryData {
 export class MemoryGalleryComponent implements OnInit {
   currentFilter: string = 'all';
   viewMode: 'carousel' | 'masonry' | 'cards' = 'carousel';
-  searchQuery: string = '';
   displayedMemories: GalleryImage[] = [];
   galleryData!: GalleryData;
   loading: boolean = false;
@@ -135,7 +134,7 @@ export class MemoryGalleryComponent implements OnInit {
   filterImages(filterId: string) {
     this.currentFilter = filterId;
     this.currentPage = 1; // Reset pagination when filter changes
-    
+
     if (filterId === 'all') {
       this.displayedMemories = this.galleryData.galleries.reduce((all, gallery) => {
         return [...all, ...gallery.images.map(img => ({
@@ -191,12 +190,7 @@ export class MemoryGalleryComponent implements OnInit {
 
   changeView(mode: 'carousel' | 'masonry' | 'cards'): void {
     this.viewMode = mode;
-    // Removed auto-play logic as per edit hint
   }
-
-  // Removed private startAutoPlay(): void { ... }
-  // Removed private stopAutoPlay(): void { ... }
-  // Removed toggleAutoPlay(): void { ... }
 
   openLightbox(memory: GalleryImage) {
     // Implement lightbox functionality here
@@ -212,11 +206,11 @@ export class MemoryGalleryComponent implements OnInit {
 
   getFilterCount(filterId: string): number {
     if (!this.galleryData) return 0;
-    
+
     if (filterId === 'all') {
       return this.galleryData.galleries.reduce((total, gallery) => total + gallery.images.length, 0);
     }
-    
+
     const gallery = this.galleryData.galleries.find(g => g.id === filterId);
     return gallery ? gallery.images.length : 0;
   }
@@ -228,27 +222,6 @@ export class MemoryGalleryComponent implements OnInit {
 
   clearFilter(): void {
     this.currentFilter = 'all';
-    this.searchQuery = '';
     this.filterImages('all');
-  }
-
-  onSearch(): void {
-    if (!this.searchQuery) {
-      this.filterImages(this.currentFilter);
-      return;
-    }
-
-    const query = this.searchQuery.toLowerCase();
-    const currentMemories = [...this.displayedMemories];
-    
-    this.displayedMemories = currentMemories.filter(memory => 
-      memory.name.toLowerCase().includes(query) || 
-      memory.description.toLowerCase().includes(query)
-    );
-  }
-
-  clearSearch(): void {
-    this.searchQuery = '';
-    this.filterImages(this.currentFilter);
   }
 }
