@@ -1,22 +1,21 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
-import { AppRoutes } from './app.routes';
-import { GratitudeMessagesComponent } from './shared/components/gratitude-messages/gratitude-messages.component';
+import { routes } from './app.routes';
 
 // Import Swiper styles in your styles.scss instead of here
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    GratitudeMessagesComponent
-  ],
   imports: [
+    AppComponent,
     BrowserModule,
-    RouterModule.forRoot(AppRoutes)
+    BrowserAnimationsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
-export class AppModule { } 
+export class AppModule {
+}

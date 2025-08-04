@@ -1,30 +1,71 @@
-<!-- Love Timeline Section -->
-<section class="timeline-section">
-  <div class="container" *ngIf="timelineData">
-    <!-- Section Header -->
-    <header class="section-header">
-      <h2 class="section-title">
-        <i class="pi pi-heart-fill"></i>
-        {{ timelineData.sectionTitle }}
-      </h2>
-      <blockquote class="main-quote">
-        <p class="quote-content">{{ timelineData.quote.content }}</p>
-        <footer class="quote-author">- {{ timelineData.quote.author }}</footer>
-      </blockquote>
-    </header>
+<!-- Timeline Header -->
+<div class="timeline-header">
+  <h2>Hành Trình Tình Yêu</h2>
+  <p>Những dấu mốc đáng nhớ trong chuyện tình của chúng ta</p>
+</div>
 
-    <!-- Timeline -->
-    <div class="timeline-container">
-      <div class="timeline-item" *ngFor="let event of timelineData.events">
-        <time class="timeline-date">
-          <i [class]="event.icon"></i>
-          {{ event.date }}
-        </time>
-        <div class="timeline-content">
-          <h3 class="timeline-title">{{ event.title }}</h3>
-          <p class="timeline-description">{{ event.description }}</p>
+<!-- Timeline Container -->
+<div class="timeline-container">
+  <!-- Timeline Line -->
+  <div class="timeline-line">
+    <div class="line-inner"></div>
+  </div>
+
+  <!-- Timeline Items -->
+  <div class="timeline-items">
+    <div class="timeline-item" *ngFor="let moment of timelineMoments; let i = index" 
+         [class.right]="i % 2 !== 0"
+         [class.animate-in]="true">
+      <!-- Date Badge -->
+      <div class="date-badge">
+        <span class="date">{{ moment.date | date:'dd/MM/yyyy' }}</span>
+      </div>
+
+      <!-- Content Card -->
+      <div class="content-card">
+        <!-- Title -->
+        <div class="moment-title">
+          <h3>{{ moment.title }}</h3>
+        </div>
+
+        <!-- Image Container with Overlay -->
+        <div class="moment-image-container" *ngIf="moment.image">
+          <div class="moment-image">
+            <img [src]="moment.image" [alt]="moment.title" loading="lazy">
+            <!-- Location Badge -->
+            <div class="location-badge" *ngIf="moment.location">
+              <i class="pi pi-map-marker"></i>
+              <span>{{ moment.location }}</span>
+            </div>
+
+            <!-- Overlay -->
+            <div class="image-overlay">
+              <!-- Floating Hearts -->
+              <div class="floating-hearts">
+                <i class="pi pi-heart-fill heart-1"></i>
+                <i class="pi pi-heart-fill heart-2"></i>
+                <i class="pi pi-heart-fill heart-3"></i>
+              </div>
+              
+              <div class="overlay-content">
+                <p class="overlay-description">{{ moment.description }}</p>
+                <div class="moment-tags" *ngIf="moment.tags && moment.tags.length">
+                  <span class="tag" *ngFor="let tag of moment.tags">{{ tag }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline Dot -->
+      <div class="timeline-dot">
+        <div class="dot-outer">
+          <div class="dot-inner">
+            <i class="pi" [ngClass]="moment.icon || 'pi-heart-fill'"></i>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</section> 
+</div> 

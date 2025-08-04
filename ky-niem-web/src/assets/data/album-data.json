@@ -104,18 +104,6 @@
           "description": "Em tươi tắn với áo sơ mi trắng trong văn phòng"
         },
         {
-          "id": "quyen-17",
-          "url": "assets/images/quyen/z6843464036239_417682cbd09b61d0ad7b71a7daed623f.jpg",
-          "title": "Dễ Thương Như Búp Bê",
-          "description": "Em xinh xắn trong buổi chụp hình tại công ty"
-        },
-        {
-          "id": "quyen-18",
-          "url": "assets/images/quyen/z6843458636694_0b655bfda7015527d928be4eb2ca956b.jpg",
-          "title": "Xinh Xắn Đáng Yêu",
-          "description": "Em dễ thương trong trang phục công sở"
-        },
-        {
           "id": "quyen-19",
           "url": "assets/images/quyen/z6843551866623_ebf56a0d86f9f579fd7cd4d8797c814b.jpg",
           "title": "Nàng Công Chúa Nhỏ",
@@ -155,7 +143,7 @@
           "id": "quyen-25",
           "url": "assets/images/quyen/3.png",
           "title": "Nàng Thơ Của Anh",
-          "description": "Em rạng rỡ trong buổi làm việc"
+          "description": "Em rạng rỡ mỗi ngày"
         },
         {
           "id": "quyen-26",
@@ -186,90 +174,6 @@
           "url": "assets/images/quyen/quyen_chup-len-vo-qua-anh-man-hinh.png",
           "title": "Khoảnh Khắc Đáng Yêu",
           "description": "Em đáng yêu qua ảnh chụp màn hình"
-        },
-        {
-          "id": "quyen-32-a",
-          "url": "assets/images/quyen/z6843528165353_bec6048cfea8af58ebb1da382d4a357d.jpg",
-          "title": "Nụ Cười Rạng Rỡ",
-          "description": "Em tươi tắn trong trang phục công sở"
-        },
-        {
-          "id": "quyen-33-a",
-          "url": "assets/images/quyen/z6843524186042_f86e79a1ecf2ca5a44fe4a4b07c9af2c.jpg",
-          "title": "Duyên Dáng Văn Phòng",
-          "description": "Em duyên dáng trong môi trường làm việc"
-        },
-        {
-          "id": "quyen-34-a",
-          "url": "assets/images/quyen/z6843515658578_a4a2821f16bb3911c1d1165772b30eae.jpg",
-          "title": "Xinh Đẹp Mỗi Ngày",
-          "description": "Em xinh đẹp trong cuộc sống hàng ngày"
-        },
-        {
-          "id": "quyen-35-a",
-          "url": "assets/images/quyen/z6843511376185_67cbe1ac795e387c8dbf309efcf326f8.jpg",
-          "title": "Nét Đẹp Tự Nhiên",
-          "description": "Em dịu dàng với nét đẹp tự nhiên"
-        },
-        {
-          "id": "quyen-36-a",
-          "url": "assets/images/quyen/z6843508203125_4da060882f1c88efb6147fe56573ea1f.jpg",
-          "title": "Khoảnh Khắc Đáng Yêu",
-          "description": "Em đáng yêu trong những phút giây đời thường"
-        },
-        {
-          "id": "quyen-37-a",
-          "url": "assets/images/quyen/z6843505637575_d6f149a3635a65e03e5f3f08ce24cc0b.jpg",
-          "title": "Dịu Dàng Trong Nắng",
-          "description": "Em dịu dàng trong ánh nắng văn phòng"
-        },
-        {
-          "id": "quyen-38-a",
-          "url": "assets/images/quyen/z6843488897657_bbf00d4751379b63b8dc7ad1bf03fbf0.jpg",
-          "title": "Nụ Cười Tỏa Nắng",
-          "description": "Nụ cười tươi tắn của em"
-        },
-        {
-          "id": "quyen-39-a",
-          "url": "assets/images/quyen/z6843474414777_ba24be1484ec56131cbdafa916cb7a68.jpg",
-          "title": "Xinh Tươi Mỗi Ngày",
-          "description": "Em xinh tươi trong công việc"
-        },
-        {
-          "id": "quyen-40-a",
-          "url": "assets/images/quyen/z6843464036239_417682cbd09b61d0ad7b71a7daed623f.jpg",
-          "title": "Khoảnh Khắc Đời Thường",
-          "description": "Em trong những phút giây bình thường"
-        },
-        {
-          "id": "quyen-41-a",
-          "url": "assets/images/quyen/z6843551866623_ebf56a0d86f9f579fd7cd4d8797c814b.jpg",
-          "title": "Duyên Dáng Công Sở",
-          "description": "Em duyên dáng trong môi trường làm việc"
-        },
-        {
-          "id": "quyen-42-a",
-          "url": "assets/images/quyen/img_4.png",
-          "title": "Nét Đẹp Tinh Khôi",
-          "description": "Em với nét đẹp tinh khôi"
-        },
-        {
-          "id": "quyen-43-a",
-          "url": "assets/images/quyen/img_3.png",
-          "title": "Dịu Dàng Trong Gió",
-          "description": "Em dịu dàng như cơn gió nhẹ"
-        },
-        {
-          "id": "quyen-44-a",
-          "url": "assets/images/quyen/img_2.png",
-          "title": "Nụ Cười Hạnh Phúc",
-          "description": "Nụ cười hạnh phúc của em"
-        },
-        {
-          "id": "quyen-45-a",
-          "url": "assets/images/quyen/img_1.png",
-          "title": "Khoảnh Khắc Yêu Thương",
-          "description": "Những khoảnh khắc yêu thương của em"
         }
       ]
     },
@@ -682,189 +586,6 @@
       ]
     },
     {
-      "id": "couple",
-      "title": "Chúng Mình",
-      "description": "Những khoảnh khắc đặc biệt của chúng mình",
-      "coverImage": "assets/images/anh-chu-dao/avatar-couple.png",
-      "photoCount": 15,
-      "photos": [
-        {
-          "id": "phat-portrait",
-          "url": "assets/images/phat/phat-portrait.png",
-          "title": "Chân dung anh",
-          "description": "Anh Phát"
-        },
-        {
-          "id": "quyen-portrait",
-          "url": "assets/images/quyen/quyen-portrait.png",
-          "title": "Chân dung em",
-          "description": "Em Quyên"
-        },
-        {
-          "id": "phat-wedding",
-          "url": "assets/images/phat/phat_dam-cuoi.png",
-          "title": "Anh trong ngày cưới",
-          "description": "Khoảnh khắc hạnh phúc"
-        },
-        {
-          "id": "phat-wedding-2",
-          "url": "assets/images/phat/phat_dam-cuoi-2.png",
-          "title": "Anh trong ngày cưới",
-          "description": "Giây phút thiêng liêng"
-        },
-        {
-          "id": "phat-hobby",
-          "url": "assets/images/phat/phat_anh-voi-cho.jpg",
-          "title": "Anh và thú cưng",
-          "description": "Những người bạn đáng yêu"
-        },
-        {
-          "id": "phat-travel",
-          "url": "assets/images/phat/phat_ho-may-vung-tau_10-2023.png",
-          "title": "Du lịch Vũng Tàu",
-          "description": "Hồ Mây - Vũng Tàu 10/2023"
-        },
-        {
-          "id": "quyen-wedding",
-          "url": "assets/images/quyen/quyen_lua-do-chup-hinh-cuoi_1-2022.png",
-          "title": "Em thử váy cưới",
-          "description": "Lựa đồ chụp hình cưới - 1/2022"
-        },
-        {
-          "id": "quyen-screenshot",
-          "url": "assets/images/quyen/quyen_chup-len-vo-qua-anh-man-hinh.png",
-          "title": "Em qua ảnh màn hình",
-          "description": "Khoảnh khắc đáng yêu"
-        },
-        {
-          "id": "couple",
-          "url": "assets/images/anh-chu-dao/avatar-couple.png",
-          "title": "Chúng mình",
-          "description": "Hạnh phúc bên nhau"
-        },
-        {
-          "id": "phat-quyen-new-1",
-          "url": "assets/images/phat/phat-quyen-ben-nhau.png",
-          "title": "Khoảnh Khắc Bên Nhau",
-          "description": "Những giây phút ngọt ngào của đôi ta"
-        },
-        {
-          "id": "quyen-office-1",
-          "url": "assets/images/quyen/z6843535586778_050aaffcce7fc14fc48d5facc985fe23.jpg",
-          "title": "Em Trong Công Ty",
-          "description": "Em xinh đẹp trong trang phục công sở"
-        },
-        {
-          "id": "quyen-office-2",
-          "url": "assets/images/quyen/z6843535586743_0ee5cfdb404b7a8352018d405a288039.jpg",
-          "title": "Nụ Cười Rạng Rỡ",
-          "description": "Em tươi tắn trong giờ làm việc"
-        },
-        {
-          "id": "phat-daily-special",
-          "url": "assets/images/phat/z6843682702130_be6dd4103032582d17a53d1ed2acb5ea.jpg",
-          "title": "Anh Trong Đời Thường",
-          "description": "Những khoảnh khắc đời thường ý nghĩa"
-        },
-        {
-          "id": "quyen-special",
-          "url": "assets/images/quyen/z6843526377730_46c05ef6a063901ba161f8e8a598ed38.jpg",
-          "title": "Em Trong Nắng",
-          "description": "Em dịu dàng trong ánh nắng"
-        },
-        {
-          "id": "phat-cooking-love",
-          "url": "assets/images/phat/phat-nau-an-cho-vo.png",
-          "title": "Nấu Ăn Cho Em",
-          "description": "Những món ăn tình yêu"
-        },
-        {
-          "id": "first-meet",
-          "url": "assets/images/ki-niem/lan-dau-gap-nhau.png",
-          "title": "Lần đầu gặp nhau",
-          "description": "Khoảnh khắc định mệnh"
-        },
-        {
-          "id": "engagement",
-          "url": "assets/images/ki-niem/trao-duyen.png",
-          "title": "Trao duyên",
-          "description": "Những ngày đầu yêu nhau"
-        },
-        {
-          "id": "anniversary",
-          "url": "assets/images/ki-niem/ky-niem-quen-nhau.png",
-          "title": "Kỷ niệm ngày quen nhau",
-          "description": "Ngày đặc biệt của chúng mình"
-        },
-        {
-          "id": "wedding-ceremony",
-          "url": "assets/images/ki-niem/cuoi-hoi.png",
-          "title": "Lễ cưới",
-          "description": "Ngày trọng đại và hạnh phúc"
-        },
-        {
-          "id": "together",
-          "url": "assets/images/ki-niem/cung-nhau.jpg",
-          "title": "Bên nhau",
-          "description": "Những phút giây hạnh phúc"
-        },
-        {
-          "id": "family-meet",
-          "url": "assets/images/ki-niem/gap-mat-gia-dinh.png",
-          "title": "Gặp gỡ gia đình",
-          "description": "Khoảnh khắc gia đình sum vầy"
-        },
-        {
-          "id": "durian",
-          "url": "assets/images/ki-niem/sau-rieng-vo-gui.png",
-          "title": "Quà từ Đắk Lắk",
-          "description": "Sầu riêng vợ gửi từ Đắk Lắk - 8/2021"
-        },
-        {
-          "id": "hoi-an-memory",
-          "url": "assets/images/places/checkin_hoi-an_quang-nam.jpg",
-          "title": "Phố Cổ Hội An",
-          "description": "Kỷ niệm dạo bước trong phố cổ Hội An - Quảng Nam"
-        },
-        {
-          "id": "sam-son-memory",
-          "url": "assets/images/places/checkin_bai-bien-sam-son_thanh-hoa.jpg",
-          "title": "Biển Sầm Sơn",
-          "description": "Những khoảnh khắc hạnh phúc tại bãi biển Sầm Sơn - Thanh Hóa"
-        },
-        {
-          "id": "da-lat-memory",
-          "url": "assets/images/places/checkin-cho-da-lat-lam-dong.jpg",
-          "title": "Đà Lạt Thành Phố Mộng Mơ",
-          "description": "Những kỷ niệm ngọt ngào tại thành phố Đà Lạt"
-        },
-        {
-          "id": "fansipan-memory",
-          "url": "assets/images/places/checkin-dinh-fansipan-lao-cai.jpg",
-          "title": "Chinh Phục Fansipan",
-          "description": "Khoảnh khắc đáng nhớ trên đỉnh Fansipan - Nóc nhà Đông Dương"
-        },
-        {
-          "id": "chua-huong-memory",
-          "url": "assets/images/places/checkin-chua-huong-ha-noi.jpg",
-          "title": "Chùa Hương",
-          "description": "Hành trình về với đất Phật tại Chùa Hương"
-        },
-        {
-          "id": "lang-bac-memory",
-          "url": "assets/images/places/checkin-lang-bac-ha-noi.jpg",
-          "title": "Lăng Bác",
-          "description": "Thăm Lăng Bác - Khoảnh khắc trang nghiêm và ý nghĩa"
-        },
-        {
-          "id": "ba-den-memory",
-          "url": "assets/images/places/checkin-nui-ba-den-tay-ninh.jpg",
-          "title": "Núi Bà Đen",
-          "description": "Chinh phục đỉnh Núi Bà Đen - Tây Ninh"
-        }
-      ]
-    },
-    {
       "id": "phat-moments",
       "title": "Khoảnh Khắc Của Anh",
       "description": "Những khoảnh khắc đáng nhớ trong cuộc sống của anh - từ công việc đến những chuyến đi và thời gian bên em",
@@ -1218,6 +939,75 @@
           "url": "assets/images/phat/z6843682929191_7714d7ccf73e3fe05c50d1467c2cc215.jpg",
           "title": "Khoảnh Khắc Suy Tư",
           "description": "Những phút giây trầm tư"
+        }
+      ]
+    },
+    {
+      "id": "our-moments",
+      "title": "Khoảnh Khắc Đôi Ta",
+      "description": "Những khoảnh khắc ngọt ngào của hai chúng mình bên nhau - Từ những ngày đầu quen biết đến hiện tại, mỗi bức ảnh là một câu chuyện tình yêu đẹp",
+      "coverImage": "assets/images/phat/phat-quyen-ben-nhau.png",
+      "photoCount": 10,
+      "photos": [
+        {
+          "id": "together-1",
+          "url": "assets/images/phat/phat-quyen-ben-nhau.png",
+          "title": "Hạnh Phúc Bên Nhau",
+          "description": "Khoảnh khắc ngọt ngào của đôi ta trong cuộc sống hàng ngày"
+        },
+        {
+          "id": "together-2",
+          "url": "assets/images/ki-niem/cung-nhau.jpg",
+          "title": "Những Ngày Đầu",
+          "description": "Những khoảnh khắc đầu tiên khi chúng mình mới yêu nhau"
+        },
+        {
+          "id": "together-3",
+          "url": "assets/images/ki-niem/cuoi-hoi.png",
+          "title": "Ngày Vui Trọng Đại",
+          "description": "Khoảnh khắc hạnh phúc trong ngày cưới của chúng mình"
+        },
+        {
+          "id": "together-4",
+          "url": "assets/images/ki-niem/dam-cuoi-nha-hang.png",
+          "title": "Tiệc Cưới Hạnh Phúc",
+          "description": "Niềm vui ngập tràn trong tiệc cưới của đôi ta"
+        },
+        {
+          "id": "together-5",
+          "url": "assets/images/ki-niem/gap-mat-gia-dinh.png",
+          "title": "Gặp Gỡ Gia Đình",
+          "description": "Những buổi sum vầy ấm áp cùng gia đình hai bên"
+        },
+        {
+          "id": "together-6",
+          "url": "assets/images/ki-niem/ky-niem-quen-nhau.png",
+          "title": "Kỷ Niệm Quen Nhau",
+          "description": "Nhìn lại những kỷ niệm đẹp từ ngày đầu quen biết"
+        },
+        {
+          "id": "together-7",
+          "url": "assets/images/ki-niem/lan-dau-gap-nhau.png",
+          "title": "Lần Đầu Gặp Gỡ",
+          "description": "Khoảnh khắc đáng nhớ của lần đầu tiên gặp nhau"
+        },
+        {
+          "id": "together-8",
+          "url": "assets/images/ki-niem/trao-duyen.png",
+          "title": "Trao Duyên",
+          "description": "Giây phút thiêng liêng khi chúng mình trao nhau lời hẹn ước"
+        },
+        {
+          "id": "together-9",
+          "url": "assets/images/gallery/ben-nhau.png",
+          "title": "Bên Nhau Mỗi Ngày",
+          "description": "Những khoảnh khắc bình dị nhưng đầy ý nghĩa khi ở bên nhau"
+        },
+        {
+          "id": "together-10",
+          "url": "assets/images/gallery/nam-tay-yeu-thuong.png",
+          "title": "Nắm Tay Nhau",
+          "description": "Cùng nắm tay nhau đi qua mọi khoảnh khắc của cuộc sống"
         }
       ]
     }

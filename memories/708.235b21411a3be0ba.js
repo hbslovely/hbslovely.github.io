@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkky_niem_web=self.webpackChunkky_niem_web||[]).push([[708],{2708:(s,o,n)=>{n.r(o),n.d(o,{ThongTinChongRoutes:()=>h});const h=[{path:"",loadComponent:()=>n.e(915).then(n.bind(n,7915)).then(t=>t.ThongTinChongComponent)}]}}]);

@@ -1,35 +1,94 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { LoveTimelineData } from '../../models/content.model';
+import { CommonModule } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+interface TimelineMoment {
+  id: string;
+  date: string;
+  title: string;
+  description: string;
+  image: string;
+  icon: string;
+  tags: string[];
+  location: string;
+}
 
 @Component({
   selector: 'app-love-timeline',
   templateUrl: './love-timeline.component.html',
   styleUrls: ['./love-timeline.component.scss'],
   standalone: true,
-  imports: [CommonModule]
+  imports: [CommonModule, HttpClientModule]
 })
 export class LoveTimelineComponent implements OnInit {
-  // Array for floating elements
-  floatingElements = Array(15).fill(0);
-  timelineData!: LoveTimelineData;
+  timelineMoments: TimelineMoment[] = [];
+  loading = false;
+  hasMoreMoments = false;
+  currentPage = 1;
+  itemsPerPage = 5;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.loadTimelineData();
   }
 
-  private loadTimelineData(): void {
-    this.http.get<LoveTimelineData>('assets/data/love-timeline.json')
+  loadTimelineData() {
+    this.loading = true;
+    this.http.get<{moments: TimelineMoment[]}>('assets/data/timeline-moments.json')
       .subscribe({
         next: (data) => {
-          this.timelineData = data;
+          // Sort moments by date in ascending order
+          const sortedMoments = data.moments.sort((a, b) => 
+            new Date(a.date).getTime() - new Date(b.date).getTime()
+          );
+          
+          // Calculate total pages
+          const totalItems = sortedMoments.length;
+          const startIndex = 0;
+          const endIndex = Math.min(this.itemsPerPage, totalItems);
+          
+          // Set initial items
+          this.timelineMoments = sortedMoments.slice(startIndex, endIndex);
+          this.hasMoreMoments = endIndex < totalItems;
+          this.loading = false;
         },
         error: (error) => {
           console.error('Error loading timeline data:', error);
+          this.loading = false;
         }
       });
   }
-} 
+
+  loadMore() {
+    if (this.loading || !this.hasMoreMoments) return;
+    
+    this.loading = true;
+    this.http.get<{moments: TimelineMoment[]}>('assets/data/timeline-moments.json')
+      .subscribe({
+        next: (data) => {
+          const sortedMoments = data.moments.sort((a, b) => 
+            new Date(a.date).getTime() - new Date(b.date).getTime()
+          );
+          
+          const totalItems = sortedMoments.length;
+          const startIndex = this.currentPage * this.itemsPerPage;
+          const endIndex = Math.min(startIndex + this.itemsPerPage, totalItems);
+          
+          // Append new items
+          this.timelineMoments = [
+            ...this.timelineMoments,
+            ...sortedMoments.slice(startIndex, endIndex)
+          ];
+          
+          this.currentPage++;
+          this.hasMoreMoments = endIndex < totalItems;
+          this.loading = false;
+        },
+        error: (error) => {
+          console.error('Error loading more timeline data:', error);
+          this.loading = false;
+        }
+      });
+  }
+}

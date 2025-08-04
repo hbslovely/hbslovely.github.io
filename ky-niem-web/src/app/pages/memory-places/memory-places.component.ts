@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { removeVietnameseTones } from '../../shared/utils/string.utils';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PlaceCardComponent } from '../../shared/components/place-card/place-card.component';
+import { MemoryPlacesFilterComponent } from '../../shared/components/memory-places-filter/memory-places-filter.component';
 
 interface Filter {
   region: string[];
@@ -41,10 +42,16 @@ interface LocationMappings {
   };
 }
 
+interface FilterTag {
+  type: string;
+  value: string;
+  label: string;
+}
+
 @Component({
   selector: 'app-memory-places',
   standalone: true,
-  imports: [CommonModule, PlaceCardComponent, FormsModule],
+  imports: [CommonModule, PlaceCardComponent, FormsModule, MemoryPlacesFilterComponent],
   templateUrl: './memory-places.component.html',
   styleUrls: ['./memory-places.component.scss']
 })
@@ -126,30 +133,15 @@ export class MemoryPlacesComponent implements OnInit {
     });
   }
 
-  toggleFilter(type: keyof Filter, value: string) {
-    const filters = this.selectedFilters[type];
-    const index = filters.indexOf(value);
+  toggleFilter(type: string, value: string): void {
+    const filterArray = (this.selectedFilters as any)[type];
+    const index = filterArray.indexOf(value);
 
     if (index === -1) {
-      filters.push(value);
+      filterArray.push(value);
     } else {
-      filters.splice(index, 1);
+      filterArray.splice(index, 1);
     }
-
-    // Update URL query params
-    const queryParams: any = {};
-    if (this.selectedFilters.region.length > 0) {
-      queryParams.region = this.selectedFilters.region[0];
-    }
-    if (this.selectedFilters.features.length > 0) {
-      queryParams.feature = this.selectedFilters.features[0];
-    }
-
-    this.router.navigate([], {
-      relativeTo: this.route,
-      queryParams,
-      queryParamsHandling: 'merge'
-    });
 
     this.applyFilters();
   }
@@ -267,18 +259,82 @@ export class MemoryPlacesComponent implements OnInit {
     });
   }
 
-  onSearch(event: Event): void {
-    this.searchText = (event.target as HTMLInputElement).value;
+  onSearch(searchText: string): void {
+    this.searchText = searchText;
     this.applyFilters();
   }
 
   hasActiveFilters(): boolean {
-    return (
-      this.selectedFilters.region.length > 0 ||
-      this.selectedFilters.features.length > 0 ||
-      this.selectedFilters.locationType.length > 0 ||
-      !!this.searchText.trim()
-    );
+    return Object.values(this.selectedFilters).some(filters => filters.length > 0) || !!this.searchText;
+  }
+
+  getActiveFilters(): FilterTag[] {
+    const tags: FilterTag[] = [];
+    
+    // Add location type filters
+    this.selectedFilters.locationType?.forEach(type => {
+      const locationTypeObj = this.locationTypes.find(t => t.value === type);
+      if (locationTypeObj) {
+        tags.push({
+          type: 'locationType',
+          value: type,
+          label: `Loại: ${locationTypeObj.label}`
+        });
+      }
+    });
+
+    // Add region filters
+    this.selectedFilters.region?.forEach(region => {
+      const regionObj = this.regions.find(r => r.value === region);
+      if (regionObj) {
+        tags.push({
+          type: 'region',
+          value: region,
+          label: `Khu vực: ${regionObj.label}`
+        });
+      }
+    });
+
+    // Add feature filters
+    this.selectedFilters.features?.forEach(feature => {
+      const featureObj = this.features.find(f => f.value === feature);
+      if (featureObj) {
+        tags.push({
+          type: 'feature',
+          value: feature,
+          label: `Đặc điểm: ${featureObj.label}`
+        });
+      }
+    });
+
+    // Add search text if present
+    if (this.searchText) {
+      tags.push({
+        type: 'search',
+        value: this.searchText,
+        label: `Tìm kiếm: ${this.searchText}`
+      });
+    }
+
+    return tags;
+  }
+
+  removeFilter(filter: FilterTag): void {
+    switch (filter.type) {
+      case 'locationType':
+        this.selectedFilters.locationType = this.selectedFilters.locationType.filter(t => t !== filter.value);
+        break;
+      case 'region':
+        this.selectedFilters.region = this.selectedFilters.region.filter(r => r !== filter.value);
+        break;
+      case 'feature':
+        this.selectedFilters.features = this.selectedFilters.features.filter(f => f !== filter.value);
+        break;
+      case 'search':
+        this.searchText = '';
+        break;
+    }
+    this.applyFilters();
   }
 
   resetFilters(): void {
@@ -302,5 +358,9 @@ export class MemoryPlacesComponent implements OnInit {
       this.applyFilters();
       this.isResetting = false;
     }, 300);
+  }
+
+  getAllPlaceNames(): string[] {
+    return this.places.map(place => place.name);
   }
 }

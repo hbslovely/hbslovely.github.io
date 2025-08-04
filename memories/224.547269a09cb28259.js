@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkky_niem_web=self.webpackChunkky_niem_web||[]).push([[224],{1224:(m,h,n)=>{n.r(h),n.d(h,{AlbumAnhRoutes:()=>o});const o=[{path:"",loadComponent:()=>n.e(231).then(n.bind(n,9231)).then(t=>t.AlbumAnhComponent)},{path:":id",loadComponent:()=>n.e(231).then(n.bind(n,9231)).then(t=>t.AlbumAnhComponent)}]}}]);

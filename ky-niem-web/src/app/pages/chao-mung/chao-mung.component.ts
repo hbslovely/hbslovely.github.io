@@ -17,7 +17,6 @@ import { CommonModule } from '@angular/common';
 import { CarouselModule } from 'primeng/carousel';
 import { ParallaxHeaderComponent } from '../../shared/components/parallax-header/parallax-header.component';
 import { LoveStatisticsComponent } from '../../shared/components/love-statistics/love-statistics.component';
-import { SpecialMomentsComponent } from '../../shared/components/special-moments/special-moments.component';
 import { OurSongsComponent } from '../../shared/components/our-songs/our-songs.component';
 import { MeaningfulGiftsComponent } from '../../shared/components/meaningful-gifts/meaningful-gifts.component';
 import { FavoriteFoodsComponent } from '../../shared/components/favorite-foods/favorite-foods.component';
@@ -34,7 +33,6 @@ import { FuturePromisesComponent } from '../../shared/components/future-promises
     CarouselModule,
     ParallaxHeaderComponent,
     LoveStatisticsComponent,
-    SpecialMomentsComponent,
     OurSongsComponent,
     MeaningfulGiftsComponent,
     FavoriteFoodsComponent,
@@ -47,18 +45,11 @@ import { FuturePromisesComponent } from '../../shared/components/future-promises
   styleUrls: ['./chao-mung.component.scss']
 })
 export class ChaoMungComponent implements OnInit {
-  memories: Memory[] = [];
-  timeline: SpecialMoment[] = [];
   loveStatistics: LoveStatistics = {
     daysTogether: 0,
     photosTaken: 0,
     placesVisited: 0
   };
-  specialMoments: SpecialMoment[] = [];
-  ourSongs: Song[] = [];
-  meaningfulGifts: Gift[] = [];
-  favoriteFoods: Food[] = [];
-
   // Array for floating hearts
   floatingHearts = Array(15).fill(0).map((_, i) => i + 1);
 
@@ -71,23 +62,6 @@ export class ChaoMungComponent implements OnInit {
   ngOnInit(): void {
     this.loadLoveStatistics();
     this.loadFutureGoals();
-    this.loadMemoriesData();
-  }
-
-  private loadMemoriesData() {
-    this.http.get<any>('assets/data/memories-data.json').subscribe({
-      next: (data) => {
-        this.memories = data.memoriesGallery;
-        this.timeline = data.timeline;
-        this.specialMoments = data.specialMoments;
-        this.ourSongs = data.ourSongs;
-        this.meaningfulGifts = data.meaningfulGifts;
-        this.favoriteFoods = data.favoriteFoods;
-      },
-      error: (error) => {
-        console.error('Error loading memories data:', error);
-      }
-    });
   }
 
   private loadLoveStatistics(): void {
