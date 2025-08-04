@@ -9,7 +9,6 @@
       [selectedFilters]="selectedFilters"
       [searchText]="searchText"
       [isResetting]="isResetting"
-      [allPlaceNames]="getAllPlaceNames()"
       (filterChange)="toggleFilter($event.type, $event.value)"
       (searchChange)="onSearch($event)"
       (resetFilters)="resetFilters()">
@@ -40,7 +39,7 @@
 
     <!-- Places Grid -->
     <div class="places-grid" *ngIf="!loading">
-      <app-place-card 
+      <app-place-card
         *ngFor="let place of filteredPlaces"
         [place]="place">
       </app-place-card>
@@ -57,4 +56,4 @@
       <p>Không tìm thấy địa điểm nào phù hợp với bộ lọc đã chọn</p>
     </div>
   </main>
-</div> 
+</div>
