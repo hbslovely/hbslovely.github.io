@@ -368,64 +368,64 @@
     {
       "id": "deo-phu-son",
       "name": "Đèo Phú Sơn",
-      "location": "Bình Định",
+      "location": "Lâm Đồng - Đắk Lắk",
       "image": "assets/images/places/checkin-deo-phu-son.jpg",
-      "description": "Cung đường đèo ngoạn mục với view biển tuyệt đẹp",
-      "detailedDescription": "Đèo Phú Sơn là một trong những cung đường ven biển đẹp nhất miền Trung, nối liền các vùng duyên hải của tỉnh Bình Định. Từ đỉnh đèo, du khách có thể ngắm nhìn toàn cảnh biển xanh và những dãy núi trùng điệp.",
-      "howToGet": "Đèo nằm trên quốc lộ 1D, cách thành phố Quy Nhơn khoảng 30km về phía Bắc.",
-      "bestTimeToVisit": "Thời điểm đẹp nhất để chinh phục đèo là từ tháng 3 đến tháng 8, khi thời tiết thuận lợi.",
+      "description": "Cung đường đèo hùng vĩ nối liền hai tỉnh Lâm Đồng và Đắk Lắk, với khung cảnh núi rừng Tây Nguyên tuyệt đẹp",
+      "detailedDescription": "Đèo Phú Sơn là một trong những cung đường đèo đẹp của Tây Nguyên, nối liền hai tỉnh Lâm Đồng và Đắk Lắk. Đèo có độ dài khoảng 10km với nhiều khúc cua uốn lượn, hai bên là rừng thông và các đồi cà phê xanh mướt. Từ đỉnh đèo, du khách có thể ngắm nhìn toàn cảnh núi rừng Tây Nguyên hùng vĩ và những thung lũng trải dài.",
+      "howToGet": "Đèo nằm trên tuyến đường từ Đà Lạt đi Buôn Ma Thuột, cách thành phố Đà Lạt khoảng 150km về phía Đông Bắc. Có thể di chuyển bằng xe máy hoặc ô tô từ hai đầu Đà Lạt hoặc Buôn Ma Thuột.",
+      "bestTimeToVisit": "Thời điểm đẹp nhất để chinh phục đèo là từ tháng 11 đến tháng 4 năm sau, khi thời tiết Tây Nguyên khô ráo, thuận lợi cho việc di chuyển và ngắm cảnh.",
       "attractions": {
         "natural": [
           {
             "name": "Đỉnh đèo Phú Sơn",
-            "description": "Điểm ngắm cảnh tuyệt đẹp nhìn ra biển",
+            "description": "Điểm ngắm cảnh tuyệt đẹp nhìn ra núi rừng Tây Nguyên",
             "image": "assets/images/places/dinh-deo-phu-son.jpg"
           },
           {
-            "name": "Bãi biển Trung Lương",
-            "description": "Bãi biển hoang sơ dưới chân đèo",
-            "image": "assets/images/places/bai-bien-trung-luong.jpg"
+            "name": "Thác Phú Sơn",
+            "description": "Thác nước hoang sơ gần đèo",
+            "image": "assets/images/places/thac-phu-son.jpg"
           }
         ]
       },
       "localFood": [
         {
-          "name": "Bánh hỏi lòng heo",
-          "description": "Món ăn đặc trưng của Bình Định",
-          "image": "assets/images/foods/banh-hoi-long-heo.jpg"
+          "name": "Cà phê Tây Nguyên",
+          "description": "Cà phê đặc sản vùng cao nguyên",
+          "image": "assets/images/foods/ca-phe-tay-nguyen.jpg"
         },
         {
-          "name": "Gỏi cá mai",
-          "description": "Đặc sản vùng biển Bình Định",
-          "image": "assets/images/foods/goi-ca-mai.jpg"
+          "name": "Rau rừng nướng",
+          "description": "Các loại rau rừng đặc trưng của vùng Tây Nguyên",
+          "image": "assets/images/foods/rau-rung.jpg"
         }
       ],
       "nearbyAttractions": [
         {
-          "name": "Bãi biển Trung Lương",
-          "description": "Bãi biển đẹp dưới chân đèo",
-          "distance": "5km",
-          "image": "assets/images/places/bai-bien-trung-luong.jpg"
+          "name": "Vườn quốc gia Chư Yang Sin",
+          "description": "Khu bảo tồn thiên nhiên với nhiều loài động thực vật quý hiếm",
+          "distance": "30km",
+          "image": "assets/images/places/vuon-quoc-gia-chu-yang-sin.jpg"
         },
         {
-          "name": "Tháp Đôi",
-          "description": "Di tích tháp Chăm cổ",
-          "distance": "15km",
-          "image": "assets/images/places/thap-doi.jpg"
+          "name": "Thác Dray Sap",
+          "description": "Thác nước hùng vĩ của Tây Nguyên",
+          "distance": "45km",
+          "image": "assets/images/places/thac-dray-sap.jpg"
         }
       ],
       "recommendedFood": [
         {
-          "name": "Bánh hỏi lòng heo",
-          "description": "Món ăn truyền thống Bình Định",
+          "name": "Cơm lam",
+          "description": "Món ăn truyền thống của người Tây Nguyên",
           "price": "30000-50000 VND/phần",
           "where": "Các quán ăn dọc đèo"
         },
         {
-          "name": "Hải sản tươi sống",
-          "description": "Các món hải sản tươi từ biển",
-          "price": "100000-300000 VND/phần",
-          "where": "Các nhà hàng ven biển"
+          "name": "Cà phê sữa đá",
+          "description": "Cà phê nguyên chất Tây Nguyên",
+          "price": "15000-25000 VND/ly",
+          "where": "Các quán cà phê dọc đường"
         }
       ]
     },
