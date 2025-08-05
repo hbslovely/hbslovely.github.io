@@ -43,44 +43,44 @@
       ]
     },
     {
-      "id": "cho-dong-xuan-da-lat",
-      "name": "Chợ Đông Xuân Đà Lạt",
-      "location": "Lâm Đồng",
-      "image": "assets/images/places/checkin-cho-dong-xuan-da-lat.png",
-      "description": "Khu chợ truyền thống nổi tiếng của thành phố Đà Lạt, nơi hội tụ đặc sản vùng cao nguyên với không gian mua sắm sôi động và đa dạng. Chợ không chỉ là điểm đến mua sắm mà còn là nơi trải nghiệm văn hóa ẩm thực độc đáo của vùng đất cao nguyên.",
-      "detailedDescription": "Chợ Đông Xuân Đà Lạt là một trong những khu chợ truyền thống lớn nhất thành phố, được xây dựng từ thời Pháp với kiến trúc đặc trưng. Nơi đây bán các sản phẩm đặc trưng của vùng đất cao nguyên như rau củ tươi, hoa quả, và các đặc sản địa phương. Chợ hoạt động từ sáng sớm với không khí nhộn nhịp của người mua kẻ bán, là nơi lý tưởng để trải nghiệm cuộc sống thường ngày của người dân Đà Lạt.",
-      "howToGet": "Chợ nằm ở trung tâm thành phố Đà Lạt, cách Hồ Xuân Hương khoảng 500m. Bạn có thể đi bộ từ khu vực trung tâm hoặc bắt taxi với giá khoảng 20.000-30.000 VND.",
-      "bestTimeToVisit": "Buổi sáng sớm từ 5h-9h là thời điểm tốt nhất để tham quan và mua sắm tại chợ. Đây là lúc các mặt hàng tươi sống được nhập về nhiều nhất và giá cả cũng hợp lý nhất.",
+      "id": "cho-dong-xuan-ha-noi",
+      "name": "Chợ Đồng Xuân Hà Nội",
+      "location": "Hà Nội",
+      "image": "assets/images/places/checkin-cho-dong-xuan-ha-noi.jpg",
+      "description": "Khu chợ truyền thống lớn nhất và lâu đời nhất Hà Nội, là biểu tượng văn hóa và thương mại của Thủ đô với lịch sử hơn 130 năm. Chợ không chỉ là trung tâm mua sắm sầm uất mà còn là điểm đến du lịch hấp dẫn của Hà Nội.",
+      "detailedDescription": "Chợ Đồng Xuân được xây dựng từ năm 1889 dưới thời Pháp thuộc, là khu chợ lớn nhất ở khu vực phố cổ Hà Nội. Với kiến trúc độc đáo mang dấu ấn thời gian, chợ Đồng Xuân là nơi tập trung buôn bán đa dạng các mặt hàng từ vải vóc, quần áo, đồ gia dụng đến thực phẩm tươi sống. Đặc biệt, tầng 1 của chợ nổi tiếng với khu ẩm thực phong phú, nơi du khách có thể thưởng thức các món ăn đặc trưng của Hà Nội.",
+      "howToGet": "Chợ nằm ở trung tâm khu phố cổ Hà Nội, số 1 phố Đồng Xuân. Có thể đi bộ từ Hồ Hoàn Kiếm khoảng 10 phút, hoặc đi taxi, xe ôm công nghệ với giá khoảng 15.000-30.000 VND.",
+      "bestTimeToVisit": "Chợ hoạt động từ 6h sáng đến 19h tối hàng ngày. Buổi sáng sớm (6h-9h) là thời điểm lý tưởng để mua thực phẩm tươi sống, còn buổi chiều thích hợp để mua sắm quần áo và đồ gia dụng.",
       "nearbyAttractions": [
         {
-          "name": "Hồ Xuân Hương",
-          "description": "Hồ nước ngọt nhân tạo trung tâm Đà Lạt, nơi lý tưởng để dạo bộ và ngắm cảnh thành phố. Xung quanh hồ có nhiều quán cà phê và điểm chụp ảnh đẹp.",
-          "distance": "1km về phía Tây",
-          "travelTime": "15 phút đi bộ hoặc 5 phút đi xe",
-          "image": "assets/images/places/ho-xuan-huong.jpg"
+          "name": "Phố cổ Hà Nội",
+          "description": "Khu phố cổ với 36 phố phường truyền thống, mỗi phố chuyên kinh doanh một mặt hàng đặc trưng. Nơi đây còn lưu giữ nhiều công trình kiến trúc và nét văn hóa độc đáo của Hà Nội xưa.",
+          "distance": "0.2km",
+          "travelTime": "5 phút đi bộ",
+          "image": "assets/images/places/pho-co-ha-noi.jpg"
         },
         {
-          "name": "Nhà thờ Con Gà",
-          "description": "Công trình kiến trúc Pháp nổi tiếng với lối kiến trúc Gothic độc đáo, là biểu tượng của thành phố Đà Lạt. Nhà thờ còn nổi tiếng với quả chuông đồng nặng 500kg.",
-          "distance": "500m về phía Nam",
+          "name": "Hồ Hoàn Kiếm",
+          "description": "Trái tim của Hà Nội, nơi có Tháp Rùa, cầu Thê Húc và đền Ngọc Sơn. Đây là điểm đến không thể bỏ qua khi du lịch Hà Nội.",
+          "distance": "0.8km",
           "travelTime": "10 phút đi bộ",
-          "image": "assets/images/places/nha-tho-con-ga.jpg"
+          "image": "assets/images/places/ho-hoan-kiem.jpg"
         }
       ],
       "recommendedFood": [
         {
-          "name": "Bánh căn",
-          "description": "Bánh làm từ bột gạo với nhân trứng hoặc thịt, được nướng trong khuôn đặc biệt và ăn kèm với nước chấm chua ngọt đặc trưng",
-          "restaurant": "Quán Bánh Căn Cô Năm",
-          "price": "25000-40000 VND/phần",
-          "where": "Khu ẩm thực chợ Đà Lạt, gần cổng chính"
+          "name": "Phở gà Đồng Xuân",
+          "description": "Món phở truyền thống với nước dùng ngọt thanh, thịt gà mềm và bánh phở dai ngon. Được nấu theo công thức gia truyền nhiều đời",
+          "restaurant": "Phở gà Bà Chiểu",
+          "price": "40000-55000 VND/bát",
+          "where": "Khu ẩm thực tầng 1 chợ Đồng Xuân"
         },
         {
-          "name": "Sữa đậu nành nóng",
-          "description": "Đồ uống ấm nóng phù hợp với thời tiết Đà Lạt, được làm từ đậu nành tươi nguyên chất và phục vụ kèm bánh tiêu nóng",
-          "restaurant": "Quầy Sữa Đậu Nành Bà Hai",
-          "price": "10000-15000 VND/ly",
-          "where": "Các quầy đồ uống trong chợ, khu vực tầng trệt"
+          "name": "Bún chả Hà Nội",
+          "description": "Món ăn đặc trưng của người Hà Nội với thịt nướng thơm lừng, nước chấm chua ngọt đậm đà và bún tươi",
+          "restaurant": "Bún chả Đồng Xuân",
+          "price": "35000-50000 VND/suất",
+          "where": "Các quán ăn xung quanh khu vực chợ"
         }
       ]
     },
