@@ -76,69 +76,167 @@
       "name": "Thành phố Tuy Hòa",
       "location": "Phú Yên",
       "image": "assets/images/places/checkin_tuy-hoa_phu-yen.jpg",
-      "description": "Thành phố biển với nhiều thắng cảnh",
-      "detailedDescription": "Tuy Hòa là thành phố biển xinh đẹp của tỉnh Phú Yên, nổi tiếng với bãi biển hoang sơ, Gành Đá Đĩa độc đáo và nhiều danh thắng khác. Nơi đây còn có nhiều món ăn đặc sản hấp dẫn.",
-      "howToGet": "Có thể đến Tuy Hòa bằng máy bay (sân bay Tuy Hòa), tàu hỏa hoặc xe khách.",
-      "bestTimeToVisit": "Thời điểm đẹp nhất là từ tháng 3 đến tháng 8.",
+      "description": "Thành phố biển xinh đẹp với danh thắng Gành Đá Đĩa độc đáo, bãi biển hoang sơ và ẩm thực đặc sắc, được mệnh danh là 'viên ngọc ẩn' của duyên hải Nam Trung Bộ",
+      "detailedDescription": "Tuy Hòa là thủ phủ của tỉnh Phú Yên, một thành phố biển quyến rũ với những thắng cảnh thiên nhiên tuyệt đẹp và di sản văn hóa phong phú. Nơi đây nổi tiếng với Gành Đá Đĩa - kỳ quan thiên nhiên với những khối đá bazan hình lục giác độc đáo, bãi biển Bãi Xép hoang sơ tuyệt đẹp, và Đầm Ô Loan với hệ sinh thái đa dạng. Phú Yên còn là vùng đất có nền ẩm thực đặc sắc với những món ăn mang đậm bản sắc địa phương như bánh canh hẹ, mực một nắng, sò huyết. Thành phố cũng lưu giữ nhiều di tích lịch sử văn hóa Chăm Pa với quần thể tháp cổ và truyền thống làng nghề truyền thống. Tuy Hòa là điểm đến lý tưởng cho du khách yêu thích khám phá những vẻ đẹp hoang sơ, thưởng thức ẩm thực đậm đà và trải nghiệm văn hóa bản địa.",
+      "howToGet": "Từ TP.HCM: máy bay (1 giờ đến sân bay Tuy Hòa), tàu hỏa (10-12 giờ đến ga Tuy Hòa), xe khách (8-10 giờ). Từ Hà Nội: máy bay (1.5 giờ), tàu hỏa (14-16 giờ), xe khách (12-14 giờ). Trong thành phố có thể thuê xe máy, taxi hoặc xe ôm để di chuyển.",
+      "bestTimeToVisit": "Thời điểm lý tưởng nhất là từ tháng 3 đến tháng 8 khi thời tiết ổn định, ít mưa bão và biển êm đẹp. Tránh mùa mưa bão từ tháng 9-12. Mùa khô từ tháng 1-8 phù hợp cho các hoạt động tham quan và thể thao biển.",
       "attractions": {
         "natural": [
           {
-            "name": "Bãi biển Tuy Hòa",
-            "description": "Bãi biển đẹp với cát trắng mịn và nước trong xanh",
-            "image": "assets/images/places/checkin_tuy-hoa_phu-yen.jpg"
+            "name": "Gành Đá Đĩa",
+            "description": "Kỳ quan thiên nhiên với hàng nghìn cột đá bazan hình lục giác xếp chồng lên nhau như những chiếc đĩa khổng lồ, được hình thành từ hoạt động núi lửa cách đây hàng triệu năm",
+            "image": "assets/images/places/ganh-da-dia.jpg"
           },
           {
-            "name": "Gành Đá Đĩa",
-            "description": "Thắng cảnh với những khối đá hình lục giác",
-            "image": "assets/images/places/ganh-da-dia.jpg"
+            "name": "Bãi Xép",
+            "description": "Bãi biển hoang sơ đẹp nhất Phú Yên với cát vàng mịn, nước biển trong xanh và khung cảnh yên bình, là điểm đến lý tưởng cho việc nghỉ dưỡng và chụp ảnh",
+            "image": "assets/images/places/bai-xep.jpg"
+          },
+          {
+            "name": "Đầm Ô Loan",
+            "description": "Đầm nước lợ lớn nhất Phú Yên với hệ sinh thái đa dạng, nổi tiếng với đặc sản sò huyết và cảnh quan thiên nhiên tuyệt đẹp với những thúng chai đánh cá độc đáo",
+            "image": "assets/images/places/dam-o-loan.jpg"
+          },
+          {
+            "name": "Mũi Điện",
+            "description": "Điểm cực Đông của đất liền Việt Nam với hải đăng cổ và cảnh quan biển hùng vĩ, là nơi đón ánh bình minh đầu tiên trên đất liền",
+            "image": "assets/images/places/mui-dien.jpg"
+          },
+          {
+            "name": "Hòn Nưa",
+            "description": "Hòn đảo nhỏ với bãi biển hoang sơ và rạn san hô đẹp, điểm đến lý tưởng cho hoạt động lặn ngắm san hô và câu cá",
+            "image": "assets/images/places/hon-nua.jpg"
           }
         ],
         "cultural": [
           {
             "name": "Tháp Nhạn",
-            "description": "Di tích kiến trúc Chăm cổ",
+            "description": "Quần thể tháp Chăm cổ từ thế kỷ 12-13 với kiến trúc độc đáo và nghệ thuật điêu khắc tinh xảo, là di sản văn hóa quan trọng của người Chăm",
             "image": "assets/images/places/thap-nhan.jpg"
+          },
+          {
+            "name": "Tháp Bình Lâm",
+            "description": "Tháp Chăm cổ còn nguyên vẹn với kiến trúc đặc trưng và giá trị lịch sử văn hóa cao",
+            "image": "assets/images/places/thap-binh-lam.jpg"
+          },
+          {
+            "name": "Nhà thờ Mằng Lăng",
+            "description": "Công trình kiến trúc tôn giáo độc đáo với lối kiến trúc Âu - Á kết hợp",
+            "image": "assets/images/places/nha-tho-mang-lang.jpg"
+          }
+        ],
+        "adventure": [
+          {
+            "name": "Bãi Môn",
+            "description": "Bãi biển với những mỏm đá tự nhiên tạo hình độc đáo, điểm check-in nổi tiếng của giới trẻ",
+            "image": "assets/images/places/bai-mon.jpg"
+          },
+          {
+            "name": "Vịnh Vũng Rô",
+            "description": "Vịnh kín đẹp nhất Việt Nam với núi non bao quanh và nước biển xanh ngắt, có ý nghĩa lịch sử quan trọng",
+            "image": "assets/images/places/vinh-vung-ro.jpg"
           }
         ]
       },
       "localFood": [
         {
           "name": "Bánh canh hẹ",
-          "description": "Món ăn đặc trưng Phú Yên",
+          "description": "Món ăn đặc trưng của Phú Yên với sợi bánh canh dai ngon, nước dùng đậm đà từ xương heo và hẹ xanh thơm ngon",
           "image": "assets/images/foods/banh-canh-he.jpg"
         },
         {
           "name": "Mực một nắng",
-          "description": "Đặc sản hải sản",
+          "description": "Đặc sản hải sản được phơi khô một nắng với hương vị thơm ngon, ngọt tự nhiên của biển khơi",
           "image": "assets/images/foods/muc-mot-nang.jpg"
+        },
+        {
+          "name": "Sò huyết Ô Loan",
+          "description": "Đặc sản nổi tiếng từ đầm Ô Loan với thịt sò ngọt thanh và nước dùng màu đỏ đặc trưng",
+          "image": "assets/images/foods/so-huyet-o-loan.jpg"
+        },
+        {
+          "name": "Bánh hỏi lòng heo",
+          "description": "Món ăn truyền thống với bánh hỏi mềm và lòng heo được nấu đậm đà, thơm ngon",
+          "image": "assets/images/foods/banh-hoi-long-heo.jpg"
+        },
+        {
+          "name": "Cá ngừ nướng lá chuối",
+          "description": "Đặc sản từ cá ngừ tươi được ướp gia vị và nướng trong lá chuối, giữ nguyên hương vị tự nhiên",
+          "image": "assets/images/foods/ca-ngu-nuong-la-chuoi.jpg"
+        },
+        {
+          "name": "Ốc hến xào dứa",
+          "description": "Món ăn độc đáo với ốc hến tươi xào cùng dứa, tạo vị chua ngọt hài hòa",
+          "image": "assets/images/foods/oc-hen-xao-dua.jpg"
         }
       ],
       "nearbyAttractions": [
         {
+          "name": "Bãi Xép",
+          "description": "Bãi biển hoang sơ đẹp nhất Phú Yên với cảnh quan thiên nhiên tuyệt vời",
+          "distance": "15km",
+          "travelTime": "25 phút đi xe máy",
+          "image": "assets/images/places/bai-xep.jpg"
+        },
+        {
           "name": "Đầm Ô Loan",
-          "description": "Đầm nước lợ nổi tiếng",
+          "description": "Đầm nước lợ với hệ sinh thái phong phú và đặc sản sò huyết nổi tiếng",
           "distance": "20km",
+          "travelTime": "30 phút đi xe máy",
           "image": "assets/images/places/dam-o-loan.jpg"
         },
         {
-          "name": "Bãi Xép",
-          "description": "Bãi biển hoang sơ đẹp",
-          "distance": "15km",
-          "image": "assets/images/places/bai-xep.jpg"
+          "name": "Gành Đá Đĩa",
+          "description": "Kỳ quan thiên nhiên với những cột đá bazan hình lục giác độc đáo",
+          "distance": "25km",
+          "travelTime": "35 phút đi xe máy",
+          "image": "assets/images/places/ganh-da-dia.jpg"
+        },
+        {
+          "name": "Mũi Điện",
+          "description": "Điểm cực Đông của đất liền với hải đăng cổ và cảnh bình minh tuyệt đẹp",
+          "distance": "30km",
+          "travelTime": "45 phút đi xe máy",
+          "image": "assets/images/places/mui-dien.jpg"
+        },
+        {
+          "name": "Vịnh Vũng Rô",
+          "description": "Vịnh kín đẹp nhất Việt Nam với núi non và biển xanh hùng vĩ",
+          "distance": "40km",
+          "travelTime": "1 giờ đi xe máy",
+          "image": "assets/images/places/vinh-vung-ro.jpg"
         }
       ],
       "recommendedFood": [
         {
           "name": "Bánh canh hẹ",
-          "description": "Món ăn truyền thống",
+          "description": "Món ăn đặc trưng Phú Yên với hương vị đậm đà",
           "price": "25000-35000 VND/tô",
-          "where": "Các quán ăn địa phương"
+          "where": "Quán Cô Ba Sáu - Đường Lê Duẩn, Quán Bà Tám - Chợ Tuy Hòa"
         },
         {
           "name": "Sò huyết Ô Loan",
-          "description": "Đặc sản nổi tiếng",
-          "price": "80000-120000 VND/phần",
-          "where": "Các nhà hàng hải sản"
+          "description": "Đặc sản nổi tiếng với thịt sò ngọt thanh",
+          "price": "80000-150000 VND/phần",
+          "where": "Nhà hàng Hải sản Ô Loan - Đầm Ô Loan, Quán Năm Em - Gần cảng"
+        },
+        {
+          "name": "Mực một nắng nướng",
+          "description": "Hải sản đặc trưng được nướng thơm ngon",
+          "price": "150000-250000 VND/kg",
+          "where": "Chợ đêm Tuy Hòa, Các quán ăn ven biển"
+        },
+        {
+          "name": "Bánh hỏi lòng heo",
+          "description": "Món ăn truyền thống với bánh hỏi mềm",
+          "price": "30000-45000 VND/phần",
+          "where": "Quán Dì Tư - Phố Lý Thường Kiệt, Quán Bà Nội - Gần chợ"
+        },
+        {
+          "name": "Cá ngừ nướng lá chuối",
+          "description": "Đặc sản cá ngừ tươi nướng thơm lừng",
+          "price": "200000-300000 VND/kg",
+          "where": "Nhà hàng Biển Xanh - Đường Trần Hưng Đạo"
         }
       ]
     },

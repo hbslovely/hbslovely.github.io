@@ -17,6 +17,12 @@ export interface MemoryPlace {
   attractions?: Attractions;
   nearbyAttractions?: NearbyAttraction[];
   recommendedFood?: RecommendedFood[];
+  customSection?: CustomSection;
+}
+
+export interface CustomSection {
+  title: string;
+  content: string;
 }
 
 export interface Food {
@@ -36,6 +42,11 @@ export interface Attractions {
   historical?: Attraction[];
   religious?: Attraction[];
   entertainment?: Attraction[];
+  cultural?: Attraction[];
+  natural?: Attraction[];
+  adventure?: Attraction[];
+  shopping?: Attraction[];
+  architectural?: Attraction[];
 }
 
 export interface Attraction {

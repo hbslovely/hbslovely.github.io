@@ -86,7 +86,7 @@
       <!-- Grid View -->
       <div class="places-grid" *ngIf="viewMode === 'grid'">
         <app-place-card
-          *ngFor="let place of filteredPlaces; trackBy: trackByPlace"
+          *ngFor="let place of paginatedPlaces; trackBy: trackByPlace"
           [place]="place"
           class="place-card-grid">
         </app-place-card>
@@ -96,7 +96,7 @@
       <div class="places-list" *ngIf="viewMode === 'list'">
         <div 
           class="place-list-item" 
-          *ngFor="let place of filteredPlaces; trackBy: trackByPlace"
+          *ngFor="let place of paginatedPlaces; trackBy: trackByPlace"
           (click)="navigateToDetail(place.id)">
           <div class="place-image">
             <img [src]="place.image" [alt]="place.name" />
@@ -132,6 +132,68 @@
           <i class="pi pi-refresh"></i>
           <span>Đặt lại bộ lọc</span>
         </button>
+      </div>
+
+      <!-- Pagination Controls -->
+      <div class="pagination-section" *ngIf="filteredPlaces.length > 0 && totalPages > 1">
+        <div class="pagination-info">
+          <span>Hiển thị {{ (currentPage - 1) * itemsPerPage + 1 }} - {{ currentPage * itemsPerPage > totalItems ? totalItems : currentPage * itemsPerPage }} trong số {{ totalItems }} địa điểm</span>
+          
+          <div class="items-per-page">
+            <label>Hiển thị:</label>
+            <select [value]="itemsPerPage" (change)="changeItemsPerPage(+$any($event.target).value)">
+              <option value="12">12</option>
+              <option value="24">24</option>
+              <option value="36">36</option>
+              <option value="48">48</option>
+            </select>
+            <span>/ trang</span>
+          </div>
+        </div>
+
+        <nav class="pagination-controls">
+          <button 
+            class="pagination-btn first-btn"
+            [disabled]="currentPage === 1"
+            (click)="goToFirstPage()"
+            title="Trang đầu">
+            <i class="pi pi-angle-double-left"></i>
+          </button>
+
+          <button 
+            class="pagination-btn prev-btn"
+            [disabled]="currentPage === 1"
+            (click)="goToPreviousPage()"
+            title="Trang trước">
+            <i class="pi pi-angle-left"></i>
+          </button>
+
+          <div class="page-numbers">
+            <button 
+              *ngFor="let page of getPageNumbers()" 
+              class="pagination-btn page-btn"
+              [class.active]="page === currentPage"
+              (click)="goToPage(page)">
+              {{ page }}
+            </button>
+          </div>
+
+          <button 
+            class="pagination-btn next-btn"
+            [disabled]="currentPage === totalPages"
+            (click)="goToNextPage()"
+            title="Trang sau">
+            <i class="pi pi-angle-right"></i>
+          </button>
+
+          <button 
+            class="pagination-btn last-btn"
+            [disabled]="currentPage === totalPages"
+            (click)="goToLastPage()"
+            title="Trang cuối">
+            <i class="pi pi-angle-double-right"></i>
+          </button>
+        </nav>
       </div>
 
     </section>

@@ -436,32 +436,59 @@
       "name": "Thành phố Bắc Ninh",
       "location": "Bắc Ninh",
       "image": "assets/images/places/checkin-bac-ninh.jpg",
-      "description": "Kinh đô quan họ với nhiều di sản văn hóa phi vật thể độc đáo, nơi hội tụ của những làn điệu dân ca truyền thống và là cái nôi của văn hóa dân gian Bắc Bộ",
-      "detailedDescription": "Bắc Ninh, vùng đất được mệnh danh là kinh đô quan họ, là nơi sinh thành và phát triển của dân ca quan họ - di sản văn hóa phi vật thể được UNESCO công nhận. Thành phố không chỉ nổi tiếng với những làn điệu quan họ ngọt ngào mà còn là nơi lưu giữ nhiều di tích lịch sử văn hóa quan trọng như đền Đô, chùa Phật Tích, đình Đình Bảng. Bắc Ninh còn là quê hương của nhiều làng nghề truyền thống như tranh dân gian Đông Hồ, gốm Phù Lãng, tơ tằm Hồ. Đặc biệt, vào mùa xuân, Bắc Ninh trở thành điểm đến hấp dẫn với nhiều lễ hội truyền thống, trong đó nổi bật nhất là lễ hội quan họ, nơi du khách có thể thưởng thức những làn điệu quan họ đặc sắc và tìm hiểu về nét văn hóa độc đáo của vùng đất này.",
-      "howToGet": "Từ Hà Nội đi xe buýt hoặc xe khách theo quốc lộ 1 (khoảng 30km).",
-      "bestTimeToVisit": "Thời điểm lý tưởng để thăm Bắc Ninh là vào mùa xuân, đặc biệt là dịp lễ hội quan họ (tháng 2-3 âm lịch). Thời tiết mát mẻ và có nhiều hoạt động văn hóa truyền thống.",
+      "description": "Kinh đô quan họ với nhiều di sản văn hóa phi vật thể độc đáo, nơi hội tụ của những làn điệu dân ca truyền thống và là cái nôi của văn hóa dân gian Bắc Bộ, được ca ngợi trong MV 'Bắc Bling' của Hòa Minzy",
+      "detailedDescription": "Bắc Ninh, vùng đất được mệnh danh là kinh đô quan họ, là nơi sinh thành và phát triển của dân ca quan họ - di sản văn hóa phi vật thể được UNESCO công nhận. Thành phố không chỉ nổi tiếng với những làn điệu quan họ ngọt ngào mà còn là nơi lưu giữ nhiều di tích lịch sử văn hóa quan trọng như đền Đô, chùa Phật Tích, đình Đình Bảng. Bắc Ninh còn là quê hương của nhiều làng nghề truyền thống như tranh dân gian Đông Hồ, gốm Phù Lãng, tơ tằm Hồ. Đặc biệt, Bắc Ninh đã trở thành nổi tiếng hơn khi được ca ngợi trong MV 'Bắc Bling' của ca sĩ Hòa Minzy, giúp quảng bá vẻ đẹp văn hóa và con người nơi đây đến với giới trẻ cả nước. Vào mùa xuân, Bắc Ninh trở thành điểm đến hấp dẫn với nhiều lễ hội truyền thống, trong đó nổi bật nhất là lễ hội quan họ, nơi du khách có thể thưởng thức những làn điệu quan họ đặc sắc và tìm hiểu về nét văn hóa độc đáo của vùng đất này.",
+      "howToGet": "Từ Hà Nội đi xe buýt hoặc xe khách theo quốc lộ 1 (khoảng 30km). Có thể đi xe buýt số 18 từ bến xe Gia Lâm hoặc tàu điện đô thị Metro Nhổn - ga Hà Nội.",
+      "bestTimeToVisit": "Thời điểm lý tưởng để thăm Bắc Ninh là vào mùa xuân, đặc biệt là dịp lễ hội quan họ (tháng 2-3 âm lịch). Thời tiết mát mẻ và có nhiều hoạt động văn hóa truyền thống. Mùa thu (tháng 9-11) cũng rất đẹp với khí hậu dễ chịu.",
       "attractions": {
         "cultural": [
           {
             "name": "Làng quan họ Lim",
-            "description": "Nơi bảo tồn và phát triển nghệ thuật dân ca quan họ, với những liền anh, liền chị nổi tiếng và các hoạt động văn hóa đặc sắc",
+            "description": "Nơi bảo tồn và phát triển nghệ thuật dân ca quan họ, được Hòa Minzy ca ngợi trong MV 'Bắc Bling', với những liền anh, liền chị nổi tiếng và các hoạt động văn hóa đặc sắc",
             "image": "assets/images/places/lang-quan-ho-lim.jpg"
           },
           {
             "name": "Làng tranh Đông Hồ",
-            "description": "Làng nghề truyền thống nổi tiếng với nghề làm tranh dân gian bằng giấy dó và màu tự nhiên",
+            "description": "Làng nghề truyền thống nổi tiếng với nghề làm tranh dân gian bằng giấy dó và màu tự nhiên, một trong những điểm check-in hot sau MV 'Bắc Bling'",
             "image": "assets/images/places/lang-tranh-dong-ho.jpg"
+          },
+          {
+            "name": "Đình Đình Bảng",
+            "description": "Di tích kiến trúc nghệ thuật cấp quốc gia với những họa tiết chạm khắc tinh xảo, thể hiện nghệ thuật điêu khắc Việt Nam thời phong kiến",
+            "image": "assets/images/places/dinh-dinh-bang.jpg"
           }
         ],
         "historical": [
           {
             "name": "Đền Đô",
-            "description": "Di tích lịch sử quan trọng thờ các vua nhà Lý, với kiến trúc độc đáo và nhiều hiện vật quý",
+            "description": "Di tích lịch sử quan trọng thờ các vua nhà Lý, với kiến trúc độc đáo và nhiều hiện vật quý, là nơi thể hiện lịch sử hào hùng của đất Kinh Bắc",
             "image": "assets/images/places/den-do.jpg"
+          },
+          {
+            "name": "Chùa Dâu",
+            "description": "Ngôi chùa cổ nhất miền Bắc, một trong tứ pháp thiêng liêng của Phật giáo Việt Nam với lịch sử hơn 2000 năm",
+            "image": "assets/images/places/chua-dau.jpg"
+          }
+        ],
+        "entertainment": [
+          {
+            "name": "Bối cảnh MV Bắc Bling",
+            "description": "Các địa điểm quay MV 'Bắc Bling' của Hòa Minzy, bao gồm làng quan họ Lim, đình Đình Bảng và các khu vực văn hóa đặc trưng",
+            "image": "assets/images/places/mv-bac-bling-locations.jpg"
           }
         ]
       },
       "localFood": [
+        {
+          "name": "Tương Đình Tổ",
+          "description": "Đặc sản nổi tiếng của Bắc Ninh, loại tương đen thơm ngon được làm theo công thức truyền thống từ làng nghề Đình Tổ",
+          "image": "assets/images/foods/tuong-dinh-to.jpg"
+        },
+        {
+          "name": "Rượu làng Vân",
+          "description": "Đặc sản rượu truyền thống của Bắc Ninh, được chưng cất theo phương pháp cổ truyền với hương vị đặc trưng",
+          "image": "assets/images/foods/ruou-lang-van.jpg"
+        },
         {
           "name": "Bánh phu thê",
           "description": "Bánh truyền thống của Bắc Ninh, biểu tượng cho tình nghĩa vợ chồng, với vị ngọt thanh và nhân đậu xanh thơm ngon",
@@ -485,9 +512,27 @@
           "description": "Làng nghề gốm truyền thống với những sản phẩm gốm độc đáo",
           "distance": "20km",
           "travelTime": "40 phút đi xe máy"
+        },
+        {
+          "name": "Làng Vân",
+          "description": "Làng nghề làm rượu truyền thống nổi tiếng với rượu làng Vân",
+          "distance": "12km",
+          "travelTime": "25 phút đi xe máy"
+        },
+        {
+          "name": "Làng Đình Tổ",
+          "description": "Làng nghề làm tương truyền thống với đặc sản tương Đình Tổ nổi tiếng",
+          "distance": "8km",
+          "travelTime": "20 phút đi xe máy"
         }
       ],
       "recommendedFood": [
+        {
+          "name": "Nem làng Bùi",
+          "description": "Món ăn nên thử với nem cuốn thơm ngon, đặc trưng của làng nghề Bùi",
+          "restaurant": "Quán nem làng Bùi - Làng Bùi, Quế Võ",
+          "price": "50000-80000 VND/phần"
+        },
         {
           "name": "Bánh phu thê",
           "description": "Bánh truyền thống với nhân đậu xanh thơm ngon",
@@ -495,10 +540,22 @@
           "price": "50000-100000 VND/hộp"
         },
         {
+          "name": "Tương Đình Tổ",
+          "description": "Đặc sản tương đen thơm ngon, có thể mua làm quà",
+          "restaurant": "Làng nghề Đình Tổ - Thuận Thành",
+          "price": "80000-150000 VND/chai"
+        },
+        {
           "name": "Bún thang Bắc Ninh",
           "description": "Món bún đặc trưng với nhiều loại rau thơm và nước dùng đậm đà",
           "restaurant": "Quán Bún thang cô Hương - Phố Huyền Quang",
           "price": "35000-50000 VND/bát"
+        },
+        {
+          "name": "Rượu làng Vân",
+          "description": "Rượu truyền thống với độ cồn vừa phải, thích hợp làm quà tặng",
+          "restaurant": "Cơ sở sản xuất làng Vân - Tiên Du",
+          "price": "200000-400000 VND/chai"
         }
       ]
     },
@@ -641,6 +698,95 @@
           "description": "Phở đặc sản với vị chua đặc trưng",
           "restaurant": "Quán phở chua Bà Hằng - Phố Tam Thanh",
           "price": "35000-45000 VND/bát"
+        }
+      ]
+    },
+    {
+      "id": "con-dao",
+      "name": "Côn Đảo",
+      "location": "Bà Rịa - Vũng Tàu",
+      "image": "assets/images/places/checkin_con-dao-hcm.png",
+      "description": "Quần đảo thiên đường với vẻ đẹp hoang sơ và lịch sử anh hùng, nơi hội tụ giữa những bãi biển tuyệt đẹp và di tích lịch sử đầy ý nghĩa của dân tộc",
+      "detailedDescription": "Côn Đảo là quần đảo gồm 16 hòn đảo lớn nhỏ nằm ở phía Nam Việt Nam, thuộc tỉnh Bà Rịa - Vũng Tàu. Nơi đây không chỉ nổi tiếng với vẻ đẹp thiên nhiên hoang sơ, những bãi biển trong xanh mà còn là vùng đất thiêng gắn liền với lịch sử đấu tranh anh dũng của dân tộc. Côn Đảo từng là nhà tù khét tiếng thời Pháp thuộc và Mỹ - Diệm, nơi giam giữ hàng nghìn chiến sĩ cách mạng và người yêu nước. Ngày nay, Côn Đảo đã trở thành điểm du lịch hấp dẫn với hệ sinh thái biển đa dạng, rừng nguyên sinh còn nguyên vẹn và những bãi biển đẹp như Đầm Trầu, An Hải. Du khách đến đây không chỉ được tận hưởng không gian biển xanh, cát trắng mà còn được tìm hiểu về lịch sử hào hùng và chiêm bái những anh hùng liệt sĩ đã hy sinh cho Tổ quốc.",
+      "howToGet": "Từ TP.HCM có thể đi máy bay (45 phút bay) hoặc đi tàu cao tốc từ Vũng Tàu (2.5 giờ). Từ Hà Nội có chuyến bay trực tiếp đến Côn Đảo.",
+      "bestTimeToVisit": "Thời điểm lý tưởng là từ tháng 11 đến tháng 4 năm sau khi thời tiết mát mẻ, ít mưa bão. Tránh mùa mưa từ tháng 5-10.",
+      "attractions": {
+        "historical": [
+          {
+            "name": "Nhà tù Côn Đảo",
+            "description": "Di tích lịch sử quan trọng, nơi giam giữ các chiến sĩ cách mạng với những câu chuyện đau thương nhưng anh dũng",
+            "image": "assets/images/places/nha-tu-con-dao.jpg"
+          },
+          {
+            "name": "Nghĩa trang Hàng Dương",
+            "description": "Nơi an nghỉ của hàng nghìn liệt sĩ, trong đó có mộ Võ Thị Sáu - biểu tượng của lòng yêu nước",
+            "image": "assets/images/places/nghia-trang-hang-duong.jpg"
+          }
+        ],
+        "natural": [
+          {
+            "name": "Biển An Hải",
+            "description": "Bãi biển tuyệt đẹp với cát trắng mịn, nước biển trong xanh và cảnh quan thiên nhiên hoang sơ",
+            "image": "assets/images/places/bien-an-hai.jpg"
+          }
+        ],
+        "cultural": [
+          {
+            "name": "Miếu bà Phi Yến",
+            "description": "Ngôi miếu linh thiêng thờ bà Phi Yến, nơi tâm linh quan trọng của người dân địa phương",
+            "image": "assets/images/places/mieu-ba-phi-yen.jpg"
+          },
+          {
+            "name": "Miếu cậu cải",
+            "description": "Công trình tâm linh độc đáo với kiến trúc truyền thống và ý nghĩa văn hóa sâu sắc",
+            "image": "assets/images/places/mieu-cau-cai.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Mứt bàng",
+          "description": "Đặc sản địa phương được làm từ quả bàng, có vị ngọt thanh đặc trưng của Côn Đảo",
+          "image": "assets/images/foods/mut-bang.jpg"
+        },
+        {
+          "name": "Kem dừa",
+          "description": "Đặc sản địa phương với vị ngọt mát, được làm từ dừa tươi của đảo",
+          "image": "assets/images/foods/kem-dua.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Hòn Bà",
+          "description": "Hòn đảo nhỏ với đình thờ bà và cảnh quan thiên nhiên tuyệt đẹp",
+          "distance": "3km",
+          "travelTime": "15 phút đi cano"
+        },
+        {
+          "name": "Hòn Cau",
+          "description": "Điểm lặn ngắm san hô lý tưởng với hệ sinh thái biển phong phú",
+          "distance": "5km",
+          "travelTime": "20 phút đi cano"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Cua mặt trăng",
+          "description": "Món ăn đặc sản nổi tiếng với thịt cua ngọt thơm, tươi sống",
+          "restaurant": "Các quán gần chợ đêm Côn Đảo",
+          "price": "400000-600000 VND/kg"
+        },
+        {
+          "name": "Cá mú đỏ",
+          "description": "Cá tươi ngon được chế biến thành lẩu với nước dùng đậm đà",
+          "restaurant": "Quán lẩu Tri Kỷ",
+          "price": "300000-500000 VND/kg"
+        },
+        {
+          "name": "Bún riêu",
+          "description": "Bún riêu truyền thống với nước dùng đậm đà và cua đồng thơm ngon",
+          "restaurant": "Quán bà hai khiêm",
+          "price": "50000-70000 VND/bát"
         }
       ]
     }

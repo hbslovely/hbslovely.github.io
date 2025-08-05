@@ -679,41 +679,83 @@
       "name": "Mũi Điện",
       "location": "Phú Yên",
       "image": "assets/images/places/checkin-mui-dien-phu-yen.png",
-      "description": "Điểm cực Đông của Tổ quốc",
-      "detailedDescription": "Mũi Điện hay còn gọi là Đại Lãnh là điểm cực Đông trên đất liền của Tổ quốc. Nơi đây có ngọn hải đăng cổ và cảnh quan thiên nhiên tuyệt đẹp với những bãi biển hoang sơ.",
-      "howToGet": "Từ Tuy Hòa đi xe máy hoặc ô tô khoảng 35km theo quốc lộ 1A.",
+      "description": "Điểm cực Đông của Tổ quốc, nơi đón bình minh đầu tiên",
+      "detailedDescription": "Mũi Điện (hay còn gọi là Mũi Đại Lãnh) thuộc địa phận xã Hòa Tâm, huyện Đông Hòa, tỉnh Phú Yên. Đây là một trong những điểm cực Đông của Tổ quốc, nơi đón ánh bình minh đầu tiên trên đất liền Việt Nam. Mũi Điện mang vẻ đẹp hoang sơ với biển xanh - cát trắng - núi đá, và Bãi Môn dưới chân mũi. Nơi đây có sự kết hợp hài hòa giữa rừng, núi, biển và trời. Mũi Điện từng là nơi quan trọng trong hành trình mở cõi về phía Nam, gần đó là Vịnh Vũng Rô - di tích lịch sử gắn liền với Đường mòn Hồ Chí Minh trên biển.",
+      "howToGet": "Mũi Điện cách trung tâm TP Tuy Hòa khoảng 35-40km về phía Đông Nam. Bằng ô tô/xe máy: Từ trung tâm Tuy Hòa → chạy theo QL1A hướng Nam (về phía huyện Đông Hòa) → rẽ trái tại ngã ba Hòa Hiệp Trung → đi theo đường DT29 (hướng về Vũng Rô – Mũi Điện) → chạy qua đèo Cả → qua cảng Vũng Rô → tới chân hải đăng Mũi Điện. Gửi xe ở bãi, đi bộ leo khoảng 15-20 phút lên đỉnh. Tổng thời gian: 1-1.5 giờ. Thuê xe máy tại Tuy Hòa: 120.000-150.000đ/ngày. Tour trọn gói: 300.000-500.000đ/người (xe đưa đón, hướng dẫn viên). Nên đi sáng sớm để ngắm bình minh, mang giày thể thao, nước uống và kem chống nắng.",
       "bestTimeToVisit": "Thời điểm đẹp nhất là từ tháng 3 đến tháng 8, đặc biệt là lúc bình minh.",
       "attractions": {
         "natural": [
           {
             "name": "Hải đăng Mũi Điện",
-            "description": "Ngọn hải đăng cổ với cảnh quan biển tuyệt đẹp",
+            "description": "Ngọn hải đăng lâu đời xây từ năm 1890, là điểm nhấn mang tính biểu tượng. Du khách có thể leo lên hải đăng để ngắm toàn cảnh",
             "image": "assets/images/places/checkin-mui-dien-phu-yen.png"
           },
           {
-            "name": "Bãi biển Mũi Điện",
-            "description": "Bãi biển hoang sơ dưới chân hải đăng",
+            "name": "Bãi Môn",
+            "description": "Bãi biển hoang sơ dưới chân mũi với cát trắng và nước biển trong xanh, lý tưởng để tắm biển và cắm trại",
             "image": "assets/images/places/bai-bien-mui-dien.jpg"
+          },
+          {
+            "name": "Cột mốc điểm cực Đông",
+            "description": "Điểm đánh dấu cực Đông đất liền Việt Nam, nơi chụp hình kỷ niệm không thể bỏ qua",
+            "image": "assets/images/places/cot-moc-cuc-dong.jpg"
           }
         ],
         "historical": [
           {
-            "name": "Hải đăng cổ",
-            "description": "Công trình kiến trúc thời Pháp",
+            "name": "Hải đăng cổ từ 1890",
+            "description": "Công trình kiến trúc thời Pháp với lịch sử hơn 130 năm, biểu tượng của Mũi Điện",
             "image": "assets/images/places/hai-dang-co.jpg"
+          },
+          {
+            "name": "Vịnh Vũng Rô",
+            "description": "Di tích lịch sử gắn liền với Đường mòn Hồ Chí Minh trên biển, nơi có cảng cá và tàu thuyền cập bến",
+            "image": "assets/images/places/vinh-vung-ro.jpg"
+          }
+        ],
+        "entertainment": [
+          {
+            "name": "Ngắm bình minh",
+            "description": "Trải nghiệm đón ánh bình minh đầu tiên trên đất liền Việt Nam, tuyệt đẹp vào sáng sớm",
+            "image": "assets/images/places/binh-minh-mui-dien.jpg"
+          },
+          {
+            "name": "Cắm trại qua đêm",
+            "description": "Cắm trại trên bãi biển để trải nghiệm không gian hoang sơ và ngắm sao đêm",
+            "image": "assets/images/places/cam-trai-mui-dien.jpg"
           }
         ]
       },
       "localFood": [
         {
-          "name": "Mực một nắng",
-          "description": "Đặc sản hải sản Phú Yên",
-          "image": "assets/images/foods/muc-mot-nang.jpg"
+          "name": "Hải sản tươi sống",
+          "description": "Tôm hùm, cá mú, mực nướng, sò huyết, sò điệp, ốc hương hấp sả tại Bãi Môn và cảng Vũng Rô",
+          "image": "assets/images/foods/hai-san-tuoi-song.jpg"
+        },
+        {
+          "name": "Cơm gà Phú Yên",
+          "description": "Đặc sản nổi tiếng với gà thơm ngon và cơm dẻo, có thể ăn ở Tuy Hòa",
+          "image": "assets/images/foods/com-ga-phu-yen.jpg"
         },
         {
           "name": "Bánh canh hẹ",
-          "description": "Món ăn truyền thống Phú Yên",
+          "description": "Món đặc trưng Phú Yên với nước dùng ngọt, nhiều hẹ và chả cá",
           "image": "assets/images/foods/banh-canh-he.jpg"
+        },
+        {
+          "name": "Bánh xèo mực",
+          "description": "Mực nhỏ tươi nguyên con cho vào bánh xèo, ăn với rau sống",
+          "image": "assets/images/foods/banh-xeo-muc.jpg"
+        },
+        {
+          "name": "Chả dông",
+          "description": "Đặc sản ít nơi có, làm từ thịt con dông (giống kỳ nhông) - đặc sản của vùng đất cát",
+          "image": "assets/images/foods/cha-dong.jpg"
+        },
+        {
+          "name": "Mực một nắng",
+          "description": "Đặc sản hải sản Phú Yên được phơi khô một nắng",
+          "image": "assets/images/foods/muc-mot-nang.jpg"
         }
       ],
       "nearbyAttractions": [
@@ -732,16 +774,52 @@
       ],
       "recommendedFood": [
         {
-          "name": "Mực một nắng nướng",
-          "description": "Đặc sản biển",
-          "price": "150000-200000 VND/phần",
-          "where": "Các quán hải sản ven biển"
+          "name": "Hải sản tươi sống",
+          "description": "Tôm hùm, cá mú, mực nướng tươi ngon từ biển",
+          "restaurant": "Các quán hải sản tại Bãi Môn và cảng Vũng Rô",
+          "price": "200000-500000 VND/phần"
         },
         {
-          "name": "Bánh canh hẹ",
-          "description": "Món ăn truyền thống",
-          "price": "25000-35000 VND/tô",
-          "where": "Các quán ăn địa phương"
+          "name": "Cơm gà Thiên Hương",
+          "description": "Cơm gà Phú Yên nổi tiếng tại Tuy Hòa",
+          "restaurant": "Cơm Gà Thiên Hương và Cơm Gà Tuyết Nhung",
+          "price": "40000-60000 VND/phần"
+        },
+        {
+          "name": "Bánh canh hẹ Bà Dưỡng",
+          "description": "Món đặc trưng với nước dùng ngọt và nhiều hẹ",
+          "restaurant": "Bánh canh hẹ Bà Dưỡng và Bánh canh hẹ Nhiên ở Tuy Hòa",
+          "price": "25000-35000 VND/tô"
+        },
+        {
+          "name": "Bánh xèo mực",
+          "description": "Bánh xèo với mực tươi nguyên con, ăn kèm rau sống",
+          "restaurant": "Các quán ven biển và chợ địa phương gần Vũng Rô",
+          "price": "30000-50000 VND/phần"
+        },
+        {
+          "name": "Chả dông",
+          "description": "Đặc sản hiếm, ăn kèm bún và rau sống với nước mắm chua ngọt",
+          "restaurant": "Các quán ăn địa phương chuyên về đặc sản",
+          "price": "80000-120000 VND/phần"
+        },
+        {
+          "name": "Lẩu cá mú/cá bớp",
+          "description": "Lẩu hải sản tươi ngon cho nhóm đông người",
+          "restaurant": "Các quán ven biển gần cảng Vũng Rô",
+          "price": "300000-500000 VND/nồi"
+        },
+        {
+          "name": "Nước dừa ven biển",
+          "description": "Nước dừa tươi mát giải khát",
+          "restaurant": "Các chỗ dừng chân dọc đường đến Mũi Điện",
+          "price": "15000-25000 VND/quả"
+        },
+        {
+          "name": "Mực một nắng nướng",
+          "description": "Đặc sản mực khô nướng thơm ngon",
+          "restaurant": "Các quán hải sản ven biển",
+          "price": "150000-200000 VND/phần"
         }
       ]
     },

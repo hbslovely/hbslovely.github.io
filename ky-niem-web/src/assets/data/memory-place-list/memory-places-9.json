@@ -199,6 +199,59 @@
           "where": "Gần chùa"
         }
       ]
+    },
+    {
+      "id": "tam-coc-bich-dong-ninh-binh",
+      "name": "Tam Cốc - Bích Động",
+      "location": "Ninh Bình",
+      "image": "assets/images/places/checkin_tam-coc-bich-dong_ninh-binh.png",
+      "description": "Quần thể danh thắng với cảnh quan sông nước hữu tình, hang động kỳ thú và núi đá vôi hùng vĩ, được mệnh danh là 'Vịnh Hạ Long trên cạn'",
+      "detailedDescription": "Tam Cốc - Bích Động là một trong những danh thắng nổi tiếng nhất của Ninh Bình, nằm trong quần thể Tràng An được UNESCO công nhận là Di sản văn hóa và thiên nhiên thế giới. Tam Cốc có nghĩa là 'ba hang', bao gồm hang Cả, hang Hai và hang Ba. Du khách sẽ được thưởng ngoạn cảnh đẹp trên thuyền kayak men theo dòng sông Ngô Đồng qua các hang động tuyệt đẹp. Bích Động được gọi là 'Nam thiên đệ nhất động', là quần thể chùa động nằm trong lòng núi đá vôi với kiến trúc độc đáo.",
+      "howToGet": "Từ Hà Nội đi xe khách hoặc ô tô riêng theo Quốc lộ 1A khoảng 100km về phía Nam, mất khoảng 2 giờ. Từ trung tâm thành phố Ninh Bình đi khoảng 7km nữa đến Tam Cốc.",
+      "bestTimeToVisit": "Thời điểm đẹp nhất từ tháng 10 đến tháng 4 năm sau khi thời tiết mát mẻ. Tháng 5-6 là mùa lúa chín vàng rất đẹp, tháng 9-10 là mùa hoa sen nở.",
+      "nearbyAttractions": [
+        {
+          "name": "Hang Múa",
+          "description": "Đỉnh núi với tầm nhìn toàn cảnh Tam Cốc tuyệt đẹp",
+          "distance": "2km",
+          "travelTime": "10 phút đi xe máy"
+        },
+        {
+          "name": "Tràng An",
+          "description": "Quần thể di sản thế giới với nhiều hang động và cảnh quan hùng vĩ",
+          "distance": "8km",
+          "travelTime": "20 phút đi xe máy"
+        },
+        {
+          "name": "Chùa Bái Đính",
+          "description": "Quần thể chùa lớn nhất Việt Nam với nhiều kỷ lục",
+          "distance": "15km",
+          "travelTime": "30 phút đi xe máy"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Cơm cháy dê Ninh Bình",
+          "description": "Món đặc sản nổi tiếng với cơm cháy giòn và thịt dê thơm ngon",
+          "restaurant": "Nhà hàng Thúy Kiều",
+          "price": "200000-300000 VND/phần",
+          "where": "Khu vực Tam Cốc"
+        },
+        {
+          "name": "Bánh cuốn thanh long",
+          "description": "Bánh cuốn đặc biệt làm từ thanh long, đặc sản độc đáo của Ninh Bình",
+          "restaurant": "Quán bánh cuốn Tam Cốc",
+          "price": "30000-40000 VND/phần",
+          "where": "Gần bến thuyền Tam Cốc"
+        },
+        {
+          "name": "Bia Ninh Bình",
+          "description": "Bia tươi địa phương có vị ngọt thanh, rất phù hợp với khí hậu",
+          "restaurant": "Các quán ăn địa phương",
+          "price": "15000-20000 VND/ly",
+          "where": "Khắp khu vực Tam Cốc"
+        }
+      ]
     }
   ]
 } 

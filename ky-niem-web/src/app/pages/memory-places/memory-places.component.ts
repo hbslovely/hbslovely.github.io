@@ -58,12 +58,19 @@ interface FilterTag {
 export class MemoryPlacesComponent implements OnInit {
   places: MemoryPlace[] = [];
   filteredPlaces: MemoryPlace[] = [];
+  paginatedPlaces: MemoryPlace[] = [];
   loading = true;
   isResetting = false;
   searchText = '';
   viewMode: 'grid' | 'list' = 'grid';
   isFilterCollapsed = false;
   private locationMappings: LocationMappings | null = null;
+
+  // Pagination properties
+  currentPage = 1;
+  itemsPerPage = 12;
+  totalItems = 0;
+  totalPages = 0;
 
   locationTypes = [
     { label: 'Trong nước', value: 'domestic', icon: 'pi pi-flag' },
@@ -195,6 +202,10 @@ export class MemoryPlacesComponent implements OnInit {
 
       return matchesRegion && matchesFeatures && matchesLocationType && matchesSearch;
     });
+
+    // Reset to first page when filters change
+    this.currentPage = 1;
+    this.updatePagination();
   }
 
   private matchesLocationType(location: string): boolean {
@@ -376,6 +387,85 @@ export class MemoryPlacesComponent implements OnInit {
 
   trackByPlace(index: number, place: MemoryPlace): string {
     return place.id;
+  }
+
+  // Pagination methods
+  updatePagination(): void {
+    this.totalItems = this.filteredPlaces.length;
+    this.totalPages = Math.ceil(this.totalItems / this.itemsPerPage);
+    
+    // Ensure current page is valid
+    if (this.currentPage > this.totalPages && this.totalPages > 0) {
+      this.currentPage = this.totalPages;
+    }
+    
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    this.paginatedPlaces = this.filteredPlaces.slice(startIndex, endIndex);
+  }
+
+  goToPage(page: number): void {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
+      this.updatePagination();
+      this.scrollToTop();
+    }
+  }
+
+  goToFirstPage(): void {
+    this.goToPage(1);
+  }
+
+  goToPreviousPage(): void {
+    this.goToPage(this.currentPage - 1);
+  }
+
+  goToNextPage(): void {
+    this.goToPage(this.currentPage + 1);
+  }
+
+  goToLastPage(): void {
+    this.goToPage(this.totalPages);
+  }
+
+  changeItemsPerPage(itemsPerPage: number): void {
+    this.itemsPerPage = itemsPerPage;
+    this.currentPage = 1;
+    this.updatePagination();
+  }
+
+  getPageNumbers(): number[] {
+    const pages: number[] = [];
+    const maxVisiblePages = 5;
+    
+    if (this.totalPages <= maxVisiblePages) {
+      // Show all pages if total pages is less than max visible
+      for (let i = 1; i <= this.totalPages; i++) {
+        pages.push(i);
+      }
+    } else {
+      // Show pages around current page
+      let start = Math.max(1, this.currentPage - Math.floor(maxVisiblePages / 2));
+      let end = Math.min(this.totalPages, start + maxVisiblePages - 1);
+      
+      // Adjust start if we're near the end
+      if (end - start < maxVisiblePages - 1) {
+        start = Math.max(1, end - maxVisiblePages + 1);
+      }
+      
+      for (let i = start; i <= end; i++) {
+        pages.push(i);
+      }
+    }
+    
+    return pages;
+  }
+
+  private scrollToTop(): void {
+    const element = document.querySelector('.main-content');
+    if (element) {
+      element.scrollTop = 0;
+    }
   }
 
   navigateToDetail(placeId: string): void {

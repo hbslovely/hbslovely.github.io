@@ -91,9 +91,9 @@
       <i class="pi pi-minus"></i>
     </button>
     <div class="controls-separator"></div>
-    <button class="description-button" 
+    <button class="description-button"
             [class.active]="showDescription"
-            (click)="toggleDescription()" 
+            (click)="toggleDescription()"
             data-tooltip="Thông tin ảnh">
       <i class="pi pi-info-circle"></i>
     </button>
@@ -119,10 +119,14 @@
         <p>{{ place?.detailedDescription }}</p>
       </div>
 
+      <div class="section" *ngIf="place?.customSection">
+        <h4>{{place?.customSection.title }}</h4>
+        <p>{{ place?.customSection.content }}</p>
+      </div>
+
       <div class="section" *ngIf="place?.bestTimeToVisit">
         <h4>Thời điểm lý tưởng</h4>
         <div class="time-info">
-          <i class="pi pi-calendar"></i>
           <p>{{ place?.bestTimeToVisit }}</p>
         </div>
       </div>
@@ -130,7 +134,6 @@
       <div class="section" *ngIf="place?.howToGet">
         <h4>Cách đến đây</h4>
         <div class="direction-info">
-          <i class="pi pi-directions"></i>
           <p>{{ place?.howToGet }}</p>
         </div>
       </div>
@@ -227,6 +230,17 @@
         <p>{{ place.detailedDescription }}</p>
       </div>
 
+      <!-- Custom Section -->
+      <div class="detail-section" *ngIf="place.customSection">
+        <div class="section-header">
+          <i class="pi pi-book"></i>
+          <h3>{{ place.customSection.title }}</h3>
+        </div>
+        <div class="custom-content">
+          <p>{{ place.customSection.content }}</p>
+        </div>
+      </div>
+
       <!-- Best Time to Visit -->
       <div class="detail-section" *ngIf="place.bestTimeToVisit">
         <div class="section-header">
@@ -251,9 +265,9 @@
           <h3>Cách đến đây</h3>
         </div>
         <div class="driving-instructions">
-          <div class="instruction-steps">
+          <p>
             {{ place.howToGet }}
-          </div>
+          </p>
         </div>
       </div>
 

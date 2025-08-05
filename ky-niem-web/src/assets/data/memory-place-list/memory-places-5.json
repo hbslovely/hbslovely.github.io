@@ -504,7 +504,7 @@
       "image": "assets/images/places/checkin_nui-ba-den-tay-ninh.png",
       "description": "Ngọn núi thiêng với nhiều di tích tâm linh",
       "detailedDescription": "Núi Bà Đen là ngọn núi cao nhất Nam Bộ, nổi tiếng với quần thể chùa chiền và các di tích tâm linh. Đây là điểm du lịch tâm linh quan trọng của vùng Đông Nam Bộ.",
-      "howToGet": "Từ TP.HCM đi xe khách đến Tây Ninh, sau đó đi xe ôm hoặc taxi đến chân núi.",
+      "howToGet": "Núi Bà Đen cách TP.HCM khoảng 110km. Từ trung tâm Sài Gòn, bạn có thể di chuyển đến núi bằng xe máy, xe buýt hoặc thuê xe ô tô. Có thể đi xe khách đến Tây Ninh, sau đó đi xe ôm hoặc taxi đến chân núi.",
       "bestTimeToVisit": "Thời điểm đẹp nhất là từ tháng 11 đến tháng 4 năm sau.",
       "attractions": {
         "religious": [
@@ -530,8 +530,18 @@
       "localFood": [
         {
           "name": "Bánh canh Trảng Bàng",
-          "description": "Món ăn đặc sản",
+          "description": "Món ăn đặc sản nổi tiếng của Tây Ninh",
           "image": "assets/images/foods/banh-canh-trang-bang.jpg"
+        },
+        {
+          "name": "Bánh tráng phơi sương",
+          "description": "Đặc sản bánh tráng mỏng tang được phơi sương sáng",
+          "image": "assets/images/foods/banh-trang-phoi-suong.jpg"
+        },
+        {
+          "name": "Bò tơ Tây Ninh",
+          "description": "Thịt bò tơ tươi ngon đặc trưng của vùng",
+          "image": "assets/images/foods/bo-to-tay-ninh.jpg"
         },
         {
           "name": "Tàu hủ nóng",
@@ -556,15 +566,33 @@
       "recommendedFood": [
         {
           "name": "Bánh canh Trảng Bàng",
-          "description": "Món ăn truyền thống",
-          "price": "30000-45000 VND/tô",
-          "where": "Các quán ăn dưới chân núi"
+          "description": "Món ăn truyền thống đặc sản nên thử",
+          "restaurant": "Các quán ăn dưới chân núi",
+          "price": "30000-45000 VND/tô"
+        },
+        {
+          "name": "Bánh tráng phơi sương",
+          "description": "Đặc sản địa phương nổi tiếng Tây Ninh",
+          "restaurant": "Các cửa hàng đặc sản",
+          "price": "15000-25000 VND/gói"
+        },
+        {
+          "name": "Bò tơ Tây Ninh",
+          "description": "Thịt bò tơ tươi ngon nên thử",
+          "restaurant": "Các nhà hàng địa phương",
+          "price": "200000-350000 VND/kg"
+        },
+        {
+          "name": "Muối Tây Ninh",
+          "description": "Đặc sản muối tinh khiết địa phương",
+          "restaurant": "Các cửa hàng đặc sản",
+          "price": "20000-40000 VND/kg"
         },
         {
           "name": "Nước mía",
           "description": "Đồ uống giải khát",
-          "price": "10000-15000 VND/ly",
-          "where": "Các quầy nước dọc đường"
+          "restaurant": "Các quầy nước dọc đường",
+          "price": "10000-15000 VND/ly"
         }
       ]
     },
@@ -644,69 +672,121 @@
       "name": "Mộ nhà thơ Hàn Mặc Tử",
       "location": "Bình Định",
       "image": "assets/images/places/checkin-mo-nha-tho-han-mac-tu_binh-dinh.jpg",
-      "description": "Di tích tưởng niệm nhà thơ tài hoa",
-      "detailedDescription": "Mộ nhà thơ Hàn Mặc Tử là di tích văn hóa ghi dấu cuộc đời và sự nghiệp của một trong những nhà thơ lãng mạn nổi tiếng của Việt Nam. Khu di tích nằm trên đồi Thi Nhân, nhìn ra biển Quy Nhơn.",
-      "howToGet": "Từ trung tâm Quy Nhơn đi xe máy hoặc taxi khoảng 5km theo đường Hàn Mặc Tử.",
-      "bestTimeToVisit": "Có thể thăm viếng quanh năm, đẹp nhất vào buổi sáng sớm.",
+      "description": "Di tích tưởng niệm nhà thơ Hàn Mặc Tử (1912-1940) trên đồi Thi Nhân, Ghềnh Ráng Tiên Sa, nơi lưu giữ hồn thơ lãng mạn của một trong những thi sĩ nổi bật phong trào Thơ Mới Việt Nam",
+      "detailedDescription": "Mộ nhà thơ Hàn Mặc Tử (tên thật Nguyễn Trọng Trí) là di tích văn hóa thiêng liêng ghi dấu cuộc đời và sự nghiệp của một trong những nhà thơ lãng mạn nổi tiếng nhất Việt Nam. Khu di tích nằm trên đồi Thi Nhân thuộc khu du lịch Ghềnh Ráng Tiên Sa, Quy Nhơn, với khung cảnh thơ mộng giữa núi đồi và biển cả. Nơi đây không chỉ là khu tưởng niệm mà còn là điểm đến tâm linh dành cho những ai yêu thích văn học và thơ ca. Ngôi mộ đơn sơ nằm giữa khung cảnh đồi núi xanh tươi, xung quanh là rừng cây và đá chồng lên nhau tạo nên không gian thơ mộng, u tịch đúng với hồn thơ Hàn Mặc Tử. Đây là nơi du khách có thể tĩnh tâm, suy ngẫm về cuộc đời và thơ văn của nhà thơ tài hoa nhưng đầy bi kịch.",
+      "howToGet": "Từ Quảng trường trung tâm TP Quy Nhơn đi đường An Dương Vương, rẽ vào khu du lịch Ghềnh Ráng Tiên Sa (khoảng 2km về phía Đông Nam). Gửi xe tại cổng và đi bộ theo đường núi khoảng 5-10 phút là đến mộ Hàn Mặc Tử. Có thể di chuyển bằng xe máy, taxi hoặc đi bộ dọc biển.",
+      "bestTimeToVisit": "Có thể thăm viếng quanh năm, mở cửa cả ngày và không thu vé vào cổng. Thời gian lý tưởng nhất là sáng sớm hoặc chiều mát để tránh nắng gắt, đặc biệt đẹp vào buổi sáng sớm khi không khí trong lành và yên tĩnh.",
+      "customSection": {
+        "title": "Giới thiệu về Hàn Mặc Tử",
+        "content": "Hàn Mặc Tử (tên thật: Nguyễn Trọng Trí, 1912-1940) là một trong những thi sĩ nổi bật của phong trào Thơ Mới Việt Nam. Cuộc đời ông gắn với tình yêu, bệnh tật, và những vần thơ đầy u uẩn, lãng mạn. Sinh ra trong một gia đình nghèo ở Lai Vung, Đồng Tháp, ông sớm bộc lộ tài năng văn chương xuất sắc. Tuy nhiên, số phận không ưu ái khi ông mắc bệnh phong và phải sống những năm cuối đời tại trại phong Quy Hòa (Quy Nhơn). Dù trong cảnh bệnh tật và nghèo khó, Hàn Mặc Tử vẫn sáng tác không ngừng, để lại cho văn học Việt Nam những tác phẩm bất hủ như 'Đêm nay ta đi hết đường dài', 'Gái quê', 'Đón xuân'... Ông qua đời năm 1940 tại Quy Hòa khi mới 28 tuổi, nhưng thơ văn ông để lại mãi mãi là nguồn cảm hứng cho các thế hệ yêu thơ."
+      },
       "attractions": {
         "cultural": [
           {
-            "name": "Khu mộ và đền thờ",
-            "description": "Di tích tưởng niệm nhà thơ Hàn Mặc Tử",
+            "name": "Mộ Hàn Mặc Tử trên đồi Thi Nhân",
+            "description": "Ngôi mộ đơn sơ nằm giữa khung cảnh thơ mộng với rừng cây và đá chồng lên nhau, gần mộ có bức tượng bán thân thi sĩ và bia đá khắc thơ",
             "image": "assets/images/places/checkin-mo-nha-tho-han-mac-tu_binh-dinh.jpg"
           },
           {
-            "name": "Nhà lưu niệm",
-            "description": "Nơi trưng bày tư liệu về nhà thơ",
-            "image": "assets/images/places/nha-luu-niem-han-mac-tu.jpg"
+            "name": "Nhà trưng bày thơ khắc gỗ Dzũ Kha",
+            "description": "Nơi lưu giữ các tác phẩm thơ Hàn Mặc Tử được nghệ nhân Dzũ Kha khắc lên gỗ - một hình thức nghệ thuật độc đáo và đầy ý nghĩa",
+            "image": "assets/images/places/nha-trung-bay-tho-khac-go.jpg"
+          },
+          {
+            "name": "Trại phong Quy Hòa",
+            "description": "Nơi Hàn Mặc Tử sống những năm cuối đời, cách mộ khoảng 2km, là điểm tham quan để hiểu thêm về cuộc đời nhà thơ",
+            "image": "assets/images/places/trai-phong-quy-hoa.jpg"
           }
         ],
         "natural": [
           {
             "name": "Đồi Thi Nhân",
-            "description": "Cảnh quan thiên nhiên đẹp",
+            "description": "Khung cảnh thiên nhiên tuyệt đẹp với view nhìn ra biển Quy Hòa xanh ngắt, ghềnh đá lởm chởm và toàn cảnh thành phố Quy Nhơn",
             "image": "assets/images/places/doi-thi-nhan.jpg"
+          },
+          {
+            "name": "Ghềnh Ráng Tiên Sa",
+            "description": "Khu du lịch sinh thái với cảnh quan đẹp, nơi có mộ Hàn Mặc Tử và nhiều điểm tham quan khác",
+            "image": "assets/images/places/ghenh-rang-tien-sa.jpg"
           }
         ]
       },
       "localFood": [
         {
           "name": "Bánh hỏi lòng heo",
-          "description": "Món ăn đặc sản Bình Định",
+          "description": "Món ăn đặc sản Bình Định với bánh hỏi mỏng mềm ăn cùng lòng heo nấu đậm đà",
           "image": "assets/images/foods/banh-hoi-long-heo.jpg"
         },
         {
-          "name": "Bún chả cá",
-          "description": "Món ăn truyền thống",
-          "image": "assets/images/foods/bun-cha-ca.jpg"
+          "name": "Bún chả cá Quy Nhơn",
+          "description": "Món ăn truyền thống nổi tiếng với cá nướng thơm ngon và bún tươi",
+          "image": "assets/images/foods/bun-cha-ca-quy-nhon.jpg"
+        },
+        {
+          "name": "Tôm cang Quy Nhơn",
+          "description": "Đặc sản hải sản tươi ngon, thịt ngọt và chắc đặc trưng vùng biển Quy Nhơn",
+          "image": "assets/images/foods/tom-cang-quy-nhon.jpg"
+        },
+        {
+          "name": "Bánh xèo tôm nhảy",
+          "description": "Món ăn độc đáo của Bình Định với tôm tươi nhảy múa trên bánh xèo giòn rụm",
+          "image": "assets/images/foods/banh-xeo-tom-nhay.jpg"
         }
       ],
       "nearbyAttractions": [
         {
           "name": "Ghềnh Ráng",
-          "description": "Thắng cảnh thiên nhiên",
+          "description": "Thắng cảnh thiên nhiên nổi tiếng với những khối đá granite khổng lồ và view biển đẹp",
           "distance": "1km",
+          "travelTime": "5 phút đi bộ",
           "image": "assets/images/places/ghenh-rang.jpg"
         },
         {
           "name": "Bãi tắm Hoàng Hậu",
-          "description": "Bãi biển đẹp",
+          "description": "Bãi biển đẹp với cát trắng mịn và nước biển trong xanh, phù hợp tắm biển và nghỉ dưỡng",
           "distance": "2km",
+          "travelTime": "10 phút đi bộ",
           "image": "assets/images/places/bai-tam-hoang-hau.jpg"
+        },
+        {
+          "name": "Khu du lịch Ghềnh Ráng Tiên Sa",
+          "description": "Khu du lịch sinh thái với nhiều hoạt động giải trí và cảnh quan đẹp",
+          "distance": "0.5km",
+          "travelTime": "3 phút đi bộ",
+          "image": "assets/images/places/khu-du-lich-ghenh-rang.jpg"
+        },
+        {
+          "name": "Trung tâm thành phố Quy Nhơn",
+          "description": "Khu vực trung tâm với nhiều điểm mua sắm, ẩm thực và tham quan",
+          "distance": "2km",
+          "travelTime": "10 phút đi xe máy",
+          "image": "assets/images/places/trung-tam-quy-nhon.jpg"
         }
       ],
       "recommendedFood": [
         {
           "name": "Bánh hỏi lòng heo",
-          "description": "Món ăn truyền thống",
+          "description": "Món ăn truyền thống đặc trưng Bình Định",
           "price": "35000-50000 VND/phần",
-          "where": "Các quán ăn gần khu di tích"
+          "where": "Các quán ăn gần khu di tích Ghềnh Ráng"
+        },
+        {
+          "name": "Bún chả cá Quy Nhơn",
+          "description": "Đặc sản nổi tiếng với cá nướng thơm ngon",
+          "price": "40000-60000 VND/tô",
+          "where": "Quán bún chả cá Bà Út - Đường Lê Hồng Phong"
+        },
+        {
+          "name": "Tôm cang nướng",
+          "description": "Hải sản tươi ngon đặc trưng vùng biển",
+          "price": "200000-300000 VND/kg",
+          "where": "Các nhà hàng hải sản ven biển Quy Nhơn"
         },
         {
           "name": "Chè đậu xanh",
-          "description": "Món tráng miệng",
+          "description": "Món tráng miệng mát lạnh, phù hợp sau khi tham quan",
           "price": "15000-25000 VND/chén",
-          "where": "Các quán chè xung quanh"
+          "where": "Các quán chè xung quanh khu di tích"
         }
       ]
     }
