@@ -48,11 +48,6 @@
       "description": "Đam mê khám phá những địa điểm mới"
     },
     {
-      "icon": "pi pi-desktop",
-      "name": "Công việc",
-      "description": "Đam mê và nhiệt huyết với công việc"
-    },
-    {
       "icon": "pi pi-compass",
       "name": "Khám phá",
       "description": "Thích tìm hiểu những điều mới mẻ"
@@ -130,7 +125,7 @@
     {
       "icon": "pi pi-star",
       "title": "Món ăn yêu thích",
-      "description": "Cơm tấm sườn và thịt kho trứng - Đậm đà hương vị nhà"
+      "description": "Cơm tấm sườn và thịt kho trứng - Đậm đà hương vị nhà. À, còn có cơm vợ nấu nữa"
     },
     {
       "icon": "pi pi-compass",
@@ -153,4 +148,4 @@
       "description": "Cùng vợ yêu trở nên giàu có và xây dựng một cuộc sống thật hạnh phúc, sung túc 💖💰✨"
     }
   ]
-} 
+}

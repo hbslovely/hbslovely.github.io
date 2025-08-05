@@ -11,13 +11,6 @@
     { "icon": "pi pi-home", "label": "Sinh sống", "value": "Một góc nhỏ trên Trái Đất 🌍" },
     { "icon": "pi pi-heart", "label": "Tình trạng", "value": "Đã bị Bé Báo bắt về làm vợ rồi 🐆💝" }
   ],
-  "wifeTraits": [
-    { "icon": "pi pi-heart-fill", "title": "Dịu dàng", "description": "Luôn nhẹ nhàng và ân cần" },
-    { "icon": "pi pi-palette", "title": "Nghệ thuật", "description": "Có khiếu thẩm mỹ tuyệt vời" },
-    { "icon": "pi pi-sun", "title": "Tích cực", "description": "Luôn lạc quan và tràn đầy năng lượng" },
-    { "icon": "pi pi-gift", "title": "Chu đáo", "description": "Quan tâm đến từng chi tiết nhỏ" },
-    { "icon": "pi pi-home", "title": "Gia đình", "description": "Biết cách tạo nên tổ ấm hạnh phúc" }
-  ],
   "wifeHobbies": [
     { "icon": "pi pi-car", "name": "Du lịch", "description": "Đam mê khám phá thế giới mới" },
     { "icon": "pi pi-heart-fill", "name": "Chăm sóc chồng", "description": "Yêu thương và chăm sóc chồng là niềm vui" },

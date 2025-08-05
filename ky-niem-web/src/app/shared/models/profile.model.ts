@@ -64,10 +64,9 @@ export interface WifeData {
     tags: string[];
   };
   wifeBasicInfo: BasicInfo[];
-  wifeTraits: Trait[];
   wifeHobbies: Hobby[];
   wifePhotos: Photo[];
   wifeFunFacts: FunFact[];
   wifeBeautyStyle: BeautyStyle;
   wifeProfessionalSkills: ProfessionalSkillCategory[];
-} 
+}
