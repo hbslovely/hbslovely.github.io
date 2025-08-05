@@ -39,15 +39,15 @@ export class LoveTimelineComponent implements OnInit {
       .subscribe({
         next: (data) => {
           // Sort moments by date in ascending order
-          const sortedMoments = data.moments.sort((a, b) => 
+          const sortedMoments = data.moments.sort((a, b) =>
             new Date(a.date).getTime() - new Date(b.date).getTime()
           );
-          
+
           // Calculate total pages
           const totalItems = sortedMoments.length;
           const startIndex = 0;
           const endIndex = Math.min(this.itemsPerPage, totalItems);
-          
+
           // Set initial items
           this.timelineMoments = sortedMoments.slice(startIndex, endIndex);
           this.hasMoreMoments = endIndex < totalItems;
@@ -55,38 +55,6 @@ export class LoveTimelineComponent implements OnInit {
         },
         error: (error) => {
           console.error('Error loading timeline data:', error);
-          this.loading = false;
-        }
-      });
-  }
-
-  loadMore() {
-    if (this.loading || !this.hasMoreMoments) return;
-    
-    this.loading = true;
-    this.http.get<{moments: TimelineMoment[]}>('assets/data/timeline-moments.json')
-      .subscribe({
-        next: (data) => {
-          const sortedMoments = data.moments.sort((a, b) => 
-            new Date(a.date).getTime() - new Date(b.date).getTime()
-          );
-          
-          const totalItems = sortedMoments.length;
-          const startIndex = this.currentPage * this.itemsPerPage;
-          const endIndex = Math.min(startIndex + this.itemsPerPage, totalItems);
-          
-          // Append new items
-          this.timelineMoments = [
-            ...this.timelineMoments,
-            ...sortedMoments.slice(startIndex, endIndex)
-          ];
-          
-          this.currentPage++;
-          this.hasMoreMoments = endIndex < totalItems;
-          this.loading = false;
-        },
-        error: (error) => {
-          console.error('Error loading more timeline data:', error);
           this.loading = false;
         }
       });

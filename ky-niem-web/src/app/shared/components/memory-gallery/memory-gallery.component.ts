@@ -134,7 +134,7 @@ export class MemoryGalleryComponent implements OnInit {
   filterImages(filterId: string) {
     this.currentFilter = filterId;
     this.currentPage = 1; // Reset pagination when filter changes
-
+    
     if (filterId === 'all') {
       this.displayedMemories = this.galleryData.galleries.reduce((all, gallery) => {
         return [...all, ...gallery.images.map(img => ({
@@ -206,11 +206,11 @@ export class MemoryGalleryComponent implements OnInit {
 
   getFilterCount(filterId: string): number {
     if (!this.galleryData) return 0;
-
+    
     if (filterId === 'all') {
       return this.galleryData.galleries.reduce((total, gallery) => total + gallery.images.length, 0);
     }
-
+    
     const gallery = this.galleryData.galleries.find(g => g.id === filterId);
     return gallery ? gallery.images.length : 0;
   }

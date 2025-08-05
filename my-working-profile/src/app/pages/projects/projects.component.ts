@@ -12,6 +12,7 @@ import { SectionHeaderComponent } from '../../components/section-header/section-
 import { ProjectDetailComponent } from '../../components/project-detail/project-detail.component';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { TranslateModule } from '@ngx-translate/core';
+import { ProjectCountComponent } from '../../components/project-count/project-count.component';
 
 // Tag color mapping
 const TAG_COLORS = {
@@ -150,7 +151,8 @@ type ViewType = 'grid' | 'list';
     FormsModule,
     SectionHeaderComponent,
     ProjectDetailComponent,
-    TranslateModule
+    TranslateModule,
+    ProjectCountComponent
   ],
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
@@ -169,6 +171,7 @@ export class ProjectsPageComponent {
 
   // State
   readonly cv = this.cvService.cv;
+  readonly projects = computed(() => this.cv()?.projects?.projects || []);
 
   // Filter state
   selectedTechnologies = signal<string[]>([]);
@@ -273,6 +276,11 @@ export class ProjectsPageComponent {
     this.selectedTechnologies.set([]);
     this.selectedScopes.set([]);
     this.selectedStatuses.set([]);
+  }
+
+  clearAllFilters(): void {
+    this.clearFilters();
+    this.searchText.set('');
   }
 
   // Helper methods to check if a filter is selected

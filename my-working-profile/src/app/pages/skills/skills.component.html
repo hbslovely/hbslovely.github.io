@@ -7,37 +7,32 @@
     </app-section-header>
 
     <div class="skills-layout">
-      <!-- Interactive Word Cloud -->
-      <div class="word-cloud-section">
-        <div class="word-cloud-wrapper">
-          <div class="word-cloud-container" #wordCloudContainer>
-            <canvas #wordCloud></canvas>
-          </div>
+      <!-- Left Column: Word Cloud -->
+      <div class="word-cloud-column" #wordCloudContainer>
+        <div class="word-cloud-container">
+          <canvas #wordCloud></canvas>
         </div>
       </div>
 
-      <!-- Organized Skills Grid -->
-      <div class="skills-content">
+      <!-- Right Column: Skills List -->
+      <div class="skills-column">
         @for (category of Object.keys(cv()?.skills?.technicalSkills || {}); track category) {
-          <div class="skill-category">
-            <div class="skill-category-header">
-              <div class="category-icon">
-                <span nz-icon [nzType]="getTechnologyIcon(category)" nzTheme="outline"></span>
-              </div>
+          <div class="skill-section">
+            <div class="section-header">
+              <span nz-icon [nzType]="getTechnologyIcon(category)" nzTheme="outline"></span>
               <h3>{{ formatCategory(category) }}</h3>
             </div>
-            
-            <div class="skill-list">
+            <div class="skill-tags">
               @for (skill of cv()?.skills?.technicalSkills?.[category]; track skill) {
-                <div class="skill-item" [class.has-experience]="getSkillExperience(skill)">
-                  <div class="skill-content">
-                    <span class="skill-name">{{ skill }}</span>
-                    @if (getSkillExperience(skill)) {
-                      <span class="experience-badge" [style.backgroundColor]="getTagColor(skill)">
-                        {{ getSkillExperience(skill) }}
-                      </span>
-                    }
-                  </div>
+                <div class="skill-tag" 
+                  [class.with-experience]="getSkillExperience(skill)"
+                  [style.borderColor]="getTagColor(skill)">
+                  <span class="skill-name">{{ skill }}</span>
+                  @if (getSkillExperience(skill)) {
+                    <span class="experience" [style.backgroundColor]="getTagColor(skill)">
+                      {{ getSkillExperience(skill) }}
+                    </span>
+                  }
                 </div>
               }
             </div>

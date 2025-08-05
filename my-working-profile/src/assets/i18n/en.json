@@ -42,6 +42,14 @@
   },
   "PROJECTS": {
     "SEARCH_PLACEHOLDER": "Search projects...",
+    "COUNT": {
+      "TOTAL": "Projects Available",
+      "FILTERED": "Projects Matching Criteria"
+    },
+    "NO_RESULTS": {
+      "TITLE": "No Projects Found",
+      "DESCRIPTION": "Try adjusting your search or filters to find what you're looking for."
+    },
     "FILTERS": {
       "TITLE": "Filter Projects",
       "CLEAR_ALL": "Clear All",

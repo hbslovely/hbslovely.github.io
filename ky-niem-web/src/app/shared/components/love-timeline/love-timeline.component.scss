@@ -20,14 +20,14 @@ $card-width: 45%;
 .timeline-header {
   text-align: center;
   margin-bottom: 60px;
-  
+
   h2 {
     color: $primary-color;
     font-size: 2.5rem;
     margin-bottom: 1rem;
     font-weight: 700;
   }
-  
+
   p {
     color: $text-color;
     font-size: 1.1rem;
@@ -52,7 +52,7 @@ $card-width: 45%;
   width: $timeline-width;
   transform: translateX(-50%);
   background: rgba($primary-color, 0.1);
-  
+
   .line-inner {
     position: absolute;
     top: 0;
@@ -74,33 +74,33 @@ $card-width: 45%;
   position: relative;
   margin-bottom: 60px;
   width: 100%;
-  
+
   &.animate-in {
     animation: slide-in 0.6s ease-out forwards;
   }
-  
+
   // Left side items
   .content-card {
     width: $card-width;
     margin-right: auto;
     background: white;
   }
-  
+
   // Right side items
   &.right {
     .content-card {
       margin-left: auto;
       margin-right: 0;
     }
-    
+
     .date-badge {
-      left: auto;
+      left: unset !important;
       right: calc(#{$card-width} - 120px);
     }
-    
+
     .timeline-dot {
       left: auto;
-      right: calc(50% - #{$dot-size/2});
+      right: calc(50% - #{$dot-size});
     }
 
     .location-badge {
@@ -149,7 +149,7 @@ $card-width: 45%;
     width: 100%;
     height: 400px;
     overflow: hidden;
-    
+
     img {
       width: 100%;
       height: 100%;
@@ -302,7 +302,7 @@ $card-width: 45%;
   top: 20px;
   @include flex-center;
   z-index: 2;
-  
+
   .dot-outer {
     width: $dot-size;
     height: $dot-size;
@@ -311,14 +311,14 @@ $card-width: 45%;
     @include flex-center;
     animation: pulse 2s infinite;
   }
-  
+
   .dot-inner {
     width: $dot-size * 0.6;
     height: $dot-size * 0.6;
     background: $primary-color;
     border-radius: 50%;
     @include flex-center;
-    
+
     i {
       color: white;
       font-size: 1rem;
@@ -330,7 +330,7 @@ $card-width: 45%;
 .timeline-footer {
   text-align: center;
   margin-top: 40px;
-  
+
   .load-more-btn {
     background: $primary-color;
     color: white;
@@ -342,12 +342,12 @@ $card-width: 45%;
     transition: all 0.3s ease;
     @include flex-center;
     gap: 10px;
-    
+
     &:hover {
       background: darken($primary-color, 10%);
       transform: translateY(-2px);
     }
-    
+
     &:disabled {
       opacity: 0.7;
       cursor: not-allowed;
@@ -407,30 +407,30 @@ $card-width: 45%;
   .timeline-line {
     left: 20px;
   }
-  
+
   .timeline-item {
     .content-card {
       width: calc(100% - 50px);
       margin-left: 50px;
     }
-    
+
     &.right .content-card {
       margin-left: 50px;
     }
-    
+
     .date-badge {
       left: 60px;
     }
-    
+
     .timeline-dot {
       left: 0;
     }
-    
+
     &.right {
       .date-badge {
         left: 60px;
       }
-      
+
       .timeline-dot {
         left: 0;
       }
@@ -441,7 +441,7 @@ $card-width: 45%;
       }
     }
   }
-  
+
   .moment-image-container {
     .moment-image {
       height: 300px;

@@ -2,7 +2,7 @@
   "moments": [
     {
       "id": "first-meet-online",
-      "date": "2021-11-01",
+      "date": "2021-05-09",
       "title": "Lần Đầu Gặp Nhau",
       "description": "Định mệnh đã cho chúng ta gặp nhau qua Facebook. Một cuộc gặp gỡ online đã mở ra chương mới của câu chuyện tình yêu.",
       "image": "assets/images/ki-niem/ky-niem-quen-nhau.png",
@@ -32,7 +32,7 @@
     },
     {
       "id": "wedding-day",
-      "date": "2022-03-01",
+      "date": "2022-03-13",
       "title": "Ngày Trọng Đại",
       "description": "Hạnh phúc vỡ òa trong ngày chung đôi. Khoảnh khắc thiêng liêng nhất khi chúng ta chính thức trở thành vợ chồng.",
       "image": "assets/images/ki-niem/dam-cuoi-nha-hang.png",
@@ -42,7 +42,7 @@
     },
     {
       "id": "north-south-trip",
-      "date": "2022-06-01",
+      "date": "2024-05-20",
       "title": "Chuyến Đi Bắc Nam",
       "description": "Hành trình xuyên Việt đầy ý nghĩa, cùng nhau khám phá những vùng đất mới và tạo nên những kỷ niệm đẹp.",
       "image": "assets/images/bucket/du-lich-bac-nam.jpg",
@@ -52,7 +52,6 @@
     },
     {
       "id": "future-together",
-      "date": "2023-01-01",
       "title": "Tương Lai Phía Trước",
       "description": "Cùng nhau viết tiếp câu chuyện tình yêu của chúng ta. Mỗi ngày bên nhau là một hành trình mới đầy hạnh phúc.",
       "image": "assets/images/albums/hinh-cuoi-dep/z6839749023413_16a76a5353a4824e9c2d6f8efb731ee2.jpg",
@@ -61,4 +60,4 @@
       "location": "TP.HCM"
     }
   ]
-} 
+}

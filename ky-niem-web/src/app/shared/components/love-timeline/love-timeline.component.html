@@ -1,71 +1,396 @@
-<!-- Timeline Header -->
-<div class="timeline-header">
-  <h2>Hành Trình Tình Yêu</h2>
-  <p>Những dấu mốc đáng nhớ trong chuyện tình của chúng ta</p>
-</div>
-
-<!-- Timeline Container -->
-<div class="timeline-container">
-  <!-- Timeline Line -->
-  <div class="timeline-line">
-    <div class="line-inner"></div>
+<!-- Timeline Section -->
+<section class="timeline-section">
+  <!-- Background Decorations -->
+  <div class="bg-decorations">
+    <i class="pi pi-heart decoration-icon"></i>
+    <i class="pi pi-heart-fill decoration-icon"></i>
+    <i class="pi pi-heart decoration-icon"></i>
+    <i class="pi pi-heart-fill decoration-icon"></i>
   </div>
 
-  <!-- Timeline Items -->
-  <div class="timeline-items">
-    <div class="timeline-item" *ngFor="let moment of timelineMoments; let i = index" 
-         [class.right]="i % 2 !== 0"
-         [class.animate-in]="true">
-      <!-- Date Badge -->
-      <div class="date-badge">
-        <span class="date">{{ moment.date | date:'dd/MM/yyyy' }}</span>
-      </div>
+  <!-- Timeline Header -->
+  <div class="timeline-header">
+    <h2>Hành Trình Tình Yêu</h2>
+    <p>Những dấu mốc đáng nhớ trong chuyện tình của chúng ta</p>
+  </div>
 
-      <!-- Content Card -->
-      <div class="content-card">
-        <!-- Title -->
-        <div class="moment-title">
-          <h3>{{ moment.title }}</h3>
+  <!-- Timeline Container -->
+  <div class="timeline-container">
+    <!-- Timeline Line -->
+    <div class="timeline-line"></div>
+
+    <!-- Timeline Items -->
+    <div class="timeline-items">
+      <div class="timeline-item" *ngFor="let moment of timelineMoments; let i = index" 
+           [class.right]="i % 2 !== 0">
+        <!-- Timeline Dot -->
+        <div class="timeline-dot">
+          <i class="pi" [ngClass]="moment.icon || 'pi-heart-fill'"></i>
         </div>
-
-        <!-- Image Container with Overlay -->
-        <div class="moment-image-container" *ngIf="moment.image">
-          <div class="moment-image">
-            <img [src]="moment.image" [alt]="moment.title" loading="lazy">
-            <!-- Location Badge -->
-            <div class="location-badge" *ngIf="moment.location">
-              <i class="pi pi-map-marker"></i>
-              <span>{{ moment.location }}</span>
-            </div>
-
-            <!-- Overlay -->
-            <div class="image-overlay">
-              <!-- Floating Hearts -->
-              <div class="floating-hearts">
-                <i class="pi pi-heart-fill heart-1"></i>
-                <i class="pi pi-heart-fill heart-2"></i>
-                <i class="pi pi-heart-fill heart-3"></i>
-              </div>
-              
-              <div class="overlay-content">
-                <p class="overlay-description">{{ moment.description }}</p>
-                <div class="moment-tags" *ngIf="moment.tags && moment.tags.length">
-                  <span class="tag" *ngFor="let tag of moment.tags">{{ tag }}</span>
-                </div>
-              </div>
-            </div>
+        
+        <!-- Timeline Content -->
+        <div class="timeline-content">
+          <!-- Date Badge -->
+          <div class="date-badge">
+            {{ moment.date | date:'dd/MM/yyyy' }}
           </div>
-        </div>
-      </div>
 
-      <!-- Timeline Dot -->
-      <div class="timeline-dot">
-        <div class="dot-outer">
-          <div class="dot-inner">
-            <i class="pi" [ngClass]="moment.icon || 'pi-heart-fill'"></i>
+          <!-- Card -->
+          <div class="timeline-card">
+            <!-- Image Container -->
+            <div class="image-container" *ngIf="moment.image">
+              <img [src]="moment.image" [alt]="moment.title" loading="lazy">
+              
+              <!-- Hover Overlay -->
+              <div class="hover-overlay">
+                <p class="description">{{ moment.description }}</p>
+              </div>
+
+              <!-- Location Tag -->
+              <div class="location-tag" *ngIf="moment.location">
+                <i class="pi pi-tag"></i>
+                {{ moment.location }}
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="card-content">
+              <h3 class="title">{{ moment.title }}</h3>
+              
+              <!-- Tags -->
+              <div class="tags" *ngIf="moment.tags && moment.tags.length">
+                <span class="tag" *ngFor="let tag of moment.tags">{{ tag }}</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div> 
+</section>
+
+<style>
+:host {
+  --timeline-pink: #ec4899;
+  --timeline-pink-light: #fce7f3;
+  --timeline-pink-lighter: #fbcfe8;
+  --timeline-pink-dark: #be185d;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --bg-white: #ffffff;
+  --timeline-spacing: 4rem;
+}
+
+/* Timeline Section */
+.timeline-section {
+  position: relative;
+  background-color: var(--timeline-pink-lighter);
+  padding: 4rem 0;
+  overflow: hidden;
+}
+
+/* Background Decorations */
+.bg-decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.decoration-icon {
+  position: absolute;
+  color: var(--timeline-pink-light);
+  opacity: 0.3;
+  font-size: 3rem;
+}
+
+.decoration-icon:nth-child(1) {
+  top: 10%;
+  left: 5%;
+  font-size: 4rem;
+}
+
+.decoration-icon:nth-child(2) {
+  top: 30%;
+  right: 8%;
+  font-size: 2.5rem;
+}
+
+.decoration-icon:nth-child(3) {
+  bottom: 20%;
+  left: 15%;
+  font-size: 3.5rem;
+}
+
+.decoration-icon:nth-child(4) {
+  bottom: 10%;
+  right: 15%;
+  font-size: 3rem;
+}
+
+/* Timeline Header */
+.timeline-header {
+  text-align: center;
+  padding: 0 1rem 4rem;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-header h2 {
+  font-size: 2.5rem;
+  color: var(--timeline-pink-dark);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.timeline-header p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Timeline Container */
+.timeline-container {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  z-index: 2;
+}
+
+/* Timeline Line */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--timeline-pink);
+  transform: translateX(-50%);
+}
+
+/* Timeline Items */
+.timeline-items {
+  position: relative;
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: calc(50% + var(--timeline-spacing));
+  position: relative;
+  padding-left: var(--timeline-spacing);
+  margin: 3rem 0;
+}
+
+.timeline-item.right {
+  justify-content: flex-start;
+  padding-right: var(--timeline-spacing);
+  padding-left: calc(50% + var(--timeline-spacing));
+}
+
+/* Timeline Content */
+.timeline-content {
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+}
+
+/* Timeline Dot */
+.timeline-dot {
+  width: 40px;
+  height: 40px;
+  background: var(--bg-white);
+  border: 2px solid var(--timeline-pink);
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 30px;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-dot i {
+  color: var(--timeline-pink);
+  font-size: 1rem;
+}
+
+.timeline-item:hover .timeline-dot {
+  background: var(--timeline-pink);
+}
+
+.timeline-item:hover .timeline-dot i {
+  color: var(--bg-white);
+}
+
+/* Date Badge */
+.date-badge {
+  display: inline-block;
+  background: var(--timeline-pink);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.timeline-item:not(.right) .date-badge {
+  float: right;
+}
+
+/* Timeline Card */
+.timeline-card {
+  background: var(--bg-white);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--timeline-pink-light);
+  transition: transform 0.3s ease;
+  clear: both;
+}
+
+.timeline-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Image Container */
+.image-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Hover Overlay */
+.hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.timeline-card:hover .hover-overlay {
+  opacity: 1;
+}
+
+.description {
+  color: var(--text-primary);
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+  margin: 0;
+}
+
+/* Location Tag */
+.location-tag {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background: var(--bg-white);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--timeline-pink);
+  border: 1px solid var(--timeline-pink-light);
+}
+
+.location-tag i {
+  font-size: 0.8rem;
+}
+
+/* Card Content */
+.card-content {
+  padding: 1.5rem;
+  background: var(--bg-white);
+}
+
+.title {
+  margin: 0 0 1rem;
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background: var(--timeline-pink-light);
+  color: var(--timeline-pink-dark);
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .timeline-section {
+    padding: 3rem 0;
+  }
+
+  .timeline-header h2 {
+    font-size: 2rem;
+  }
+
+  .timeline-line {
+    left: 20px;
+  }
+
+  .timeline-item,
+  .timeline-item.right {
+    padding: 0 1rem 0 60px;
+    justify-content: flex-start;
+  }
+
+  .timeline-content {
+    max-width: 100%;
+  }
+
+  .timeline-dot {
+    left: 20px;
+    transform: translateX(-50%);
+  }
+
+  .timeline-item:not(.right) .date-badge {
+    float: none;
+  }
+
+  .decoration-icon {
+    font-size: 2rem !important;
+  }
+}
+</style> 

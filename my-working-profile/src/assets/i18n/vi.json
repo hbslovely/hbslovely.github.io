@@ -42,6 +42,14 @@
   },
   "PROJECTS": {
     "SEARCH_PLACEHOLDER": "Tìm kiếm dự án...",
+    "COUNT": {
+      "TOTAL": "Dự Án",
+      "FILTERED": "Dự Án Phù Hợp"
+    },
+    "NO_RESULTS": {
+      "TITLE": "Không Tìm Thấy Dự Án",
+      "DESCRIPTION": "Hãy thử điều chỉnh tìm kiếm hoặc bộ lọc để tìm thấy những gì bạn đang tìm kiếm."
+    },
     "FILTERS": {
       "TITLE": "Lọc Dự Án",
       "CLEAR_ALL": "Xóa Tất Cả",

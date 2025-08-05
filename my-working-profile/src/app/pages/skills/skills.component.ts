@@ -36,6 +36,7 @@ export class SkillsComponent implements AfterViewInit, OnDestroy {
   private readonly cvService = inject(CVService);
   cv = this.cvService.cv;
   private resizeObserver: ResizeObserver | null = null;
+  private wordCloudInitialized = false;
 
   config = {
     className: 'skills-page',
@@ -52,13 +53,11 @@ export class SkillsComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
-    // Setup resize observer first
-    this.setupResizeObserver();
-    
-    // Initial render with a small delay to ensure container is ready
+    // Wait for the next tick to ensure ViewChild references are available
     setTimeout(() => {
+      this.setupResizeObserver();
       this.initWordCloud();
-    }, 100);
+    }, 0);
   }
 
   ngOnDestroy() {
@@ -68,40 +67,42 @@ export class SkillsComponent implements AfterViewInit, OnDestroy {
   }
 
   private setupResizeObserver() {
-    this.resizeObserver = new ResizeObserver(() => {
-      this.initWordCloud();
+    if (!this.container?.nativeElement) return;
+
+    this.resizeObserver = new ResizeObserver((entries) => {
+      // Only reinitialize if we've already initialized once
+      if (this.wordCloudInitialized) {
+        this.initWordCloud();
+      }
     });
     this.resizeObserver.observe(this.container.nativeElement);
   }
 
   private initWordCloud() {
-    // Ensure container is available and has dimensions
-    if (!this.container?.nativeElement) return;
+    if (!this.container?.nativeElement || !this.wordCloudCanvas?.nativeElement) return;
 
-    // Use requestAnimationFrame to ensure the container has been laid out
-    requestAnimationFrame(() => {
-      const containerWidth = this.container.nativeElement.offsetWidth;
-      // Skip if container width is 0
-      if (containerWidth === 0) return;
+    const containerWidth = this.container.nativeElement.offsetWidth;
+    const containerHeight = containerWidth; // Make it square
 
-      const containerHeight = Math.min(400, window.innerHeight * 0.4);
-      const words = this.getAllSkills().map(skill => ({
-        text: skill,
-        size: this.getSkillSize(skill),
-        color: this.getTagColor(skill)
-      }));
+    if (containerWidth === 0) return;
 
-      const layout = cloud()
-        .size([containerWidth, containerHeight])
-        .words(words)
-        .padding(5)
-        .rotate(() => 0)
-        .font('Arial')
-        .fontSize(d => d.size!)
-        .on('end', (words) => this.drawWordCloud(words as any));
+    const words = this.getAllSkills().map(skill => ({
+      text: skill,
+      size: this.getSkillSize(skill),
+      color: this.getTagColor(skill)
+    }));
 
-      layout.start();
-    });
+    const layout = cloud()
+      .size([containerWidth, containerHeight])
+      .words(words)
+      .padding(5)
+      .rotate(() => 0)
+      .font('Arial')
+      .fontSize(d => d.size!)
+      .on('end', (words) => this.drawWordCloud(words as WordCloudItem[]));
+
+    layout.start();
+    this.wordCloudInitialized = true;
   }
 
   private drawWordCloud(words: WordCloudItem[]) {
@@ -110,19 +111,26 @@ export class SkillsComponent implements AfterViewInit, OnDestroy {
     if (!ctx) return;
 
     const containerWidth = this.container.nativeElement.offsetWidth;
-    const containerHeight = Math.min(400, window.innerHeight * 0.4);
+    const containerHeight = containerWidth; // Keep it square
 
+    // Set canvas size
     canvas.width = containerWidth;
     canvas.height = containerHeight;
 
+    // Clear canvas
     ctx.clearRect(0, 0, containerWidth, containerHeight);
+
+    // Set text properties
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
 
+    // Draw words
     words.forEach(word => {
       ctx.font = `${word.size}px Arial`;
       ctx.fillStyle = word.color;
-      ctx.fillText(word.text, (word.x || 0) + containerWidth / 2, (word.y || 0) + containerHeight / 2);
+      const x = (word.x || 0) + containerWidth / 2;
+      const y = (word.y || 0) + containerHeight / 2;
+      ctx.fillText(word.text, x, y);
     });
   }
 

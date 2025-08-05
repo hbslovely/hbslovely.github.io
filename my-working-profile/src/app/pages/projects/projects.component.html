@@ -6,6 +6,13 @@
       subtitle="SECTIONS.SUBTITLES.FEATURED_PROJECTS">
     </app-section-header>
 
+    <div class="count-wrapper">
+      <app-project-count
+        [filteredCount]="filteredProjects().length"
+        [totalCount]="projects().length"
+      ></app-project-count>
+    </div>
+
     <!-- Toolbar Section -->
     <div class="toolbar-section">
       <div class="search-box">
@@ -131,16 +138,28 @@
 
     <!-- Projects Container -->
     <div class="projects-container" [class.list-view]="viewType() === 'list'">
-      @for (project of filteredProjects(); track project) {
-        <app-project-detail
-          [project]="project"
-          [viewType]="viewType()"
-          [isExpanded]="isProjectExpanded(project)"
-          [selectedTechnologies]="selectedTechnologies()"
-          [highlightedText]="searchText()"
-          (toggleExpand)="toggleProjectExpansion(project)"
-          (technologyClick)="toggleTechnologyFilter($event)"
-        ></app-project-detail>
+      @if (filteredProjects().length) {
+        @for (project of filteredProjects(); track project) {
+          <app-project-detail
+            [project]="project"
+            [viewType]="viewType()"
+            [isExpanded]="isProjectExpanded(project)"
+            [selectedTechnologies]="selectedTechnologies()"
+            [highlightedText]="searchText()"
+            (toggleExpand)="toggleProjectExpansion(project)"
+            (technologyClick)="toggleTechnologyFilter($event)"
+          ></app-project-detail>
+        }
+      } @else {
+        <div class="no-results">
+          <span nz-icon nzType="inbox" nzTheme="outline"></span>
+          <h3>{{ 'PROJECTS.NO_RESULTS.TITLE' | translate }}</h3>
+          <p>{{ 'PROJECTS.NO_RESULTS.DESCRIPTION' | translate }}</p>
+          <button class="clear-filters" (click)="clearAllFilters()">
+            <span nz-icon nzType="clear" nzTheme="outline"></span>
+            {{ 'PROJECTS.FILTERS.CLEAR_ALL' | translate }}
+          </button>
+        </div>
       }
     </div>
   </div>
