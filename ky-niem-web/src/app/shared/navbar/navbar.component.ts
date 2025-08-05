@@ -53,12 +53,11 @@ export class NavbarComponent implements OnInit {
 
   getShortText(text: string): string {
     const textMap: { [key: string]: string } = {
-      'Trang Chủ Yêu Thương': 'Trang Chủ',
-      'Chuyện Tình Đẹp': 'Chuyện Tình',
-      'Nàng Thơ Của Anh': 'Nàng Thơ',
-      'Chàng Trai Của Em': 'Chàng Trai',
-      'Khoảnh Khắc Yêu Thương': 'Khoảnh Khắc',
-      'Bí Quyết Hạnh Phúc': 'Bí Quyết'
+      'Trang Chủ Yêu Thương': 'Xin Chào Bạn!',
+      'Chuyện Tình Đẹp': 'Về Chúng Tôi',
+      'Nàng Thơ Của Anh': 'Về Em Ấy',
+      'Chàng Trai Của Em': 'Về Anh Ấy',
+      'Khoảnh Khắc Yêu Thương': 'Album Ảnh',
     };
     return textMap[text] || text;
   }
