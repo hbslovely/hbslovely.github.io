@@ -1,59 +1,141 @@
-<!-- Page Layout -->
-<div class="page-container">
-  <!-- Left Column - Filters -->
-  <aside class="filters-column">
-    <app-memory-places-filter
-      [locationTypes]="locationTypes"
-      [regions]="regions"
-      [features]="features"
-      [selectedFilters]="selectedFilters"
-      [searchText]="searchText"
-      [isResetting]="isResetting"
-      (filterChange)="toggleFilter($event.type, $event.value)"
-      (searchChange)="onSearch($event)"
-      (resetFilters)="resetFilters()">
-    </app-memory-places-filter>
+<!-- Main Container -->
+<div class="memory-places-container" [class.collapsed]="isFilterCollapsed">
+
+  <!-- Left Sidebar - Sticky Filters -->
+  <aside class="filters-sidebar" [class.collapsed]="isFilterCollapsed">
+    <div class="filter-content" [class.hidden]="isFilterCollapsed">
+      <app-memory-places-filter
+        [locationTypes]="locationTypes"
+        [regions]="regions"
+        [features]="features"
+        [selectedFilters]="selectedFilters"
+        [searchText]="searchText"
+        [isResetting]="isResetting"
+        (filterChange)="toggleFilter($event.type, $event.value)"
+        (searchChange)="onSearch($event)"
+        (resetFilters)="resetFilters()">
+      </app-memory-places-filter>
+    </div>
   </aside>
 
-  <!-- Right Column - Content -->
-  <main class="content-column">
-    <div class="content-header">
-      <div class="header-title">
+  <!-- Main Content Area -->
+  <main class="main-content">
+
+    <!-- Content Header -->
+    <header class="content-header">
+      <div class="title-section">
         <h1>Địa Điểm Kỷ Niệm</h1>
-        <span class="place-count">{{ filteredPlaces.length }} địa điểm</span>
+        <div class="place-count">
+          <i class="pi pi-map-marker"></i>
+          <span>{{ filteredPlaces.length }} địa điểm</span>
+        </div>
       </div>
-      <p>Những nơi chúng ta đã đến cùng nhau</p>
-    </div>
 
-    <!-- Selected Filters Tags -->
-    <div class="selected-filters" *ngIf="hasActiveFilters()">
-      <div class="filter-tag" *ngFor="let filter of getActiveFilters()">
-        <span>{{ filter.label }}</span>
-        <i class="pi pi-times" (click)="removeFilter(filter)"></i>
+      <div class="header-actions">
+        <button class="filter-toggle-btn" (click)="toggleFilterCollapse()" title="Ẩn/hiện bộ lọc">
+          <i class="pi" [ngClass]="isFilterCollapsed ? 'pi-angle-right' : 'pi-angle-left'"></i>
+          <span>Bộ lọc</span>
+        </button>
+
+        <div class="view-toggle">
+          <button
+            class="view-btn"
+            [class.active]="viewMode === 'grid'"
+            (click)="viewMode = 'grid'"
+            title="Xem dạng lưới">
+            <i class="pi pi-th-large"></i>
+          </button>
+          <button
+            class="view-btn"
+            [class.active]="viewMode === 'list'"
+            (click)="viewMode = 'list'"
+            title="Xem dạng danh sách">
+            <i class="pi pi-list"></i>
+          </button>
+        </div>
       </div>
-      <button class="clear-all" (click)="resetFilters()">
+    </header>
+
+    <!-- Selected Filters -->
+    <section class="selected-filters" *ngIf="hasActiveFilters()">
+      <div class="filter-tags">
+        <div class="filter-tag" *ngFor="let filter of getActiveFilters()">
+          <span>{{ filter.label }}</span>
+          <button class="remove-filter" (click)="removeFilter(filter)">
+            <i class="pi pi-times"></i>
+          </button>
+        </div>
+      </div>
+      <button class="clear-all-btn" (click)="resetFilters()">
         <i class="pi pi-trash"></i>
-        Xóa tất cả
+        <span>Xóa tất cả</span>
       </button>
-    </div>
-
-    <!-- Places Grid -->
-    <div class="places-grid" *ngIf="!loading">
-      <app-place-card
-        *ngFor="let place of filteredPlaces"
-        [place]="place">
-      </app-place-card>
-    </div>
+    </section>
 
     <!-- Loading State -->
-    <div class="loading" *ngIf="loading">
-      <i class="pi pi-spin pi-spinner"></i>
-      <span>Đang tải...</span>
+    <div class="loading-state" *ngIf="loading">
+      <div class="loading-spinner">
+        <i class="pi pi-spin pi-spinner"></i>
+      </div>
+      <p>Đang tải địa điểm...</p>
     </div>
 
-    <!-- No Results -->
-    <div class="no-results" *ngIf="!loading && filteredPlaces.length === 0">
-      <p>Không tìm thấy địa điểm nào phù hợp với bộ lọc đã chọn</p>
-    </div>
+    <!-- Places Display -->
+    <section class="places-container" *ngIf="!loading">
+
+      <!-- Grid View -->
+      <div class="places-grid" *ngIf="viewMode === 'grid'">
+        <app-place-card
+          *ngFor="let place of filteredPlaces; trackBy: trackByPlace"
+          [place]="place"
+          class="place-card-grid">
+        </app-place-card>
+      </div>
+
+      <!-- List View -->
+      <div class="places-list" *ngIf="viewMode === 'list'">
+        <div 
+          class="place-list-item" 
+          *ngFor="let place of filteredPlaces; trackBy: trackByPlace"
+          (click)="navigateToDetail(place.id)">
+          <div class="place-image">
+            <img [src]="place.image" [alt]="place.name" />
+          </div>
+          <div class="place-info">
+            <h3>{{ place.name }}</h3>
+            <p class="location">
+              <i class="pi pi-map-marker"></i>
+              {{ place.location }}
+            </p>
+            <p class="description">{{ place.description }}</p>
+          </div>
+          <div class="place-actions">
+            <button 
+              class="view-details-btn" 
+              (click)="$event.stopPropagation()"
+              [routerLink]="['/place-detail', place.id]">
+              <i class="pi pi-eye"></i>
+              <span>Xem chi tiết</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- No Results -->
+      <div class="no-results" *ngIf="filteredPlaces.length === 0">
+        <div class="no-results-icon">
+          <i class="pi pi-search"></i>
+        </div>
+        <h3>Không tìm thấy địa điểm</h3>
+        <p>Không có địa điểm nào phù hợp với bộ lọc đã chọn</p>
+        <button class="reset-btn" (click)="resetFilters()">
+          <i class="pi pi-refresh"></i>
+          <span>Đặt lại bộ lọc</span>
+        </button>
+      </div>
+
+    </section>
+
   </main>
+
 </div>

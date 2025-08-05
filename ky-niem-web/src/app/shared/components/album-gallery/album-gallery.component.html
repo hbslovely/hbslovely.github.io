@@ -9,7 +9,12 @@
   <ng-container *ngIf="images && images.length > 0">
     <div class="main-image-wrapper">
       <div class="main-image-fade" [class.fading]="isTransitioning">
-        <img class="main-image" [src]="images[selectedIndex].src" [alt]="images[selectedIndex].caption || images[selectedIndex].name || 'Main image'">
+        <img 
+          class="main-image clickable" 
+          [src]="images[selectedIndex].src" 
+          [alt]="images[selectedIndex].caption || images[selectedIndex].name || 'Main image'"
+          (click)="onImageClick()"
+          title="Click to view fullscreen">
       </div>
       <div class="main-info">
         <div class="place-name" *ngIf="images[selectedIndex].name">{{ images[selectedIndex].name }}</div>

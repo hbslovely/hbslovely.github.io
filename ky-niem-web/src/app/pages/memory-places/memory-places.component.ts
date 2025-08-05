@@ -6,7 +6,7 @@ import { forkJoin, Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { FormsModule } from '@angular/forms';
 import { removeVietnameseTones } from '../../shared/utils/string.utils';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { PlaceCardComponent } from '../../shared/components/place-card/place-card.component';
 import { MemoryPlacesFilterComponent } from '../../shared/components/memory-places-filter/memory-places-filter.component';
 
@@ -51,7 +51,7 @@ interface FilterTag {
 @Component({
   selector: 'app-memory-places',
   standalone: true,
-  imports: [CommonModule, PlaceCardComponent, FormsModule, MemoryPlacesFilterComponent],
+  imports: [CommonModule, PlaceCardComponent, FormsModule, MemoryPlacesFilterComponent, RouterModule],
   templateUrl: './memory-places.component.html',
   styleUrls: ['./memory-places.component.scss']
 })
@@ -61,6 +61,8 @@ export class MemoryPlacesComponent implements OnInit {
   loading = true;
   isResetting = false;
   searchText = '';
+  viewMode: 'grid' | 'list' = 'grid';
+  isFilterCollapsed = false;
   private locationMappings: LocationMappings | null = null;
 
   locationTypes = [
@@ -270,7 +272,7 @@ export class MemoryPlacesComponent implements OnInit {
 
   getActiveFilters(): FilterTag[] {
     const tags: FilterTag[] = [];
-    
+
     // Add location type filters
     this.selectedFilters.locationType?.forEach(type => {
       const locationTypeObj = this.locationTypes.find(t => t.value === type);
@@ -362,5 +364,21 @@ export class MemoryPlacesComponent implements OnInit {
 
   getAllPlaceNames(): string[] {
     return this.places.map(place => place.name);
+  }
+
+  toggleViewMode(): void {
+    this.viewMode = this.viewMode === 'grid' ? 'list' : 'grid';
+  }
+
+  toggleFilterCollapse(): void {
+    this.isFilterCollapsed = !this.isFilterCollapsed;
+  }
+
+  trackByPlace(index: number, place: MemoryPlace): string {
+    return place.id;
+  }
+
+  navigateToDetail(placeId: string): void {
+    this.router.navigate(['/place', placeId]);
   }
 }

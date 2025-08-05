@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { AlbumGalleryImage } from '../../models';
@@ -12,6 +12,7 @@ import { AlbumGalleryImage } from '../../models';
 })
 export class AlbumGalleryComponent implements OnInit, OnDestroy {
   @Input() images: AlbumGalleryImage[] = [];
+  @Output() imageClick = new EventEmitter<AlbumGalleryImage>();
   selectedIndex = 0;
   private autoPlayInterval: any;
   private readonly AUTO_PLAY_INTERVAL = 4000;
@@ -43,6 +44,10 @@ export class AlbumGalleryComponent implements OnInit, OnDestroy {
     });
     this.stopAutoPlay();
     this.startAutoPlay();
+  }
+
+  onImageClick() {
+    this.imageClick.emit(this.images[this.selectedIndex]);
   }
 
   private startAutoPlay() {

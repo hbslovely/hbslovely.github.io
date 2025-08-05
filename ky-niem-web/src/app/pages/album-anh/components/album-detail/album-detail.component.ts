@@ -77,6 +77,14 @@ export class AlbumDetailComponent implements OnInit {
     this.selectedPhoto = photo;
   }
 
+  onCarouselImageClick(galleryImage: AlbumGalleryImage) {
+    // Find the corresponding Photo object from album data
+    const photo = this.album?.photos?.find(p => p.url === galleryImage.src);
+    if (photo) {
+      this.openPhotoViewer(photo);
+    }
+  }
+
   closePhotoViewer() {
     this.selectedPhoto = null;
   }

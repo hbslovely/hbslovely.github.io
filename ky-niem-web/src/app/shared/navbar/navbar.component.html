@@ -4,11 +4,17 @@
   <div class="nav-background">
     <div class="bg-pattern"></div>
     <div class="bg-gradient"></div>
-    <div class="bg-dots"></div>
-    <div class="floating-hearts">
-      <i class="pi pi-heart"></i>
-      <i class="pi pi-heart"></i>
-      <i class="pi pi-heart"></i>
+    <div class="floating-particles">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+    <div class="wave-animation">
+      <div class="wave wave1"></div>
+      <div class="wave wave2"></div>
+      <div class="wave wave3"></div>
     </div>
   </div>
 
@@ -17,8 +23,9 @@
     <a routerLink="/chao-mung" class="brand" title="Trang chủ">
       <div class="avatar-wrapper">
         <img src="assets/images/anh-chu-dao/avatar-couple.png" alt="Avatar đôi" />
-        <div class="avatar-glow"></div>
+        <div class="avatar-ring"></div>
       </div>
+      <div class="brand-text">KY NIEM</div>
     </a>
     
     <!-- Desktop Navigation -->
@@ -30,10 +37,9 @@
            [title]="item.description">
           <div class="icon-wrapper">
             <i [class]="item.icon"></i>
-            <div class="icon-background"></div>
           </div>
           <span class="nav-text">{{ getShortText(item.text) }}</span>
-          <div class="link-effect"></div>
+          <div class="link-indicator"></div>
         </a>
       </li>
     </ul>
@@ -45,8 +51,14 @@
   <!-- Mobile Background Effects -->
   <div class="mobile-background">
     <div class="mobile-pattern"></div>
-    <div class="mobile-glow"></div>
-    <div class="mobile-dots"></div>
+    <div class="mobile-wave">
+      <div class="wave-layer"></div>
+    </div>
+    <div class="mobile-particles">
+      <div class="mobile-particle"></div>
+      <div class="mobile-particle"></div>
+      <div class="mobile-particle"></div>
+    </div>
   </div>
 
   <!-- Mobile Menu Items -->
@@ -57,18 +69,11 @@
        class="mobile-nav-link"
        [title]="item.description">
       <div class="mobile-icon-wrapper">
-        <div class="icon-highlight"></div>
         <i [class]="item.icon"></i>
-        <div class="icon-ripple"></div>
+        <div class="icon-bg"></div>
       </div>
       <span class="mobile-text">{{ getShortText(item.text) }}</span>
-      <div class="active-indicator">
-        <div class="indicator-dot"></div>
-        <div class="indicator-line"></div>
-      </div>
+      <div class="active-bar"></div>
     </a>
   </div>
-
-  <!-- Mobile Active Background -->
-  <div class="mobile-active-bg"></div>
 </nav>

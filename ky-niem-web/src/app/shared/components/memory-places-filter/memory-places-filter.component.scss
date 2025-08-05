@@ -44,14 +44,8 @@ $text-lighter: #999;
 
 // Main Container
 .filters-container {
-  position: sticky;
-  top: 80px;
-  z-index: 100;
   background: linear-gradient(135deg, #ffffff 0%, #f8fff9 100%);
   border-radius: 16px;
-  box-shadow: 
-    0 4px 12px rgba(0, 0, 0, 0.03),
-    0 1px 3px rgba(0, 0, 0, 0.02);
   margin-bottom: 2rem;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -376,4 +370,4 @@ $text-lighter: #999;
       transform: scale(0.95);
     }
   }
-} 
+}
