@@ -155,7 +155,7 @@ const projects = {
             duration: "Sep 2022 - Nov 2024",
             description: "Building the application for both Front users and admin user of a fintech company to allow user to make a money transfer in different currencies",
             scope: "FinTech",
-            technologies: ["Angular", "ReactJS", "TailwindCSS", "Material", "GraphQL", "Jasmine/Karma"],
+            technologies: ["Angular", "ReactJS", "TailwindCSS", "Material", "GraphQL", "Jasmine", "Karma"],
             environment: ["VSC", "Git", "Chrome", "Windows", "Agile/Scrum"],
             role: "Front-end Developer"
         },
@@ -197,4 +197,4 @@ writeJsonFile('education.json', education);
 writeJsonFile('skills.json', skills);
 writeJsonFile('projects.json', projects);
 
-console.log('CV data has been parsed and saved to JSON files successfully!'); 
+console.log('CV data has been parsed and saved to JSON files successfully!');

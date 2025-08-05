@@ -36,7 +36,8 @@
         "TailwindCSS",
         "Material",
         "GraphQL",
-        "Jasmine/Karma",
+        "Jasmine",
+        "Karma",
         "AG Grid"
       ],
       "environment": [
@@ -79,7 +80,7 @@
       "scope": "Wealth management",
       "technologies": [
         "Angular",
-        "Ruby on Rails",
+        "Jasmine",
         "Karma"
       ],
       "environment": [
@@ -97,7 +98,7 @@
       "company": "Nashtech",
       "duration": "Dec 2018 – Oct 2020",
       "description": "Spearheaded the migration from AngularJS to Angular 7 for a comprehensive financial management platform. Developed responsive interfaces for order management, invoicing, and payment processing. Implemented wealth management demonstration tools for client presentations.",
-      "scope": "Fintech",
+      "scope": "FinTech",
       "technologies": [
         "AngularJS",
         "Angular",
@@ -206,7 +207,7 @@
         "SignalR",
         "d3Js",
         "Dygraph",
-        ".NET Core"
+        "ASP.NET"
       ],
       "environment": [
         "Webstorm",
@@ -427,8 +428,10 @@
         "Lodash",
         "Scala",
         "Protractor",
+        "Jasmine",
+        "Mocha",
         "Karma",
-        "Chaijs",
+        "ChaiJS",
         "Sinon"
       ],
       "environment": [

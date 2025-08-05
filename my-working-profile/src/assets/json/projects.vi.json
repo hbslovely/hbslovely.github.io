@@ -36,7 +36,8 @@
         "TailwindCSS",
         "Material",
         "GraphQL",
-        "Jasmine/Karma",
+        "Jasmine",
+        "Karma",
         "AG Grid"
       ],
       "environment": [
@@ -79,7 +80,6 @@
       "scope": "Quản lý tài sản",
       "technologies": [
         "Angular",
-        "Ruby on Rails",
         "Karma"
       ],
       "environment": [
@@ -206,7 +206,7 @@
         "SignalR",
         "d3Js",
         "Dygraph",
-        ".NET Core"
+        "ASP.NET"
       ],
       "environment": [
         "Webstorm",
@@ -428,7 +428,7 @@
         "Scala",
         "Protractor",
         "Karma",
-        "Chaijs",
+        "ChaiJS",
         "Sinon"
       ],
       "environment": [
