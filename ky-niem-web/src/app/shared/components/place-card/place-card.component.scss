@@ -5,7 +5,7 @@
   --card-text: #2E7D32;
   display: block;
   height: 100%;
-  
+
   // Uncomment below for blue theme
   /*
   --card-primary: #2196F3;
@@ -76,7 +76,7 @@
 .content-section {
   position: relative;
   padding: 1.25rem;
-  background: #E8F5E9;
+  background: #fcfcfc;
   overflow: hidden;
   flex: 1;
   display: flex;
@@ -85,15 +85,15 @@
 
   .watermark {
     position: absolute;
-    right: -20px;
-    bottom: -20px;
-    opacity: 0.1;
+    right: -10px;
+    bottom: 10px;
+    opacity: 0.05;
     pointer-events: none;
 
     i {
-      font-size: 100px;
-      color: #4CAF50;
-      animation: float 6s ease-in-out infinite;
+      font-size: 66px;
+      color: #117215;
+      animation: float 10s ease-in-out infinite;
     }
   }
 
@@ -249,9 +249,9 @@
     transform: translate(0, 0) rotate(0deg);
   }
   25% {
-    transform: translate(-5px, 5px) rotate(-2deg);
+    transform: translate(-5px, 5px) rotate(-10deg);
   }
   75% {
-    transform: translate(5px, -5px) rotate(2deg);
+    transform: translate(5px, -5px) rotate(15deg);
   }
 }

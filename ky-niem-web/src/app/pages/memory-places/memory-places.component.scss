@@ -30,25 +30,6 @@
   }
 }
 
-/* Background Pattern */
-:host::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0.05;
-  z-index: 0;
-  background: 
-    repeating-linear-gradient(45deg,
-      transparent 0,
-      transparent 40px,
-      rgba(46, 125, 50, 0.1) 40px,
-      rgba(46, 125, 50, 0.1) 80px
-    );
-}
-
 /* Animated Icons */
 .bg-icon {
   position: fixed;
@@ -309,4 +290,4 @@
     width: 80px;
     height: 80px;
   }
-} 
+}
