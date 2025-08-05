@@ -362,13 +362,17 @@
     },
     {
       "id": "hung-yen",
-      "name": "Phố Hiến",
+      "name": "Hưng Yên",
       "location": "Hưng Yên",
       "image": "assets/images/places/checkin-hung-yen.jpg",
-      "description": "Thành phố cổ với nhiều di tích lịch sử, từng được mệnh danh là 'Tiểu Quảng Châu' của Việt Nam, nơi lưu giữ những giá trị văn hóa và kiến trúc độc đáo của một thương cảng sầm uất thời xưa",
-      "detailedDescription": "Phố Hiến xưa, nay là thành phố Hưng Yên, từng được ví như 'Tiểu Quảng Châu' với vai trò là một trong những trung tâm thương mại, văn hóa sầm uất bậc nhất Đàng Ngoài thế kỷ XVII-XVIII. Nơi đây còn lưu giữ nhiều công trình kiến trúc cổ có giá trị như đền Mẫu, chùa Chuông, đền Trần, văn miếu Xích Đằng. Mỗi công trình đều mang những nét kiến trúc độc đáo và chứa đựng những câu chuyện lịch sử thú vị. Phố Hiến không chỉ nổi tiếng với các di tích lịch sử mà còn được biết đến với nghề trồng nhãn lồng thơm ngọt và các làng nghề truyền thống như làm tương, làm bún, dệt lụa.",
-      "howToGet": "Từ Hà Nội đi xe khách hoặc xe máy theo quốc lộ 5 (khoảng 50km).",
-      "bestTimeToVisit": "Thời điểm thích hợp để thăm Hưng Yên là từ tháng 9 đến tháng 3 năm sau, khi thời tiết mát mẻ. Đặc biệt vào mùa nhãn (tháng 7-8) là thời điểm lý tưởng để thưởng thức đặc sản nhãn lồng.",
+      "description": "Tỉnh Hưng Yên nằm ở đồng bằng sông Hồng, nổi tiếng với Phố Hiến cổ kính - từng được mệnh danh là 'Tiểu Quảng Châu', và đặc sản nhãn lồng thơm ngọt đệ nhất. Đây là vùng đất giàu truyền thống văn hóa với nhiều di tích lịch sử và làng nghề truyền thống.",
+      "detailedDescription": "Hưng Yên là tỉnh có vị trí địa lý quan trọng ở đồng bằng sông Hồng, từ lâu đã nổi tiếng với Phố Hiến cổ - một trong những thương cảng sầm uất nhất Đàng Ngoài thế kỷ XVII-XVIII. Tỉnh này không chỉ được biết đến với đặc sản nhãn lồng 'đệ nhất' mà còn lưu giữ nhiều giá trị văn hóa, lịch sử quý báu qua các di tích như đền Mẫu, chùa Chuông, đền Trần, và văn miếu Xích Đằng. Các làng nghề truyền thống như làm tương Bần, dệt lụa vẫn được duy trì và phát triển đến ngày nay.",
+      "howToGet": "Từ Hà Nội đến Hưng Yên (khoảng 60-70km): Đi ô tô/xe máy theo đường cao tốc Hà Nội - Hải Phòng (CT.04) hoặc QL5, sau đó rẽ vào đường 39 đến TP Hưng Yên. Xe khách khởi hành từ bến Giáp Bát, Mỹ Đình, Yên Nghĩa, giá vé 60.000-80.000đ/lượt.",
+      "bestTimeToVisit": "Quanh năm đều thích hợp, đặc biệt mùa nhãn chín (tháng 7-8 Âm lịch) để thưởng thức đặc sản nhãn lồng tươi ngon nhất.",
+      "customSection": {
+        "title": "Giới thiệu về Phố Hiến",
+        "content": "Phố Hiến là một đô thị cổ nổi tiếng, nằm tại thành phố Hưng Yên, ven sông Hồng. Vào thế kỷ 16–17, nơi đây từng là một thương cảng quốc tế sầm uất, chỉ sau kinh thành Thăng Long, với câu nói nổi tiếng:\n\n\"Thứ nhất kinh kỳ, thứ nhì Phố Hiến.\"\n\nPhố Hiến từng là nơi giao thương nhộn nhịp, đón tiếp thương nhân từ Trung Quốc, Nhật Bản, Hà Lan… Không chỉ phát triển về kinh tế, nơi đây còn là trung tâm văn hóa – tôn giáo đa dạng với hơn 60 di tích lịch sử được bảo tồn, như: đền Mẫu, chùa Chuông, Văn Miếu Xích Đằng...\n\nNgày nay, Phố Hiến vẫn lưu giữ vẻ cổ kính, trầm mặc của một thời vang bóng, là điểm đến hấp dẫn cho những ai yêu thích khám phá lịch sử, văn hóa và kiến trúc truyền thống Việt Nam."
+      },
       "attractions": {
         "historical": [
           {
@@ -418,16 +422,34 @@
       ],
       "recommendedFood": [
         {
-          "name": "Cơm Vòng",
-          "description": "Món cơm truyền thống được nấu trong nồi đất với gạo địa phương",
-          "restaurant": "Quán cơm Bà Vòng - Phố cổ",
-          "price": "40000-60000 VND/suất"
+          "name": "Nhãn lồng Hưng Yên",
+          "description": "Được mệnh danh là 'đệ nhất nhãn', nhãn lồng Hưng Yên nổi bật bởi cùi dày, hạt nhỏ, vị ngọt thơm đặc biệt. Mùa nhãn rơi vào khoảng tháng 7-8 Âm lịch",
+          "restaurant": "Vườn nhãn các huyện Hưng Yên",
+          "price": "50000-80000 VND/kg"
         },
         {
-          "name": "Bánh cuốn Phố Hiến",
-          "description": "Bánh cuốn truyền thống với nhân thịt băm và nấm mèo",
-          "restaurant": "Quán Bánh cuốn cô Hà - Gần chợ",
-          "price": "25000-35000 VND/đĩa"
+          "name": "Cá mòi kho",
+          "description": "Món cá kho nổi tiếng vùng sông Hồng, thịt cá thơm béo, mềm rục, ăn với cơm trắng rất ngon",
+          "restaurant": "Các quán ăn địa phương",
+          "price": "60000-80000 VND/phần"
+        },
+        {
+          "name": "Bún thang lươn",
+          "description": "Biến tấu độc đáo từ bún thang Hà Nội, dùng lươn đồng chế biến cầu kỳ, tạo nên hương vị riêng biệt",
+          "restaurant": "Quán bún thang cô Hương",
+          "price": "45000-60000 VND/tô"
+        },
+        {
+          "name": "Tương Bần",
+          "description": "Đặc sản nổi tiếng lâu đời, tương có vị ngọt mặn hài hòa, dùng chấm rau luộc, thịt luộc, rất 'bắt vị'",
+          "restaurant": "Làng nghề tương Bần",
+          "price": "100000-150000 VND/kg"
+        },
+        {
+          "name": "Chè sen long nhãn",
+          "description": "Món chè ngọt mát với hạt sen tươi và nhãn lồng Hưng Yên, đặc biệt thơm ngon vào mùa hè",
+          "restaurant": "Các quán chè truyền thống",
+          "price": "25000-35000 VND/tô"
         }
       ]
     },
@@ -791,4 +813,4 @@
       ]
     }
   ]
-} 
+}

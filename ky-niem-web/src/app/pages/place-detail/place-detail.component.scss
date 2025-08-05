@@ -311,6 +311,12 @@
     margin: 0 auto;
     padding: 0 2rem;
   }
+
+  .place-details {
+    p {
+      white-space: pre-line;
+    }
+  }
 }
 
 // Place Image Section
@@ -332,12 +338,11 @@
     background: linear-gradient(to right bottom, #f1f8e9, #dcedc8);
     padding: 20px;
     border-radius: 3px;
-    box-shadow:
-      0 1px 1px rgba(0,0,0,0.08),
-      0 2px 2px rgba(0,0,0,0.08),
-      0 4px 4px rgba(0,0,0,0.08),
-      0 8px 8px rgba(0,0,0,0.08),
-      0 16px 16px rgba(0,0,0,0.08);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08),
+    0 2px 2px rgba(0, 0, 0, 0.08),
+    0 4px 4px rgba(0, 0, 0, 0.08),
+    0 8px 8px rgba(0, 0, 0, 0.08),
+    0 16px 16px rgba(0, 0, 0, 0.08);
 
     // Decorative corner elements
     &::before, &::after,
@@ -410,9 +415,8 @@
         left: 0;
         right: 0;
         bottom: 0;
-        box-shadow:
-          inset 0 0 30px rgba(0, 0, 0, 0.2),
-          inset 0 0 2px rgba(129, 199, 132, 0.3);
+        box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.2),
+        inset 0 0 2px rgba(129, 199, 132, 0.3);
         pointer-events: none;
       }
 
@@ -1530,6 +1534,10 @@
     .description-content {
       padding: 2rem;
 
+      p {
+        white-space: pre-line;
+      }
+
       .section {
         margin-bottom: 2.5rem;
         position: relative;
@@ -1994,6 +2002,7 @@
 .place-figure::after {
   content: '';
 }
+
 .corner-bottom-left, .corner-bottom-right {
   content: '';
 }

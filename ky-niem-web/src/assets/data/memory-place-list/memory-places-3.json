@@ -681,7 +681,7 @@
       "image": "assets/images/places/checkin-mui-dien-phu-yen.png",
       "description": "Điểm cực Đông của Tổ quốc, nơi đón bình minh đầu tiên",
       "detailedDescription": "Mũi Điện (hay còn gọi là Mũi Đại Lãnh) thuộc địa phận xã Hòa Tâm, huyện Đông Hòa, tỉnh Phú Yên. Đây là một trong những điểm cực Đông của Tổ quốc, nơi đón ánh bình minh đầu tiên trên đất liền Việt Nam. Mũi Điện mang vẻ đẹp hoang sơ với biển xanh - cát trắng - núi đá, và Bãi Môn dưới chân mũi. Nơi đây có sự kết hợp hài hòa giữa rừng, núi, biển và trời. Mũi Điện từng là nơi quan trọng trong hành trình mở cõi về phía Nam, gần đó là Vịnh Vũng Rô - di tích lịch sử gắn liền với Đường mòn Hồ Chí Minh trên biển.",
-      "howToGet": "Mũi Điện cách trung tâm TP Tuy Hòa khoảng 35-40km về phía Đông Nam. Bằng ô tô/xe máy: Từ trung tâm Tuy Hòa → chạy theo QL1A hướng Nam (về phía huyện Đông Hòa) → rẽ trái tại ngã ba Hòa Hiệp Trung → đi theo đường DT29 (hướng về Vũng Rô – Mũi Điện) → chạy qua đèo Cả → qua cảng Vũng Rô → tới chân hải đăng Mũi Điện. Gửi xe ở bãi, đi bộ leo khoảng 15-20 phút lên đỉnh. Tổng thời gian: 1-1.5 giờ. Thuê xe máy tại Tuy Hòa: 120.000-150.000đ/ngày. Tour trọn gói: 300.000-500.000đ/người (xe đưa đón, hướng dẫn viên). Nên đi sáng sớm để ngắm bình minh, mang giày thể thao, nước uống và kem chống nắng.",
+      "howToGet": "Mũi Điện cách trung tâm TP Tuy Hòa khoảng 35-40km về phía Đông Nam.\n\nHướng dẫn đường đi:\n1. Từ trung tâm Tuy Hòa → chạy theo QL1A hướng Nam (về phía huyện Đông Hòa)\n2. Rẽ trái tại ngã ba Hòa Hiệp Trung\n3. Đi theo đường DT29 (hướng về Vũng Rô – Mũi Điện)\n4. Chạy qua đèo Cả\n5. Qua cảng Vũng Rô\n6. Tới chân hải đăng Mũi Điện\n7. Gửi xe ở bãi, đi bộ leo khoảng 15-20 phút lên đỉnh\n\nThông tin thêm:\n- Tổng thời gian di chuyển: 1-1.5 giờ\n- Thuê xe máy tại Tuy Hòa: 120.000-150.000đ/ngày\n- Tour trọn gói: 300.000-500.000đ/người (xe đưa đón, hướng dẫn viên)\n\nLưu ý:\n- Nên đi sáng sớm để ngắm bình minh\n- Mang giày thể thao\n- Mang theo nước uống và kem chống nắng",
       "bestTimeToVisit": "Thời điểm đẹp nhất là từ tháng 3 đến tháng 8, đặc biệt là lúc bình minh.",
       "attractions": {
         "natural": [
@@ -1000,6 +1000,10 @@
       "location": "Thừa Thiên Huế",
       "image": "assets/images/places/checkin-lang-tu-duc.jpg",
       "description": "Quần thể lăng tẩm đẹp nhất và lãng mạn nhất trong các lăng tẩm nhà Nguyễn, nơi an nghỉ của vị vua thi sĩ Tự Đức, là kiệt tác kiến trúc hài hòa giữa cảnh quan thiên nhiên và bàn tay con người",
+      "customSection": {
+        "title": "Vua Tự Đức - Vị Hoàng Đế Thi Sĩ",
+        "content": "Nguyễn Phúc Hồng Nhậm (1829-1883), tức vua Tự Đức, là vị hoàng đế thứ 4 và là người trị vì lâu nhất của triều đại nhà Nguyễn. Ông nổi tiếng là một vị vua thi sĩ với hơn 4.000 bài thơ, một nhà văn hóa uyên thâm và là người có tầm nhìn nghệ thuật độc đáo. Dù trị vì trong thời kỳ đất nước gặp nhiều khó khăn trước sự xâm lược của thực dân Pháp, vua Tự Đức vẫn để lại dấu ấn sâu đậm trong lịch sử văn hóa Việt Nam. Ông nổi tiếng với đức tính khiêm nhường, thường tự xưng là 'quả nhân', và có tình yêu đặc biệt với thiên nhiên. Lăng tẩm của ông không chỉ là nơi an nghỉ mà còn là một công viên thơ ca, nơi ông thường xuyên lui tới để ngao du, sáng tác và thưởng ngoạn khi còn sống."
+      },
       "detailedDescription": "Lăng Tự Đức được xây dựng từ năm 1864 đến 1867, là nơi an nghỉ của vua Tự Đức - vị vua trị vì lâu nhất triều Nguyễn (1847-1883). Quần thể lăng rộng 12 ha được thiết kế như một công viên thu nhỏ với hơn 50 công trình kiến trúc. Đặc biệt, đây là lăng tẩm duy nhất được vua sử dụng làm nơi nghỉ ngơi, làm việc và ngao du thưởng ngoạn khi còn sống. Kiến trúc lăng thể hiện sự hài hòa tuyệt đối giữa cảnh quan thiên nhiên và nhân tạo, với hồ Lưu Khiêm, đảo Tiểu Trung Châu, các điện thờ, nhà bia, và vườn thơ Xung Khiêm. Mỗi công trình đều mang tên gọi thể hiện đức tính khiêm nhường của vua Tự Đức. Nơi đây còn lưu giữ nhiều bài thơ do chính vua sáng tác, khắc trên bia đá, phản ánh tâm hồn nghệ sĩ và triết lý sống của ông.",
       "howToGet": "Từ trung tâm thành phố Huế đi khoảng 7km theo đường Lê Ngô Cát hoặc đường Nam Giao. Có thể đi xe máy, taxi hoặc tham gia tour tham quan lăng tẩm. Nên thuê hướng dẫn viên để hiểu rõ hơn về lịch sử và ý nghĩa của các công trình.",
       "bestTimeToVisit": "Thời điểm lý tưởng là từ tháng 2 đến tháng 4, khi thời tiết mát mẻ và hoa nở rộ. Nên đến vào buổi sáng sớm hoặc chiều tà để tránh nắng nóng và có ánh sáng đẹp cho việc chụp ảnh. Tránh thời điểm mưa nhiều (tháng 10-12) vì đường trơn trượt và khó tham quan.",
@@ -1198,7 +1202,7 @@
       "localFood": [
         {
           "name": "Cơm hến",
-          "description": "Món ăn dân dã đặc trưng của Huế với hến sông Hương, ăn kèm các loại rau thơm và gia vị đặc biệt",
+          "description": "Món ăn dân dã đặc trưng của Huế, được chế biến từ hến sông Hương, ăn kèm các loại rau thơm và gia vị đặc biệt",
           "image": "assets/images/foods/com-hen.jpg"
         },
         {
