@@ -357,6 +357,17 @@ export class PlaceDetailComponent implements OnInit, OnDestroy {
     return this.isCustomSectionArray(this.place.customSection) ? null : this.place.customSection;
   }
 
+  getFirstCustomSectionTitle(): string {
+    if (this.place?.customSection) {
+      if (Array.isArray(this.place.customSection)) {
+        return this.place.customSection[0]?.title || 'Thông tin thêm';
+      } else {
+        return this.place.customSection.title || 'Thông tin thêm';
+      }
+    }
+    return 'Thông tin thêm';
+  }
+
   // Type guard for custom section
   isCustomSectionArray(section: CustomSection | CustomSection[] | undefined): section is CustomSection[] {
     return Array.isArray(section);
