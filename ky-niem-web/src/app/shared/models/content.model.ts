@@ -1,3 +1,5 @@
+import { Attractions, CustomSection, Food, NearbyAttraction, RecommendedFood } from './place.model';
+
 export interface Song {
   id: number;
   title: string;
@@ -68,9 +70,11 @@ export interface MemoryPlace {
   bestTimeToVisit?: string;
   seasonalTips?: string[];
   howToGet?: string;
-  localFood?: any[];
-  recommendedFood?: any[];
-  nearbyAttractions?: any[];
+  localFood?: Food[];
+  attractions?: Attractions;
+  nearbyAttractions?: NearbyAttraction[];
+  recommendedFood?: RecommendedFood[];
+  customSection?: CustomSection | CustomSection[];
 }
 
 export interface LoveTimelineEvent {

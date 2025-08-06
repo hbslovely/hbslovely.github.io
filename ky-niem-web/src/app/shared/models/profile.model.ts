@@ -1,72 +1,62 @@
-interface BasicInfo {
-  icon: string;
+export interface Profile {
+  name: string;
+  title: string;
+  avatar: string;
+  description: string;
+  loveMessage: string;
+  basicInfo: BasicInfo[];
+  hobbies: Hobby[];
+  lifeGoals: string[];
+  loveStory: string[];
+}
+
+export interface BasicInfo {
   label: string;
   value: string;
+  icon: string;
 }
 
-interface Trait {
-  icon: string;
-  title: string;
-  description: string;
-}
-
-interface Hobby {
-  icon: string;
+export interface Hobby {
   name: string;
-  description: string;
+  icon: string;
+  description?: string;
 }
 
-interface ProfessionalSkillCategory {
-  category: string;
-  skills: string[];
-}
-
-interface FunFact {
-  title: string;
-  description: string;
-  icon?: string;
-}
-
-interface Photo {
-  url: string;
-  caption: string;
-}
-
-interface BeautyStyle {
-  description: string;
-  categories: Array<{
-    title: string;
-    description: string;
-  }>;
-}
-
-export interface HusbandData {
+export interface ProfileData {
   basicInfo: {
     name: string;
     title: string;
     description: string;
     loveMessage: string;
+    avatar: string;
     tags: string[];
-    stats: BasicInfo[];
+    stats: {
+      icon: string;
+      label: string;
+      value: string;
+    }[];
   };
-  traits: Trait[];
-  hobbies: Hobby[];
-  professionalSkillCategories: ProfessionalSkillCategory[];
+  traits: {
+    icon: string;
+    title: string;
+    description: string;
+  }[];
+  hobbies: {
+    icon: string;
+    name: string;
+    description: string;
+  }[];
+  photos: {
+    url: string;
+    caption: string;
+    description: string;
+  }[];
   funFacts: FunFact[];
 }
 
-export interface WifeData {
-  wifeInfo: {
-    name: string;
-    title: string;
-    description: string;
-    loveMessage: string;
-    tags: string[];
-  };
-  wifeBasicInfo: BasicInfo[];
-  wifeHobbies: Hobby[];
-  wifePhotos: Photo[];
-  wifeFunFacts: FunFact[];
-  wifeBeautyStyle: BeautyStyle;
-  wifeProfessionalSkills: ProfessionalSkillCategory[];
+
+export interface FunFact {
+  icon: string;
+  title: string;
+  description: string;
 }

@@ -1,173 +1,176 @@
-.fun-facts-section {
-  padding: 2rem;
-  border-radius: 20px;
-  margin: 2rem 0;
-}
+// Variables
+$card-padding: 1.5rem;
+$border-radius: 16px;
+$transition-speed: 0.3s;
 
-:host-context(.wife-profile) .fun-facts-section {
-  background: linear-gradient(135deg, #fff5f7 0%, #fff0f6 100%);
-}
-
-:host-context(.husband-profile) .fun-facts-section {
-  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-}
-
-.section-title {
-  text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-}
-
-:host-context(.wife-profile) .section-title {
-  color: #e83e8c;
-}
-
-:host-context(.husband-profile) .section-title {
-  color: #1976d2;
-}
-
-.emoji {
-  font-size: 1.5rem;
-  animation: twinkle 1.5s ease infinite;
-}
-
-.fun-facts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
+// Fun Fact Card
 .fun-fact-card {
-  border-radius: 15px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
+  background: white;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: $card-padding;
+  position: relative;
+  overflow: hidden;
+  transition: all $transition-speed ease;
 
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+
+    .icon-wrapper {
+      transform: scale(1.1);
+      
+      i {
+        transform: rotate(10deg);
+      }
+
+      .icon-background {
+        transform: scale(1.2);
+        opacity: 0.2;
+      }
+    }
+
+    .decoration-dot {
+      &.dot-1 { transform: translate(-5px, -5px); }
+      &.dot-2 { transform: translate(5px, 5px); }
+      &.dot-3 { transform: translate(-5px, 5px); }
+    }
+
+    .decoration-line {
+      width: 100px;
+      opacity: 0.2;
+    }
   }
 }
 
-:host-context(.wife-profile) .fun-fact-card {
-  background: linear-gradient(135deg, #fff5f5 0%, #fff0f7 100%);
-  border: 2px solid rgba(232, 62, 140, 0.2);
-
-  &:hover {
-    border-color: rgba(232, 62, 140, 0.4);
-  }
-}
-
-:host-context(.husband-profile) .fun-fact-card {
-  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%);
-  border: 2px solid rgba(25, 118, 210, 0.2);
-
-  &:hover {
-    border-color: rgba(25, 118, 210, 0.4);
-  }
-}
-
-.fun-fact-title {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+// Card Header
+.card-header {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
+  margin-bottom: 1rem;
 
-  i {
+  .icon-wrapper {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform $transition-speed ease;
+
+    i {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      position: relative;
+      z-index: 2;
+      transition: transform $transition-speed ease;
+    }
+
+    .icon-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--primary-color);
+      border-radius: 50%;
+      opacity: 0.1;
+      transition: all $transition-speed ease;
+    }
+  }
+
+  h3 {
+    margin: 0;
     font-size: 1.2rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    flex: 1;
   }
 }
 
-:host-context(.wife-profile) .fun-fact-title {
-  color: #d23f77;
-  i { color: #d23f77; }
-}
-
-:host-context(.husband-profile) .fun-fact-title {
-  color: #1976d2;
-  i { color: #1976d2; }
-}
-
-.title-emoji {
-  animation: sparkle 1.5s ease infinite;
-}
-
-.fun-fact-description {
-  line-height: 1.6;
-  font-size: 1rem;
-  margin: 0;
-  position: relative;
-}
-
-:host-context(.wife-profile) .fun-fact-description {
-  color: #e83e8c;
-}
-
-:host-context(.husband-profile) .fun-fact-description {
-  color: #1976d2;
-}
-
-.money-rain {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-
-  i {
-    color: #ffd700;
+// Card Content
+.card-content {
+  p {
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.6;
     font-size: 1rem;
-    animation: moneyRain 2s ease infinite;
+  }
+}
 
-    &:nth-child(2) {
-      animation-delay: 0.3s;
+// Card Decorations
+.card-decorations {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  overflow: hidden;
+
+  .decoration-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    opacity: 0.2;
+    transition: transform $transition-speed ease;
+
+    &.dot-1 {
+      top: 20px;
+      right: 20px;
     }
 
-    &:nth-child(3) {
-      animation-delay: 0.6s;
+    &.dot-2 {
+      bottom: 30px;
+      right: 40px;
+    }
+
+    &.dot-3 {
+      bottom: 20px;
+      right: 20px;
     }
   }
-}
 
-@keyframes twinkle {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.7;
-    transform: scale(1.2);
-  }
-}
-
-@keyframes sparkle {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-  }
-  50% {
-    opacity: 0.7;
-    transform: scale(1.2) rotate(180deg);
+  .decoration-line {
+    position: absolute;
+    top: 40px;
+    right: -20px;
+    width: 60px;
+    height: 2px;
+    background: var(--primary-color);
+    opacity: 0.1;
+    transform: rotate(-45deg);
+    transition: all $transition-speed ease;
   }
 }
 
-@keyframes moneyRain {
-  0% {
-    transform: translateY(-100%) rotate(0deg);
-    opacity: 0;
+// Responsive Design
+@media (max-width: 768px) {
+  .fun-fact-card {
+    padding: 1rem;
   }
-  50% {
-    opacity: 1;
+
+  .card-header {
+    .icon-wrapper {
+      width: 40px;
+      height: 40px;
+
+      i {
+        font-size: 1.2rem;
+      }
+    }
+
+    h3 {
+      font-size: 1.1rem;
+    }
   }
-  100% {
-    transform: translateY(100%) rotate(360deg);
-    opacity: 0;
+
+  .card-content {
+    p {
+      font-size: 0.9rem;
+    }
   }
 } 

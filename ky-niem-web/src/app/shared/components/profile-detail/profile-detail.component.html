@@ -1,0 +1,104 @@
+<div class="profile-container" [class]="themeClass">
+  <!-- Header Image -->
+  <div class="profile-header-image">
+    <img [src]="profile.avatar" [alt]="profile.name">
+    <div class="overlay"></div>
+    <div class="header-content">
+      <h1>{{ profile.name }}</h1>
+      <p>{{ profile.title }}</p>
+    </div>
+  </div>
+
+  <!-- Profile Content -->
+  <div class="profile-content">
+    <div class="masonry-grid">
+      <!-- About Section -->
+      <section class="profile-section">
+        <div class="section-header">
+          <h2>Giới Thiệu</h2>
+          <div class="header-line"></div>
+        </div>
+        <div class="section-content">
+          <p>{{ profile.description }}</p>
+        </div>
+      </section>
+
+      <!-- Basic Info Section -->
+      <section class="profile-section">
+        <div class="section-header">
+          <h2>Thông Tin Cơ Bản</h2>
+          <div class="header-line"></div>
+        </div>
+        <div class="section-content">
+          <div class="info-grid">
+            <div class="info-item" *ngFor="let info of profile.basicInfo">
+              <i [class]="info.icon"></i>
+              <div class="info-text">
+                <span class="label">{{ info.label }}</span>
+                <span class="value">{{ info.value }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hobbies Section -->
+      <section class="profile-section">
+        <div class="section-header">
+          <h2>Sở Thích</h2>
+          <div class="header-line"></div>
+        </div>
+        <div class="section-content">
+          <div class="hobbies-grid">
+            <div class="hobby-item" *ngFor="let hobby of profile.hobbies">
+              <i [class]="hobby.icon"></i>
+              <span>{{ hobby.name }}</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Life Goals Section -->
+      <section class="profile-section">
+        <div class="section-header">
+          <h2>Mục Tiêu Sống</h2>
+          <div class="header-line"></div>
+        </div>
+        <div class="section-content">
+          <ul class="goals-list">
+            <li *ngFor="let goal of profile.lifeGoals">
+              <i class="fas fa-star"></i>
+              <span>{{ goal }}</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Love Message Section -->
+      <section class="profile-section">
+        <div class="section-header">
+          <h2>Lời Yêu Thương</h2>
+          <div class="header-line"></div>
+        </div>
+        <div class="section-content love-message">
+          <i class="fas fa-heart message-icon"></i>
+          <p>{{ profile.loveMessage }}</p>
+        </div>
+      </section>
+
+      <!-- Fun Facts Section -->
+      <ng-container *ngIf="funFacts && funFacts.length > 0">
+        <section class="profile-section" *ngFor="let fact of funFacts">
+          <div class="section-header">
+            <h2>{{ fact.title }}</h2>
+            <div class="header-line"></div>
+          </div>
+          <div class="section-content fun-fact">
+            <i [class]="fact.icon"></i>
+            <p>{{ fact.description }}</p>
+          </div>
+        </section>
+      </ng-container>
+    </div>
+  </div>
+</div>

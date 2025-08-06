@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FunFact } from '../../models';
 
 @Component({
   selector: 'app-fun-facts-card',
@@ -9,6 +10,5 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./fun-facts-card.component.scss']
 })
 export class FunFactsCardComponent {
-  @Input() facts: any[] = [];
-  @Input() title: string = 'Những điều thú vị';
-} 
+  @Input() fact!: FunFact;
+}
