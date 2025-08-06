@@ -3,11 +3,13 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: 'chao-mung',
-    loadChildren: () => import('./pages/chao-mung/chao-mung.routes').then(m => m.CHaoMungRoutes)
+    loadChildren: () => import('./pages/chao-mung/chao-mung.routes').then(m => m.CHaoMungRoutes),
+    data: { preload: true } // Preload welcome page
   },
   {
     path: 've-chung-toi',
-    loadChildren: () => import('./pages/ve-chung-toi/ve-chung-toi.routes').then(m => m.VeChungToiRoutes)
+    loadChildren: () => import('./pages/ve-chung-toi/ve-chung-toi.routes').then(m => m.VeChungToiRoutes),
+    data: { preload: true } // Preload about us page
   },
   {
     path: 'thong-tin-vo',
@@ -19,7 +21,8 @@ export const routes: Routes = [
   },
   {
     path: 'album-anh',
-    loadChildren: () => import('./pages/album-anh/album-anh.routes').then(m => m.ALBUM_ANH_ROUTES)
+    loadChildren: () => import('./pages/album-anh/album-anh.routes').then(m => m.ALBUM_ANH_ROUTES),
+    data: { preload: true } // Preload album page
   },
   {
     path: 'album-anh/:id',
