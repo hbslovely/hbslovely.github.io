@@ -4,7 +4,6 @@
   display: block;
   background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
   min-height: 100vh;
-  padding: 2rem 0;
 }
 
 .wife-profile-container {
@@ -20,28 +19,6 @@
     --text-primary: #333333;
     --text-secondary: #666666;
     --background-light: #fff5f8;
-  }
-}
-
-// Fun Facts Section
-.fun-facts-section {
-  margin-top: 3rem;
-  padding: 2rem;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-
-  h2 {
-    color: var(--primary-color, #e91e63);
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-
-  .fun-facts-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
   }
 }
 

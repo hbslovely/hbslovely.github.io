@@ -2,12 +2,14 @@ export interface Profile {
   name: string;
   title: string;
   avatar: string;
+  headerImage: string; // URL to the header background image
   description: string;
   loveMessage: string;
   basicInfo: BasicInfo[];
   hobbies: Hobby[];
   lifeGoals: string[];
   loveStory: string[];
+  sweetMoments: SweetMoment[];
 }
 
 export interface BasicInfo {
@@ -59,4 +61,11 @@ export interface FunFact {
   icon: string;
   title: string;
   description: string;
+}
+
+export interface SweetMoment {
+  imageUrl: string;
+  title: string;
+  description: string;
+  date?: string;
 }

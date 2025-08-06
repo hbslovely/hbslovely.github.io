@@ -1,11 +1,18 @@
 <div class="profile-container" [class]="themeClass">
   <!-- Header Image -->
   <div class="profile-header-image">
-    <img [src]="profile.avatar" [alt]="profile.name">
+    <img [src]="profile.headerImage || profile.avatar" [alt]="profile.name" class="header-bg">
     <div class="overlay"></div>
     <div class="header-content">
-      <h1>{{ profile.name }}</h1>
-      <p>{{ profile.title }}</p>
+      <div class="name-with-avatar">
+        <div class="small-avatar">
+          <img [src]="profile.avatar" [alt]="profile.name">
+        </div>
+        <div class="name-title">
+          <h1>{{ profile.name }}</h1>
+          <p>{{ profile.title }}</p>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -102,3 +109,6 @@
     </div>
   </div>
 </div>
+
+<!-- Sweet Moments Section -->
+<app-sweet-moments [moments]="profile.sweetMoments"></app-sweet-moments>
