@@ -43,37 +43,47 @@
         </a>
       </li>
     </ul>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen">
+      <span class="toggle-bar"></span>
+      <span class="toggle-bar"></span>
+      <span class="toggle-bar"></span>
+    </button>
   </div>
 </nav>
 
-<!-- Mobile Navigation -->
-<nav class="mobile-nav">
-  <!-- Mobile Background Effects -->
-  <div class="mobile-background">
-    <div class="mobile-pattern"></div>
-    <div class="mobile-wave">
-      <div class="wave-layer"></div>
-    </div>
-    <div class="mobile-particles">
-      <div class="mobile-particle"></div>
-      <div class="mobile-particle"></div>
-      <div class="mobile-particle"></div>
-    </div>
-  </div>
-
-  <!-- Mobile Menu Items -->
-  <div class="mobile-menu">
-    <a *ngFor="let item of menuItems"
-       [routerLink]="item.link"
-       routerLinkActive="active"
-       class="mobile-nav-link"
-       [title]="item.description">
-      <div class="mobile-icon-wrapper">
-        <i [class]="item.icon"></i>
-        <div class="icon-bg"></div>
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-nav-drawer" [class.open]="isMobileMenuOpen">
+  <div class="drawer-header">
+    <a routerLink="/chao-mung" class="mobile-brand" title="Trang chủ" (click)="closeMobileMenu()">
+      <div class="mobile-avatar">
+        <img src="assets/images/anh-chu-dao/avatar-couple.png" alt="Avatar đôi" />
       </div>
-      <span class="mobile-text">{{ getShortText(item.text) }}</span>
-      <div class="active-bar"></div>
+      <div class="mobile-brand-text">P&Q</div>
     </a>
+    <button class="close-drawer" (click)="toggleMobileMenu()">
+      <i class="fas fa-times"></i>
+    </button>
   </div>
-</nav>
+
+  <div class="drawer-content">
+    <div class="mobile-menu-items">
+      <a *ngFor="let item of menuItems"
+         [routerLink]="item.link"
+         routerLinkActive="active"
+         class="mobile-menu-item"
+         [title]="item.description"
+         (click)="closeMobileMenu()">
+        <i [class]="item.icon"></i>
+        <span>{{ item.text }}</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu-overlay" 
+     [class.active]="isMobileMenuOpen" 
+     (click)="closeMobileMenu()">
+</div>

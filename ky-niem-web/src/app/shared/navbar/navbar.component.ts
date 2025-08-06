@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -18,7 +18,7 @@ interface MenuItem {
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  isMenuOpen = false;
+  isMobileMenuOpen = false;
   menuItems: MenuItem[] = [];
 
   constructor(private http: HttpClient) {}
@@ -34,20 +34,20 @@ export class NavbarComponent implements OnInit {
       });
   }
 
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
-    document.body.style.overflow = this.isMenuOpen ? 'hidden' : '';
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+    document.body.style.overflow = this.isMobileMenuOpen ? 'hidden' : '';
+  }
 
-    if (this.isMenuOpen) {
-      const menuItems = document.querySelectorAll('.mobile-nav-item');
-      menuItems.forEach((item, index) => {
-        setTimeout(() => {
-          item.classList.add('show');
-        }, index * 100);
-      });
-    } else {
-      const menuItems = document.querySelectorAll('.mobile-nav-item');
-      menuItems.forEach(item => item.classList.remove('show'));
+  closeMobileMenu() {
+    this.isMobileMenuOpen = false;
+    document.body.style.overflow = '';
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    if (window.innerWidth > 768 && this.isMobileMenuOpen) {
+      this.closeMobileMenu();
     }
   }
 
