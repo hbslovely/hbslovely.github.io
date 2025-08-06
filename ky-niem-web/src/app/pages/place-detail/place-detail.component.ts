@@ -6,7 +6,7 @@ import { PlaceCardComponent } from '../../shared/components/place-card/place-car
 import { switchMap, map } from 'rxjs/operators';
 import { forkJoin } from 'rxjs';
 import { Location } from '@angular/common';
-import { MemoryPlace } from '../../shared/models';
+import { CustomSection, MemoryPlace } from '../../shared/models';
 
 interface PlaceListConfig {
   files: string[];
@@ -34,6 +34,19 @@ export class PlaceDetailComponent implements OnInit, OnDestroy {
   translateY = 0;
   lastTranslateX = 0;
   lastTranslateY = 0;
+
+  // New properties for section navigation and toggle
+  activeSection: string = 'intro';
+  expandedSections = {
+    intro: true,
+    attractions: true,
+    custom: true,
+    time: true,
+    directions: true,
+    food: true,
+    nearby: true,
+    otherPlaces: true
+  };
 
   locationTypes = [
     { label: 'Trong nước', value: 'domestic', icon: 'pi pi-flag' },
@@ -266,6 +279,87 @@ export class PlaceDetailComponent implements OnInit, OnDestroy {
         feature: feature.value
       }
     });
+  }
+
+  navigateToPlace(placeId: string): void {
+    this.router.navigate(['/places', placeId]);
+  }
+
+  // Section navigation methods
+  scrollToSection(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      this.activeSection = sectionId;
+      this.expandedSections[sectionId as keyof typeof this.expandedSections] = true;
+    }
+  }
+
+  toggleSection(sectionId: string): void {
+    this.expandedSections[sectionId as keyof typeof this.expandedSections] =
+      !this.expandedSections[sectionId as keyof typeof this.expandedSections];
+  }
+
+  // Helper methods for section visibility
+  hasAttractions(): boolean {
+    return !!(
+      this.place?.attractions?.religious?.length ||
+      this.place?.attractions?.natural?.length ||
+      this.place?.attractions?.cultural?.length ||
+      this.place?.attractions?.historical?.length
+    );
+  }
+
+  hasFood(): boolean {
+    return !!(
+      (this.place?.localFood && this.place.localFood.length > 0) ||
+      (this.place?.recommendedFood && this.place.recommendedFood.length > 0)
+    );
+  }
+
+  hasNearbyAttractions(): boolean {
+    return !!(this.place?.nearbyAttractions && this.place.nearbyAttractions.length > 0);
+  }
+
+  // Scroll spy for active section
+  @HostListener('window:scroll', ['$event'])
+  onScroll(): void {
+    const sections = [
+      'intro',
+      'attractions',
+      'custom',
+      'time',
+      'directions',
+      'food',
+      'nearby'
+    ];
+
+    for (const section of sections) {
+      const element = document.getElementById(section);
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        if (rect.top <= 100 && rect.bottom >= 100) {
+          this.activeSection = section;
+          break;
+        }
+      }
+    }
+  }
+
+  // Helper methods for type safety
+  getCustomSections(): CustomSection[] {
+    if (!this.place?.customSection) return [];
+    return this.isCustomSectionArray(this.place.customSection) ? this.place.customSection : [];
+  }
+
+  getSingleCustomSection(): CustomSection | null {
+    if (!this.place?.customSection) return null;
+    return this.isCustomSectionArray(this.place.customSection) ? null : this.place.customSection;
+  }
+
+  // Type guard for custom section
+  isCustomSectionArray(section: CustomSection | CustomSection[] | undefined): section is CustomSection[] {
+    return Array.isArray(section);
   }
 
   private loadPlaceDetails(placeId: string) {

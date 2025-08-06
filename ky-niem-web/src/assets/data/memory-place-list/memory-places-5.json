@@ -5,10 +5,24 @@
       "name": "Hải đăng Vũng Tàu",
       "location": "Bà Rịa - Vũng Tàu",
       "image": "assets/images/places/checkin-hai-dang-vung-tau.jpg",
-      "description": "Ngọn hải đăng lịch sử trên núi Nhỏ",
-      "detailedDescription": "Hải đăng Vũng Tàu là một trong những ngọn hải đăng cổ nhất Việt Nam, được xây dựng từ thời Pháp thuộc. Từ đây có thể ngắm toàn cảnh thành phố Vũng Tàu và biển Đông tuyệt đẹp.",
-      "howToGet": "Từ trung tâm Vũng Tàu đi bộ hoặc xe máy lên núi Nhỏ.",
-      "bestTimeToVisit": "Thời điểm đẹp nhất là lúc bình minh hoặc hoàng hôn.",
+      "description": "Ngọn hải đăng lịch sử trên núi Nhỏ, một trong những ngọn hải đăng cổ nhất và quan trọng nhất Việt Nam",
+      "detailedDescription": "Hải đăng Vũng Tàu là một trong những ngọn hải đăng cổ nhất và quan trọng nhất Việt Nam, được xây dựng từ thời Pháp thuộc năm 1862. Nằm trên đỉnh núi Nhỏ ở độ cao 170m so với mực nước biển, ngọn hải đăng này đóng vai trò quan trọng trong việc dẫn đường cho tàu thuyền ra vào cảng Vũng Tàu và vùng biển phía Nam. Từ đây có thể ngắm toàn cảnh thành phố Vũng Tàu, biển Đông và các hoạt động của tàu thuyền.",
+      "customSection": [
+        {
+          "title": "Hệ thống Hải đăng Việt Nam",
+          "content": "<p>Việt Nam với bờ biển dài hơn 3.260km, sở hữu một hệ thống hải đăng đóng vai trò quan trọng trong hàng hải và chủ quyền biển đảo. Hệ thống này bao gồm hơn 80 ngọn hải đăng lớn nhỏ, trải dài từ Móng Cái đến Hà Tiên, trong đó có nhiều ngọn hải đăng có giá trị lịch sử và kiến trúc độc đáo.</p><p>Các hải đăng được phân bố theo 3 vùng chính:</p><ul><li><strong>Miền Bắc:</strong> Từ Móng Cái đến Lạch Ghép (Thanh Hóa)</li><li><strong>Miền Trung:</strong> Từ Thanh Hóa đến Phan Thiết</li><li><strong>Miền Nam:</strong> Từ Phan Thiết đến Hà Tiên</li></ul>"
+        },
+        {
+          "title": "Các Hải đăng tiêu biểu",
+          "content": "<p>Một số ngọn hải đăng nổi tiếng của Việt Nam:</p><ul><li><strong>Hải đăng Hòn Dấu (Hải Phòng):</strong> Ngọn hải đăng cổ nhất Việt Nam, xây dựng năm 1892</li><li><strong>Hải đăng Kê Gà (Bình Thuận):</strong> Ngọn hải đăng cao nhất Đông Nam Á</li><li><strong>Hải đăng Đại Lãnh (Phú Yên):</strong> Nơi đón ánh bình minh đầu tiên trên đất liền</li><li><strong>Hải đăng Vũng Tàu:</strong> Một trong những ngọn hải đăng cổ và quan trọng nhất miền Nam</li><li><strong>Hải đăng Cù Lao Xanh (Quy Nhơn):</strong> Ngọn hải đăng nằm trên đảo, có tầm quan sát rộng</li></ul>"
+        },
+        {
+          "title": "Vai trò của Hải đăng",
+          "content": "<p>Hệ thống hải đăng đóng nhiều vai trò quan trọng:</p><ul><li><strong>Dẫn đường hàng hải:</strong> Giúp tàu thuyền định hướng và tránh các vùng nguy hiểm</li><li><strong>Bảo vệ chủ quyền:</strong> Khẳng định sự hiện diện và chủ quyền trên các vùng biển đảo</li><li><strong>Nghiên cứu khoa học:</strong> Là trạm quan trắc khí tượng thủy văn</li><li><strong>Du lịch:</strong> Nhiều hải đăng trở thành điểm tham quan hấp dẫn</li><li><strong>Bảo tồn văn hóa:</strong> Là di sản kiến trúc và lịch sử quan trọng</li></ul>"
+        }
+      ],
+      "howToGet": "Từ trung tâm Vũng Tàu đi bộ hoặc xe máy lên núi Nhỏ theo đường Hạ Long hoặc Trần Phú. Có thể đi bộ khoảng 1000 bậc thang từ chân núi hoặc đi xe máy theo đường nhựa lên đỉnh.",
+      "bestTimeToVisit": "Thời điểm đẹp nhất là lúc bình minh hoặc hoàng hôn. Nên tránh những ngày mưa gió vì đường lên khá dốc. Buổi sáng sớm (5h-7h) là thời điểm lý tưởng để ngắm bình minh và toàn cảnh thành phố.",
       "attractions": {
         "historical": [
           {
@@ -58,14 +72,26 @@
       ],
       "recommendedFood": [
         {
-          "name": "Bánh khọt Vũng Tàu",
-          "description": "Món ăn truyền thống",
+          "name": "Yaourt cô Tiên",
+          "description": "Thương hiệu yaourt nổi tiếng nhất Vũng Tàu từ năm 1996, được làm thủ công với công thức gia truyền. Yaourt có vị béo ngậy, chua thanh và ngọt dịu đặc trưng",
+          "price": "15.000-20.000 VND/hộp",
+          "where": "Yaourt cô Tiên - 157 Phan Chu Trinh, Phường 2"
+        },
+        {
+          "name": "Trứng lòng đào",
+          "description": "Món ăn vặt đặc trưng của Vũng Tàu, trứng gà luộc vừa chín tới, lòng đào còn mềm, ăn kèm với muối tiêu chanh và bánh mì nóng",
+          "price": "10.000-15.000 VND/quả",
+          "where": "Các quán ăn vặt dọc đường Hạ Long và khu vực chân núi"
+        },
+        {
+          "name": "Bánh khọt",
+          "description": "Món ăn đặc sản Vũng Tàu, bánh giòn bên ngoài, mềm bên trong với nhân tôm tươi",
           "price": "50000-70000 VND/phần",
           "where": "Các quán ăn dọc đường lên hải đăng"
         },
         {
           "name": "Nước dừa tươi",
-          "description": "Đồ uống giải khát",
+          "description": "Đồ uống giải khát tự nhiên, dừa Vũng Tàu nổi tiếng ngọt mát",
           "price": "20000-30000 VND/trái",
           "where": "Các quầy bán nước dọc đường"
         }
@@ -78,6 +104,20 @@
       "image": "assets/images/places/checkin-di-tich-rach-gam-xoai-mut-tien-giang.jpg",
       "description": "Di tích lịch sử chiến thắng Rạch Gầm - Xoài Mút",
       "detailedDescription": "Di tích Rạch Gầm - Xoài Mút là nơi diễn ra trận thủy chiến lịch sử năm 1785, khi quân Tây Sơn đánh bại quân Xiêm. Đây là một trong những chiến thắng vẻ vang của dân tộc trên sông nước.",
+      "customSection": [
+        {
+          "title": "Chiến thắng Rạch Gầm - Xoài Múp 1785",
+          "content": "<p>Trận thủy chiến Rạch Gầm - Xoài Múp diễn ra vào ngày 19 tháng 1 năm 1785 là một trong những chiến thắng vang dội nhất trong lịch sử chống ngoại xâm của dân tộc. Dưới sự chỉ huy tài tình của Nguyễn Huệ, quân Tây Sơn đã đánh bại hoàn toàn đội quân xâm lược Xiêm La (Thái Lan) gồm 50.000 quân và 300 chiến thuyền do Chúa Nguyễn Ánh cầu viện.</p><p>Với chiến thuật độc đáo kết hợp giữa thủy chiến và bộ chiến, cùng việc tận dụng địa hình sông nước hiểm trở, quân Tây Sơn đã tiêu diệt và bắt sống hầu hết quân địch, phá hủy toàn bộ đoàn thuyền chiến của giặc.</p>"
+        },
+        {
+          "title": "Ý nghĩa lịch sử",
+          "content": "<p>Chiến thắng Rạch Gầm - Xoài Múp có ý nghĩa lịch sử to lớn:</p><ul><li>Đập tan âm mưu xâm lược của quân Xiêm</li><li>Khẳng định tài thao lược xuất chúng của Nguyễn Huệ</li><li>Thể hiện sức mạnh quân sự của nghĩa quân Tây Sơn</li><li>Là một trong những trận thủy chiến lớn nhất trong lịch sử Việt Nam</li><li>Minh chứng cho truyền thống đánh giặc giữ nước anh hùng của dân tộc</li></ul>"
+        },
+        {
+          "title": "Chiến thuật độc đáo",
+          "content": "<p>Nguyễn Huệ đã sử dụng chiến thuật độc đáo trong trận đánh này:</p><ul><li>Nghiên cứu kỹ địa hình sông nước hiểm trở</li><li>Bố trí quân mai phục dọc hai bờ sông</li><li>Dùng thuyền nhỏ dụ địch vào trận địa đã chuẩn bị</li><li>Kết hợp thủy chiến và bộ chiến tạo thế gọng kìm</li><li>Tận dụng thủy triều và dòng chảy để đánh địch</li></ul><p>Chiến thuật này đã tạo nên một trận đánh kinh điển trong lịch sử quân sự Việt Nam.</p>"
+        }
+      ],
       "howToGet": "Từ TP.HCM đi xe khách đến Mỹ Tho, sau đó đi xe ôm hoặc taxi đến di tích.",
       "bestTimeToVisit": "Có thể thăm quan quanh năm, tránh mùa mưa lũ.",
       "attractions": {
@@ -286,11 +326,15 @@
     },
     {
       "id": "dinh-thay-thim",
-      "name": "Đình Thầy Thím",
+      "name": "Dinh Thầy Thím",
       "location": "Bình Thuận",
       "image": "assets/images/places/checkin-dinh-thay-thim.png",
-      "description": "Di tích tâm linh cổ của vùng đất Bình Thuận",
-      "detailedDescription": "Đình Thầy Thím là di tích lịch sử văn hóa cấp quốc gia, nơi thờ các vị thần linh và các bậc tiền hiền có công với vùng đất. Công trình mang đậm kiến trúc truyền thống Nam Bộ.",
+      "description": "Di tích tâm linh cổ của vùng đất Bình Thuận, nơi ghi dấu câu chuyện huyền thoại về đôi vợ chồng đạo sĩ với tấm lòng nhân ái",
+      "customSection": {
+        "title": "Huyền Thoại Thầy Thím - Câu Chuyện Về Đức Độ và Phép Màu",
+        "content": "Theo truyền thuyết từ thời vua Gia Long, có một đạo sĩ tài ba cùng người vợ hiền từ Quảng Nam vào Nam lánh nạn sau khi bị triều đình xét xử oan ức. Họ dừng chân tại làng Tam Tân (nay là xã Tân Tiến, LaGi, Bình Thuận) và được dân làng gọi thân thương là Thầy - Thím. Thầy nổi tiếng với tài phép phi thường và tấm lòng nhân ái: từ việc cầu mưa cứu hạn, chữa bệnh cứu người, đến đóng ghe giúp ngư dân. Một câu chuyện kỳ diệu kể rằng khi bị triều đình kết án, Thầy đã dùng một tấm lụa đào biến thành rồng, đưa vợ chồng bay về phương Nam. Tại Tam Tân, Thầy Thím sống giản dị, giúp đỡ dân làng, thậm chí còn cảm hóa được cả thú rừng. Khi họ qua đời, hai con hổ Bạch-Hắc thường xuyên về tảo mộ, canh giữ phần mộ của Thầy Thím. Cảm phục trước đức độ của họ, vua Thành Thái năm thứ 18 đã ban sắc phong 'Chí Đức Tiên Sinh, Chí Đức Nương Nương Tôn Thần'. Hàng năm vào ngày 15/9 âm lịch, người dân vẫn tổ chức lễ tế thu để tưởng nhớ công đức của Thầy Thím."
+      },
+      "detailedDescription": "Dinh Thầy Thím là di tích lịch sử văn hóa cấp quốc gia, nơi thờ các vị thần linh và các bậc tiền hiền có công với vùng đất. Công trình mang đậm kiến trúc truyền thống Nam Bộ.",
       "howToGet": "Từ Phan Thiết đi xe máy hoặc ô tô khoảng 20km theo hướng Hàm Thuận Nam.",
       "bestTimeToVisit": "Có thể thăm quan quanh năm, đặc biệt vào các dịp lễ hội.",
       "attractions": {

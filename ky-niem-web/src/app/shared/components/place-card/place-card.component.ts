@@ -17,4 +17,5 @@ export class PlaceCardComponent {
     description: string;
     image: string;
   };
+  @Input() compact = false;
 }

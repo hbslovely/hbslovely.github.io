@@ -5,20 +5,20 @@
       "name": "Chùa Hương",
       "location": "Hà Nội",
       "image": "assets/images/places/checkin-chua-huong-ha-noi.jpg",
-      "description": "Danh thắng tâm linh nổi tiếng với cảnh quan thiên nhiên tuyệt đẹp, nơi hội tụ giữa đức tin tâm linh và vẻ đẹp kỳ vĩ của tạo hóa",
-      "detailedDescription": "Chùa Hương hay còn gọi là chùa Hương Tích là một quần thể di tích danh thắng nổi tiếng bậc nhất của Việt Nam, bao gồm hàng chục ngôi chùa, đền, đình nằm rải rác trong thung lũng Suối Yến, xã Hương Sơn, huyện Mỹ Đức, Hà Nội. Quần thể này không chỉ là một trung tâm du lịch tâm linh quan trọng mà còn là nơi hội tụ của những cảnh quan thiên nhiên tuyệt đẹp với hệ thống hang động, suối nước trong vắt và những dãy núi đá vôi hùng vĩ. Mỗi năm, chùa Hương đón hàng triệu lượt khách hành hương và du lịch, đặc biệt là trong mùa lễ hội kéo dài từ tháng Giêng đến tháng Ba âm lịch. Du khách không chỉ được chiêm bái các công trình tâm linh mà còn được trải nghiệm hành trình đi thuyền trên Suối Yến thơ mộng, leo núi khám phá các hang động tự nhiên và thưởng ngoạn phong cảnh núi rừng hùng vĩ của vùng Hương Sơn.",
+      "description": "Danh thắng tâm linh nổi tiếng với quần thể hang động mang đậm màu sắc tín ngưỡng dân gian và đạo Phật, nơi hội tụ giữa đức tin tâm linh và vẻ đẹp kỳ vĩ của tạo hóa",
+      "detailedDescription": "Chùa Hương hay còn gọi là chùa Hương Tích là một quần thể hang động mang đậm màu sắc tín ngưỡng dân gian – đạo Phật với nền văn hoá nông nghiệp và phảng phất nét văn hoá phồn thực. Theo truyền thuyết, vào thế kỷ đầu tiên, vùng 'Linh sơn phúc địa' này đã có công chúa Diệu Thiện (tục gọi là Chúa Ba), ứng thân của Bồ Tát Quán Thế Âm, đã vào tu hành 9 năm đắc đạo thành Phật đi cứu độ chúng sinh. Vào tháng 3 năm Canh Dần (1770), Chúa Tĩnh Đô Vương Trịnh Sâm đã vào động Hương Tích thắp hương vãn cảnh và đề lên vách đá cửa động năm chữ 'Nam Thiên Đệ Nhất Động', đưa vị thế động Hương Tích trở thành một di tích lớn. Từ thời Vua Lê Thánh Tông niên hiệu Quang Thuận (1460 – 1469) khai phá ra vùng đất Hương Sơn đến nay, đã trải qua 13 đời Sư tổ. Ngày nay, lễ hội Chùa Hương đã trở thành một lễ hội lớn thu hút hàng triệu lượt du khách về thăm quan chiêm bái, với thời gian diễn ra lâu nhất và có lượng du khách về trẩy hội đông nhất.",
       "howToGet": "Từ trung tâm Hà Nội, bạn có thể đi xe khách hoặc xe máy đến Mỹ Đức (khoảng 70km). Sau đó đi thuyền và leo núi để thăm quan các điểm trong quần thể.",
-      "bestTimeToVisit": "Thời điểm lý tưởng để thăm Chùa Hương là từ tháng 1 đến tháng 3 (mùa lễ hội), hoặc tháng 9-11 (thời tiết mát mẻ, ít mưa).",
+      "bestTimeToVisit": "Thời điểm lý tưởng để thăm Chùa Hương là từ tháng Giêng đến tháng Ba âm lịch (mùa lễ hội), đặc biệt là sau ngày mùng 6 tháng Giêng - ngày khai hội chính thức. Thời điểm này khí trời mát mẻ, cây cỏ xanh tươi, trăm hoa đua nở.",
       "attractions": {
         "religious": [
           {
-            "name": "Chùa Hương Tích",
-            "description": "Ngôi chùa chính trong quần thể, nằm trong lòng núi với nhiều hang động đẹp và tượng Phật cổ quý giá",
+            "name": "Động Hương Tích",
+            "description": "Động được Chúa Trịnh Sâm phong tặng là 'Nam Thiên Đệ Nhất Động', nơi thờ Phật Bà Quán Thế Âm và là chỗ dựa tinh thần của lòng dân",
             "image": "assets/images/places/checkin-chua-huong-ha-noi.jpg"
           },
           {
-            "name": "Đền Trình",
-            "description": "Điểm dừng chân đầu tiên của hành trình hành hương, nơi du khách thắp hương bái lễ trước khi lên đường",
+            "name": "Đền Trình (Ngũ Nhạc Linh Từ)",
+            "description": "Nơi làm lễ khai sơn của làng Yến Vỹ, thờ sơn thần và vị thần tướng có công đánh giặc Ân dưới cờ Đức Thánh Phù Đổng",
             "image": "assets/images/places/den-trinh.jpg"
           }
         ],
@@ -29,8 +29,8 @@
             "image": "assets/images/places/suoi-yen.jpg"
           },
           {
-            "name": "Động Hương Tích",
-            "description": "Hang động tự nhiên với nhiều nhũ đá độc đáo và các hình thù kỳ thú do thiên nhiên tạo nên",
+            "name": "Quần thể hang động",
+            "description": "Hệ thống hang động tự nhiên mang đậm dấu ấn văn hóa nông nghiệp và phồn thực, với những hình ảnh như ao bèo, con trâu, đàn lợn, nong tằm, né kén",
             "image": "assets/images/places/dong-huong-tich.jpg"
           }
         ]
@@ -729,6 +729,10 @@
       "location": "Bà Rịa - Vũng Tàu",
       "image": "assets/images/places/checkin_con-dao-hcm.png",
       "description": "Quần đảo thiên đường với vẻ đẹp hoang sơ và lịch sử anh hùng, nơi hội tụ giữa những bãi biển tuyệt đẹp và di tích lịch sử đầy ý nghĩa của dân tộc",
+      "customSection": {
+        "title": "Võ Thị Sáu - Nữ Anh Hùng Tuổi 19",
+        "content": "Võ Thị Sáu (1933-1952) là một trong những biểu tượng anh hùng của Côn Đảo và cách mạng Việt Nam. Sinh ra tại huyện Đất Đỏ, tỉnh Bà Rịa - Vũng Tàu, chị tham gia cách mạng từ khi mới 14 tuổi. Năm 1950, ở tuổi 17, chị bị thực dân Pháp bắt và kết án tử hình vì hai lần ném lựu đạn vào đồn địch. Tại nhà tù Côn Đảo, dù bị tra tấn dã man, chị vẫn giữ khí tiết cách mạng, không khuất phục. Đêm trước khi hy sinh, chị đã hát vang những bài ca cách mạng, truyền lửa đấu tranh cho đồng đội. Ngày 23/1/1952, chị hy sinh anh dũng tại pháp trường Côn Đảo, để lại hình ảnh một nữ anh hùng trẻ tuổi kiên cường. Ngày nay, mộ chị tại Nghĩa trang Hàng Dương luôn tấp nập người đến viếng, với những bông hoa tươi và nén nhang thơm, tưởng nhớ người con gái anh hùng đã hiến dâng tuổi xuân cho Tổ quốc."
+      },
       "detailedDescription": "Côn Đảo là quần đảo gồm 16 hòn đảo lớn nhỏ nằm ở phía Nam Việt Nam, thuộc tỉnh Bà Rịa - Vũng Tàu. Nơi đây không chỉ nổi tiếng với vẻ đẹp thiên nhiên hoang sơ, những bãi biển trong xanh mà còn là vùng đất thiêng gắn liền với lịch sử đấu tranh anh dũng của dân tộc. Côn Đảo từng là nhà tù khét tiếng thời Pháp thuộc và Mỹ - Diệm, nơi giam giữ hàng nghìn chiến sĩ cách mạng và người yêu nước. Ngày nay, Côn Đảo đã trở thành điểm du lịch hấp dẫn với hệ sinh thái biển đa dạng, rừng nguyên sinh còn nguyên vẹn và những bãi biển đẹp như Đầm Trầu, An Hải. Du khách đến đây không chỉ được tận hưởng không gian biển xanh, cát trắng mà còn được tìm hiểu về lịch sử hào hùng và chiêm bái những anh hùng liệt sĩ đã hy sinh cho Tổ quốc.",
       "howToGet": "Từ TP.HCM có thể đi máy bay (45 phút bay) hoặc đi tàu cao tốc từ Vũng Tàu (2.5 giờ). Từ Hà Nội có chuyến bay trực tiếp đến Côn Đảo.",
       "bestTimeToVisit": "Thời điểm lý tưởng là từ tháng 11 đến tháng 4 năm sau khi thời tiết mát mẻ, ít mưa bão. Tránh mùa mưa từ tháng 5-10.",

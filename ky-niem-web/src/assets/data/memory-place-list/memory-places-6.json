@@ -247,6 +247,20 @@
       "image": "assets/images/places/checkin_ngu-hanh-son_da-nang.jpg",
       "description": "Danh thắng với năm ngọn núi đá vôi",
       "detailedDescription": "Ngũ Hành Sơn là quần thể gồm năm ngọn núi đá vôi, mang tên Kim, Mộc, Thủy, Hỏa, Thổ. Nơi đây có nhiều hang động đẹp, chùa chiền cổ kính và là trung tâm đá mỹ nghệ nổi tiếng.",
+      "customSection": [
+        {
+          "title": "Sự tích & Huyền thoại về Ngũ Hành Sơn",
+          "content": "<p>Theo truyền thuyết, Ngũ Hành Sơn được hình thành từ một quả trứng của chim thần khổng lồ. Sau khi chim nở, vỏ trứng vỡ thành năm mảnh, hóa thành năm ngọn núi tượng trưng cho ngũ hành:</p><ul><li><strong>Núi Kim Sơn (Kim):</strong> Tượng trưng cho vàng, cao 106m, có hình dáng như một đồng tiền cổ</li><li><strong>Núi Mộc Sơn (Mộc):</strong> Tượng trưng cho cây cối, có nhiều cây cổ thụ</li><li><strong>Núi Thủy Sơn (Thủy):</strong> Tượng trưng cho nước, là ngọn núi cao nhất và đẹp nhất</li><li><strong>Núi Hỏa Sơn (Hỏa):</strong> Tượng trưng cho lửa, có màu đỏ đặc trưng</li><li><strong>Núi Thổ Sơn (Thổ):</strong> Tượng trưng cho đất, là ngọn núi thấp nhất</li></ul>"
+        },
+        {
+          "title": "Giá trị tâm linh & văn hóa",
+          "content": "<p>Ngũ Hành Sơn không chỉ là danh thắng mà còn là trung tâm tâm linh quan trọng:</p><ul><li>Là nơi tu hành của nhiều vị cao tăng từ thế kỷ 17</li><li>Có hệ thống chùa, am tự cổ kính như chùa Linh Ứng, chùa Tam Thai</li><li>Nhiều hang động tự nhiên được biến thành không gian thờ tự như động Huyền Không, động Vân Thông</li><li>Là nơi giao thoa giữa Phật giáo, tín ngưỡng dân gian và văn hóa Chăm</li></ul>"
+        },
+        {
+          "title": "Làng nghề đá mỹ nghệ Non Nước",
+          "content": "<p>Dưới chân Ngũ Hành Sơn là làng đá mỹ nghệ Non Nước nổi tiếng:</p><ul><li>Làng nghề truyền thống có từ thế kỷ 18</li><li>Nghệ nhân tạc tượng từ đá cẩm thạch tự nhiên</li><li>Sản phẩm đa dạng từ tượng Phật, trang sức đến đồ trang trí</li><li>Được công nhận là di sản văn hóa phi vật thể quốc gia</li></ul>"
+        }
+      ],
       "howToGet": "Từ trung tâm Đà Nẵng đi xe máy hoặc taxi khoảng 8km về phía Đông Nam.",
       "bestTimeToVisit": "Có thể thăm quan quanh năm, đẹp nhất vào buổi sáng sớm.",
       "attractions": {

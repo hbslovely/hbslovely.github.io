@@ -17,7 +17,7 @@ export interface MemoryPlace {
   attractions?: Attractions;
   nearbyAttractions?: NearbyAttraction[];
   recommendedFood?: RecommendedFood[];
-  customSection?: CustomSection;
+  customSection?: CustomSection | CustomSection[];
 }
 
 export interface CustomSection {
