@@ -20,57 +20,107 @@
   <div class="profile-content">
     <div class="masonry-grid">
       <!-- About Section -->
-      <app-section-container title="Giới Thiệu" icon="pi pi-user">
-        <p>{{ profile.description }}</p>
+      <app-section-container class="about-section" title="Giới Thiệu" icon="pi pi-user" [theme]="profile.gender === 'female' ? 'pink' : 'blue'">
+        <div class="about-content">
+          <div class="quote-marks">
+            <i class="pi pi-quote-left"></i>
+          </div>
+          <div class="description-text">
+            {{ profile.description }}
+          </div>
+          <div class="quote-marks end">
+            <i class="pi pi-quote-right"></i>
+          </div>
+          <div class="tags">
+            <span class="tag" *ngFor="let tag of profile.tags">
+              <i class="pi pi-heart"></i>
+              {{ tag }}
+            </span>
+          </div>
+        </div>
       </app-section-container>
 
       <!-- Basic Info Section -->
-      <app-section-container title="Thông Tin Cơ Bản" icon="pi pi-info-circle">
-        <div class="info-grid">
-          <div class="info-item" *ngFor="let info of profile.basicInfo">
-            <i [class]="info.icon"></i>
-            <div class="info-text">
-              <span class="label">{{ info.label }}</span>
-              <span class="value">{{ info.value }}</span>
+      <app-section-container title="Thông Tin Cơ Bản" icon="pi pi-info-circle" [theme]="profile.gender === 'female' ? 'pink' : 'blue'">
+        <div class="basic-info-content">
+          <div class="info-card" *ngFor="let info of profile.basicInfo">
+            <div class="info-icon">
+              <i [class]="info.icon"></i>
+            </div>
+            <div class="info-details">
+              <h3 class="info-label">{{ info.label }}</h3>
+              <p class="info-value">{{ info.value }}</p>
             </div>
           </div>
         </div>
       </app-section-container>
 
+      <!-- Decorative Image -->
+      <div class="decorative-image">
+        <img [src]="profile.gender === 'female' ?
+          'assets/images/albums/hinh-cuoi-dep/z6839748952402_e08e25c67223cd6b67ca34237e432a4a.jpg' :
+          'assets/images/albums/hinh-cuoi-dep/z6839748547298_b5ca358084616504239404b32c19c4cc.jpg'"
+          alt="Wedding Photo" class="section-divider">
+      </div>
+
       <!-- Hobbies Section -->
-      <app-section-container title="Sở Thích" icon="pi pi-heart">
-        <div class="hobbies-grid">
-          <div class="hobby-item" *ngFor="let hobby of profile.hobbies">
+      <app-section-container title="Sở Thích" icon="pi pi-heart" [theme]="profile.gender === 'female' ? 'pink' : 'blue'" class="hobbies-section">
+        <div class="compact-hobbies-grid">
+          <div class="hobby-chip" *ngFor="let hobby of profile.hobbies">
             <i [class]="hobby.icon"></i>
-            <span>{{ hobby.name }}</span>
+            <span class="hobby-name">{{ hobby.name }}</span>
+            <div class="hobby-tooltip" *ngIf="hobby.description">
+              {{ hobby.description }}
+            </div>
           </div>
         </div>
       </app-section-container>
 
+      <!-- Decorative Image -->
+      <div class="decorative-image">
+        <img [src]="profile.gender === 'female' ?
+          'assets/images/albums/hinh-cuoi-dep/z6839748735120_c80a38b787a2b8d01524eabdec4ea54f.jpg' :
+          'assets/images/albums/hinh-cuoi-dep/z6839748926606_4667f65f7afb58dd41ea00b6eea3ce3d.jpg'"
+          alt="Wedding Photo" class="section-divider">
+      </div>
+
       <!-- Life Goals Section -->
-      <app-section-container title="Mục Tiêu Sống" icon="pi pi-flag">
-        <ul class="goals-list">
-          <li *ngFor="let goal of profile.lifeGoals">
-            <i class="fas fa-star"></i>
-            <span>{{ goal }}</span>
-          </li>
-        </ul>
+      <app-section-container title="Mục Tiêu Sống" icon="pi pi-flag" [theme]="profile.gender === 'female' ? 'pink' : 'blue'" class="goals-section">
+        <div class="goals-grid">
+          <div class="goal-card" *ngFor="let goal of profile.lifeGoals; let i = index">
+            <div class="goal-number">{{ i + 1 }}</div>
+            <div class="goal-content">
+              <i class="pi pi-star goal-star"></i>
+              <p class="goal-text">{{ goal }}</p>
+            </div>
+          </div>
+        </div>
       </app-section-container>
 
       <!-- Love Message Section -->
-      <app-section-container title="Lời Yêu Thương" icon="pi pi-heart-fill" class="love-message" headerIcon="fas fa-heart">
+      <app-section-container title="Lời Yêu Thương" icon="pi pi-heart-fill" class="love-message" headerIcon="pi pi-heart" [theme]="profile.gender === 'female' ? 'pink' : 'blue'">
         <p>{{ profile.loveMessage }}</p>
       </app-section-container>
 
       <!-- Fun Facts Section -->
       <ng-container *ngIf="funFacts && funFacts.length > 0">
-        <app-section-container *ngFor="let fact of funFacts" [title]="fact.title" [icon]="fact.icon" class="fun-fact">
-          <p>{{ fact.description }}</p>
-        </app-section-container>
+        <ng-container *ngFor="let fact of funFacts; let i = index">
+          <app-section-container [title]="fact.title" [icon]="fact.icon" class="fun-fact" [theme]="profile.gender === 'female' ? 'pink' : 'blue'">
+            <p>{{ fact.description }}</p>
+          </app-section-container>
+
+          <!-- Add decorative image in the middle of fun facts -->
+          <div class="decorative-image" *ngIf="i === 2">
+            <img [src]="profile.gender === 'female' ?
+              'assets/images/albums/hinh-cuoi-dep/z6839748615091_b394bea7561ca2862a97742e063d4a5c.jpg' :
+              'assets/images/albums/hinh-cuoi-dep/z6839749117958_7a971474ff2e95d2152c95056bf75c6d.jpg'"
+              alt="Wedding Photo" class="section-divider">
+          </div>
+        </ng-container>
       </ng-container>
     </div>
   </div>
 </div>
 
 <!-- Sweet Moments Section -->
-<app-sweet-moments [moments]="profile.sweetMoments"></app-sweet-moments>
+<app-sweet-moments [moments]="profile.sweetMoments" [theme]="profile.gender === 'female' ? 'pink' : 'blue'"></app-sweet-moments>

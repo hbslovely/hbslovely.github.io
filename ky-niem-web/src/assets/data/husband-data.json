@@ -98,33 +98,74 @@
   ],
   "photos": [
     {
-      "url": "assets/images/phat/phat-portrait.png",
-      "caption": "Chân dung",
-      "description": "Khoảnh khắc đời thường"
+      "url": "assets/images/phat/z6843682688942_8ae8a3bccc41f133a7025665a46240d6.jpg",
+      "caption": "Khoảnh Khắc",
+      "description": "Những khoảnh khắc đời thường",
+      "date": "2024"
+    },
+    {
+      "url": "assets/images/phat/z6843682702130_be6dd4103032582d17a53d1ed2acb5ea.jpg",
+      "caption": "Nụ Cười",
+      "description": "Nụ cười hạnh phúc",
+      "date": "2024"
+    },
+    {
+      "url": "assets/images/phat/z6843682736683_12e74d7e2926653e294c7137a25b36a5.jpg",
+      "caption": "Tươi Tắn",
+      "description": "Khoảnh khắc tươi vui",
+      "date": "2024"
+    },
+    {
+      "url": "assets/images/phat/z6843682748876_eed8ca92a6b36b77a096a27fa8415190.jpg",
+      "caption": "Thư Giãn",
+      "description": "Những phút giây thư giãn",
+      "date": "2024"
+    },
+    {
+      "url": "assets/images/phat/z6843682760892_ee2af16154a39a5d771a8ba289770688.jpg",
+      "caption": "Vui Vẻ",
+      "description": "Niềm vui ngập tràn",
+      "date": "2024"
+    },
+    {
+      "url": "assets/images/phat/z6843682799868_df75a26ceef12562600fac23c06b28f1.jpg",
+      "caption": "Hạnh Phúc",
+      "description": "Khoảnh khắc hạnh phúc",
+      "date": "2024"
+    },
+    {
+      "url": "assets/images/phat/z6843682806625_cf8508e3d57defa8e6b30386f4ad55ae.jpg",
+      "caption": "Năng Động",
+      "description": "Những phút giây năng động",
+      "date": "2024"
+    },
+    {
+      "url": "assets/images/phat/z6843682847277_5f8844798c7eaaa90aa6906d50df3f92.jpg",
+      "caption": "Tự Tin",
+      "description": "Khoảnh khắc tự tin",
+      "date": "2024"
+    },
+    {
+      "url": "assets/images/phat/z6843682880102_a975966a4b5f4d0b574da155f338b606.jpg",
+      "caption": "Lãng Mạn",
+      "description": "Những giây phút lãng mạn",
+      "date": "2024"
+    },
+    {
+      "url": "assets/images/phat/z6843682896201_ea5cb269bb14d38255d781d2dd689a28.jpg",
+      "caption": "Đáng Yêu",
+      "description": "Nét đáng yêu trong từng khoảnh khắc",
+      "date": "2024"
     },
     {
       "url": "assets/images/phat/phat_dam-cuoi.png",
-      "caption": "Ngày cưới",
-      "description": "Khoảnh khắc hạnh phúc bên người thương"
-    },
-    {
-      "url": "assets/images/phat/phat-travel.png",
-      "caption": "Du lịch",
-      "description": "Những chuyến đi khám phá thế giới"
-    },
-    {
-      "url": "assets/images/phat/phat_ho-may-vung-tau_10-2023.png",
-      "caption": "Vũng Tàu",
-      "description": "Kỷ niệm tại Hồ Mây - Vũng Tàu"
-    },
-    {
-      "url": "assets/images/phat/phat-quyen-ben-nhau.png",
-      "caption": "Bên nhau",
-      "description": "Những khoảnh khắc hạnh phúc bên nhau"
+      "caption": "Ngày Cưới",
+      "description": "Khoảnh khắc hạnh phúc trong ngày cưới",
+      "date": "2022"
     },
     {
       "url": "assets/images/phat/phat-nau-an-cho-vo.png",
-      "caption": "Nấu ăn",
+      "caption": "Nấu Ăn",
       "description": "Khoảnh khắc vào bếp nấu ăn cho vợ"
     }
   ],

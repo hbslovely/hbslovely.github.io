@@ -67,34 +67,75 @@
   ],
   "photos": [
     {
-      "url": "assets/images/quyen/quyen-portrait.png",
-      "caption": "Chân dung",
-      "description": "Nụ cười rạng rỡ"
+      "url": "assets/images/quyen/z6843539895501_95bd68ae1ce476718ac2a2ea38d8e046.jpg",
+      "caption": "Nụ Cười Rạng Rỡ",
+      "description": "Khoảnh khắc hạnh phúc",
+      "date": "2024"
+    },
+    {
+      "url": "assets/images/quyen/z6843535586778_050aaffcce7fc14fc48d5facc985fe23.jpg",
+      "caption": "Duyên Dáng",
+      "description": "Nét duyên dáng trong từng khoảnh khắc",
+      "date": "2024"
+    },
+    {
+      "url": "assets/images/quyen/z6843535586743_0ee5cfdb404b7a8352018d405a288039.jpg",
+      "caption": "Xinh Đẹp",
+      "description": "Vẻ đẹp rạng ngời",
+      "date": "2024"
+    },
+    {
+      "url": "assets/images/quyen/z6843526377730_46c05ef6a063901ba161f8e8a598ed38.jpg",
+      "caption": "Tươi Tắn",
+      "description": "Nụ cười tỏa nắng",
+      "date": "2024"
+    },
+    {
+      "url": "assets/images/quyen/z6843528165353_bec6048cfea8af58ebb1da382d4a357d.jpg",
+      "caption": "Ngọt Ngào",
+      "description": "Khoảnh khắc ngọt ngào",
+      "date": "2024"
+    },
+    {
+      "url": "assets/images/quyen/z6843524186042_f86e79a1ecf2ca5a44fe4a4b07c9af2c.jpg",
+      "caption": "Hạnh Phúc",
+      "description": "Niềm hạnh phúc ngập tràn",
+      "date": "2024"
+    },
+    {
+      "url": "assets/images/quyen/z6843515658578_a4a2821f16bb3911c1d1165772b30eae.jpg",
+      "caption": "Đáng Yêu",
+      "description": "Nét đáng yêu trong từng khoảnh khắc",
+      "date": "2024"
+    },
+    {
+      "url": "assets/images/quyen/z6843511376185_67cbe1ac795e387c8dbf309efcf326f8.jpg",
+      "caption": "Tinh Nghịch",
+      "description": "Những phút giây vui vẻ",
+      "date": "2024"
+    },
+    {
+      "url": "assets/images/quyen/z6843508203125_4da060882f1c88efb6147fe56573ea1f.jpg",
+      "caption": "Thư Thái",
+      "description": "Khoảnh khắc thư giãn",
+      "date": "2024"
+    },
+    {
+      "url": "assets/images/quyen/z6843505637575_d6f149a3635a65e03e5f3f08ce24cc0b.jpg",
+      "caption": "Lãng Mạn",
+      "description": "Những giây phút lãng mạn",
+      "date": "2024"
     },
     {
       "url": "assets/images/quyen/quyen_lua-do-chup-hinh-cuoi_1-2022.png",
-      "caption": "Chuẩn bị cưới",
-      "description": "Khoảnh khắc lựa đồ chụp hình cưới"
+      "caption": "Chuẩn Bị Cưới",
+      "description": "Khoảnh khắc lựa đồ chụp hình cưới",
+      "date": "2022"
     },
     {
-      "url": "assets/images/quyen/img_1.png",
-      "caption": "Khoảnh khắc đẹp",
-      "description": "Những giây phút hạnh phúc"
-    },
-    {
-      "url": "assets/images/quyen/img_2.png",
-      "caption": "Duyên dáng",
-      "description": "Nét duyên dáng trong từng khoảnh khắc"
-    },
-    {
-      "url": "assets/images/quyen/img_3.png",
-      "caption": "Tươi vui",
-      "description": "Nụ cười tỏa nắng"
-    },
-    {
-      "url": "assets/images/quyen/img_4.png",
-      "caption": "Xinh đẹp",
-      "description": "Vẻ đẹp rạng ngời"
+      "url": "assets/images/quyen/quyen_chup-len-vo-qua-anh-man-hinh.png",
+      "caption": "Khoảnh Khắc",
+      "description": "Những khoảnh khắc đời thường"
     }
   ],
   "funFacts": [

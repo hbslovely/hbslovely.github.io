@@ -14,4 +14,5 @@ export class SectionContainerComponent {
   @Input() class?: string;
   @Input() headerIcon?: string;
   @Input() headerIconClass?: string = 'message-icon';
+  @Input() theme: 'pink' | 'blue' = 'blue';
 } 

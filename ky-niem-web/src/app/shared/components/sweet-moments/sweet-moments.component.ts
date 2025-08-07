@@ -11,4 +11,5 @@ import { SweetMoment } from '../../models/profile.model';
 })
 export class SweetMomentsComponent {
   @Input() moments: SweetMoment[] = [];
+  @Input() theme: 'pink' | 'blue' = 'blue';
 } 
