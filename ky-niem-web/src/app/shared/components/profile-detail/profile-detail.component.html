@@ -7,22 +7,8 @@
   <i class="bg-icon pi pi-heart-fill"></i>
   <i class="bg-icon pi pi-gift"></i>
 
-  <!-- Header Image -->
-  <div class="profile-header-image">
-    <img [src]="profile.headerImage || profile.avatar" [alt]="profile.name" class="header-bg">
-    <div class="overlay"></div>
-    <div class="header-content">
-      <div class="name-with-avatar">
-        <div class="small-avatar">
-          <img [src]="profile.avatar" [alt]="profile.name">
-        </div>
-        <div class="name-title">
-          <h1>{{ profile.name }}</h1>
-          <p>{{ profile.title }}</p>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!-- Profile Header -->
+  <app-profile-header [profile]="profile" [themeClass]="themeClass"></app-profile-header>
 
   <!-- Profile Content -->
   <div class="profile-content">
