@@ -113,14 +113,14 @@
 
       <div class="section" *ngIf="place?.customSection">
         <ng-container *ngIf="getCustomSections().length > 0">
-          <div *ngFor="let section of getCustomSections()" class="custom-section-item">
+          <div *ngFor="let section of getCustomSections()">
             <h4>{{section.title}}</h4>
-            <div [innerHTML]="section.content"></div>
+            <div class="custom-section-item" [innerHTML]="section.content"></div>
           </div>
         </ng-container>
         <ng-container *ngIf="getSingleCustomSection() as section">
           <h4>{{section.title}}</h4>
-          <div [innerHTML]="section.content"></div>
+          <div class="custom-section-item" [innerHTML]="section.content"></div>
         </ng-container>
       </div>
 

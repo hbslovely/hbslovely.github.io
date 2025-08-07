@@ -116,32 +116,6 @@
           "description": "Thành phố biển Tuy Hòa - Phú Yên, nơi có những bãi biển đẹp và ẩm thực đặc sắc."
         }
       ]
-    },
-    {
-      "id": "foods",
-      "title": "Món Ăn Yêu Thích",
-      "images": [
-        {
-          "src": "assets/images/foods/banh-hoi-long.jpg",
-          "name": "Bánh hỏi lòng Phú Yên",
-          "description": "Đặc sản Phú Yên - Sợi bánh hỏi mềm mịn quyện với lòng heo thơm ngon, rau sống tươi mát và nước mắm chua ngọt đậm đà. Món ăn gắn liền với những kỷ niệm đầu tiên của chúng tôi."
-        },
-        {
-          "src": "assets/images/foods/cha-ram-tom-dat.jpg",
-          "name": "Chả ram tôm đất miền Trung",
-          "description": "Đặc sản miền Trung với vỏ giòn rụm, nhân tôm đất thơm ngọt. Món ăn gợi nhớ về những chuyến du lịch đáng nhớ và những bữa ăn ngon cùng nhau."
-        },
-        {
-          "src": "assets/images/foods/nem-nuong.png",
-          "name": "Nem nướng Nha Trang",
-          "description": "Đặc sản Nha Trang - Nem nướng thơm lừng, cuốn với bánh tráng, rau sống và chấm cùng nước chấm đặc biệt. Món ăn gắn liền với những buổi hẹn hò đầu tiên của chúng tôi."
-        },
-        {
-          "src": "assets/images/foods/tre-tron.jpg",
-          "name": "Tre trộn đậm đà",
-          "description": "Đặc sản miền Trung với vị chua ngọt đặc trưng, thịt tre giòn ngon trộn với rau thơm và gia vị. Món ăn nhẹ yêu thích mỗi khi chúng tôi ghé thăm quê nhà."
-        }
-      ]
     }
   ]
 }

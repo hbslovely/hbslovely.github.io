@@ -1,9 +1,29 @@
 <!-- Main Container -->
-<div class="memory-places-container" [class.collapsed]="isFilterCollapsed">
+<div class="memory-places-container" [class.filter-collapsed]="isFilterCollapsed">
+  <!-- Desktop Filter Toggle -->
+  <button
+    *ngIf="!isMobile"
+    class="desktop-filter-toggle"
+    (click)="toggleFilterCollapse()"
+    [class.collapsed]="isFilterCollapsed">
+    <i class="pi" [ngClass]="isFilterCollapsed ? 'pi-angle-right' : 'pi-angle-left'"></i>
+  </button>
 
-  <!-- Left Sidebar - Sticky Filters -->
-  <aside class="filters-sidebar" [class.collapsed]="isFilterCollapsed">
-    <div class="filter-content" [class.hidden]="isFilterCollapsed">
+  <!-- Mobile Filter Toggle -->
+  <button
+    *ngIf="isMobile"
+    class="filter-toggle-btn"
+    (click)="toggleFilterCollapse()">
+    <i class="pi pi-filter"></i>
+    <span>Bộ lọc</span>
+    <div class="filter-count" *ngIf="getActiveFilters().length > 0">
+      {{ getActiveFilters().length }}
+    </div>
+  </button>
+
+  <!-- Desktop Filter Sidebar -->
+  <aside class="filters-sidebar" [class.collapsed]="isFilterCollapsed" *ngIf="!isMobile">
+    <div class="filter-content">
       <app-memory-places-filter
         [locationTypes]="locationTypes"
         [regions]="regions"
@@ -11,12 +31,45 @@
         [selectedFilters]="selectedFilters"
         [searchText]="searchText"
         [isResetting]="isResetting"
-        (filterChange)="toggleFilter($event.type, $event.value)"
+        (filterChange)="onFilterChange($event)"
         (searchChange)="onSearch($event)"
         (resetFilters)="resetFilters()">
       </app-memory-places-filter>
     </div>
   </aside>
+
+  <!-- Mobile Filter Modal -->
+  <div class="filter-modal" *ngIf="isMobile && !isFilterCollapsed" (click)="closeFilterModal($event)">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <h2>Bộ lọc tìm kiếm</h2>
+        <button class="close-modal" (click)="toggleFilterCollapse()">
+          <i class="pi pi-times"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-memory-places-filter
+          [locationTypes]="locationTypes"
+          [regions]="regions"
+          [features]="features"
+          [selectedFilters]="selectedFilters"
+          [searchText]="searchText"
+          [isResetting]="isResetting"
+          (filterChange)="toggleFilter($event.type, $event.value)"
+          (searchChange)="onSearch($event)"
+          (resetFilters)="resetFilters()">
+        </app-memory-places-filter>
+      </div>
+      <div class="modal-footer">
+        <button class="apply-filters" (click)="applyFiltersAndClose()">
+          <span>Áp dụng</span>
+          <div class="filter-count" *ngIf="getActiveFilters().length > 0">
+            {{ getActiveFilters().length }}
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- Main Content Area -->
   <main class="main-content">
@@ -32,9 +85,13 @@
       </div>
 
       <div class="header-actions">
-        <button class="filter-toggle-btn" (click)="toggleFilterCollapse()" title="Ẩn/hiện bộ lọc">
-          <i class="pi" [ngClass]="isFilterCollapsed ? 'pi-angle-right' : 'pi-angle-left'"></i>
-          <span>Bộ lọc</span>
+        <button class="sort-btn" (click)="toggleSort()" [title]="sortMode === 'none' ? 'Sắp xếp theo tên' : 'Thay đổi thứ tự sắp xếp'">
+          <i class="pi" [ngClass]="{
+            'pi-sort': sortMode === 'none',
+            'pi-sort-alpha-down': sortMode === 'asc',
+            'pi-sort-alpha-up': sortMode === 'desc'
+          }"></i>
+          <span>{{ sortMode === 'none' ? 'Sắp xếp' : sortMode === 'asc' ? 'A đến Z' : 'Z đến A' }}</span>
         </button>
 
         <div class="view-toggle">
@@ -94,29 +151,49 @@
 
       <!-- List View -->
       <div class="places-list" *ngIf="viewMode === 'list'">
-        <div 
-          class="place-list-item" 
+        <div
+          class="place-list-item"
           *ngFor="let place of paginatedPlaces; trackBy: trackByPlace"
-          (click)="navigateToDetail(place.id)">
+          (click)="navigateToDetail(place.id)"
+          [style.cursor]="'pointer'"
+          role="link"
+          [attr.aria-label]="'View details of ' + place.name">
           <div class="place-image">
             <img [src]="place.image" [alt]="place.name" />
-          </div>
-          <div class="place-info">
-            <h3>{{ place.name }}</h3>
-            <p class="location">
-              <i class="pi pi-map-marker"></i>
-              {{ place.location }}
-            </p>
-            <p class="description">{{ place.description }}</p>
-          </div>
-          <div class="place-actions">
-            <button 
-              class="view-details-btn" 
-              (click)="$event.stopPropagation()"
-              [routerLink]="['/place-detail', place.id]">
+            <div class="image-overlay">
               <i class="pi pi-eye"></i>
               <span>Xem chi tiết</span>
-            </button>
+            </div>
+          </div>
+          <div class="place-content">
+            <div class="place-info">
+              <div class="info-header">
+                <h3 class="place-name">{{ place.name }}</h3>
+                <div class="view-instruction">
+                  <i class="pi pi-arrow-right"></i>
+                  <span>Nhấn để xem chi tiết</span>
+                </div>
+              </div>
+              <div class="place-meta">
+                <span class="location">
+                  <i class="pi pi-map-marker"></i>
+                  {{ place.location }}
+                </span>
+                <span class="type" *ngIf="place.type">
+                  <i class="pi pi-tag"></i>
+                  {{ place.type }}
+                </span>
+              </div>
+              <p class="description">{{ place.description }}</p>
+            </div>
+            <div class="place-features" *ngIf="place.features?.length">
+              <span class="feature-tag" *ngFor="let feature of place.features.slice(0, 3)">
+                {{ feature }}
+              </span>
+              <span class="more-features" *ngIf="place.features.length > 3">
+                +{{ place.features.length - 3 }}
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -138,7 +215,7 @@
       <div class="pagination-section" *ngIf="filteredPlaces.length > 0 && totalPages > 1">
         <div class="pagination-info">
           <span>Hiển thị {{ (currentPage - 1) * itemsPerPage + 1 }} - {{ currentPage * itemsPerPage > totalItems ? totalItems : currentPage * itemsPerPage }} trong số {{ totalItems }} địa điểm</span>
-          
+
           <div class="items-per-page">
             <label>Hiển thị:</label>
             <select [value]="itemsPerPage" (change)="changeItemsPerPage(+$any($event.target).value)">
@@ -152,7 +229,7 @@
         </div>
 
         <nav class="pagination-controls">
-          <button 
+          <button
             class="pagination-btn first-btn"
             [disabled]="currentPage === 1"
             (click)="goToFirstPage()"
@@ -160,7 +237,7 @@
             <i class="pi pi-angle-double-left"></i>
           </button>
 
-          <button 
+          <button
             class="pagination-btn prev-btn"
             [disabled]="currentPage === 1"
             (click)="goToPreviousPage()"
@@ -169,8 +246,8 @@
           </button>
 
           <div class="page-numbers">
-            <button 
-              *ngFor="let page of getPageNumbers()" 
+            <button
+              *ngFor="let page of getPageNumbers()"
               class="pagination-btn page-btn"
               [class.active]="page === currentPage"
               (click)="goToPage(page)">
@@ -178,7 +255,7 @@
             </button>
           </div>
 
-          <button 
+          <button
             class="pagination-btn next-btn"
             [disabled]="currentPage === totalPages"
             (click)="goToNextPage()"
@@ -186,7 +263,7 @@
             <i class="pi pi-angle-right"></i>
           </button>
 
-          <button 
+          <button
             class="pagination-btn last-btn"
             [disabled]="currentPage === totalPages"
             (click)="goToLastPage()"

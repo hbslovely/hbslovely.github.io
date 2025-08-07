@@ -8,7 +8,11 @@ import { Album, Photo, AlbumGalleryImage } from '../../../../shared/models';
 @Component({
   selector: 'app-album-detail',
   standalone: true,
-  imports: [CommonModule, AlbumDetailHeaderComponent, AlbumGalleryComponent],
+  imports: [
+    CommonModule,
+    AlbumDetailHeaderComponent,
+    AlbumGalleryComponent
+  ],
   templateUrl: './album-detail.component.html',
   styleUrls: ['./album-detail.component.scss']
 })
@@ -34,7 +38,7 @@ export class AlbumDetailComponent implements OnInit {
       const response = await fetch('assets/data/album-data.json');
       const data = await response.json();
       this.album = data.albums.find((a: Album) => a.id === albumId);
-      
+
       if (!this.album || !this.album.photos) {
         this.router.navigate(['/album-anh']);
         return;
@@ -122,4 +126,4 @@ export class AlbumDetailComponent implements OnInit {
   goBack() {
     this.router.navigate(['/album-anh']);
   }
-} 
+}

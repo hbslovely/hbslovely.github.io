@@ -46,7 +46,7 @@
         </app-section-container>
       </div>
       <div class="profile-image-column">
-        <img [src]="profile.gender === 'female' ? 'assets/images/quyen/quyen_du-lich.png' : 'assets/images/phat/z6843682691039_4659ec69633c02093c6714210b0c61b3.jpg'" [alt]="profile.name" class="profile-side-image">
+        <img [src]="profile.gender === 'female' ? 'assets/images/quyen/z6843551866623_ebf56a0d86f9f579fd7cd4d8797c814b.jpg' : 'assets/images/phat/z6843682691039_4659ec69633c02093c6714210b0c61b3.jpg'" [alt]="profile.name" class="profile-side-image">
       </div>
     </div>
 
@@ -74,10 +74,15 @@
 
       <!-- Decorative Image -->
       <div class="decorative-image">
-        <img [src]="profile.gender === 'female' ?
-          'assets/images/quyen/quyen_style.png' :
-          'assets/images/phat/phat-portrait.png'"
-          alt="Wedding Photo" class="section-divider">
+        <div class="image-hover-container" [class.pink-theme]="profile.gender === 'female'" [class.blue-theme]="profile.gender === 'male'">
+          <img [src]="profile.gender === 'female' ?
+            'assets/images/quyen/quyen_style.png' :
+            'assets/images/phat/phat-portrait.png'"
+            alt="Wedding Photo" class="section-divider">
+          <div class="hover-overlay">
+            <i class="pi pi-heart"></i>
+          </div>
+        </div>
       </div>
 
       <!-- Life Goals Section -->
@@ -107,10 +112,15 @@
 
           <!-- Add decorative image in the middle of fun facts -->
           <div class="decorative-image" *ngIf="i === 2">
-            <img [src]="profile.gender === 'female' ?
-              'assets/images/quyen/z6884282082398_1ef38d289f5299eb583648a04acbc3d4.jpg' :
-              'assets/images/phat/img_2.png'"
-              alt="Wedding Photo" class="section-divider">
+            <div class="image-hover-container" [class.pink-theme]="profile.gender === 'female'" [class.blue-theme]="profile.gender === 'male'">
+              <img [src]="profile.gender === 'female' ?
+                'assets/images/quyen/z6884282082398_1ef38d289f5299eb583648a04acbc3d4.jpg' :
+                'assets/images/phat/img_2.png'"
+                alt="Wedding Photo" class="section-divider">
+              <div class="hover-overlay">
+                <i class="pi pi-heart"></i>
+              </div>
+            </div>
           </div>
         </ng-container>
       </ng-container>

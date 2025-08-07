@@ -92,7 +92,7 @@ $white: #ffffff;
   margin-bottom: 0;
   padding: 1.25rem 0;
   box-shadow: 0 2px 20px rgba(76, 175, 80, 0.12);
-  
+
   .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -148,7 +148,7 @@ $white: #ffffff;
     border-color: rgba($primary-green, 0.2);
     transform: translateY(-1px);
     box-shadow: 0 4px 16px rgba($primary-green, 0.12);
-    
+
     .btn-content i {
       transform: scale(1.1);
     }
@@ -159,11 +159,11 @@ $white: #ffffff;
     color: white;
     border-color: $primary-green;
     box-shadow: 0 4px 16px rgba($primary-green, 0.25);
-    
+
     .btn-content {
       color: white;
     }
-    
+
     &:hover {
       background: darken($primary-green, 5%);
       border-color: darken($primary-green, 5%);
@@ -202,7 +202,7 @@ $white: #ffffff;
   position: relative;
   width: 100%;
   overflow: hidden;
-  
+
   img {
     width: 100%;
     height: auto;
@@ -210,7 +210,7 @@ $white: #ffffff;
     cursor: pointer;
     @include smooth-transition;
     transform: scale(1);
-    
+
     &:hover {
       transform: scale(1.05);
     }
@@ -319,7 +319,7 @@ $white: #ffffff;
 
 .photo-container {
   position: relative;
-  
+
   img {
     max-width: 100%;
     max-height: 80vh;
@@ -353,7 +353,7 @@ $white: #ffffff;
 @media (max-width: 768px) {
   .view-controls-sticky {
     padding: 1rem 0;
-    
+
     .container {
       padding: 0 0.5rem;
     }
@@ -371,11 +371,11 @@ $white: #ffffff;
 
     .btn-content {
       gap: 0.375rem;
-      
+
       span {
         font-size: 0.8rem;
       }
-      
+
       i {
         font-size: 1rem;
       }
@@ -422,7 +422,7 @@ $white: #ffffff;
   font-size: 0.9rem;
   font-weight: 500;
   box-shadow: 0 2px 8px rgba(76, 175, 80, 0.08);
-  
+
   i {
     color: $primary-green;
     font-size: 1rem;
@@ -447,7 +447,7 @@ $white: #ffffff;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(76, 175, 80, 0.2);
-  
+
   i {
     font-size: 0.9rem;
     color: $primary-green;
@@ -457,4 +457,4 @@ $white: #ffffff;
 .photo-card:hover .fullscreen-hint {
   opacity: 1;
   transform: translateY(0);
-} 
+}

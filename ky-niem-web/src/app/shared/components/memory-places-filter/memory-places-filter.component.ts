@@ -1,20 +1,22 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { animate, state, style, transition, trigger } from '@angular/animations';
+import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-memory-places-filter',
   templateUrl: './memory-places-filter.component.html',
-  styleUrls: [ './memory-places-filter.component.scss' ],
+  styleUrls: ['./memory-places-filter.component.scss'],
   standalone: true,
-  imports: [ CommonModule, FormsModule ],
+  imports: [CommonModule, FormsModule],
   animations: [
-    trigger('expandCollapse', [
-      state('expanded', style({ height: '*', opacity: 1 })),
-      state('collapsed', style({ height: '0', opacity: 0 })),
-      transition('expanded <=> collapsed', [
-        animate('200ms ease-in-out')
+    trigger('fadeInOut', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(-10px)' }),
+        animate('200ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+      ]),
+      transition(':leave', [
+        animate('200ms ease-in', style({ opacity: 0, transform: 'translateY(-10px)' }))
       ])
     ])
   ]
@@ -23,7 +25,11 @@ export class MemoryPlacesFilterComponent {
   @Input() locationTypes: any[] = [];
   @Input() regions: any[] = [];
   @Input() features: any[] = [];
-  @Input() selectedFilters: any = {};
+  @Input() selectedFilters: any = {
+    locationType: [],
+    region: [],
+    features: []
+  };
   @Input() searchText: string = '';
   @Input() isResetting: boolean = false;
 
@@ -31,18 +37,21 @@ export class MemoryPlacesFilterComponent {
   @Output() searchChange = new EventEmitter<string>();
   @Output() resetFilters = new EventEmitter<void>();
 
-  isExpanded: boolean = true;
-
-  hasActiveFilters(): boolean {
-    return this.selectedFilters.locationType.length > 0 ||
-      this.selectedFilters.region.length > 0 ||
-      this.selectedFilters.features.length > 0 ||
-      !!this.searchText;
-  }
+  private searchTimeout: any;
 
   onSearchInput(event: any): void {
-    this.searchText = event.target.value;
-    this.searchChange.emit(this.searchText);
+    const value = event.target.value;
+    
+    // Clear previous timeout
+    if (this.searchTimeout) {
+      clearTimeout(this.searchTimeout);
+    }
+
+    // Debounce search
+    this.searchTimeout = setTimeout(() => {
+      this.searchText = value;
+      this.searchChange.emit(this.searchText);
+    }, 300);
   }
 
   onSearchClear(): void {
@@ -58,8 +67,11 @@ export class MemoryPlacesFilterComponent {
     this.resetFilters.emit();
   }
 
-  toggleExpand(): void {
-    this.isExpanded = !this.isExpanded;
+  hasActiveFilters(): boolean {
+    return this.selectedFilters.locationType.length > 0 ||
+      this.selectedFilters.region.length > 0 ||
+      this.selectedFilters.features.length > 0 ||
+      !!this.searchText;
   }
 
   getActiveFiltersCount(): number {
@@ -69,5 +81,11 @@ export class MemoryPlacesFilterComponent {
       this.selectedFilters.features.length +
       (this.searchText ? 1 : 0)
     );
+  }
+
+  ngOnDestroy() {
+    if (this.searchTimeout) {
+      clearTimeout(this.searchTimeout);
+    }
   }
 }

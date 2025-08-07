@@ -12,52 +12,68 @@
   <!-- Menu Content -->
   <div class="menu-content">
     <!-- His Menu Section -->
-    <div class="menu-section">
+    <div class="menu-section husband-section">
+      <div class="frame-decoration">
+        <div class="corner top-left"></div>
+        <div class="corner top-right"></div>
+        <div class="corner bottom-left"></div>
+        <div class="corner bottom-right"></div>
+      </div>
       <div class="section-header">
-        <i class="pi pi-user"></i>
+        <div class="header-icon">
+          <i class="pi pi-heart-fill"></i>
+          <i class="pi pi-user"></i>
+        </div>
         <h2>Món Anh Yêu Thích</h2>
       </div>
       
       <div class="menu-items">
         <div class="menu-item" *ngFor="let food of $any(foods) | filter:'Chồng'">
-          <div class="item-header">
-            <h3 class="item-name">{{ $any(food).dish }}</h3>
-            <div class="item-price">
-              <i class="pi pi-heart-fill"></i>
-              <i class="pi pi-heart-fill"></i>
-              <i class="pi pi-heart-fill"></i>
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-name">{{ $any(food).dish }}</h3>
             </div>
+            <p class="item-description">{{ $any(food).story }}</p>
           </div>
-          <p class="item-description">{{ $any(food).story }}</p>
-          <div class="item-note">
-            <i class="pi pi-heart"></i>
-            <span>{{ $any(food).feeling }}</span>
+          <div class="food-image" (click)="openImageViewer(food.imageUrl, food.dish)">
+            <img [src]="food.imageUrl" [alt]="food.dish" loading="lazy">
+            <div class="image-overlay">
+              <i class="pi pi-search"></i>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Her Menu Section -->
-    <div class="menu-section">
+    <div class="menu-section wife-section">
+      <div class="frame-decoration">
+        <div class="corner top-left"></div>
+        <div class="corner top-right"></div>
+        <div class="corner bottom-left"></div>
+        <div class="corner bottom-right"></div>
+      </div>
       <div class="section-header">
-        <i class="pi pi-user"></i>
+        <div class="header-icon">
+          <i class="pi pi-heart-fill"></i>
+          <i class="pi pi-user"></i>
+        </div>
         <h2>Món Em Yêu Thích</h2>
       </div>
       
       <div class="menu-items">
         <div class="menu-item" *ngFor="let food of $any(foods) | filter:'Vợ'">
-          <div class="item-header">
-            <h3 class="item-name">{{ food.dish }}</h3>
-            <div class="item-price">
-              <i class="pi pi-heart-fill"></i>
-              <i class="pi pi-heart-fill"></i>
-              <i class="pi pi-heart-fill"></i>
+          <div class="item-content">
+            <div class="item-header">
+              <h3 class="item-name">{{ food.dish }}</h3>
             </div>
+            <p class="item-description">{{ food.story }}</p>
           </div>
-          <p class="item-description">{{ food.story }}</p>
-          <div class="item-note">
-            <i class="pi pi-heart"></i>
-            <span>{{ food.feeling }}</span>
+          <div class="food-image" (click)="openImageViewer(food.imageUrl, food.dish)">
+            <img [src]="food.imageUrl" [alt]="food.dish" loading="lazy">
+            <div class="image-overlay">
+              <i class="pi pi-search"></i>
+            </div>
           </div>
         </div>
       </div>
@@ -76,3 +92,11 @@
     </div>
   </div>
 </div>
+
+<!-- Image Viewer -->
+<app-image-viewer
+  [imageUrl]="selectedImage?.url || ''"
+  [imageAlt]="selectedImage?.alt || ''"
+  [isVisible]="!!selectedImage"
+  (close)="closeImageViewer()">
+</app-image-viewer>

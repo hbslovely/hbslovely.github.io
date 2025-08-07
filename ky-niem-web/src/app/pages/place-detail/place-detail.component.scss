@@ -2248,28 +2248,51 @@ $border-radius-xl: 20px;
   }
 }
 
-// Custom Section Styles
-.custom-section-item {
-  margin-bottom: 2rem;
 
-  &:last-child {
-    margin-bottom: 0;
+
+::ng-deep {
+  // Folk Song Styles
+  .folk-song-container {
+    text-align: center;
   }
 
-  h4 {
-    font-size: 1.2rem;
-    color: #1b5e20;
-    margin: 0 0 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
+  .folk-song-verse {
+    font-style: italic;
+    font-size: 1.2em;
+    margin: 20px 0 40px 0;
+    line-height: 1.6;
+    color: #333;
+  }
 
-    &::before {
-      content: '';
-      width: 4px;
-      height: 1.2em;
-      background: linear-gradient(to bottom, #4caf50, #2e7d32);
-      border-radius: 2px;
+  .folk-song-description {
+    text-align: justify;
+    line-height: 1.6;
+    color: #444;
+  }
+
+  // Custom Section Styles
+  .custom-section-item {
+    margin-bottom: 2rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    h4 {
+      font-size: 1.2rem;
+      color: #1b5e20;
+      margin: 1rem 0 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+
+      &::before {
+        content: '';
+        width: 4px;
+        height: 1.2em;
+        background: linear-gradient(to bottom, #4caf50, #2e7d32);
+        border-radius: 2px;
+      }
     }
   }
 }

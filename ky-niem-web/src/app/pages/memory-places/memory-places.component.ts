@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { MemoryPlace } from '../../shared/models';
@@ -64,7 +64,9 @@ export class MemoryPlacesComponent implements OnInit {
   searchText = '';
   viewMode: 'grid' | 'list' = 'grid';
   isFilterCollapsed = false;
+  sortMode: 'none' | 'asc' | 'desc' = 'none';
   private locationMappings: LocationMappings | null = null;
+  isMobile = false;
 
   // Pagination properties
   currentPage = 1;
@@ -97,11 +99,18 @@ export class MemoryPlacesComponent implements OnInit {
     locationType: []
   };
 
+  @HostListener('window:resize')
+  onResize() {
+    this.checkMobile();
+  }
+
   constructor(
     private http: HttpClient,
     private route: ActivatedRoute,
     private router: Router
-  ) {}
+  ) {
+    this.checkMobile();
+  }
 
   ngOnInit() {
     // First load the data
@@ -142,6 +151,15 @@ export class MemoryPlacesComponent implements OnInit {
     });
   }
 
+  onFilterChange(event: { type: string; value: string }) {
+    this.toggleFilter(event.type, event.value);
+    // Only collapse panel on mobile after filter change
+    if (this.isMobile) {
+      this.isFilterCollapsed = true;
+      document.body.style.overflow = '';
+    }
+  }
+
   toggleFilter(type: string, value: string): void {
     const filterArray = (this.selectedFilters as any)[type];
     const index = filterArray.indexOf(value);
@@ -155,7 +173,21 @@ export class MemoryPlacesComponent implements OnInit {
     this.applyFilters();
   }
 
-  private applyFilters() {
+  applyFiltersAndClose() {
+    this.applyFilters();
+    if (this.isMobile) {
+      this.isFilterCollapsed = true;
+      document.body.style.overflow = '';
+    }
+  }
+
+  applyFilters() {
+    // Apply filter logic without collapsing the panel
+    this.currentPage = 1; // Reset to first page
+    this.updateFilteredPlaces();
+  }
+
+  private updateFilteredPlaces() {
     this.filteredPlaces = this.places.filter(place => {
       // If no filters are selected and no search text, show all places
       if (this.selectedFilters.region.length === 0 &&
@@ -203,8 +235,8 @@ export class MemoryPlacesComponent implements OnInit {
       return matchesRegion && matchesFeatures && matchesLocationType && matchesSearch;
     });
 
-    // Reset to first page when filters change
-    this.currentPage = 1;
+    // Apply sorting after filtering
+    this.filteredPlaces = this.sortPlaces(this.filteredPlaces);
     this.updatePagination();
   }
 
@@ -381,8 +413,19 @@ export class MemoryPlacesComponent implements OnInit {
     this.viewMode = this.viewMode === 'grid' ? 'list' : 'grid';
   }
 
-  toggleFilterCollapse(): void {
+  toggleFilterCollapse() {
     this.isFilterCollapsed = !this.isFilterCollapsed;
+    if (this.isMobile) {
+      // Only manipulate body overflow when on mobile
+      document.body.style.overflow = this.isFilterCollapsed ? '' : 'hidden';
+    }
+  }
+
+  closeFilterModal(event: MouseEvent) {
+    if (this.isMobile && event.target === event.currentTarget) {
+      this.isFilterCollapsed = true;
+      document.body.style.overflow = '';
+    }
   }
 
   trackByPlace(index: number, place: MemoryPlace): string {
@@ -393,12 +436,12 @@ export class MemoryPlacesComponent implements OnInit {
   updatePagination(): void {
     this.totalItems = this.filteredPlaces.length;
     this.totalPages = Math.ceil(this.totalItems / this.itemsPerPage);
-    
+
     // Ensure current page is valid
     if (this.currentPage > this.totalPages && this.totalPages > 0) {
       this.currentPage = this.totalPages;
     }
-    
+
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;
     const endIndex = startIndex + this.itemsPerPage;
     this.paginatedPlaces = this.filteredPlaces.slice(startIndex, endIndex);
@@ -437,7 +480,7 @@ export class MemoryPlacesComponent implements OnInit {
   getPageNumbers(): number[] {
     const pages: number[] = [];
     const maxVisiblePages = 5;
-    
+
     if (this.totalPages <= maxVisiblePages) {
       // Show all pages if total pages is less than max visible
       for (let i = 1; i <= this.totalPages; i++) {
@@ -447,17 +490,17 @@ export class MemoryPlacesComponent implements OnInit {
       // Show pages around current page
       let start = Math.max(1, this.currentPage - Math.floor(maxVisiblePages / 2));
       let end = Math.min(this.totalPages, start + maxVisiblePages - 1);
-      
+
       // Adjust start if we're near the end
       if (end - start < maxVisiblePages - 1) {
         start = Math.max(1, end - maxVisiblePages + 1);
       }
-      
+
       for (let i = start; i <= end; i++) {
         pages.push(i);
       }
     }
-    
+
     return pages;
   }
 
@@ -468,7 +511,43 @@ export class MemoryPlacesComponent implements OnInit {
     }
   }
 
+  private sortPlaces(places: MemoryPlace[]): MemoryPlace[] {
+    if (this.sortMode === 'none') {
+      return places;
+    }
+    return [...places].sort((a, b) => {
+      const nameA = removeVietnameseTones(a.name.toLowerCase());
+      const nameB = removeVietnameseTones(b.name.toLowerCase());
+      return this.sortMode === 'asc'
+        ? nameA.localeCompare(nameB)
+        : nameB.localeCompare(nameA);
+    });
+  }
+
+  toggleSort(): void {
+    switch (this.sortMode) {
+      case 'none':
+        this.sortMode = 'asc';
+        break;
+      case 'asc':
+        this.sortMode = 'desc';
+        break;
+      case 'desc':
+        this.sortMode = 'none';
+        break;
+    }
+    this.applyFilters();
+  }
+
   navigateToDetail(placeId: string): void {
-    this.router.navigate(['/place', placeId]);
+    this.router.navigate(['/place-detail', placeId]);
+  }
+
+  private checkMobile() {
+    this.isMobile = window.innerWidth < 768;
+    // Don't manipulate body overflow on initial load
+    if (!this.isMobile) {
+      document.body.style.overflow = '';
+    }
   }
 }

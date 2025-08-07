@@ -695,3 +695,68 @@ html {
     }
   }
 }
+
+/* Lazy Loading Image Styles */
+.lazy-image {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  min-height: 100px;
+  background-color: #f5f5f5;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      rgba(255,255,255, 0) 0%,
+      rgba(255,255,255, 0.6) 50%,
+      rgba(255,255,255, 0) 100%
+    );
+    transform: translateX(-100%);
+    animation: shimmer 1.5s infinite;
+  }
+}
+
+.lazy-loading {
+  opacity: 0;
+}
+
+.lazy-loaded {
+  opacity: 1;
+  background: none;
+  
+  &::before {
+    content: none;
+  }
+}
+
+.lazy-error {
+  background-color: #fee;
+  
+  &::before {
+    content: none;
+  }
+  
+  &::after {
+    content: '⚠️';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

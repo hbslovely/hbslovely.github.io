@@ -4,170 +4,398 @@
       "id": "quyen-moments",
       "title": "Nàng Thơ Của Anh",
       "description": "Những khoảnh khắc đáng yêu và xinh đẹp của em - người con gái anh yêu thương nhất",
-      "coverImage": "assets/images/quyen/quyen-portrait.png",
-      "photoCount": 31,
+      "coverImage": "assets/images/quyen/z6884400348107_3869a192f2dbbdb5e538f7d4fa186fa0.jpg",
+      "photoCount": 65,
       "photos": [
         {
-          "id": "quyen-1",
+          "id": "quyen-portrait-1",
           "url": "assets/images/quyen/quyen-portrait.png",
-          "title": "Nàng Thơ Của Anh",
-          "description": "Chân dung em trong chiếc áo trắng tinh khôi"
+          "title": "Chân Dung Nàng Thơ",
+          "description": "Em xinh đẹp trong tấm hình chân dung"
         },
         {
-          "id": "quyen-2",
-          "url": "assets/images/quyen/z6843539895501_95bd68ae1ce476718ac2a2ea38d8e046.jpg",
-          "title": "Nụ Cười Tỏa Nắng",
-          "description": "Em cười rạng rỡ trong chiếc áo sơ mi trắng"
+          "id": "quyen-style-1",
+          "url": "assets/images/quyen/quyen_style.png",
+          "title": "Phong Cách Thời Trang",
+          "description": "Em duyên dáng với phong cách riêng"
         },
         {
-          "id": "quyen-3",
-          "url": "assets/images/quyen/z6843535586778_050aaffcce7fc14fc48d5facc985fe23.jpg",
-          "title": "Dịu Dàng Và Đáng Yêu",
-          "description": "Em duyên dáng với mái tóc dài và nụ cười tươi"
+          "id": "quyen-travel-1",
+          "url": "assets/images/quyen/quyen_du-lich.png",
+          "title": "Khoảnh Khắc Du Lịch",
+          "description": "Em rạng rỡ trong chuyến đi khám phá"
         },
         {
-          "id": "quyen-4",
-          "url": "assets/images/quyen/z6843535586743_0ee5cfdb404b7a8352018d405a288039.jpg",
-          "title": "Thiên Thần Của Anh",
-          "description": "Em xinh đẹp trong trang phục công sở thanh lịch"
+          "id": "quyen-dining-1",
+          "url": "assets/images/quyen/img_5.png",
+          "title": "Bữa Tiệc Thân Mật",
+          "description": "Em thưởng thức rượu vang và đồ ăn ngon trong không gian ấm cúng"
         },
         {
-          "id": "quyen-5",
-          "url": "assets/images/quyen/z6843526377730_46c05ef6a063901ba161f8e8a598ed38.jpg",
-          "title": "Công Chúa Nhỏ",
-          "description": "Em dễ thương với áo sơ mi trắng và mái tóc buông dài"
+          "id": "quyen-daily-1",
+          "url": "assets/images/quyen/z6884400313551_902fa49a9f16e71be700155a56144540.jpg",
+          "title": "Nụ Cười Rạng Rỡ",
+          "description": "Em tươi tắn với nụ cười hạnh phúc"
         },
         {
-          "id": "quyen-6",
-          "url": "assets/images/quyen/z6843528165353_bec6048cfea8af58ebb1da382d4a357d.jpg",
-          "title": "Nàng Tiên Hoa",
-          "description": "Em rạng ngời trong trang phục công sở"
+          "id": "quyen-daily-2",
+          "url": "assets/images/quyen/z6884400315120_a72295e1978693926e5596aeb5ebb837.jpg",
+          "title": "Duyên Dáng Công Sở",
+          "description": "Em thanh lịch trong trang phục văn phòng"
         },
         {
-          "id": "quyen-7",
-          "url": "assets/images/quyen/z6843524186042_f86e79a1ecf2ca5a44fe4a4b07c9af2c.jpg",
+          "id": "quyen-daily-3",
+          "url": "assets/images/quyen/z6884400326821_19c13aa137971edc22e6cbd3a0354e4f.jpg",
           "title": "Ánh Mắt Ngọt Ngào",
-          "description": "Em duyên dáng với áo sơ mi và mái tóc xõa"
+          "description": "Em dịu dàng với ánh mắt đầy yêu thương"
         },
         {
-          "id": "quyen-8",
-          "url": "assets/images/quyen/z6843515658578_a4a2821f16bb3911c1d1165772b30eae.jpg",
-          "title": "Nụ Cười Hạnh Phúc",
-          "description": "Em tươi tắn trong buổi chụp hình ngoài trời"
-        },
-        {
-          "id": "quyen-9",
-          "url": "assets/images/quyen/z6843515658506_de688e976cc79b2d7c55e56d9432ef0d.jpg",
-          "title": "Khoảnh Khắc Yêu Thương",
-          "description": "Em xinh xắn với áo sơ mi trắng trong văn phòng"
-        },
-        {
-          "id": "quyen-10",
-          "url": "assets/images/quyen/z6843511376185_67cbe1ac795e387c8dbf309efcf326f8.jpg",
-          "title": "Duyên Dáng Áo Dài",
-          "description": "Em dịu dàng trong tà áo dài truyền thống màu trắng"
-        },
-        {
-          "id": "quyen-11",
-          "url": "assets/images/quyen/z6843508203125_4da060882f1c88efb6147fe56573ea1f.jpg",
-          "title": "Xinh Tươi Rạng Ngời",
-          "description": "Em tươi tắn trong buổi chụp hình ngoài trời"
-        },
-        {
-          "id": "quyen-12",
-          "url": "assets/images/quyen/z6843508159760_ff9c396a811f5427caf75a43cd00d7f0.jpg",
-          "title": "Nét Đẹp Tinh Khôi",
-          "description": "Em duyên dáng với áo sơ mi trắng trong văn phòng"
-        },
-        {
-          "id": "quyen-13",
-          "url": "assets/images/quyen/z6843505637575_d6f149a3635a65e03e5f3f08ce24cc0b.jpg",
-          "title": "Nàng Thơ Dịu Dàng",
-          "description": "Em xinh đẹp trong trang phục công sở"
-        },
-        {
-          "id": "quyen-14",
-          "url": "assets/images/quyen/z6843500921245_ee900de19b79840fa3a8d2efba11a6d2.jpg",
-          "title": "Nét Đẹp Đằm Thắm",
-          "description": "Em dịu dàng với mái tóc dài và nụ cười tươi"
-        },
-        {
-          "id": "quyen-15",
-          "url": "assets/images/quyen/z6843488897657_bbf00d4751379b63b8dc7ad1bf03fbf0.jpg",
-          "title": "Trong Veo Như Nắng Mai",
-          "description": "Em rạng rỡ trong trang phục công sở"
-        },
-        {
-          "id": "quyen-16",
-          "url": "assets/images/quyen/z6843474414777_ba24be1484ec56131cbdafa916cb7a68.jpg",
-          "title": "Nụ Cười Thiên Thần",
-          "description": "Em tươi tắn với áo sơ mi trắng trong văn phòng"
-        },
-        {
-          "id": "quyen-19",
-          "url": "assets/images/quyen/z6843551866623_ebf56a0d86f9f579fd7cd4d8797c814b.jpg",
-          "title": "Nàng Công Chúa Nhỏ",
-          "description": "Em rạng rỡ với nụ cười tươi tắn"
-        },
-        {
-          "id": "quyen-20",
-          "url": "assets/images/quyen/img_4.png",
-          "title": "Nét Đẹp Thuần Khiết",
-          "description": "Em dịu dàng trong trang phục công sở"
-        },
-        {
-          "id": "quyen-21",
-          "url": "assets/images/quyen/img_3.png",
-          "title": "Nàng Thơ Của Mùa Xuân",
-          "description": "Em xinh đẹp với áo sơ mi trắng và mái tóc buông"
-        },
-        {
-          "id": "quyen-22",
-          "url": "assets/images/quyen/img_2.png",
-          "title": "Nụ Cười Trong Veo",
-          "description": "Em tươi tắn trong buổi làm việc tại văn phòng"
-        },
-        {
-          "id": "quyen-23",
-          "url": "assets/images/quyen/img_1.png",
-          "title": "Ánh Mắt Biết Nói",
-          "description": "Em duyên dáng trong trang phục công sở"
-        },
-        {
-          "id": "quyen-24",
-          "url": "assets/images/quyen/img.png",
-          "title": "Dịu Dàng Nắng Mai",
-          "description": "Em xinh xắn với áo sơ mi trắng trong văn phòng"
-        },
-        {
-          "id": "quyen-25",
-          "url": "assets/images/quyen/3.png",
-          "title": "Nàng Thơ Của Anh",
-          "description": "Em rạng rỡ mỗi ngày"
-        },
-        {
-          "id": "quyen-26",
-          "url": "assets/images/quyen/2.png",
-          "title": "Xinh Đẹp Tựa Hoa",
-          "description": "Em dịu dàng trong trang phục công sở"
-        },
-        {
-          "id": "quyen-27",
-          "url": "assets/images/quyen/1.png",
-          "title": "Trong Trẻo Như Sương",
-          "description": "Em xinh đẹp với áo sơ mi trắng tại văn phòng"
-        },
-        {
-          "id": "quyen-28",
-          "url": "assets/images/quyen/quyen_1.png",
-          "title": "Nét Đẹp Tinh Khôi",
-          "description": "Em duyên dáng trong trang phục công sở"
-        },
-        {
-          "id": "quyen-30",
-          "url": "assets/images/quyen/quyen_chup-len-vo-qua-anh-man-hinh.png",
+          "id": "quyen-daily-4",
+          "url": "assets/images/quyen/z6884400330143_b957e21448c0c27e51e87d2b37447419.jpg",
           "title": "Khoảnh Khắc Đáng Yêu",
-          "description": "Em đáng yêu qua ảnh chụp màn hình"
+          "description": "Em trong những giây phút đáng yêu nhất"
+        },
+        {
+          "id": "quyen-daily-5",
+          "url": "assets/images/quyen/z6884400330418_44013e791f8508361b19d55f608c8aea.jpg",
+          "title": "Nét Đẹp Tự Nhiên",
+          "description": "Em xinh đẹp trong những khoảnh khắc đời thường"
+        },
+        {
+          "id": "quyen-daily-6",
+          "url": "assets/images/quyen/z6884400336021_e82f991f3897d53e78b8b8dc707a6a6b.jpg",
+          "title": "Nụ Cười Tỏa Nắng",
+          "description": "Em với nụ cười rạng rỡ như ánh nắng"
+        },
+        {
+          "id": "quyen-daily-7",
+          "url": "assets/images/quyen/z6884400341450_9bec57610c21fc49c58ca1cddcbef64e.jpg",
+          "title": "Duyên Dáng Văn Phòng",
+          "description": "Em thanh lịch nơi công sở"
+        },
+        {
+          "id": "quyen-daily-8",
+          "url": "assets/images/quyen/z6884400348107_3869a192f2dbbdb5e538f7d4fa186fa0.jpg",
+          "title": "Khoảnh Khắc Yêu Thương",
+          "description": "Em trong những giây phút đáng nhớ"
+        },
+        {
+          "id": "quyen-daily-9",
+          "url": "assets/images/quyen/z6884400353691_414dc76393483fc3356faafa69b0439f.jpg",
+          "title": "Nét Đẹp Tinh Khôi",
+          "description": "Em với vẻ đẹp trong trẻo, tinh khôi"
+        },
+        {
+          "id": "quyen-daily-10",
+          "url": "assets/images/quyen/z6884400357357_67eaf6d71b71e4360ab42d38bedc13ae.jpg",
+          "title": "Duyên Dáng Nơi Làm Việc",
+          "description": "Em xinh đẹp trong môi trường làm việc"
+        },
+        {
+          "id": "quyen-daily-11",
+          "url": "assets/images/quyen/z6884400369068_eb38e67b7afb25cd0cb974ed05114aa0.jpg",
+          "title": "Nụ Cười Hạnh Phúc",
+          "description": "Em với nụ cười tươi tắn hạnh phúc"
+        },
+        {
+          "id": "quyen-daily-12",
+          "url": "assets/images/quyen/z6884400369365_c6dcd79582b0700c6521898924e9c8e6.jpg",
+          "title": "Khoảnh Khắc Đời Thường",
+          "description": "Em trong những giây phút bình dị"
+        },
+        {
+          "id": "quyen-daily-13",
+          "url": "assets/images/quyen/z6884400378712_3da9b88f7a8fff1e0d3108c122679082.jpg",
+          "title": "Nét Đẹp Dịu Dàng",
+          "description": "Em với vẻ đẹp dịu dàng, đằm thắm"
+        },
+        {
+          "id": "quyen-daily-14",
+          "url": "assets/images/quyen/z6884400384344_1533761673cff02dcc7a436e167b3610.jpg",
+          "title": "Ánh Mắt Biết Nói",
+          "description": "Em với ánh mắt đầy tình cảm"
+        },
+        {
+          "id": "quyen-daily-15",
+          "url": "assets/images/quyen/z6884400388925_d1af3e4064bc5c4a151f9fddc79679b1.jpg",
+          "title": "Duyên Dáng Mỗi Ngày",
+          "description": "Em xinh đẹp trong cuộc sống hàng ngày"
+        },
+        {
+          "id": "quyen-daily-16",
+          "url": "assets/images/quyen/z6884400397019_684cec4bac721470c4c0e1410fe51e50.jpg",
+          "title": "Nụ Cười Tinh Nghịch",
+          "description": "Em với nụ cười tinh nghịch đáng yêu"
+        },
+        {
+          "id": "quyen-daily-17",
+          "url": "assets/images/quyen/z6884372360563_76204e00d1a8bd05390b977f5730dfa0.jpg",
+          "title": "Khoảnh Khắc Đáng Nhớ",
+          "description": "Em trong những giây phút đáng nhớ"
+        },
+        {
+          "id": "quyen-daily-18",
+          "url": "assets/images/quyen/z6884372360846_576d1ef8bbc8ba3466bb1ae55b5ed80c.jpg",
+          "title": "Nét Đẹp Tự Nhiên",
+          "description": "Em xinh đẹp trong những khoảnh khắc tự nhiên"
+        },
+        {
+          "id": "quyen-daily-19",
+          "url": "assets/images/quyen/z6884372369945_59a9825125b58165f7423cb637a81d43.jpg",
+          "title": "Duyên Dáng Văn Phòng",
+          "description": "Em thanh lịch trong môi trường làm việc"
+        },
+        {
+          "id": "quyen-daily-20",
+          "url": "assets/images/quyen/z6884372377780_949362a03c7a7dd933366238128f7802.jpg",
+          "title": "Nụ Cười Rạng Rỡ",
+          "description": "Em tươi tắn với nụ cười hạnh phúc"
+        },
+        {
+          "id": "quyen-daily-21",
+          "url": "assets/images/quyen/z6884372378081_96bbc5294e858336cc07e6861966db0b.jpg",
+          "title": "Khoảnh Khắc Yêu Thương",
+          "description": "Em trong những giây phút đáng yêu"
+        },
+        {
+          "id": "quyen-daily-22",
+          "url": "assets/images/quyen/z6884372389228_dfbae5a9d6f6eefff9cb2388e6d0fc5f.jpg",
+          "title": "Nét Đẹp Dịu Dàng",
+          "description": "Em với vẻ đẹp dịu dàng, đằm thắm"
+        },
+        {
+          "id": "quyen-daily-23",
+          "url": "assets/images/quyen/z6884372397037_57f3b9649b82190ff853360afeff3492.jpg",
+          "title": "Ánh Mắt Ngọt Ngào",
+          "description": "Em với ánh mắt đầy tình cảm"
+        },
+        {
+          "id": "quyen-daily-24",
+          "url": "assets/images/quyen/z6884372408348_5599ac4229320bce3cc55d7fa9ecf55d.jpg",
+          "title": "Duyên Dáng Mỗi Ngày",
+          "description": "Em xinh đẹp trong cuộc sống hàng ngày"
+        },
+        {
+          "id": "quyen-daily-25",
+          "url": "assets/images/quyen/z6884372412550_28cd467d2729861b5b68673aacad53f7.jpg",
+          "title": "Nụ Cười Tinh Nghịch",
+          "description": "Em với nụ cười tinh nghịch đáng yêu"
+        },
+        {
+          "id": "quyen-daily-26",
+          "url": "assets/images/quyen/z6884372413518_084d740b7904d67414c1a3dd0ef6ee19.jpg",
+          "title": "Khoảnh Khắc Đáng Nhớ",
+          "description": "Em trong những giây phút đáng nhớ"
+        },
+        {
+          "id": "quyen-daily-27",
+          "url": "assets/images/quyen/z6884372423664_cc016a6052bbece0b60f245c6ed3a2ba.jpg",
+          "title": "Nét Đẹp Tự Nhiên",
+          "description": "Em xinh đẹp trong những khoảnh khắc tự nhiên"
+        },
+        {
+          "id": "quyen-daily-28",
+          "url": "assets/images/quyen/z6884372426510_15c5570d93e86b445cd6acab0016795a.jpg",
+          "title": "Duyên Dáng Văn Phòng",
+          "description": "Em thanh lịch trong môi trường làm việc"
+        },
+        {
+          "id": "quyen-daily-29",
+          "url": "assets/images/quyen/z6884372352173_323ed0cb8b1b5e9e713e8eed10064ca1.jpg",
+          "title": "Nụ Cười Rạng Rỡ",
+          "description": "Em tươi tắn với nụ cười hạnh phúc"
+        },
+        {
+          "id": "quyen-daily-30",
+          "url": "assets/images/quyen/z6884282044176_5c06169f14a208e1e9b322521d852fb3.jpg",
+          "title": "Khoảnh Khắc Yêu Thương",
+          "description": "Em trong những giây phút đáng yêu"
+        },
+        {
+          "id": "quyen-daily-31",
+          "url": "assets/images/quyen/z6884282061036_2896a966d2dd26fd776257035edfd313.jpg",
+          "title": "Nét Đẹp Dịu Dàng",
+          "description": "Em với vẻ đẹp dịu dàng, đằm thắm"
+        },
+        {
+          "id": "quyen-daily-32",
+          "url": "assets/images/quyen/z6884282082398_1ef38d289f5299eb583648a04acbc3d4.jpg",
+          "title": "Ánh Mắt Ngọt Ngào",
+          "description": "Em với ánh mắt đầy tình cảm"
+        },
+        {
+          "id": "quyen-daily-33",
+          "url": "assets/images/quyen/z6884282025143_1afb5f7a961d0a697f2bcc7098ff5c1e.jpg",
+          "title": "Duyên Dáng Mỗi Ngày",
+          "description": "Em xinh đẹp trong cuộc sống hàng ngày"
+        },
+        {
+          "id": "quyen-daily-34",
+          "url": "assets/images/quyen/z6843539895501_95bd68ae1ce476718ac2a2ea38d8e046.jpg",
+          "title": "Nụ Cười Tinh Nghịch",
+          "description": "Em với nụ cười tinh nghịch đáng yêu"
+        },
+        {
+          "id": "quyen-daily-35",
+          "url": "assets/images/quyen/z6843535586778_050aaffcce7fc14fc48d5facc985fe23.jpg",
+          "title": "Khoảnh Khắc Đáng Nhớ",
+          "description": "Em trong những giây phút đáng nhớ"
+        },
+        {
+          "id": "quyen-daily-36",
+          "url": "assets/images/quyen/z6843535586743_0ee5cfdb404b7a8352018d405a288039.jpg",
+          "title": "Nét Đẹp Tự Nhiên",
+          "description": "Em xinh đẹp trong những khoảnh khắc tự nhiên"
+        },
+        {
+          "id": "quyen-daily-37",
+          "url": "assets/images/quyen/z6843526377730_46c05ef6a063901ba161f8e8a598ed38.jpg",
+          "title": "Duyên Dáng Văn Phòng",
+          "description": "Em thanh lịch trong môi trường làm việc"
+        },
+        {
+          "id": "quyen-daily-38",
+          "url": "assets/images/quyen/z6843528165353_bec6048cfea8af58ebb1da382d4a357d.jpg",
+          "title": "Nụ Cười Rạng Rỡ",
+          "description": "Em tươi tắn với nụ cười hạnh phúc"
+        },
+        {
+          "id": "quyen-daily-39",
+          "url": "assets/images/quyen/z6843524186042_f86e79a1ecf2ca5a44fe4a4b07c9af2c.jpg",
+          "title": "Khoảnh Khắc Yêu Thương",
+          "description": "Em trong những giây phút đáng yêu"
+        },
+        {
+          "id": "quyen-daily-40",
+          "url": "assets/images/quyen/z6843515658578_a4a2821f16bb3911c1d1165772b30eae.jpg",
+          "title": "Nét Đẹp Dịu Dàng",
+          "description": "Em với vẻ đẹp dịu dàng, đằm thắm"
+        },
+        {
+          "id": "quyen-daily-41",
+          "url": "assets/images/quyen/z6843515658506_de688e976cc79b2d7c55e56d9432ef0d.jpg",
+          "title": "Ánh Mắt Ngọt Ngào",
+          "description": "Em với ánh mắt đầy tình cảm"
+        },
+        {
+          "id": "quyen-daily-42",
+          "url": "assets/images/quyen/z6843511376185_67cbe1ac795e387c8dbf309efcf326f8.jpg",
+          "title": "Duyên Dáng Mỗi Ngày",
+          "description": "Em xinh đẹp trong cuộc sống hàng ngày"
+        },
+        {
+          "id": "quyen-daily-43",
+          "url": "assets/images/quyen/z6843508203125_4da060882f1c88efb6147fe56573ea1f.jpg",
+          "title": "Nụ Cười Tinh Nghịch",
+          "description": "Em với nụ cười tinh nghịch đáng yêu"
+        },
+        {
+          "id": "quyen-daily-44",
+          "url": "assets/images/quyen/z6843508159760_ff9c396a811f5427caf75a43cd00d7f0.jpg",
+          "title": "Khoảnh Khắc Đáng Nhớ",
+          "description": "Em trong những giây phút đáng nhớ"
+        },
+        {
+          "id": "quyen-daily-45",
+          "url": "assets/images/quyen/z6843505637575_d6f149a3635a65e03e5f3f08ce24cc0b.jpg",
+          "title": "Nét Đẹp Tự Nhiên",
+          "description": "Em xinh đẹp trong những khoảnh khắc tự nhiên"
+        },
+        {
+          "id": "quyen-daily-46",
+          "url": "assets/images/quyen/z6843500921245_ee900de19b79840fa3a8d2efba11a6d2.jpg",
+          "title": "Duyên Dáng Văn Phòng",
+          "description": "Em thanh lịch trong môi trường làm việc"
+        },
+        {
+          "id": "quyen-daily-47",
+          "url": "assets/images/quyen/z6843484672019_39e794d0bdd47de22b7a6d09fa3c7b18.jpg",
+          "title": "Nụ Cười Rạng Rỡ",
+          "description": "Em tươi tắn với nụ cười hạnh phúc"
+        },
+        {
+          "id": "quyen-daily-48",
+          "url": "assets/images/quyen/z6843488897657_bbf00d4751379b63b8dc7ad1bf03fbf0.jpg",
+          "title": "Khoảnh Khắc Yêu Thương",
+          "description": "Em trong những giây phút đáng yêu"
+        },
+        {
+          "id": "quyen-daily-49",
+          "url": "assets/images/quyen/z6843474414777_ba24be1484ec56131cbdafa916cb7a68.jpg",
+          "title": "Nét Đẹp Dịu Dàng",
+          "description": "Em với vẻ đẹp dịu dàng, đằm thắm"
+        },
+        {
+          "id": "quyen-daily-50",
+          "url": "assets/images/quyen/z6843464036239_417682cbd09b61d0ad7b71a7daed623f.jpg",
+          "title": "Ánh Mắt Ngọt Ngào",
+          "description": "Em với ánh mắt đầy tình cảm"
+        },
+        {
+          "id": "quyen-daily-51",
+          "url": "assets/images/quyen/z6843551866623_ebf56a0d86f9f579fd7cd4d8797c814b.jpg",
+          "title": "Duyên Dáng Mỗi Ngày",
+          "description": "Em xinh đẹp trong cuộc sống hàng ngày"
+        },
+        {
+          "id": "quyen-daily-52",
+          "url": "assets/images/quyen/img_4.png",
+          "title": "Nụ Cười Tinh Nghịch",
+          "description": "Em với nụ cười tinh nghịch đáng yêu"
+        },
+        {
+          "id": "quyen-daily-53",
+          "url": "assets/images/quyen/img_3.png",
+          "title": "Khoảnh Khắc Đáng Nhớ",
+          "description": "Em trong những giây phút đáng nhớ"
+        },
+        {
+          "id": "quyen-daily-54",
+          "url": "assets/images/quyen/img_2.png",
+          "title": "Nét Đẹp Tự Nhiên",
+          "description": "Em xinh đẹp trong những khoảnh khắc tự nhiên"
+        },
+        {
+          "id": "quyen-daily-55",
+          "url": "assets/images/quyen/img_1.png",
+          "title": "Duyên Dáng Văn Phòng",
+          "description": "Em thanh lịch trong môi trường làm việc"
+        },
+        {
+          "id": "quyen-daily-56",
+          "url": "assets/images/quyen/img.png",
+          "title": "Nụ Cười Rạng Rỡ",
+          "description": "Em tươi tắn với nụ cười hạnh phúc"
+        },
+        {
+          "id": "quyen-daily-57",
+          "url": "assets/images/quyen/3.png",
+          "title": "Khoảnh Khắc Yêu Thương",
+          "description": "Em trong những giây phút đáng yêu"
+        },
+        {
+          "id": "quyen-daily-58",
+          "url": "assets/images/quyen/2.png",
+          "title": "Nét Đẹp Dịu Dàng",
+          "description": "Em với vẻ đẹp dịu dàng, đằm thắm"
+        },
+        {
+          "id": "quyen-daily-59",
+          "url": "assets/images/quyen/1.png",
+          "title": "Ánh Mắt Ngọt Ngào",
+          "description": "Em với ánh mắt đầy tình cảm"
+        },
+        {
+          "id": "quyen-daily-60",
+          "url": "assets/images/quyen/quyen_1.png",
+          "title": "Duyên Dáng Mỗi Ngày",
+          "description": "Em xinh đẹp trong cuộc sống hàng ngày"
+        },
+        {
+          "id": "quyen-daily-61",
+          "url": "assets/images/quyen/quyen_chup-len-vo-qua-anh-man-hinh.png",
+          "title": "Khoảnh Khắc Bất Ngờ",
+          "description": "Em đáng yêu trong khoảnh khắc bất chợt"
         }
       ]
     },
@@ -458,7 +686,7 @@
           "id": "wedding-beautiful-47",
           "url": "assets/images/albums/hinh-cuoi-dep/z6839749143751_99b54052dba550900775866be80860b1.jpg",
           "title": "Hạnh phúc trọn vẹn",
-          "description": "Nụ cười rạng rỡ của tình yêu đích thực"
+          "description": "Nụ cười hạnh phúc của đôi lứa yêu nhau"
         },
         {
           "id": "wedding-beautiful-48",
