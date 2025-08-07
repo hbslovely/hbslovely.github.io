@@ -3,6 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 interface Food {
   person: string;
   dish: string;
+  imageUrl: string;
   story: string;
   feeling: string;
 }
@@ -16,4 +17,4 @@ export class PersonFilterPipe implements PipeTransform {
     if (!foods) return [];
     return foods.filter(food => food.person === person);
   }
-} 
+}
