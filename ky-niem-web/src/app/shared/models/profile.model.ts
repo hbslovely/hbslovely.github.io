@@ -2,6 +2,7 @@ export interface Profile {
   name: string;
   title: string;
   avatar: string;
+  tags?: string[];
   headerImage?: string;
   description: string;
   loveMessage: string;
@@ -13,6 +14,7 @@ export interface Profile {
   }[];
   hobbies: {
     name: string;
+    description: string;
     icon: string;
   }[];
   lifeGoals: string[];
