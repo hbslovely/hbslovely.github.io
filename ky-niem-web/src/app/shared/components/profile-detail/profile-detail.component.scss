@@ -11,7 +11,11 @@ $transition-speed: 0.3s;
   --background-light: #f8f9fa;
   --text-primary: #333;
   --text-secondary: #666;
-  --primary-light: rgba(var(--primary-rgb), 0.2);
+  --primary-light: rgba(var(--primary-rgb), 0.1);
+  --tag-bg: #f0f0f0;
+  --tag-text: #666;
+  --accent-color: var(--accent);
+  --accent-light: rgba(var(--accent-rgb), 0.1);
   display: block;
   width: 100%;
   overflow: hidden;
@@ -19,11 +23,11 @@ $transition-speed: 0.3s;
 
 // Floating Background Icons
 @keyframes float {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  25% { transform: translate(10px, -10px) rotate(5deg); }
-  50% { transform: translate(0, -20px) rotate(0deg); }
-  75% { transform: translate(-10px, -10px) rotate(-5deg); }
-  100% { transform: translate(0, 0) rotate(0deg); }
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 0.03; }
+  25% { transform: translate(10px, -10px) rotate(5deg); opacity: 0.05; }
+  50% { transform: translate(0, -20px) rotate(0deg); opacity: 0.03; }
+  75% { transform: translate(-10px, -10px) rotate(-5deg); opacity: 0.05; }
+  100% { transform: translate(0, 0) rotate(0deg); opacity: 0.03; }
 }
 
 @keyframes pulse {
@@ -37,17 +41,219 @@ $transition-speed: 0.3s;
   min-height: 100vh;
   position: relative;
   overflow: hidden;
+  background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      repeating-linear-gradient(45deg,
+        rgba(var(--primary-rgb), 0.02) 0px,
+        rgba(var(--primary-rgb), 0.02) 2px,
+        transparent 2px,
+        transparent 10px
+      );
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  // Animated background icons
+  .bg-icon {
+    position: fixed;
+    font-size: 8rem;
+    color: rgba(var(--accent-rgb), 0.05);
+    z-index: 0;
+    pointer-events: none;
+    animation: float 8s infinite ease-in-out;
+
+    &:nth-child(odd) {
+      color: rgba(var(--primary-rgb), 0.03);
+    }
+
+    &:nth-child(1) {
+      top: 10%;
+      left: 5%;
+      animation-delay: 0s;
+    }
+
+    &:nth-child(2) {
+      top: 30%;
+      right: 10%;
+      animation-delay: -2s;
+      font-size: 6rem;
+    }
+
+    &:nth-child(3) {
+      bottom: 20%;
+      left: 15%;
+      animation-delay: -4s;
+      font-size: 7rem;
+    }
+
+    &:nth-child(4) {
+      bottom: 30%;
+      right: 15%;
+      animation-delay: -6s;
+      font-size: 5rem;
+    }
+  }
 
   &.theme-pink {
+    // Pink and light mint green theme
+    --primary-rgb: 255, 105, 180;
     --primary-color: #ff69b4;
-    --primary-light: #ffb6c1;
-    --primary-dark: #ff1493;
+    --primary-light: rgba(255, 105, 180, 0.15);
+    --accent-rgb: 152, 229, 183;
+    --accent: rgb(var(--accent-rgb));
+    --accent-light: rgba(152, 229, 183, 0.2);
+    --tag-bg: #fff0f7;
+    --tag-text: #d4367a;
+
+    background: linear-gradient(135deg,
+      rgba(255, 105, 180, 0.08) 0%,
+      rgba(152, 229, 183, 0.08) 100%
+    );
+
+    .basic-info-column {
+      .combined-info-content {
+        background: linear-gradient(to right bottom,
+          rgba(255, 255, 255, 0.95),
+          rgba(255, 255, 255, 0.9)
+        );
+
+        .info-card {
+          background: var(--accent-light);
+          border: 1px solid rgba(152, 229, 183, 0.3);
+
+          .info-icon {
+            background: white;
+            i {
+              color: var(--primary-color);
+            }
+          }
+
+          .info-details {
+            .info-label {
+              color: var(--primary-color);
+            }
+          }
+
+          &:hover {
+            border-color: var(--accent);
+            background: var(--accent);
+            .info-icon {
+              background: white;
+              i {
+                color: var(--accent);
+              }
+            }
+            .info-details {
+              .info-label, .info-value {
+                color: white;
+              }
+            }
+          }
+        }
+
+        .hobby-chip {
+          background: var(--accent-light);
+          border: 1px solid rgba(152, 229, 183, 0.3);
+
+          i, .hobby-name {
+            color: var(--accent);
+          }
+
+          &:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            i, .hobby-name {
+              color: white;
+            }
+          }
+        }
+      }
+    }
   }
 
   &.theme-blue {
-    --primary-color: #4a90e2;
-    --primary-light: #64b5f6;
-    --primary-dark: #2196f3;
+    // Dark blue and light yellow theme
+    --primary-rgb: 25, 55, 109;
+    --primary-color: #19376D;
+    --primary-light: rgba(25, 55, 109, 0.15);
+    --accent-rgb: 255, 223, 126;
+    --accent: rgb(var(--accent-rgb));
+    --accent-light: rgba(255, 223, 126, 0.2);
+    --tag-bg: #f0f4ff;
+    --tag-text: #19376D;
+
+    background: linear-gradient(135deg,
+      rgba(25, 55, 109, 0.08) 0%,
+      rgba(255, 223, 126, 0.08) 100%
+    );
+
+    .basic-info-column {
+      .combined-info-content {
+        background: linear-gradient(to right bottom,
+          rgba(255, 255, 255, 0.95),
+          rgba(255, 255, 255, 0.9)
+        );
+
+        .info-card {
+          background: var(--accent-light);
+          border: 1px solid rgba(255, 223, 126, 0.3);
+
+          .info-icon {
+            background: white;
+            i {
+              color: var(--primary-color);
+            }
+          }
+
+          .info-details {
+            .info-label {
+              color: var(--primary-color);
+            }
+          }
+
+          &:hover {
+            border-color: var(--accent);
+            background: var(--accent);
+            .info-icon {
+              background: white;
+              i {
+                color: var(--primary-color);
+              }
+            }
+            .info-details {
+              .info-label, .info-value {
+                color: var(--primary-color);
+              }
+            }
+          }
+        }
+
+        .hobby-chip {
+          background: var(--accent-light);
+          border: 1px solid rgba(255, 223, 126, 0.3);
+
+          i, .hobby-name {
+            color: var(--primary-color);
+          }
+
+          &:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            i, .hobby-name {
+              color: var(--primary-color);
+            }
+          }
+        }
+      }
+    }
   }
 
   .about-content {
@@ -872,5 +1078,298 @@ $transition-speed: 0.3s;
         }
       }
     }
+  }
+}
+
+.basic-info-two-column {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  align-items: start;
+
+  .basic-info-column {
+    .combined-info-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      background: white;
+      border-radius: 1rem;
+
+      .basic-info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+
+        .info-card {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          padding: 1rem;
+          background: var(--primary-light);
+          border-radius: 0.75rem;
+          transition: all 0.3s ease;
+
+          &:hover {
+            transform: translateY(-2px);
+
+            .info-icon {
+              transform: scale(1.05);
+              i {
+                color: var(--primary-color);
+              }
+            }
+          }
+
+          .info-icon {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            background: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+            i {
+              font-size: 1.25rem;
+              color: var(--text-secondary);
+              transition: color 0.3s ease;
+            }
+          }
+
+          .info-details {
+            flex: 1;
+
+            .info-label {
+              font-size: 0.8rem;
+              color: var(--text-secondary);
+              margin: 0 0 0.25rem;
+              font-weight: 500;
+              text-transform: uppercase;
+              letter-spacing: 0.5px;
+            }
+
+            .info-value {
+              font-size: 1rem;
+              color: var(--text-primary);
+              margin: 0;
+              line-height: 1.3;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+
+      .section-divider {
+        position: relative;
+        text-align: center;
+        margin: 0.5rem 0;
+
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          width: calc(50% - 60px);
+          height: 1px;
+          background: var(--primary-light);
+        }
+
+        &::before {
+          left: 0;
+        }
+
+        &::after {
+          right: 0;
+        }
+
+        span {
+          background: white;
+          padding: 0 15px;
+          color: var(--text-secondary);
+          font-size: 0.9rem;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+      }
+
+      .compact-hobbies-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        padding: 0.25rem;
+
+        .hobby-chip {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.5rem 0.75rem;
+          background: var(--tag-bg);
+          border-radius: 20px;
+          transition: all 0.2s ease;
+          cursor: pointer;
+
+          &:hover {
+            transform: translateY(-2px);
+            background: var(--primary-color);
+
+            i, .hobby-name {
+              color: white;
+            }
+          }
+
+          i {
+            font-size: 0.9rem;
+            color: var(--tag-text);
+            transition: color 0.2s ease;
+          }
+
+          .hobby-name {
+            font-size: 0.85rem;
+            color: var(--tag-text);
+            font-weight: 500;
+            transition: color 0.2s ease;
+          }
+
+          .hobby-tooltip {
+            position: absolute;
+            bottom: calc(100% + 8px);
+            left: 50%;
+            transform: translateX(-50%) translateY(5px);
+            background: white;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            font-size: 0.8rem;
+            color: var(--text-primary);
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+            z-index: 1;
+
+            &::after {
+              content: '';
+              position: absolute;
+              top: 100%;
+              left: 50%;
+              transform: translateX(-50%);
+              border: 5px solid transparent;
+              border-top-color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .profile-image-column {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    .profile-side-image {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+}
+
+// Add responsive styles for the new layout
+@media screen and (max-width: 768px) {
+  .basic-info-two-column {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+
+    .profile-image-column {
+      order: -1; // Move image to top on mobile
+      margin-bottom: 1rem;
+
+      .profile-side-image {
+        max-width: 100%;
+      }
+    }
+
+    .basic-info-column {
+      .combined-info-content {
+        gap: 1rem;
+
+        .basic-info-grid {
+          grid-template-columns: 1fr;
+          gap: 0.5rem;
+
+          .info-card {
+            padding: 0.75rem;
+
+            .info-icon {
+              width: 36px;
+              height: 36px;
+              min-width: 36px;
+
+              i {
+                font-size: 1.1rem;
+              }
+            }
+
+            .info-details {
+              .info-label {
+                font-size: 0.75rem;
+              }
+
+              .info-value {
+                font-size: 0.9rem;
+              }
+            }
+          }
+        }
+
+        .compact-hobbies-grid {
+          justify-content: center;
+
+          .hobby-chip {
+            padding: 0.4rem 0.6rem;
+
+            i {
+              font-size: 0.8rem;
+            }
+
+            .hobby-name {
+              font-size: 0.8rem;
+            }
+
+            .hobby-tooltip {
+              display: none; // Hide tooltips on mobile
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Update section divider colors
+.section-divider {
+  &::before,
+  &::after {
+    background: var(--accent-light) !important;
+  }
+
+  span {
+    color: var(--primary-color) !important;
+    font-weight: 600 !important;
   }
 }

@@ -1,4 +1,12 @@
 <div class="profile-container" [class]="themeClass">
+  <!-- Background Icons -->
+  <i class="bg-icon pi pi-heart"></i>
+  <i class="bg-icon pi pi-star"></i>
+  <i class="bg-icon pi pi-camera"></i>
+  <i class="bg-icon pi pi-map-marker"></i>
+  <i class="bg-icon pi pi-heart-fill"></i>
+  <i class="bg-icon pi pi-gift"></i>
+
   <!-- Header Image -->
   <div class="profile-header-image">
     <img [src]="profile.headerImage || profile.avatar" [alt]="profile.name" class="header-bg">
@@ -18,6 +26,44 @@
 
   <!-- Profile Content -->
   <div class="profile-content">
+    <!-- Basic Info Two Column Section -->
+    <div class="basic-info-two-column">
+      <div class="basic-info-column">
+        <app-section-container title="Thông Tin Cơ Bản" icon="pi pi-info-circle" [theme]="profile.gender === 'female' ? 'pink' : 'blue'">
+          <div class="combined-info-content">
+            <div class="basic-info-grid">
+              <div class="info-card" *ngFor="let info of profile.basicInfo">
+                <div class="info-icon">
+                  <i [class]="info.icon"></i>
+                </div>
+                <div class="info-details">
+                  <h3 class="info-label">{{ info.label }}</h3>
+                  <p class="info-value">{{ info.value }}</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="section-divider">
+              <span>Sở Thích</span>
+            </div>
+
+            <div class="compact-hobbies-grid">
+              <div class="hobby-chip" *ngFor="let hobby of profile.hobbies">
+                <i [class]="hobby.icon"></i>
+                <span class="hobby-name">{{ hobby.name }}</span>
+                <div class="hobby-tooltip" *ngIf="hobby.description">
+                  {{ hobby.description }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </app-section-container>
+      </div>
+      <div class="profile-image-column">
+        <img [src]="profile.gender === 'female' ? 'assets/images/quyen/1.png' : 'assets/images/phat/img_1.png'" [alt]="profile.name" class="profile-side-image">
+      </div>
+    </div>
+
     <div class="masonry-grid">
       <!-- About Section -->
       <app-section-container class="about-section" title="Giới Thiệu" icon="pi pi-user" [theme]="profile.gender === 'female' ? 'pink' : 'blue'">
@@ -40,47 +86,11 @@
         </div>
       </app-section-container>
 
-      <!-- Basic Info Section -->
-      <app-section-container title="Thông Tin Cơ Bản" icon="pi pi-info-circle" [theme]="profile.gender === 'female' ? 'pink' : 'blue'">
-        <div class="basic-info-content">
-          <div class="info-card" *ngFor="let info of profile.basicInfo">
-            <div class="info-icon">
-              <i [class]="info.icon"></i>
-            </div>
-            <div class="info-details">
-              <h3 class="info-label">{{ info.label }}</h3>
-              <p class="info-value">{{ info.value }}</p>
-            </div>
-          </div>
-        </div>
-      </app-section-container>
-
       <!-- Decorative Image -->
       <div class="decorative-image">
         <img [src]="profile.gender === 'female' ?
           'assets/images/albums/hinh-cuoi-dep/z6839748952402_e08e25c67223cd6b67ca34237e432a4a.jpg' :
           'assets/images/albums/hinh-cuoi-dep/z6839748547298_b5ca358084616504239404b32c19c4cc.jpg'"
-          alt="Wedding Photo" class="section-divider">
-      </div>
-
-      <!-- Hobbies Section -->
-      <app-section-container title="Sở Thích" icon="pi pi-heart" [theme]="profile.gender === 'female' ? 'pink' : 'blue'" class="hobbies-section">
-        <div class="compact-hobbies-grid">
-          <div class="hobby-chip" *ngFor="let hobby of profile.hobbies">
-            <i [class]="hobby.icon"></i>
-            <span class="hobby-name">{{ hobby.name }}</span>
-            <div class="hobby-tooltip" *ngIf="hobby.description">
-              {{ hobby.description }}
-            </div>
-          </div>
-        </div>
-      </app-section-container>
-
-      <!-- Decorative Image -->
-      <div class="decorative-image">
-        <img [src]="profile.gender === 'female' ?
-          'assets/images/albums/hinh-cuoi-dep/z6839748735120_c80a38b787a2b8d01524eabdec4ea54f.jpg' :
-          'assets/images/albums/hinh-cuoi-dep/z6839748926606_4667f65f7afb58dd41ea00b6eea3ce3d.jpg'"
           alt="Wedding Photo" class="section-divider">
       </div>
 
