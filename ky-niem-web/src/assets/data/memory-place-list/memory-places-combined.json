@@ -3004,73 +3004,73 @@
       ]
     },
     {
-      "id": "kinh-luan-dat-vang",
-      "name": "Kính Lửa Đất Vàng",
+      "id": "dai-bao-thap-kinh-luan",
+      "name": "Đại Bảo tháp Kinh Luân",
       "location": "Lâm Đồng",
       "image": "assets/images/places/checkin-kinh-luan-dat-vang-lam-dong.jpg",
-      "description": "Điểm check-in độc đáo với kiến trúc hiện đại",
-      "detailedDescription": "Kính Lửa Đất Vàng là một công trình kiến trúc hiện đại tại Đà Lạt, nổi tiếng với thiết kế độc đáo và view nhìn toàn cảnh thành phố. Đây là điểm check-in yêu thích của giới trẻ.",
+      "description": "Đại Bảo tháp Kinh luân lớn nhất thế giới tại Samten Hills Dalat, biểu tượng của tình hữu nghị, hoà bình và văn hoá ngoại giao, được công nhận kỷ lục Guinness thế giới",
+      "detailedDescription": "Đại Bảo tháp Kinh luân Drigung Kagyu Rinchen Khorchen Khorwe Go Gek là công trình tâm linh độc đáo tại Samten Hills Dalat. Được làm bằng đồng tinh khiết và mạ vàng 24k, tháp có chiều cao 37,22m và đường kính 16,53m. Bên trong bánh xe cầu nguyện chứa hơn một tỷ câu chú Om Mani Padme Hum được in lên giấy lụa mỏng, cùng các phẩm vật cát tường như Xá lợi của Phật và các vị Thánh tăng. Khi quay kinh luân, các chuỗi chân ngôn bên trong chuyển động sẽ tạo ra nguồn năng lượng từ trường tích cực, an lành, nguồn phúc lạc to lớn của thập phương chư Phật.",
       "howToGet": "Từ trung tâm Đà Lạt đi khoảng 5km theo hướng Suối Vàng.",
       "bestTimeToVisit": "Thời điểm đẹp nhất là buổi sáng sớm hoặc hoàng hôn.",
       "attractions": {
-        "entertainment": [
+        "religious": [
           {
-            "name": "Kính Lửa Đất Vàng",
-            "description": "Công trình kiến trúc hiện đại với view toàn cảnh",
+            "name": "Đại Bảo tháp Kinh Luân",
+            "description": "Công trình tâm linh độc đáo với chiều cao 37,22m, được làm từ đồng tinh khiết mạ vàng 24k, chứa hơn một tỷ câu chú Om Mani Padme Hum",
             "image": "assets/images/places/checkin-kinh-luan-dat-vang-lam-dong.jpg"
           },
           {
-            "name": "Khu chụp ảnh",
-            "description": "Khu vực trang trí đẹp để chụp ảnh",
-            "image": "assets/images/places/khu-chup-anh-kinh-lua.jpg"
+            "name": "Khu tâm linh Samten Hills",
+            "description": "Không gian văn hóa tâm linh rộng lớn, nơi kết hợp giữa kiến trúc Phật giáo và cảnh quan thiên nhiên Đà Lạt",
+            "image": "assets/images/places/samten-hills.jpg"
           }
         ],
-        "natural": [
+        "cultural": [
           {
-            "name": "Đồi thông",
-            "description": "Cảnh quan thiên nhiên đẹp xung quanh",
-            "image": "assets/images/places/doi-thong-da-lat.jpg"
+            "name": "Bảo tàng Phật giáo",
+            "description": "Nơi trưng bày các hiện vật và tư liệu quý về lịch sử Phật giáo Kim cương thừa tại Việt Nam",
+            "image": "assets/images/places/bao-tang-phat-giao.jpg"
           }
         ]
       },
       "localFood": [
         {
-          "name": "Cà phê view đồi",
-          "description": "Cà phê thưởng thức với view đẹp",
-          "image": "assets/images/foods/cafe-view-doi.jpg"
+          "name": "Cơm chay",
+          "description": "Món ăn chay thanh tịnh được chế biến từ rau củ địa phương",
+          "image": "assets/images/foods/com-chay-samten.jpg"
         },
         {
-          "name": "Bánh mì nướng muối ớt",
-          "description": "Món ăn vặt phổ biến",
-          "image": "assets/images/foods/banh-mi-nuong.jpg"
+          "name": "Trà Tây Tạng",
+          "description": "Thức uống truyền thống của Phật giáo Kim cương thừa",
+          "image": "assets/images/foods/tra-tay-tang.jpg"
         }
       ],
       "nearbyAttractions": [
         {
-          "name": "Thung lũng Tình Yêu",
-          "description": "Khu du lịch nổi tiếng Đà Lạt",
-          "distance": "3km",
-          "image": "assets/images/places/thung-lung-tinh-yeu.jpg"
+          "name": "Thiền viện Trúc Lâm",
+          "description": "Thiền viện lớn nhất Đà Lạt với kiến trúc độc đáo và cảnh quan thanh tịnh",
+          "distance": "5km",
+          "travelTime": "15 phút đi xe"
         },
         {
-          "name": "Đồi Robin",
-          "description": "Điểm ngắm cảnh đẹp",
-          "distance": "2km",
-          "image": "assets/images/places/doi-robin.jpg"
+          "name": "Hồ Tuyền Lâm",
+          "description": "Hồ nước trong xanh với cảnh quan thiên nhiên tuyệt đẹp",
+          "distance": "3km",
+          "travelTime": "10 phút đi xe"
         }
       ],
       "recommendedFood": [
         {
-          "name": "Cà phê sữa đá",
-          "description": "Cà phê Đà Lạt thơm ngon",
-          "price": "25000-35000 VND/ly",
-          "where": "Quán cà phê trong khu du lịch"
+          "name": "Cơm chay Samten",
+          "description": "Set cơm chay với các món từ rau củ địa phương",
+          "restaurant": "Nhà hàng chay Samten Hills",
+          "price": "80000-150000 VND/suất"
         },
         {
-          "name": "Trà trái cây",
-          "description": "Đồ uống từ trái cây Đà Lạt",
-          "price": "30000-45000 VND/ly",
-          "where": "Các quán nước trong khu vực"
+          "name": "Trà thiền",
+          "description": "Trà đặc biệt được pha chế theo phương pháp truyền thống",
+          "restaurant": "Quán trà Samten Hills",
+          "price": "40000-60000 VND/set"
         }
       ]
     },
