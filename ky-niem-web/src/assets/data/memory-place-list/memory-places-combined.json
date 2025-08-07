@@ -1,6 +1,81 @@
 {
   "places": [
     {
+      "id": "thanh-co-quang-tri",
+      "name": "Thành cổ Quảng Trị",
+      "location": "Quảng Trị",
+      "image": "assets/images/places/checkin-thanh-co-quang-tri.jpg",
+      "description": "Di tích lịch sử cấp quốc gia đặc biệt, chứng tích của 81 ngày đêm chiến đấu anh dũng bảo vệ thành cổ năm 1972, biểu tượng của tinh thần chiến đấu kiên cường và bất khuất của quân và dân ta",
+      "customSection": {
+        "title": "81 Ngày Đêm Chiến Đấu Bảo Vệ Thành Cổ",
+        "content": "<div class=\"custom-section-item\">\n<div class=\"folk-song-description\">\n<h4>Cuộc Chiến Bảo Vệ Thành Cổ</h4>\nTrong 81 ngày đêm từ ngày 28/6 đến 16/9/1972, quân và dân ta đã anh dũng chiến đấu bảo vệ thành cổ Quảng Trị. Đây là một trong những trận chiến ác liệt nhất của cuộc kháng chiến chống Mỹ, với sự hy sinh anh dũng của hàng nghìn chiến sĩ để bảo vệ từng tấc đất của Tổ quốc.\n\n<h4>Tinh Thần Chiến Đấu Kiên Cường</h4>\nTrong điều kiện khốc liệt, với hơn 328.000 quả bom đạn của địch trút xuống mỗi ngày, các chiến sĩ vẫn kiên cường bám trụ, chiến đấu. Họ đã biến thành cổ thành một pháo đài vững chắc, một biểu tượng của ý chí và tinh thần bất khuất của dân tộc.\n\n<h4>Chiến Thắng Lịch Sử</h4>\nSau 81 ngày đêm chiến đấu, quân và dân ta đã giành thắng lợi, giải phóng hoàn toàn thành cổ Quảng Trị. Chiến thắng này không chỉ có ý nghĩa quân sự mà còn là thắng lợi về tinh thần, khẳng định ý chí độc lập, tự do của dân tộc.\n\n<h4>Di Tích Lịch Sử</h4>\nNgày nay, thành cổ Quảng Trị là di tích lịch sử cấp quốc gia đặc biệt, nơi ghi dấu chiến công hiển hách của quân và dân ta. Mỗi viên gạch, mỗi bức tường còn lưu giữ dấu tích của những trận đánh ác liệt, là chứng nhân lịch sử của một thời kỳ hào hùng.</div>\n</div>"
+      },
+      "detailedDescription": "Thành cổ Quảng Trị là một công trình kiến trúc quân sự được xây dựng từ thời Nguyễn (1809-1818), có hình vuông với chu vi 2.160m, cao 4m. Trong cuộc kháng chiến chống Mỹ, đặc biệt là 81 ngày đêm năm 1972, thành cổ trở thành biểu tượng của tinh thần chiến đấu kiên cường của quân và dân ta. Mỗi ngày có hơn 328.000 quả bom đạn của địch trút xuống, nhưng các chiến sĩ vẫn anh dũng bám trụ, chiến đấu bảo vệ từng tấc đất. Ngày nay, di tích thành cổ không chỉ là chứng tích lịch sử mà còn là nơi giáo dục truyền thống yêu nước cho các thế hệ mai sau.",
+      "howToGet": "Thành cổ nằm ở trung tâm thành phố Quảng Trị, cách Huế khoảng 60km về phía Bắc. Có thể đi bằng xe khách hoặc tàu từ Huế hoặc Đông Hà.",
+      "bestTimeToVisit": "Có thể tham quan quanh năm, nhưng thời điểm đẹp nhất là từ tháng 3 đến tháng 8 khi thời tiết khô ráo. Đặc biệt vào dịp kỷ niệm giải phóng thành cổ (16/9) có nhiều hoạt động tưởng niệm ý nghĩa.",
+      "attractions": {
+        "historical": [
+          {
+            "name": "Thành cổ",
+            "description": "Công trình kiến trúc quân sự thời Nguyễn, chứng tích của 81 ngày đêm chiến đấu anh dũng",
+            "image": "assets/images/places/checkin_thanh-co-quang-tri.jpg"
+          },
+          {
+            "name": "Bảo tàng Thành cổ",
+            "description": "Nơi trưng bày hiện vật và tư liệu về trận chiến 81 ngày đêm",
+            "image": "assets/images/places/bao-tang-thanh-co.jpg"
+          }
+        ],
+        "cultural": [
+          {
+            "name": "Đền tưởng niệm",
+            "description": "Nơi tưởng nhớ các anh hùng liệt sĩ đã hy sinh trong chiến đấu",
+            "image": "assets/images/places/den-tuong-niem-thanh-co.jpg"
+          }
+        ]
+      },
+      "localFood": [
+        {
+          "name": "Cơm hến Quảng Trị",
+          "description": "Món ăn dân dã đặc trưng của vùng đất Quảng Trị",
+          "image": "assets/images/foods/com-hen.jpg"
+        },
+        {
+          "name": "Bánh ít lá gai",
+          "description": "Bánh truyền thống với nhân đậu xanh và vỏ bánh màu đen từ lá gai",
+          "image": "assets/images/foods/banh-it-la-gai.jpg"
+        }
+      ],
+      "nearbyAttractions": [
+        {
+          "name": "Sông Thạch Hãn",
+          "description": "Dòng sông lịch sử gắn liền với chiến tích bảo vệ thành cổ",
+          "distance": "0.5km",
+          "travelTime": "10 phút đi bộ"
+        },
+        {
+          "name": "Nghĩa trang liệt sĩ Trường Sơn",
+          "description": "Nơi yên nghỉ của hàng vạn liệt sĩ",
+          "distance": "30km",
+          "travelTime": "45 phút đi xe máy"
+        }
+      ],
+      "recommendedFood": [
+        {
+          "name": "Cơm hến",
+          "description": "Món cơm trộn với hến, rau thơm và gia vị đặc trưng",
+          "restaurant": "Quán cơm hến Bà Hoà - Gần thành cổ",
+          "price": "25000-35000 VND/phần"
+        },
+        {
+          "name": "Bánh ít lá gai",
+          "description": "Bánh truyền thống thơm ngon, đặc sản địa phương",
+          "restaurant": "Tiệm bánh Thanh Tâm - Chợ Quảng Trị",
+          "price": "5000-10000 VND/cái"
+        }
+      ]
+    },
+    {
       "id": "chua-huong-ha-noi",
       "name": "Chùa Hương",
       "location": "Hà Nội",
@@ -1256,17 +1331,17 @@
     },
     {
       "id": "deo-da-trang-son-la",
-      "name": "Đèo Dải Trắng",
+      "name": "Đèo Đá Trắng",
       "location": "Sơn La",
       "image": "assets/images/places/checkin-deo-da-trang-son-la.jpg",
       "description": "Cung đường đèo uốn lượn với cảnh quan hùng vĩ, một trong những cung đường đẹp nhất Tây Bắc, nơi mây trời và núi non hòa quyện tạo nên khung cảnh tuyệt đẹp như dải lụa trắng vắt ngang trời",
-      "detailedDescription": "Đèo Dải Trắng là một trong những cung đường đèo đẹp nhất miền Bắc, nằm trên quốc lộ 6 đoạn qua tỉnh Sơn La. Với độ cao trên 1000m so với mực nước biển, đèo có chiều dài khoảng 12km với những khúc cua uốn lượn như dải lụa trắng vắt ngang sườn núi. Từ đỉnh đèo, du khách có thể ngắm nhìn toàn cảnh thung lũng Sơn La với những thửa ruộng bậc thang tầng tầng lớp lớp và những bản làng của đồng bào dân tộc thiểu số nằm ẩn hiện trong sương mù. Vào những ngày đẹp trời, mây trắng bao phủ tạo nên khung cảnh huyền ảo như chốn bồng lai. Đèo không chỉ nổi tiếng về cảnh đẹp mà còn là thử thách hấp dẫn cho những người yêu thích phượt xe máy.",
+      "detailedDescription": "Đèo Đá Trắng là một trong những cung đường đèo đẹp nhất miền Bắc, nằm trên quốc lộ 6 đoạn qua tỉnh Sơn La. Với độ cao trên 1000m so với mực nước biển, đèo có chiều dài khoảng 12km với những khúc cua uốn lượn như dải lụa trắng vắt ngang sườn núi. Từ đỉnh đèo, du khách có thể ngắm nhìn toàn cảnh thung lũng Sơn La với những thửa ruộng bậc thang tầng tầng lớp lớp và những bản làng của đồng bào dân tộc thiểu số nằm ẩn hiện trong sương mù. Vào những ngày đẹp trời, mây trắng bao phủ tạo nên khung cảnh huyền ảo như chốn bồng lai. Đèo không chỉ nổi tiếng về cảnh đẹp mà còn là thử thách hấp dẫn cho những người yêu thích phượt xe máy.",
       "howToGet": "Đèo nằm trên quốc lộ 6, đoạn qua tỉnh Sơn La, cách trung tâm thành phố Sơn La khoảng 30km. Có thể đi bằng xe máy hoặc ô tô từ Hà Nội theo quốc lộ 6.",
       "bestTimeToVisit": "Thời điểm đẹp nhất là mùa thu (tháng 9-11) khi thời tiết mát mẻ, bầu trời trong xanh. Nên đến vào sáng sớm hoặc chiều tà để ngắm bình minh hoặc hoàng hôn và tránh sương mù dày đặc.",
       "attractions": {
         "natural": [
           {
-            "name": "Đèo Dải Trắng",
+            "name": "Đèo Đá Trắng",
             "description": "Cung đường đèo với cảnh quan thiên nhiên tuyệt đẹp, nổi tiếng với những khúc cua tay áo và tầm nhìn panorama",
             "image": "assets/images/places/checkin-deo-da-trang-son-la.jpg"
           },
@@ -1990,82 +2065,6 @@
           "name": "Bánh mì que",
           "description": "Bánh mì que nướng đặc sản với patê và ớt cay nồng, món ăn vặt được yêu thích",
           "restaurant": "Xe bánh mì que dì Hoa - Khu vực Hải Vân Quan",
-          "price": "5000-10000 VND/cái"
-        }
-      ]
-    },
-    {
-      "id": "thanh-co-quang-tri",
-      "name": "Thành cổ Quảng Trị",
-      "location": "Quảng Trị",
-      "image": "assets/images/places/checkin-thanh-co-quang-tri.jpg",
-      "description": "Di tích lịch sử quốc gia đặc biệt, chứng tích hào hùng của 81 ngày đêm chiến đấu anh dũng, biểu tượng của tinh thần bất khuất và ý chí kiên cường của quân và dân ta trong cuộc kháng chiến chống Mỹ",
-      "detailedDescription": "Thành cổ Quảng Trị là một công trình kiến trúc quân sự được xây dựng từ năm 1824 dưới triều Minh Mạng. Tuy nhiên, di tích này nổi tiếng nhất với 81 ngày đêm chiến đấu anh dũng năm 1972, khi quân và dân ta đã kiên cường bảo vệ thành cổ trước cuộc tấn công ác liệt của địch. Thành có hình vuông với chu vi 2.160m, bốn góc thành có pháo đài, bốn cửa thành theo bốn hướng Đông - Tây - Nam - Bắc. Ngày nay, di tích vẫn còn lưu giữ nhiều dấu tích của cuộc chiến như vết đạn trên tường thành, hầm hào chiến đấu, và các hiện vật quý giá. Bảo tàng trong khuôn viên thành cổ trưng bày nhiều tư liệu, hiện vật về cuộc chiến đấu lịch sử, giúp người tham quan hiểu rõ hơn về một giai đoạn lịch sử hào hùng của dân tộc.",
-      "howToGet": "Từ trung tâm thành phố Đông Hà đi khoảng 12km theo quốc lộ 1A về phía Nam. Có thể đi xe máy, ô tô hoặc taxi. Từ ga Đông Hà cũng có xe buýt và xe ôm đến thành cổ.",
-      "bestTimeToVisit": "Có thể tham quan quanh năm, nhưng thời điểm đẹp nhất là từ tháng 3 đến tháng 8 khi thời tiết khô ráo. Nên tránh mùa mưa (tháng 9-12) vì có thể gây khó khăn cho việc tham quan. Đặc biệt nên đến vào dịp kỷ niệm 81 ngày đêm (từ 28/6 đến 16/9) để tham dự các hoạt động tưởng niệm.",
-      "attractions": {
-        "historical": [
-          {
-            "name": "Tường thành cổ",
-            "description": "Công trình kiến trúc quân sự thời Nguyễn với bốn cửa thành và hệ thống phòng thủ kiên cố, mang nhiều dấu tích lịch sử của cuộc chiến 81 ngày đêm",
-            "image": "assets/images/places/tuong-thanh-co.jpg"
-          },
-          {
-            "name": "Bảo tàng Thành cổ",
-            "description": "Nơi trưng bày các hiện vật, tư liệu quý về cuộc chiến đấu bảo vệ thành cổ và lịch sử phát triển của vùng đất Quảng Trị",
-            "image": "assets/images/places/bao-tang-thanh-co.jpg"
-          }
-        ],
-        "memorial": [
-          {
-            "name": "Đài tưởng niệm",
-            "description": "Công trình tưởng niệm các anh hùng liệt sĩ đã hy sinh trong cuộc chiến bảo vệ thành cổ, được xây dựng trang nghiêm và đầy ý nghĩa",
-            "image": "assets/images/places/dai-tuong-niem-thanh-co.jpg"
-          },
-          {
-            "name": "Hệ thống hầm hào",
-            "description": "Hệ thống phòng thủ còn sót lại từ cuộc chiến, giúp du khách hiểu rõ hơn về điều kiện chiến đấu của quân và dân ta",
-            "image": "assets/images/places/ham-hao-thanh-co.jpg"
-          }
-        ]
-      },
-      "localFood": [
-        {
-          "name": "Bánh ít lá gai",
-          "description": "Món bánh truyền thống của Quảng Trị, làm từ bột gạo nếp và lá gai, nhân đậu xanh hoặc dừa, có hương vị đặc trưng và màu xanh tự nhiên",
-          "image": "assets/images/foods/banh-it-la-gai.jpg"
-        },
-        {
-          "name": "Cháo canh Quảng Trị",
-          "description": "Món ăn đặc sản với sợi bột gạo, thịt nạc, chả cá, và nước dùng đậm đà, thường ăn kèm với rau sống và ớt tươi",
-          "image": "assets/images/foods/chao-canh.jpg"
-        }
-      ],
-      "nearbyAttractions": [
-        {
-          "name": "Sông Thạch Hãn",
-          "description": "Dòng sông lịch sử gắn liền với cuộc chiến bảo vệ thành cổ, nơi diễn ra nhiều trận đánh ác liệt",
-          "distance": "0.5km",
-          "travelTime": "5 phút đi bộ"
-        },
-        {
-          "name": "Nghĩa trang liệt sĩ Trường Sơn",
-          "description": "Nơi yên nghỉ của hàng vạn anh hùng liệt sĩ, một trong những nghĩa trang liệt sĩ lớn nhất cả nước",
-          "distance": "15km",
-          "travelTime": "25 phút đi xe máy"
-        }
-      ],
-      "recommendedFood": [
-        {
-          "name": "Cháo canh Quảng Trị",
-          "description": "Món ăn truyền thống với sợi bột gạo tươi và nước dùng đặc biệt",
-          "restaurant": "Quán cháo canh Bà Đào - Đường Trần Hưng Đạo",
-          "price": "25000-35000 VND/tô"
-        },
-        {
-          "name": "Bánh ít lá gai",
-          "description": "Bánh truyền thống với nhân đậu xanh thơm ngon",
-          "restaurant": "Cơ sở bánh ít Bà Liên - Phường 1",
           "price": "5000-10000 VND/cái"
         }
       ]
@@ -5092,6 +5091,10 @@
       "location": "Quảng Trị",
       "image": "assets/images/places/checkin-cau-hien-luong-quang-tri.png",
       "description": "Cây cầu lịch sử trên sông Bến Hải, biểu tượng của sự chia cắt và thống nhất đất nước. Với chiều dài 178m, cầu Hiền Lương không chỉ là chứng nhân lịch sử mà còn là điểm du lịch thu hút du khách tìm hiểu về một giai đoạn lịch sử đặc biệt của dân tộc.",
+      "customSection": {
+        "title": "Hiệp định Geneva 1954 và Cầu Hiền Lương",
+        "content": "<div class=\"custom-section-item\">\n<div class=\"folk-song-description\">\n<h4>Hiệp định Geneva 1954</h4>\nHiệp định Geneva được ký kết ngày 21/7/1954 tại Geneva, Thụy Sĩ, chính thức chấm dứt cuộc chiến tranh Đông Dương lần thứ nhất. Theo hiệp định này, vĩ tuyến 17 và sông Bến Hải trở thành ranh giới quân sự tạm thời giữa hai miền Nam - Bắc Việt Nam. Cầu Hiền Lương, bắc qua sông Bến Hải, trở thành biểu tượng của sự phân chia này.\n\n<h4>Ý nghĩa lịch sử</h4>\nCầu Hiền Lương được sơn hai màu: phía Bắc màu đỏ, phía Nam màu vàng, tượng trưng cho hai chế độ chính trị khác nhau. Trong suốt 21 năm (1954-1975), cây cầu này là điểm chứng kiến nhiều cuộc chia ly đau thương của các gia đình Việt Nam và cũng là nơi ghi dấu khát vọng thống nhất đất nước của toàn dân tộc.\n\n<h4>Khu phi quân sự (DMZ)</h4>\nTheo Hiệp định Geneva, một khu phi quân sự rộng 10km (mỗi bên 5km) được thiết lập dọc theo sông Bến Hải. Khu vực này trở thành vùng đệm giữa hai miền, dưới sự giám sát của Ủy ban Quốc tế Kiểm soát và Giám sát (ICC).\n\n<h4>Di tích lịch sử ngày nay</h4>\nHiện nay, cầu Hiền Lương và khu vực xung quanh đã trở thành một quần thể di tích lịch sử quốc gia đặc biệt. Nơi đây không chỉ là điểm du lịch hấp dẫn mà còn là địa điểm giáo dục truyền thống lịch sử cho thế hệ trẻ, nhắc nhớ về một thời kỳ đặc biệt trong lịch sử dân tộc và giá trị của hòa bình, thống nhất.</div>\n</div>"
+      },
       "detailedDescription": "Cầu Hiền Lương là một di tích lịch sử quan trọng, nằm trên sông Bến Hải, tỉnh Quảng Trị. Được xây dựng từ thời Pháp thuộc, cây cầu này từng là ranh giới tạm thời giữa hai miền Nam - Bắc Việt Nam trong giai đoạn 1954-1975. Với hai màu sơn đặc trưng ở hai đầu cầu, công trình này đã trở thành biểu tượng của sự chia cắt và sau này là sự thống nhất đất nước. Ngày nay, cầu Hiền Lương không chỉ là điểm tham quan du lịch ý nghĩa mà còn là nơi giáo dục truyền thống lịch sử cho thế hệ trẻ.",
       "howToGet": "Từ trung tâm thành phố Đông Hà, Quảng Trị, bạn di chuyển theo Quốc lộ 1A khoảng 30km về phía Bắc là đến cầu Hiền Lương. Có thể đi bằng xe máy (khoảng 45 phút) hoặc taxi (khoảng 400.000 VND/chiều).",
       "bestTimeToVisit": "Thời điểm thích hợp để thăm cầu Hiền Lương là từ tháng 2 đến tháng 8, khi thời tiết khô ráo và thuận lợi cho việc tham quan. Nên đến vào buổi sáng sớm hoặc chiều tối để tránh nắng nóng và có những bức ảnh đẹp nhất.",

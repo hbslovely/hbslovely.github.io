@@ -540,7 +540,7 @@ export class MemoryPlacesComponent implements OnInit {
   }
 
   navigateToDetail(placeId: string): void {
-    this.router.navigate(['/place-detail', placeId]);
+    this.router.navigate(['/place', placeId]);
   }
 
   private checkMobile() {

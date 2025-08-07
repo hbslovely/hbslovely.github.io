@@ -85,7 +85,8 @@
       </div>
 
       <div class="header-actions">
-        <button class="sort-btn" (click)="toggleSort()" [title]="sortMode === 'none' ? 'Sắp xếp theo tên' : 'Thay đổi thứ tự sắp xếp'">
+        <button class="sort-btn" (click)="toggleSort()"
+                [title]="sortMode === 'none' ? 'Sắp xếp theo tên' : 'Thay đổi thứ tự sắp xếp'">
           <i class="pi" [ngClass]="{
             'pi-sort': sortMode === 'none',
             'pi-sort-alpha-down': sortMode === 'asc',
@@ -140,63 +141,49 @@
     <!-- Places Display -->
     <section class="places-container" *ngIf="!loading">
 
-      <!-- Grid View -->
-      <div class="places-grid" *ngIf="viewMode === 'grid'">
-        <app-place-card
-          *ngFor="let place of paginatedPlaces; trackBy: trackByPlace"
-          [place]="place"
-          class="place-card-grid">
-        </app-place-card>
-      </div>
 
-      <!-- List View -->
-      <div class="places-list" *ngIf="viewMode === 'list'">
-        <div
-          class="place-list-item"
-          *ngFor="let place of paginatedPlaces; trackBy: trackByPlace"
-          (click)="navigateToDetail(place.id)"
-          [style.cursor]="'pointer'"
-          role="link"
-          [attr.aria-label]="'View details of ' + place.name">
-          <div class="place-image">
-            <img [src]="place.image" [alt]="place.name" />
-            <div class="image-overlay">
-              <i class="pi pi-eye"></i>
-              <span>Xem chi tiết</span>
+      <!-- Places List -->
+      @if (viewMode === 'list') {
+        <div class="places-list list-view">
+          <div
+            *ngFor="let place of paginatedPlaces; trackBy: trackByPlace"
+            class="place-list-item"
+            role="link"
+            [attr.aria-label]="'Xem chi tiết ' + place.name"
+            (click)="navigateToDetail(place.id)">
+            <div class="place-image">
+              <img [src]="place.image" [alt]="place.name" loading="lazy">
+              <div class="image-overlay">
+                <i class="pi pi-eye"></i>
+                <span>Xem chi tiết</span>
+              </div>
             </div>
-          </div>
-          <div class="place-content">
-            <div class="place-info">
-              <div class="info-header">
+            <div class="place-content">
+              <div class="place-header">
                 <h3 class="place-name">{{ place.name }}</h3>
-                <div class="view-instruction">
-                  <i class="pi pi-arrow-right"></i>
-                  <span>Nhấn để xem chi tiết</span>
+                <div class="place-location">
+                  <i class="pi pi-map-marker"></i>
+                  <span>{{ place.location }}</span>
                 </div>
               </div>
-              <div class="place-meta">
-                <span class="location">
-                  <i class="pi pi-map-marker"></i>
-                  {{ place.location }}
-                </span>
-                <span class="type" *ngIf="place.type">
-                  <i class="pi pi-tag"></i>
-                  {{ place.type }}
-                </span>
+              <p class="place-description">{{ place.description }}</p>
+              <div class="place-actions">
+                <i class="pi pi-arrow-right"></i>
+                <span>Xem chi tiết</span>
               </div>
-              <p class="description">{{ place.description }}</p>
-            </div>
-            <div class="place-features" *ngIf="place.features?.length">
-              <span class="feature-tag" *ngFor="let feature of place.features.slice(0, 3)">
-                {{ feature }}
-              </span>
-              <span class="more-features" *ngIf="place.features.length > 3">
-                +{{ place.features.length - 3 }}
-              </span>
             </div>
           </div>
         </div>
-      </div>
+      } @else {
+        <!-- Grid View -->
+        <div class="places-grid">
+          <app-place-card
+            *ngFor="let place of paginatedPlaces; trackBy: trackByPlace"
+            [place]="place"
+            class="place-card-grid">
+          </app-place-card>
+        </div>
+      }
 
       <!-- No Results -->
       <div class="no-results" *ngIf="filteredPlaces.length === 0">
@@ -214,7 +201,9 @@
       <!-- Pagination Controls -->
       <div class="pagination-section" *ngIf="filteredPlaces.length > 0 && totalPages > 1">
         <div class="pagination-info">
-          <span>Hiển thị {{ (currentPage - 1) * itemsPerPage + 1 }} - {{ currentPage * itemsPerPage > totalItems ? totalItems : currentPage * itemsPerPage }} trong số {{ totalItems }} địa điểm</span>
+          <span>Hiển thị {{ (currentPage - 1) * itemsPerPage + 1 }}
+            - {{ currentPage * itemsPerPage > totalItems ? totalItems : currentPage * itemsPerPage }}
+            trong số {{ totalItems }} địa điểm</span>
 
           <div class="items-per-page">
             <label>Hiển thị:</label>
