@@ -1,34 +1,16 @@
-<div class="profile-header">
-  <!-- Background image with parallax effect -->
-  <div class="background-image"
-       [style.background-image]="'url(' + backgroundImage + ')'">
-  </div>
-
-  <!-- Content overlay with animation -->
-  <div class="content-overlay" [class.visible]="isVisible">
-    <!-- Profile info -->
-    <div class="profile-info">
-      <div class="avatar-container">
-        <img [src]="avatarImage" [alt]="name" class="avatar">
+<!-- Header Image -->
+<div class="profile-header-image">
+  <img [src]="profile.headerImage || profile.avatar" [alt]="profile.name" class="header-bg">
+  <div class="overlay"></div>
+  <div class="header-content">
+    <div class="name-with-avatar">
+      <div class="small-avatar">
+        <img [src]="profile.avatar" [alt]="profile.name">
       </div>
-      
-      <div class="info-text">
-        <h1 class="name">{{ name }}</h1>
-        <h2 class="nickname">"{{ nickname }}"</h2>
-        
-        <!-- Basic info with animation -->
-        <div class="basic-info">
-          <div class="info-item" *ngFor="let item of basicInfo | keyvalue">
-            <span class="label">{{ item.key }}:</span>
-            <span class="value">{{ item.value }}</span>
-          </div>
-        </div>
+      <div class="name-title">
+        <h1>{{ profile.name }}</h1>
+        <p>{{ profile.title }}</p>
       </div>
     </div>
-  </div>
-
-  <!-- Floating hearts animation -->
-  <div class="floating-hearts">
-    <span class="heart" *ngFor="let i of [1,2,3,4,5,6,7,8]">❤️</span>
   </div>
 </div> 

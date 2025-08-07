@@ -2,14 +2,27 @@ export interface Profile {
   name: string;
   title: string;
   avatar: string;
-  headerImage: string; // URL to the header background image
+  headerImage?: string;
   description: string;
   loveMessage: string;
-  basicInfo: BasicInfo[];
-  hobbies: Hobby[];
+  gender: 'male' | 'female';
+  basicInfo: {
+    label: string;
+    value: string;
+    icon: string;
+  }[];
+  hobbies: {
+    name: string;
+    icon: string;
+  }[];
   lifeGoals: string[];
   loveStory: string[];
-  sweetMoments: SweetMoment[];
+  sweetMoments: {
+    imageUrl: string;
+    title: string;
+    description: string;
+    date: string;
+  }[];
 }
 
 export interface BasicInfo {

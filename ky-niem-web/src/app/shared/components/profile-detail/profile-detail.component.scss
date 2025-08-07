@@ -5,24 +5,106 @@ $section-spacing: 2rem;
 $border-radius: 16px;
 $transition-speed: 0.3s;
 
+// CSS Variables
+:host {
+  --primary-color-transparent: rgba(var(--primary-rgb), 0.8);
+  --background-light: #f8f9fa;
+  --text-primary: #333;
+  --text-secondary: #666;
+  --primary-light: rgba(var(--primary-rgb), 0.2);
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+
+// Floating Background Icons
+@keyframes float {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(10px, -10px) rotate(5deg); }
+  50% { transform: translate(0, -20px) rotate(0deg); }
+  75% { transform: translate(-10px, -10px) rotate(-5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 0.5; }
+}
+
+.profile-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100vw;
+  background: var(--bg-light);
+
+  // Floating Icons Background
+  &::before,
+  &::after {
+    content: '♥';
+    font-size: 3rem;
+    position: absolute;
+    opacity: 0.1;
+    z-index: 0;
+    animation: float 8s infinite ease-in-out;
+    color: var(--primary-color);
+  }
+
+  &::before {
+    top: 20%;
+    left: 10%;
+    animation-delay: -2s;
+  }
+
+  &::after {
+    bottom: 20%;
+    right: 10%;
+    animation-delay: -4s;
+  }
+
+  // Theme-specific styling
+  &.theme-pink {
+    --header-gradient: linear-gradient(45deg, var(--theme-pink-primary), var(--theme-pink-secondary));
+    --icon-color: var(--theme-pink-primary);
+    --primary-rgb: var(--theme-pink-rgb);
+  }
+
+  &.theme-blue {
+    --header-gradient: linear-gradient(45deg, var(--theme-blue-primary), var(--theme-blue-secondary));
+    --icon-color: var(--theme-blue-primary);
+    --primary-rgb: var(--theme-blue-rgb);
+  }
+}
+
 // Header Image
 .profile-header-image {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 60vh;
   min-height: 400px;
   overflow: hidden;
   margin-bottom: $section-spacing;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--header-gradient);
+    opacity: 0.85;
+    z-index: 1;
+  }
 
   .header-bg {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transform: scale(1.1); // Slightly larger to prevent white edges during blur
-    filter: blur(4px); // Initial blur
-    transition: all 0.5s ease;
+    transform: scale(1.1);
+    filter: blur(4px);
+    transition: all 0.8s ease;
   }
 
   &:hover .header-bg {
@@ -37,10 +119,11 @@ $transition-speed: 0.3s;
     bottom: 0;
     background: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.4),
-      var(--primary-color-transparent)
+      rgba(0, 0, 0, 0.2),
+      rgba(var(--primary-rgb), 0.8)
     );
     backdrop-filter: blur(4px);
+    z-index: 2;
   }
 
   .header-content {
@@ -51,6 +134,7 @@ $transition-speed: 0.3s;
     text-align: center;
     color: white;
     padding: 0 1rem;
+    z-index: 3;
 
     .name-with-avatar {
       display: flex;
@@ -59,20 +143,33 @@ $transition-speed: 0.3s;
       gap: 1.5rem;
 
       .small-avatar {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
         border-radius: 50%;
         overflow: hidden;
         border: 4px solid white;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         transform: translateY(-10px);
         transition: all 0.3s ease;
-        
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: -2px;
+          left: -2px;
+          right: -2px;
+          bottom: -2px;
+          border: 2px solid rgba(var(--primary-rgb), 1);
+          border-radius: 50%;
+          animation: pulse 2s infinite;
+        }
+
         &:hover {
           transform: translateY(-15px) scale(1.05);
           box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
         }
-        
+
         img {
           width: 100%;
           height: 100%;
@@ -82,14 +179,17 @@ $transition-speed: 0.3s;
 
       .name-title {
         text-align: left;
+        animation: slideIn 0.5s ease-out;
       }
     }
 
     h1 {
-      font-size: 3rem;
+      font-size: 3.5rem;
       margin: 0 0 0.5rem;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
       color: white;
+      font-weight: bold;
+      letter-spacing: 1px;
     }
 
     p {
@@ -106,15 +206,17 @@ $transition-speed: 0.3s;
 .profile-content {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 1rem;
-  overflow: hidden;
+  padding: 2rem 1rem;
+  position: relative;
+  z-index: 1;
+  background: var(--bg-light);
 }
 
 // Masonry Grid
 .masonry-grid {
   column-count: 3;
   column-gap: $section-spacing;
-  
+
   .profile-section {
     break-inside: avoid;
     margin-bottom: $section-spacing;
@@ -397,6 +499,29 @@ $transition-speed: 0.3s;
   }
 }
 
+// Floating Icons
+:host::ng-deep .floating-icon {
+  position: absolute;
+  font-size: 2rem;
+  color: rgba(var(--primary-rgb), 0.8);
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+  animation: float 8s infinite ease-in-out;
+  text-shadow: 0 0 10px rgba(var(--primary-rgb), 0.8);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 // Responsive Design
 @media (max-width: 1200px) {
   .masonry-grid {
@@ -418,7 +543,7 @@ $transition-speed: 0.3s;
           width: 80px;
           height: 80px;
           transform: translateY(0);
-          
+
           &:hover {
             transform: scale(1.05);
           }
@@ -455,4 +580,4 @@ $transition-speed: 0.3s;
   .section-content {
     padding: 1rem;
   }
-} 
+}

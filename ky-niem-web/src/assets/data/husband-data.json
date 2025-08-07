@@ -6,6 +6,7 @@
     "loveMessage": "Gửi em - người vợ yêu dấu của anh 💝\n\nNgày đầu tiên gặp em, anh đã biết rằng cuộc đời anh sẽ thay đổi mãi mãi. Em không chỉ là người yêu, mà còn là người bạn đồng hành tuyệt vời nhất của anh. Mỗi ngày bên em là một ngày anh thấy mình may mắn và hạnh phúc hơn.\n\nAnh yêu tất cả những điều về em - từ nụ cười ấm áp mỗi sáng thức dậy, đến cách em chăm sóc cho gia đình nhỏ của chúng ta. Em là động lực để anh cố gắng mỗi ngày, là niềm vui khi anh trở về nhà, và là người anh muốn chia sẻ mọi khoảnh khắc trong đời.\n\nCó thể anh không phải là người hoàn hảo, đôi khi vẫn còn những thiếu sót. Nhưng anh hứa sẽ luôn cố gắng là người chồng tốt nhất có thể, yêu thương và bảo vệ em suốt cuộc đời này. Cảm ơn em đã luôn ở bên anh, thấu hiểu và nâng đỡ anh trong mọi hoàn cảnh.\n\nMong rằng chúng ta sẽ cùng nhau đi thật xa, xây dựng một tổ ấm thật hạnh phúc, và tạo nên thật nhiều kỷ niệm đẹp. Anh yêu em nhiều lắm - người vợ, người bạn đời, và là một nửa hoàn hảo của anh. ❤️\n\nYêu em vô cùng,\nBé Báo của em",
     "avatar": "assets/images/phat/phat_dam-cuoi.png",
     "headerImage": "assets/images/albums/hinh-cuoi-dep/z6839748952402_e08e25c67223cd6b67ca34237e432a4a.jpg",
+    "gender": "male",
     "tags": ["Bé Báo", "Chồng Yêu", "Developer"],
     "stats": [
       {
@@ -102,19 +103,29 @@
       "description": "Khoảnh khắc đời thường"
     },
     {
-      "url": "assets/images/phat/phat-work.png",
-      "caption": "Công việc",
-      "description": "Những giờ làm việc tập trung"
+      "url": "assets/images/phat/phat_dam-cuoi.png",
+      "caption": "Ngày cưới",
+      "description": "Khoảnh khắc hạnh phúc bên người thương"
     },
     {
       "url": "assets/images/phat/phat-travel.png",
       "caption": "Du lịch",
-      "description": "Khám phá những vùng đất mới"
+      "description": "Những chuyến đi khám phá thế giới"
     },
     {
-      "url": "assets/images/phat/phat-hobby.png",
-      "caption": "Sở thích",
-      "description": "Những điều yêu thích"
+      "url": "assets/images/phat/phat_ho-may-vung-tau_10-2023.png",
+      "caption": "Vũng Tàu",
+      "description": "Kỷ niệm tại Hồ Mây - Vũng Tàu"
+    },
+    {
+      "url": "assets/images/phat/phat-quyen-ben-nhau.png",
+      "caption": "Bên nhau",
+      "description": "Những khoảnh khắc hạnh phúc bên nhau"
+    },
+    {
+      "url": "assets/images/phat/phat-nau-an-cho-vo.png",
+      "caption": "Nấu ăn",
+      "description": "Khoảnh khắc vào bếp nấu ăn cho vợ"
     }
   ],
   "funFacts": [

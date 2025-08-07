@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Profile } from '../../models/profile.model';
 
 @Component({
   selector: 'app-profile-header',
@@ -9,19 +10,6 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./profile-header.component.scss']
 })
 export class ProfileHeaderComponent {
-  @Input() name: string = '';
-  @Input() nickname: string = '';
-  @Input() backgroundImage: string = '';
-  @Input() avatarImage: string = '';
-  @Input() basicInfo: any = {};
-
-  // Animation states
-  isVisible = false;
-
-  ngOnInit() {
-    // Trigger animation after component loads
-    setTimeout(() => {
-      this.isVisible = true;
-    }, 100);
-  }
+  @Input() profile!: Profile;
+  @Input() themeClass: string = '';
 } 

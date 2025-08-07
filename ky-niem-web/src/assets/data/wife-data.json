@@ -6,6 +6,7 @@
     "loveMessage": "Gửi anh - người đã cho em biết thế nào là yêu thương đích thực 💕\n\nAnh biết không, mỗi sáng thức dậy bên anh, em lại thầm cảm ơn cuộc đời đã mang anh đến bên em. Anh là người đã dạy em cách yêu thương một cách trọn vẹn, là người luôn ở bên cạnh dù em có nóng tính thế nào. Em yêu tất cả những điều nhỏ nhặt về anh - từ nụ cười ấm áp mỗi sáng, đến cái nắm tay thật chặt mỗi khi em lo lắng.\n\nCó người nói rằng hôn nhân là nơi tình yêu kết thúc, nhưng với em, đó là nơi tình yêu thực sự bắt đầu. Mỗi ngày bên anh là một ngày em học được cách yêu thương sâu sắc hơn, trưởng thành hơn. Em hứa sẽ luôn là người vợ, người bạn đồng hành, và là người yêu của anh - mãi mãi. 💑✨\n\nYêu anh rất nhiều,\nVợ yêu của anh 💝",
     "avatar": "assets/images/quyen/quyen_1.png",
     "headerImage": "assets/images/albums/hinh-cuoi-dep/z6839748735120_c80a38b787a2b8d01524eabdec4ea54f.jpg",
+    "gender": "female",
     "tags": ["Vợ Yêu", "Cá Tính", "Người bạn đời", "Forever"],
     "stats": [
       {
@@ -66,24 +67,34 @@
   ],
   "photos": [
     {
-      "url": "assets/images/albums/hinh-cuoi-dep/z6839748525510_085d4586f5e49f5e9ac19ae074e6a9d7.jpg",
-      "caption": "Nàng dâu xinh đẹp trong ngày cưới",
-      "description": "Khoảnh khắc hạnh phúc"
+      "url": "assets/images/quyen/quyen-portrait.png",
+      "caption": "Chân dung",
+      "description": "Nụ cười rạng rỡ"
     },
     {
-      "url": "assets/images/albums/hinh-cuoi-dep/z6839748547513_1b41d744b95885998cc9eb267ac19b86.jpg",
-      "caption": "Khoảnh khắc rạng rỡ",
+      "url": "assets/images/quyen/quyen_lua-do-chup-hinh-cuoi_1-2022.png",
+      "caption": "Chuẩn bị cưới",
+      "description": "Khoảnh khắc lựa đồ chụp hình cưới"
+    },
+    {
+      "url": "assets/images/quyen/img_1.png",
+      "caption": "Khoảnh khắc đẹp",
+      "description": "Những giây phút hạnh phúc"
+    },
+    {
+      "url": "assets/images/quyen/img_2.png",
+      "caption": "Duyên dáng",
+      "description": "Nét duyên dáng trong từng khoảnh khắc"
+    },
+    {
+      "url": "assets/images/quyen/img_3.png",
+      "caption": "Tươi vui",
       "description": "Nụ cười tỏa nắng"
     },
     {
-      "url": "assets/images/albums/hinh-cuoi-dep/z6839748857055_94d59ff46b0106fd9046389fbe8f46c8.jpg",
-      "caption": "Nụ cười hạnh phúc",
-      "description": "Niềm vui ngày cưới"
-    },
-    {
-      "url": "assets/images/albums/hinh-cuoi-dep/z6839748926606_4667f65f7afb58dd41ea00b6eea3ce3d.jpg",
-      "caption": "Duyên dáng trong váy cưới",
-      "description": "Khoảnh khắc đáng nhớ"
+      "url": "assets/images/quyen/img_4.png",
+      "caption": "Xinh đẹp",
+      "description": "Vẻ đẹp rạng ngời"
     }
   ],
   "funFacts": [
