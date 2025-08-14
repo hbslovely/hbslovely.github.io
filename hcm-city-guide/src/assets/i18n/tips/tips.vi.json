@@ -1,0 +1,86 @@
+{
+  "TITLE": "Hướng Dẫn Du Lịch Thành Phố Hồ Chí Minh",
+  "DESCRIPTION": "Thông tin cần thiết và những lời khuyên hữu ích để chuyến thăm Thành phố Hồ Chí Minh của bạn an toàn và thú vị.",
+  "ESSENTIALS": {
+    "TITLE": "Những Lời Khuyên Cần Thiết",
+    "VISA": {
+      "TITLE": "Yêu Cầu Visa",
+      "CONTENT": "Hầu hết du khách cần visa để vào Việt Nam. Kiểm tra yêu cầu và đăng ký trực tuyến qua cổng e-visa chính thức."
+    },
+    "MONEY": {
+      "TITLE": "Tiền Tệ & Thanh Toán",
+      "CONTENT": "Đồng Việt Nam (VND) là tiền tệ địa phương. ATM có sẵn rộng rãi, và nhiều nơi chấp nhận thẻ, nhưng nên giữ sẵn tiền mặt."
+    },
+    "PHONE": {
+      "TITLE": "Di Động & Internet",
+      "CONTENT": "SIM điện thoại địa phương giá rẻ và có phủ sóng tốt. Wi-Fi miễn phí có sẵn ở hầu hết quán cà phê và nhà hàng."
+    }
+  },
+  "TRANSPORTATION": {
+    "TITLE": "Di Chuyển",
+    "GRAB": {
+      "TITLE": "Dịch Vụ Grab",
+      "CONTENT": "Grab là ứng dụng gọi xe phổ biến cung cấp dịch vụ xe hơi, xe máy và giao đồ ăn. An toàn và giá cố định."
+    },
+    "BUS": {
+      "TITLE": "Xe Buýt Công Cộng",
+      "CONTENT": "Xe buýt là phương tiện di chuyển rẻ nhất. Lấy bản đồ xe buýt và nhớ tên điểm dừng bằng tiếng Việt."
+    },
+    "MOTORBIKE": {
+      "TITLE": "An Toàn Xe Máy",
+      "CONTENT": "Nếu thuê xe máy, luôn đội mũ bảo hiểm và mang theo giấy tờ hợp lệ. Giao thông có thể khó khăn cho người mới."
+    }
+  },
+  "SAFETY": {
+    "TITLE": "Lời Khuyên An Toàn",
+    "VALUABLES": {
+      "TITLE": "Bảo Vệ Tài Sản",
+      "CONTENT": "Giữ tài sản an toàn và chú ý xung quanh, đặc biệt ở nơi đông người."
+    },
+    "TRAFFIC": {
+      "TITLE": "An Toàn Giao Thông",
+      "CONTENT": "Nhìn cả hai bên và đi bộ đều đặn khi qua đường. Xe máy có thể đi trên vỉa hè."
+    },
+    "SCAMS": {
+      "TITLE": "Lừa Đảo Phổ Biến",
+      "CONTENT": "Cẩn thận với người lạ quá thân thiện và luôn thỏa thuận giá trước khi sử dụng dịch vụ."
+    }
+  },
+  "ETIQUETTE": {
+    "TITLE": "Phép Tắc Địa Phương",
+    "TEMPLES": {
+      "TITLE": "Thăm Chùa",
+      "CONTENT": "Cởi giày trước khi vào chùa và ăn mặc kín đáo. Xin phép trước khi chụp ảnh."
+    },
+    "DRESS": {
+      "TITLE": "Quy Tắc Trang Phục",
+      "CONTENT": "Ăn mặc kín đáo, đặc biệt khi thăm các địa điểm tôn giáo. Nên mặc quần áo nhẹ, thoáng mát."
+    },
+    "BARGAINING": {
+      "TITLE": "Mẹo Mặc Cả",
+      "CONTENT": "Mặc cả phổ biến ở chợ. Bắt đầu từ 50% giá ban đầu và thương lượng một cách thân thiện."
+    }
+  },
+  "WEATHER": {
+    "TITLE": "Hướng Dẫn Thời Tiết",
+    "RAINY": {
+      "TITLE": "Mùa Mưa",
+      "CONTENT": "Từ tháng 5 đến tháng 11 có mưa chiều. Mang theo áo mưa nhẹ hoặc ô."
+    },
+    "HEAT": {
+      "TITLE": "Bảo Vệ Khỏi Nắng Nóng",
+      "CONTENT": "Thành phố nóng quanh năm. Uống đủ nước và sử dụng kem chống nắng."
+    },
+    "BEST_TIME": {
+      "TITLE": "Thời Điểm Tốt Nhất Để Thăm",
+      "CONTENT": "Từ tháng 12 đến tháng 4 có thời tiết dễ chịu nhất với ít mưa và độ ẩm thấp hơn."
+    }
+  },
+  "IMPORTANT": "Quan Trọng",
+  "DOWNLOAD": {
+    "TITLE": "Tải Hướng Dẫn Du Lịch",
+    "DESCRIPTION": "Tải hướng dẫn du lịch đầy đủ dưới dạng PDF để xem offline hoặc in ấn.",
+    "PDF": "Tải Hướng Dẫn PDF",
+    "PRINT": "In Hướng Dẫn"
+  }
+}

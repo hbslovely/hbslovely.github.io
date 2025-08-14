@@ -1,0 +1,30 @@
+{
+  "TITLE": "Liên Hệ",
+  "DESCRIPTION": "Bạn có thắc mắc về Thành phố Hồ Chí Minh? Chúng tôi luôn sẵn sàng hỗ trợ! Vui lòng điền vào mẫu dưới đây và chúng tôi sẽ phản hồi sớm nhất có thể.",
+  "FORM": {
+    "NAME": "Họ và tên",
+    "NAME_PLACEHOLDER": "Nhập họ và tên của bạn",
+    "EMAIL": "Email",
+    "EMAIL_PLACEHOLDER": "Nhập địa chỉ email của bạn",
+    "SUBJECT": "Chủ đề",
+    "SUBJECT_PLACEHOLDER": "Bạn muốn tìm hiểu về điều gì?",
+    "MESSAGE": "Nội dung",
+    "MESSAGE_PLACEHOLDER": "Nhập nội dung tin nhắn của bạn...",
+    "SUBMIT": "Gửi Tin Nhắn"
+  },
+  "INFO": {
+    "TITLE": "Thông Tin Liên Hệ",
+    "ADDRESS": {
+      "TITLE": "Địa chỉ",
+      "VALUE": "Quận 1, Thành phố Hồ Chí Minh, Việt Nam"
+    },
+    "EMAIL": {
+      "TITLE": "Email",
+      "VALUE": "info@hcmcityguide.com"
+    },
+    "PHONE": {
+      "TITLE": "Điện thoại",
+      "VALUE": "+84 28 1234 5678"
+    }
+  }
+}

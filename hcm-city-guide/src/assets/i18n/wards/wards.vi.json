@@ -1,0 +1,421 @@
+{
+  "SAI_GON": {
+    "id": "sai-gon-ward",
+    "name": "Sài Gòn",
+    "description": "Phường Sài Gòn là trái tim của Thành phố Hồ Chí Minh, nơi hội tụ hoàn hảo giữa di sản lịch sử và sự phát triển hiện đại. Phường trung tâm này là nơi tọa lạc của nhiều công trình biểu tượng của thành phố, từ kiến trúc thời Pháp thuộc đến các tòa nhà chọc trời đương đại. Khu vực này đóng vai trò là trung tâm hành chính và thương mại chính, đồng thời vẫn giữ được ý nghĩa văn hóa thông qua các di tích lịch sử được bảo tồn và cấu trúc đường phố truyền thống. Vị trí ven sông đã đóng vai trò quan trọng trong sự phát triển của phường từ những ngày đầu là một cảng thương mại.",
+    "area": "3,2 km²",
+    "neighboring_wards": [
+      {
+        "id": "ben-thanh-ward",
+        "name": "Bến Thành"
+      },
+      {
+        "id": "tan-dinh-ward",
+        "name": "Tân Định"
+      },
+      {
+        "id": "da-kao-ward",
+        "name": "Đa Kao"
+      },
+      {
+        "id": "cau-kho-ward",
+        "name": "Cầu Kho"
+      }
+    ],
+    "interesting_facts": [
+      "Tên gọi 'Sài Gòn' có nguồn gốc từ 'Sai Con' hoặc 'Cây Bông Gòn', chỉ những cây gòn từng mọc phổ biến trong khu vực. Tài liệu lịch sử từ thế kỷ 17 đã nhắc đến tên gọi này, được người Khmer đặt cho vùng đất này trước khi người Việt đến định cư.",
+      "Phường có cảng thương mại đầu tiên của thành phố, có từ thế kỷ 18",
+      "Nơi có mật độ công trình kiến trúc Pháp cao nhất thành phố",
+      "Tòa nhà Bitexco được thiết kế theo hình búp sen, quốc hoa của Việt Nam"
+    ],
+    "landmarks": [
+      {
+        "id": "saigon-river",
+        "name": "LANDMARKS.SAIGON_RIVER",
+        "images": ["assets/images/places/saigon-river.jpg"]
+      },
+      {
+        "id": "bitexco-tower",
+        "name": "LANDMARKS.BITEXCO_TOWER",
+        "images": ["assets/images/places/bitexco-tower.jpg"]
+      },
+      {
+        "id": "opera-house",
+        "name": "LANDMARKS.OPERA_HOUSE",
+        "images": ["assets/images/places/opera-house.jpg"]
+      },
+      {
+        "id": "city-hall",
+        "name": "LANDMARKS.CITY_HALL",
+        "images": ["assets/images/places/city-hall.jpg"]
+      }
+    ],
+    "features": [
+      "FEATURES.ADMINISTRATIVE_CENTER",
+      "FEATURES.BUSINESS_DISTRICT",
+      "FEATURES.HISTORIC_SITE",
+      "FEATURES.CULTURAL_HERITAGE"
+    ]
+  },
+  "BEN_THANH": {
+    "id": "ben-thanh-ward",
+    "name": "Bến Thành",
+    "description": "Phường Bến Thành là trung tâm thương mại và du lịch của Thành phố Hồ Chí Minh, với trung tâm là chợ Bến Thành mang tính biểu tượng. Khu vực sôi động này kết hợp hài hòa giữa văn hóa chợ truyền thống và trải nghiệm mua sắm hiện đại. Phường đặc biệt nổi tiếng với ẩm thực đường phố, có nhiều quầy ăn và nhà hàng địa phương phục vụ các món ăn Việt Nam đích thực. Khu vực trở nên sống động về đêm với chợ đêm nhộn nhịp và các địa điểm giải trí, khiến nơi đây trở thành điểm đến không thể bỏ qua đối với cả người dân địa phương và du khách. Vị trí chiến lược của phường khiến nó trở thành trung tâm giao thông quan trọng, kết nối các khu vực khác nhau của thành phố.",
+    "area": "2,5 km²",
+    "neighboring_wards": [
+      {
+        "id": "sai-gon-ward",
+        "name": "Sài Gòn"
+      },
+      {
+        "id": "cau-ong-lanh-ward",
+        "name": "Cầu Ông Lãnh"
+      },
+      {
+        "id": "pham-ngu-lao-ward",
+        "name": "Phạm Ngũ Lão"
+      },
+      {
+        "id": "nguyen-thai-binh-ward",
+        "name": "Nguyễn Thái Bình"
+      }
+    ],
+    "interesting_facts": [
+      "Tên gọi 'Bến Thành' có nguồn gốc từ một bến cảng (bến) được xây dựng gần thành lũy (thành) vào cuối thế kỷ 18. Mặc dù chợ đã được di dời đến vị trí hiện tại vào năm 1914, nhưng tên gọi này vẫn được giữ lại như một minh chứng cho nguồn gốc lịch sử của nó.",
+      "Chợ Bến Thành đã hoạt động liên tục từ năm 1914",
+      "Tháp đồng hồ của chợ đã trở thành một trong những biểu tượng dễ nhận biết nhất của thành phố",
+      "Trong thời Pháp thuộc, khu vực này được gọi là 'Les Halles Centrales'"
+    ],
+    "landmarks": [
+      {
+        "id": "ben-thanh-market",
+        "name": "LANDMARKS.BEN_THANH_MARKET",
+        "images": [
+          "assets/images/places/ben-thanh-market.jpg",
+          "assets/images/places/ben-thanh-market-night.jpg"
+        ]
+      },
+      {
+        "id": "september-23-park",
+        "name": "LANDMARKS.SEPTEMBER_23_PARK",
+        "images": ["assets/images/places/september-23-park.jpg"]
+      }
+    ],
+    "features": [
+      "FEATURES.TOURIST_ATTRACTION",
+      "FEATURES.SHOPPING_DISTRICT",
+      "FEATURES.ENTERTAINMENT_ZONE"
+    ]
+  },
+  "AN_DONG": {
+    "id": "an-dong-ward",
+    "name": "An Đông",
+    "description": "Phường An Đông nổi tiếng với di sản văn hóa phong phú và hoạt động thương mại sôi động. Trung tâm của phường là chợ An Đông lịch sử, một trung tâm buôn bán dệt may và hàng thủ công mỹ nghệ đã hoạt động qua nhiều thế hệ. Khu vực này thể hiện sự kết hợp thú vị giữa kiến trúc Việt Nam truyền thống và các công trình hiện đại, với những con hẻm nhỏ dẫn đến các ngôi chùa ẩn mình và các khu mua sắm hiện đại. Phường đặc biệt nổi tiếng với nghề dệt may, các xưởng thủ công truyền thống và các món ăn đặc sản địa phương. Vị trí chiến lược gần khu vực Chợ Lớn khiến nơi đây trở thành cầu nối quan trọng giữa ảnh hưởng văn hóa Việt Nam và Trung Hoa trong thành phố.",
+    "area": "1,3 km²",
+    "neighboring_wards": [
+      {
+        "id": "nguyen-cu-trinh-ward",
+        "name": "Nguyễn Cư Trinh"
+      },
+      {
+        "id": "co-giang-ward",
+        "name": "Cô Giang"
+      },
+      {
+        "id": "cau-kho-ward",
+        "name": "Cầu Kho"
+      },
+      {
+        "id": "nguyen-thai-binh-ward",
+        "name": "Nguyễn Thái Bình"
+      }
+    ],
+    "interesting_facts": [
+      "Tên gọi 'An Đông' có nghĩa là 'Phía Đông Yên Bình', phản ánh vị trí lịch sử của nó như một khu định cư yên bình ở phía đông Chợ Lớn. Tên gọi này có từ cuối thế kỷ 18 khi các thương nhân Hoa kiều bắt đầu thiết lập cơ sở kinh doanh trong khu vực này, tạo nên sự hòa quyện hài hòa giữa văn hóa Việt Nam và Trung Hoa.",
+      "Chợ An Đông được thành lập bởi các thương nhân Hoa kiều vào cuối thế kỷ 19",
+      "Phường có một số cơ sở kinh doanh dệt may lâu đời nhất Thành phố Hồ Chí Minh",
+      "Khu vực này nổi tiếng với các cơ sở làm bánh trung thu truyền thống trong dịp Tết Trung thu"
+    ],
+    "landmarks": [
+      {
+        "id": "an-dong-market",
+        "name": "LANDMARKS.AN_DONG_MARKET",
+        "images": ["assets/images/places/an-dong-market.jpg"]
+      }
+    ],
+    "features": [
+      "FEATURES.COMMERCIAL_HUB",
+      "FEATURES.TRADITIONAL_MARKET",
+      "FEATURES.CULTURAL_HERITAGE"
+    ]
+  },
+  "XUAN_HOA": {
+    "id": "xuan-hoa-ward",
+    "name": "Xuân Hòa",
+    "description": "Phường Xuân Hòa là sự kết hợp hài hòa giữa di sản lịch sử và sự phát triển đô thị hiện đại. Khu vực này nổi bật với những con đường có hàng cây xanh mát, những biệt thự thời Pháp và không gian cộng đồng sôi động. Nổi tiếng với các cơ sở giáo dục và địa điểm văn hóa, phường duy trì sự cân bằng hoàn hảo giữa không gian yên tĩnh của khu dân cư và tiện nghi đô thị. Khu vực này đã bảo tồn được phần lớn di sản kiến trúc trong khi thích ứng với nhu cầu đô thị đương đại, làm cho nó trở thành một ví dụ điển hình về phát triển đô thị bền vững tại Thành phố Hồ Chí Minh.",
+    "area": "1,8 km²",
+    "neighboring_wards": [
+      {
+        "id": "ban-co-ward",
+        "name": "Bàn Cờ"
+      },
+      {
+        "id": "vo-thi-sau-ward",
+        "name": "Võ Thị Sáu"
+      },
+      {
+        "id": "da-kao-ward",
+        "name": "Đa Kao"
+      }
+    ],
+    "interesting_facts": [
+      "Xuân Hòa là một địa danh có lịch sử lâu đời, xuất hiện từ năm 1880 khi thôn Tân Định được đổi tên thành thôn Xuân Hòa. Đình Xuân Hòa, một di tích kiến trúc nghệ thuật cấp thành phố, là minh chứng cho sự tồn tại và phát triển của vùng đất này qua nhiều thế kỷ.",
+      "Phường có nhiều biệt thự thời Pháp được bảo tồn nguyên vẹn",
+      "Là nơi có một trong những cơ sở giáo dục lâu đời nhất thành phố",
+      "Có kiểu quy hoạch đô thị độc đáo kết hợp giữa mô hình lưới thời Pháp và kiến trúc truyền thống Việt Nam"
+    ],
+    "landmarks": [
+      {
+        "id": "xuan-hoa-temple",
+        "name": "LANDMARKS.XUAN_HOA_TEMPLE",
+        "images": ["assets/images/places/xuan-hoa-temple.jpg"]
+      },
+      {
+        "id": "colonial-villas",
+        "name": "LANDMARKS.COLONIAL_VILLAS",
+        "images": ["assets/images/places/colonial-villas.jpg"]
+      }
+    ],
+    "features": [
+      "FEATURES.CULTURAL_HERITAGE",
+      "FEATURES.EDUCATION_HUB",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.COLONIAL_ARCHITECTURE"
+    ]
+  },
+  "BAN_CO": {
+    "id": "ban-co-ward",
+    "name": "Bàn Cờ",
+    "description": "Phường Bàn Cờ là một khu vực đô thị năng động, nơi kết hợp hài hòa giữa cộng đồng dân cư và không gian thương mại. Được đặt tên theo chợ Bàn Cờ lịch sử, phường đã phát triển thành một khu đô thị hiện đại trong khi vẫn giữ được nét quyến rũ truyền thống. Khu vực này đặc biệt nổi tiếng với sự pha trộn các phong cách kiến trúc, từ nhà phố truyền thống đến căn hộ hiện đại, và đời sống đường phố sôi động thể hiện văn hóa năng động của thành phố.",
+    "area": "2,0 km²",
+    "neighboring_wards": [
+      {
+        "id": "xuan-hoa-ward",
+        "name": "Xuân Hòa"
+      },
+      {
+        "id": "nguyen-cu-trinh-ward",
+        "name": "Nguyễn Cư Trinh"
+      },
+      {
+        "id": "da-kao-ward",
+        "name": "Đa Kao"
+      }
+    ],
+    "interesting_facts": [
+      "Tên gọi 'Bàn Cờ' bắt nguồn từ một bàn cờ cổ nơi các học giả địa phương thường tụ tập để chơi cờ tướng. Truyền thống này có từ cuối thế kỷ 19, khiến nơi đây trở thành một trong những không gian giải trí lâu đời nhất của thành phố.",
+      "Phường từng là nơi cư trú của nhiều quan chức hành chính Pháp vào đầu thế kỷ 20",
+      "Có một trong những khu chợ hoạt động liên tục lâu đời nhất thành phố",
+      "Có nhiều ngôi chùa cổ được bảo tồn từ những năm 1850"
+    ],
+    "landmarks": [
+      {
+        "id": "ban-co-market",
+        "name": "LANDMARKS.BAN_CO_MARKET",
+        "images": ["assets/images/places/ban-co-market.jpg"]
+      },
+      {
+        "id": "scholar-garden",
+        "name": "LANDMARKS.SCHOLAR_GARDEN",
+        "images": ["assets/images/places/scholar-garden.jpg"]
+      }
+    ],
+    "features": [
+      "FEATURES.TRADITIONAL_MARKET",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.CULTURAL_HERITAGE",
+      "FEATURES.COMMUNITY_CENTER"
+    ]
+  },
+  "CAU_ONG_LANH": {
+    "id": "cau-ong-lanh-ward",
+    "name": "Cầu Ông Lãnh",
+    "description": "Phường Cầu Ông Lãnh là một quận lịch sử thể hiện sự đa dạng văn hóa phong phú của Thành phố Hồ Chí Minh. Được đặt tên theo cây cầu Ông Lãnh lịch sử, phường này đại diện cho sự giao thoa giữa thương mại truyền thống và phát triển đô thị hiện đại. Khu vực này nổi tiếng với các tuyến đường thủy lịch sử, chợ truyền thống và di sản kiến trúc trải dài qua nhiều thế kỷ phát triển đô thị. Vị trí chiến lược đã biến nơi đây thành một trung tâm thương mại quan trọng trong khi vẫn giữ được ý nghĩa lịch sử của mình.",
+    "area": "1,6 km²",
+    "neighboring_wards": [
+      {
+        "id": "ben-thanh-ward",
+        "name": "Bến Thành"
+      },
+      {
+        "id": "cau-kho-ward",
+        "name": "Cầu Kho"
+      },
+      {
+        "id": "nguyen-thai-binh-ward",
+        "name": "Nguyễn Thái Bình"
+      }
+    ],
+    "interesting_facts": [
+      "Tên gọi 'Cầu Ông Lãnh' có nguồn gốc từ một cây cầu được xây dựng vào cuối thế kỷ 18. Theo truyền thuyết, cầu được đặt theo tên một vị cao niên (Ông Lãnh) đã giúp bảo trì cầu và hỗ trợ người qua lại.",
+      "Có một số tuyến đường thủy buôn bán lâu đời nhất thành phố",
+      "Có nhiều ngôi chùa cổ có từ thời nhà Nguyễn",
+      "Có kiến trúc độc đáo pha trộn ảnh hưởng Việt Nam, Trung Hoa và Pháp"
+    ],
+    "landmarks": [
+      {
+        "id": "ong-lanh-bridge",
+        "name": "LANDMARKS.ONG_LANH_BRIDGE",
+        "images": ["assets/images/places/ong-lanh-bridge.jpg"]
+      },
+      {
+        "id": "heritage-house",
+        "name": "LANDMARKS.HERITAGE_HOUSE",
+        "images": ["assets/images/places/heritage-house.jpg"]
+      }
+    ],
+    "features": [
+      "FEATURES.HISTORIC_SITE",
+      "FEATURES.WATERFRONT",
+      "FEATURES.TRADITIONAL_MARKET",
+      "FEATURES.CULTURAL_HERITAGE"
+    ]
+  },
+  "NHIEU_LOC": {
+    "id": "nhieu-loc-ward",
+    "name": "Nhiêu Lộc",
+    "description": "Phường Nhiêu Lộc là khu vực đô thị sôi động lấy tên từ kênh Nhiêu Lộc lịch sử, đã đóng vai trò quan trọng trong sự phát triển của thành phố. Phường là một ví dụ thành công về đổi mới đô thị, nơi con kênh từng ô nhiễm đã được chuyển đổi thành một tuyến đường thủy cảnh quan. Ngày nay, khu vực này nổi bật với các công trình ven sông, không gian giải trí và sự kết hợp giữa kiến trúc truyền thống và hiện đại tạo nên một cảnh quan đô thị độc đáo.",
+    "area": "2,2 km²",
+    "neighboring_wards": [
+      {
+        "id": "vo-thi-sau-ward",
+        "name": "Võ Thị Sáu"
+      },
+      {
+        "id": "tan-dinh-ward",
+        "name": "Tân Định"
+      },
+      {
+        "id": "da-kao-ward",
+        "name": "Đa Kao"
+      }
+    ],
+    "interesting_facts": [
+      "Tên gọi 'Nhiêu Lộc' có nguồn gốc từ một ngôi làng cổ tồn tại ở đây vào thế kỷ 18. Từ 'Nhiêu' ám chỉ sự phong phú của các sản phẩm địa phương, trong khi 'Lộc' tượng trưng cho sự thịnh vượng, phản ánh vai trò lịch sử của khu vực như một điểm giao thương phát đạt dọc theo kênh.",
+      "Kênh Nhiêu Lộc từng được gọi là 'Venice của Sài Gòn' trong thời Pháp thuộc",
+      "Phường đã trải qua một trong những dự án phục hồi môi trường thành công nhất của thành phố",
+      "Có những con đường đi bộ ven kênh và khu vực giải trí được ưa chuộng nhất thành phố"
+    ],
+    "landmarks": [
+      {
+        "id": "nhieu-loc-canal",
+        "name": "LANDMARKS.NHIEU_LOC_CANAL",
+        "images": [
+          "assets/images/places/nhieu-loc-canal.jpg",
+          "assets/images/places/nhieu-loc-canal-night.jpg"
+        ]
+      },
+      {
+        "id": "waterfront-park",
+        "name": "LANDMARKS.WATERFRONT_PARK",
+        "images": ["assets/images/places/waterfront-park.jpg"]
+      }
+    ],
+    "features": [
+      "FEATURES.WATERFRONT",
+      "FEATURES.PARK_AND_RECREATION",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.URBAN_RENEWAL"
+    ]
+  },
+
+  "DA_KAO": {
+    "id": "da-kao-ward",
+    "name": "Đa Kao",
+    "description": "Phường Đa Kao là một trong những khu vực có ý nghĩa lịch sử quan trọng nhất của Thành phố Hồ Chí Minh, nổi tiếng với việc bảo tồn xuất sắc kiến trúc Pháp và di sản tôn giáo. Phường có những con đường có hàng cây xanh mát, biệt thự cổ và các địa điểm tôn giáo quan trọng phản ánh ảnh hưởng văn hóa đa dạng của thành phố. Vị trí chiến lược và ý nghĩa văn hóa đã biến nơi đây thành một ví dụ điển hình về việc bảo tồn lịch sử có thể tồn tại song song với phát triển đô thị hiện đại.",
+    "area": "1,9 km²",
+    "neighboring_wards": [
+      {
+        "id": "ben-nghe-ward",
+        "name": "Bến Nghé"
+      },
+      {
+        "id": "tan-dinh-ward",
+        "name": "Tân Định"
+      },
+      {
+        "id": "nguyen-thai-binh-ward",
+        "name": "Nguyễn Thái Bình"
+      }
+    ],
+    "interesting_facts": [
+      "Tên gọi 'Đa Kao' có nguồn gốc từ từ ngữ Khmer 'Dak Kau', có nghĩa là 'cầu bắc qua suối', chỉ một cây cầu gỗ cổ từng bắc qua một con suối trong khu vực này thời tiền thuộc địa.",
+      "Là nơi có bệnh viện hiện đại đầu tiên của thành phố, được thành lập vào cuối thế kỷ 19",
+      "Có mật độ biệt thự Pháp được bảo tồn cao nhất thành phố",
+      "Có nhiều công trình tôn giáo có ý nghĩa lịch sử đại diện cho các tín ngưỡng khác nhau"
+    ],
+    "landmarks": [
+      {
+        "id": "pink-church",
+        "name": "LANDMARKS.PINK_CHURCH",
+        "images": ["assets/images/places/pink-church.jpg"]
+      },
+      {
+        "id": "jade-emperor-pagoda",
+        "name": "LANDMARKS.JADE_EMPEROR_PAGODA",
+        "images": ["assets/images/places/jade-emperor-pagoda.jpg"]
+      }
+    ],
+    "features": [
+      "FEATURES.HISTORIC_SITE",
+      "FEATURES.RELIGIOUS_SITE",
+      "FEATURES.COLONIAL_ARCHITECTURE",
+      "FEATURES.CULTURAL_HERITAGE"
+    ]
+  },
+
+  "TAN_DINH": {
+    "id": "tan-dinh-ward",
+    "name": "Tân Định",
+    "description": "Phường Tân Định nổi tiếng với nhà thờ màu hồng mang tính biểu tượng và chợ lịch sử, đại diện cho sự kết hợp hoàn hảo giữa di sản tôn giáo và sức sống thương mại. Khu vực này vẫn giữ được đặc trưng là trung tâm thương mại truyền thống trong khi đón nhận sự phát triển hiện đại. Nổi tiếng với nghề buôn bán vải và ẩm thực địa phương, phường mang đến cho du khách và cư dân trải nghiệm độc đáo về lối sống đích thực và sự đa dạng văn hóa của Sài Gòn.",
+    "area": "1,7 km²",
+    "neighboring_wards": [
+      {
+        "id": "da-kao-ward",
+        "name": "Đa Kao"
+      },
+      {
+        "id": "ben-nghe-ward",
+        "name": "Bến Nghé"
+      },
+      {
+        "id": "nguyen-thai-binh-ward",
+        "name": "Nguyễn Thái Bình"
+      }
+    ],
+    "interesting_facts": [
+      "Tên gọi 'Tân Định' có nghĩa là 'Khu Định Cư Mới', phản ánh lịch sử của nó như một trong những khu vực mở rộng có quy hoạch đầu tiên của Sài Gòn vào cuối thế kỷ 19. Khu vực này được phát triển như một khu phố mẫu kết hợp các chức năng dân cư, thương mại và tôn giáo.",
+      "Nhà thờ Tân Định, với màu hồng ấn tượng, được xây dựng năm 1876 và là nhà thờ lớn thứ hai ở Thành phố Hồ Chí Minh",
+      "Chợ của phường là trung tâm buôn bán vải vóc chính từ đầu thế kỷ 20",
+      "Có một số doanh nghiệp gia đình lâu đời nhất thành phố, một số đã hoạt động hơn 100 năm"
+    ],
+    "landmarks": [
+      {
+        "id": "tan-dinh-church",
+        "name": "LANDMARKS.TAN_DINH_CHURCH",
+        "images": ["assets/images/places/tan-dinh-church.jpg"]
+      },
+      {
+        "id": "tan-dinh-market",
+        "name": "LANDMARKS.TAN_DINH_MARKET",
+        "images": ["assets/images/places/tan-dinh-market.jpg"]
+      }
+    ],
+    "features": [
+      "FEATURES.RELIGIOUS_SITE",
+      "FEATURES.TRADITIONAL_MARKET",
+      "FEATURES.CULTURAL_HERITAGE",
+      "FEATURES.COLONIAL_ARCHITECTURE"
+    ]
+  }
+} 

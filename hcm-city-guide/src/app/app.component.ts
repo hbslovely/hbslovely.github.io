@@ -30,7 +30,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations: [
-    trigger('fadeAnimation', [
+    trigger('routeAnimations', [
       transition('* <=> *', [
         style({ opacity: 0, transform: 'translateY(20px)' }),
         animate('300ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
@@ -77,7 +77,11 @@ export class AppComponent implements OnInit {
     console.log('Searching for:', searchTerm);
   }
 
-  getRouteState(outlet: RouterOutlet) {
-    return outlet?.activatedRouteData?.['animation'] || outlet?.activatedRoute?.component?.name || 'none';
+  prepareRoute(outlet: RouterOutlet) {
+    if (!outlet || !outlet.isActivated) {
+      return;
+    }
+
+    return outlet.activatedRouteData?.['animation'] || outlet?.activatedRoute?.snapshot?.url;
   }
 }

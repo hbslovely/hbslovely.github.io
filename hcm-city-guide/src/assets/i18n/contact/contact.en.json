@@ -1,0 +1,30 @@
+{
+  "TITLE": "Contact Us",
+  "DESCRIPTION": "Have questions about Ho Chi Minh City? We're here to help! Fill out the form below and we'll get back to you as soon as possible.",
+  "FORM": {
+    "NAME": "Name",
+    "NAME_PLACEHOLDER": "Enter your name",
+    "EMAIL": "Email",
+    "EMAIL_PLACEHOLDER": "Enter your email address",
+    "SUBJECT": "Subject",
+    "SUBJECT_PLACEHOLDER": "What would you like to know?",
+    "MESSAGE": "Message",
+    "MESSAGE_PLACEHOLDER": "Type your message here...",
+    "SUBMIT": "Send Message"
+  },
+  "INFO": {
+    "TITLE": "Get in Touch",
+    "ADDRESS": {
+      "TITLE": "Address",
+      "VALUE": "District 1, Ho Chi Minh City, Vietnam"
+    },
+    "EMAIL": {
+      "TITLE": "Email",
+      "VALUE": "info@hcmcityguide.com"
+    },
+    "PHONE": {
+      "TITLE": "Phone",
+      "VALUE": "+84 28 1234 5678"
+    }
+  }
+}

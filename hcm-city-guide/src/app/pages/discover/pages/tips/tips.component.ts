@@ -5,6 +5,14 @@ import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { AccordionModule } from 'primeng/accordion';
 
+interface TipAction {
+  label: string;
+  icon: string;
+  class?: string;
+  type: 'link' | 'download' | 'share';
+  data?: any;
+}
+
 interface TravelTip {
   categoryKey: string;
   icon: string;
@@ -12,6 +20,8 @@ interface TravelTip {
     titleKey: string;
     contentKey: string;
     important?: boolean;
+    icon?: string;
+    actions?: TipAction[];
   }[];
 }
 
@@ -37,16 +47,27 @@ export class TipsComponent {
       tips: [
         {
           titleKey: 'TIPS.TRANSPORTATION.GRAB.TITLE',
-          contentKey: 'TIPS.TRANSPORTATION.GRAB.CONTENT'
+          contentKey: 'TIPS.TRANSPORTATION.GRAB.CONTENT',
+          icon: 'fa-solid fa-car',
+          actions: [
+            {
+              label: 'TIPS.ACTIONS.DOWNLOAD_APP',
+              icon: 'pi pi-download',
+              type: 'link',
+              data: 'https://grab.com/vn/download/'
+            }
+          ]
         },
         {
           titleKey: 'TIPS.TRANSPORTATION.BUS.TITLE',
-          contentKey: 'TIPS.TRANSPORTATION.BUS.CONTENT'
+          contentKey: 'TIPS.TRANSPORTATION.BUS.CONTENT',
+          icon: 'fa-solid fa-bus'
         },
         {
           titleKey: 'TIPS.TRANSPORTATION.MOTORBIKE.TITLE',
           contentKey: 'TIPS.TRANSPORTATION.MOTORBIKE.CONTENT',
-          important: true
+          important: true,
+          icon: 'fa-solid fa-motorcycle'
         }
       ]
     },
@@ -57,15 +78,18 @@ export class TipsComponent {
         {
           titleKey: 'TIPS.SAFETY.VALUABLES.TITLE',
           contentKey: 'TIPS.SAFETY.VALUABLES.CONTENT',
-          important: true
+          important: true,
+          icon: 'fa-solid fa-shield-halved'
         },
         {
           titleKey: 'TIPS.SAFETY.TRAFFIC.TITLE',
-          contentKey: 'TIPS.SAFETY.TRAFFIC.CONTENT'
+          contentKey: 'TIPS.SAFETY.TRAFFIC.CONTENT',
+          icon: 'fa-solid fa-traffic-light'
         },
         {
           titleKey: 'TIPS.SAFETY.SCAMS.TITLE',
-          contentKey: 'TIPS.SAFETY.SCAMS.CONTENT'
+          contentKey: 'TIPS.SAFETY.SCAMS.CONTENT',
+          icon: 'fa-solid fa-triangle-exclamation'
         }
       ]
     },
@@ -75,15 +99,18 @@ export class TipsComponent {
       tips: [
         {
           titleKey: 'TIPS.ETIQUETTE.TEMPLES.TITLE',
-          contentKey: 'TIPS.ETIQUETTE.TEMPLES.CONTENT'
+          contentKey: 'TIPS.ETIQUETTE.TEMPLES.CONTENT',
+          icon: 'fa-solid fa-gopuram'
         },
         {
           titleKey: 'TIPS.ETIQUETTE.DRESS.TITLE',
-          contentKey: 'TIPS.ETIQUETTE.DRESS.CONTENT'
+          contentKey: 'TIPS.ETIQUETTE.DRESS.CONTENT',
+          icon: 'fa-solid fa-shirt'
         },
         {
           titleKey: 'TIPS.ETIQUETTE.BARGAINING.TITLE',
-          contentKey: 'TIPS.ETIQUETTE.BARGAINING.CONTENT'
+          contentKey: 'TIPS.ETIQUETTE.BARGAINING.CONTENT',
+          icon: 'fa-solid fa-hand-holding-dollar'
         }
       ]
     },
@@ -93,16 +120,19 @@ export class TipsComponent {
       tips: [
         {
           titleKey: 'TIPS.WEATHER.RAINY.TITLE',
-          contentKey: 'TIPS.WEATHER.RAINY.CONTENT'
+          contentKey: 'TIPS.WEATHER.RAINY.CONTENT',
+          icon: 'fa-solid fa-cloud-rain'
         },
         {
           titleKey: 'TIPS.WEATHER.HEAT.TITLE',
           contentKey: 'TIPS.WEATHER.HEAT.CONTENT',
-          important: true
+          important: true,
+          icon: 'fa-solid fa-temperature-high'
         },
         {
           titleKey: 'TIPS.WEATHER.BEST_TIME.TITLE',
-          contentKey: 'TIPS.WEATHER.BEST_TIME.CONTENT'
+          contentKey: 'TIPS.WEATHER.BEST_TIME.CONTENT',
+          icon: 'fa-solid fa-calendar-check'
         }
       ]
     }
@@ -143,4 +173,20 @@ export class TipsComponent {
       icon: 'fa-solid fa-fire-extinguisher'
     }
   ];
+
+  onTipAction(action: TipAction) {
+    switch (action.type) {
+      case 'link':
+        if (action.data) {
+          window.open(action.data, '_blank');
+        }
+        break;
+      case 'download':
+        // Handle download action
+        break;
+      case 'share':
+        // Handle share action
+        break;
+    }
+  }
 } 

@@ -4,7 +4,7 @@
       <div class="header-left">
         <img src="assets/images/logo.png" height="40" class="logo" alt="HCM City Guide Logo"/>
       </div>
-      
+
       <nav class="header-nav">
         <ul class="nav-list">
           <li>
@@ -24,7 +24,7 @@
             </ul>
           </li>
           <li>
-            <a routerLink="/discover/tips" routerLinkActive="active">
+            <a routerLink="/travel-tips" routerLinkActive="active">
               {{ 'MENU.TRAVEL_TIPS' | translate }}
             </a>
           </li>
@@ -51,7 +51,7 @@
   </header>
 
   <main>
-    <div [@fadeAnimation]="getRouteState(outlet)">
+    <div [@routeAnimations]="prepareRoute(outlet)">
       <router-outlet #outlet="outlet"></router-outlet>
     </div>
   </main>

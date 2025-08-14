@@ -1,0 +1,86 @@
+{
+  "TITLE": "Travel Tips for Ho Chi Minh City",
+  "DESCRIPTION": "Essential information and helpful tips to make your visit to Ho Chi Minh City safe and enjoyable.",
+  "ESSENTIALS": {
+    "TITLE": "Essential Travel Tips",
+    "VISA": {
+      "TITLE": "Visa Requirements",
+      "CONTENT": "Most visitors need a visa to enter Vietnam. Check requirements and apply online through the official e-visa portal."
+    },
+    "MONEY": {
+      "TITLE": "Currency & Payments",
+      "CONTENT": "Vietnamese Dong (VND) is the local currency. ATMs are widely available, and many places accept cards, but keep some cash handy."
+    },
+    "PHONE": {
+      "TITLE": "Mobile & Internet",
+      "CONTENT": "Local SIM cards are affordable and provide good coverage. Free Wi-Fi is available in most cafes and restaurants."
+    }
+  },
+  "TRANSPORTATION": {
+    "TITLE": "Getting Around",
+    "GRAB": {
+      "TITLE": "Grab Services",
+      "CONTENT": "Grab is a popular ride-hailing app offering car, bike, and food delivery services. It's safe and prices are fixed."
+    },
+    "BUS": {
+      "TITLE": "Public Buses",
+      "CONTENT": "Buses are the cheapest way to travel. Get a bus map and remember your stop's name in Vietnamese."
+    },
+    "MOTORBIKE": {
+      "TITLE": "Motorbike Safety",
+      "CONTENT": "If renting a motorbike, always wear a helmet and carry proper documentation. Traffic can be challenging for newcomers."
+    }
+  },
+  "SAFETY": {
+    "TITLE": "Safety Tips",
+    "VALUABLES": {
+      "TITLE": "Protecting Valuables",
+      "CONTENT": "Keep valuables secure and be aware of your surroundings, especially in crowded areas."
+    },
+    "TRAFFIC": {
+      "TITLE": "Traffic Safety",
+      "CONTENT": "Look both ways and walk steadily when crossing streets. Motorbikes may drive on sidewalks."
+    },
+    "SCAMS": {
+      "TITLE": "Common Scams",
+      "CONTENT": "Be cautious of unusually friendly strangers and always agree on prices before services."
+    }
+  },
+  "ETIQUETTE": {
+    "TITLE": "Local Etiquette",
+    "TEMPLES": {
+      "TITLE": "Temple Visits",
+      "CONTENT": "Remove shoes before entering temples and dress modestly. Ask permission before taking photos."
+    },
+    "DRESS": {
+      "TITLE": "Dress Code",
+      "CONTENT": "Dress modestly, especially when visiting religious sites. Light, breathable clothing is recommended."
+    },
+    "BARGAINING": {
+      "TITLE": "Bargaining Tips",
+      "CONTENT": "Bargaining is common in markets. Start at 50% of the initial price and negotiate friendly."
+    }
+  },
+  "WEATHER": {
+    "TITLE": "Weather Guide",
+    "RAINY": {
+      "TITLE": "Rainy Season",
+      "CONTENT": "May to November brings afternoon showers. Carry a light raincoat or umbrella."
+    },
+    "HEAT": {
+      "TITLE": "Heat Protection",
+      "CONTENT": "The city is hot year-round. Stay hydrated and use sun protection."
+    },
+    "BEST_TIME": {
+      "TITLE": "Best Time to Visit",
+      "CONTENT": "December to April offers the most pleasant weather with less rain and lower humidity."
+    }
+  },
+  "IMPORTANT": "Important",
+  "DOWNLOAD": {
+    "TITLE": "Download Travel Guide",
+    "DESCRIPTION": "Get our comprehensive travel guide in PDF format for offline access or printing.",
+    "PDF": "Download PDF Guide",
+    "PRINT": "Print Guide"
+  }
+}

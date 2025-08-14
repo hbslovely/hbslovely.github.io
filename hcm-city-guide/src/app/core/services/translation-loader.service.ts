@@ -13,7 +13,9 @@ export class TranslationLoaderService {
     'ATTRACTIONS',
     'PRIVACY',
     'TERMS',
-    'FOOTER'
+    'FOOTER',
+    'CONTACT',
+    'TIPS'
   ];
 
   constructor(private http: HttpClient) {}

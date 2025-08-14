@@ -14,8 +14,16 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/legal/privacy/privacy.component').then(m => m.PrivacyComponent)
   },
   {
+    path: 'travel-tips',
+    loadComponent: () => import('./pages/discover/pages/tips/tips.component').then(m => m.TipsComponent)
+  },
+  {
     path: 'terms',
     loadComponent: () => import('./pages/legal/terms/terms.component').then(m => m.TermsComponent)
+  },
+  {
+    path: 'contact',
+    loadComponent: () => import('./pages/contact/contact.component').then(m => m.ContactComponent)
   },
   {
     path: '',

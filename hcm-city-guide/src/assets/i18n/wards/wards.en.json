@@ -1,0 +1,855 @@
+{
+  "SAI_GON": {
+    "id": "sai-gon-ward",
+    "name": "Sai Gon",
+    "description": "The heart of Ho Chi Minh City, Sai Gon ward represents the perfect blend of historical heritage and modern development. This central ward is home to many of the city's most iconic landmarks, from colonial-era architecture to contemporary skyscrapers. The area serves as the main administrative and business hub, while maintaining its cultural significance through preserved historical sites and traditional street layouts. The riverside location has been crucial to the ward's development since its early days as a trading port.",
+    "area": "3.2 km²",
+    "neighboring_wards": [
+      {
+        "id": "ben-thanh-ward",
+        "name": "Ben Thanh"
+      },
+      {
+        "id": "tan-dinh-ward",
+        "name": "Tan Dinh"
+      },
+      {
+        "id": "da-kao-ward",
+        "name": "Da Kao"
+      },
+      {
+        "id": "cau-kho-ward",
+        "name": "Cau Kho"
+      }
+    ],
+    "interesting_facts": [
+      "The name 'Sai Gon' originates from 'Sai Con' or 'Cotton Tree', referring to the Kapok trees that once dominated the area. Historical documents from the 17th century mention this name, which was given by the Khmer people who lived here before the arrival of Vietnamese settlers.",
+      "The ward contains the city's first commercial port, dating back to the 18th century",
+      "Home to the highest concentration of French colonial buildings in the city",
+      "The iconic Bitexco Tower was designed to resemble a lotus bud, Vietnam's national flower"
+    ],
+    "landmarks": [
+      {
+        "id": "saigon-river",
+        "name": "LANDMARKS.SAIGON_RIVER",
+        "images": ["assets/images/places/saigon-river.jpg"]
+      },
+      {
+        "id": "bitexco-tower",
+        "name": "LANDMARKS.BITEXCO_TOWER",
+        "images": ["assets/images/places/bitexco-tower.jpg"]
+      },
+      {
+        "id": "opera-house",
+        "name": "LANDMARKS.OPERA_HOUSE",
+        "images": ["assets/images/places/opera-house.jpg"]
+      },
+      {
+        "id": "city-hall",
+        "name": "LANDMARKS.CITY_HALL",
+        "images": ["assets/images/places/city-hall.jpg"]
+      }
+    ],
+    "features": [
+      "FEATURES.ADMINISTRATIVE_CENTER",
+      "FEATURES.BUSINESS_DISTRICT",
+      "FEATURES.HISTORIC_SITE",
+      "FEATURES.CULTURAL_HERITAGE"
+    ]
+  },
+  "BEN_THANH": {
+    "id": "ben-thanh-ward",
+    "name": "Ben Thanh",
+    "description": "Ben Thanh ward is the commercial and tourist heart of Ho Chi Minh City, centered around the iconic Ben Thanh Market. This vibrant area seamlessly combines traditional market culture with modern shopping experiences. The ward is particularly known for its street food scene, with numerous food stalls and local restaurants offering authentic Vietnamese cuisine. The area comes alive at night with bustling night markets and entertainment venues, making it a must-visit destination for both locals and tourists. The ward's strategic location makes it a major transportation hub, connecting various parts of the city.",
+    "area": "2.5 km²",
+    "neighboring_wards": [
+      {
+        "id": "sai-gon-ward",
+        "name": "Sai Gon"
+      },
+      {
+        "id": "cau-ong-lanh-ward",
+        "name": "Cau Ong Lanh"
+      },
+      {
+        "id": "pham-ngu-lao-ward",
+        "name": "Pham Ngu Lao"
+      },
+      {
+        "id": "nguyen-thai-binh-ward",
+        "name": "Nguyen Thai Binh"
+      }
+    ],
+    "interesting_facts": [
+      "The name 'Ben Thanh' means 'Citadel Wharf', derived from the original market built near a fortress (thanh) by the river port (ben) in the late 18th century. The market was relocated to its current location in 1914, but the name remained as a testament to its historical origins.",
+      "Ben Thanh Market has operated continuously since 1914",
+      "The market's clock tower has become one of the city's most recognizable symbols",
+      "During the colonial period, the area was known as 'Les Halles Centrales'"
+    ],
+    "landmarks": [
+      {
+        "id": "ben-thanh-market",
+        "name": "LANDMARKS.BEN_THANH_MARKET",
+        "images": [
+          "assets/images/places/ben-thanh-market.jpg",
+          "assets/images/places/ben-thanh-market-night.jpg"
+        ]
+      },
+      {
+        "id": "september-23-park",
+        "name": "LANDMARKS.SEPTEMBER_23_PARK",
+        "images": ["assets/images/places/september-23-park.jpg"]
+      }
+    ],
+    "features": [
+      "FEATURES.TOURIST_ATTRACTION",
+      "FEATURES.SHOPPING_DISTRICT",
+      "FEATURES.ENTERTAINMENT_ZONE"
+    ]
+  },
+  "XUAN_HOA": {
+    "id": "xuan-hoa-ward",
+    "name": "Xuan Hoa",
+    "description": "Xuan Hoa ward represents a harmonious blend of historical heritage and modern urban development. The area is characterized by its tree-lined streets, colonial-era villas, and vibrant community spaces. Known for its educational institutions and cultural venues, the ward maintains a perfect balance between residential tranquility and urban convenience. The area has preserved much of its architectural heritage while adapting to contemporary urban needs, making it a prime example of sustainable urban development in Ho Chi Minh City.",
+    "area": "1.8 km²",
+    "neighboring_wards": [
+      {
+        "id": "ban-co-ward",
+        "name": "Ban Co"
+      },
+      {
+        "id": "vo-thi-sau-ward",
+        "name": "Vo Thi Sau"
+      },
+      {
+        "id": "da-kao-ward",
+        "name": "Da Kao"
+      }
+    ],
+    "interesting_facts": [
+      "Xuan Hoa is a historic place name dating back to 1880 when Tan Dinh village was renamed to Xuan Hoa village. The Xuan Hoa Temple, a city-level architectural and artistic relic, stands as testament to this area's existence and development through centuries.",
+      "The ward contains several French colonial villas that have been perfectly preserved",
+      "Home to one of the city's oldest educational institutions",
+      "Features a unique urban planning style that combines French colonial grid patterns with traditional Vietnamese architecture"
+    ],
+    "landmarks": [
+      {
+        "id": "xuan-hoa-temple",
+        "name": "LANDMARKS.XUAN_HOA_TEMPLE",
+        "images": ["assets/images/places/xuan-hoa-temple.jpg"]
+      },
+      {
+        "id": "colonial-villas",
+        "name": "LANDMARKS.COLONIAL_VILLAS",
+        "images": ["assets/images/places/colonial-villas.jpg"]
+      }
+    ],
+    "features": [
+      "FEATURES.CULTURAL_HERITAGE",
+      "FEATURES.EDUCATION_HUB",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.COLONIAL_ARCHITECTURE"
+    ]
+  },
+  "XOM_CHIEU": {
+    "id": "W008",
+    "type": "ward",
+    "name": "Xom Chieu",
+    "previous": ["Ward 13", "Ward 16", "Ward 18", "Part of Ward 15"],
+    "description": "Consolidated ward in former District 4",
+    "area": "1.5 km²",
+    "landmarks": ["Xom Chieu Market", "Local parks", "Community centers"],
+    "features": ["Traditional markets", "Residential areas", "Local businesses"]
+  },
+  "KHANH_HOI": {
+    "id": "W009",
+    "type": "ward",
+    "name": "Khanh Hoi",
+    "previous": ["Ward 8", "Ward 9", "Parts of Ward 2, 4, and 15"],
+    "description": "Merged ward in southern area",
+    "area": "1.7 km²",
+    "landmarks": ["Khanh Hoi Bridge", "Local markets", "Parks"],
+    "features": ["Riverside location", "Mixed development", "Transport hub"]
+  },
+  "VINH_HOI": {
+    "id": "W010",
+    "type": "ward",
+    "name": "Vinh Hoi",
+    "previous": ["Ward 1", "Ward 3", "Remaining parts of Ward 2 and 4"],
+    "description": "New consolidated riverside ward",
+    "area": "1.6 km²",
+    "landmarks": ["Vinh Hoi Port", "Local markets", "Community spaces"],
+    "features": ["Port facilities", "Residential areas", "Local commerce"]
+  },
+  "CHO_QUAN": {
+    "id": "W011",
+    "type": "ward",
+    "name": "Cho Quan",
+    "previous": ["Ward 1", "Ward 2", "Ward 4"],
+    "description": "Historic market district ward",
+    "area": "1.4 km²",
+    "landmarks": ["Cho Quan Historic Area", "Traditional markets", "Temples"],
+    "features": ["Historic sites", "Commercial areas", "Cultural venues"]
+  },
+  "AN_DONG": {
+    "id": "an-dong-ward",
+    "name": "An Dong",
+    "description": "An Dong ward is renowned for its rich cultural heritage and bustling commercial activities. The ward is centered around the historic An Dong Market, a major textile and handicraft trading center that has been operating for generations. The area represents a fascinating mix of traditional Vietnamese architecture and modern developments, with narrow alleyways leading to hidden temples and modern shopping complexes. The ward is particularly famous for its textile trade, traditional craft workshops, and local food specialties. Its strategic location near the Cho Lon area makes it an important bridge between Vietnamese and Chinese cultural influences in the city.",
+    "area": "1.3 km²",
+    "neighboring_wards": [
+      {
+        "id": "nguyen-cu-trinh-ward",
+        "name": "Nguyen Cu Trinh"
+      },
+      {
+        "id": "co-giang-ward",
+        "name": "Co Giang"
+      },
+      {
+        "id": "cau-kho-ward",
+        "name": "Cau Kho"
+      },
+      {
+        "id": "nguyen-thai-binh-ward",
+        "name": "Nguyen Thai Binh"
+      }
+    ],
+    "interesting_facts": [
+      "The name 'An Dong' means 'Peaceful East', reflecting its historical position as a peaceful settlement east of Cho Lon. The name dates back to the late 18th century when Chinese merchants first established their businesses in this area, creating a harmonious blend of Vietnamese and Chinese cultures.",
+      "An Dong Market was originally established by Chinese merchants in the late 19th century",
+      "The ward contains some of the oldest textile businesses in Ho Chi Minh City",
+      "The area is famous for its traditional moon cake makers during Mid-Autumn Festival"
+    ],
+    "landmarks": [
+      {
+        "id": "an-dong-market",
+        "name": "LANDMARKS.AN_DONG_MARKET",
+        "images": ["assets/images/places/an-dong-market.jpg"]
+      }
+    ],
+    "features": [
+      "FEATURES.COMMERCIAL_HUB",
+      "FEATURES.TRADITIONAL_MARKET",
+      "FEATURES.CULTURAL_HERITAGE"
+    ]
+  },
+  "BAN_CO": {
+    "id": "ban-co-ward",
+    "name": "Ban Co",
+    "description": "Ban Co ward is a dynamic urban area that seamlessly integrates residential communities with commercial spaces. Named after the historic Ban Co Market, the ward has evolved into a modern urban district while preserving its traditional charm. The area is particularly noted for its mix of architectural styles, from traditional shophouses to modern apartments, and its vibrant street life that exemplifies the city's dynamic culture.",
+    "area": "2.0 km²",
+    "neighboring_wards": [
+      {
+        "id": "xuan-hoa-ward",
+        "name": "Xuan Hoa"
+      },
+      {
+        "id": "nguyen-cu-trinh-ward",
+        "name": "Nguyen Cu Trinh"
+      },
+      {
+        "id": "da-kao-ward",
+        "name": "Da Kao"
+      }
+    ],
+    "interesting_facts": [
+      "The name 'Ban Co' originates from an ancient chess board (ban co) where local scholars would gather to play Chinese chess. This tradition dates back to the late 19th century, making it one of the city's oldest recreational spaces.",
+      "The ward was home to many French colonial administrators in the early 20th century",
+      "Contains one of the city's oldest continuous markets",
+      "Features several historic temples that have been preserved since the 1850s"
+    ],
+    "landmarks": [
+      {
+        "id": "ban-co-market",
+        "name": "LANDMARKS.BAN_CO_MARKET",
+        "images": ["assets/images/places/ban-co-market.jpg"]
+      },
+      {
+        "id": "scholar-garden",
+        "name": "LANDMARKS.SCHOLAR_GARDEN",
+        "images": ["assets/images/places/scholar-garden.jpg"]
+      }
+    ],
+    "features": [
+      "FEATURES.TRADITIONAL_MARKET",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.CULTURAL_HERITAGE",
+      "FEATURES.COMMUNITY_CENTER"
+    ]
+  },
+  "CAU_ONG_LANH": {
+    "id": "cau-ong-lanh-ward",
+    "name": "Cau Ong Lanh",
+    "description": "Cau Ong Lanh ward is a historic district that showcases the rich cultural tapestry of Ho Chi Minh City. Named after the historic Ong Lanh Bridge, this ward represents the intersection of traditional commerce and modern urban development. The area is known for its historic waterways, traditional markets, and architectural heritage that spans several centuries of urban development. Its strategic location has made it a crucial commercial hub while maintaining its historical significance.",
+    "area": "1.6 km²",
+    "neighboring_wards": [
+      {
+        "id": "ben-thanh-ward",
+        "name": "Ben Thanh"
+      },
+      {
+        "id": "cau-kho-ward",
+        "name": "Cau Kho"
+      },
+      {
+        "id": "nguyen-thai-binh-ward",
+        "name": "Nguyen Thai Binh"
+      }
+    ],
+    "interesting_facts": [
+      "The name 'Cau Ong Lanh' comes from a historic bridge built in the late 18th century. Legend has it that the bridge was named after a local elder (Ong Lanh) who helped maintain the bridge and assist travelers crossing it.",
+      "Contains some of the oldest waterway trading routes in the city",
+      "Home to several historic temples dating back to the Nguyen Dynasty",
+      "Features unique architecture that blends Vietnamese, Chinese, and French influences"
+    ],
+    "landmarks": [
+      {
+        "id": "ong-lanh-bridge",
+        "name": "LANDMARKS.ONG_LANH_BRIDGE",
+        "images": ["assets/images/places/ong-lanh-bridge.jpg"]
+      },
+      {
+        "id": "heritage-house",
+        "name": "LANDMARKS.HERITAGE_HOUSE",
+        "images": ["assets/images/places/heritage-house.jpg"]
+      }
+    ],
+    "features": [
+      "FEATURES.HISTORIC_SITE",
+      "FEATURES.WATERFRONT",
+      "FEATURES.TRADITIONAL_MARKET",
+      "FEATURES.CULTURAL_HERITAGE"
+    ]
+  },
+  "NHIEU_LOC": {
+    "id": "nhieu-loc-ward",
+    "name": "Nhieu Loc",
+    "description": "Nhieu Loc ward is a vibrant urban area that takes its name from the historic Nhieu Loc Canal, which has played a crucial role in the city's development. The ward represents a successful example of urban renewal, where the once-polluted canal has been transformed into a scenic waterway. Today, the area is characterized by its waterfront developments, recreational spaces, and a mix of traditional and modern architecture that creates a unique urban landscape.",
+    "area": "2.2 km²",
+    "neighboring_wards": [
+      {
+        "id": "vo-thi-sau-ward",
+        "name": "Vo Thi Sau"
+      },
+      {
+        "id": "tan-dinh-ward",
+        "name": "Tan Dinh"
+      },
+      {
+        "id": "da-kao-ward",
+        "name": "Da Kao"
+      }
+    ],
+    "interesting_facts": [
+      "The name 'Nhieu Loc' comes from an ancient village that existed here in the 18th century. The word 'Nhieu' refers to the abundance of local products, while 'Loc' signifies prosperity, reflecting the area's historical role as a thriving trading post along the canal.",
+      "The Nhieu Loc Canal was once known as the 'Venice of Saigon' during the French colonial period",
+      "The ward has undergone one of the city's most successful environmental rehabilitation projects",
+      "Home to some of the city's most popular waterfront walking paths and recreational areas"
+    ],
+    "landmarks": [
+      {
+        "id": "nhieu-loc-canal",
+        "name": "LANDMARKS.NHIEU_LOC_CANAL",
+        "images": [
+          "assets/images/places/nhieu-loc-canal.jpg",
+          "assets/images/places/nhieu-loc-canal-night.jpg"
+        ]
+      },
+      {
+        "id": "waterfront-park",
+        "name": "LANDMARKS.WATERFRONT_PARK",
+        "images": ["assets/images/places/waterfront-park.jpg"]
+      }
+    ],
+    "features": [
+      "FEATURES.WATERFRONT",
+      "FEATURES.PARK_AND_RECREATION",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.URBAN_RENEWAL"
+    ]
+  },
+  "DA_KAO": {
+    "id": "da-kao-ward",
+    "name": "Da Kao",
+    "description": "Da Kao ward is one of the most historically significant areas of Ho Chi Minh City, known for its exceptional preservation of French colonial architecture and religious heritage. The ward features tree-lined streets, historic villas, and important religious sites that reflect the city's diverse cultural influences. Its strategic location and cultural significance have made it a prime example of how historical preservation can coexist with modern urban development.",
+    "area": "1.9 km²",
+    "neighboring_wards": [
+      {
+        "id": "ben-nghe-ward",
+        "name": "Ben Nghe"
+      },
+      {
+        "id": "tan-dinh-ward",
+        "name": "Tan Dinh"
+      },
+      {
+        "id": "nguyen-thai-binh-ward",
+        "name": "Nguyen Thai Binh"
+      }
+    ],
+    "interesting_facts": [
+      "The name 'Da Kao' originates from the Khmer words 'Dak Kau', meaning 'bridge over the stream', referring to an ancient wooden bridge that once crossed a stream in this area during the pre-colonial period.",
+      "Home to the city's first modern hospital, established in the late 19th century",
+      "Contains the highest concentration of preserved French colonial villas in the city",
+      "Features several historically significant religious buildings representing different faiths"
+    ],
+    "landmarks": [
+      {
+        "id": "pink-church",
+        "name": "LANDMARKS.PINK_CHURCH",
+        "images": ["assets/images/places/pink-church.jpg"]
+      },
+      {
+        "id": "jade-emperor-pagoda",
+        "name": "LANDMARKS.JADE_EMPEROR_PAGODA",
+        "images": ["assets/images/places/jade-emperor-pagoda.jpg"]
+      }
+    ],
+    "features": [
+      "FEATURES.HISTORIC_SITE",
+      "FEATURES.RELIGIOUS_SITE",
+      "FEATURES.COLONIAL_ARCHITECTURE",
+      "FEATURES.CULTURAL_HERITAGE"
+    ]
+  },
+  "TAN_DINH": {
+    "id": "tan-dinh-ward",
+    "name": "Tan Dinh",
+    "description": "Tan Dinh ward is renowned for its iconic pink church and historic market, representing a perfect blend of religious heritage and commercial vitality. The area has maintained its character as a traditional trading hub while embracing modern development. Known for its textile trade and local cuisine, the ward offers visitors and residents a unique experience of Saigon's authentic lifestyle and cultural diversity.",
+    "area": "1.7 km²",
+    "neighboring_wards": [
+      {
+        "id": "da-kao-ward",
+        "name": "Da Kao"
+      },
+      {
+        "id": "ben-nghe-ward",
+        "name": "Ben Nghe"
+      },
+      {
+        "id": "nguyen-thai-binh-ward",
+        "name": "Nguyen Thai Binh"
+      }
+    ],
+    "interesting_facts": [
+      "The name 'Tan Dinh' means 'New Settlement', reflecting its history as one of the first planned expansions of Saigon in the late 19th century. The area was developed as a model neighborhood combining residential, commercial, and religious functions.",
+      "The Tan Dinh Church, painted in striking pink, was built in 1876 and is the second largest church in Ho Chi Minh City",
+      "The ward's market has been a major textile trading center since the early 20th century",
+      "Features some of the city's oldest family-run businesses, some operating for over 100 years"
+    ],
+    "landmarks": [
+      {
+        "id": "tan-dinh-church",
+        "name": "LANDMARKS.TAN_DINH_CHURCH",
+        "images": ["assets/images/places/tan-dinh-church.jpg"]
+      },
+      {
+        "id": "tan-dinh-market",
+        "name": "LANDMARKS.TAN_DINH_MARKET",
+        "images": ["assets/images/places/tan-dinh-market.jpg"]
+      }
+    ],
+    "features": [
+      "FEATURES.RELIGIOUS_SITE",
+      "FEATURES.TRADITIONAL_MARKET",
+      "FEATURES.CULTURAL_HERITAGE",
+      "FEATURES.COLONIAL_ARCHITECTURE"
+    ]
+  },
+  "AN_HOI_DONG": {
+    "id": "an-hoi-dong-ward",
+    "name": "An Hoi Dong",
+    "description": "An Hoi Dong ward is characterized by its traditional riverside community and local markets. The ward represents the authentic daily life of Ho Chi Minh City residents, with a strong focus on community activities and local trade. The area maintains its historical character while adapting to modern urban development needs.",
+    "area": "1.4 km²",
+    "neighboring_wards": [
+      {
+        "id": "an-lac-ward",
+        "name": "An Lac"
+      },
+      {
+        "id": "binh-tri-dong-ward",
+        "name": "Binh Tri Dong"
+      },
+      {
+        "id": "tan-tao-ward",
+        "name": "Tan Tao"
+      }
+    ],
+    "interesting_facts": [
+      "The name 'An Hoi Dong' combines 'An' (peace), 'Hoi' (meeting/gathering), and 'Dong' (east), reflecting its historical role as a peaceful gathering place in the eastern part of the area. The name dates back to the early settlement period of the region.",
+      "Home to several traditional craft workshops",
+      "Features one of the oldest community markets in the area",
+      "Known for its riverside community gardens and local produce"
+    ],
+    "landmarks": [
+      {
+        "id": "an-hoi-dong-market",
+        "name": "LANDMARKS.AN_HOI_DONG_MARKET",
+        "images": ["assets/images/places/an-hoi-dong-market.jpg"]
+      },
+      {
+        "id": "riverside-garden",
+        "name": "LANDMARKS.RIVERSIDE_GARDEN",
+        "images": ["assets/images/places/riverside-garden.jpg"]
+      }
+    ],
+    "features": [
+      "FEATURES.TRADITIONAL_MARKET",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.WATERFRONT",
+      "FEATURES.COMMUNITY_CENTER"
+    ]
+  },
+  "AN_LAC": {
+    "id": "an-lac-ward",
+    "name": "An Lac",
+    "description": "An Lac ward is a dynamic area that combines industrial development with residential communities. The ward has evolved from its agricultural roots into a modern urban district while maintaining strong community ties. Its strategic location has made it an important hub for both commerce and residential development.",
+    "area": "2.1 km²",
+    "neighboring_wards": [
+      {
+        "id": "binh-tri-dong-ward",
+        "name": "Binh Tri Dong"
+      },
+      {
+        "id": "tan-tao-ward",
+        "name": "Tan Tao"
+      },
+      {
+        "id": "binh-hung-hoa-ward",
+        "name": "Binh Hung Hoa"
+      }
+    ],
+    "interesting_facts": [
+      "The name 'An Lac' means 'peaceful happiness', reflecting the aspirations of its early settlers in the late 19th century who sought to establish a stable and prosperous community in what was then the outskirts of Saigon.",
+      "Transformed from agricultural land to urban area in the past three decades",
+      "Home to several important industrial zones",
+      "Features modern residential developments while preserving traditional community spaces"
+    ],
+    "landmarks": [
+      {
+        "id": "an-lac-industrial-park",
+        "name": "LANDMARKS.AN_LAC_INDUSTRIAL_PARK",
+        "images": ["assets/images/places/an-lac-industrial-park.jpg"]
+      },
+      {
+        "id": "community-sports-center",
+        "name": "LANDMARKS.COMMUNITY_SPORTS_CENTER",
+        "images": ["assets/images/places/community-sports-center.jpg"]
+      }
+    ],
+    "features": [
+      "FEATURES.INDUSTRIAL_ZONE",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.MODERN_DEVELOPMENT",
+      "FEATURES.COMMUNITY_CENTER"
+    ]
+  },
+  "AN_PHU": {
+    "id": "an-phu-ward",
+    "name": "An Phu",
+    "description": "An Phu ward is one of the city's most modern residential areas, known for its planned developments and international community. The ward exemplifies contemporary urban planning with its mix of high-end residential complexes, international schools, and modern amenities. While being a symbol of modern development, it also maintains green spaces and community areas.",
+    "area": "1.8 km²",
+    "neighboring_wards": [
+      {
+        "id": "thao-dien-ward",
+        "name": "Thao Dien"
+      },
+      {
+        "id": "binh-an-ward",
+        "name": "Binh An"
+      },
+      {
+        "id": "an-khanh-ward",
+        "name": "An Khanh"
+      }
+    ],
+    "interesting_facts": [
+      "The name 'An Phu' combines 'An' (peace) and 'Phu' (prosperity), reflecting the area's development vision when it was established as a modern residential district in the early 2000s. The name was chosen to represent the aspirations for a peaceful and prosperous community.",
+      "One of the first areas in the city to implement modern urban planning standards",
+      "Home to a significant international resident population",
+      "Features some of the city's most advanced infrastructure and facilities"
+    ],
+    "landmarks": [
+      {
+        "id": "metro-station",
+        "name": "LANDMARKS.METRO_STATION",
+        "images": ["assets/images/places/metro-station.jpg"]
+      },
+      {
+        "id": "international-school",
+        "name": "LANDMARKS.INTERNATIONAL_SCHOOL",
+        "images": ["assets/images/places/international-school.jpg"]
+      }
+    ],
+    "features": [
+      "FEATURES.MODERN_DEVELOPMENT",
+      "FEATURES.EDUCATION_HUB",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE"
+    ]
+  },
+  "BINH_DONG": {
+    "id": "binh-dong-ward",
+    "name": "Binh Dong",
+    "description": "Binh Dong ward is a historic riverside district known for its traditional waterfront activities and cultural heritage. The area has played a significant role in the city's maritime trade history and continues to be an important hub for river-based commerce and cultural activities. The ward maintains a strong connection to its waterfront identity while adapting to modern urban development.",
+    "area": "1.8 km²",
+    "neighboring_wards": [
+      {
+        "id": "cau-kho-ward",
+        "name": "Cau Kho"
+      },
+      {
+        "id": "ben-nghe-ward",
+        "name": "Ben Nghe"
+      },
+      {
+        "id": "binh-tay-ward",
+        "name": "Binh Tay"
+      }
+    ],
+    "interesting_facts": [
+      "The name 'Binh Dong' originates from its location along a peaceful (binh) stretch of the eastern (dong) riverbank, dating back to the early 19th century when it was an important port area.",
+      "Home to one of the oldest riverside markets in Ho Chi Minh City",
+      "Features traditional shipbuilding and repair facilities that have operated for generations",
+      "Known for its annual river festivals and traditional boat races"
+    ],
+    "landmarks": [
+      {
+        "id": "binh-dong-wharf",
+        "name": "LANDMARKS.BINH_DONG_WHARF",
+        "images": ["assets/images/places/binh-dong-wharf.jpg"]
+      },
+      {
+        "id": "riverside-temple",
+        "name": "LANDMARKS.RIVERSIDE_TEMPLE",
+        "images": ["assets/images/places/riverside-temple.jpg"]
+      }
+    ],
+    "features": [
+      "FEATURES.WATERFRONT",
+      "FEATURES.TRADITIONAL_MARKET",
+      "FEATURES.CULTURAL_HERITAGE",
+      "FEATURES.MARITIME_TRADE"
+    ]
+  },
+  "BINH_TAY": {
+    "id": "binh-tay-ward",
+    "name": "Binh Tay",
+    "description": "Binh Tay ward is centered around the famous Binh Tay Market, one of the largest wholesale markets in Ho Chi Minh City. Located in the heart of Cho Lon (Chinatown), the ward represents a vibrant mix of Vietnamese and Chinese cultures. The area is characterized by its bustling commercial activities, historic architecture, and rich cultural heritage.",
+    "area": "1.6 km²",
+    "neighboring_wards": [
+      {
+        "id": "binh-dong-ward",
+        "name": "Binh Dong"
+      },
+      {
+        "id": "cho-lon-ward",
+        "name": "Cho Lon"
+      },
+      {
+        "id": "phu-dinh-ward",
+        "name": "Phu Dinh"
+      }
+    ],
+    "interesting_facts": [
+      "The name 'Binh Tay' comes from the Chinese pronunciation of 'Quach Dam', the wealthy businessman who funded the construction of the market in 1928. The market was designed with a distinctive Chinese architectural style.",
+      "The ward has been a major trading hub since the late 19th century",
+      "Features some of the oldest Chinese clan houses in the city",
+      "Home to numerous traditional medicine shops and craft workshops"
+    ],
+    "landmarks": [
+      {
+        "id": "binh-tay-market",
+        "name": "LANDMARKS.BINH_TAY_MARKET",
+        "images": ["assets/images/places/binh-tay-market.jpg"]
+      },
+      {
+        "id": "chinese-pagoda",
+        "name": "LANDMARKS.CHINESE_PAGODA",
+        "images": ["assets/images/places/chinese-pagoda.jpg"]
+      }
+    ],
+    "features": [
+      "FEATURES.COMMERCIAL_HUB",
+      "FEATURES.CULTURAL_HERITAGE",
+      "FEATURES.HISTORIC_SITE",
+      "FEATURES.TRADITIONAL_MARKET"
+    ]
+  },
+  "CHO_LON": {
+    "id": "cho-lon-ward",
+    "name": "Cho Lon",
+    "description": "Cho Lon ward is the historic heart of Ho Chi Minh City's Chinese district, representing centuries of Chinese influence and culture. The area is famous for its traditional Chinese architecture, temples, and bustling commercial activities. As one of the city's oldest districts, it maintains its unique character while adapting to modern urban development.",
+    "area": "2.3 km²",
+    "neighboring_wards": [
+      {
+        "id": "binh-tay-ward",
+        "name": "Binh Tay"
+      },
+      {
+        "id": "phu-dinh-ward",
+        "name": "Phu Dinh"
+      },
+      {
+        "id": "ben-thanh-ward",
+        "name": "Ben Thanh"
+      }
+    ],
+    "interesting_facts": [
+      "The name 'Cho Lon' literally means 'big market', reflecting its historical role as the largest commercial center in the region since the late 18th century when Chinese merchants first established their community here.",
+      "Contains the highest concentration of Chinese temples and clan houses in Vietnam",
+      "Many buildings feature unique fusion of Chinese, Vietnamese, and French architectural styles",
+      "Home to some of the oldest Chinese family businesses in Vietnam"
+    ],
+    "landmarks": [
+      {
+        "id": "thien-hau-temple",
+        "name": "LANDMARKS.THIEN_HAU_TEMPLE",
+        "images": ["assets/images/places/thien-hau-temple.jpg"]
+      },
+      {
+        "id": "cho-lon-central-market",
+        "name": "LANDMARKS.CHO_LON_CENTRAL_MARKET",
+        "images": ["assets/images/places/cho-lon-central-market.jpg"]
+      }
+    ],
+    "features": [
+      "FEATURES.CULTURAL_HERITAGE",
+      "FEATURES.HISTORIC_SITE",
+      "FEATURES.COMMERCIAL_HUB",
+      "FEATURES.RELIGIOUS_SITE"
+    ]
+  },
+  "BINH_TRUNG": {
+    "id": "binh-trung-ward",
+    "name": "Binh Trung",
+    "description": "Binh Trung ward is a rapidly developing area that combines modern residential developments with traditional community values. The ward has transformed from a primarily agricultural area into a dynamic urban district, while maintaining significant green spaces and community facilities. Its strategic location has made it an attractive area for both residential and commercial development.",
+    "area": "2.4 km²",
+    "neighboring_wards": [
+      {
+        "id": "cat-lai-ward",
+        "name": "Cat Lai"
+      },
+      {
+        "id": "binh-khanh-ward",
+        "name": "Binh Khanh"
+      },
+      {
+        "id": "thu-duc-ward",
+        "name": "Thu Duc"
+      }
+    ],
+    "interesting_facts": [
+      "The name 'Binh Trung' combines 'Binh' (peace) and 'Trung' (center), reflecting its historical role as a peaceful central meeting point between different districts. The name dates back to the early 20th century.",
+      "Was primarily rice fields and orchards until the 1990s",
+      "Home to several modern residential complexes that preserve green spaces",
+      "Features a unique blend of traditional markets and modern shopping centers"
+    ],
+    "landmarks": [
+      {
+        "id": "binh-trung-park",
+        "name": "LANDMARKS.BINH_TRUNG_PARK",
+        "images": ["assets/images/places/binh-trung-park.jpg"]
+      },
+      {
+        "id": "modern-plaza",
+        "name": "LANDMARKS.MODERN_PLAZA",
+        "images": ["assets/images/places/modern-plaza.jpg"]
+      }
+    ],
+    "features": [
+      "FEATURES.MODERN_DEVELOPMENT",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.MIXED_USE"
+    ]
+  },
+  "CAT_LAI": {
+    "id": "cat-lai-ward",
+    "name": "Cat Lai",
+    "description": "Cat Lai ward is known for hosting one of Vietnam's largest ports and being a crucial logistics hub. The area has evolved from a small fishing village into a major industrial and commercial center, while maintaining some of its traditional riverside character. The ward plays a vital role in the city's economic development and international trade.",
+    "area": "3.1 km²",
+    "neighboring_wards": [
+      {
+        "id": "binh-trung-ward",
+        "name": "Binh Trung"
+      },
+      {
+        "id": "thu-duc-ward",
+        "name": "Thu Duc"
+      },
+      {
+        "id": "long-binh-ward",
+        "name": "Long Binh"
+      }
+    ],
+    "interesting_facts": [
+      "The name 'Cat Lai' has historical roots dating back to the 18th century when it was a small port for sand (cat) transportation. The area has since transformed into one of Vietnam's most important container ports.",
+      "Home to Vietnam's largest container port",
+      "Was a strategic military location during various historical periods",
+      "Features a unique mix of industrial heritage and modern logistics facilities"
+    ],
+    "landmarks": [
+      {
+        "id": "cat-lai-port",
+        "name": "LANDMARKS.CAT_LAI_PORT",
+        "images": ["assets/images/places/cat-lai-port.jpg"]
+      },
+      {
+        "id": "logistics-center",
+        "name": "LANDMARKS.LOGISTICS_CENTER",
+        "images": ["assets/images/places/logistics-center.jpg"]
+      }
+    ],
+    "features": [
+      "FEATURES.INDUSTRIAL_ZONE",
+      "FEATURES.PORT_FACILITY",
+      "FEATURES.LOGISTICS_HUB",
+      "FEATURES.WATERFRONT"
+    ]
+  },
+  "PHU_MY": {
+    "id": "phu-my-ward",
+    "name": "Phu My",
+    "description": "Phu My ward is a modern urban district that exemplifies the city's rapid development and modernization. Known for its high-rise residential complexes and commercial centers, the ward maintains a balance between urban development and quality of life through well-planned public spaces and community facilities. The area has become a model for sustainable urban development in Ho Chi Minh City.",
+    "area": "2.7 km²",
+    "neighboring_wards": [
+      {
+        "id": "tan-phu-ward",
+        "name": "Tan Phu"
+      },
+      {
+        "id": "binh-thanh-ward",
+        "name": "Binh Thanh"
+      },
+      {
+        "id": "an-phu-ward",
+        "name": "An Phu"
+      }
+    ],
+    "interesting_facts": [
+      "The name 'Phu My' combines 'Phu' (prosperity) and 'My' (beautiful), reflecting the aspirations for the area when it was designated for modern development in the early 2000s.",
+      "One of the first wards to implement comprehensive urban planning",
+      "Features award-winning architectural designs",
+      "Home to several international schools and modern medical facilities"
+    ],
+    "landmarks": [
+      {
+        "id": "phu-my-complex",
+        "name": "LANDMARKS.PHU_MY_COMPLEX",
+        "images": ["assets/images/places/phu-my-complex.jpg"]
+      },
+      {
+        "id": "central-park",
+        "name": "LANDMARKS.CENTRAL_PARK",
+        "images": ["assets/images/places/central-park.jpg"]
+      }
+    ],
+    "features": [
+      "FEATURES.MODERN_DEVELOPMENT",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.EDUCATION_HUB",
+      "FEATURES.GREEN_SPACE"
+    ]
+  }
+}
