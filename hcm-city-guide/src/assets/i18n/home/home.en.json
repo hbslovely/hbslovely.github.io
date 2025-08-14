@@ -1,0 +1,40 @@
+{
+  "WELCOME": "Welcome to Ho Chi Minh City",
+  "HERO_DESC": "Discover the vibrant heart of Vietnam - a city where tradition meets modernity, creating an unforgettable experience.",
+  "EXPLORE_BTN": "Start Exploring",
+  "FEATURED_PLACES": {
+    "TITLE": "Featured Places",
+    "SUBTITLE": "Discover the most popular destinations in Ho Chi Minh City"
+  },
+  "QUICK_FACTS": {
+    "TITLE": "Quick Facts",
+    "POPULATION": "Population: 9.3 million",
+    "DISTRICTS": "Districts: 16 districts and 1 city",
+    "FOUNDED": "Founded: 1698",
+    "CLIMATE": "Climate: Tropical"
+  },
+  "CATEGORIES": {
+    "TITLE": "Explore by Category",
+    "CULTURE": {
+      "TITLE": "Culture & Heritage",
+      "DESC": "Immerse yourself in the rich cultural heritage and historical landmarks"
+    },
+    "FOOD": {
+      "TITLE": "Food & Dining",
+      "DESC": "Experience the world-renowned Vietnamese cuisine and street food"
+    },
+    "ATTRACTIONS": {
+      "TITLE": "Tourist Attractions",
+      "DESC": "Visit the must-see destinations and hidden gems"
+    },
+    "SHOPPING": {
+      "TITLE": "Shopping",
+      "DESC": "From traditional markets to modern malls"
+    }
+  },
+  "CTA": {
+    "TITLE": "Ready to Explore?",
+    "DESC": "Start your journey through Ho Chi Minh City with our comprehensive guide",
+    "BTN": "View City Guide"
+  }
+} 

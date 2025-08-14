@@ -1,0 +1,30 @@
+{
+  "ABOUT": {
+    "TITLE": "About HCM City Guide",
+    "DESCRIPTION": "Your comprehensive guide to exploring Ho Chi Minh City, featuring local insights, travel tips, and cultural experiences."
+  },
+  "QUICK_LINKS": {
+    "TITLE": "Quick Links",
+    "HOME": "Home",
+    "ATTRACTIONS": "Attractions",
+    "FOOD": "Food & Dining",
+    "CULTURE": "Culture",
+    "TIPS": "Travel Tips"
+  },
+  "LEGAL": {
+    "TITLE": "Legal",
+    "PRIVACY": "Privacy Policy",
+    "TERMS": "Terms of Service"
+  },
+  "CONTACT": {
+    "TITLE": "Contact Us",
+    "ADDRESS": "123 Nguyen Hue Street, District 1, Ho Chi Minh City",
+    "PHONE": "+84 28 1234 5678",
+    "EMAIL": "contact@hcmcityguide.com"
+  },
+  "SOCIAL": {
+    "TITLE": "Connect With Us",
+    "FOLLOW_US": "Follow us on social media"
+  },
+  "COPYRIGHT": "© 2024 HCM City Guide. All rights reserved."
+} 

@@ -1,74 +1,56 @@
-<div class="container">
+<div class="home-container">
   <!-- Hero Section -->
   <section class="hero">
-    <div class="grid">
-      <div class="col-12 md:col-6 flex align-items-center">
-        <div class="hero-content">
-          <h1>Welcome to Ho Chi Minh City</h1>
-          <p class="mt-3 text-lg">
-            Discover the vibrant heart of Vietnam - a city where tradition meets modernity, creating an unforgettable experience for every visitor.
-          </p>
-          <div class="mt-4">
-            <button pButton label="Explore Districts" icon="pi pi-map" class="mr-3"></button>
-            <button pButton label="Plan Your Visit" icon="pi pi-calendar" class="p-button-outlined"></button>
-          </div>
-        </div>
+    <h1>{{ 'HOME.WELCOME' | translate }}</h1>
+    <p class="hero-desc">{{ 'HOME.HERO_DESC' | translate }}</p>
+    <button class="explore-btn">{{ 'HOME.EXPLORE_BTN' | translate }}</button>
+  </section>
+
+  <!-- Featured Places -->
+  <section class="featured-places">
+    <h2>{{ 'HOME.FEATURED_PLACES.TITLE' | translate }}</h2>
+    <p>{{ 'HOME.FEATURED_PLACES.SUBTITLE' | translate }}</p>
+    <!-- Featured places content -->
+  </section>
+
+  <!-- Quick Facts -->
+  <section class="quick-facts">
+    <h2>{{ 'HOME.QUICK_FACTS.TITLE' | translate }}</h2>
+    <div class="facts-grid">
+      <div class="fact">{{ 'HOME.QUICK_FACTS.POPULATION' | translate }}</div>
+      <div class="fact">{{ 'HOME.QUICK_FACTS.DISTRICTS' | translate }}</div>
+      <div class="fact">{{ 'HOME.QUICK_FACTS.FOUNDED' | translate }}</div>
+      <div class="fact">{{ 'HOME.QUICK_FACTS.CLIMATE' | translate }}</div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories">
+    <h2>{{ 'HOME.CATEGORIES.TITLE' | translate }}</h2>
+    <div class="categories-grid">
+      <div class="category">
+        <h3>{{ 'HOME.CATEGORIES.CULTURE.TITLE' | translate }}</h3>
+        <p>{{ 'HOME.CATEGORIES.CULTURE.DESC' | translate }}</p>
       </div>
-      <div class="col-12 md:col-6">
-        <img src="assets/images/hcmc-skyline.jpg" alt="Ho Chi Minh City Skyline" class="w-full border-round"/>
+      <div class="category">
+        <h3>{{ 'HOME.CATEGORIES.FOOD.TITLE' | translate }}</h3>
+        <p>{{ 'HOME.CATEGORIES.FOOD.DESC' | translate }}</p>
+      </div>
+      <div class="category">
+        <h3>{{ 'HOME.CATEGORIES.ATTRACTIONS.TITLE' | translate }}</h3>
+        <p>{{ 'HOME.CATEGORIES.ATTRACTIONS.DESC' | translate }}</p>
+      </div>
+      <div class="category">
+        <h3>{{ 'HOME.CATEGORIES.SHOPPING.TITLE' | translate }}</h3>
+        <p>{{ 'HOME.CATEGORIES.SHOPPING.DESC' | translate }}</p>
       </div>
     </div>
   </section>
 
-  <!-- City Highlights -->
-  <section class="highlights mt-6">
-    <h2 class="text-center mb-4">City Highlights</h2>
-    <p-carousel [value]="highlights" [numVisible]="3" [numScroll]="1" [circular]="true" [responsiveOptions]="[
-      {
-        breakpoint: '1024px',
-        numVisible: 2,
-        numScroll: 1
-      },
-      {
-        breakpoint: '768px',
-        numVisible: 1,
-        numScroll: 1
-      }
-    ]">
-      <ng-template let-highlight pTemplate="item">
-        <div class="highlight-item p-2">
-          <p-card>
-            <ng-template pTemplate="header">
-              <img [src]="highlight.image" [alt]="highlight.title" class="w-full"/>
-            </ng-template>
-            <h3>{{highlight.title}}</h3>
-            <p>{{highlight.description}}</p>
-            <ng-template pTemplate="footer">
-              <button pButton label="Learn More" class="p-button-text"></button>
-            </ng-template>
-          </p-card>
-        </div>
-      </ng-template>
-    </p-carousel>
-  </section>
-
-  <!-- Districts Overview -->
-  <section class="districts mt-6">
-    <h2 class="text-center mb-4">Explore Districts</h2>
-    <div class="grid">
-      <div class="col-12 md:col-4" *ngFor="let district of districts">
-        <p-card [header]="district.name" styleClass="h-full">
-          <p>{{district.description}}</p>
-          <ul class="list-none p-0 mt-3">
-            <li *ngFor="let attraction of district.attractions" class="mb-2">
-              <i class="pi pi-map-marker mr-2"></i>{{attraction}}
-            </li>
-          </ul>
-          <ng-template pTemplate="footer">
-            <button pButton label="View Details" class="p-button-outlined w-full"></button>
-          </ng-template>
-        </p-card>
-      </div>
-    </div>
+  <!-- Call to Action -->
+  <section class="cta">
+    <h2>{{ 'HOME.CTA.TITLE' | translate }}</h2>
+    <p>{{ 'HOME.CTA.DESC' | translate }}</p>
+    <button class="cta-btn">{{ 'HOME.CTA.BTN' | translate }}</button>
   </section>
 </div>

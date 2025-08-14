@@ -1,0 +1,73 @@
+<footer class="footer">
+  <div class="footer-content">
+    <!-- About Section -->
+    <div class="footer-section">
+      <h3>{{ 'FOOTER.ABOUT.TITLE' | translate }}</h3>
+      <p>{{ 'FOOTER.ABOUT.DESCRIPTION' | translate }}</p>
+    </div>
+
+    <!-- Quick Links Section -->
+    <div class="footer-section">
+      <h3>{{ 'FOOTER.QUICK_LINKS.TITLE' | translate }}</h3>
+      <ul>
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          {{ 'FOOTER.QUICK_LINKS.HOME' | translate }}
+        </a></li>
+        <li><a routerLink="/discover/attractions" routerLinkActive="active">
+          {{ 'FOOTER.QUICK_LINKS.ATTRACTIONS' | translate }}
+        </a></li>
+        <li><a routerLink="/discover/food" routerLinkActive="active">
+          {{ 'FOOTER.QUICK_LINKS.FOOD' | translate }}
+        </a></li>
+        <li><a routerLink="/discover/culture" routerLinkActive="active">
+          {{ 'FOOTER.QUICK_LINKS.CULTURE' | translate }}
+        </a></li>
+        <li><a routerLink="/discover/tips" routerLinkActive="active">
+          {{ 'FOOTER.QUICK_LINKS.TIPS' | translate }}
+        </a></li>
+      </ul>
+    </div>
+
+    <!-- Legal Section -->
+    <div class="footer-section">
+      <h3>{{ 'FOOTER.LEGAL.TITLE' | translate }}</h3>
+      <ul>
+        <li><a routerLink="/privacy" routerLinkActive="active">
+          {{ 'FOOTER.LEGAL.PRIVACY' | translate }}
+        </a></li>
+        <li><a routerLink="/terms" routerLinkActive="active">
+          {{ 'FOOTER.LEGAL.TERMS' | translate }}
+        </a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="footer-section">
+      <h3>{{ 'FOOTER.CONTACT.TITLE' | translate }}</h3>
+      <address>
+        <p><i class="fas fa-map-marker-alt"></i> {{ 'FOOTER.CONTACT.ADDRESS' | translate }}</p>
+        <p><i class="fas fa-phone"></i> {{ 'FOOTER.CONTACT.PHONE' | translate }}</p>
+        <p><i class="fas fa-envelope"></i> {{ 'FOOTER.CONTACT.EMAIL' | translate }}</p>
+      </address>
+    </div>
+
+    <!-- Social Media Section -->
+    <div class="footer-section">
+      <h3>{{ 'FOOTER.SOCIAL.TITLE' | translate }}</h3>
+      <p>{{ 'FOOTER.SOCIAL.FOLLOW_US' | translate }}</p>
+      <div class="social-links">
+        <a *ngFor="let social of socialLinks" 
+           [href]="social.url" 
+           target="_blank" 
+           rel="noopener noreferrer">
+          <i [class]="social.icon"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer-bottom">
+    <p>{{ 'FOOTER.COPYRIGHT' | translate }}</p>
+  </div>
+</footer>

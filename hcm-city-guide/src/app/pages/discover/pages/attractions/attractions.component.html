@@ -1,0 +1,72 @@
+<div class="attractions-container">
+  <div class="attractions-header">
+    <h1>{{ 'ATTRACTIONS.TITLE' | translate }}</h1>
+    <p class="description">{{ 'ATTRACTIONS.DESCRIPTION' | translate }}</p>
+  </div>
+
+  <div class="attractions-grid">
+    <div class="attraction-card" *ngFor="let attraction of attractions">
+      <div class="attraction-images">
+        <p-galleria [value]="attraction.images" 
+                   [showThumbnails]="false" 
+                   [showIndicators]="true"
+                   [circular]="true"
+                   [autoPlay]="true"
+                   [transitionInterval]="5000">
+          <ng-template pTemplate="item" let-item>
+            <img [src]="item" [alt]="attraction.nameKey | translate">
+          </ng-template>
+        </p-galleria>
+      </div>
+
+      <div class="attraction-content">
+        <h2>{{ attraction.nameKey | translate }}</h2>
+        
+        <div class="tags">
+          <p-tag *ngFor="let tag of attraction.tags" 
+                 [value]="tag | translate" 
+                 [severity]="getTagColor(tag)">
+          </p-tag>
+        </div>
+
+        <p class="description">{{ attraction.descriptionKey | translate }}</p>
+
+        <div class="info-grid">
+          <div class="info-item">
+            <i class="fas fa-location-dot"></i>
+            <span>{{ attraction.address }}</span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-clock"></i>
+            <span>{{ attraction.openingHours }}</span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-ticket"></i>
+            <span>{{ attraction.price }}</span>
+          </div>
+        </div>
+
+        <div class="facilities">
+          <h3>{{ 'ATTRACTIONS.FACILITIES' | translate }}</h3>
+          <div class="facility-icons">
+            <div class="facility" *ngFor="let facility of attraction.facilities">
+              <i [class]="getFacilityIcon(facility)"></i>
+              <span>{{ 'ATTRACTIONS.FACILITIES.' + facility.toUpperCase() | translate }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <button class="button primary">
+            <i class="fas fa-map-location-dot"></i>
+            {{ 'ATTRACTIONS.VIEW_MAP' | translate }}
+          </button>
+          <button class="button outline">
+            <i class="fas fa-camera"></i>
+            {{ 'ATTRACTIONS.VIEW_GALLERY' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 

@@ -1,0 +1,40 @@
+{
+  "WELCOME": "Chào mừng đến Thành phố Hồ Chí Minh",
+  "HERO_DESC": "Khám phá trái tim sôi động của Việt Nam - nơi truyền thống gặp gỡ hiện đại, tạo nên trải nghiệm khó quên.",
+  "EXPLORE_BTN": "Bắt đầu Khám phá",
+  "FEATURED_PLACES": {
+    "TITLE": "Địa điểm Nổi bật",
+    "SUBTITLE": "Khám phá những điểm đến phổ biến nhất tại Thành phố Hồ Chí Minh"
+  },
+  "QUICK_FACTS": {
+    "TITLE": "Thông tin Nhanh",
+    "POPULATION": "Dân số: 9,3 triệu người",
+    "DISTRICTS": "Quận/Huyện: 16 quận và 1 thành phố",
+    "FOUNDED": "Thành lập: 1698",
+    "CLIMATE": "Khí hậu: Nhiệt đới"
+  },
+  "CATEGORIES": {
+    "TITLE": "Khám phá theo Danh mục",
+    "CULTURE": {
+      "TITLE": "Văn hóa & Di sản",
+      "DESC": "Đắm mình trong di sản văn hóa và các địa danh lịch sử phong phú"
+    },
+    "FOOD": {
+      "TITLE": "Ẩm thực",
+      "DESC": "Trải nghiệm ẩm thực Việt Nam nổi tiếng thế giới và đồ ăn đường phố"
+    },
+    "ATTRACTIONS": {
+      "TITLE": "Điểm Du lịch",
+      "DESC": "Ghé thăm những điểm đến không thể bỏ qua và những địa điểm thú vị ẩn giấu"
+    },
+    "SHOPPING": {
+      "TITLE": "Mua sắm",
+      "DESC": "Từ chợ truyền thống đến trung tâm thương mại hiện đại"
+    }
+  },
+  "CTA": {
+    "TITLE": "Sẵn sàng Khám phá?",
+    "DESC": "Bắt đầu hành trình khám phá Thành phố Hồ Chí Minh với hướng dẫn toàn diện của chúng tôi",
+    "BTN": "Xem Hướng dẫn"
+  }
+} 

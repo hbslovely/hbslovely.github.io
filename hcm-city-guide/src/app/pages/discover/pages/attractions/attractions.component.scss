@@ -1,0 +1,215 @@
+.attractions-container {
+  padding: 2rem 0;
+}
+
+.attractions-header {
+  text-align: center;
+  margin-bottom: 3rem;
+
+  h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    font-size: 1.125rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+}
+
+.attractions-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.attraction-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  .attraction-images {
+    height: 400px;
+    overflow: hidden;
+
+    ::ng-deep {
+      .p-galleria {
+        height: 100%;
+
+        .p-galleria-item-wrapper {
+          height: 100%;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .p-galleria-indicators {
+          position: absolute;
+          bottom: 1rem;
+        }
+      }
+    }
+  }
+
+  .attraction-content {
+    padding: 2rem;
+
+    h2 {
+      font-size: 1.75rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .description {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #f8f8f8;
+  border-radius: 8px;
+
+  .info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    i {
+      color: var(--primary-color);
+      font-size: 1.25rem;
+    }
+
+    span {
+      color: #666;
+      font-size: 0.875rem;
+    }
+  }
+}
+
+.facilities {
+  margin-bottom: 2rem;
+
+  h3 {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+
+  .facility-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+
+    .facility {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      text-align: center;
+
+      i {
+        font-size: 1.5rem;
+        color: var(--primary-color);
+      }
+
+      span {
+        font-size: 0.75rem;
+        color: #666;
+      }
+    }
+  }
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+
+  .button {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &.primary {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+
+      &:hover {
+        background-color: var(--primary-dark);
+      }
+    }
+
+    &.outline {
+      background-color: transparent;
+      border: 1px solid var(--primary-color);
+      color: var(--primary-color);
+
+      &:hover {
+        background-color: var(--primary-color);
+        color: white;
+      }
+    }
+
+    i {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .attractions-container {
+    padding: 1rem;
+  }
+
+  .attractions-header {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  .attraction-card {
+    .attraction-images {
+      height: 300px;
+    }
+
+    .attraction-content {
+      padding: 1.5rem;
+    }
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+} 

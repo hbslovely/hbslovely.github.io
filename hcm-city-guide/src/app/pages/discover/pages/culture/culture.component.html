@@ -1,0 +1,70 @@
+<div class="culture-container">
+  <div class="culture-header">
+    <h1>{{ 'CULTURE.TITLE' | translate }}</h1>
+    <p class="description">{{ 'CULTURE.DESCRIPTION' | translate }}</p>
+  </div>
+
+  <!-- Upcoming Events Section -->
+  <section class="events-section">
+    <h2>{{ 'CULTURE.EVENTS.TITLE' | translate }}</h2>
+    <div class="events-grid">
+      <div class="event-card" *ngFor="let event of upcomingEvents">
+        <div class="event-image">
+          <img [src]="event.image" [alt]="event.nameKey | translate">
+        </div>
+        <div class="event-content">
+          <h3>{{ event.nameKey | translate }}</h3>
+          <p class="event-date">{{ event.dateKey | translate }}</p>
+          <p class="event-location">
+            <i class="fas fa-map-marker-alt"></i>
+            {{ event.location }}
+          </p>
+          <p class="event-description">{{ event.descriptionKey | translate }}</p>
+          <button class="button primary">
+            {{ 'CULTURE.EVENTS.LEARN_MORE' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Heritage Sites Section -->
+  <section class="heritage-section">
+    <h2>{{ 'CULTURE.HERITAGE.TITLE' | translate }}</h2>
+    <div class="heritage-grid">
+      <div class="heritage-card" *ngFor="let site of heritages">
+        <div class="heritage-image">
+          <img [src]="site.image" [alt]="site.nameKey | translate">
+          <span class="year-built">{{ site.yearBuilt }}</span>
+        </div>
+        <div class="heritage-content">
+          <span class="category-tag">{{ site.category | uppercase }}</span>
+          <h3>{{ site.nameKey | translate }}</h3>
+          <p>{{ site.descriptionKey | translate }}</p>
+          <button class="button secondary">
+            {{ 'CULTURE.HERITAGE.VISIT' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Traditions Section -->
+  <section class="traditions-section">
+    <h2>{{ 'CULTURE.TRADITIONS.TITLE' | translate }}</h2>
+    <div class="traditions-grid">
+      <div class="tradition-card" *ngFor="let tradition of traditions">
+        <div class="tradition-image">
+          <img [src]="tradition.image" [alt]="tradition.nameKey | translate">
+        </div>
+        <div class="tradition-content">
+          <h3>{{ tradition.nameKey | translate }}</h3>
+          <p>{{ tradition.descriptionKey | translate }}</p>
+          <button class="button outline">
+            {{ 'CULTURE.TRADITIONS.READ_MORE' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div> 

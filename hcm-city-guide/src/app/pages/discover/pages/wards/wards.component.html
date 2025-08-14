@@ -1,0 +1,37 @@
+<div class="wards-container">
+  <div class="wards-header">
+    <h1>{{ 'WARDS.TITLE' | translate }}</h1>
+    <p class="description">{{ 'WARDS.DESCRIPTION' | translate }}</p>
+  </div>
+
+  <div class="wards-grid">
+    <div class="ward-card" *ngFor="let ward of wards">
+      <div class="ward-image">
+        <img [src]="ward.image" [alt]="ward.nameKey | translate">
+      </div>
+      <div class="ward-content">
+        <h2>{{ ward.nameKey | translate }}</h2>
+        <p>{{ ward.descriptionKey | translate }}</p>
+        
+        <div class="attractions">
+          <h3>{{ 'WARDS.KEY_ATTRACTIONS' | translate }}</h3>
+          <ul>
+            <li *ngFor="let attraction of ward.attractions">
+              <i class="fas fa-landmark"></i>
+              {{ attraction | translate }}
+            </li>
+          </ul>
+        </div>
+
+        <div class="ward-actions">
+          <button class="button primary">
+            {{ 'WARDS.EXPLORE' | translate }}
+          </button>
+          <button class="button secondary">
+            {{ 'WARDS.VIEW_MAP' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 

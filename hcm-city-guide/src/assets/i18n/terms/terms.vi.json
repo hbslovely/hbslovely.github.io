@@ -1,0 +1,30 @@
+{
+  "TITLE": "Điều Khoản Sử Dụng",
+  "LAST_UPDATED": "Cập nhật lần cuối",
+  "AGREEMENT": {
+    "TITLE": "Thỏa thuận",
+    "CONTENT": "Bằng việc sử dụng dịch vụ của chúng tôi, bạn đồng ý với các điều khoản này."
+  },
+  "SERVICES": {
+    "TITLE": "Dịch vụ của chúng tôi",
+    "INTRO": "Chúng tôi cung cấp các dịch vụ sau:",
+    "GUIDE": "Hướng dẫn du lịch thành phố",
+    "RECOMMENDATIONS": "Gợi ý địa điểm tham quan",
+    "INFORMATION": "Thông tin cập nhật",
+    "UPDATES": "Tin tức và sự kiện"
+  },
+  "USER_OBLIGATIONS": {
+    "TITLE": "Trách nhiệm người dùng",
+    "INTRO": "Khi sử dụng dịch vụ, bạn đồng ý:",
+    "ACCURATE": "Cung cấp thông tin chính xác",
+    "LAWFUL": "Tuân thủ pháp luật",
+    "RESPECTFUL": "Tôn trọng người khác",
+    "SECURITY": "Bảo mật tài khoản"
+  },
+  "CONTACT": {
+    "TITLE": "Liên hệ",
+    "CONTENT": "Nếu bạn có bất kỳ câu hỏi nào về điều khoản sử dụng, vui lòng liên hệ:",
+    "ADDRESS": "Địa chỉ",
+    "PHONE": "Điện thoại"
+  }
+} 

@@ -1,0 +1,264 @@
+.culture-container {
+  padding: 2rem 0;
+}
+
+.culture-header {
+  text-align: center;
+  margin-bottom: 3rem;
+
+  h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    font-size: 1.125rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+}
+
+section {
+  margin-bottom: 4rem;
+
+  h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+}
+
+// Events Section
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.event-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .event-image {
+    height: 200px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .event-content {
+    padding: 1.5rem;
+
+    h3 {
+      font-size: 1.25rem;
+      color: #333;
+      margin-bottom: 0.75rem;
+    }
+
+    .event-date {
+      color: var(--primary-color);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .event-location {
+      color: #666;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+
+      i {
+        color: var(--primary-color);
+      }
+    }
+
+    .event-description {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+// Heritage Section
+.heritage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.heritage-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  .heritage-image {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .year-built {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.875rem;
+    }
+  }
+
+  .heritage-content {
+    padding: 1.5rem;
+
+    .category-tag {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      background: #f5f5f5;
+      color: #666;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      color: #333;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+// Traditions Section
+.traditions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.tradition-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  .tradition-image {
+    height: 250px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .tradition-content {
+    padding: 1.5rem;
+
+    h3 {
+      font-size: 1.25rem;
+      color: #333;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+// Buttons
+.button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+
+  &.primary {
+    background-color: var(--primary-color);
+    color: white;
+
+    &:hover {
+      background-color: var(--primary-dark);
+    }
+  }
+
+  &.secondary {
+    background-color: #f5f5f5;
+    color: #333;
+
+    &:hover {
+      background-color: #eee;
+    }
+  }
+
+  &.outline {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+
+    &:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .culture-header {
+    padding: 0 1rem;
+
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  section {
+    padding: 0 1rem;
+
+    h2 {
+      font-size: 1.75rem;
+    }
+  }
+} 

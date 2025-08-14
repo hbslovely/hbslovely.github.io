@@ -1,0 +1,43 @@
+<div class="food-container">
+  <div class="food-header">
+    <h1>{{ 'FOOD.TITLE' | translate }}</h1>
+    <p class="description">{{ 'FOOD.DESCRIPTION' | translate }}</p>
+  </div>
+
+  <div class="food-categories">
+    <div class="category" *ngFor="let category of categories">
+      <div class="category-header">
+        <img [src]="category.image" [alt]="category.nameKey | translate" class="category-image">
+        <div class="category-info">
+          <h2>{{ category.nameKey | translate }}</h2>
+          <p>{{ category.descriptionKey | translate }}</p>
+        </div>
+      </div>
+
+      <div class="dishes-grid">
+        <div class="dish-card" *ngFor="let dish of category.dishes">
+          <div class="dish-image">
+            <img [src]="dish.image" [alt]="dish.nameKey | translate">
+          </div>
+          <div class="dish-content">
+            <h3>{{ dish.nameKey | translate }}</h3>
+            <p class="dish-description">{{ dish.descriptionKey | translate }}</p>
+            <div class="dish-tags">
+              <p-tag 
+                *ngFor="let tag of dish.tags" 
+                [value]="tag | translate" 
+                [severity]="getTagSeverity(tag)">
+              </p-tag>
+            </div>
+            <div class="dish-footer">
+              <span class="price">{{ dish.price }}</span>
+              <button class="button primary">
+                {{ 'FOOD.FIND_LOCATIONS' | translate }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 

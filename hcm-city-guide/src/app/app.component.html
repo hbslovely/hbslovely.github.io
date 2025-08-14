@@ -1,45 +1,60 @@
 <div class="app-container">
-  <header>
-    <p-menubar [model]="menuItems" styleClass="border-none">
-      <ng-template pTemplate="start">
-        <img src="assets/images/logo.png" height="40" class="mr-2" alt="HCM City Guide Logo"/>
-      </ng-template>
-    </p-menubar>
+  <header class="header">
+    <div class="header-content">
+      <div class="header-left">
+        <img src="assets/images/logo.png" height="40" class="logo" alt="HCM City Guide Logo"/>
+      </div>
+      
+      <nav class="header-nav">
+        <ul class="nav-list">
+          <li>
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+              {{ 'MENU.HOME' | translate }}
+            </a>
+          </li>
+          <li class="nav-item-with-submenu">
+            <a routerLink="/discover" routerLinkActive="active">
+              {{ 'MENU.DISCOVER' | translate }}
+              <i class="pi pi-chevron-down"></i>
+            </a>
+            <ul class="submenu">
+              <li><a routerLink="/discover/wards">{{ 'MENU.WARDS' | translate }}</a></li>
+              <li><a routerLink="/discover/food">{{ 'MENU.FOOD_DINING' | translate }}</a></li>
+              <li><a routerLink="/discover/culture">{{ 'MENU.CULTURE' | translate }}</a></li>
+            </ul>
+          </li>
+          <li>
+            <a routerLink="/discover/tips" routerLinkActive="active">
+              {{ 'MENU.TRAVEL_TIPS' | translate }}
+            </a>
+          </li>
+          <li>
+            <a routerLink="/contact" routerLinkActive="active">
+              {{ 'MENU.CONTACT' | translate }}
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-right">
+        <div class="search-box">
+          <span class="p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input type="text" pInputText [placeholder]="'MENU.SEARCH' | translate" />
+          </span>
+        </div>
+        <button class="button language-button" (click)="switchLanguage()">
+          {{ currentLang === 'en' ? 'VI' : 'EN' }}
+        </button>
+      </div>
+    </div>
   </header>
 
   <main>
-    <router-outlet></router-outlet>
+    <div [@fadeAnimation]="getRouteState(outlet)">
+      <router-outlet #outlet="outlet"></router-outlet>
+    </div>
   </main>
 
-  <footer class="mt-4 py-4 surface-ground">
-    <div class="container">
-      <div class="grid">
-        <div class="col-12 md:col-4">
-          <h3>About HCM City Guide</h3>
-          <p>Your comprehensive guide to exploring the vibrant city of Ho Chi Minh, Vietnam.</p>
-        </div>
-        <div class="col-12 md:col-4">
-          <h3>Quick Links</h3>
-          <ul class="list-none p-0">
-            <li><a href="#"><i class="fas fa-map-marker-alt mr-2"></i>Districts Guide</a></li>
-            <li><a href="#"><i class="fas fa-utensils mr-2"></i>Local Food</a></li>
-            <li><a href="#"><i class="fas fa-landmark mr-2"></i>Cultural Sites</a></li>
-            <li><a href="#"><i class="fas fa-info-circle mr-2"></i>Travel Tips</a></li>
-          </ul>
-        </div>
-        <div class="col-12 md:col-4">
-          <h3>Connect With Us</h3>
-          <div class="social-icons">
-            <a href="#" class="mr-3"><i class="fab fa-facebook fa-lg"></i></a>
-            <a href="#" class="mr-3"><i class="fab fa-instagram fa-lg"></i></a>
-            <a href="#" class="mr-3"><i class="fab fa-twitter fa-lg"></i></a>
-            <a href="#"><i class="fab fa-youtube fa-lg"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="text-center mt-4 border-top-1 surface-border pt-4">
-        <p>© 2024 HCM City Guide. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+  <app-footer></app-footer>
 </div>

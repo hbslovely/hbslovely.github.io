@@ -1,0 +1,112 @@
+{
+  "MENU": {
+    "HOME": "Trang chủ",
+    "DISCOVER": "Khám phá",
+    "WARDS": "Phường",
+    "ATTRACTIONS": "Điểm tham quan",
+    "FOOD_DINING": "Ẩm thực",
+    "CULTURE": "Văn hóa",
+    "HISTORY": "Lịch sử",
+    "LOCAL_LIFE": "Đời sống",
+    "EVENTS": "Sự kiện",
+    "TRAVEL_TIPS": "Hướng dẫn du lịch",
+    "CONTACT": "Liên hệ",
+    "ABOUT": "Về HCM City Guide",
+    "ABOUT_DESC": "Hướng dẫn toàn diện để khám phá thành phố Hồ Chí Minh sôi động.",
+    "QUICK_LINKS": "Liên kết nhanh",
+    "CONNECT": "Kết nối với chúng tôi",
+    "RIGHTS": "Đã đăng ký bản quyền.",
+    "SEARCH": "Tìm kiếm địa điểm, điểm tham quan..."
+  },
+  "ATTRACTIONS": {
+    "TITLE": "Điểm Tham Quan",
+    "DESCRIPTION": "Khám phá những địa điểm nổi tiếng và hấp dẫn tại Thành phố Hồ Chí Minh.",
+    "FACILITIES": "Tiện ích",
+    "VIEW_MAP": "Xem bản đồ",
+    "VIEW_GALLERY": "Xem ảnh",
+    "BEN_THANH": {
+      "NAME": "Chợ Bến Thành",
+      "DESC": "Khu chợ biểu tượng của Sài Gòn, nơi bạn có thể tìm thấy đủ loại hàng hóa, từ đồ lưu niệm đến ẩm thực địa phương."
+    },
+    "NOTRE_DAME": {
+      "NAME": "Nhà thờ Đức Bà",
+      "DESC": "Công trình kiến trúc Gothic nổi tiếng được xây dựng trong thời Pháp thuộc, là biểu tượng của thành phố."
+    },
+    "WAR_MUSEUM": {
+      "NAME": "Bảo tàng Chứng tích Chiến tranh",
+      "DESC": "Bảo tàng trưng bày các hiện vật và hình ảnh về chiến tranh, giúp du khách hiểu rõ hơn về lịch sử Việt Nam."
+    },
+    "INDEPENDENCE_PALACE": {
+      "NAME": "Dinh Độc Lập",
+      "DESC": "Công trình lịch sử quan trọng, từng là nơi ở và làm việc của Tổng thống Việt Nam Cộng Hòa."
+    },
+    "FACILITIES": {
+      "PARKING": "Bãi đậu xe",
+      "RESTROOM": "Nhà vệ sinh",
+      "ATM": "Máy ATM",
+      "CAFE": "Quán cà phê",
+      "GIFT_SHOP": "Cửa hàng quà tặng",
+      "GUIDED_TOUR": "Hướng dẫn viên"
+    }
+  },
+  "PRIVACY": {
+    "TITLE": "Chính Sách Bảo Mật",
+    "LAST_UPDATED": "Cập nhật lần cuối",
+    "INTRODUCTION": {
+      "TITLE": "Giới thiệu",
+      "CONTENT": "Chúng tôi coi trọng quyền riêng tư của bạn và cam kết bảo vệ thông tin cá nhân của bạn."
+    },
+    "INFORMATION": {
+      "TITLE": "Thông tin chúng tôi thu thập",
+      "INTRO": "Chúng tôi thu thập các loại thông tin sau:",
+      "PERSONAL": "Thông tin cá nhân như tên, email và số điện thoại",
+      "USAGE": "Thông tin sử dụng và tương tác với ứng dụng",
+      "DEVICE": "Thông tin thiết bị và trình duyệt",
+      "LOCATION": "Thông tin vị trí (nếu được cho phép)"
+    },
+    "USE": {
+      "TITLE": "Cách chúng tôi sử dụng thông tin",
+      "INTRO": "Thông tin của bạn được sử dụng để:",
+      "SERVICE": "Cung cấp và cải thiện dịch vụ",
+      "COMMUNICATION": "Liên lạc với bạn về dịch vụ",
+      "IMPROVEMENT": "Cải thiện trải nghiệm người dùng",
+      "ANALYTICS": "Phân tích và nghiên cứu"
+    },
+    "CONTACT": {
+      "TITLE": "Liên hệ",
+      "CONTENT": "Nếu bạn có bất kỳ câu hỏi nào về chính sách bảo mật của chúng tôi, vui lòng liên hệ:",
+      "ADDRESS": "Địa chỉ",
+      "PHONE": "Điện thoại"
+    }
+  },
+  "TERMS": {
+    "TITLE": "Điều Khoản Sử Dụng",
+    "LAST_UPDATED": "Cập nhật lần cuối",
+    "AGREEMENT": {
+      "TITLE": "Thỏa thuận",
+      "CONTENT": "Bằng việc sử dụng dịch vụ của chúng tôi, bạn đồng ý với các điều khoản này."
+    },
+    "SERVICES": {
+      "TITLE": "Dịch vụ của chúng tôi",
+      "INTRO": "Chúng tôi cung cấp các dịch vụ sau:",
+      "GUIDE": "Hướng dẫn du lịch thành phố",
+      "RECOMMENDATIONS": "Gợi ý địa điểm tham quan",
+      "INFORMATION": "Thông tin cập nhật",
+      "UPDATES": "Tin tức và sự kiện"
+    },
+    "USER_OBLIGATIONS": {
+      "TITLE": "Trách nhiệm người dùng",
+      "INTRO": "Khi sử dụng dịch vụ, bạn đồng ý:",
+      "ACCURATE": "Cung cấp thông tin chính xác",
+      "LAWFUL": "Tuân thủ pháp luật",
+      "RESPECTFUL": "Tôn trọng người khác",
+      "SECURITY": "Bảo mật tài khoản"
+    },
+    "CONTACT": {
+      "TITLE": "Liên hệ",
+      "CONTENT": "Nếu bạn có bất kỳ câu hỏi nào về điều khoản sử dụng, vui lòng liên hệ:",
+      "ADDRESS": "Địa chỉ",
+      "PHONE": "Điện thoại"
+    }
+  }
+} 

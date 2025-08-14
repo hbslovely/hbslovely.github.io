@@ -1,0 +1,30 @@
+{
+  "TITLE": "Privacy Policy",
+  "LAST_UPDATED": "Last Updated",
+  "INTRODUCTION": {
+    "TITLE": "Introduction",
+    "CONTENT": "We value your privacy and are committed to protecting your personal information."
+  },
+  "INFORMATION": {
+    "TITLE": "Information We Collect",
+    "INTRO": "We collect the following types of information:",
+    "PERSONAL": "Personal information such as name, email, and phone number",
+    "USAGE": "Usage and interaction information with the application",
+    "DEVICE": "Device and browser information",
+    "LOCATION": "Location information (if permitted)"
+  },
+  "USE": {
+    "TITLE": "How We Use Your Information",
+    "INTRO": "Your information is used to:",
+    "SERVICE": "Provide and improve our services",
+    "COMMUNICATION": "Communicate with you about our services",
+    "IMPROVEMENT": "Improve user experience",
+    "ANALYTICS": "Analytics and research"
+  },
+  "CONTACT": {
+    "TITLE": "Contact",
+    "CONTENT": "If you have any questions about our privacy policy, please contact:",
+    "ADDRESS": "Address",
+    "PHONE": "Phone"
+  }
+} 

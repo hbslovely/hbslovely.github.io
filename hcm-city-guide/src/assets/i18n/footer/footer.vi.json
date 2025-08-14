@@ -1,0 +1,30 @@
+{
+  "ABOUT": {
+    "TITLE": "Về HCM City Guide",
+    "DESCRIPTION": "Hướng dẫn toàn diện để khám phá Thành phố Hồ Chí Minh, với thông tin địa phương, hướng dẫn du lịch và trải nghiệm văn hóa."
+  },
+  "QUICK_LINKS": {
+    "TITLE": "Liên kết nhanh",
+    "HOME": "Trang chủ",
+    "ATTRACTIONS": "Điểm tham quan",
+    "FOOD": "Ẩm thực",
+    "CULTURE": "Văn hóa",
+    "TIPS": "Hướng dẫn du lịch"
+  },
+  "LEGAL": {
+    "TITLE": "Pháp lý",
+    "PRIVACY": "Chính sách bảo mật",
+    "TERMS": "Điều khoản sử dụng"
+  },
+  "CONTACT": {
+    "TITLE": "Liên hệ",
+    "ADDRESS": "123 Đường Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh",
+    "PHONE": "+84 28 1234 5678",
+    "EMAIL": "contact@hcmcityguide.com"
+  },
+  "SOCIAL": {
+    "TITLE": "Kết nối với chúng tôi",
+    "FOLLOW_US": "Theo dõi chúng tôi trên mạng xã hội"
+  },
+  "COPYRIGHT": "© 2024 HCM City Guide. Đã đăng ký bản quyền."
+} 

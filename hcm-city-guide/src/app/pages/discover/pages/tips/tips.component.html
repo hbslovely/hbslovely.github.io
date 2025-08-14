@@ -1,0 +1,79 @@
+<div class="tips-container">
+  <div class="tips-header">
+    <h1>{{ 'TIPS.TITLE' | translate }}</h1>
+    <p class="description">{{ 'TIPS.DESCRIPTION' | translate }}</p>
+  </div>
+
+  <!-- Emergency Contacts -->
+  <section class="emergency-section">
+    <div class="emergency-contacts">
+      <div class="emergency-card" *ngFor="let contact of emergencyContacts">
+        <i [class]="contact.icon"></i>
+        <h3>{{ contact.name }}</h3>
+        <div class="emergency-number">{{ contact.number }}</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Essential Information -->
+  <section class="essentials-section">
+    <h2>{{ 'TIPS.ESSENTIALS.TITLE' | translate }}</h2>
+    <div class="essentials-grid">
+      <div class="essential-card" *ngFor="let essential of essentials">
+        <div class="essential-icon">
+          <i [class]="essential.icon"></i>
+        </div>
+        <div class="essential-content">
+          <h3>{{ essential.titleKey | translate }}</h3>
+          <p>{{ essential.contentKey | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Travel Tips Categories -->
+  <section class="tips-categories">
+    <div class="category" *ngFor="let category of travelTips">
+      <div class="category-header">
+        <i [class]="category.icon"></i>
+        <h2>{{ category.categoryKey | translate }}</h2>
+      </div>
+
+      <p-accordion [multiple]="true">
+        <div *ngFor="let tip of category.tips">
+          <p-accordion-panel>
+            <p-accordion-header>
+              <div class="tip-header">
+                <span>{{ tip.titleKey | translate }}</span>
+                <span class="important-tag" *ngIf="tip.important">
+                  {{ 'TIPS.IMPORTANT' | translate }}
+                </span>
+              </div>
+            </p-accordion-header>
+            <p-accordion-content>
+              <p>{{ tip.contentKey | translate }}</p>
+            </p-accordion-content>
+          </p-accordion-panel>
+        </div>
+      </p-accordion>
+    </div>
+  </section>
+
+  <!-- Download Section -->
+  <section class="download-section">
+    <div class="download-card">
+      <h2>{{ 'TIPS.DOWNLOAD.TITLE' | translate }}</h2>
+      <p>{{ 'TIPS.DOWNLOAD.DESCRIPTION' | translate }}</p>
+      <div class="download-buttons">
+        <button class="button primary">
+          <i class="fas fa-download"></i>
+          {{ 'TIPS.DOWNLOAD.PDF' | translate }}
+        </button>
+        <button class="button outline">
+          <i class="fas fa-print"></i>
+          {{ 'TIPS.DOWNLOAD.PRINT' | translate }}
+        </button>
+      </div>
+    </div>
+  </section>
+</div>
