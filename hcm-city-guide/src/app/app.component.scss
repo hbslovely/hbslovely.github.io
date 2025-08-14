@@ -1,0 +1,53 @@
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  main {
+    flex: 1;
+    padding: 2rem 0;
+  }
+}
+
+header {
+  background-color: var(--surface-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background-color: var(--surface-ground);
+  color: var(--text-color-secondary);
+
+  h3 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    li {
+      margin-bottom: 0.5rem;
+
+      a {
+        color: var(--text-color-secondary);
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: var(--primary-color);
+        }
+      }
+    }
+  }
+
+  .social-icons {
+    i {
+      color: var(--text-color-secondary);
+      cursor: pointer;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+.hero {
+  padding: 4rem 0;
+  background-color: var(--surface-ground);
+
+  h1 {
+    font-size: 3rem;
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  p {
+    color: var(--text-color-secondary);
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
+  img {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.highlights {
+  .highlight-item {
+    .p-card {
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+    }
+
+    img {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    h3 {
+      color: var(--text-color);
+      margin: 0.5rem 0;
+    }
+
+    p {
+      color: var(--text-color-secondary);
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.districts {
+  .p-card {
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    ul li {
+      color: var(--text-color-secondary);
+      
+      i {
+        color: var(--primary-color);
+      }
+    }
+  }
+}
