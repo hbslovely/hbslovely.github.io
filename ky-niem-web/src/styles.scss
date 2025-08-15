@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import 'primeflex/primeflex.css';
 @import 'primeicons/primeicons.css';
-@import 'assets/scss/mixins';
 @import 'swiper/scss';
 @import 'swiper/scss/navigation';
 @import 'swiper/scss/pagination';
@@ -20,7 +19,7 @@
   --theme-pink-primary: #ff69b4;
   --theme-pink-secondary: #ff1493;
   --theme-pink-rgb: 255, 105, 180;
-  
+
   --theme-blue-primary: #4a90e2;
   --theme-blue-secondary: #357abd;
   --theme-blue-rgb: 74, 144, 226;
@@ -703,7 +702,7 @@ html {
   min-height: 100px;
   background-color: #f5f5f5;
   position: relative;
-  
+
   &::before {
     content: '';
     position: absolute;
@@ -729,7 +728,7 @@ html {
 .lazy-loaded {
   opacity: 1;
   background: none;
-  
+
   &::before {
     content: none;
   }
@@ -737,11 +736,11 @@ html {
 
 .lazy-error {
   background-color: #fee;
-  
+
   &::before {
     content: none;
   }
-  
+
   &::after {
     content: '⚠️';
     position: absolute;
