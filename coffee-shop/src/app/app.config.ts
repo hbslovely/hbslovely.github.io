@@ -3,6 +3,7 @@ import { provideRouter } from '@angular/router';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule, NbMenuModule, NbSidebarModule, NbIconModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { HttpClientModule } from '@angular/common/http';
 
 import { routes } from './app.routes';
 
@@ -11,6 +12,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideAnimations(),
     importProvidersFrom(
+      HttpClientModule,
       NbThemeModule.forRoot({ name: 'default' }),
       NbLayoutModule,
       NbMenuModule.forRoot(),

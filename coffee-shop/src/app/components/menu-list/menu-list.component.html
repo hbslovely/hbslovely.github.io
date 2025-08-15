@@ -1,0 +1,9 @@
+<div class="menu-grid">
+  @for (item of items; track item.id) {
+    <app-menu-item
+      [item]="item"
+      [quantity]="itemQuantities[item.id]"
+      (addToCart)="onAddToCart($event)"
+    ></app-menu-item>
+  }
+</div> 

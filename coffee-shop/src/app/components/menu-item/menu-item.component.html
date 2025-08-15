@@ -1,0 +1,17 @@
+<nb-card class="menu-item">
+  <nb-card-header *ngIf="item.image">
+    <img [src]="item.image" [alt]="item.name">
+  </nb-card-header>
+  <nb-card-body>
+    <h3>{{ item.name }}</h3>
+    <p class="description">{{ item.description }}</p>
+    <p class="price">{{ item.originalPrice | currency:'VND':'symbol':'1.0-0' }}</p>
+    <div class="actions">
+      <input nbInput type="number" [(ngModel)]="quantity" min="1" max="99">
+      <button nbButton status="primary" (click)="onAddToCart()">
+        <nb-icon icon="shopping-cart-outline"></nb-icon>
+        Add to Cart
+      </button>
+    </div>
+  </nb-card-body>
+</nb-card> 

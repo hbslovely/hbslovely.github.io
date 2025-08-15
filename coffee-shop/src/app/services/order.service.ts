@@ -10,7 +10,6 @@ export class OrderService {
   
   constructor() {}
 
-  // Cart management
   getCartItems(): Observable<CartItem[]> {
     return this.cartItems.asObservable();
   }
@@ -24,7 +23,12 @@ export class OrderService {
       if (note) existingItem.note = note;
       this.cartItems.next([...currentItems]);
     } else {
-      const newItem: CartItem = { ...item, quantity, note };
+      const newItem: CartItem = {
+        ...item,
+        quantity,
+        note,
+        price: item.originalPrice // Map originalPrice to price for cart
+      };
       this.cartItems.next([...currentItems, newItem]);
     }
   }
@@ -41,7 +45,6 @@ export class OrderService {
     this.cartItems.next([]);
   }
 
-  // Order encoding/decoding
   encodeOrder(order: OrderInfo): string {
     const orderString = JSON.stringify(order);
     return btoa(encodeURIComponent(orderString));
@@ -57,6 +60,6 @@ export class OrderService {
   }
 
   calculateTotal(items: CartItem[]): number {
-    return items.reduce((total, item) => total + (item.price * item.quantity), 0);
+    return items.reduce((total, item) => total + (item.originalPrice * item.quantity), 0);
   }
 } 

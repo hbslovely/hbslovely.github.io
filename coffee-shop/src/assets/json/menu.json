@@ -1,0 +1,133 @@
+{
+  "categories": [
+    {
+      "id": "coffee",
+      "name": "Coffee",
+      "items": [
+        {
+          "id": "cf001",
+          "name": "Cà Phê Sữa Đá",
+          "description": "Traditional Vietnamese iced coffee with sweetened condensed milk",
+          "originalPrice": 29000,
+          "image": "assets/images/menu/ca-phe-sua-da.jpg"
+        },
+        {
+          "id": "cf002",
+          "name": "Cà Phê Đen Đá",
+          "description": "Strong Vietnamese black iced coffee",
+          "originalPrice": 25000,
+          "image": "assets/images/menu/ca-phe-den-da.jpg"
+        },
+        {
+          "id": "cf003",
+          "name": "Bạc Xỉu",
+          "description": "White coffee with extra condensed milk (Saigon special)",
+          "originalPrice": 32000,
+          "image": "assets/images/menu/bac-xiu.jpg"
+        },
+        {
+          "id": "cf004",
+          "name": "Cà Phê Trứng",
+          "description": "Egg coffee - coffee with whipped egg cream",
+          "originalPrice": 39000,
+          "image": "assets/images/menu/ca-phe-trung.jpg"
+        },
+        {
+          "id": "cf005",
+          "name": "Cà Phê Dừa",
+          "description": "Coconut coffee - coffee blended with coconut cream",
+          "originalPrice": 39000,
+          "image": "assets/images/menu/ca-phe-dua.jpg"
+        }
+      ]
+    },
+    {
+      "id": "tea",
+      "name": "Tea",
+      "items": [
+        {
+          "id": "tea001",
+          "name": "Trà Sen",
+          "description": "Lotus tea with subtle floral aroma",
+          "originalPrice": 25000,
+          "image": "assets/images/menu/tra-sen.jpg"
+        },
+        {
+          "id": "tea002",
+          "name": "Trà Đào",
+          "description": "Peach tea with fresh peach slices",
+          "originalPrice": 35000,
+          "image": "assets/images/menu/tra-dao.jpg"
+        },
+        {
+          "id": "tea003",
+          "name": "Trà Chanh",
+          "description": "Traditional Vietnamese iced tea with fresh lime",
+          "originalPrice": 20000,
+          "image": "assets/images/menu/tra-chanh.jpg"
+        }
+      ]
+    },
+    {
+      "id": "snacks",
+      "name": "Snacks",
+      "items": [
+        {
+          "id": "snk001",
+          "name": "Bánh Mì Que",
+          "description": "Crispy breadsticks with pate",
+          "originalPrice": 15000,
+          "image": "assets/images/menu/banh-mi-que.jpg"
+        },
+        {
+          "id": "snk002",
+          "name": "Bánh Flan",
+          "description": "Vietnamese style crème caramel",
+          "originalPrice": 25000,
+          "image": "assets/images/menu/banh-flan.jpg"
+        },
+        {
+          "id": "snk003",
+          "name": "Mì Cay",
+          "description": "Spicy Korean-style instant noodles",
+          "originalPrice": 35000,
+          "image": "assets/images/menu/mi-cay.jpg"
+        },
+        {
+          "id": "snk004",
+          "name": "Bắp Xào",
+          "description": "Stir-fried corn with butter and dried shrimp",
+          "originalPrice": 30000,
+          "image": "assets/images/menu/bap-xao.jpg"
+        }
+      ]
+    },
+    {
+      "id": "specials",
+      "name": "Special Drinks",
+      "items": [
+        {
+          "id": "sp001",
+          "name": "Sinh Tố Bơ",
+          "description": "Fresh avocado smoothie with condensed milk",
+          "originalPrice": 45000,
+          "image": "assets/images/menu/sinh-to-bo.jpg"
+        },
+        {
+          "id": "sp002",
+          "name": "Nước Ép Cam",
+          "description": "Freshly squeezed orange juice",
+          "originalPrice": 35000,
+          "image": "assets/images/menu/nuoc-ep-cam.jpg"
+        },
+        {
+          "id": "sp003",
+          "name": "Soda Chanh",
+          "description": "Sparkling lime soda",
+          "originalPrice": 25000,
+          "image": "assets/images/menu/soda-chanh.jpg"
+        }
+      ]
+    }
+  ]
+} 
