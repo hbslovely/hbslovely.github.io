@@ -1,0 +1,12 @@
+<div class="feature-card" [class.has-image]="image">
+  <div class="card-icon" *ngIf="icon">
+    <i class="fas" [class]="icon"></i>
+  </div>
+  <div class="card-image" *ngIf="image">
+    <img [src]="image" [alt]="title | translate">
+  </div>
+  <div class="card-content">
+    <h3 class="card-title">{{ title | translate }}</h3>
+    <p class="card-description">{{ description | translate }}</p>
+  </div>
+</div> 

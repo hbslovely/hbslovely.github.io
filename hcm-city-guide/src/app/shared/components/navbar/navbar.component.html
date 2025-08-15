@@ -1,0 +1,103 @@
+<header class="header" [class.scrolled]="isScrolled">
+  <div class="header-content">
+    <div class="header-left">
+      <button class="mobile-menu-toggle" (click)="toggleMobileMenu()">
+        <i class="pi" [ngClass]="{'pi-bars': !isMobileMenuOpen, 'pi-times': isMobileMenuOpen}"></i>
+      </button>
+      <img src="assets/images/logo.png" height="40" class="logo" alt="HCM City Guide Logo"/>
+    </div>
+
+    <nav class="header-nav">
+      <ul class="nav-list">
+        <li>
+          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            {{ 'MENU.HOME' | translate }}
+          </a>
+        </li>
+        <li class="nav-item-with-submenu">
+          <a routerLink="/discover" routerLinkActive="active">
+            {{ 'MENU.DISCOVER' | translate }}
+            <i class="pi pi-chevron-down"></i>
+          </a>
+          <ul class="submenu">
+            <li><a routerLink="/discover/wards">{{ 'MENU.WARDS' | translate }}</a></li>
+            <li><a routerLink="/discover/food">{{ 'MENU.FOOD_DINING' | translate }}</a></li>
+            <li><a routerLink="/discover/culture">{{ 'MENU.CULTURE' | translate }}</a></li>
+          </ul>
+        </li>
+        <li>
+          <a routerLink="/travel-tips" routerLinkActive="active">
+            {{ 'MENU.TRAVEL_TIPS' | translate }}
+          </a>
+        </li>
+        <li>
+          <a routerLink="/contact" routerLinkActive="active">
+            {{ 'MENU.CONTACT' | translate }}
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="header-right">
+      <div class="search-box">
+        <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input 
+            type="text" 
+            pInputText 
+            [(ngModel)]="searchTerm"
+            (keyup.enter)="onSearch()"
+            [placeholder]="'MENU.SEARCH' | translate" />
+        </span>
+      </div>
+      <button class="button language-button" (click)="switchLanguage()">
+        {{ currentLang === 'en' ? 'VI' : 'EN' }}
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" [class.active]="isMobileMenuOpen">
+    <div class="mobile-search-box">
+      <span class="p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <input 
+          type="text" 
+          pInputText 
+          [(ngModel)]="searchTerm"
+          (keyup.enter)="onSearch()"
+          [placeholder]="'MENU.SEARCH' | translate" />
+      </span>
+    </div>
+    <nav class="mobile-nav">
+      <ul class="mobile-nav-list">
+        <li>
+          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMobileMenu()">
+            {{ 'MENU.HOME' | translate }}
+          </a>
+        </li>
+        <li class="mobile-nav-item-with-submenu" [class.open]="isSubmenuOpen">
+          <div class="submenu-trigger" (click)="toggleSubmenu()">
+            {{ 'MENU.DISCOVER' | translate }}
+            <i class="pi" [ngClass]="{'pi-chevron-down': !isSubmenuOpen, 'pi-chevron-up': isSubmenuOpen}"></i>
+          </div>
+          <ul class="mobile-submenu">
+            <li><a routerLink="/discover/wards" (click)="closeMobileMenu()">{{ 'MENU.WARDS' | translate }}</a></li>
+            <li><a routerLink="/discover/food" (click)="closeMobileMenu()">{{ 'MENU.FOOD_DINING' | translate }}</a></li>
+            <li><a routerLink="/discover/culture" (click)="closeMobileMenu()">{{ 'MENU.CULTURE' | translate }}</a></li>
+          </ul>
+        </li>
+        <li>
+          <a routerLink="/travel-tips" routerLinkActive="active" (click)="closeMobileMenu()">
+            {{ 'MENU.TRAVEL_TIPS' | translate }}
+          </a>
+        </li>
+        <li>
+          <a routerLink="/contact" routerLinkActive="active" (click)="closeMobileMenu()">
+            {{ 'MENU.CONTACT' | translate }}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header> 

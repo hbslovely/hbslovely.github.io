@@ -1,162 +1,202 @@
 .home-container {
-  min-height: 100vh;
-  background-color: #ffffff;
-}
+  .hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('/assets/images/district-1.jpg') no-repeat center center;
+    background-size: cover;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 4rem;
 
-// Section Styles
-section {
-  padding: 5rem 2rem;
-}
+    .hero-content {
+      max-width: 800px;
+      padding: 2rem;
 
-.section-header {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 3rem;
+      h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        color: white;
+      }
 
-  h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #2d3436;
-    margin-bottom: 1rem;
+      .hero-desc {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+      }
+    }
   }
 
-  p {
-    font-size: 1.2rem;
-    color: #636e72;
-    line-height: 1.6;
-  }
-}
+  .featured-places {
+    margin-bottom: 4rem;
+    text-align: center;
 
-// Featured Places
-.featured-places {
-  background-color: #f8f9fa;
-}
-
-.places-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-// Categories
-.categories {
-  background-color: #ffffff;
-}
-
-.categories-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-// Call to Action
-.cta {
-  background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
-  color: white;
-  text-align: center;
-  padding: 6rem 2rem;
-}
-
-.cta-content {
-  max-width: 800px;
-  margin: 0 auto;
-
-  h2 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-  }
-}
-
-.cta-button {
-  padding: 1rem 2.5rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #ff6b6b;
-  background-color: white;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    background-color: #f8f9fa;
-  }
-}
-
-// Responsive Design
-@media (max-width: 768px) {
-  section {
-    padding: 4rem 1.5rem;
-  }
-
-  .section-header {
     h2 {
-      font-size: 2rem;
+      margin-bottom: 1rem;
     }
 
     p {
-      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    ::ng-deep {
+      .featured-place-card {
+        margin: 0.5rem;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+        }
+
+        .featured-image {
+          height: 200px;
+          object-fit: cover;
+          border-radius: 6px 6px 0 0;
+        }
+
+        .p-card-content {
+          text-align: left;
+        }
+      }
+
+      .p-carousel .p-carousel-indicators {
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  .quick-facts {
+    margin-bottom: 4rem;
+    text-align: center;
+
+    h2 {
+      margin-bottom: 2rem;
+    }
+
+    .facts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+
+      ::ng-deep .p-card {
+        .fact-content {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          padding: 1rem;
+
+          i {
+            font-size: 2rem;
+            color: var(--primary-color);
+          }
+
+          p {
+            margin: 0;
+            font-size: 1.1rem;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+
+  .categories {
+    margin-bottom: 4rem;
+    text-align: center;
+
+    h2 {
+      margin-bottom: 2rem;
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+
+      ::ng-deep .category-card {
+        .category-icon {
+          text-align: center;
+          margin-bottom: 1rem;
+
+          i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            background: var(--primary-light);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+          }
+        }
+
+        .p-card-content {
+          min-height: 80px;
+        }
+      }
     }
   }
 
   .cta {
-    padding: 4rem 1.5rem;
-  }
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('/assets/images/ben-thanh-market.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 6rem 0;
+    text-align: center;
+    color: white;
 
-  .cta-content {
-    h2 {
-      font-size: 2.5rem;
+    .cta-content {
+      max-width: 600px;
+      margin: 0 auto;
+
+      h2 {
+        color: white;
+        margin-bottom: 1rem;
+        font-size: 2.5rem;
+      }
+
+      p {
+        margin-bottom: 2rem;
+        font-size: 1.2rem;
+      }
     }
-
-    p {
-      font-size: 1.1rem;
-    }
-  }
-
-  .cta-button {
-    padding: 0.8rem 2rem;
-    font-size: 1rem;
   }
 }
 
-// Dark Mode Support
-@media (prefers-color-scheme: dark) {
+// Responsive styles
+@media (max-width: 768px) {
   .home-container {
-    background-color: #1a1a1a;
-  }
+    .hero {
+      min-height: 400px;
 
-  .featured-places {
-    background-color: #2d2d2d;
-  }
+      .hero-content {
+        h1 {
+          font-size: 2.5rem;
+        }
 
-  .categories {
-    background-color: #1a1a1a;
-  }
-
-  .section-header {
-    h2 {
-      color: #f8f9fa;
+        .hero-desc {
+          font-size: 1.2rem;
+        }
+      }
     }
 
-    p {
-      color: #a0a0a0;
+    .quick-facts,
+    .categories {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .cta {
+      padding: 4rem 0;
+
+      h2 {
+        font-size: 2rem;
+      }
     }
   }
 }

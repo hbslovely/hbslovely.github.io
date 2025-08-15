@@ -1,0 +1,48 @@
+<section class="hero" [ngStyle]="getBackgroundStyle()">
+  <div class="hero-content">
+    <h1>{{ title | translate }}</h1>
+    <p class="hero-desc">{{ description | translate }}</p>
+
+    <!-- Search Bar -->
+    <div class="search-container" *ngIf="showSearch">
+      <p-autoComplete
+        [(ngModel)]="searchQuery"
+        [suggestions]="filteredSuggestions"
+        (completeMethod)="onSearch($event)"
+        [field]="'name'"
+        [dropdown]="true"
+        [placeholder]="'SEARCH.PLACEHOLDER' | translate"
+        styleClass="w-full"
+        [inputStyleClass]="'w-full'"
+        [panelStyleClass]="'search-panel'">
+        <ng-template let-suggestion pTemplate="item">
+          <div class="search-item" [routerLink]="suggestion.route">
+            <i [class]="suggestion.icon"></i>
+            <div class="search-item-details">
+              <span class="name">{{ suggestion.name }}</span>
+              <span class="category">{{ 'CATEGORIES.' + suggestion.category + '.TITLE' | translate }}</span>
+            </div>
+          </div>
+        </ng-template>
+      </p-autoComplete>
+      <p-button
+        icon="pi pi-search"
+        styleClass="p-button-rounded search-button"
+        [pTooltip]="'SEARCH.TOOLTIP' | translate">
+      </p-button>
+    </div>
+
+    <!-- Action Button -->
+    <p-button
+      *ngIf="buttonText"
+      [label]="buttonText | translate"
+      styleClass="p-button-rounded p-button-lg primary-button"
+      [routerLink]="buttonLink">
+    </p-button>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator">
+    <i class="pi pi-chevron-down"></i>
+  </div>
+</section> 

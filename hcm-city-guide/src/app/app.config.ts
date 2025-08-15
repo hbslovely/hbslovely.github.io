@@ -1,9 +1,11 @@
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { routes } from './app.routes';
+import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideHttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslationLoaderService } from './core/services/translation-loader.service';
+
+import { routes } from './app.routes';
 
 export function createTranslateLoader(service: TranslationLoaderService) {
   return {
@@ -15,6 +17,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideHttpClient(),
+    provideAnimations(),
     importProvidersFrom(
       TranslateModule.forRoot({
         defaultLanguage: 'en',

@@ -1,0 +1,230 @@
+.hero {
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+
+  .hero-content {
+    max-width: 800px;
+    width: 100%;
+    z-index: 1;
+
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    .hero-desc {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+      opacity: 0.9;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+    }
+
+    .search-container {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      animation: fadeIn 0.8s ease-out 0.4s both;
+
+      ::ng-deep {
+        .p-autocomplete {
+          flex: 1;
+
+          .p-autocomplete-input {
+            padding: 1rem 1.5rem;
+            font-size: 1.1rem;
+            border-radius: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            border: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+
+            &:focus {
+              background: white;
+              box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+            }
+          }
+        }
+
+        .search-button {
+          .p-button {
+            width: 3.5rem;
+            height: 3.5rem;
+            background: var(--primary-color);
+
+            &:hover {
+              background: var(--primary-dark);
+            }
+
+            .pi-search {
+              font-size: 1.2rem;
+            }
+          }
+        }
+
+        .search-panel {
+          .search-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+
+            &:hover {
+              background-color: var(--surface-hover);
+            }
+
+            i {
+              font-size: 1.2rem;
+              color: var(--primary-color);
+            }
+
+            .search-item-details {
+              display: flex;
+              flex-direction: column;
+
+              .name {
+                font-weight: 500;
+                color: var(--text-color);
+              }
+
+              .category {
+                font-size: 0.875rem;
+                color: var(--text-color-secondary);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .p-button.primary-button {
+      animation: fadeInUp 0.8s ease-out 0.6s both;
+    }
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+    cursor: pointer;
+    z-index: 1;
+
+    i {
+      font-size: 2rem;
+      color: white;
+      opacity: 0.8;
+      transition: opacity 0.3s;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// Animations
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .hero {
+    min-height: 500px;
+    padding: 1rem;
+
+    .hero-content {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-desc {
+        font-size: 1.2rem;
+      }
+
+      .search-container {
+        flex-direction: column;
+
+        ::ng-deep {
+          .p-autocomplete {
+            width: 100%;
+          }
+
+          .search-button {
+            align-self: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    .hero-content {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .hero-desc {
+        font-size: 1.1rem;
+      }
+    }
+  }
+} 

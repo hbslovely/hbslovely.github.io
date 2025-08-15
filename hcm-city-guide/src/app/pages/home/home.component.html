@@ -1,59 +1,117 @@
 <div class="home-container">
   <!-- Hero Section -->
   <section class="hero">
-    <h1>{{ 'HOME.WELCOME' | translate }}</h1>
-    <p class="hero-desc">{{ 'HOME.HERO_DESC' | translate }}</p>
-    <button class="explore-btn">{{ 'HOME.EXPLORE_BTN' | translate }}</button>
+    <div class="hero-content">
+      <h1>{{ 'HOME.WELCOME' | translate }}</h1>
+      <p class="hero-desc">{{ 'HOME.HERO_DESC' | translate }}</p>
+      <p-button
+        [label]="'HOME.EXPLORE_BTN' | translate"
+        styleClass="p-button-rounded p-button-lg primary-button"
+        routerLink="/discover">
+      </p-button>
+    </div>
   </section>
 
   <!-- Featured Places -->
-  <section class="featured-places">
+  <section class="featured-places container">
     <h2>{{ 'HOME.FEATURED_PLACES.TITLE' | translate }}</h2>
     <p>{{ 'HOME.FEATURED_PLACES.SUBTITLE' | translate }}</p>
-    <!-- Featured places content -->
+
+    <p-carousel
+      [value]="featuredPlaces"
+      [numVisible]="3"
+      [numScroll]="1"
+      [circular]="true"
+      [responsiveOptions]="responsiveOptions"
+      [autoplayInterval]="5000">
+      <ng-template let-place pTemplate="item">
+        <p-card styleClass="featured-place-card">
+          <ng-template pTemplate="header">
+            <p-image
+              [src]="place.image"
+              [alt]="place.title"
+              [preview]="true"
+              imageClass="featured-image">
+            </p-image>
+          </ng-template>
+          <ng-template pTemplate="title">
+            {{ place.title }}
+          </ng-template>
+          <ng-template pTemplate="content">
+            <p>{{ place.description | translate }}</p>
+          </ng-template>
+          <ng-template pTemplate="footer">
+            <p-button
+              [label]="'HOME.LEARN_MORE' | translate"
+              styleClass="p-button-text"
+              icon="pi pi-arrow-right"
+              iconPos="right">
+            </p-button>
+          </ng-template>
+        </p-card>
+      </ng-template>
+    </p-carousel>
   </section>
 
   <!-- Stats Section -->
   <app-stats-section></app-stats-section>
 
   <!-- Quick Facts -->
-  <section class="quick-facts">
+  <section class="quick-facts container">
     <h2>{{ 'HOME.QUICK_FACTS.TITLE' | translate }}</h2>
     <div class="facts-grid">
-      <div class="fact">{{ 'HOME.QUICK_FACTS.POPULATION' | translate }}</div>
-      <div class="fact">{{ 'HOME.QUICK_FACTS.DISTRICTS' | translate }}</div>
-      <div class="fact">{{ 'HOME.QUICK_FACTS.FOUNDED' | translate }}</div>
-      <div class="fact">{{ 'HOME.QUICK_FACTS.CLIMATE' | translate }}</div>
+      <p-card *ngFor="let fact of ['POPULATION', 'DISTRICTS', 'FOUNDED', 'CLIMATE']">
+        <div class="fact-content">
+          <i class="pi" [ngClass]="{
+            'pi-users': fact === 'POPULATION',
+            'pi-map': fact === 'DISTRICTS',
+            'pi-calendar': fact === 'FOUNDED',
+            'pi-cloud': fact === 'CLIMATE'
+          }"></i>
+          <p>{{ 'HOME.QUICK_FACTS.' + fact | translate }}</p>
+        </div>
+      </p-card>
     </div>
   </section>
 
   <!-- Categories -->
-  <section class="categories">
+  <section class="categories container">
     <h2>{{ 'HOME.CATEGORIES.TITLE' | translate }}</h2>
     <div class="categories-grid">
-      <div class="category">
-        <h3>{{ 'HOME.CATEGORIES.CULTURE.TITLE' | translate }}</h3>
-        <p>{{ 'HOME.CATEGORIES.CULTURE.DESC' | translate }}</p>
-      </div>
-      <div class="category">
-        <h3>{{ 'HOME.CATEGORIES.FOOD.TITLE' | translate }}</h3>
-        <p>{{ 'HOME.CATEGORIES.FOOD.DESC' | translate }}</p>
-      </div>
-      <div class="category">
-        <h3>{{ 'HOME.CATEGORIES.ATTRACTIONS.TITLE' | translate }}</h3>
-        <p>{{ 'HOME.CATEGORIES.ATTRACTIONS.DESC' | translate }}</p>
-      </div>
-      <div class="category">
-        <h3>{{ 'HOME.CATEGORIES.SHOPPING.TITLE' | translate }}</h3>
-        <p>{{ 'HOME.CATEGORIES.SHOPPING.DESC' | translate }}</p>
-      </div>
+      <p-card *ngFor="let category of categories" styleClass="category-card">
+        <ng-template pTemplate="header">
+          <div class="category-icon">
+            <i [class]="category.icon"></i>
+          </div>
+        </ng-template>
+        <ng-template pTemplate="title">
+          {{ category.title | translate }}
+        </ng-template>
+        <ng-template pTemplate="content">
+          <p>{{ category.description | translate }}</p>
+        </ng-template>
+        <ng-template pTemplate="footer">
+          <p-button
+            [label]="'HOME.EXPLORE' | translate"
+            styleClass="p-button-outlined"
+            [routerLink]="category.route"
+            [pRipple]="true">
+          </p-button>
+        </ng-template>
+      </p-card>
     </div>
   </section>
 
   <!-- Call to Action -->
   <section class="cta">
-    <h2>{{ 'HOME.CTA.TITLE' | translate }}</h2>
-    <p>{{ 'HOME.CTA.DESC' | translate }}</p>
-    <button class="cta-btn">{{ 'HOME.CTA.BTN' | translate }}</button>
+    <div class="cta-content container">
+      <h2>{{ 'HOME.CTA.TITLE' | translate }}</h2>
+      <p>{{ 'HOME.CTA.DESC' | translate }}</p>
+      <p-button
+        [label]="'HOME.CTA.BTN' | translate"
+        styleClass="p-button-rounded p-button-lg accent-button"
+        [pRipple]="true">
+      </p-button>
+    </div>
   </section>
 </div>
