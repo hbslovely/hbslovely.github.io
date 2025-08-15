@@ -1,0 +1,111 @@
+<div class="ward-detail-container" *ngIf="ward">
+  <!-- Hero Section -->
+  <section class="hero" [style.backgroundImage]="'url(' + (ward.image || 'assets/images/wards/default.jpg') + ')'">
+    <div class="hero-content">
+      <div class="ward-type" *ngIf="ward?.type">
+        {{ ward.type || '' | translate }}
+      </div>
+      <h1>{{ ward.name || '' | translate }}</h1>
+      <div class="key-stats">
+        <div class="stat" [title]="'WARD.DETAIL.AREA' | translate">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>{{ ward.area }}</span>
+        </div>
+        <div class="stat" *ngIf="ward?.landmarks?.length" [title]="'WARD.DETAIL.LANDMARKS_COUNT' | translate">
+          <i class="fas fa-landmark"></i>
+          <span>{{ ward.landmarks?.length }} {{ 'WARD.DETAIL.LANDMARKS' | translate }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="content-wrapper">
+    <!-- Description Section -->
+    <section class="description-section">
+      <h2>{{ 'WARD.DETAIL.ABOUT' | translate }}</h2>
+      <p>{{ ward.description || '' | translate }}</p>
+
+      <!-- Features -->
+      <div class="features">
+        <h3>{{ 'WARD.DETAIL.KEY_FEATURES' | translate }}</h3>
+        <div class="features-grid">
+          <div class="feature" *ngFor="let feature of ward?.features">
+            <i class="fas" [ngClass]="getFeatureIcon(feature)"></i>
+            <span>{{ feature | translate }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interesting Facts -->
+      <div class="facts" *ngIf="ward?.interesting_facts?.length">
+        <h3>{{ 'WARD.DETAIL.INTERESTING_FACTS' | translate }}</h3>
+        <ul>
+          <li *ngFor="let fact of ward?.interesting_facts">
+            <i class="fas fa-check-circle"></i>
+            <span>{{ fact }}</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Landmarks Section -->
+    <section class="landmarks-section" *ngIf="ward?.landmarks?.length">
+      <h2>{{ 'WARD.DETAIL.NOTABLE_LANDMARKS' | translate }}</h2>
+      <div class="landmarks-grid">
+        <div class="landmark-card" *ngFor="let landmark of ward?.landmarks">
+          <div class="landmark-image">
+            <img [src]="landmark.images[0]" [alt]="landmark.name || '' | translate">
+          </div>
+          <div class="landmark-content">
+            <h3>{{ landmark.name || '' | translate }}</h3>
+            <button class="view-btn" (click)="viewLandmark(landmark)">
+              {{ 'WARD.DETAIL.VIEW_LANDMARK' | translate }}
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Neighboring Wards -->
+    <section class="neighboring-section" *ngIf="ward?.neighboring_wards?.length">
+      <h2>{{ 'WARD.DETAIL.NEIGHBORING_WARDS' | translate }}</h2>
+      <div class="neighboring-grid">
+        <app-ward-card
+          *ngFor="let neighbor of ward?.neighboring_wards"
+          [ward]="$any(neighbor)">
+        </app-ward-card>
+      </div>
+    </section>
+  </div>
+
+  <!-- Map Section -->
+  <section class="map-section">
+    <h2>{{ 'WARD.DETAIL.LOCATION' | translate }}</h2>
+    <div class="map-container">
+      <!-- Map component will go here -->
+      <div class="map-placeholder">
+        {{ 'WARD.DETAIL.MAP_LOADING' | translate }}
+      </div>
+    </div>
+  </section>
+
+  <!-- Action Buttons -->
+  <div class="action-buttons">
+    <button class="back-btn" (click)="goBack()">
+      <i class="fas fa-arrow-left"></i>
+      {{ 'WARD.DETAIL.BACK_TO_WARDS' | translate }}
+    </button>
+    <button class="share-btn" (click)="shareWard()">
+      <i class="fas fa-share-alt"></i>
+      {{ 'WARD.DETAIL.SHARE' | translate }}
+    </button>
+  </div>
+</div>
+
+<!-- Loading State -->
+<div class="loading-state" *ngIf="!ward">
+  <div class="spinner"></div>
+  <p>{{ 'WARD.DETAIL.LOADING' | translate }}</p>
+</div>

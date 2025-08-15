@@ -1,0 +1,12 @@
+{
+  "PLACEHOLDER": "Tìm kiếm...",
+  "NO_RESULTS": {
+    "TITLE": "Không Tìm Thấy Kết Quả",
+    "MESSAGE": "Vui lòng điều chỉnh tiêu chí tìm kiếm"
+  },
+  "FILTERS": {
+    "TITLE": "Bộ Lọc",
+    "RESET": "Đặt Lại",
+    "APPLY": "Áp Dụng"
+  }
+} 

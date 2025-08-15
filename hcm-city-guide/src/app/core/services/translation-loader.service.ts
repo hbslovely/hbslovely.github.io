@@ -10,12 +10,18 @@ export class TranslationLoaderService {
   private readonly sections: string[] = [
     'HOME',
     'MENU',
+    'SEARCH',
     'ATTRACTIONS',
     'PRIVACY',
     'TERMS',
     'FOOTER',
     'CONTACT',
-    'TIPS'
+    'TIPS',
+    'WARD',
+    'PAGINATION',
+    'FEATURES',
+    'LANDMARKS',
+    'CULTURES'
   ];
 
   constructor(private http: HttpClient) {}

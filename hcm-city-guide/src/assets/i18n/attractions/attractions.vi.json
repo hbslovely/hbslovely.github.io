@@ -1,42 +1,17 @@
 {
-  "TITLE": "Điểm Tham Quan",
-  "DESCRIPTION": "Khám phá những địa điểm nổi tiếng và hấp dẫn tại Thành phố Hồ Chí Minh.",
-  "FACILITIES": "Tiện ích",
-  "VIEW_MAP": "Xem bản đồ",
-  "VIEW_GALLERY": "Xem ảnh",
-  "PLACES": {
-    "BEN_THANH": {
-      "NAME": "Chợ Bến Thành",
-      "DESC": "Khu chợ biểu tượng của Sài Gòn, nơi bạn có thể tìm thấy đủ loại hàng hóa, từ đồ lưu niệm đến ẩm thực địa phương."
-    },
-    "NOTRE_DAME": {
-      "NAME": "Nhà thờ Đức Bà",
-      "DESC": "Công trình kiến trúc Gothic nổi tiếng được xây dựng trong thời Pháp thuộc, là biểu tượng của thành phố."
-    },
-    "WAR_MUSEUM": {
-      "NAME": "Bảo tàng Chứng tích Chiến tranh",
-      "DESC": "Bảo tàng trưng bày các hiện vật và hình ảnh về chiến tranh, giúp du khách hiểu rõ hơn về lịch sử Việt Nam."
-    },
-    "INDEPENDENCE_PALACE": {
-      "NAME": "Dinh Độc Lập",
-      "DESC": "Công trình lịch sử quan trọng, từng là nơi ở và làm việc của Tổng thống Việt Nam Cộng Hòa."
-    }
+  "TITLE": "Điểm Du Lịch",
+  "DESCRIPTION": "Khám phá những địa điểm thú vị nhất tại Thành phố Hồ Chí Minh",
+  "CATEGORIES": {
+    "HISTORICAL": "Di Tích Lịch Sử",
+    "CULTURAL": "Địa Điểm Văn Hóa",
+    "MODERN": "Điểm Du Lịch Hiện Đại",
+    "NATURAL": "Điểm Du Lịch Thiên Nhiên",
+    "RELIGIOUS": "Cơ Sở Tôn Giáo"
   },
-  "FACILITIES_LIST": {
-    "PARKING": "Bãi đậu xe",
-    "RESTROOM": "Nhà vệ sinh",
-    "ATM": "Máy ATM",
-    "CAFE": "Quán cà phê",
-    "GIFT_SHOP": "Cửa hàng quà tặng",
-    "GUIDED_TOUR": "Hướng dẫn viên"
-  },
-  "TAGS": {
-    "SHOPPING": "Mua sắm",
-    "FOOD": "Ẩm thực",
-    "HISTORIC": "Lịch sử",
-    "RELIGIOUS": "Tôn giáo",
-    "ARCHITECTURE": "Kiến trúc",
-    "MUSEUM": "Bảo tàng",
-    "EDUCATIONAL": "Giáo dục"
+  "FILTERS": {
+    "CATEGORY": "Danh Mục",
+    "DISTRICT": "Quận",
+    "PRICE_RANGE": "Khoảng Giá",
+    "RATING": "Đánh Giá"
   }
 } 

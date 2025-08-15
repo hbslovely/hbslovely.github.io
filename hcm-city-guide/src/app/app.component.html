@@ -1,54 +1,5 @@
 <div class="app-container">
-  <header class="header">
-    <div class="header-content">
-      <div class="header-left">
-        <img src="assets/images/logo.png" height="40" class="logo" alt="HCM City Guide Logo"/>
-      </div>
-
-      <nav class="header-nav">
-        <ul class="nav-list">
-          <li>
-            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-              {{ 'MENU.HOME' | translate }}
-            </a>
-          </li>
-          <li class="nav-item-with-submenu">
-            <a routerLink="/discover" routerLinkActive="active">
-              {{ 'MENU.DISCOVER' | translate }}
-              <i class="pi pi-chevron-down"></i>
-            </a>
-            <ul class="submenu">
-              <li><a routerLink="/discover/wards">{{ 'MENU.WARDS' | translate }}</a></li>
-              <li><a routerLink="/discover/food">{{ 'MENU.FOOD_DINING' | translate }}</a></li>
-              <li><a routerLink="/discover/culture">{{ 'MENU.CULTURE' | translate }}</a></li>
-            </ul>
-          </li>
-          <li>
-            <a routerLink="/travel-tips" routerLinkActive="active">
-              {{ 'MENU.TRAVEL_TIPS' | translate }}
-            </a>
-          </li>
-          <li>
-            <a routerLink="/contact" routerLinkActive="active">
-              {{ 'MENU.CONTACT' | translate }}
-            </a>
-          </li>
-        </ul>
-      </nav>
-
-      <div class="header-right">
-        <div class="search-box">
-          <span class="p-input-icon-left">
-            <i class="pi pi-search"></i>
-            <input type="text" pInputText [placeholder]="'MENU.SEARCH' | translate" />
-          </span>
-        </div>
-        <button class="button language-button" (click)="switchLanguage()">
-          {{ currentLang === 'en' ? 'VI' : 'EN' }}
-        </button>
-      </div>
-    </div>
-  </header>
+  <app-navbar></app-navbar>
 
   <main>
     <div [@routeAnimations]="prepareRoute(outlet)">

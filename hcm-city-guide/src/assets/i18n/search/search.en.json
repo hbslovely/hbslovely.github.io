@@ -1,0 +1,12 @@
+{
+  "PLACEHOLDER": "Search...",
+  "NO_RESULTS": {
+    "TITLE": "No Results Found",
+    "MESSAGE": "Try adjusting your search criteria"
+  },
+  "FILTERS": {
+    "TITLE": "Filters",
+    "RESET": "Reset",
+    "APPLY": "Apply"
+  }
+} 

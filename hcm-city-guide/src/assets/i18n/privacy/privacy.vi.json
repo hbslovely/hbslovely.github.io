@@ -1,30 +1,22 @@
 {
   "TITLE": "Chính Sách Bảo Mật",
-  "LAST_UPDATED": "Cập nhật lần cuối",
-  "INTRODUCTION": {
-    "TITLE": "Giới thiệu",
-    "CONTENT": "Chúng tôi coi trọng quyền riêng tư của bạn và cam kết bảo vệ thông tin cá nhân của bạn."
-  },
-  "INFORMATION": {
-    "TITLE": "Thông tin chúng tôi thu thập",
-    "INTRO": "Chúng tôi thu thập các loại thông tin sau:",
-    "PERSONAL": "Thông tin cá nhân như tên, email và số điện thoại",
-    "USAGE": "Thông tin sử dụng và tương tác với ứng dụng",
-    "DEVICE": "Thông tin thiết bị và trình duyệt",
-    "LOCATION": "Thông tin vị trí (nếu được cho phép)"
-  },
-  "USE": {
-    "TITLE": "Cách chúng tôi sử dụng thông tin",
-    "INTRO": "Thông tin của bạn được sử dụng để:",
-    "SERVICE": "Cung cấp và cải thiện dịch vụ",
-    "COMMUNICATION": "Liên lạc với bạn về dịch vụ",
-    "IMPROVEMENT": "Cải thiện trải nghiệm người dùng",
-    "ANALYTICS": "Phân tích và nghiên cứu"
-  },
-  "CONTACT": {
-    "TITLE": "Liên hệ",
-    "CONTENT": "Nếu bạn có bất kỳ câu hỏi nào về chính sách bảo mật của chúng tôi, vui lòng liên hệ:",
-    "ADDRESS": "Địa chỉ",
-    "PHONE": "Điện thoại"
+  "LAST_UPDATED": "Cập Nhật Lần Cuối",
+  "SECTIONS": {
+    "INTRODUCTION": {
+      "TITLE": "Giới Thiệu",
+      "CONTENT": "Chính sách bảo mật này mô tả cách chúng tôi thu thập, sử dụng và bảo vệ thông tin cá nhân của bạn."
+    },
+    "DATA_COLLECTION": {
+      "TITLE": "Thu Thập Dữ Liệu",
+      "CONTENT": "Chúng tôi thu thập thông tin mà bạn cung cấp trực tiếp và thông tin được thu thập tự động khi bạn sử dụng dịch vụ."
+    },
+    "DATA_USE": {
+      "TITLE": "Sử Dụng Dữ Liệu",
+      "CONTENT": "Chúng tôi sử dụng dữ liệu thu thập để cung cấp và cải thiện dịch vụ, liên lạc với bạn và đảm bảo an ninh."
+    },
+    "DATA_PROTECTION": {
+      "TITLE": "Bảo Vệ Dữ Liệu",
+      "CONTENT": "Chúng tôi thực hiện các biện pháp bảo mật thích hợp để bảo vệ thông tin cá nhân của bạn."
+    }
   }
 } 

@@ -1,22 +1,30 @@
 {
   "MENU": {
-    "HOME": "Trang chủ",
-    "DISCOVER": "Khám phá",
+    "HOME": "Trang Chủ",
+    "DISCOVER": "Khám Phá",
     "WARDS": "Phường",
-    "ATTRACTIONS": "Điểm tham quan",
-    "FOOD_DINING": "Ẩm thực",
-    "CULTURE": "Văn hóa",
-    "HISTORY": "Lịch sử",
-    "LOCAL_LIFE": "Đời sống",
-    "EVENTS": "Sự kiện",
-    "TRAVEL_TIPS": "Hướng dẫn du lịch",
-    "CONTACT": "Liên hệ",
-    "ABOUT": "Về HCM City Guide",
-    "ABOUT_DESC": "Hướng dẫn toàn diện để khám phá thành phố Hồ Chí Minh sôi động.",
-    "QUICK_LINKS": "Liên kết nhanh",
-    "CONNECT": "Kết nối với chúng tôi",
-    "RIGHTS": "Đã đăng ký bản quyền.",
-    "SEARCH": "Tìm kiếm địa điểm, điểm tham quan..."
+    "FOOD_DINING": "Ẩm Thực",
+    "CULTURE": "Văn Hóa",
+    "TRAVEL_TIPS": "Hướng Dẫn Du Lịch",
+    "CONTACT": "Liên Hệ",
+    "SEARCH": "Tìm kiếm..."
+  },
+  "SEARCH": {
+    "TITLE": "Tìm Kiếm Thành Phố Hồ Chí Minh",
+    "PLACEHOLDER": "Nhập từ khóa để tìm kiếm...",
+    "RESULTS_COUNT": "Tìm thấy {{count}} kết quả",
+    "VIEW_DETAILS": "Xem Chi Tiết",
+    "NO_RESULTS": {
+      "TITLE": "Không tìm thấy kết quả",
+      "MESSAGE": "Thử từ khóa khác hoặc bỏ bớt bộ lọc"
+    },
+    "TYPES": {
+      "WARDS": "Phường",
+      "LANDMARKS": "Địa Điểm",
+      "FOOD": "Ẩm Thực",
+      "CULTURE": "Văn Hóa & Lịch Sử",
+      "TIPS": "Hướng Dẫn Du Lịch"
+    }
   },
   "ATTRACTIONS": {
     "TITLE": "Điểm Tham Quan",
@@ -108,5 +116,11 @@
       "ADDRESS": "Địa chỉ",
       "PHONE": "Điện thoại"
     }
+  },
+  "CULTURES": {
+    "VIETNAMESE": "Văn Hóa Việt Nam",
+    "CHINESE": "Văn Hóa Trung Hoa",
+    "FRENCH_COLONIAL": "Di Sản Thuộc Địa Pháp",
+    "MODERN": "Văn Hóa Đô Thị Hiện Đại"
   }
 } 

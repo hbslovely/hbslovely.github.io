@@ -1,0 +1,19 @@
+{
+  "ITEMS_PER_PAGE": "Số mục trên trang",
+  "OF": "của",
+  "NEXT": "Tiếp theo",
+  "PREVIOUS": "Trước",
+  "PAGE": "Trang",
+  "SHOWING": "Hiển thị",
+  "TO": "đến",
+  "TOTAL": "mục",
+  "FIRST_PAGE": "Trang đầu",
+  "LAST_PAGE": "Trang cuối",
+  "PAGE_SIZE": "Kích thước trang",
+  "CURRENT_PAGE": "Trang hiện tại",
+  "GO_TO_PAGE": "Đi đến trang",
+  "ITEMS": {
+    "SINGULAR": "mục",
+    "PLURAL": "mục"
+  }
+} 

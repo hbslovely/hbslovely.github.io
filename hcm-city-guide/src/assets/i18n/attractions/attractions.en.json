@@ -1,42 +1,17 @@
 {
-  "TITLE": "Tourist Attractions",
-  "DESCRIPTION": "Discover the famous and fascinating attractions in Ho Chi Minh City.",
-  "FACILITIES": "Facilities",
-  "VIEW_MAP": "View Map",
-  "VIEW_GALLERY": "View Gallery",
-  "PLACES": {
-    "BEN_THANH": {
-      "NAME": "Ben Thanh Market",
-      "DESC": "An iconic Saigon market where you can find everything from souvenirs to local cuisine."
-    },
-    "NOTRE_DAME": {
-      "NAME": "Notre-Dame Cathedral",
-      "DESC": "A famous Gothic architecture built during the French colonial period, a symbol of the city."
-    },
-    "WAR_MUSEUM": {
-      "NAME": "War Remnants Museum",
-      "DESC": "A museum displaying artifacts and images from the war, helping visitors better understand Vietnam's history."
-    },
-    "INDEPENDENCE_PALACE": {
-      "NAME": "Independence Palace",
-      "DESC": "An important historical building, former residence and workplace of the President of South Vietnam."
-    }
+  "TITLE": "Attractions",
+  "DESCRIPTION": "Discover the most interesting places in Ho Chi Minh City",
+  "CATEGORIES": {
+    "HISTORICAL": "Historical Sites",
+    "CULTURAL": "Cultural Venues",
+    "MODERN": "Modern Attractions",
+    "NATURAL": "Natural Attractions",
+    "RELIGIOUS": "Religious Sites"
   },
-  "FACILITIES_LIST": {
-    "PARKING": "Parking",
-    "RESTROOM": "Restroom",
-    "ATM": "ATM",
-    "CAFE": "Cafe",
-    "GIFT_SHOP": "Gift Shop",
-    "GUIDED_TOUR": "Guided Tour"
-  },
-  "TAGS": {
-    "SHOPPING": "Shopping",
-    "FOOD": "Food",
-    "HISTORIC": "Historic",
-    "RELIGIOUS": "Religious",
-    "ARCHITECTURE": "Architecture",
-    "MUSEUM": "Museum",
-    "EDUCATIONAL": "Educational"
+  "FILTERS": {
+    "CATEGORY": "Category",
+    "DISTRICT": "District",
+    "PRICE_RANGE": "Price Range",
+    "RATING": "Rating"
   }
 } 

@@ -1,0 +1,21 @@
+<div class="ward-list-item" [routerLink]="['/discover/wards', ward.id]">
+  <div class="ward-image">
+    <img [src]="ward.image" [alt]="ward.name">
+  </div>
+  <div class="ward-content">
+    <h3>{{ ward.name }}</h3>
+    <p class="description">{{ ward.description }}</p>
+    <div class="ward-details">
+      <span class="ward-type" *ngIf="ward.type">{{ ward.type | translate }}</span>
+      <span class="ward-area">{{ 'WARD.CARD.AREA' | translate }}: {{ ward.area }}</span>
+    </div>
+    <div class="ward-features">
+      <span *ngFor="let feature of ward.features.slice(0, 3)" class="feature-tag">
+        {{ feature | translate }}
+      </span>
+      <span *ngIf="ward.features.length > 3" class="more-features">
+        {{ 'WARD.CARD.MORE_FEATURES' | translate: { count: ward.features.length - 3 } }}
+      </span>
+    </div>
+  </div>
+</div> 

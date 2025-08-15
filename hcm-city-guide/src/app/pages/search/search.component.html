@@ -1,0 +1,91 @@
+<div class="search-page">
+  <!-- Search Header -->
+  <section class="search-header">
+    <h1>{{ 'SEARCH.TITLE' | translate }}</h1>
+    <div class="search-box">
+      <span class="p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <input
+          type="text"
+          pInputText
+          [(ngModel)]="searchTerm"
+          (ngModelChange)="onSearchChange($event)"
+          [placeholder]="'SEARCH.PLACEHOLDER' | translate"
+          autofocus>
+      </span>
+    </div>
+  </section>
+
+  <!-- Filter Section -->
+  <section class="filter-section">
+    <div class="filter-chips">
+      <p-chip
+        *ngFor="let type of searchTypes"
+        [label]="type.label | translate"
+        [class.selected]="isTypeSelected(type.id)"
+        (click)="toggleType(type.id)"
+        [removable]="false">
+      </p-chip>
+    </div>
+  </section>
+
+  <!-- Results Section -->
+  <section class="results-section" *ngIf="!isLoading">
+    <div class="results-header" *ngIf="searchTerm">
+      <h2>{{ 'SEARCH.RESULTS_COUNT' | translate: { count: results.length } }}</h2>
+    </div>
+
+    <div class="results-grid" *ngIf="results.length > 0">
+      <div class="result-card" *ngFor="let result of results">
+        <img [src]="result.image" [alt]="result.title" *ngIf="result.image">
+        <div class="result-content">
+          <div class="result-type">
+            <p-chip [label]="'SEARCH.TYPES.' + result.type.toUpperCase() | translate" [removable]="false"></p-chip>
+          </div>
+          <h3>{{ result.title }}</h3>
+          <p>{{ result.description }}</p>
+          <div class="result-meta">
+            <span *ngIf="result.location">
+              <i class="pi pi-map-marker"></i> {{ result.location }}
+            </span>
+            <p-rating *ngIf="result.rating" [ngModel]="result.rating" [readonly]="true" [stars]="5"></p-rating>
+          </div>
+          <div class="result-tags" *ngIf="result.tags?.length">
+            <p-chip
+              *ngFor="let tag of result.tags"
+              [label]="tag"
+              [removable]="false"
+              styleClass="tag-chip">
+            </p-chip>
+          </div>
+          <a [routerLink]="result.route" class="p-button">
+            {{ 'SEARCH.VIEW_DETAILS' | translate }}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- No Results -->
+    <div class="no-results" *ngIf="searchTerm && results.length === 0">
+      <i class="pi pi-search"></i>
+      <h3>{{ 'SEARCH.NO_RESULTS.TITLE' | translate }}</h3>
+      <p>{{ 'SEARCH.NO_RESULTS.MESSAGE' | translate }}</p>
+    </div>
+  </section>
+
+  <!-- Loading State -->
+  <section class="results-section" *ngIf="isLoading">
+    <div class="results-grid">
+      <div class="result-card" *ngFor="let i of [1,2,3,4]">
+        <p-skeleton height="200px" styleClass="mb-2"></p-skeleton>
+        <div class="result-content">
+          <p-skeleton width="30%" height="2rem"></p-skeleton>
+          <p-skeleton width="70%" height="2rem" styleClass="mb-2"></p-skeleton>
+          <p-skeleton width="100%" height="4rem"></p-skeleton>
+          <p-skeleton width="50%" height="2rem" styleClass="mb-2"></p-skeleton>
+          <p-skeleton width="100%" height="3rem"></p-skeleton>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

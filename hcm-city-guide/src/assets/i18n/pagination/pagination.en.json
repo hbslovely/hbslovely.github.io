@@ -1,0 +1,19 @@
+{
+  "ITEMS_PER_PAGE": "Items per page",
+  "OF": "of",
+  "NEXT": "Next",
+  "PREVIOUS": "Previous",
+  "PAGE": "Page",
+  "SHOWING": "Showing",
+  "TO": "to",
+  "TOTAL": "items",
+  "FIRST_PAGE": "First page",
+  "LAST_PAGE": "Last page",
+  "PAGE_SIZE": "Page size",
+  "CURRENT_PAGE": "Current page",
+  "GO_TO_PAGE": "Go to page",
+  "ITEMS": {
+    "SINGULAR": "item",
+    "PLURAL": "items"
+  }
+} 

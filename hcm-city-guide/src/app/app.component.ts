@@ -1,14 +1,9 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
-import { ButtonModule } from 'primeng/button';
-import { InputTextModule } from 'primeng/inputtext';
-import { CardModule } from 'primeng/card';
-import { RippleModule } from 'primeng/ripple';
-import { StyleClassModule } from 'primeng/styleclass';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { RouterOutlet } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 import { FooterComponent } from './shared/components/footer/footer.component';
-import { ScrollService } from './core/services/scroll.service';
+import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
@@ -17,15 +12,9 @@ import { animate, style, transition, trigger } from '@angular/animations';
   imports: [
     CommonModule,
     RouterOutlet,
-    RouterLink,
-    RouterLinkActive,
-    ButtonModule,
-    InputTextModule,
-    CardModule,
-    RippleModule,
-    StyleClassModule,
     TranslateModule,
-    FooterComponent
+    FooterComponent,
+    NavbarComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
@@ -38,50 +27,8 @@ import { animate, style, transition, trigger } from '@angular/animations';
     ])
   ]
 })
-export class AppComponent implements OnInit {
-  currentLang: string = 'en';
-  isScrolled: boolean = false;
-  isMobileMenuOpen: boolean = false;
-
-  constructor(
-    private translate: TranslateService,
-    private scrollService: ScrollService
-  ) {
-    translate.setDefaultLang('en');
-    translate.use('en');
-  }
-
-  ngOnInit() {
-    this.translate.onLangChange.subscribe(() => {
-      // Handle any language change specific logic here
-    });
-  }
-
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    this.isScrolled = scrollPosition > 50;
-  }
-
-  switchLanguage() {
-    this.currentLang = this.currentLang === 'en' ? 'vi' : 'en';
-    this.translate.use(this.currentLang);
-  }
-
-  toggleMobileMenu() {
-    this.isMobileMenuOpen = !this.isMobileMenuOpen;
-  }
-
-  onSearch(event: any) {
-    const searchTerm = event.target.value;
-    console.log('Searching for:', searchTerm);
-  }
-
+export class AppComponent {
   prepareRoute(outlet: RouterOutlet) {
-    if (!outlet || !outlet.isActivated) {
-      return;
-    }
-
-    return outlet.activatedRouteData?.['animation'] || outlet?.activatedRoute?.snapshot?.url;
+    return outlet && outlet.activatedRouteData;
   }
 }

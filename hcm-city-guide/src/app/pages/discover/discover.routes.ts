@@ -10,6 +10,10 @@ export const DISCOVER_ROUTES: Routes = [
         loadComponent: () => import('./pages/wards/wards.component').then(m => m.WardsComponent)
       },
       {
+        path: 'wards/:id',
+        loadComponent: () => import('./pages/wards/ward-detail/ward-detail.component').then(m => m.WardDetailComponent)
+      },
+      {
         path: 'food',
         loadComponent: () => import('./pages/food/food.component').then(m => m.FoodComponent)
       },

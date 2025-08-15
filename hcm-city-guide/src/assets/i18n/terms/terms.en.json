@@ -1,30 +1,22 @@
 {
   "TITLE": "Terms of Service",
   "LAST_UPDATED": "Last Updated",
-  "AGREEMENT": {
-    "TITLE": "Agreement",
-    "CONTENT": "By using our services, you agree to these terms."
-  },
-  "SERVICES": {
-    "TITLE": "Our Services",
-    "INTRO": "We provide the following services:",
-    "GUIDE": "City travel guide",
-    "RECOMMENDATIONS": "Attraction recommendations",
-    "INFORMATION": "Updated information",
-    "UPDATES": "News and events"
-  },
-  "USER_OBLIGATIONS": {
-    "TITLE": "User Obligations",
-    "INTRO": "When using the service, you agree to:",
-    "ACCURATE": "Provide accurate information",
-    "LAWFUL": "Comply with laws",
-    "RESPECTFUL": "Respect others",
-    "SECURITY": "Maintain account security"
-  },
-  "CONTACT": {
-    "TITLE": "Contact",
-    "CONTENT": "If you have any questions about our terms of service, please contact:",
-    "ADDRESS": "Address",
-    "PHONE": "Phone"
+  "SECTIONS": {
+    "INTRODUCTION": {
+      "TITLE": "Introduction",
+      "CONTENT": "These Terms of Service govern your use of our website and services."
+    },
+    "ACCEPTANCE": {
+      "TITLE": "Acceptance of Terms",
+      "CONTENT": "By accessing or using our services, you agree to be bound by these terms."
+    },
+    "USER_OBLIGATIONS": {
+      "TITLE": "User Obligations",
+      "CONTENT": "You agree to use our services in accordance with applicable laws and regulations."
+    },
+    "INTELLECTUAL_PROPERTY": {
+      "TITLE": "Intellectual Property",
+      "CONTENT": "All content and materials available through our services are protected by intellectual property rights."
+    }
   }
 } 

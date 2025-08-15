@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
@@ -16,7 +16,7 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class FooterComponent {
   currentYear = new Date().getFullYear();
-
+  
   socialLinks = [
     { icon: 'fab fa-facebook', url: 'https://facebook.com/hcmcityguide' },
     { icon: 'fab fa-instagram', url: 'https://instagram.com/hcmcityguide' },

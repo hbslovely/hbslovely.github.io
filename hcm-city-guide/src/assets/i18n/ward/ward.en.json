@@ -1,0 +1,140 @@
+{
+  "TITLE": "Discover Ho Chi Minh City's Wards",
+  "DESCRIPTION": "Explore the unique character and charm of each ward in Ho Chi Minh City",
+  "SEARCH": {
+    "PLACEHOLDER": "Search wards by name or feature..."
+  },
+  "FILTERS": {
+    "FEATURES": "Features",
+    "TYPE": "Ward Type",
+    "CULTURE": "Cultural Heritage",
+    "ALL_TYPES": "All Types",
+    "ACTIVE_FILTERS": "Active Filters",
+    "RESET": "Reset Filters"
+  },
+  "CARD": {
+    "AREA": "Area",
+    "TYPE": "Ward Type",
+    "MORE_FEATURES": "+{{count}} more",
+    "VIEW_DETAILS": "View Details",
+    "VIEW_MAP": "View on Map"
+  },
+
+  "DETAIL": {
+    "ABOUT": "About this Ward",
+    "KEY_FEATURES": "Key Features",
+    "INTERESTING_FACTS": "Interesting Facts",
+    "NOTABLE_LANDMARKS": "Notable Landmarks",
+    "NEIGHBORING_WARDS": "Neighboring Wards",
+    "LOCATION": "Location",
+    "MAP_LOADING": "Loading map...",
+    "BACK_TO_WARDS": "Back to Wards",
+    "SHARE": "Share",
+    "LOADING": "Loading ward information...",
+    "AREA": "Total Area",
+    "LANDMARKS": "landmarks",
+    "LANDMARKS_COUNT": "Number of Notable Landmarks",
+    "VIEW_LANDMARK": "View Details"
+  },
+
+  "NO_RESULTS": {
+    "TITLE": "No Results Found",
+    "MESSAGE": "Try adjusting your search criteria or filters"
+  },
+
+  "GENERAL": {
+    "AREA": "Area",
+    "POPULATION": "Population",
+    "LOCATION": "Location",
+    "HISTORY": "History",
+    "LANDMARKS": "Notable Landmarks",
+    "FEATURES": "Key Features",
+    "NEIGHBORING_WARDS": "Neighboring Wards"
+  },
+
+  "FEATURES": {
+    "HISTORIC_SITE": "Historic Site",
+    "CULTURAL_HERITAGE": "Cultural Heritage",
+    "COMMERCIAL_HUB": "Commercial Hub",
+    "RESIDENTIAL_AREA": "Residential Area",
+    "INDUSTRIAL_ZONE": "Industrial Zone",
+    "TOURIST_ATTRACTION": "Tourist Attraction",
+    "WATERFRONT": "Waterfront",
+    "GREEN_SPACE": "Green Space",
+    "EDUCATION_HUB": "Education Hub",
+    "TRADITIONAL_MARKET": "Traditional Market",
+    "MODERN_DEVELOPMENT": "Modern Development",
+    "ENVIRONMENTAL_CONSERVATION": "Environmental Conservation",
+    "COMMUNITY_CENTER": "Community Center",
+    "PORT_FACILITY": "Port Facility",
+    "LOGISTICS_HUB": "Logistics Hub",
+    "TRANSPORT_HUB": "Transport Hub",
+    "RELIGIOUS_SITE": "Religious Site",
+    "MARITIME_TRADE": "Maritime Trade",
+    "FISHING_INDUSTRY": "Fishing Industry",
+    "TRADITIONAL_CRAFT": "Traditional Craft",
+    "ARCHITECTURAL_SIGNIFICANCE": "Architectural Significance",
+    "PARK_AND_RECREATION": "Park and Recreation",
+    "SPORTS_FACILITY": "Sports Facility",
+    "RESEARCH_CENTER": "Research Center",
+    "TECH_ZONE": "Technology Zone",
+    "MIXED_USE": "Mixed Use Development",
+    "ENTERTAINMENT_ZONE": "Entertainment Zone",
+    "SHOPPING_DISTRICT": "Shopping District",
+    "COLONIAL_ARCHITECTURE": "Colonial Architecture",
+    "NATURAL_HERITAGE": "Natural Heritage",
+    "AGRICULTURAL_HERITAGE": "Agricultural Heritage",
+    "RURAL_COMMUNITY": "Rural Community",
+    "COASTAL_AREA": "Coastal Area",
+    "NATIONAL_PARK": "National Park",
+    "MARINE_CONSERVATION": "Marine Conservation"
+  },
+
+  "LANDMARKS": {
+    "AN_DONG_MARKET": "An Dong Market",
+    "BEN_THANH_MARKET": "Ben Thanh Market",
+    "BINH_TAY_MARKET": "Binh Tay Market",
+    "NOTRE_DAME_CATHEDRAL": "Notre-Dame Cathedral",
+    "INDEPENDENCE_PALACE": "Independence Palace",
+    "WAR_REMNANTS_MUSEUM": "War Remnants Museum",
+    "THIEN_HAU_TEMPLE": "Thien Hau Temple",
+    "JADE_EMPEROR_PAGODA": "Jade Emperor Pagoda",
+    "CENTRAL_POST_OFFICE": "Central Post Office",
+    "OPERA_HOUSE": "Opera House",
+    "NGUYEN_HUE_WALKING_STREET": "Nguyen Hue Walking Street",
+    "STARLIGHT_BRIDGE": "Starlight Bridge",
+    "LANDMARK_81": "Landmark 81",
+    "BITEXCO_TOWER": "Bitexco Financial Tower",
+    "SEPTEMBER_23_PARK": "September 23 Park",
+    "TAO_DAN_PARK": "Tao Dan Park",
+    "TURTLE_LAKE": "Turtle Lake",
+    "DISTRICT_1_PARK": "District 1 Park",
+    "SAIGON_RIVER": "Saigon River",
+    "CAT_LAI_PORT": "Cat Lai Port",
+    "INDUSTRIAL_PARK": "Industrial Park",
+    "ECO_PARK": "Eco Park",
+    "COMMUNITY_CENTER": "Community Center",
+    "CULTURAL_CENTER": "Cultural Center",
+    "EDUCATION_CENTER": "Education Center",
+    "SPORTS_COMPLEX": "Sports Complex",
+    "RIVERSIDE_PARK": "Riverside Park",
+    "HERITAGE_BUILDINGS": "Heritage Buildings",
+    "TRADITIONAL_MARKET": "Traditional Market",
+    "MODERN_PLAZA": "Modern Plaza",
+    "SHOPPING_COMPLEX": "Shopping Complex",
+    "LOGISTICS_CENTER": "Logistics Center"
+  },
+
+  "WARD_TYPES": {
+    "URBAN": "Urban Ward",
+    "SUBURBAN": "Suburban Ward",
+    "RURAL": "Rural Ward",
+    "SPECIAL": "Special Administrative Region"
+  },
+
+  "VIEW_TYPES": {
+    "GRID": "Grid View",
+    "LIST": "List View",
+    "TOGGLE_VIEW": "Toggle View"
+  }
+}

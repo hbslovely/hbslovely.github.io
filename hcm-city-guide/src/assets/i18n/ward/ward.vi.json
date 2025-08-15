@@ -1,0 +1,99 @@
+{
+  "TITLE": "Khám Phá Các Phường Thành Phố Hồ Chí Minh",
+  "DESCRIPTION": "Tìm hiểu đặc điểm và nét riêng của từng phường tại Thành phố Hồ Chí Minh",
+  "SEARCH": {
+    "PLACEHOLDER": "Tìm kiếm phường theo tên hoặc đặc điểm..."
+  },
+  "FILTERS": {
+    "FEATURES": "Đặc Điểm",
+    "TYPE": "Loại Phường",
+    "CULTURE": "Di Sản Văn Hóa",
+    "ALL_TYPES": "Tất Cả",
+    "ACTIVE_FILTERS": "Bộ Lọc Đang Dùng",
+    "RESET": "Đặt Lại"
+  },
+  "CARD": {
+    "AREA": "Diện tích",
+    "TYPE": "Loại Phường",
+    "MORE_FEATURES": "+{{count}} khác",
+    "VIEW_DETAILS": "Xem Chi tiết",
+    "VIEW_MAP": "Xem Bản đồ"
+  },
+
+  "DETAIL": {
+    "ABOUT": "Giới thiệu Phường",
+    "KEY_FEATURES": "Đặc điểm Chính",
+    "INTERESTING_FACTS": "Thông tin Thú vị",
+    "NOTABLE_LANDMARKS": "Địa điểm Nổi bật",
+    "NEIGHBORING_WARDS": "Các Phường Lân cận",
+    "LOCATION": "Vị trí",
+    "MAP_LOADING": "Đang tải bản đồ...",
+    "BACK_TO_WARDS": "Quay lại Danh sách",
+    "SHARE": "Chia sẻ",
+    "LOADING": "Đang tải thông tin phường...",
+    "AREA": "Tổng Diện tích",
+    "LANDMARKS": "địa điểm",
+    "LANDMARKS_COUNT": "Số Địa điểm Nổi bật",
+    "VIEW_LANDMARK": "Xem Chi tiết"
+  },
+
+  "NO_RESULTS": {
+    "TITLE": "Không Tìm Thấy Kết Quả",
+    "MESSAGE": "Vui lòng điều chỉnh tiêu chí tìm kiếm hoặc bộ lọc"
+  },
+
+  "GENERAL": {
+    "AREA": "Diện tích",
+    "POPULATION": "Dân số",
+    "LOCATION": "Vị trí",
+    "HISTORY": "Lịch sử",
+    "LANDMARKS": "Địa điểm nổi bật",
+    "FEATURES": "Đặc điểm chính",
+    "NEIGHBORING_WARDS": "Các phường lân cận"
+  },
+
+  "FEATURES": {
+    "HISTORIC_SITE": "Di tích lịch sử",
+    "CULTURAL_HERITAGE": "Di sản văn hóa",
+    "COMMERCIAL_HUB": "Trung tâm thương mại",
+    "RESIDENTIAL_AREA": "Khu dân cư",
+    "INDUSTRIAL_ZONE": "Khu công nghiệp",
+    "TOURIST_ATTRACTION": "Điểm du lịch",
+    "WATERFRONT": "Khu vực ven sông",
+    "GREEN_SPACE": "Không gian xanh",
+    "EDUCATION_HUB": "Trung tâm giáo dục",
+    "TRADITIONAL_MARKET": "Chợ truyền thống",
+    "MODERN_DEVELOPMENT": "Phát triển hiện đại",
+    "ENVIRONMENTAL_CONSERVATION": "Bảo tồn môi trường",
+    "COMMUNITY_CENTER": "Trung tâm cộng đồng",
+    "PORT_FACILITY": "Cơ sở cảng biển",
+    "LOGISTICS_HUB": "Trung tâm logistics",
+    "TRANSPORT_HUB": "Trung tâm giao thông",
+    "RELIGIOUS_SITE": "Địa điểm tôn giáo",
+    "MARITIME_TRADE": "Thương mại hàng hải",
+    "FISHING_INDUSTRY": "Ngành nghề đánh bắt",
+    "TRADITIONAL_CRAFT": "Nghề thủ công truyền thống",
+    "ARCHITECTURAL_SIGNIFICANCE": "Kiến trúc đặc sắc",
+    "PARK_AND_RECREATION": "Công viên và giải trí",
+    "SPORTS_FACILITY": "Cơ sở thể thao",
+    "RESEARCH_CENTER": "Trung tâm nghiên cứu",
+    "TECH_ZONE": "Khu công nghệ",
+    "MIXED_USE": "Khu phức hợp",
+    "ENTERTAINMENT_ZONE": "Khu vui chơi giải trí",
+    "SHOPPING_DISTRICT": "Khu mua sắm",
+    "COLONIAL_ARCHITECTURE": "Kiến trúc thời Pháp",
+    "NATURAL_HERITAGE": "Di sản thiên nhiên",
+    "AGRICULTURAL_HERITAGE": "Di sản nông nghiệp",
+    "RURAL_COMMUNITY": "Cộng đồng nông thôn",
+    "COASTAL_AREA": "Khu vực ven biển",
+    "NATIONAL_PARK": "Vườn quốc gia",
+    "MARINE_CONSERVATION": "Bảo tồn biển"
+  },
+
+  "WARD_TYPES": {
+    "URBAN": "Phường đô thị",
+    "SUBURBAN": "Phường ven đô",
+    "RURAL": "Phường nông thôn",
+    "SPECIAL": "Khu vực hành chính đặc biệt"
+  }
+}

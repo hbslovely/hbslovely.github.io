@@ -11,23 +11,7 @@ import { TranslateModule } from '@ngx-translate/core';
     RouterOutlet,
     TranslateModule
   ],
-  template: `
-    <div class="discover-container">
-      <div class="discover-content">
-        <router-outlet></router-outlet>
-      </div>
-    </div>
-  `,
-  styles: [`
-    .discover-container {
-      padding: 2rem 0;
-    }
-
-    .discover-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-  `]
+  templateUrl: './discover.component.html',
+  styleUrls: ['./discover.component.scss']
 })
 export class DiscoverComponent {} 
