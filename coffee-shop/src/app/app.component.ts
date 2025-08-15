@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet, RouterLink } from '@angular/router';
 import { NbThemeModule, NbLayoutModule, NbButtonModule, NbIconModule, NbBadgeModule } from '@nebular/theme';
-import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { OrderService } from './services/order.service';
 
 @Component({
@@ -16,8 +15,7 @@ import { OrderService } from './services/order.service';
     NbLayoutModule,
     NbButtonModule,
     NbIconModule,
-    NbBadgeModule,
-    NbEvaIconsModule
+    NbBadgeModule
   ],
   template: `
     <nb-layout>

@@ -34,7 +34,7 @@ import { OrderService } from '../../services/order.service';
               <div class="actions">
                 <input nbInput type="number" [(ngModel)]="item.tempQuantity" min="1" max="99">
                 <button nbButton status="primary" (click)="addToCart(item)">
-                  <nb-icon icon="shopping-cart"></nb-icon>
+                  <nb-icon icon="shopping-cart-outline"></nb-icon>
                   Add to Cart
                 </button>
               </div>
