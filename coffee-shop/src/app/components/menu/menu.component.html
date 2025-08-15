@@ -1,1 +1,70 @@
- 
+<div class="menu-container">
+  <!-- Header -->
+  <div class="menu-header">
+    <h1 class="heading-lg">Thực đơn</h1>
+    <div class="menu-actions">
+      <!-- Search -->
+      <nb-form-field class="search-field">
+        <nb-icon nbPrefix icon="search-outline" class="icon-small"></nb-icon>
+        <input nbInput
+               [placeholder]="'Tìm món ăn...'"
+               [(ngModel)]="searchTerm"
+               (ngModelChange)="onSearch($event)">
+      </nb-form-field>
+
+      <!-- Sort -->
+      <nb-select [(ngModel)]="sortOption" (selectedChange)="onSort($event)">
+        <nb-option value="name">Tên A-Z</nb-option>
+        <nb-option value="price-asc">Giá tăng dần</nb-option>
+        <nb-option value="price-desc">Giá giảm dần</nb-option>
+      </nb-select>
+
+      <!-- View Mode -->
+      <div class="view-mode-toggle">
+        <button nbButton ghost
+                [status]="viewMode === 'grid' ? 'primary' : 'basic'"
+                (click)="setViewMode('grid')">
+          <nb-icon icon="grid-outline" class="icon-small"></nb-icon>
+        </button>
+        <button nbButton ghost
+                [status]="viewMode === 'list' ? 'primary' : 'basic'"
+                (click)="setViewMode('list')">
+          <nb-icon icon="list-outline" class="icon-small"></nb-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Categories -->
+  <div class="menu-categories">
+    <button nbButton
+            *ngFor="let category of menuCategories"
+            [status]="selectedCategory?.id === category.id ? 'primary' : 'basic'"
+            (click)="selectCategory(category)">
+      <nb-icon [icon]="category.icon" class="icon-small"></nb-icon>
+      {{ category.name }}
+    </button>
+  </div>
+
+  <!-- Menu Items -->
+  <div class="menu-content" [class.list-view]="viewMode === 'list'">
+    @if (filteredItems.length > 0) {
+      @for (item of filteredItems; track item.id) {
+        <app-menu-item
+          [item]="item"
+          [viewMode]="viewMode"
+          [quantity]="1"
+          (addToCart)="onAddToCart($event)">
+        </app-menu-item>
+      }
+    } @else {
+      <div class="empty-state">
+        <nb-icon icon="alert-circle-outline" class="icon-large"></nb-icon>
+        <p class="text-md">Không tìm thấy món ăn nào phù hợp</p>
+        <button nbButton status="primary" (click)="resetFilters()">
+          Xóa bộ lọc
+        </button>
+      </div>
+    }
+  </div>
+</div> 

@@ -1,24 +1,16 @@
-import { ApplicationConfig, importProvidersFrom } from '@angular/core';
+import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
+import { routes, routeProviders } from './app.routes';
 import { provideAnimations } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule, NbMenuModule, NbSidebarModule, NbIconModule } from '@nebular/theme';
-import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { HttpClientModule } from '@angular/common/http';
-
-import { routes } from './app.routes';
+import { provideHttpClient } from '@angular/common/http';
+import { PrimeNGConfig } from 'primeng/api';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideAnimations(),
-    importProvidersFrom(
-      HttpClientModule,
-      NbThemeModule.forRoot({ name: 'default' }),
-      NbLayoutModule,
-      NbMenuModule.forRoot(),
-      NbSidebarModule.forRoot(),
-      NbIconModule,
-      NbEvaIconsModule
-    )
+    provideHttpClient(),
+    ...routeProviders,
+    PrimeNGConfig
   ]
 };

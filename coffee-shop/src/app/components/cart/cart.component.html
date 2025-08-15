@@ -1,0 +1,96 @@
+<div class="cart-container">
+  <nb-card>
+    <nb-card-header class="cart-header">
+      <h2>
+        <nb-icon icon="shopping-cart-outline"></nb-icon>
+        Giỏ hàng của bạn
+      </h2>
+    </nb-card-header>
+    <nb-card-body>
+      @if (cartItems.length === 0) {
+        <div class="empty-cart">
+          <nb-icon icon="shopping-bag-outline" class="empty-icon"></nb-icon>
+          <p>Giỏ hàng của bạn đang trống</p>
+          <button nbButton status="primary" routerLink="/menu">
+            <nb-icon icon="book-open-outline"></nb-icon>
+            Xem thực đơn
+          </button>
+        </div>
+      } @else {
+        <div class="cart-items">
+          @for (item of cartItems; track item.id) {
+            <div class="cart-item">
+              <div class="item-info">
+                <div class="item-header">
+                  <h3>{{ item.name }}</h3>
+                  <button nbButton ghost size="tiny" (click)="updateQuantity(item.id, 0)">
+                    <nb-icon icon="close-outline"></nb-icon>
+                  </button>
+                </div>
+                <p class="price">{{ item.price | currency:'VND':'symbol':'1.0-0' }}</p>
+              </div>
+              <div class="item-actions">
+                <nb-form-field>
+                  <nb-icon nbPrefix icon="shopping-bag-outline"></nb-icon>
+                  <input nbInput type="number" [(ngModel)]="item.quantity" 
+                         (ngModelChange)="updateQuantity(item.id, $event)" 
+                         min="0" max="99" class="quantity-input">
+                </nb-form-field>
+                <nb-form-field>
+                  <nb-icon nbPrefix icon="edit-2-outline"></nb-icon>
+                  <textarea nbInput [(ngModel)]="item.note" 
+                            placeholder="Thêm ghi chú..."
+                            class="note-input"></textarea>
+                </nb-form-field>
+              </div>
+            </div>
+          }
+        </div>
+
+        <div class="order-form">
+          <h3>Thông tin giao hàng</h3>
+          <div class="form-grid">
+            <nb-form-field class="form-group">
+              <nb-icon nbPrefix icon="person-outline"></nb-icon>
+              <input nbInput fullWidth [(ngModel)]="orderInfo.customerName" 
+                     placeholder="Tên của bạn (Không bắt buộc)">
+            </nb-form-field>
+            <nb-form-field class="form-group">
+              <nb-icon nbPrefix icon="home-outline"></nb-icon>
+              <input nbInput fullWidth [(ngModel)]="orderInfo.address" 
+                     placeholder="Địa chỉ giao hàng *" required>
+            </nb-form-field>
+            <nb-form-field class="form-group">
+              <nb-icon nbPrefix icon="phone-outline"></nb-icon>
+              <input nbInput fullWidth [(ngModel)]="orderInfo.phone" 
+                     placeholder="Số điện thoại *" required>
+            </nb-form-field>
+          </div>
+        </div>
+
+        <div class="cart-summary">
+          <div class="summary-details">
+            <div class="summary-row">
+              <span>Tạm tính</span>
+              <span>{{ total | currency:'VND':'symbol':'1.0-0' }}</span>
+            </div>
+            <div class="summary-row">
+              <span>Phí giao hàng</span>
+              <span>Miễn phí</span>
+            </div>
+            <div class="summary-row total">
+              <span>Tổng cộng</span>
+              <span>{{ total | currency:'VND':'symbol':'1.0-0' }}</span>
+            </div>
+          </div>
+          <button nbButton status="success" size="medium" fullWidth
+                  (click)="placeOrder()" 
+                  [disabled]="!orderInfo.address || !orderInfo.phone">
+            <nb-icon icon="checkmark-circle-2-outline"></nb-icon>
+            Đặt hàng
+          </button>
+        </div>
+      }
+    </nb-card-body>
+  </nb-card>
+</div> 

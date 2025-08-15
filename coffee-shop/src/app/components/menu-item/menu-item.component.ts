@@ -1,8 +1,15 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { NbCardModule, NbButtonModule, NbIconModule, NbInputModule } from '@nebular/theme';
+import { 
+  NbCardModule, 
+  NbButtonModule, 
+  NbIconModule, 
+  NbInputModule,
+  NbFormFieldModule 
+} from '@nebular/theme';
 import { MenuItem } from '../../models/menu.model';
+import { ViewMode } from '../../services/menu.service';
 
 @Component({
   selector: 'app-menu-item',
@@ -13,19 +20,32 @@ import { MenuItem } from '../../models/menu.model';
     NbCardModule,
     NbButtonModule,
     NbIconModule,
-    NbInputModule
+    NbInputModule,
+    NbFormFieldModule
   ],
   templateUrl: './menu-item.component.html',
   styleUrls: ['./menu-item.component.scss']
 })
-export class MenuItemComponent {
+export class MenuItemComponent implements AfterViewInit {
   @Input() item!: MenuItem;
   @Input() quantity: number = 1;
-  @Output() addToCart = new EventEmitter<{ item: MenuItem, quantity: number }>();
+  @Input() viewMode: ViewMode = 'grid';
+  @Output() addToCart = new EventEmitter<{ item: MenuItem, quantity: number, element: HTMLElement }>();
+  @ViewChild('addToCartBtn', { static: true }) addToCartBtn!: ElementRef;
+
+  private buttonElement: HTMLElement | null = null;
+
+  ngAfterViewInit() {
+    this.buttonElement = this.addToCartBtn.nativeElement;
+  }
 
   onAddToCart(): void {
-    if (this.quantity > 0) {
-      this.addToCart.emit({ item: this.item, quantity: this.quantity });
+    if (this.quantity > 0 && this.buttonElement) {
+      this.addToCart.emit({ 
+        item: this.item, 
+        quantity: this.quantity,
+        element: this.buttonElement
+      });
     }
   }
 } 

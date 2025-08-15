@@ -1,0 +1,108 @@
+<div class="order-container">
+  <nb-card>
+    <nb-card-header class="order-header">
+      <h2>
+        <nb-icon icon="file-text-outline"></nb-icon>
+        Chi tiết đơn hàng
+      </h2>
+    </nb-card-header>
+    <nb-card-body>
+      @if (order) {
+        <div class="order-info">
+          <div class="info-section customer-info">
+            <div class="section-header">
+              <nb-icon icon="person-outline"></nb-icon>
+              <h3>Thông tin khách hàng</h3>
+            </div>
+            <div class="info-grid">
+              @if (order.customerName) {
+                <div class="info-item">
+                  <span class="label">Tên</span>
+                  <span class="value">{{ order.customerName }}</span>
+                </div>
+              }
+              <div class="info-item">
+                <span class="label">Địa chỉ</span>
+                <span class="value">{{ order.address }}</span>
+              </div>
+              <div class="info-item">
+                <span class="label">Số điện thoại</span>
+                <span class="value">{{ order.phone }}</span>
+              </div>
+              <div class="info-item">
+                <span class="label">Ngày đặt hàng</span>
+                <span class="value">{{ order.orderDate | date:'medium' }}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-section order-items">
+            <div class="section-header">
+              <nb-icon icon="shopping-bag-outline"></nb-icon>
+              <h3>Các món đã đặt</h3>
+            </div>
+            <div class="items-list">
+              @for (item of order.items; track item.id) {
+                <div class="order-item">
+                  <div class="item-details">
+                    <div class="item-main">
+                      <h4>{{ item.name }}</h4>
+                      <span class="quantity">x{{ item.quantity }}</span>
+                    </div>
+                    <span class="price">{{ item.price * item.quantity | currency:'VND':'symbol':'1.0-0' }}</span>
+                  </div>
+                  @if (item.note) {
+                    <div class="item-note">
+                      <nb-icon icon="message-circle-outline"></nb-icon>
+                      <p>{{ item.note }}</p>
+                    </div>
+                  }
+                </div>
+              }
+            </div>
+          </div>
+
+          <div class="info-section order-total">
+            <div class="section-header">
+              <nb-icon icon="credit-card-outline"></nb-icon>
+              <h3>Thông tin thanh toán</h3>
+            </div>
+            <div class="total-details">
+              <div class="summary-row">
+                <span>Tạm tính</span>
+                <span>{{ order.totalAmount | currency:'VND':'symbol':'1.0-0' }}</span>
+              </div>
+              <div class="summary-row">
+                <span>Phí giao hàng</span>
+                <span>Miễn phí</span>
+              </div>
+              <div class="summary-row total">
+                <span>Tổng cộng</span>
+                <span>{{ order.totalAmount | currency:'VND':'symbol':'1.0-0' }}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="share-section">
+            <button nbButton status="primary" (click)="copyOrderLink()">
+              <nb-icon icon="link-2-outline"></nb-icon>
+              Chia sẻ đơn hàng
+            </button>
+            <nb-alert *ngIf="showCopySuccess" status="success" closable (close)="showCopySuccess = false">
+              Đã sao chép liên kết đơn hàng!
+            </nb-alert>
+          </div>
+        </div>
+      } @else {
+        <div class="error-state">
+          <nb-icon icon="alert-triangle-outline"></nb-icon>
+          <h3>Đơn hàng không hợp lệ</h3>
+          <p>Mã đơn hàng không hợp lệ hoặc đã hết hạn.</p>
+          <button nbButton status="primary" routerLink="/menu">
+            Quay lại thực đơn
+          </button>
+        </div>
+      }
+    </nb-card-body>
+  </nb-card>
+</div> 
