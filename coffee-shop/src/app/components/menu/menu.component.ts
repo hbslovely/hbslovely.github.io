@@ -7,10 +7,10 @@ import { InputTextModule } from 'primeng/inputtext';
 import { DropdownModule } from 'primeng/dropdown';
 import { MenuItemComponent } from '../menu-item/menu-item.component';
 import { OrderService } from '../../services/order.service';
+import { MenuService } from '../../services/menu.service';
 import { CartAnimationService } from '../../services/cart-animation.service';
-import { MenuData, MenuItem, ViewMode, SortOption } from '../../models/menu.model';
-import { combineLatest, BehaviorSubject } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { MenuItem, Category, ViewMode, SortOption } from '../../models/menu.model';
+import { BehaviorSubject, combineLatest } from 'rxjs';
 
 @Component({
   selector: 'app-menu',
@@ -28,7 +28,7 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  menuData: MenuData | null = null;
+  categories: Category[] = [];
   selectedCategory = 'all';
   viewMode: ViewMode = 'grid';
   searchTerm = '';
@@ -46,24 +46,29 @@ export class MenuComponent implements OnInit {
   ];
 
   constructor(
+    private menuService: MenuService,
     private orderService: OrderService,
     private cartAnimationService: CartAnimationService
   ) {}
 
   ngOnInit() {
+    // Subscribe to menu data
+    this.menuService.categories$.subscribe(categories => {
+      this.categories = categories;
+    });
+
     // Combine all filter changes
     combineLatest([
+      this.menuService.menuItems$,
       this.searchTermSubject,
       this.sortOptionSubject,
       this.viewModeSubject
-    ]).pipe(
-      map(([search, sort, view]) => {
-        this.searchTerm = search;
-        this.sortOption = sort;
-        this.viewMode = view;
-        this.updateFilteredItems();
-      })
-    ).subscribe();
+    ]).subscribe(([items, search, sort, view]) => {
+      this.searchTerm = search;
+      this.sortOption = sort;
+      this.viewMode = view;
+      this.updateFilteredItems(items);
+    });
   }
 
   onSearch(event: Event): void {
@@ -79,16 +84,17 @@ export class MenuComponent implements OnInit {
     this.viewModeSubject.next(mode);
   }
 
-  selectCategory(category: string): void {
-    this.selectedCategory = category;
-    this.updateFilteredItems();
+  selectCategory(categoryId: string): void {
+    this.selectedCategory = categoryId;
+    this.menuService.getItemsByCategory(categoryId).subscribe(items => {
+      this.updateFilteredItems(items);
+    });
   }
 
   resetFilters(): void {
     this.searchTermSubject.next('');
     this.sortOptionSubject.next('default');
     this.selectedCategory = 'all';
-    this.updateFilteredItems();
   }
 
   onAddToCart(event: { item: MenuItem, element: HTMLElement }): void {
@@ -98,53 +104,36 @@ export class MenuComponent implements OnInit {
     this.orderService.addToCart({
       id: item.id,
       name: item.name,
-      price: item.price,
+      price: item.originalPrice,
       description: item.description,
       image: item.image
     });
 
     // Animate
     if (element) {
-      this.cartAnimationService.animateAddToCart(element);
+      const cartIcon = document.querySelector('.cart-link .pi-shopping-cart') as HTMLElement;
+      if (cartIcon) {
+        this.cartAnimationService.animateAddToCart(element);
+      }
     }
   }
 
-  private updateFilteredItems(): void {
-    if (!this.menuData) return;
-
-    let items = this.menuData.items;
+  private updateFilteredItems(items: MenuItem[]): void {
+    let filteredItems = items;
 
     // Filter by category
-    if (this.selectedCategory !== 'all') {
-      items = items.filter(item => 
-        this.selectedCategory === 'recommended' 
-          ? item.recommended 
-          : item.category === this.selectedCategory
-      );
+    if (this.selectedCategory === 'recommended') {
+      filteredItems = filteredItems.filter(item => item.recommended);
+    } else if (this.selectedCategory !== 'all') {
+      filteredItems = filteredItems.filter(item => item.categoryId === this.selectedCategory);
     }
 
-    // Filter by search term
+    // Apply search filter
     if (this.searchTerm) {
-      const searchLower = this.searchTerm.toLowerCase();
-      items = items.filter(item => 
-        item.name.toLowerCase().includes(searchLower) ||
-        item.description.toLowerCase().includes(searchLower)
-      );
+      filteredItems = this.menuService.filterItems(filteredItems, this.searchTerm);
     }
 
-    // Sort items
-    switch (this.sortOption) {
-      case 'price_asc':
-        items = [...items].sort((a, b) => a.price - b.price);
-        break;
-      case 'price_desc':
-        items = [...items].sort((a, b) => b.price - a.price);
-        break;
-      default:
-        // Keep original order
-        break;
-    }
-
-    this.filteredItems = items;
+    // Apply sort
+    this.filteredItems = this.menuService.sortItems(filteredItems, this.sortOption);
   }
 } 

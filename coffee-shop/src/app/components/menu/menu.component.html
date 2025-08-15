@@ -1,33 +1,30 @@
 <div class="menu-container">
-  <p-card>
-    <ng-template pTemplate="header">
-      <div class="menu-header">
-        <h2>
-          <i class="pi pi-book"></i>
-          Thực đơn
-        </h2>
-      </div>
-    </ng-template>
+  <div class="menu-header">
+    <div class="header-content">
+      <h1>Thực Đơn</h1>
+      <p>Khám phá hương vị cà phê đích thực</p>
+    </div>
+  </div>
 
-    <div class="menu-controls">
-      <div class="search-sort">
-        <span class="p-input-icon-left search-field">
-          <i class="pi pi-search"></i>
-          <input 
-            pInputText 
-            type="text" 
-            [value]="searchTerm"
-            (input)="onSearch($event)" 
-            placeholder="Tìm kiếm món...">
-        </span>
+  <div class="menu-controls">
+    <div class="search-sort">
+      <span class="p-input-icon-left search-field">
+        <i class="pi pi-search"></i>
+        <input 
+          pInputText 
+          type="text" 
+          [value]="searchTerm"
+          (input)="onSearch($event)" 
+          placeholder="Tìm món yêu thích...">
+      </span>
 
-        <p-dropdown
-          [options]="sortOptions"
-          [(ngModel)]="sortOption"
-          (onChange)="onSort($event)"
-          placeholder="Sắp xếp theo">
-        </p-dropdown>
-      </div>
+      <p-dropdown
+        [options]="sortOptions"
+        [(ngModel)]="sortOption"
+        (onChange)="onSort($event)"
+        [style]="{'min-width': '150px'}"
+        placeholder="Sắp xếp theo">
+      </p-dropdown>
 
       <div class="view-toggle">
         <p-button
@@ -43,52 +40,61 @@
         </p-button>
       </div>
     </div>
+  </div>
 
-    <div class="menu-categories" *ngIf="menuData">
-      <p-button
-        label="Tất cả"
-        (onClick)="selectCategory('all')"
-        [outlined]="selectedCategory !== 'all'"
-        class="mr-2">
-      </p-button>
-      <p-button
-        label="Món được yêu thích"
-        (onClick)="selectCategory('recommended')"
-        [outlined]="selectedCategory !== 'recommended'"
-        class="mr-2">
-      </p-button>
-      <p-button
-        *ngFor="let category of menuData.categories"
-        [label]="category"
-        (onClick)="selectCategory(category)"
-        [outlined]="selectedCategory !== category"
-        class="mr-2">
-      </p-button>
-    </div>
+  <div class="menu-categories">
+    <p-button
+      label="Tất cả"
+      (onClick)="selectCategory('all')"
+      [outlined]="selectedCategory !== 'all'"
+      class="category-btn">
+    </p-button>
+    <p-button
+      label="Món được yêu thích"
+      (onClick)="selectCategory('recommended')"
+      [outlined]="selectedCategory !== 'recommended'"
+      class="category-btn">
+    </p-button>
+    @for (category of categories; track category.id) {
+      <div class="category-item">
+        <p-button
+          [label]="category.name"
+          (onClick)="selectCategory(category.id)"
+          [outlined]="selectedCategory !== category.id"
+          class="category-btn">
+        </p-button>
+        @if (selectedCategory === category.id) {
+          <div class="category-description">
+            <img [src]="category.image" [alt]="category.name">
+            <p>{{ category.description }}</p>
+          </div>
+        }
+      </div>
+    }
+  </div>
 
-    <div class="menu-content">
-      @if (filteredItems.length > 0) {
-        <div class="menu-items" [class.grid-view]="viewMode === 'grid'" [class.list-view]="viewMode === 'list'">
-          @for (item of filteredItems; track item.id) {
-            <app-menu-item
-              [item]="item"
-              [viewMode]="viewMode"
-              (addToCart)="onAddToCart($event)">
-            </app-menu-item>
-          }
-        </div>
-      } @else {
-        <div class="empty-state">
-          <i class="pi pi-search"></i>
-          <h3>Không tìm thấy món nào</h3>
-          <p>Thử tìm kiếm với từ khóa khác hoặc xóa bộ lọc</p>
-          <p-button
-            label="Xóa bộ lọc"
-            icon="pi pi-filter-slash"
-            (onClick)="resetFilters()">
-          </p-button>
-        </div>
-      }
-    </div>
-  </p-card>
+  <div class="menu-content">
+    @if (filteredItems.length > 0) {
+      <div class="menu-items" [class.grid-view]="viewMode === 'grid'" [class.list-view]="viewMode === 'list'">
+        @for (item of filteredItems; track item.id) {
+          <app-menu-item
+            [item]="item"
+            [viewMode]="viewMode"
+            (addToCart)="onAddToCart($event)">
+          </app-menu-item>
+        }
+      </div>
+    } @else {
+      <div class="empty-state">
+        <i class="pi pi-search"></i>
+        <h3>Không tìm thấy món nào</h3>
+        <p>Thử tìm kiếm với từ khóa khác hoặc xóa bộ lọc</p>
+        <p-button
+          label="Xóa bộ lọc"
+          icon="pi pi-filter-slash"
+          (onClick)="resetFilters()">
+        </p-button>
+      </div>
+    }
+  </div>
 </div> 

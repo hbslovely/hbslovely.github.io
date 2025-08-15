@@ -1,0 +1,34 @@
+{
+  "categories": [
+    {
+      "id": "coffee",
+      "name": "Cà phê",
+      "description": "Khám phá hương vị cà phê Việt Nam đích thực, từ cà phê sữa đá truyền thống đến những món fusion độc đáo.",
+      "image": "assets/images/categories/coffee.jpg"
+    },
+    {
+      "id": "tea",
+      "name": "Trà",
+      "description": "Thưởng thức các loại trà thơm ngon, được chọn lọc từ những vùng trà nổi tiếng với hương vị tinh tế.",
+      "image": "assets/images/categories/tea.jpg"
+    },
+    {
+      "id": "milk-tea",
+      "name": "Trà sữa",
+      "description": "Trà sữa thơm ngon với nhiều hương vị độc đáo, kết hợp cùng trân châu và các loại topping hấp dẫn.",
+      "image": "assets/images/categories/milk-tea.jpg"
+    },
+    {
+      "id": "snacks",
+      "name": "Ăn vặt",
+      "description": "Các món ăn vặt đặc trưng của Việt Nam, hoàn hảo để thưởng thức cùng đồ uống.",
+      "image": "assets/images/categories/snacks.jpg"
+    },
+    {
+      "id": "specials",
+      "name": "Đồ uống đặc biệt",
+      "description": "Những món đồ uống đặc biệt của quán, được pha chế với công thức độc đáo riêng biệt.",
+      "image": "assets/images/categories/specials.jpg"
+    }
+  ]
+} 

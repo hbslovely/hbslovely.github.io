@@ -1,133 +1,146 @@
 {
-  "categories": [
+  "items": [
     {
-      "id": "coffee",
-      "name": "Coffee",
-      "items": [
-        {
-          "id": "cf001",
-          "name": "Cà Phê Sữa Đá",
-          "description": "Traditional Vietnamese iced coffee with sweetened condensed milk",
-          "originalPrice": 29000,
-          "image": "assets/images/menu/ca-phe-sua-da.jpg"
-        },
-        {
-          "id": "cf002",
-          "name": "Cà Phê Đen Đá",
-          "description": "Strong Vietnamese black iced coffee",
-          "originalPrice": 25000,
-          "image": "assets/images/menu/ca-phe-den-da.jpg"
-        },
-        {
-          "id": "cf003",
-          "name": "Bạc Xỉu",
-          "description": "White coffee with extra condensed milk (Saigon special)",
-          "originalPrice": 32000,
-          "image": "assets/images/menu/bac-xiu.jpg"
-        },
-        {
-          "id": "cf004",
-          "name": "Cà Phê Trứng",
-          "description": "Egg coffee - coffee with whipped egg cream",
-          "originalPrice": 39000,
-          "image": "assets/images/menu/ca-phe-trung.jpg"
-        },
-        {
-          "id": "cf005",
-          "name": "Cà Phê Dừa",
-          "description": "Coconut coffee - coffee blended with coconut cream",
-          "originalPrice": 39000,
-          "image": "assets/images/menu/ca-phe-dua.jpg"
-        }
-      ]
+      "id": "cf001",
+      "name": "Cà Phê Sữa Đá",
+      "description": "Cà phê phin truyền thống kết hợp với sữa đặc, đậm đà hương vị Việt Nam",
+      "originalPrice": 29000,
+      "categoryId": "coffee",
+      "image": "assets/images/menu/ca-phe-sua-da.jpg",
+      "recommended": true
     },
     {
-      "id": "tea",
-      "name": "Tea",
-      "items": [
-        {
-          "id": "tea001",
-          "name": "Trà Sen",
-          "description": "Lotus tea with subtle floral aroma",
-          "originalPrice": 25000,
-          "image": "assets/images/menu/tra-sen.jpg"
-        },
-        {
-          "id": "tea002",
-          "name": "Trà Đào",
-          "description": "Peach tea with fresh peach slices",
-          "originalPrice": 35000,
-          "image": "assets/images/menu/tra-dao.jpg"
-        },
-        {
-          "id": "tea003",
-          "name": "Trà Chanh",
-          "description": "Traditional Vietnamese iced tea with fresh lime",
-          "originalPrice": 20000,
-          "image": "assets/images/menu/tra-chanh.jpg"
-        }
-      ]
+      "id": "cf002",
+      "name": "Cà Phê Đen Đá",
+      "description": "Cà phê đen đậm đà, phong cách Sài Gòn truyền thống",
+      "originalPrice": 25000,
+      "categoryId": "coffee",
+      "image": "assets/images/menu/ca-phe-den-da.jpg"
     },
     {
-      "id": "snacks",
-      "name": "Snacks",
-      "items": [
-        {
-          "id": "snk001",
-          "name": "Bánh Mì Que",
-          "description": "Crispy breadsticks with pate",
-          "originalPrice": 15000,
-          "image": "assets/images/menu/banh-mi-que.jpg"
-        },
-        {
-          "id": "snk002",
-          "name": "Bánh Flan",
-          "description": "Vietnamese style crème caramel",
-          "originalPrice": 25000,
-          "image": "assets/images/menu/banh-flan.jpg"
-        },
-        {
-          "id": "snk003",
-          "name": "Mì Cay",
-          "description": "Spicy Korean-style instant noodles",
-          "originalPrice": 35000,
-          "image": "assets/images/menu/mi-cay.jpg"
-        },
-        {
-          "id": "snk004",
-          "name": "Bắp Xào",
-          "description": "Stir-fried corn with butter and dried shrimp",
-          "originalPrice": 30000,
-          "image": "assets/images/menu/bap-xao.jpg"
-        }
-      ]
+      "id": "cf003",
+      "name": "Bạc Xỉu",
+      "description": "Cà phê sữa đá với tỷ lệ sữa nhiều hơn, vị ngọt dịu",
+      "originalPrice": 32000,
+      "categoryId": "coffee",
+      "image": "assets/images/menu/bac-xiu.jpg",
+      "recommended": true
     },
     {
-      "id": "specials",
-      "name": "Special Drinks",
-      "items": [
-        {
-          "id": "sp001",
-          "name": "Sinh Tố Bơ",
-          "description": "Fresh avocado smoothie with condensed milk",
-          "originalPrice": 45000,
-          "image": "assets/images/menu/sinh-to-bo.jpg"
-        },
-        {
-          "id": "sp002",
-          "name": "Nước Ép Cam",
-          "description": "Freshly squeezed orange juice",
-          "originalPrice": 35000,
-          "image": "assets/images/menu/nuoc-ep-cam.jpg"
-        },
-        {
-          "id": "sp003",
-          "name": "Soda Chanh",
-          "description": "Sparkling lime soda",
-          "originalPrice": 25000,
-          "image": "assets/images/menu/soda-chanh.jpg"
-        }
-      ]
+      "id": "cf004",
+      "name": "Cà Phê Trứng",
+      "description": "Cà phê đen kết hợp với kem trứng béo ngậy, phong cách Hà Nội",
+      "originalPrice": 39000,
+      "categoryId": "coffee",
+      "image": "assets/images/menu/ca-phe-trung.jpg"
+    },
+    {
+      "id": "cf005",
+      "name": "Cà Phê Dừa",
+      "description": "Cà phê kết hợp với kem dừa béo ngậy, thanh mát",
+      "originalPrice": 39000,
+      "categoryId": "coffee",
+      "image": "assets/images/menu/ca-phe-dua.jpg"
+    },
+    {
+      "id": "tea001",
+      "name": "Trà Sen",
+      "description": "Trà ướp hương sen thanh mát, tinh tế",
+      "originalPrice": 25000,
+      "categoryId": "tea",
+      "image": "assets/images/menu/tra-sen.jpg"
+    },
+    {
+      "id": "tea002",
+      "name": "Trà Đào",
+      "description": "Trà đào thơm ngon với đào miếng tươi",
+      "originalPrice": 35000,
+      "categoryId": "tea",
+      "image": "assets/images/menu/tra-dao.jpg",
+      "recommended": true
+    },
+    {
+      "id": "tea003",
+      "name": "Trà Chanh",
+      "description": "Trà chanh tươi mát, phong cách vỉa hè Hà Nội",
+      "originalPrice": 20000,
+      "categoryId": "tea",
+      "image": "assets/images/menu/tra-chanh.jpg"
+    },
+    {
+      "id": "mt001",
+      "name": "Trà Sữa Trân Châu",
+      "description": "Trà sữa Đài Loan với trân châu đen dẻo dai",
+      "originalPrice": 35000,
+      "categoryId": "milk-tea",
+      "image": "assets/images/menu/tra-sua-tran-chau.jpg",
+      "recommended": true
+    },
+    {
+      "id": "mt002",
+      "name": "Trà Sữa Matcha",
+      "description": "Trà sữa matcha Nhật Bản thơm béo",
+      "originalPrice": 39000,
+      "categoryId": "milk-tea",
+      "image": "assets/images/menu/tra-sua-matcha.jpg"
+    },
+    {
+      "id": "snk001",
+      "name": "Bánh Mì Que",
+      "description": "Bánh mì que giòn rụm với patê thơm ngon",
+      "originalPrice": 15000,
+      "categoryId": "snacks",
+      "image": "assets/images/menu/banh-mi-que.jpg"
+    },
+    {
+      "id": "snk002",
+      "name": "Bánh Flan",
+      "description": "Bánh flan mềm mịn với caramel thơm béo",
+      "originalPrice": 25000,
+      "categoryId": "snacks",
+      "image": "assets/images/menu/banh-flan.jpg",
+      "recommended": true
+    },
+    {
+      "id": "snk003",
+      "name": "Mì Cay",
+      "description": "Mì cay Hàn Quốc với nhiều cấp độ cay",
+      "originalPrice": 35000,
+      "categoryId": "snacks",
+      "image": "assets/images/menu/mi-cay.jpg"
+    },
+    {
+      "id": "snk004",
+      "name": "Bắp Xào",
+      "description": "Bắp xào bơ với tép khô thơm ngon",
+      "originalPrice": 30000,
+      "categoryId": "snacks",
+      "image": "assets/images/menu/bap-xao.jpg"
+    },
+    {
+      "id": "sp001",
+      "name": "Sinh Tố Bơ",
+      "description": "Sinh tố bơ béo ngậy với sữa đặc",
+      "originalPrice": 45000,
+      "categoryId": "specials",
+      "image": "assets/images/menu/sinh-to-bo.jpg",
+      "recommended": true
+    },
+    {
+      "id": "sp002",
+      "name": "Nước Ép Cam",
+      "description": "Nước cam tươi ép nguyên chất",
+      "originalPrice": 35000,
+      "categoryId": "specials",
+      "image": "assets/images/menu/nuoc-ep-cam.jpg"
+    },
+    {
+      "id": "sp003",
+      "name": "Soda Chanh",
+      "description": "Soda chanh tươi mát với chanh tươi",
+      "originalPrice": 25000,
+      "categoryId": "specials",
+      "image": "assets/images/menu/soda-chanh.jpg"
     }
   ]
 } 

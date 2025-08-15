@@ -1,32 +1,39 @@
 /* Import fonts */
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap');
 
 /* Apply fonts to root */
 :root {
+  // Custom theme colors
+  --coffee-dark: #3C2A21;
+  --coffee-medium: #967259;
+  --coffee-light: #D5B4A8;
+  --yellow-warm: #E5B853;
+  --yellow-light: #F4DEB3;
+  --cream: #FDF6EC;
+
+  // Override PrimeNG theme variables
+  --primary-color: var(--yellow-warm);
+  --primary-color-text: var(--coffee-dark);
+  --surface-ground: var(--cream);
+  --surface-card: #FFFFFF;
+  --surface-border: var(--coffee-light);
+  --surface-hover: var(--yellow-light);
+  --text-color: var(--coffee-dark);
+  --text-color-secondary: var(--coffee-medium);
+
+  // Typography
   --font-family-primary: 'Playfair Display', serif;
   --font-family-secondary: 'Archivo', sans-serif;
-
-  /* Custom colors */
-  --primary-color: #597ef7;
-  --primary-color-light: #85a5ff;
-  --primary-color-dark: #4b69c6;
-  --surface-ground: #f8f9fa;
-  --surface-section: #ffffff;
-  --surface-card: #ffffff;
-  --surface-overlay: #ffffff;
-  --surface-border: #dfe7ef;
-  --text-color: #495057;
-  --text-color-secondary: #6c757d;
 }
 
 /* Global typography styles */
 body {
-  font-family: var(--font-family-secondary);
-  color: var(--text-color);
-  background-color: var(--surface-ground);
   margin: 0;
   padding: 0;
+  font-family: var(--font-family-secondary);
+  background-color: var(--surface-ground);
+  color: var(--text-color);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -92,7 +99,7 @@ h1, h2, h3, h4, h5, h6 {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
 
   @media (max-width: 768px) {
     padding: 0 1rem;
@@ -105,17 +112,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .p-card {
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05) !important;
   background: var(--surface-card);
   
   .p-card-header {
-    padding: 1.25rem;
+    padding-bottom: 0;
     border-bottom: 1px solid var(--surface-border);
   }
 
   .p-card-body {
-    padding: 1.25rem;
+    padding: 1.5rem;
   }
 
   .p-card-content {
@@ -125,8 +132,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .p-button {
   font-family: var(--font-family-secondary);
-  font-weight: 500;
-  border-radius: 0.375rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
   transition: all 0.2s ease;
 
   &.p-button-sm {
@@ -139,14 +146,24 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0.5rem;
   }
 
+  &.p-button-text {
+    color: var(--text-color-secondary);
+
+    &:hover {
+      background: var(--surface-hover);
+      color: var(--text-color);
+    }
+  }
+
   .p-button-icon {
     font-size: 1rem;
+    font-weight: bold;
   }
 }
 
 .p-inputtext {
   font-family: var(--font-family-secondary);
-  border-radius: 0.375rem;
+  border-radius: 0.5rem;
   transition: all 0.2s ease;
   
   &:enabled:hover {
@@ -156,16 +173,21 @@ h1, h2, h3, h4, h5, h6 {
   &:enabled:focus {
     outline: 0 none;
     outline-offset: 0;
-    box-shadow: 0 0 0 2px #bfdbfe;
     border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--yellow-light);
   }
 }
 
 .p-dropdown {
-  border-radius: 0.375rem;
+  border-radius: 0.5rem;
   
   .p-dropdown-label {
     font-family: var(--font-family-secondary);
+  }
+
+  &:not(.p-disabled).p-focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--yellow-light);
   }
 }
 
@@ -173,11 +195,15 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family-secondary);
   border-radius: 1rem;
   padding: 0.25rem 0.5rem;
+  background: var(--primary-color);
+  color: var(--primary-color-text);
+  font-weight: 600;
 }
 
 /* Icon styles */
 .pi {
   font-size: 1rem;
+  font-weight: bold;
   
   &.pi-sm {
     font-size: 0.875rem;
@@ -197,6 +223,10 @@ h1, h2, h3, h4, h5, h6 {
   animation: slideDown 0.3s ease-out;
 }
 
+.flying-item {
+  animation: fly 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -214,5 +244,16 @@ h1, h2, h3, h4, h5, h6 {
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+@keyframes fly {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
   }
 }

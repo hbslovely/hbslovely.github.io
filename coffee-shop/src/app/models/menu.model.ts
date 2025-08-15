@@ -2,10 +2,17 @@ export interface MenuItem {
   id: string;
   name: string;
   description: string;
-  price: number;
+  originalPrice: number;
+  categoryId: string;
   image?: string;
-  category: string;
   recommended?: boolean;
+}
+
+export interface Category {
+  id: string;
+  name: string;
+  description: string;
+  image: string;
 }
 
 export interface CartItem {
@@ -25,11 +32,6 @@ export interface OrderInfo {
   items: CartItem[];
   totalAmount: number;
   orderDate: Date;
-}
-
-export interface MenuData {
-  categories: string[];
-  items: MenuItem[];
 }
 
 export type ViewMode = 'grid' | 'list';
