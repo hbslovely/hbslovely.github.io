@@ -1,51 +1,94 @@
 {
-  "WELCOME": "Welcome to Ho Chi Minh City",
-  "HERO_DESC": "Discover the vibrant culture, delicious cuisine, and rich history of Saigon",
-  "EXPLORE_BTN": "Start Exploring",
-  
+  "HERO": {
+    "WELCOME": "Welcome to Ho Chi Minh City",
+    "DESCRIPTION": "Discover the vibrant culture, delicious cuisine, and rich history of Saigon",
+    "EXPLORE_BTN": "Start Exploring",
+    "SEARCH_PLACEHOLDER": "Search for places, food, attractions..."
+  },
+
   "FEATURED_PLACES": {
     "TITLE": "Featured Places",
-    "SUBTITLE": "Must-visit destinations in Ho Chi Minh City"
-  },
-
-  "STATS": {
-    "DISTRICTS": "Districts",
-    "RESTAURANTS": "Local Restaurants",
-    "HOTELS": "Hotels & Stays",
-    "ATTRACTIONS": "Tourist Attractions"
-  },
-
-  "QUICK_FACTS": {
-    "TITLE": "Quick Facts",
-    "POPULATION": "Population: 9+ million",
-    "DISTRICTS": "24 Districts",
-    "FOUNDED": "Founded: 1698",
-    "CLIMATE": "Tropical Climate"
+    "SUBTITLE": "Must-visit destinations in Ho Chi Minh City",
+    "BEN_THANH_MARKET": "The iconic Ben Thanh Market, a symbol of Saigon since 1914",
+    "CU_CHI_TUNNELS": "Explore the historic Cu Chi Tunnels, a testament to wartime ingenuity",
+    "DISTRICT_1": "Experience the vibrant heart of the city in District 1",
+    "VIEW_MORE": "View More Places",
+    "LEARN_MORE": "Learn More"
   },
 
   "CATEGORIES": {
     "TITLE": "Explore by Category",
+    "SUBTITLE": "Find what interests you most",
     "CULTURE": {
       "TITLE": "Culture & History",
-      "DESC": "Discover the rich cultural heritage and historical landmarks"
+      "DESC": "Discover the rich cultural heritage and historical landmarks",
+      "FEATURES": [
+        "Historical Sites",
+        "Museums",
+        "Traditional Architecture",
+        "Cultural Shows"
+      ]
     },
     "FOOD": {
       "TITLE": "Food & Dining",
-      "DESC": "Experience the diverse culinary scene and local delicacies"
+      "DESC": "Experience the diverse culinary scene and local delicacies",
+      "FEATURES": [
+        "Street Food",
+        "Local Restaurants",
+        "Cooking Classes",
+        "Food Tours"
+      ]
     },
     "ATTRACTIONS": {
       "TITLE": "Tourist Attractions",
-      "DESC": "Visit popular tourist spots and hidden gems"
+      "DESC": "Visit popular tourist spots and hidden gems",
+      "FEATURES": [
+        "Famous Landmarks",
+        "Parks & Gardens",
+        "Entertainment",
+        "Shopping Areas"
+      ]
     },
     "SHOPPING": {
       "TITLE": "Shopping",
-      "DESC": "From modern malls to traditional markets"
+      "DESC": "From modern malls to traditional markets",
+      "FEATURES": [
+        "Traditional Markets",
+        "Shopping Malls",
+        "Boutiques",
+        "Souvenir Shops"
+      ]
     }
+  },
+
+  "QUICK_FACTS": {
+    "TITLE": "Quick Facts",
+    "SUBTITLE": "Essential information about Ho Chi Minh City",
+    "POPULATION": "Population: 9+ million",
+    "DISTRICTS": "24 Districts",
+    "FOUNDED": "Founded: 1698",
+    "CLIMATE": "Tropical Climate",
+    "LEARN_MORE": "Learn More About HCMC"
   },
 
   "CTA": {
     "TITLE": "Plan Your Visit",
     "DESC": "Get the most out of your trip to Ho Chi Minh City",
-    "BTN": "Start Planning"
+    "BTN": "Start Planning",
+    "FEATURES": [
+      "Customized Itineraries",
+      "Local Tips & Advice",
+      "Travel Guides",
+      "Booking Assistance"
+    ]
+  },
+
+  "NEWSLETTER": {
+    "TITLE": "Stay Updated",
+    "DESC": "Subscribe to our newsletter for the latest updates and travel tips",
+    "PLACEHOLDER": "Enter your email",
+    "SUBSCRIBE": "Subscribe",
+    "SUCCESS": "Thank you for subscribing!",
+    "ERROR": "Something went wrong. Please try again."
   }
 } 

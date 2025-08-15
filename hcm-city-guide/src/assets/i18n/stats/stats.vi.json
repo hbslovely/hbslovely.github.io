@@ -1,0 +1,58 @@
+{
+  "TITLE": "Thống kê Thành phố",
+  "SUBTITLE": "Các con số chính về TP.HCM",
+  "CATEGORIES": {
+    "DISTRICTS": {
+      "TITLE": "Quận/Huyện",
+      "VALUE": "24+",
+      "DESC": "Đơn vị hành chính"
+    },
+    "RESTAURANTS": {
+      "TITLE": "Nhà hàng Địa phương",
+      "VALUE": "1000+",
+      "DESC": "Địa điểm ẩm thực"
+    },
+    "HOTELS": {
+      "TITLE": "Khách sạn & Lưu trú",
+      "VALUE": "500+",
+      "DESC": "Lựa chọn lưu trú"
+    },
+    "ATTRACTIONS": {
+      "TITLE": "Điểm Du lịch",
+      "VALUE": "100+",
+      "DESC": "Địa điểm tham quan"
+    },
+    "MARKETS": {
+      "TITLE": "Chợ Truyền thống",
+      "VALUE": "50+",
+      "DESC": "Chợ địa phương"
+    },
+    "TEMPLES": {
+      "TITLE": "Chùa & Đền",
+      "VALUE": "30+",
+      "DESC": "Địa điểm tâm linh"
+    }
+  },
+  "QUICK_FACTS": {
+    "POPULATION": {
+      "TITLE": "Dân số",
+      "VALUE": "9+ triệu",
+      "DESC": "Tính đến 2024"
+    },
+    "AREA": {
+      "TITLE": "Tổng Diện tích",
+      "VALUE": "2.061 km²",
+      "DESC": "Diện tích đất"
+    },
+    "FOUNDED": {
+      "TITLE": "Thành lập",
+      "VALUE": "1698",
+      "DESC": "Năm thành lập"
+    },
+    "CLIMATE": {
+      "TITLE": "Khí hậu",
+      "VALUE": "Nhiệt đới",
+      "DESC": "Thời tiết ấm quanh năm"
+    }
+  }
+} 

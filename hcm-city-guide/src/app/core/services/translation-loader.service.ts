@@ -21,7 +21,8 @@ export class TranslationLoaderService {
     'PAGINATION',
     'FEATURES',
     'LANDMARKS',
-    'CULTURES'
+    'CULTURES',
+    'STATS'
   ];
 
   constructor(private http: HttpClient) {}

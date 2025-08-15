@@ -1,0 +1,58 @@
+{
+  "TITLE": "City Statistics",
+  "SUBTITLE": "Key numbers about Ho Chi Minh City",
+  "CATEGORIES": {
+    "DISTRICTS": {
+      "TITLE": "Districts",
+      "VALUE": "24+",
+      "DESC": "Administrative regions"
+    },
+    "RESTAURANTS": {
+      "TITLE": "Local Restaurants",
+      "VALUE": "1000+",
+      "DESC": "Places to dine"
+    },
+    "HOTELS": {
+      "TITLE": "Hotels & Stays",
+      "VALUE": "500+",
+      "DESC": "Accommodation options"
+    },
+    "ATTRACTIONS": {
+      "TITLE": "Tourist Attractions",
+      "VALUE": "100+",
+      "DESC": "Places to visit"
+    },
+    "MARKETS": {
+      "TITLE": "Traditional Markets",
+      "VALUE": "50+",
+      "DESC": "Local markets"
+    },
+    "TEMPLES": {
+      "TITLE": "Temples & Pagodas",
+      "VALUE": "30+",
+      "DESC": "Religious sites"
+    }
+  },
+  "QUICK_FACTS": {
+    "POPULATION": {
+      "TITLE": "Population",
+      "VALUE": "9+ million",
+      "DESC": "As of 2024"
+    },
+    "AREA": {
+      "TITLE": "Total Area",
+      "VALUE": "2,061 km²",
+      "DESC": "Land area"
+    },
+    "FOUNDED": {
+      "TITLE": "Founded",
+      "VALUE": "1698",
+      "DESC": "Historical foundation"
+    },
+    "CLIMATE": {
+      "TITLE": "Climate",
+      "VALUE": "Tropical",
+      "DESC": "Year-round warm weather"
+    }
+  }
+} 

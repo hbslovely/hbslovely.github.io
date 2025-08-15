@@ -40,7 +40,7 @@
       </div>
 
       <p-accordion [multiple]="true" [expandIcon]="'pi pi-chevron-right'" [collapseIcon]="'pi pi-chevron-down'">
-        <p-accordionTab *ngFor="let tip of category.tips" [selected]="tip.important">
+        <p-accordionTab *ngFor="let tip of category.tips" [selected]="!!tip.important">
           <ng-template pTemplate="header">
             <div class="tip-header">
               <i [class]="tip.icon || 'pi pi-info-circle'" class="tip-icon"></i>
