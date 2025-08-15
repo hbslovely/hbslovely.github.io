@@ -1,6 +1,6 @@
 # Coffee Shop Menu Application
 
-A modern web application for managing coffee shop orders with a beautiful UI built using Angular and Nebular.
+A modern web application for managing coffee shop orders with a beautiful UI built using Angular and PrimeNG.
 
 ## Features
 
@@ -15,10 +15,9 @@ A modern web application for managing coffee shop orders with a beautiful UI bui
 ## Technologies Used
 
 - Angular 19
-- Nebular UI Kit
+- PrimeNG
 - SCSS for styling
 - Font Awesome icons
-- Timberline font for headings
 
 ## Getting Started
 

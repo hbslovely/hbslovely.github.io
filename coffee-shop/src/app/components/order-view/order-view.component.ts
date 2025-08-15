@@ -2,12 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
-import { 
-  NbCardModule, 
-  NbButtonModule, 
-  NbIconModule,
-  NbAlertModule
-} from '@nebular/theme';
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 import { OrderService } from '../../services/order.service';
 import { OrderInfo } from '../../models/menu.model';
 
@@ -17,30 +15,28 @@ import { OrderInfo } from '../../models/menu.model';
   imports: [
     CommonModule,
     RouterModule,
-    NbCardModule,
-    NbButtonModule,
-    NbIconModule,
-    NbAlertModule
+    CardModule,
+    ButtonModule,
+    ToastModule
   ],
+  providers: [MessageService],
   templateUrl: './order-view.component.html',
   styleUrls: ['./order-view.component.scss']
 })
 export class OrderViewComponent implements OnInit {
   order: OrderInfo | null = null;
-  showCopySuccess = false;
-  orderId: string = '';
 
   constructor(
     private route: ActivatedRoute,
-    private orderService: OrderService
+    private orderService: OrderService,
+    private messageService: MessageService
   ) {}
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       if (params['id']) {
-        this.orderId = params['id'];
         try {
-          this.order = this.orderService.decodeOrder(this.orderId);
+          this.order = this.orderService.decodeOrder(params['id']);
         } catch (error) {
           this.order = null;
         }
@@ -49,14 +45,15 @@ export class OrderViewComponent implements OnInit {
   }
 
   copyOrderLink() {
-    if (!this.orderId) return;
+    if (!this.order) return;
 
-    const message = this.orderService.getShareableMessage(this.orderId);
+    const message = this.orderService.getShareableMessage(this.route.snapshot.params['id']);
     navigator.clipboard.writeText(message).then(() => {
-      this.showCopySuccess = true;
-      setTimeout(() => {
-        this.showCopySuccess = false;
-      }, 3000);
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Thành công',
+        detail: 'Đã sao chép liên kết đơn hàng!'
+      });
     });
   }
 } 

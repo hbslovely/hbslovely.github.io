@@ -1,13 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { 
-  NbLayoutModule,
-  NbButtonModule,
-  NbIconModule,
-  NbBadgeModule
-} from '@nebular/theme';
+import { ButtonModule } from 'primeng/button';
+import { BadgeModule } from 'primeng/badge';
 import { OrderService } from '../../services/order.service';
+import { CartItem } from '../../models/menu.model';
 
 @Component({
   selector: 'app-nav-bar',
@@ -15,22 +12,20 @@ import { OrderService } from '../../services/order.service';
   imports: [
     CommonModule,
     RouterModule,
-    NbLayoutModule,
-    NbButtonModule,
-    NbIconModule,
-    NbBadgeModule
+    ButtonModule,
+    BadgeModule
   ],
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
-  cartItemCount: number = 0;
+  cartItemCount = 0;
 
   constructor(private orderService: OrderService) {}
 
   ngOnInit() {
-    this.orderService.getCartItems().subscribe(items => {
-      this.cartItemCount = items.reduce((total, item) => total + item.quantity, 0);
+    this.orderService.cartItems$.subscribe((items: CartItem[]) => {
+      this.cartItemCount = items.reduce((total: number, item: CartItem) => total + item.quantity, 0);
     });
   }
 } 

@@ -30,9 +30,13 @@
     .search-field {
       flex: 1;
       min-width: 250px;
+
+      input {
+        width: 100%;
+      }
     }
 
-    nb-select {
+    .p-dropdown {
       min-width: 150px;
     }
 
@@ -40,7 +44,7 @@
       display: flex;
       gap: 0.5rem;
 
-      button {
+      .p-button {
         padding: 0.5rem;
       }
     }
@@ -60,28 +64,23 @@
   }
 
   &::-webkit-scrollbar-track {
-    background: var(--background-basic-color-2);
+    background: var(--surface-200);
     border-radius: 2px;
   }
 
   &::-webkit-scrollbar-thumb {
-    background: var(--color-primary-500);
+    background: var(--primary-color);
     border-radius: 2px;
   }
 
-  button {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  .p-button {
     white-space: nowrap;
-    padding: 0.5rem 1rem;
-    border-radius: 2rem;
-
-    nb-icon {
+    
+    .p-button-icon {
       transition: transform 0.2s ease;
     }
 
-    &.active nb-icon {
+    &:not(.p-button-outlined) .p-button-icon {
       transform: scale(1.2);
     }
   }
@@ -110,17 +109,18 @@
 .empty-state {
   text-align: center;
   padding: 3rem 1rem;
-  background: var(--background-basic-color-2);
+  background: var(--surface-card);
   border-radius: 0.5rem;
   margin: 2rem 0;
 
-  nb-icon {
-    color: var(--text-hint-color);
+  .pi {
+    font-size: 3rem;
+    color: var(--text-color-secondary);
     margin-bottom: 1rem;
   }
 
   p {
-    color: var(--text-hint-color);
+    color: var(--text-color-secondary);
     margin-bottom: 1.5rem;
   }
 } 

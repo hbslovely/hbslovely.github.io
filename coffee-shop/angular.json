@@ -30,8 +30,9 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/@nebular/theme/styles/prebuilt/cosmic.css",
-              "node_modules/eva-icons/style/eva-icons.css",
+              "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeicons/primeicons.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -92,8 +93,9 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/@nebular/theme/styles/prebuilt/cosmic.css",
-              "node_modules/eva-icons/style/eva-icons.css",
+              "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeicons/primeicons.css",
               "src/styles.scss"
             ],
             "scripts": []

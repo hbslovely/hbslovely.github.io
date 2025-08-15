@@ -1,70 +1,94 @@
 <div class="menu-container">
-  <!-- Header -->
-  <div class="menu-header">
-    <h1 class="heading-lg">Thực đơn</h1>
-    <div class="menu-actions">
-      <!-- Search -->
-      <nb-form-field class="search-field">
-        <nb-icon nbPrefix icon="search-outline" class="icon-small"></nb-icon>
-        <input nbInput
-               [placeholder]="'Tìm món ăn...'"
-               [(ngModel)]="searchTerm"
-               (ngModelChange)="onSearch($event)">
-      </nb-form-field>
+  <p-card>
+    <ng-template pTemplate="header">
+      <div class="menu-header">
+        <h2>
+          <i class="pi pi-book"></i>
+          Thực đơn
+        </h2>
+      </div>
+    </ng-template>
 
-      <!-- Sort -->
-      <nb-select [(ngModel)]="sortOption" (selectedChange)="onSort($event)">
-        <nb-option value="name">Tên A-Z</nb-option>
-        <nb-option value="price-asc">Giá tăng dần</nb-option>
-        <nb-option value="price-desc">Giá giảm dần</nb-option>
-      </nb-select>
+    <div class="menu-controls">
+      <div class="search-sort">
+        <span class="p-input-icon-left search-field">
+          <i class="pi pi-search"></i>
+          <input 
+            pInputText 
+            type="text" 
+            [value]="searchTerm"
+            (input)="onSearch($event)" 
+            placeholder="Tìm kiếm món...">
+        </span>
 
-      <!-- View Mode -->
-      <div class="view-mode-toggle">
-        <button nbButton ghost
-                [status]="viewMode === 'grid' ? 'primary' : 'basic'"
-                (click)="setViewMode('grid')">
-          <nb-icon icon="grid-outline" class="icon-small"></nb-icon>
-        </button>
-        <button nbButton ghost
-                [status]="viewMode === 'list' ? 'primary' : 'basic'"
-                (click)="setViewMode('list')">
-          <nb-icon icon="list-outline" class="icon-small"></nb-icon>
-        </button>
+        <p-dropdown
+          [options]="sortOptions"
+          [(ngModel)]="sortOption"
+          (onChange)="onSort($event)"
+          placeholder="Sắp xếp theo">
+        </p-dropdown>
+      </div>
+
+      <div class="view-toggle">
+        <p-button
+          icon="pi pi-th-large"
+          (onClick)="setViewMode('grid')"
+          [outlined]="viewMode !== 'grid'"
+          class="mr-2">
+        </p-button>
+        <p-button
+          icon="pi pi-list"
+          (onClick)="setViewMode('list')"
+          [outlined]="viewMode !== 'list'">
+        </p-button>
       </div>
     </div>
-  </div>
 
-  <!-- Categories -->
-  <div class="menu-categories">
-    <button nbButton
-            *ngFor="let category of menuCategories"
-            [status]="selectedCategory?.id === category.id ? 'primary' : 'basic'"
-            (click)="selectCategory(category)">
-      <nb-icon [icon]="category.icon" class="icon-small"></nb-icon>
-      {{ category.name }}
-    </button>
-  </div>
+    <div class="menu-categories" *ngIf="menuData">
+      <p-button
+        label="Tất cả"
+        (onClick)="selectCategory('all')"
+        [outlined]="selectedCategory !== 'all'"
+        class="mr-2">
+      </p-button>
+      <p-button
+        label="Món được yêu thích"
+        (onClick)="selectCategory('recommended')"
+        [outlined]="selectedCategory !== 'recommended'"
+        class="mr-2">
+      </p-button>
+      <p-button
+        *ngFor="let category of menuData.categories"
+        [label]="category"
+        (onClick)="selectCategory(category)"
+        [outlined]="selectedCategory !== category"
+        class="mr-2">
+      </p-button>
+    </div>
 
-  <!-- Menu Items -->
-  <div class="menu-content" [class.list-view]="viewMode === 'list'">
-    @if (filteredItems.length > 0) {
-      @for (item of filteredItems; track item.id) {
-        <app-menu-item
-          [item]="item"
-          [viewMode]="viewMode"
-          [quantity]="1"
-          (addToCart)="onAddToCart($event)">
-        </app-menu-item>
+    <div class="menu-content">
+      @if (filteredItems.length > 0) {
+        <div class="menu-items" [class.grid-view]="viewMode === 'grid'" [class.list-view]="viewMode === 'list'">
+          @for (item of filteredItems; track item.id) {
+            <app-menu-item
+              [item]="item"
+              [viewMode]="viewMode"
+              (addToCart)="onAddToCart($event)">
+            </app-menu-item>
+          }
+        </div>
+      } @else {
+        <div class="empty-state">
+          <i class="pi pi-search"></i>
+          <h3>Không tìm thấy món nào</h3>
+          <p>Thử tìm kiếm với từ khóa khác hoặc xóa bộ lọc</p>
+          <p-button
+            label="Xóa bộ lọc"
+            icon="pi pi-filter-slash"
+            (onClick)="resetFilters()">
+          </p-button>
+        </div>
       }
-    } @else {
-      <div class="empty-state">
-        <nb-icon icon="alert-circle-outline" class="icon-large"></nb-icon>
-        <p class="text-md">Không tìm thấy món ăn nào phù hợp</p>
-        <button nbButton status="primary" (click)="resetFilters()">
-          Xóa bộ lọc
-        </button>
-      </div>
-    }
-  </div>
+    </div>
+  </p-card>
 </div> 

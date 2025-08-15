@@ -1,20 +1,16 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { 
-  NbButtonModule,
-  NbIconModule,
-  NbFormFieldModule,
-  NbInputModule,
-  NbSelectModule
-} from '@nebular/theme';
-import { MenuService, MenuCategory, ViewMode, SortOption } from '../../services/menu.service';
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { DropdownModule } from 'primeng/dropdown';
 import { MenuItemComponent } from '../menu-item/menu-item.component';
-import { MenuItem } from '../../models/menu.model';
 import { OrderService } from '../../services/order.service';
 import { CartAnimationService } from '../../services/cart-animation.service';
-import { combineLatest } from 'rxjs';
-import { NavBarComponent } from '../nav-bar/nav-bar.component';
+import { MenuData, MenuItem, ViewMode, SortOption } from '../../models/menu.model';
+import { combineLatest, BehaviorSubject } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-menu',
@@ -22,99 +18,133 @@ import { NavBarComponent } from '../nav-bar/nav-bar.component';
   imports: [
     CommonModule,
     FormsModule,
-    NbButtonModule,
-    NbIconModule,
-    NbFormFieldModule,
-    NbInputModule,
-    NbSelectModule,
+    CardModule,
+    ButtonModule,
+    InputTextModule,
+    DropdownModule,
     MenuItemComponent
   ],
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  menuCategories: MenuCategory[] = [];
-  selectedCategory: MenuCategory | null = null;
-  filteredItems: MenuItem[] = [];
+  menuData: MenuData | null = null;
+  selectedCategory = 'all';
   viewMode: ViewMode = 'grid';
-  sortOption: SortOption = 'name';
-  searchTerm: string = '';
+  searchTerm = '';
+  sortOption: SortOption = 'default';
+  filteredItems: MenuItem[] = [];
 
-  @ViewChild(NavBarComponent) navBar!: NavBarComponent;
+  private searchTermSubject = new BehaviorSubject<string>('');
+  private sortOptionSubject = new BehaviorSubject<SortOption>('default');
+  private viewModeSubject = new BehaviorSubject<ViewMode>('grid');
+
+  readonly sortOptions = [
+    { label: 'Mặc định', value: 'default' },
+    { label: 'Giá tăng dần', value: 'price_asc' },
+    { label: 'Giá giảm dần', value: 'price_desc' }
+  ];
 
   constructor(
-    private menuService: MenuService,
     private orderService: OrderService,
     private cartAnimationService: CartAnimationService
   ) {}
 
   ngOnInit() {
-    // Subscribe to menu data and filter/sort options
+    // Combine all filter changes
     combineLatest([
-      this.menuService.getMenu(),
-      this.menuService.getViewMode(),
-      this.menuService.getSortOption(),
-      this.menuService.getSearchTerm()
-    ]).subscribe(([categories, viewMode, sortOption, searchTerm]) => {
-      this.menuCategories = categories;
-      this.viewMode = viewMode;
-      this.sortOption = sortOption;
-      this.searchTerm = searchTerm;
-      
-      if (!this.selectedCategory) {
-        this.selectedCategory = categories[0];
-      }
-      
-      this.updateFilteredItems();
-    });
+      this.searchTermSubject,
+      this.sortOptionSubject,
+      this.viewModeSubject
+    ]).pipe(
+      map(([search, sort, view]) => {
+        this.searchTerm = search;
+        this.sortOption = sort;
+        this.viewMode = view;
+        this.updateFilteredItems();
+      })
+    ).subscribe();
   }
 
-  selectCategory(category: MenuCategory) {
+  onSearch(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    this.searchTermSubject.next(input.value);
+  }
+
+  onSort(event: { value: SortOption }): void {
+    this.sortOptionSubject.next(event.value);
+  }
+
+  setViewMode(mode: ViewMode): void {
+    this.viewModeSubject.next(mode);
+  }
+
+  selectCategory(category: string): void {
     this.selectedCategory = category;
     this.updateFilteredItems();
   }
 
-  setViewMode(mode: ViewMode) {
-    this.menuService.setViewMode(mode);
-  }
-
-  onSort(option: SortOption) {
-    this.menuService.setSortOption(option);
+  resetFilters(): void {
+    this.searchTermSubject.next('');
+    this.sortOptionSubject.next('default');
+    this.selectedCategory = 'all';
     this.updateFilteredItems();
   }
 
-  onSearch(term: string) {
-    this.menuService.setSearchTerm(term);
-    this.updateFilteredItems();
-  }
-
-  onAddToCart(event: { item: MenuItem, quantity: number, element: HTMLElement }) {
+  onAddToCart(event: { item: MenuItem, element: HTMLElement }): void {
+    const { item, element } = event;
+    
     // Add to cart
-    this.orderService.addToCart(
-      { ...event.item, price: event.item.originalPrice },
-      event.quantity
-    );
+    this.orderService.addToCart({
+      id: item.id,
+      name: item.name,
+      price: item.price,
+      description: item.description,
+      image: item.image
+    });
 
-    // Get the cart icon from the nav bar
-    const cartIcon = document.querySelector('.cart-link nb-icon');
-    if (cartIcon && event.element) {
-      this.cartAnimationService.animateAddToCart(event.element, cartIcon as HTMLElement);
+    // Animate
+    if (element) {
+      this.cartAnimationService.animateAddToCart(element);
     }
   }
 
-  resetFilters() {
-    this.searchTerm = '';
-    this.sortOption = 'name';
-    this.menuService.setSearchTerm('');
-    this.menuService.setSortOption('name');
-  }
+  private updateFilteredItems(): void {
+    if (!this.menuData) return;
 
-  private updateFilteredItems() {
-    if (!this.selectedCategory) return;
+    let items = this.menuData.items;
 
-    let items = this.selectedCategory.items;
-    items = this.menuService.filterItems(items, this.searchTerm);
-    items = this.menuService.sortItems(items, this.sortOption);
+    // Filter by category
+    if (this.selectedCategory !== 'all') {
+      items = items.filter(item => 
+        this.selectedCategory === 'recommended' 
+          ? item.recommended 
+          : item.category === this.selectedCategory
+      );
+    }
+
+    // Filter by search term
+    if (this.searchTerm) {
+      const searchLower = this.searchTerm.toLowerCase();
+      items = items.filter(item => 
+        item.name.toLowerCase().includes(searchLower) ||
+        item.description.toLowerCase().includes(searchLower)
+      );
+    }
+
+    // Sort items
+    switch (this.sortOption) {
+      case 'price_asc':
+        items = [...items].sort((a, b) => a.price - b.price);
+        break;
+      case 'price_desc':
+        items = [...items].sort((a, b) => b.price - a.price);
+        break;
+      default:
+        // Keep original order
+        break;
+    }
+
     this.filteredItems = items;
   }
 } 

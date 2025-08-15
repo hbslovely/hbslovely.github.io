@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { CartItem, OrderInfo } from '../models/menu.model';
 
 const CART_STORAGE_KEY = 'coffee_shop_cart';
@@ -8,65 +8,79 @@ const CART_STORAGE_KEY = 'coffee_shop_cart';
   providedIn: 'root'
 })
 export class OrderService {
-  private cartItems = new BehaviorSubject<CartItem[]>(this.loadCartFromStorage());
+  private readonly cartItems = new BehaviorSubject<CartItem[]>(this.loadCartFromStorage());
+  readonly cartItems$ = this.cartItems.asObservable();
 
   constructor() {
-    // Subscribe to changes and save to localStorage
-    this.cartItems.subscribe(items => {
+    // Save cart to localStorage whenever it changes
+    this.cartItems$.subscribe(items => {
       localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
     });
   }
 
   private loadCartFromStorage(): CartItem[] {
+    const savedCart = localStorage.getItem(CART_STORAGE_KEY);
     try {
-      const storedCart = localStorage.getItem(CART_STORAGE_KEY);
-      return storedCart ? JSON.parse(storedCart) : [];
-    } catch (error) {
-      console.error('Error loading cart from storage:', error);
+      return savedCart ? JSON.parse(savedCart) : [];
+    } catch {
+      localStorage.removeItem(CART_STORAGE_KEY);
       return [];
     }
   }
 
-  getCartItems(): Observable<CartItem[]> {
-    return this.cartItems.asObservable();
-  }
-
-  addToCart(item: CartItem, quantity: number) {
+  addToCart(item: Omit<CartItem, 'quantity' | 'note'>): void {
     const currentItems = this.cartItems.value;
     const existingItem = currentItems.find(i => i.id === item.id);
 
     if (existingItem) {
-      existingItem.quantity += quantity;
-      this.cartItems.next([...currentItems]);
+      this.updateQuantity(item.id, existingItem.quantity + 1);
     } else {
-      this.cartItems.next([...currentItems, { ...item, quantity }]);
+      const newItem: CartItem = {
+        ...item,
+        quantity: 1,
+        note: ''
+      };
+      this.cartItems.next([...currentItems, newItem]);
     }
   }
 
-  updateItemQuantity(itemId: string, quantity: number) {
+  updateQuantity(itemId: string, quantity: number): void {
     const currentItems = this.cartItems.value;
-    if (quantity <= 0) {
-      this.cartItems.next(currentItems.filter(item => item.id !== itemId));
-    } else {
-      const updatedItems = currentItems.map(item =>
-        item.id === itemId ? { ...item, quantity } : item
-      );
-      this.cartItems.next(updatedItems);
-    }
+    const updatedItems = currentItems
+      .map(item => item.id === itemId ? { ...item, quantity } : item)
+      .filter(item => item.quantity > 0);
+    
+    this.cartItems.next(updatedItems);
   }
 
-  calculateTotal(items: CartItem[]): number {
-    return items.reduce((total, item) => total + (item.price * item.quantity), 0);
+  updateNote(itemId: string, note: string): void {
+    const currentItems = this.cartItems.value;
+    const updatedItems = currentItems.map(item => 
+      item.id === itemId ? { ...item, note: note.trim() } : item
+    );
+    
+    this.cartItems.next(updatedItems);
   }
 
-  clearCart() {
+  removeFromCart(itemId: string): void {
+    const currentItems = this.cartItems.value;
+    const updatedItems = currentItems.filter(item => item.id !== itemId);
+    this.cartItems.next(updatedItems);
+  }
+
+  clearCart(): void {
     this.cartItems.next([]);
     localStorage.removeItem(CART_STORAGE_KEY);
   }
 
   encodeOrder(order: OrderInfo): string {
-    const orderString = JSON.stringify(order);
-    return btoa(encodeURIComponent(orderString));
+    try {
+      const orderString = JSON.stringify(order);
+      return btoa(encodeURIComponent(orderString));
+    } catch (error) {
+      console.error('Error encoding order:', error);
+      throw new Error('Failed to encode order');
+    }
   }
 
   decodeOrder(encodedOrder: string): OrderInfo {
@@ -74,18 +88,13 @@ export class OrderService {
       const orderString = decodeURIComponent(atob(encodedOrder));
       return JSON.parse(orderString);
     } catch (error) {
+      console.error('Error decoding order:', error);
       throw new Error('Invalid order code');
     }
   }
 
-  getShareableLink(orderId: string): string {
-    const baseUrl = window.location.origin;
-    const path = window.location.pathname;
-    return `${baseUrl}${path}#/order/${orderId}`;
-  }
-
   getShareableMessage(orderId: string): string {
-    const link = this.getShareableLink(orderId);
-    return `Tôi đã chuẩn bị xong món nè Hello Coffee, Vui lòng chuẩn bị cho tôi tại link sau:\n${link}`;
+    const baseUrl = window.location.origin;
+    return `Tôi đã chuẩn bị xong món nè Hello Coffee, Vui lòng chuẩn bị cho tôi tại link sau:\n${baseUrl}/#/order/${orderId}`;
   }
 } 

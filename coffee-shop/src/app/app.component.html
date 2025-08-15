@@ -1,15 +1,15 @@
-<nb-layout>
-  <nb-layout-header fixed>
+<div class="app-container">
+  <header class="app-header">
     <app-nav-bar></app-nav-bar>
-  </nb-layout-header>
+  </header>
 
-  <nb-layout-column>
-    <div class="content">
+  <main class="app-content">
+    <div class="container">
       <router-outlet></router-outlet>
     </div>
-  </nb-layout-column>
+  </main>
 
-  <nb-layout-footer fixed>
+  <footer class="app-footer">
     <app-footer></app-footer>
-  </nb-layout-footer>
-</nb-layout>
+  </footer>
+</div>

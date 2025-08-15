@@ -1,16 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { 
-  NbCardModule, 
-  NbButtonModule, 
-  NbIconModule, 
-  NbInputModule, 
-  NbFormFieldModule 
-} from '@nebular/theme';
+import { FormsModule } from '@angular/forms';
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 import { OrderService } from '../../services/order.service';
-import { Router } from '@angular/router';
 import { CartItem, OrderInfo } from '../../models/menu.model';
 
 @Component({
@@ -18,59 +15,74 @@ import { CartItem, OrderInfo } from '../../models/menu.model';
   standalone: true,
   imports: [
     CommonModule,
-    FormsModule,
     RouterModule,
-    NbCardModule,
-    NbButtonModule,
-    NbIconModule,
-    NbInputModule,
-    NbFormFieldModule
+    FormsModule,
+    CardModule,
+    ButtonModule,
+    InputTextModule,
+    InputNumberModule,
+    InputTextareaModule
   ],
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
   cartItems: CartItem[] = [];
-  total: number = 0;
   orderInfo: OrderInfo = {
     customerName: '',
-    address: '',
     phone: '',
+    address: '',
     items: [],
     totalAmount: 0,
     orderDate: new Date()
   };
 
-  constructor(
-    private orderService: OrderService,
-    private router: Router
-  ) {}
+  constructor(private orderService: OrderService) {}
 
   ngOnInit() {
-    this.orderService.getCartItems().subscribe(items => {
+    this.orderService.cartItems$.subscribe(items => {
       this.cartItems = items;
-      this.total = this.orderService.calculateTotal(items);
+      this.updateOrderItems();
     });
   }
 
-  updateQuantity(itemId: string, quantity: number) {
-    this.orderService.updateItemQuantity(itemId, quantity);
-  }
-
-  placeOrder() {
-    if (!this.orderInfo.address || !this.orderInfo.phone) {
+  updateQuantity(itemId: string, value: string | number | null) {
+    if (value === null || value === '') {
+      return;
+    }
+    
+    const quantity = typeof value === 'string' ? parseInt(value, 10) : value;
+    if (isNaN(quantity) || quantity < 0) {
       return;
     }
 
-    const order: OrderInfo = {
-      ...this.orderInfo,
-      items: this.cartItems,
-      totalAmount: this.total,
-      orderDate: new Date()
-    };
+    if (quantity === 0) {
+      this.removeItem(itemId);
+    } else {
+      this.orderService.updateQuantity(itemId, quantity);
+    }
+  }
 
-    const encodedOrder = this.orderService.encodeOrder(order);
+  updateNote(itemId: string, note: string) {
+    this.orderService.updateNote(itemId, note);
+  }
+
+  removeItem(itemId: string) {
+    this.orderService.removeFromCart(itemId);
+  }
+
+  private updateOrderItems() {
+    this.orderInfo.items = this.cartItems;
+    this.orderInfo.totalAmount = this.cartItems.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
+  }
+
+  placeOrder() {
+    this.orderInfo.orderDate = new Date();
+    const orderId = this.orderService.encodeOrder(this.orderInfo);
     this.orderService.clearCart();
-    this.router.navigate(['/order', encodedOrder]);
+    return orderId;
   }
 } 

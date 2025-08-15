@@ -1,78 +1,102 @@
 <div class="cart-container">
-  <nb-card>
-    <nb-card-header class="cart-header">
-      <h2>
-        <nb-icon icon="shopping-cart-outline"></nb-icon>
-        Giỏ hàng của bạn
-      </h2>
-    </nb-card-header>
-    <nb-card-body>
-      @if (cartItems.length === 0) {
-        <div class="empty-cart">
-          <nb-icon icon="shopping-bag-outline" class="empty-icon"></nb-icon>
-          <p>Giỏ hàng của bạn đang trống</p>
-          <button nbButton status="primary" routerLink="/menu">
-            <nb-icon icon="book-open-outline"></nb-icon>
-            Xem thực đơn
-          </button>
-        </div>
-      } @else {
+  <p-card>
+    <ng-template pTemplate="header">
+      <div class="cart-header">
+        <h2>
+          <i class="pi pi-shopping-cart"></i>
+          Giỏ hàng
+        </h2>
+      </div>
+    </ng-template>
+
+    @if (cartItems.length > 0) {
+      <div class="cart-content">
         <div class="cart-items">
           @for (item of cartItems; track item.id) {
             <div class="cart-item">
               <div class="item-info">
-                <div class="item-header">
-                  <h3>{{ item.name }}</h3>
-                  <button nbButton ghost size="tiny" (click)="updateQuantity(item.id, 0)">
-                    <nb-icon icon="close-outline"></nb-icon>
-                  </button>
-                </div>
+                <h3>{{ item.name }}</h3>
                 <p class="price">{{ item.price | currency:'VND':'symbol':'1.0-0' }}</p>
               </div>
+
               <div class="item-actions">
-                <nb-form-field>
-                  <nb-icon nbPrefix icon="shopping-bag-outline"></nb-icon>
-                  <input nbInput type="number" [(ngModel)]="item.quantity" 
-                         (ngModelChange)="updateQuantity(item.id, $event)" 
-                         min="0" max="99" class="quantity-input">
-                </nb-form-field>
-                <nb-form-field>
-                  <nb-icon nbPrefix icon="edit-2-outline"></nb-icon>
-                  <textarea nbInput [(ngModel)]="item.note" 
-                            placeholder="Thêm ghi chú..."
-                            class="note-input"></textarea>
-                </nb-form-field>
+                <div class="quantity-control">
+                  <p-inputNumber
+                    [showButtons]="true"
+                    [min]="0"
+                    [max]="99"
+                    [step]="1"
+                    [inputStyleClass]="'quantity-input'"
+                    [ngModel]="item.quantity"
+                    (onInput)="updateQuantity(item.id, $event.value)"
+                    buttonLayout="horizontal"
+                    spinnerMode="horizontal"
+                    decrementButtonClass="p-button-text"
+                    incrementButtonClass="p-button-text"
+                    incrementButtonIcon="pi pi-plus"
+                    decrementButtonIcon="pi pi-minus">
+                  </p-inputNumber>
+                </div>
+
+                <div class="note-control">
+                  <span class="p-float-label">
+                    <textarea
+                      pInputTextarea
+                      [rows]="2"
+                      [value]="item.note"
+                      (input)="updateNote(item.id, $any($event.target).value)"
+                      id="note-{{item.id}}">
+                    </textarea>
+                    <label for="note-{{item.id}}">Ghi chú</label>
+                  </span>
+                </div>
               </div>
             </div>
           }
         </div>
 
         <div class="order-form">
-          <h3>Thông tin giao hàng</h3>
-          <div class="form-grid">
-            <nb-form-field class="form-group">
-              <nb-icon nbPrefix icon="person-outline"></nb-icon>
-              <input nbInput fullWidth [(ngModel)]="orderInfo.customerName" 
-                     placeholder="Tên của bạn (Không bắt buộc)">
-            </nb-form-field>
-            <nb-form-field class="form-group">
-              <nb-icon nbPrefix icon="home-outline"></nb-icon>
-              <input nbInput fullWidth [(ngModel)]="orderInfo.address" 
-                     placeholder="Địa chỉ giao hàng *" required>
-            </nb-form-field>
-            <nb-form-field class="form-group">
-              <nb-icon nbPrefix icon="phone-outline"></nb-icon>
-              <input nbInput fullWidth [(ngModel)]="orderInfo.phone" 
-                     placeholder="Số điện thoại *" required>
-            </nb-form-field>
-          </div>
-        </div>
+          <h3>Thông tin đặt hàng</h3>
 
-        <div class="cart-summary">
-          <div class="summary-details">
+          <div class="form-group">
+            <span class="p-float-label">
+              <input
+                pInputText
+                id="customerName"
+                [(ngModel)]="orderInfo.customerName"
+                required>
+              <label for="customerName">Tên của bạn</label>
+            </span>
+          </div>
+
+          <div class="form-group">
+            <span class="p-float-label">
+              <input
+                pInputText
+                id="phone"
+                [(ngModel)]="orderInfo.phone"
+                required>
+              <label for="phone">Số điện thoại</label>
+            </span>
+          </div>
+
+          <div class="form-group">
+            <span class="p-float-label">
+              <textarea
+                pInputTextarea
+                id="address"
+                [(ngModel)]="orderInfo.address"
+                [rows]="3"
+                required>
+              </textarea>
+              <label for="address">Địa chỉ giao hàng</label>
+            </span>
+          </div>
+
+          <div class="order-summary">
             <div class="summary-row">
               <span>Tạm tính</span>
-              <span>{{ total | currency:'VND':'symbol':'1.0-0' }}</span>
+              <span>{{ orderInfo.totalAmount | currency:'VND':'symbol':'1.0-0' }}</span>
             </div>
             <div class="summary-row">
               <span>Phí giao hàng</span>
@@ -80,17 +104,32 @@
             </div>
             <div class="summary-row total">
               <span>Tổng cộng</span>
-              <span>{{ total | currency:'VND':'symbol':'1.0-0' }}</span>
+              <span>{{ orderInfo.totalAmount | currency:'VND':'symbol':'1.0-0' }}</span>
             </div>
           </div>
-          <button nbButton status="success" size="medium" fullWidth
-                  (click)="placeOrder()" 
-                  [disabled]="!orderInfo.address || !orderInfo.phone">
-            <nb-icon icon="checkmark-circle-2-outline"></nb-icon>
-            Đặt hàng
-          </button>
+
+          <div class="form-actions">
+            <p-button
+              label="Đặt hàng"
+              icon="pi pi-check"
+              [disabled]="!orderInfo.customerName || !orderInfo.phone || !orderInfo.address"
+              (onClick)="placeOrder()"
+              styleClass="p-button-lg">
+            </p-button>
+          </div>
         </div>
-      }
-    </nb-card-body>
-  </nb-card>
-</div> 
+      </div>
+    } @else {
+      <div class="empty-cart">
+        <i class="pi pi-shopping-cart"></i>
+        <h3>Giỏ hàng trống</h3>
+        <p>Hãy thêm một vài món ngon vào giỏ hàng của bạn</p>
+        <p-button
+          label="Xem thực đơn"
+          icon="pi pi-arrow-left"
+          routerLink="/menu">
+        </p-button>
+      </div>
+    }
+  </p-card>
+</div>
