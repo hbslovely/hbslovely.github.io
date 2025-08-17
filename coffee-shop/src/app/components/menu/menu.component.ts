@@ -90,10 +90,6 @@ export class MenuComponent implements OnInit {
     this.sortOptionSubject.next(event.value);
   }
 
-  setViewMode(mode: ViewMode): void {
-    this.viewModeSubject.next(mode);
-  }
-
   selectCategory(categoryId: string): void {
     this.selectedCategory = categoryId;
     this.menuService.getItemsByCategory(categoryId).subscribe(items => {

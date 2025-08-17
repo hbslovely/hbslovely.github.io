@@ -3,18 +3,11 @@ import { BehaviorSubject, Subject } from 'rxjs';
 import { CartItem, OrderInfo } from '../models/menu.model';
 
 const CART_STORAGE_KEY = 'coffee_shop_cart';
-const ORDERS_STORAGE_KEY = 'coffee_shop_orders';
 
 export interface CartNotification {
   type: 'success' | 'info' | 'warning' | 'error';
   message: string;
   duration?: number;
-}
-
-export interface StoredOrder {
-  id: string;
-  order: OrderInfo;
-  createdAt: Date;
 }
 
 @Injectable({
@@ -204,99 +197,23 @@ export class OrderService {
     }
   }
 
-  private generateShortOrderId(): string {
-    // Generate a short ID using timestamp + random characters
-    const timestamp = Date.now().toString(36); // Base36 timestamp for shorter string
-    const randomChars = Math.random().toString(36).substring(2, 6); // 4 random chars
-    return `${timestamp}-${randomChars}`.toUpperCase();
-  }
-
-  private getStoredOrders(): { [key: string]: StoredOrder } {
-    try {
-      const stored = localStorage.getItem(ORDERS_STORAGE_KEY);
-      return stored ? JSON.parse(stored) : {};
-    } catch {
-      localStorage.removeItem(ORDERS_STORAGE_KEY);
-      return {};
-    }
-  }
-
-  private saveStoredOrders(orders: { [key: string]: StoredOrder }): void {
-    try {
-      localStorage.setItem(ORDERS_STORAGE_KEY, JSON.stringify(orders));
-    } catch (error) {
-      console.error('Error saving orders:', error);
-    }
-  }
-
-  private cleanupOldOrders(): void {
-    const orders = this.getStoredOrders();
-    const thirtyDaysAgo = new Date();
-    thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
-
-    let hasChanges = false;
-    Object.keys(orders).forEach(id => {
-      const orderDate = new Date(orders[id].createdAt);
-      if (orderDate < thirtyDaysAgo) {
-        delete orders[id];
-        hasChanges = true;
-      }
-    });
-
-    if (hasChanges) {
-      this.saveStoredOrders(orders);
-    }
-  }
-
   encodeOrder(order: OrderInfo): string {
     try {
-      // Clean up old orders first
-      this.cleanupOldOrders();
-      
-      // Generate short ID
-      const orderId = this.generateShortOrderId();
-      
-      // Store order with short ID
-      const orders = this.getStoredOrders();
-      orders[orderId] = {
-        id: orderId,
-        order: { ...order },
-        createdAt: new Date()
-      };
-      
-      this.saveStoredOrders(orders);
-      return orderId;
+      const orderString = JSON.stringify(order);
+      return btoa(encodeURIComponent(orderString));
     } catch (error) {
       console.error('Error encoding order:', error);
-      throw new Error('Failed to create order');
+      throw new Error('Failed to encode order');
     }
   }
 
-  decodeOrder(orderId: string): OrderInfo {
+  decodeOrder(encodedOrder: string): OrderInfo {
     try {
-      const orders = this.getStoredOrders();
-      const storedOrder = orders[orderId];
-      
-      if (!storedOrder) {
-        throw new Error('Order not found');
-      }
-
-      // Check if order is not too old (30 days)
-      const orderDate = new Date(storedOrder.createdAt);
-      const thirtyDaysAgo = new Date();
-      thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
-      
-      if (orderDate < thirtyDaysAgo) {
-        // Remove expired order
-        delete orders[orderId];
-        this.saveStoredOrders(orders);
-        throw new Error('Order expired');
-      }
-
-      return storedOrder.order;
+      const orderString = decodeURIComponent(atob(encodedOrder));
+      return JSON.parse(orderString);
     } catch (error) {
       console.error('Error decoding order:', error);
-      throw new Error('Invalid or expired order ID');
+      throw new Error('Invalid order code');
     }
   }
 
@@ -352,4 +269,14 @@ export class OrderService {
     }
     return false;
   }
+
+  private generateShortOrderId(): string {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let result = '';
+    for (let i = 0; i < 8; i++) { // Generate an 8-character ID
+        const randomIndex = Math.floor(Math.random() * chars.length);
+        result += chars[randomIndex];
+    }
+    return result;
+}
 } 
