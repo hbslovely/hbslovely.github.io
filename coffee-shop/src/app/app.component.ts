@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { ConfirmationDialogManagerComponent } from './components/confirmation-dialog-manager/confirmation-dialog-manager.component';
 import { MenubarModule } from 'primeng/menubar';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
@@ -15,6 +16,7 @@ import { CardModule } from 'primeng/card';
     RouterModule,
     FooterComponent,
     NavBarComponent,
+    ConfirmationDialogManagerComponent,
     MenubarModule,
     ButtonModule,
     CardModule

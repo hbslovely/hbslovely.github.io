@@ -11,6 +11,19 @@
     </ng-template>
 
     @if (order) {
+      <!-- Success Banner for newly placed orders -->
+      @if (isOrderJustPlaced) {
+        <div class="success-banner">
+          <div class="success-content">
+            <i class="pi pi-check-circle"></i>
+            <div class="success-text">
+              <h3>Đặt hàng thành công!</h3>
+              <p>Đơn hàng <strong>{{ orderId }}</strong> đã được tạo. Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.</p>
+            </div>
+          </div>
+        </div>
+      }
+
       <div class="order-info">
         <div class="info-section customer-info">
           <div class="section-header">
@@ -86,12 +99,72 @@
           </div>
         </div>
 
-        <div class="share-section">
-          <p-button 
-            label="Chia sẻ đơn hàng"
-            icon="pi pi-link"
-            (onClick)="copyOrderLink()">
-          </p-button>
+        <!-- Order ID Section -->
+        <div class="info-section order-id">
+          <div class="section-header">
+            <i class="pi pi-tag"></i>
+            <h3>Mã đơn hàng</h3>
+          </div>
+          <div class="order-id-content">
+            <div class="order-id-display">
+              <span class="order-id-text">{{ orderId }}</span>
+              <p-button 
+                icon="pi pi-copy"
+                [text]="true"
+                size="small"
+                (onClick)="copyOrderId()"
+                pTooltip="Sao chép mã đơn hàng">
+              </p-button>
+            </div>
+          </div>
+        </div>
+
+        <!-- QR Code Section -->
+        @if (qrCodeDataUrl) {
+          <div class="info-section qr-section">
+            <div class="section-header">
+              <i class="pi pi-qrcode"></i>
+              <h3>Mã QR đơn hàng</h3>
+            </div>
+            <div class="qr-content">
+              <div class="qr-code-container">
+                <img [src]="qrCodeDataUrl" alt="QR Code cho đơn hàng" class="qr-code-image">
+              </div>
+              <p class="qr-description">Quét mã QR để truy cập đơn hàng từ điện thoại</p>
+              <div class="qr-actions">
+                <p-button 
+                  label="Tải xuống QR"
+                  icon="pi pi-download"
+                  size="small"
+                  [outlined]="true"
+                  (onClick)="downloadQRCode()">
+                </p-button>
+              </div>
+            </div>
+          </div>
+        }
+
+        <!-- Share Section -->
+        <div class="info-section share-section">
+          <div class="section-header">
+            <i class="pi pi-share-alt"></i>
+            <h3>Chia sẻ đơn hàng</h3>
+          </div>
+          <div class="share-actions">
+            <p-button 
+              label="Sao chép liên kết"
+              icon="pi pi-link"
+              (onClick)="copyOrderUrl()"
+              styleClass="share-btn">
+            </p-button>
+            <p-button 
+              label="Chia sẻ tin nhắn"
+              icon="pi pi-send"
+              [outlined]="true"
+              (onClick)="copyOrderLink()"
+              styleClass="share-btn">
+            </p-button>
+          </div>
         </div>
       </div>
     } @else {

@@ -5,30 +5,57 @@
   
   <nav class="nav-container">
     <div class="nav-content">
-      <a routerLink="/" class="logo">
+      <!-- Logo -->
+      <a routerLink="/" class="logo" (click)="closeMobileMenu()">
         <div class="logo-icon">
           <i class="pi pi-coffee"></i>
         </div>
         <span class="logo-text">Hello Coffee</span>
       </a>
 
-      <div class="nav-links">
-        <a routerLink="/menu" routerLinkActive="active" class="nav-link">
+      <!-- Mobile menu toggle button -->
+      <button 
+        class="mobile-menu-toggle" 
+        (click)="toggleMobileMenu()"
+        [class.active]="isMobileMenuOpen"
+        aria-label="Toggle navigation menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <!-- Navigation links -->
+      <div class="nav-links" [class.mobile-open]="isMobileMenuOpen">
+        <a routerLink="/menu" 
+           routerLinkActive="active" 
+           class="nav-link"
+           (click)="closeMobileMenu()">
           <i class="pi pi-book"></i>
-          <span>Thực đơn</span>
+          <span class="nav-text">Thực đơn</span>
         </a>
-        <a routerLink="/about" routerLinkActive="active" class="nav-link">
+        <a routerLink="/about" 
+           routerLinkActive="active" 
+           class="nav-link"
+           (click)="closeMobileMenu()">
           <i class="pi pi-heart"></i>
-          <span>Giới thiệu</span>
+          <span class="nav-text">Giới thiệu</span>
         </a>
-        <a routerLink="/cart" routerLinkActive="active" class="nav-link cart-link">
+        <a routerLink="/cart" 
+           routerLinkActive="active" 
+           class="nav-link cart-link"
+           (click)="closeMobileMenu()">
           <i class="pi pi-shopping-cart"></i>
-          <span>Giỏ hàng</span>
+          <span class="nav-text">Giỏ hàng</span>
           @if (cartItemCount > 0) {
             <span class="cart-badge">{{ cartItemCount }}</span>
           }
         </a>
       </div>
+
+      <!-- Mobile backdrop -->
+      <div class="mobile-backdrop" 
+           [class.active]="isMobileMenuOpen"
+           (click)="closeMobileMenu()"></div>
     </div>
   </nav>
 </header> 

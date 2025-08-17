@@ -1,39 +1,177 @@
-<div class="menu-item" [class.list-view]="viewMode === 'list'">
-  <p-card>
-    <ng-template pTemplate="header">
-      <img [src]="item.image" [alt]="item.name" *ngIf="item.image">
-    </ng-template>
-
-    <div class="item-content">
-      <div class="item-info">
-        <h3>{{ item.name }}</h3>
-        <p class="text-md price">{{ item.originalPrice | currency:'VND':'symbol':'1.0-0' }}</p>
-        <p class="description">{{ item.description }}</p>
+<div class="menu-item" [class.list-view]="viewMode === 'list'" [class.in-cart]="isInCart">
+  <div class="menu-item-card" [class.is-adding]="isAdding">
+    <!-- Image Section with Overlays -->
+    <div class="item-image-container">
+      @if (item.image) {
+        <img [src]="item.image" [alt]="item.name" class="item-image">
+      } @else {
+        <div class="image-placeholder">
+          <i class="pi pi-image"></i>
+          <span>No Image</span>
+        </div>
+      }
+      
+      <!-- Image Overlays -->
+      <div class="image-overlay">
+        <!-- Recommended Badge -->
+        @if (item.recommended) {
+          <div class="recommended-badge">
+            <i class="pi pi-star-fill"></i>
+            <span>Đề xuất</span>
+          </div>
+        }
+        
+        <!-- Cart Status Indicator -->
+        @if (isInCart) {
+          <div class="cart-status-badge">
+            <i class="pi pi-check-circle"></i>
+            <span>{{ currentQuantityInCart }}</span>
+          </div>
+        }
+        
+        <!-- Quick Actions for Grid View -->
+        @if (viewMode === 'grid') {
+          <div class="quick-actions">
+            @if (!isInCart) {
+              <button 
+                class="quick-add-btn"
+                (click)="onQuickAdd()"
+                [disabled]="isAdding"
+                type="button"
+                title="Thêm nhanh vào giỏ">
+                <i class="pi pi-plus"></i>
+              </button>
+            } @else {
+              <div class="cart-quantity-controls">
+                <button 
+                  class="qty-control-btn decrease"
+                  (click)="onDecreaseInCart()"
+                  type="button"
+                  title="Giảm số lượng">
+                  <i class="pi pi-minus"></i>
+                </button>
+                <span class="qty-display">{{ currentQuantityInCart }}</span>
+                <button 
+                  class="qty-control-btn increase"
+                  (click)="onIncreaseInCart()"
+                  [disabled]="currentQuantityInCart >= 99"
+                  type="button"
+                  title="Tăng số lượng">
+                  <i class="pi pi-plus"></i>
+                </button>
+              </div>
+            }
+          </div>
+        }
       </div>
-
-      <div class="item-actions">
-        <p-inputNumber 
-          [(ngModel)]="quantity"
-          [showButtons]="true"
-          [min]="1"
-          [max]="99"
-          [step]="1"
-          buttonLayout="horizontal"
-          spinnerMode="horizontal"
-          inputStyleClass="quantity-input"
-          decrementButtonClass="p-button-text"
-          incrementButtonClass="p-button-text"
-          incrementButtonIcon="pi pi-plus"
-          decrementButtonIcon="pi pi-minus">
-        </p-inputNumber>
-
-        <p-button 
-          #addToCartBtn
-          label="Thêm vào giỏ"
-          icon="pi pi-shopping-cart"
-          (onClick)="onAddToCart()">
-        </p-button>
+      
+      <!-- Price Tag -->
+      <div class="price-tag">
+        <span class="price-amount">{{ item.originalPrice | currency:'VND':'symbol':'1.0-0' }}</span>
       </div>
     </div>
-  </p-card>
+
+    <!-- Content Section -->
+    <div class="item-content">
+      <!-- Header -->
+      <div class="item-header">
+        <h3 class="item-name">{{ item.name }}</h3>
+        @if (viewMode === 'list' && isInCart) {
+          <div class="list-cart-badge">
+            <i class="pi pi-shopping-cart"></i>
+            <span>{{ currentQuantityInCart }}</span>
+          </div>
+        }
+      </div>
+      
+      <!-- Description -->
+      <p class="item-description">{{ item.description }}</p>
+      
+      <!-- Bottom Section -->
+      <div class="item-bottom">
+        <!-- Main Actions -->
+        @if (!isInCart || viewMode === 'list') {
+          <div class="add-to-cart-section">
+            <!-- Quantity Selector -->
+            <div class="quantity-selector" [class.compact]="viewMode === 'list'">
+              <button 
+                class="qty-btn"
+                (click)="decreaseQuantity()"
+                [disabled]="quantity <= 1"
+                type="button">
+                <i class="pi pi-minus"></i>
+              </button>
+              <span class="quantity-display">{{ quantity }}</span>
+              <button 
+                class="qty-btn"
+                (click)="increaseQuantity()"
+                [disabled]="quantity >= 99"
+                type="button">
+                <i class="pi pi-plus"></i>
+              </button>
+            </div>
+
+            <!-- Add to Cart Button -->
+            <button 
+              #addToCartBtn
+              class="add-to-cart-btn"
+              [class.adding]="isAdding"
+              [class.in-cart]="isInCart"
+              [class.compact]="viewMode === 'list'"
+              (click)="onAddToCart()"
+              [disabled]="isAdding"
+              type="button">
+              <div class="btn-content">
+                <i class="btn-icon pi" 
+                   [class.pi-shopping-cart]="!isAdding" 
+                   [class.pi-spinner]="isAdding"
+                   [class.pi-spin]="isAdding"></i>
+                <span class="btn-text">{{ getAddToCartLabel() }}</span>
+                @if (quantity > 1 && !isAdding) {
+                  <span class="quantity-badge">{{ quantity }}</span>
+                }
+              </div>
+              @if (quantity > 1) {
+                <div class="total-price-section">
+                  <div class="total-price">
+                    {{ getTotalPrice() | currency:'VND':'symbol':'1.0-0' }}
+                  </div>
+                </div>
+              }
+            </button>
+          </div>
+        }
+        
+        <!-- Cart Controls for Grid View -->
+        @if (isInCart && viewMode === 'grid') {
+          <div class="cart-controls-section">
+            <div class="cart-info">
+              <span class="cart-text">Trong giỏ: {{ currentQuantityInCart }}</span>
+              <span class="cart-total">{{ item.originalPrice * currentQuantityInCart | currency:'VND':'symbol':'1.0-0' }}</span>
+            </div>
+            <div class="cart-actions">
+              <button 
+                class="action-btn remove-btn"
+                (click)="onRemoveFromCart()"
+                type="button"
+                title="Xóa khỏi giỏ">
+                <i class="pi pi-trash"></i>
+              </button>
+              <button 
+                class="action-btn add-more-btn"
+                (click)="onQuickAdd()"
+                [disabled]="isAdding"
+                type="button"
+                title="Thêm nữa">
+                <i class="pi pi-plus"></i>
+              </button>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+  
+  <!-- Flying Animation Elements -->
+  <div class="flying-elements-container"></div>
 </div> 

@@ -15,6 +15,11 @@ export interface Category {
   image: string;
 }
 
+export interface GroupedMenuItem {
+  category: Category;
+  items: MenuItem[];
+}
+
 export interface CartItem {
   id: string;
   name: string;

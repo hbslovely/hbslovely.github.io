@@ -1,135 +1,196 @@
 <div class="cart-container">
-  <p-card>
-    <ng-template pTemplate="header">
-      <div class="cart-header">
-        <h2>
-          <i class="pi pi-shopping-cart"></i>
-          Giỏ hàng
-        </h2>
-      </div>
-    </ng-template>
-
+  <div class="cart-header">
+    <h1>
+      <i class="pi pi-shopping-cart"></i>
+      Giỏ hàng của bạn
+    </h1>
     @if (cartItems.length > 0) {
-      <div class="cart-content">
+      <p class="cart-summary">{{ cartItems.length }} món • {{ getTotalItems() }} sản phẩm</p>
+    }
+  </div>
+
+  @if (cartItems.length > 0) {
+    <div class="cart-content">
+      <div class="cart-items-section">
         <div class="cart-items">
           @for (item of cartItems; track item.id) {
-            <div class="cart-item">
-              <div class="item-info">
-                <h3>{{ item.name }}</h3>
-                <p class="price">{{ item.price | currency:'VND':'symbol':'1.0-0' }}</p>
+            <div class="cart-item" [attr.data-item-id]="item.id">
+              <div class="item-image">
+                @if (item.image) {
+                  <img [src]="item.image" [alt]="item.name" />
+                } @else {
+                  <div class="image-placeholder">
+                    <i class="pi pi-image"></i>
+                  </div>
+                }
               </div>
 
-              <div class="item-actions">
-                <div class="quantity-control">
-                  <p-inputNumber
-                    [showButtons]="true"
-                    [min]="0"
-                    [max]="99"
-                    [step]="1"
-                    [inputStyleClass]="'quantity-input'"
-                    [ngModel]="item.quantity"
-                    (onInput)="updateQuantity(item.id, $event.value)"
-                    buttonLayout="horizontal"
-                    spinnerMode="horizontal"
-                    decrementButtonClass="p-button-text"
-                    incrementButtonClass="p-button-text"
-                    incrementButtonIcon="pi pi-plus"
-                    decrementButtonIcon="pi pi-minus">
-                  </p-inputNumber>
+              <div class="item-details">
+                <div class="item-header">
+                  <h3 class="item-name">{{ item.name }}</h3>
+                  <button 
+                    class="remove-btn"
+                    (click)="removeItem(item.id)"
+                    type="button"
+                    aria-label="Xóa món">
+                    <i class="pi pi-times"></i>
+                  </button>
                 </div>
 
-                <div class="note-control">
-                  <span class="p-float-label">
+                <p class="item-description">{{ item.description }}</p>
+                
+                <div class="item-price">
+                  <span class="unit-price">{{ item.price | currency:'VND':'symbol':'1.0-0' }}</span>
+                  <span class="total-price">= {{ item.price * item.quantity | currency:'VND':'symbol':'1.0-0' }}</span>
+                </div>
+
+                <div class="item-controls">
+                  <div class="quantity-control">
+                    <label class="quantity-label">Số lượng:</label>
+                    <div class="quantity-buttons">
+                      <button 
+                        class="qty-btn"
+                        (click)="decreaseQuantity(item.id)"
+                        [disabled]="item.quantity <= 1"
+                        type="button">
+                        <i class="pi pi-minus"></i>
+                      </button>
+                      <span class="quantity-display">{{ item.quantity }}</span>
+                      <button 
+                        class="qty-btn"
+                        (click)="increaseQuantity(item.id)"
+                        [disabled]="item.quantity >= 99"
+                        type="button">
+                        <i class="pi pi-plus"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="note-control">
+                    <label class="note-label">Ghi chú:</label>
                     <textarea
-                      pInputTextarea
-                      [rows]="2"
+                      class="note-input"
                       [value]="item.note"
                       (input)="updateNote(item.id, $any($event.target).value)"
-                      id="note-{{item.id}}">
+                      placeholder="Thêm ghi chú cho món này..."
+                      rows="2">
                     </textarea>
-                    <label for="note-{{item.id}}">Ghi chú</label>
-                  </span>
+                  </div>
                 </div>
               </div>
             </div>
           }
         </div>
 
-        <div class="order-form">
-          <h3>Thông tin đặt hàng</h3>
+        <div class="cart-actions">
+          <button 
+            class="clear-cart-btn"
+            (click)="clearCart()"
+            type="button">
+            <i class="pi pi-trash"></i>
+            Xóa tất cả
+          </button>
+          <button 
+            class="continue-shopping-btn"
+            routerLink="/menu"
+            type="button">
+            <i class="pi pi-arrow-left"></i>
+            Tiếp tục mua hàng
+          </button>
+        </div>
+      </div>
 
-          <div class="form-group">
-            <span class="p-float-label">
-              <input
-                pInputText
-                id="customerName"
-                [(ngModel)]="orderInfo.customerName"
-                required>
-              <label for="customerName">Tên của bạn</label>
-            </span>
-          </div>
-
-          <div class="form-group">
-            <span class="p-float-label">
-              <input
-                pInputText
-                id="phone"
-                [(ngModel)]="orderInfo.phone"
-                required>
-              <label for="phone">Số điện thoại</label>
-            </span>
-          </div>
-
-          <div class="form-group">
-            <span class="p-float-label">
-              <textarea
-                pInputTextarea
-                id="address"
-                [(ngModel)]="orderInfo.address"
-                [rows]="3"
-                required>
-              </textarea>
-              <label for="address">Địa chỉ giao hàng</label>
-            </span>
-          </div>
-
-          <div class="order-summary">
+      <div class="checkout-section">
+        <div class="order-summary">
+          <h3>Tóm tắt đơn hàng</h3>
+          
+          <div class="summary-details">
             <div class="summary-row">
-              <span>Tạm tính</span>
+              <span>Tạm tính ({{ getTotalItems() }} món)</span>
               <span>{{ orderInfo.totalAmount | currency:'VND':'symbol':'1.0-0' }}</span>
             </div>
             <div class="summary-row">
               <span>Phí giao hàng</span>
-              <span>Miễn phí</span>
+              <span class="free-shipping">Miễn phí</span>
             </div>
-            <div class="summary-row total">
+            <div class="summary-row discount-row" style="display: none;">
+              <span>Giảm giá</span>
+              <span class="discount-amount">-{{ 0 | currency:'VND':'symbol':'1.0-0' }}</span>
+            </div>
+            <div class="summary-divider"></div>
+            <div class="summary-row total-row">
               <span>Tổng cộng</span>
-              <span>{{ orderInfo.totalAmount | currency:'VND':'symbol':'1.0-0' }}</span>
+              <span class="total-amount">{{ orderInfo.totalAmount | currency:'VND':'symbol':'1.0-0' }}</span>
             </div>
-          </div>
-
-          <div class="form-actions">
-            <p-button
-              label="Đặt hàng"
-              icon="pi pi-check"
-              [disabled]="!orderInfo.customerName || !orderInfo.phone || !orderInfo.address"
-              (onClick)="placeOrder()"
-              styleClass="p-button-lg">
-            </p-button>
           </div>
         </div>
+
+        <div class="customer-info">
+          <h3>Thông tin giao hàng</h3>
+          
+          <div class="form-group">
+            <label for="customerName">Họ và tên *</label>
+            <input
+              id="customerName"
+              type="text"
+              class="form-input"
+              [(ngModel)]="orderInfo.customerName"
+              placeholder="Nhập họ và tên của bạn"
+              required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Số điện thoại *</label>
+            <input
+              id="phone"
+              type="tel"
+              class="form-input"
+              [(ngModel)]="orderInfo.phone"
+              placeholder="Nhập số điện thoại"
+              required>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Địa chỉ giao hàng *</label>
+            <textarea
+              id="address"
+              class="form-input form-textarea"
+              [(ngModel)]="orderInfo.address"
+              placeholder="Nhập địa chỉ giao hàng chi tiết"
+              rows="3"
+              required></textarea>
+          </div>
+        </div>
+
+        <div class="checkout-actions">
+          <button 
+            class="checkout-btn"
+            [disabled]="!isFormValid()"
+            (click)="placeOrder()"
+            type="button">
+            <i class="pi pi-check"></i>
+            Đặt hàng ngay
+            <span class="checkout-total">{{ orderInfo.totalAmount | currency:'VND':'symbol':'1.0-0' }}</span>
+          </button>
+        </div>
       </div>
-    } @else {
-      <div class="empty-cart">
+    </div>
+  } @else {
+    <div class="empty-cart">
+      <div class="empty-cart-icon">
         <i class="pi pi-shopping-cart"></i>
-        <h3>Giỏ hàng trống</h3>
-        <p>Hãy thêm một vài món ngon vào giỏ hàng của bạn</p>
-        <p-button
-          label="Xem thực đơn"
-          icon="pi pi-arrow-left"
-          routerLink="/menu">
-        </p-button>
       </div>
-    }
-  </p-card>
+      <h2>Giỏ hàng của bạn đang trống</h2>
+      <p>Khám phá thực đơn và thêm những món ngon vào giỏ hàng nhé!</p>
+      <div class="empty-cart-actions">
+        <button 
+          class="browse-menu-btn"
+          routerLink="/menu"
+          type="button">
+          <i class="pi pi-search"></i>
+          Khám phá thực đơn
+        </button>
+      </div>
+    </div>
+  }
 </div>

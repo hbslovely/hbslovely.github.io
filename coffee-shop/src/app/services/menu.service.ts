@@ -33,7 +33,7 @@ export class MenuService {
 
   getItemsByCategory(categoryId: string): Observable<MenuItem[]> {
     return this.menuItems$.pipe(
-      map(items => items.filter(item => item.categoryId === categoryId))
+      map(items => items.filter(item => categoryId === 'all' || (item.categoryId === categoryId)))
     );
   }
 
@@ -60,7 +60,7 @@ export class MenuService {
     return items.filter(item => {
       const normalizedName = this.normalizeText(item.name);
       const normalizedDesc = this.normalizeText(item.description);
-      return normalizedName.includes(searchLower) || 
+      return normalizedName.includes(searchLower) ||
              normalizedDesc.includes(searchLower);
     });
   }
@@ -83,4 +83,4 @@ export class MenuService {
       .replace(/đ/g, 'd')
       .replace(/Đ/g, 'D');
   }
-} 
+}

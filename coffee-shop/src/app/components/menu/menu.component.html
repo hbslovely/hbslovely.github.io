@@ -1,99 +1,171 @@
 <div class="menu-container">
-  <div class="menu-header">
-    <div class="header-content">
-      <h1>Thực Đơn</h1>
-      <p>Khám phá hương vị cà phê đích thực</p>
+  <!-- Hero Header -->
+  <div class="menu-hero">
+    <div class="hero-content">
+      <h1>Thực Đơn Cà Phê</h1>
+      <p>Khám phá hương vị cà phê đích thực với những món ngon tuyệt vời</p>
+    </div>
+    <div class="hero-decoration">
+      <div class="coffee-bean"></div>
+      <div class="coffee-bean"></div>
+      <div class="coffee-bean"></div>
     </div>
   </div>
 
-  <div class="menu-controls">
-    <div class="search-sort">
-      <span class="p-input-icon-left search-field">
-        <i class="pi pi-search"></i>
-        <input 
-          pInputText 
-          type="text" 
-          [value]="searchTerm"
-          (input)="onSearch($event)" 
-          placeholder="Tìm món yêu thích...">
-      </span>
+  <!-- Modern Filter Panel -->
+  <div class="filter-panel">
+    <div class="filter-row">
+      <!-- Search Box -->
+      <div class="search-container">
+        <div class="search-box">
+          <i class="pi pi-search search-icon"></i>
+          <input 
+            type="text" 
+            [value]="searchTerm"
+            (input)="onSearch($event)" 
+            placeholder="Tìm kiếm món yêu thích..."
+            class="search-input">
+          @if (searchTerm) {
+            <button class="clear-search" (click)="clearSearch()">
+              <i class="pi pi-times"></i>
+            </button>
+          }
+        </div>
+      </div>
 
-      <p-dropdown
-        [options]="sortOptions"
-        [(ngModel)]="sortOption"
-        (onChange)="onSort($event)"
-        [style]="{'min-width': '150px'}"
-        placeholder="Sắp xếp theo">
-      </p-dropdown>
+      <!-- Sort & View Controls -->
+      <div class="controls-group">
+        <!-- Sort Dropdown -->
+        <div class="sort-container">
+          <p-dropdown
+            [options]="sortOptions"
+            [(ngModel)]="sortOption"
+            (onChange)="onSort($event)"
+            placeholder="Sắp xếp"
+            [showClear]="false"
+            styleClass="custom-dropdown">
+            <ng-template pTemplate="selectedItem">
+              <div class="selected-item">
+                <i class="pi pi-sort-alt"></i>
+                <span>{{ selectedSortLabel }}</span>
+              </div>
+            </ng-template>
+          </p-dropdown>
+        </div>
 
-      <div class="view-toggle">
-        <p-button
-          icon="pi pi-th-large"
-          (onClick)="setViewMode('grid')"
-          [outlined]="viewMode !== 'grid'"
-          class="mr-2">
-        </p-button>
-        <p-button
-          icon="pi pi-list"
-          (onClick)="setViewMode('list')"
-          [outlined]="viewMode !== 'list'">
-        </p-button>
+        <!-- View Toggle -->
+        <div class="view-toggle">
+          <button 
+            class="view-btn"
+            [class.active]="viewMode === 'grid'"
+            (click)="setViewMode('grid')"
+            title="Xem dạng lưới">
+            <i class="pi pi-th-large"></i>
+          </button>
+          <button 
+            class="view-btn"
+            [class.active]="viewMode === 'list'"
+            (click)="setViewMode('list')"
+            title="Xem dạng danh sách">
+            <i class="pi pi-list"></i>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="menu-categories">
-    <p-button
-      label="Tất cả"
-      (onClick)="selectCategory('all')"
-      [outlined]="selectedCategory !== 'all'"
-      class="category-btn">
-    </p-button>
-    <p-button
-      label="Món được yêu thích"
-      (onClick)="selectCategory('recommended')"
-      [outlined]="selectedCategory !== 'recommended'"
-      class="category-btn">
-    </p-button>
-    @for (category of categories; track category.id) {
-      <div class="category-item">
-        <p-button
-          [label]="category.name"
-          (onClick)="selectCategory(category.id)"
-          [outlined]="selectedCategory !== category.id"
-          class="category-btn">
-        </p-button>
-        @if (selectedCategory === category.id) {
-          <div class="category-description">
-            <img [src]="category.image" [alt]="category.name">
-            <p>{{ category.description }}</p>
-          </div>
+    <!-- Category Filters -->
+    <div class="category-filters">
+      <div class="category-pills">
+        <button
+          class="category-pill"
+          [class.active]="selectedCategory === 'all'"
+          (click)="selectCategory('all')">
+          <i class="pi pi-home"></i>
+          <span>Tất cả</span>
+        </button>
+        
+        <button
+          class="category-pill featured"
+          [class.active]="selectedCategory === 'recommended'"
+          (click)="selectCategory('recommended')">
+          <i class="pi pi-star-fill"></i>
+          <span>Yêu thích</span>
+        </button>
+
+        @for (category of categories; track category.id) {
+          <button
+            class="category-pill"
+            [class.active]="selectedCategory === category.id"
+            (click)="selectCategory(category.id)">
+            <span>{{ category.name }}</span>
+          </button>
         }
+      </div>
+    </div>
+
+    <!-- Filter Results Info -->
+    @if (filteredItems.length > 0) {
+      <div class="results-info">
+        <span class="results-count">
+          Tìm thấy <strong>{{ filteredItems.length }}</strong> món
+          @if (searchTerm || selectedCategory !== 'all') {
+            <button class="clear-filters" (click)="resetFilters()">
+              <i class="pi pi-filter-slash"></i>
+              Xóa bộ lọc
+            </button>
+          }
+        </span>
       </div>
     }
   </div>
 
+  <!-- Menu Content -->
   <div class="menu-content">
-    @if (filteredItems.length > 0) {
-      <div class="menu-items" [class.grid-view]="viewMode === 'grid'" [class.list-view]="viewMode === 'list'">
-        @for (item of filteredItems; track item.id) {
-          <app-menu-item
-            [item]="item"
-            [viewMode]="viewMode"
-            (addToCart)="onAddToCart($event)">
-          </app-menu-item>
+    @if (groupedItems.length > 0) {
+      <div class="grouped-menu">
+        @for (group of groupedItems; track group.category.id) {
+          <div class="category-section">
+            <div class="category-header">
+              <h2 class="category-title">
+                <span class="title-text">{{ group.category.name }}</span>
+                <span class="item-count">({{ group.items.length }})</span>
+              </h2>
+              @if (group.category.description) {
+                <p class="category-description">{{ group.category.description }}</p>
+              }
+            </div>
+            
+            <div class="category-items" 
+                 [class.grid-layout]="viewMode === 'grid'" 
+                 [class.list-layout]="viewMode === 'list'">
+              @for (item of group.items; track item.id) {
+                <app-menu-item
+                  [item]="item"
+                  [viewMode]="viewMode"
+                  (addToCart)="onAddToCart($event)">
+                </app-menu-item>
+              }
+            </div>
+          </div>
         }
       </div>
     } @else {
       <div class="empty-state">
-        <i class="pi pi-search"></i>
+        <div class="empty-icon">
+          <i class="pi pi-search"></i>
+        </div>
         <h3>Không tìm thấy món nào</h3>
-        <p>Thử tìm kiếm với từ khóa khác hoặc xóa bộ lọc</p>
-        <p-button
-          label="Xóa bộ lọc"
-          icon="pi pi-filter-slash"
-          (onClick)="resetFilters()">
-        </p-button>
+        <p>
+          @if (searchTerm) {
+            Không có món nào phù hợp với "<strong>{{ searchTerm }}</strong>"
+          } @else {
+            Thử thay đổi bộ lọc hoặc từ khóa tìm kiếm
+          }
+        </p>
+        <button class="reset-btn" (click)="resetFilters()">
+          <i class="pi pi-refresh"></i>
+          Đặt lại bộ lọc
+        </button>
       </div>
     }
   </div>

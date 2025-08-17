@@ -1,13 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { CardModule } from 'primeng/card';
-import { ButtonModule } from 'primeng/button';
-import { InputTextModule } from 'primeng/inputtext';
-import { InputNumberModule } from 'primeng/inputnumber';
-import { InputTextareaModule } from 'primeng/inputtextarea';
 import { OrderService } from '../../services/order.service';
+import { ConfirmationDialogService } from '../../services/confirmation-dialog.service';
 import { CartItem, OrderInfo } from '../../models/menu.model';
 
 @Component({
@@ -16,12 +12,7 @@ import { CartItem, OrderInfo } from '../../models/menu.model';
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule,
-    CardModule,
-    ButtonModule,
-    InputTextModule,
-    InputNumberModule,
-    InputTextareaModule
+    FormsModule
   ],
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
@@ -37,7 +28,11 @@ export class CartComponent implements OnInit {
     orderDate: new Date()
   };
 
-  constructor(private orderService: OrderService) {}
+  constructor(
+    private orderService: OrderService,
+    private confirmationService: ConfirmationDialogService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.orderService.cartItems$.subscribe(items => {
@@ -46,11 +41,29 @@ export class CartComponent implements OnInit {
     });
   }
 
+  getTotalItems(): number {
+    return this.cartItems.reduce((total, item) => total + item.quantity, 0);
+  }
+
+  increaseQuantity(itemId: string): void {
+    const item = this.cartItems.find(i => i.id === itemId);
+    if (item && item.quantity < 99) {
+      this.orderService.updateQuantity(itemId, item.quantity + 1);
+    }
+  }
+
+  decreaseQuantity(itemId: string): void {
+    const item = this.cartItems.find(i => i.id === itemId);
+    if (item && item.quantity > 1) {
+      this.orderService.updateQuantity(itemId, item.quantity - 1);
+    }
+  }
+
   updateQuantity(itemId: string, value: string | number | null) {
     if (value === null || value === '') {
       return;
     }
-    
+
     const quantity = typeof value === 'string' ? parseInt(value, 10) : value;
     if (isNaN(quantity) || quantity < 0) {
       return;
@@ -67,8 +80,45 @@ export class CartComponent implements OnInit {
     this.orderService.updateNote(itemId, note);
   }
 
-  removeItem(itemId: string) {
-    this.orderService.removeFromCart(itemId);
+  async removeItem(itemId: string) {
+    const item = this.cartItems.find(i => i.id === itemId);
+    if (!item) return;
+
+    const confirmed = await this.confirmationService.confirmDelete(
+      item.name,
+      `Bạn có chắc chắn muốn xóa "${item.name}" khỏi giỏ hàng?`
+    );
+
+    if (confirmed) {
+      // Add animation class before removing
+      const itemElement = document.querySelector(`[data-item-id="${itemId}"]`);
+      if (itemElement) {
+        itemElement.classList.add('removing');
+        setTimeout(() => {
+          this.orderService.removeFromCart(itemId);
+        }, 300);
+      } else {
+        this.orderService.removeFromCart(itemId);
+      }
+    }
+  }
+
+  async clearCart(): Promise<void> {
+    if (this.cartItems.length === 0) return;
+
+    const confirmed = await this.confirmationService.confirmClearCart();
+    if (confirmed) {
+      this.orderService.clearCart();
+    }
+  }
+
+  isFormValid(): boolean {
+    return !!(
+      this.orderInfo.customerName?.trim() &&
+      this.orderInfo.phone?.trim() &&
+      this.orderInfo.address?.trim() &&
+      this.cartItems.length > 0
+    );
   }
 
   private updateOrderItems() {
@@ -79,10 +129,30 @@ export class CartComponent implements OnInit {
     );
   }
 
-  placeOrder() {
-    this.orderInfo.orderDate = new Date();
-    const orderId = this.orderService.encodeOrder(this.orderInfo);
-    this.orderService.clearCart();
-    return orderId;
+  async placeOrder() {
+    if (!this.isFormValid()) {
+      return;
+    }
+
+    try {
+      this.orderInfo.orderDate = new Date();
+      const orderId = this.orderService.encodeOrder(this.orderInfo);
+      this.orderService.clearCart();
+
+      // Navigate to order detail page with success flag
+      this.router.navigate(['/order', orderId], {
+        queryParams: { success: 'true' }
+      });
+
+      return orderId;
+    } catch (error) {
+      // Show error if order creation fails
+      await this.confirmationService.showError(
+        'Lỗi đặt hàng',
+        'Có lỗi xảy ra khi tạo đơn hàng. Vui lòng thử lại.'
+      );
+
+      return null;
+    }
   }
-} 
+}

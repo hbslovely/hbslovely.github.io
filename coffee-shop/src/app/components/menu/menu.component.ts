@@ -9,7 +9,7 @@ import { MenuItemComponent } from '../menu-item/menu-item.component';
 import { OrderService } from '../../services/order.service';
 import { MenuService } from '../../services/menu.service';
 import { CartAnimationService } from '../../services/cart-animation.service';
-import { MenuItem, Category, ViewMode, SortOption } from '../../models/menu.model';
+import { MenuItem, Category, ViewMode, SortOption, GroupedMenuItem } from '../../models/menu.model';
 import { BehaviorSubject, combineLatest } from 'rxjs';
 
 @Component({
@@ -34,6 +34,7 @@ export class MenuComponent implements OnInit {
   searchTerm = '';
   sortOption: SortOption = 'default';
   filteredItems: MenuItem[] = [];
+  groupedItems: GroupedMenuItem[] = [];
 
   private searchTermSubject = new BehaviorSubject<string>('');
   private sortOptionSubject = new BehaviorSubject<SortOption>('default');
@@ -76,6 +77,15 @@ export class MenuComponent implements OnInit {
     this.searchTermSubject.next(input.value);
   }
 
+  clearSearch(): void {
+    this.searchTermSubject.next('');
+  }
+
+  get selectedSortLabel(): string {
+    const selectedOption = this.sortOptions.find(opt => opt.value === this.sortOption);
+    return selectedOption?.label || 'Sắp xếp';
+  }
+
   onSort(event: { value: SortOption }): void {
     this.sortOptionSubject.next(event.value);
   }
@@ -97,17 +107,17 @@ export class MenuComponent implements OnInit {
     this.selectedCategory = 'all';
   }
 
-  onAddToCart(event: { item: MenuItem, element: HTMLElement }): void {
-    const { item, element } = event;
+  onAddToCart(event: { item: MenuItem, element: HTMLElement, quantity: number }): void {
+    const { item, element, quantity } = event;
     
-    // Add to cart
+    // Add to cart with specified quantity
     this.orderService.addToCart({
       id: item.id,
       name: item.name,
       price: item.originalPrice,
       description: item.description,
       image: item.image
-    });
+    }, quantity);
 
     // Animate
     if (element) {
@@ -135,5 +145,29 @@ export class MenuComponent implements OnInit {
 
     // Apply sort
     this.filteredItems = this.menuService.sortItems(filteredItems, this.sortOption);
+    
+    // Group items by category
+    this.groupedItems = this.groupItemsByCategory(this.filteredItems);
+  }
+
+  private groupItemsByCategory(items: MenuItem[]): GroupedMenuItem[] {
+    const grouped: { [categoryId: string]: MenuItem[] } = {};
+
+    // Group items by categoryId
+    items.forEach(item => {
+      if (!grouped[item.categoryId]) {
+        grouped[item.categoryId] = [];
+      }
+      grouped[item.categoryId].push(item);
+    });
+
+    // Convert to GroupedMenuItem array with category details
+    return Object.keys(grouped).map(categoryId => {
+      const category = this.categories.find(cat => cat.id === categoryId);
+      return {
+        category: category || { id: categoryId, name: categoryId, description: '', image: '' },
+        items: grouped[categoryId]
+      };
+    }).filter(group => group.category && group.items.length > 0);
   }
 } 
