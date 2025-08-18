@@ -5,150 +5,33 @@
       <h1>Thực Đơn Cà Phê</h1>
       <p>Khám phá hương vị cà phê đích thực với những món ngon tuyệt vời</p>
     </div>
-    <div class="hero-decoration">
-      <div class="coffee-bean"></div>
-      <div class="coffee-bean"></div>
-      <div class="coffee-bean"></div>
-    </div>
   </div>
 
-  <!-- Modern Filter Panel -->
-  <div class="filter-panel">
-    <div class="filter-row">
-      <!-- Search Box -->
-      <div class="search-container">
-        <div class="search-box">
-          <i class="pi pi-search search-icon"></i>
-          <input 
-            type="text" 
-            [value]="searchTerm"
-            (input)="onSearch($event)" 
-            placeholder="Tìm kiếm món yêu thích..."
-            class="search-input">
-          @if (searchTerm) {
-            <button class="clear-search" (click)="clearSearch()">
-              <i class="pi pi-times"></i>
-            </button>
-          }
-        </div>
-      </div>
-
-      <!-- Sort & View Controls -->
-      <div class="controls-group">
-        <!-- Sort Dropdown -->
-        <div class="sort-container">
-          <p-dropdown
-            [options]="sortOptions"
-            [(ngModel)]="sortOption"
-            (onChange)="onSort($event)"
-            placeholder="Sắp xếp"
-            [showClear]="false"
-            styleClass="custom-dropdown">
-            <ng-template pTemplate="selectedItem">
-              <div class="selected-item">
-                <i class="pi pi-sort-alt"></i>
-                <span>{{ selectedSortLabel }}</span>
-              </div>
-            </ng-template>
-          </p-dropdown>
-        </div>
-      </div>
-    </div>
-
-    <!-- Category Filters -->
-    <div class="category-filters">
-      <div class="category-pills">
-        <button
-          class="category-pill"
-          [class.active]="selectedCategory === 'all'"
-          (click)="selectCategory('all')">
-          <i class="pi pi-home"></i>
-          <span>Tất cả</span>
-        </button>
-        
-        <button
-          class="category-pill featured"
-          [class.active]="selectedCategory === 'recommended'"
-          (click)="selectCategory('recommended')">
-          <i class="pi pi-star-fill"></i>
-          <span>Yêu thích</span>
-        </button>
-
-        @for (category of categories; track category.id) {
-          <button
-            class="category-pill"
-            [class.active]="selectedCategory === category.id"
-            (click)="selectCategory(category.id)">
-            <span>{{ category.name }}</span>
-          </button>
-        }
-      </div>
-    </div>
-
-    <!-- Filter Results Info -->
-    @if (filteredItems.length > 0) {
-      <div class="results-info">
-        <span class="results-count">
-          Tìm thấy <strong>{{ filteredItems.length }}</strong> món
-          @if (searchTerm || selectedCategory !== 'all') {
-            <button class="clear-filters" (click)="resetFilters()">
-              <i class="pi pi-filter-slash"></i>
-              Xóa bộ lọc
-            </button>
-          }
-        </span>
-      </div>
-    }
-  </div>
+  <!-- Menu Filter Component -->
+  <app-menu-filter
+    [categories]="categories"
+    (searchTermChange)="onSearchTermChange($event)"
+    (categoryChange)="onCategoryChange($event)">
+  </app-menu-filter>
 
   <!-- Menu Content -->
   <div class="menu-content">
-    @if (groupedItems.length > 0) {
-      <div class="grouped-menu">
-        @for (group of groupedItems; track group.category.id) {
-          <div class="category-section">
-            <div class="category-header">
-              <h2 class="category-title">
-                <span class="title-text">{{ group.category.name }}</span>
-                <span class="item-count">({{ group.items.length }})</span>
-              </h2>
-              @if (group.category.description) {
-                <p class="category-description">{{ group.category.description }}</p>
-              }
-            </div>
-            
-            <div class="category-items" 
-                 [class.grid-layout]="viewMode === 'grid'" 
-                 [class.list-layout]="viewMode === 'list'">
-              @for (item of group.items; track item.id) {
-                <app-menu-item
-                  [item]="item"
-                  [viewMode]="viewMode"
-                  (addToCart)="onAddToCart($event)">
-                </app-menu-item>
-              }
-            </div>
-          </div>
-        }
-      </div>
-    } @else {
-      <div class="empty-state">
-        <div class="empty-icon">
-          <i class="pi pi-search"></i>
+    <div *ngIf="groupedItems.length > 0" class="grouped-menu">
+      <div *ngFor="let group of groupedItems" class="category-section">
+        <h2 class="category-title">{{ group.category.name }} ({{ group.items.length }})</h2>
+        <div class="category-items" [class.grid-layout]="viewMode === 'grid'" [class.list-layout]="viewMode === 'list'">
+          <app-menu-item *ngFor="let item of group.items" [item]="item" [viewMode]="viewMode" (addToCart)="onAddToCart($event)"></app-menu-item>
         </div>
-        <h3>Không tìm thấy món nào</h3>
-        <p>
-          @if (searchTerm) {
-            Không có món nào phù hợp với "<strong>{{ searchTerm }}</strong>"
-          } @else {
-            Thử thay đổi bộ lọc hoặc từ khóa tìm kiếm
-          }
-        </p>
-        <button class="reset-btn" (click)="resetFilters()">
-          <i class="pi pi-refresh"></i>
-          Đặt lại bộ lọc
-        </button>
       </div>
-    }
+    </div>
+    <div *ngIf="groupedItems.length === 0" class="empty-state">
+      <i class="pi pi-search"></i>
+      <h3>Không tìm thấy món nào</h3>
+      <p *ngIf="searchTerm">Không có món nào phù hợp với "<strong>{{ searchTerm }}</strong>"</p>
+      <p *ngIf="!searchTerm">Thử thay đổi bộ lọc hoặc từ khóa tìm kiếm</p>
+      <button class="reset-btn" (click)="resetFilters()">
+        <i class="pi pi-refresh"></i> Đặt lại bộ lọc
+      </button>
+    </div>
   </div>
 </div> 

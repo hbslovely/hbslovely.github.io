@@ -1,0 +1,15 @@
+<div class="filter-panel">
+  <div class="search-bar">
+    <input type="text" [value]="searchTerm" (input)="onSearch($event)" placeholder="Tìm kiếm..." class="search-input">
+    <button *ngIf="searchTerm" class="clear-search" (click)="clearSearch()">
+      <i class="pi pi-times"></i>
+    </button>
+  </div>
+
+  <div class="category-filters">
+    <button class="category-pill" [class.active]="selectedCategory === 'all'" (click)="selectCategory('all')">Tất cả</button>
+    <button *ngFor="let category of categories" class="category-pill" [class.active]="selectedCategory === category.id" (click)="selectCategory(category.id)">
+      {{ category.name }}
+    </button>
+  </div>
+</div> 
