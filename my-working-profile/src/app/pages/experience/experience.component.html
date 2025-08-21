@@ -1,8 +1,8 @@
 <div [class]="config.className">
   <div class="container" [style.maxWidth.px]="config.maxWidth">
     <!-- Education Section -->
-    <section [id]="sections[1].id" class="section">
-      <app-section-header [title]="sections[0].title" [icon]="sections[1].icon">
+    <section [id]="sections[0].id" class="section">
+      <app-section-header [title]="sections[0].title" [icon]="sections[0].icon">
         <div class="section-subtitle">{{ 'SECTIONS.SUBTITLES.EDUCATION' | translate }}</div>
       </app-section-header>
 
@@ -14,8 +14,8 @@
     </section>
 
     <!-- Work Experience Section -->
-    <section [id]="sections[0].id" class="section">
-      <app-section-header [title]="sections[1].title" [icon]="sections[0].icon">
+    <section [id]="sections[1].id" class="section">
+      <app-section-header [title]="sections[1].title" [icon]="sections[1].icon">
         <div class="section-subtitle">{{ 'SECTIONS.SUBTITLES.WORK_EXPERIENCE' | translate }}</div>
       </app-section-header>
 
