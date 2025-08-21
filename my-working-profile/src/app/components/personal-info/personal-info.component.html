@@ -2,21 +2,59 @@
   <div class="info-container">
     <!-- Profile Header -->
     <div class="profile-header">
-      <div class="avatar-container">
-        <div class="avatar" (click)="showFullscreenAvatar()">
-          <img src="assets/images/avatar.jpeg" alt="Profile Picture">
-          <div class="avatar-overlay">
-            <span nz-icon nzType="fullscreen" nzTheme="outline"></span>
+      <div class="profile-content">
+        <div class="avatar-container">
+          <div class="avatar" (click)="showFullscreenAvatar()">
+            <img src="assets/images/avatar.jpeg" alt="Profile Picture">
+            <div class="avatar-overlay">
+              <span nz-icon nzType="fullscreen" nzTheme="outline"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-info">
+          <div class="name-section">
+            <div class="title-prefix">{{ info?.prefix }}</div>
+            <h1 class="name">{{ info?.name }}</h1>
+          </div>
+          
+          <div class="role-section">
+            <span nz-icon nzType="code" nzTheme="outline"></span>
+            <h2 class="role">{{ info?.title }}</h2>
+          </div>
+
+          <div class="location-section">
+            <span nz-icon nzType="environment" nzTheme="outline"></span>
+            <div class="location-details">
+              <span class="city">{{ info?.location?.city }}</span>
+              <span class="separator">•</span>
+              <span class="country">{{ info?.location?.country }}</span>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="name-title">
-        <h1><span class="name-prefix">{{ info?.prefix }}</span>{{ info?.name }}</h1>
-        <h2>{{ info?.title }}</h2>
-        <div class="location">
-          <span nz-icon nzType="environment" nzTheme="outline"></span>
-          {{ info?.location?.city }}, {{ info?.location?.country }}
+      <div class="profile-stats">
+        <div class="stat-item">
+          <span nz-icon nzType="clock-circle" nzTheme="outline"></span>
+          <div class="stat-content">
+            <div class="stat-label">Experience</div>
+            <div class="stat-value">10+ Years</div>
+          </div>
+        </div>
+        <div class="stat-item">
+          <span nz-icon nzType="project" nzTheme="outline"></span>
+          <div class="stat-content">
+            <div class="stat-label">Projects</div>
+            <div class="stat-value">50+</div>
+          </div>
+        </div>
+        <div class="stat-item">
+          <span nz-icon nzType="trophy" nzTheme="outline"></span>
+          <div class="stat-content">
+            <div class="stat-label">Position</div>
+            <div class="stat-value">Senior</div>
+          </div>
         </div>
       </div>
     </div>
@@ -27,7 +65,12 @@
         <span nz-icon nzType="mail" nzTheme="outline"></span>
         <div class="contact-details">
           <span class="label">Email</span>
-          <span class="value">{{ info?.contact?.email }}</span>
+          <div class="value-with-copy">
+            <span class="value">{{ info?.contact?.email }}</span>
+            <button class="copy-btn" (click)="copyToClipboard($event, info?.contact?.email)">
+              <span nz-icon [nzType]="emailCopied() ? 'check' : 'copy'" nzTheme="outline"></span>
+            </button>
+          </div>
         </div>
       </a>
 
@@ -35,7 +78,12 @@
         <span nz-icon nzType="phone" nzTheme="outline"></span>
         <div class="contact-details">
           <span class="label">Phone</span>
-          <span class="value">{{ info?.contact?.phone }}</span>
+          <div class="value-with-copy">
+            <span class="value">{{ info?.contact?.phone }}</span>
+            <button class="copy-btn" (click)="copyToClipboard($event, info?.contact?.phone)">
+              <span nz-icon [nzType]="phoneCopied() ? 'check' : 'copy'" nzTheme="outline"></span>
+            </button>
+          </div>
         </div>
       </a>
 
@@ -62,45 +110,66 @@
         <span nz-icon nzType="user" nzTheme="outline"></span>
         {{ 'PERSONAL_INFO.PROFESSIONAL_SUMMARY' | translate }}
       </h3>
-      <p>{{ info?.summary }}</p>
+      <div class="summary-content">
+        <blockquote>
+          <p>{{ info?.summary }}</p>
+        </blockquote>
+      </div>
     </div>
 
     <!-- Additional Info -->
     <div class="additional-info">
       <!-- Languages -->
       <div class="info-section" *ngIf="info?.languages?.length">
-        <h3>
+        <div class="section-header">
           <span nz-icon nzType="global" nzTheme="outline"></span>
-          {{ 'PERSONAL_INFO.LANGUAGES' | translate }}
-        </h3>
+          <h3>{{ 'PERSONAL_INFO.LANGUAGES' | translate }}</h3>
+        </div>
         <div class="language-grid">
-          <div class="language-item" *ngFor="let lang of info?.languages">
-            <span class="lang-name">{{ lang.name }}</span>
-            <nz-tag [nzColor]="'blue'">{{ lang.level }}</nz-tag>
-          </div>
+          @for (lang of info?.languages; track lang) {
+            <div class="language-tag">
+              <span class="lang-name">{{ lang.name }}</span>
+              <nz-tag [nzColor]="getLangColor(lang.level)">{{ lang.level }}</nz-tag>
+            </div>
+          }
         </div>
       </div>
 
       <!-- Interests -->
       <div class="info-section" *ngIf="info?.interests?.length">
-        <h3>
+        <div class="section-header">
           <span nz-icon nzType="star" nzTheme="outline"></span>
-          {{ 'PERSONAL_INFO.AREAS_OF_INTEREST' | translate }}
-        </h3>
+          <h3>{{ 'PERSONAL_INFO.AREAS_OF_INTEREST' | translate }}</h3>
+        </div>
         <div class="interests-grid">
-          <nz-tag *ngFor="let interest of info?.interests">{{ interest }}</nz-tag>
+          @for (interest of info?.interests; track interest) {
+            <div class="interest-tag">
+              <span nz-icon [nzType]="getInterestIcon(interest)" nzTheme="outline"></span>
+              {{ interest }}
+            </div>
+          }
         </div>
       </div>
 
       <!-- Work Preferences -->
       <div class="info-section" *ngIf="info?.availability">
-        <h3>
+        <div class="section-header">
           <span nz-icon nzType="clock-circle" nzTheme="outline"></span>
-          {{ 'PERSONAL_INFO.WORK_PREFERENCES' | translate }}
-        </h3>
-        <div class="work-preferences">
-          <nz-tag [nzColor]="'blue'">{{ info?.availability?.workType }}</nz-tag>
-          <nz-tag [nzColor]="'green'">{{ info?.availability?.workLocation }}</nz-tag>
+          <h3>{{ 'PERSONAL_INFO.WORK_PREFERENCES' | translate }}</h3>
+        </div>
+        <div class="preferences-grid">
+          @if (info?.availability?.workType) {
+            <div class="pref-tag">
+              <span nz-icon nzType="schedule" nzTheme="outline"></span>
+              {{ info?.availability?.workType }}
+            </div>
+          }
+          @if (info?.availability?.workLocation) {
+            <div class="pref-tag">
+              <span nz-icon nzType="environment" nzTheme="outline"></span>
+              {{ info?.availability?.workLocation }}
+            </div>
+          }
         </div>
       </div>
     </div>

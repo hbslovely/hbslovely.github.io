@@ -3,42 +3,51 @@
     <app-section-header 
       title="SECTIONS.TECHNICAL_SKILLS" 
       icon="tool" 
-      subtitle="SECTIONS.SUBTITLES.TECHNICAL_SKILLS">
+      subtitle="A comprehensive collection of technical skills acquired through years of hands-on experience in web development, with a focus on modern frontend technologies and best practices.">
     </app-section-header>
 
-    <div class="skills-layout">
-      <!-- Left Column: Word Cloud -->
-      <div class="word-cloud-column" #wordCloudContainer>
-        <div class="word-cloud-container">
-          <canvas #wordCloud></canvas>
-        </div>
-      </div>
-
-      <!-- Right Column: Skills List -->
-      <div class="skills-column">
+    <div class="skills-content">
+      <!-- Skills Grid -->
+      <div class="skills-grid">
         @for (category of Object.keys(cv()?.skills?.technicalSkills || {}); track category) {
           <div class="skill-section">
             <div class="section-header">
-              <span nz-icon [nzType]="getTechnologyIcon(category)" nzTheme="outline"></span>
-              <h3>{{ formatCategory(category) }}</h3>
+              <div class="header-icon">
+                <span nz-icon [nzType]="getTechnologyIcon(category)" nzTheme="outline"></span>
+              </div>
+              <div class="header-content">
+                <h3>{{ formatCategory(category) }}</h3>
+                <span class="skill-count">{{ cv()?.skills?.technicalSkills?.[category]?.length || 0 }} skills</span>
+              </div>
             </div>
             <div class="skill-tags">
               @for (skill of cv()?.skills?.technicalSkills?.[category]; track skill) {
-                <div class="skill-tag" 
-                  [class.with-experience]="getSkillExperience(skill)"
-                  [style.borderColor]="getTagColor(skill)">
-                  <span class="skill-name">{{ skill }}</span>
-                  @if (getSkillExperience(skill)) {
-                    <span class="experience" [style.backgroundColor]="getTagColor(skill)">
-                      {{ getSkillExperience(skill) }}
-                    </span>
-                  }
-                </div>
+                <app-skill-item
+                  [name]="skill"
+                  [experience]="getSkillExperience(skill)"
+                  [color]="getTagColor(skill)"
+                  [experiencePercentage]="getExperiencePercentage(skill)"
+                  (onClick)="showSkillInfo(skill)"
+                ></app-skill-item>
               }
             </div>
           </div>
         }
       </div>
+
+      <!-- View Projects Link -->
+      <div class="view-projects-section">
+        <a routerLink="/projects" class="view-projects">{{ 'SKILLS.VIEW_PROJECTS' | translate }}</a>
+        <p class="projects-hint">{{ 'SKILLS.PROJECTS_HINT' | translate }}</p>
+      </div>
     </div>
   </div>
 </div>
+
+<!-- Skill Detail Dialog Template -->
+<ng-template #skillDetailDialog>
+  <app-skill-detail
+    [info]="selectedSkill!"
+    [projectCount]="selectedSkillProjectCount">
+  </app-skill-detail>
+</ng-template>

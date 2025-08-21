@@ -45,6 +45,8 @@ export class CVService {
     }).subscribe({
       next: (data) => {
         this.cvData.set(data);
+        // Store CV data in window object for PdfService
+        (window as any).cvData = data;
         this.loading.set(false);
       },
       error: (err) => {
@@ -70,6 +72,8 @@ export class CVService {
     }).subscribe({
       next: (data) => {
         this.cvData.set(data);
+        // Store CV data in window object for PdfService
+        (window as any).cvData = data;
         this.loading.set(false);
       },
       error: (err) => {

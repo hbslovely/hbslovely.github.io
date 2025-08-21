@@ -2,37 +2,81 @@
   display: inline-block;
 }
 
-.language-button {
-  padding: 4px 12px;
-  height: auto;
+.language-toggle {
   display: flex;
-  align-items: center;
-  gap: 8px;
-  border-radius: 4px;
-  transition: all 0.3s;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px;
+  border-radius: 8px;
+  gap: 4px;
 
-  &:hover {
-    background: rgba(0, 0, 0, 0.05);
+  .toggle-button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border: none;
+    background: transparent;
+    border-radius: 6px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    &.active {
+      background: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+    }
+
+    .flag {
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    .lang-code {
+      font-weight: 500;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+    }
   }
 }
 
-.flag {
-  font-size: 20px;
-  line-height: 1;
+// Dark theme adjustments
+:host-context(.dark-theme) {
+  .language-toggle {
+    background: rgba(0, 0, 0, 0.2);
+
+    .toggle-button {
+      &:hover {
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      &.active {
+        background: rgba(255, 255, 255, 0.15);
+      }
+    }
+  }
 }
 
-.lang-code {
-  font-size: 14px;
-  font-weight: 500;
-}
+// Mobile adjustments
+@media (max-width: 768px) {
+  .language-toggle {
+    padding: 3px;
 
-.lang-name {
-  margin-left: 8px;
-  font-size: 14px;
-}
+    .toggle-button {
+      padding: 5px 8px;
 
-[nz-menu-item] {
-  display: flex;
-  align-items: center;
-  padding: 8px 12px;
+      .flag {
+        font-size: 1rem;
+      }
+
+      .lang-code {
+        font-size: 0.8rem;
+      }
+    }
+  }
 } 

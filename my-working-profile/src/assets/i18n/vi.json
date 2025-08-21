@@ -62,5 +62,16 @@
       "LIST": "Xem Dạng Danh Sách"
     },
     "FILTER_BUTTON": "Bộ Lọc"
+  },
+  "SKILLS": {
+    "OVERVIEW": "Tổng quan kỹ năng",
+    "DESCRIPTION": "Bộ sưu tập toàn diện các kỹ năng kỹ thuật được tích lũy qua nhiều năm kinh nghiệm thực tế trong phát triển web, tập trung vào các công nghệ frontend hiện đại và các phương pháp thực hành tốt nhất.",
+    "VIEW_PROJECTS": "Xem dự án của tôi",
+    "PROJECTS_HINT": "Khám phá portfolio của tôi để thấy các kỹ năng này được áp dụng trong các dự án thực tế.",
+    "DIALOG": {
+      "VISIT_WEBSITE": "Truy cập trang chủ",
+      "VISIT_GITHUB": "Xem trên GitHub",
+      "USED_IN": "Được sử dụng trong {{count}} dự án"
+    }
   }
 }
