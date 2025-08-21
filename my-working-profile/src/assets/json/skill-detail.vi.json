@@ -14,11 +14,18 @@
     "logo": "https://angular.io/assets/images/logos/angular/angular.svg"
   },
   "ReactJS": {
-    "name": "React",
-    "description": "React là một thư viện JavaScript để xây dựng giao diện người dùng. Nó cho phép bạn tạo các UI phức tạp từ các đoạn mã nhỏ và độc lập gọi là \"components\". React giúp việc tạo UI tương tác trở nên dễ dàng.",
-    "url": "https://react.dev",
+    "name": "ReactJS",
+    "description": [
+      "ReactJS là thư viện JavaScript mạnh mẽ để xây dựng giao diện người dùng với trọng tâm vào kiến trúc dựa trên component. Triển khai DOM ảo và luồng dữ liệu một chiều của nó tạo ra các ứng dụng hiệu quả và dự đoán được.",
+      "Kiến trúc dựa trên component của React thúc đẩy khả năng tái sử dụng và bảo trì. Component đóng gói UI và hành vi, cho phép nhà phát triển xây dựng giao diện phức tạp từ các phần đơn giản, độc lập quản lý trạng thái riêng của chúng.",
+      "Triển khai DOM ảo tối ưu hóa hiệu suất render. Bằng cách duy trì bản sao nhẹ của DOM trong bộ nhớ, React giảm thiểu các thao tác DOM tốn kém và cập nhật hiệu quả chỉ những gì cần thiết.",
+      "JSX, phần mở rộng cú pháp của React, cho phép viết mã giống HTML trong JavaScript. Cách tiếp cận này cung cấp sức mạnh lập trình đầy đủ trong khi duy trì cú pháp HTML quen thuộc, làm cho template component trực quan và dễ bảo trì hơn.",
+      "Luồng dữ liệu một chiều của React đảm bảo quản lý trạng thái dự đoán được. Props và state cung cấp mẫu rõ ràng cho xử lý dữ liệu, làm cho ứng dụng dễ gỡ lỗi và bảo trì hơn khi mở rộng.",
+      "Hệ sinh thái mở rộng bao gồm các công cụ và thư viện mạnh mẽ. Từ giải pháp quản lý trạng thái như Redux đến thư viện định tuyến và thư viện component UI, hệ sinh thái React cung cấp giải pháp cho nhu cầu ứng dụng phức tạp."
+    ],
+    "url": "https://reactjs.org",
     "githubUrl": "https://github.com/facebook/react",
-    "logo": "https://react.dev/favicon.ico"
+    "logo": "https://reactjs.org/favicon.ico"
   },
   "TypeScript": {
     "name": "TypeScript",
@@ -49,10 +56,17 @@
   },
   "AngularJS": {
     "name": "AngularJS",
-    "description": "AngularJS (còn được gọi là Angular.js hoặc Angular 1) là một framework front-end mã nguồn mở dựa trên JavaScript để phát triển các ứng dụng trang đơn. Nó được duy trì bởi Google và cộng đồng các cá nhân và doanh nghiệp trước khi bị ngừng phát triển.",
+    "description": [
+      "AngularJS (Angular 1.x) là framework JavaScript đột phá đã cách mạng hóa phát triển ứng dụng web. Nó giới thiệu các khái niệm mạnh mẽ như ràng buộc dữ liệu hai chiều, tiêm phụ thuộc và directive đã ảnh hưởng đến phát triển frontend hiện đại.",
+      "Ràng buộc dữ liệu hai chiều của framework tự động đồng bộ hóa dữ liệu giữa model và view. Tính năng này đáng kể giảm mã soạn sẵn và giúp dễ dàng xây dựng giao diện người dùng động với cập nhật thời gian thực.",
+      "Hệ thống tiêm phụ thuộc của AngularJS thúc đẩy mã module hóa và có thể kiểm thử. Mẫu kiến trúc này cho phép tổ chức mã tốt hơn, khả năng tái sử dụng và kiểm thử đơn vị dễ dàng hơn thông qua mẫu service và factory.",
+      "Hệ thống directive của framework cho phép tạo các thành phần UI có thể tái sử dụng. Directive mở rộng từ vựng HTML với các phần tử và thuộc tính tùy chỉnh, cho phép nhà phát triển tạo các thành phần UI phức tạp đóng gói cả đánh dấu và hành vi.",
+      "Các service tích hợp sẵn cung cấp chức năng phổ biến như giao tiếp HTTP và định tuyến. Các service này trừu tượng hóa các thao tác phức tạp và cung cấp API nhất quán cho các tính năng ứng dụng web phổ biến.",
+      "Ngôn ngữ biểu thức và bộ lọc của AngularJS cho phép thao tác dữ liệu mạnh mẽ trong template. Các tính năng này cho phép chuyển đổi và định dạng dữ liệu phức tạp trực tiếp trong lớp view, giảm độ phức tạp của controller."
+    ],
     "url": "https://angularjs.org",
     "githubUrl": "https://github.com/angular/angular.js",
-    "logo": "https://angularjs.org/img/AngularJS-large.png"
+    "logo": "https://angularjs.org/favicon.ico"
   },
   "HTML5": {
     "name": "HTML5",
@@ -110,24 +124,45 @@
   },
   "D3.js": {
     "name": "D3.js",
-    "description": "D3.js là một thư viện JavaScript để tạo ra các trực quan hóa dữ liệu động, tương tác trong trình duyệt web. Nó sử dụng SVG, Canvas và HTML để tạo các thành phần trực quan hóa mạnh mẽ và thực hiện thao tác DOM dựa trên dữ liệu.",
+    "description": [
+      "D3.js (Data-Driven Documents) là thư viện JavaScript mạnh mẽ để tạo các trực quan hóa dữ liệu động, tương tác trong trình duyệt web. Nó kết hợp các thành phần trực quan hóa mạnh mẽ với cách tiếp cận điều khiển DOM dựa trên dữ liệu, cho phép kiểm soát tối đa kết quả trực quan cuối cùng.",
+      "Điểm mạnh cốt lõi của thư viện nằm ở cơ chế ràng buộc dữ liệu, cho phép ánh xạ trực tiếp dữ liệu vào các phần tử trực quan. Cách tiếp cận này cho phép tạo các trực quan hóa phức tạp tự động cập nhật khi dữ liệu thay đổi, lý tưởng cho bảng điều khiển thời gian thực và báo cáo tương tác.",
+      "Kiến trúc module của D3 cung cấp bộ công cụ toàn diện để chuyển đổi và trực quan hóa dữ liệu. Từ biểu đồ cơ bản đến đồ thị có hướng lực phức tạp, thư viện cung cấp các thành phần cho tỷ lệ, trục, chuyển tiếp và các thuật toán bố cục khác nhau.",
+      "Hệ thống hoạt ảnh và chuyển tiếp của thư viện cho phép cập nhật và chuyển đổi mượt mà giữa các trạng thái. Khả năng này tạo ra trải nghiệm người dùng hấp dẫn và giúp người dùng theo dõi thay đổi trong trực quan hóa dữ liệu theo thời gian.",
+      "API lựa chọn và thao tác mở rộng của D3 cung cấp kiểm soát chi tiết đối với các phần tử trực quan. Kiểm soát cấp thấp này cho phép nhà phát triển tạo các trực quan hóa tùy chỉnh không thể thực hiện được với các thư viện biểu đồ cấp cao hơn.",
+      "Hỗ trợ SVG của thư viện cho phép tạo đồ họa độc lập với độ phân giải. Kết hợp với hỗ trợ cho các tiêu chuẩn web hiện đại, điều này đảm bảo trực quan hóa sắc nét trên các thiết bị và kích thước màn hình khác nhau."
+    ],
     "url": "https://d3js.org",
     "githubUrl": "https://github.com/d3/d3",
-    "logo": "https://d3js.org/logo.svg"
+    "logo": "https://d3js.org/favicon.png"
   },
   "jQuery": {
     "name": "jQuery",
-    "description": "jQuery là một thư viện JavaScript nhanh, nhỏ gọn và giàu tính năng. Nó giúp việc duyệt và thao tác tài liệu HTML, xử lý sự kiện, hoạt ảnh và Ajax trở nên đơn giản hơn với API dễ sử dụng hoạt động trên nhiều trình duyệt.",
+    "description": [
+      "jQuery là thư viện JavaScript nhanh, nhẹ và giàu tính năng đã cách mạng hóa phát triển web. Nó đơn giản hóa việc duyệt tài liệu HTML, xử lý sự kiện, hoạt ảnh và tương tác Ajax cho phát triển web nhanh chóng.",
+      "Động cơ chọn mạnh mẽ của thư viện cho phép thao tác DOM dễ dàng bằng cú pháp CSS quen thuộc. Khả năng này, kết hợp với các phương thức có thể xâu chuỗi, cho phép nhà phát triển viết mã ngắn gọn và dễ đọc cho các thao tác DOM phức tạp.",
+      "Hệ thống xử lý sự kiện của jQuery cung cấp giao diện nhất quán trên các trình duyệt khác nhau. Lớp trừu tượng này đơn giản hóa việc ràng buộc và xử lý tương tác người dùng, giúp dễ dàng tạo ứng dụng web tương tác.",
+      "Khả năng Ajax của thư viện đơn giản hóa trao đổi dữ liệu bất đồng bộ với máy chủ. Giao diện cấp cao của nó cho các yêu cầu HTTP giúp dễ dàng tải và gửi dữ liệu mà không cần xử lý các triển khai đặc thù của trình duyệt.",
+      "Hệ thống hoạt ảnh của jQuery cung cấp hiệu ứng chuyển tiếp và hiệu ứng trực quan mượt mà. Từ hiệu ứng mờ dần đơn giản đến hoạt ảnh tùy chỉnh phức tạp, thư viện giúp dễ dàng thêm phản hồi trực quan hấp dẫn cho tương tác người dùng.",
+      "Hệ sinh thái plugin mở rộng của thư viện mở rộng chức năng của nó để đáp ứng hầu hết mọi nhu cầu phát triển web. Từ xác thực biểu mẫu đến thư viện ảnh, plugin jQuery cung cấp giải pháp sẵn sàng sử dụng cho các tác vụ phát triển web phổ biến."
+    ],
     "url": "https://jquery.com",
     "githubUrl": "https://github.com/jquery/jquery",
     "logo": "https://jquery.com/wp-content/themes/jquery/images/logo-jquery@2x.png"
   },
   "Chart.js": {
     "name": "Chart.js",
-    "description": "Chart.js là một thư viện JavaScript mã nguồn mở miễn phí để trực quan hóa dữ liệu, hỗ trợ tám loại biểu đồ: cột, đường, vùng, tròn, bong bóng, radar, cực và phân tán. Nó tạo ra các biểu đồ đẹp, đáp ứng và tương tác sử dụng HTML5 Canvas.",
+    "description": [
+      "Chart.js là thư viện biểu đồ JavaScript linh hoạt và mạnh mẽ tạo ra các biểu đồ đẹp, đáp ứng bằng HTML5 Canvas. Nó cung cấp API hướng đối tượng thanh lịch để tạo các trực quan hóa tinh vi với mã tối thiểu.",
+      "Thư viện cung cấp tám loại biểu đồ sẵn có, bao gồm biểu đồ đường, cột, radar và tròn. Mỗi loại biểu đồ có thể tùy chỉnh cao và có thể kết hợp để tạo các trực quan hóa phức tạp truyền đạt hiệu quả câu chuyện dữ liệu.",
+      "Chart.js có tính năng hoạt ảnh tích hợp sẵn mang lại sức sống cho trực quan hóa. Chuyển tiếp và hoạt ảnh mượt mà giúp người dùng hiểu thay đổi dữ liệu và làm cho biểu đồ hấp dẫn và tương tác hơn.",
+      "Thiết kế đáp ứng của thư viện đảm bảo biểu đồ trông tuyệt vời trên mọi thiết bị. Biểu đồ tự động điều chỉnh kích thước để vừa với container trong khi duy trì tỷ lệ khung hình và khả năng đọc phù hợp.",
+      "Tùy chọn tùy chỉnh nâng cao cho phép tinh chỉnh mọi khía cạnh của biểu đồ. Từ màu sắc và phông chữ đến chú thích công cụ và chú thích, nhà phát triển có toàn quyền kiểm soát trình bày trực quan.",
+      "Chart.js bao gồm kiến trúc plugin mạnh mẽ để mở rộng chức năng. Hệ thống plugin cho phép thêm loại biểu đồ tùy chỉnh, chế độ tương tác mới và tích hợp với các thư viện khác."
+    ],
     "url": "https://www.chartjs.org",
     "githubUrl": "https://github.com/chartjs/Chart.js",
-    "logo": "https://www.chartjs.org/img/chartjs-logo.svg"
+    "logo": "https://www.chartjs.org/favicon.ico"
   },
   "Jest": {
     "name": "Jest",
@@ -234,10 +269,17 @@
   },
   "macOS": {
     "name": "macOS",
-    "description": "macOS là hệ điều hành dựa trên Unix của Apple được thiết kế cho máy tính Mac. Nó cung cấp môi trường phát triển mạnh mẽ với các công cụ Unix tích hợp sẵn, tích hợp tuyệt vời với phần mềm phát triển và giao diện thân thiện với người dùng nâng cao năng suất.",
+    "description": [
+      "macOS là hệ điều hành dựa trên Unix mạnh mẽ của Apple cung cấp môi trường phát triển thanh lịch và hiệu quả. Sự kết hợp giữa giao diện người dùng được đánh bóng với nền tảng Unix mạnh mẽ làm cho nó trở thành lựa chọn ưa thích của nhiều nhà phát triển.",
+      "Nền tảng Unix của hệ điều hành cung cấp quyền truy cập vào các công cụ và tiện ích dòng lệnh mạnh mẽ. Ứng dụng Terminal cho phép sử dụng tập lệnh shell, trình quản lý gói và công cụ phát triển thiết yếu cho phát triển phần mềm hiện đại.",
+      "macOS bao gồm công cụ và framework phát triển tích hợp sẵn. Xcode, Command Line Tools và các công cụ phát triển Unix khác nhau được cài đặt sẵn hoặc dễ dàng truy cập, cung cấp môi trường phát triển toàn diện.",
+      "Khả năng tìm kiếm Spotlight và quản lý tệp của hệ thống nâng cao năng suất. Truy cập nhanh vào tệp, ứng dụng và tài liệu giúp duy trì quy trình phát triển hiệu quả.",
+      "Tích hợp với dịch vụ và công cụ phát triển diễn ra liền mạch. Hỗ trợ cho SSH, Git và các môi trường phát triển khác nhau hoạt động ngay lập tức, trong khi trình quản lý gói như Homebrew mở rộng chức năng.",
+      "Tính năng bảo mật của hệ điều hành bao gồm Gatekeeper, FileVault và System Integrity Protection. Những tính năng này bảo vệ môi trường phát triển trong khi cho phép tính linh hoạt cần thiết cho các tác vụ phát triển."
+    ],
     "url": "https://www.apple.com/macos",
-    "logo": "https://www.apple.com/v/macos/home/bn/images/overview/hero/macos_hero__dnwfb67q9goi_large.jpg",
-    "isCommonTool": true
+    "isCommonTool": true,
+    "logo": "https://www.apple.com/favicon.ico"
   },
   "Linux": {
     "name": "Linux",
@@ -259,17 +301,18 @@
     "isCommonTool": true
   },
   "Chrome": {
-    "name": "Google Chrome",
+    "name": "Chrome",
     "description": [
-      "Google Chrome là trình duyệt web hàng đầu đã ảnh hưởng đáng kể đến phát triển web hiện đại thông qua công cụ phát triển mạnh mẽ, chu kỳ phát hành nhanh và cam kết với tiêu chuẩn web. Nó cung cấp nền tảng mạnh mẽ cho cả người dùng và nhà phát triển.",
-      "Chrome DevTools cung cấp khả năng gỡ lỗi và phân tích hiệu suất toàn diện. Các tính năng kiểm tra DOM, gỡ lỗi JavaScript, phân tích yêu cầu mạng và lập hồ sơ hiệu suất là thiết yếu cho phát triển web hiện đại.",
-      "Động cơ JavaScript V8, được phát triển cho Chrome, đã thiết lập tiêu chuẩn mới cho hiệu suất JavaScript. Các đổi mới trong biên dịch just-in-time và thu gom rác đã ảnh hưởng đến phát triển động cơ JavaScript trong toàn ngành.",
-      "Hỗ trợ Progressive Web Apps (PWAs) của Chrome cho phép ứng dụng web cung cấp trải nghiệm giống như ứng dụng gốc. Các tính năng như service workers, thông báo đẩy và khả năng offline làm cho ứng dụng web mạnh mẽ và hấp dẫn hơn.",
-      "Hệ thống cập nhật tự động của trình duyệt đảm bảo người dùng luôn có bản vá bảo mật mới nhất và hỗ trợ tiêu chuẩn web. Chu kỳ cập nhật nhanh này đã giúp thúc đẩy việc áp dụng công nghệ web hiện đại.",
-      "Hệ sinh thái tiện ích mở rộng của Chrome cho phép nhà phát triển nâng cao chức năng trình duyệt. API phong phú cho phát triển tiện ích mở rộng cho phép tạo ra các công cụ mạnh mẽ tích hợp liền mạch với trình duyệt."
+      "Google Chrome là trình duyệt web hàng đầu kết hợp thiết kế tối giản với công nghệ tinh vi để làm cho web nhanh hơn, an toàn hơn và dễ điều hướng hơn. Động cơ JavaScript V8 mạnh mẽ và công cụ phát triển làm cho nó trở thành thiết yếu cho phát triển web.",
+      "Chrome DevTools cung cấp khả năng gỡ lỗi và phân tích hiệu suất toàn diện. Từ kiểm tra DOM và giám sát mạng đến lập hồ sơ hiệu suất và phân tích bộ nhớ, những công cụ này vô giá cho phát triển web hiện đại.",
+      "Trình quản lý tác vụ và cô lập quy trình của trình duyệt nâng cao tính ổn định và bảo mật. Mỗi tab chạy trong một quy trình riêng biệt, ngăn một trang đơn làm sập toàn bộ trình duyệt và cô lập các mối đe dọa bảo mật tiềm ẩn.",
+      "Hệ sinh thái tiện ích mở rộng của Chrome cho phép tùy chỉnh môi trường phát triển. Tiện ích mở rộng có thể thêm công cụ gỡ lỗi, tiện ích kiểm thử, kiểm tra khả năng truy cập và các hỗ trợ phát triển khác nhau.",
+      "Tính năng bảo mật tích hợp của trình duyệt bao gồm Safe Browsing, sandboxing và cập nhật tự động. Những tính năng này bảo vệ nhà phát triển và người dùng khỏi phần mềm độc hại, lừa đảo và các mối đe dọa dựa trên web khác.",
+      "Khả năng đồng bộ hóa đa nền tảng của Chrome hợp lý hóa phát triển trên các thiết bị. Dấu trang, tiện ích mở rộng và cài đặt DevTools có thể được đồng bộ hóa, duy trì môi trường phát triển nhất quán."
     ],
     "url": "https://www.google.com/chrome",
-    "isCommonTool": true
+    "isCommonTool": true,
+    "logo": "https://www.google.com/chrome/static/images/chrome-logo.svg"
   },
   "Firefox": {
     "name": "Firefox",
@@ -434,7 +477,7 @@
     ],
     "url": "https://www.chaijs.com",
     "githubUrl": "https://github.com/chaijs/chai",
-    "logo": "https://www.chaijs.com/img/chai-logo.png"
+    "logo": "https://www.chaijs.com/img/favicon.ico"
   },
   "Agile/Scrum": {
     "name": "Agile/Scrum",
@@ -512,5 +555,47 @@
     ],
     "url": "https://www.telerik.com/kendo-ui",
     "logo": "https://www.telerik.com/favicon.ico"
+  },
+  "Webstorm": {
+    "name": "WebStorm",
+    "description": [
+      "WebStorm là môi trường phát triển tích hợp (IDE) mạnh mẽ được thiết kế đặc biệt cho phát triển JavaScript hiện đại. Hỗ trợ lập trình thông minh và thiết kế công gônômích làm cho nó trở thành lựa chọn ưa thích cho phát triển web chuyên nghiệp.",
+      "Phân tích mã nâng cao của IDE cung cấp phát hiện lỗi thời gian thực, kiểm tra chất lượng mã và điều hướng thông minh. Những tính năng này giúp nhà phát triển viết mã tốt hơn nhanh hơn trong khi duy trì tiêu chuẩn chất lượng cao.",
+      "Khả năng gỡ lỗi tích hợp của WebStorm hỗ trợ nhiều môi trường runtime. Từ ứng dụng Node.js đến gỡ lỗi dựa trên trình duyệt, IDE cung cấp công cụ toàn diện để xác định và sửa vấn đề hiệu quả.",
+      "Tích hợp quản lý phiên bản tích hợp sẵn hợp lý hóa quy trình phát triển. IDE cung cấp giao diện phong phú cho các thao tác Git, bao gồm công cụ diff trực quan, giải quyết xung đột và quản lý nhánh.",
+      "Công cụ tái cấu trúc của IDE hỗ trợ thay đổi mã an toàn trên toàn dự án. Từ đổi tên biểu tượng đến trích xuất thành phần, WebStorm đảm bảo các thao tác tái cấu trúc duy trì tính toàn vẹn mã trong toàn bộ dự án.",
+      "Tích hợp kiểm thử của WebStorm hỗ trợ các framework kiểm thử khác nhau và cung cấp trình chạy kiểm thử trực quan. Các tính năng như phân tích độ bao phủ kiểm thử và thực thi kiểm thử tự động giúp duy trì chất lượng mã trong suốt quá trình phát triển."
+    ],
+    "url": "https://www.jetbrains.com/webstorm",
+    "isCommonTool": true,
+    "logo": "https://resources.jetbrains.com/storage/products/webstorm/img/meta/webstorm_logo_300x300.png"
+  },
+  "SOLID principles": {
+    "name": "Nguyên tắc SOLID",
+    "description": [
+      "SOLID là tập hợp năm nguyên tắc cơ bản của lập trình và thiết kế hướng đối tượng giúp tạo ra phần mềm có thể bảo trì và mở rộng. Những nguyên tắc này đóng vai trò như hướng dẫn để xây dựng ứng dụng mạnh mẽ và linh hoạt.",
+      "Nguyên tắc Trách nhiệm Đơn lẻ (SRP) nêu rằng một lớp chỉ nên có một lý do để thay đổi. Nguyên tắc này thúc đẩy các thành phần tập trung, gắn kết dễ hiểu, kiểm thử và bảo trì hơn.",
+      "Nguyên tắc Đóng/Mở (OCP) ủng hộ việc các thực thể phần mềm nên mở để mở rộng nhưng đóng để sửa đổi. Điều này cho phép thêm chức năng mới mà không thay đổi mã hiện có, giảm nguy cơ gây ra lỗi.",
+      "Nguyên tắc Thay thế Liskov (LSP) đảm bảo rằng đối tượng của lớp cha có thể được thay thế bằng đối tượng của lớp con mà không ảnh hưởng đến tính đúng đắn của chương trình. Nguyên tắc này duy trì tính nhất quán hành vi trong phân cấp kế thừa.",
+      "Nguyên tắc Phân tách Giao diện (ISP) gợi ý rằng client không nên bị buộc phụ thuộc vào các giao diện mà họ không sử dụng. Điều này dẫn đến giao diện tập trung hơn và giảm sự ràng buộc giữa các thành phần.",
+      "Nguyên tắc Đảo ngược Phụ thuộc (DIP) nêu rằng các module cấp cao không nên phụ thuộc vào module cấp thấp; cả hai nên phụ thuộc vào trừu tượng. Nguyên tắc này thúc đẩy sự ràng buộc lỏng lẻo và kiểm thử dễ dàng hơn thông qua tiêm phụ thuộc."
+    ],
+    "url": "https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design",
+    "isCommonTool": true
+  },
+  "Visual Studio Code": {
+    "name": "Visual Studio Code",
+    "description": [
+      "Visual Studio Code là trình soạn thảo mã nguồn mở có khả năng mở rộng cao kết hợp sự đơn giản của trình soạn thảo văn bản với công cụ phát triển mạnh mẽ. Kiến trúc nhẹ nhưng mạnh mẽ làm cho nó phù hợp cho phát triển trên nhiều ngôn ngữ và nền tảng.",
+      "Tính năng IntelliSense của trình soạn thảo cung cấp gợi ý thông minh dựa trên kiểu biến, định nghĩa hàm và module đã import. Tự động hoàn thành mã thông minh này nâng cao năng suất trong khi giảm lỗi lập trình.",
+      "Hỗ trợ gỡ lỗi tích hợp của VS Code cung cấp trải nghiệm gỡ lỗi phong phú. Với hỗ trợ điểm dừng, kiểm tra ngăn xếp cuộc gọi và theo dõi biến, nhà phát triển có thể theo dõi và sửa vấn đề trong mã của họ một cách hiệu quả.",
+      "Tích hợp Git tích hợp sẵn đơn giản hóa quy trình làm việc quản lý phiên bản. Các tính năng như chú thích blame nội tuyến, xem diff và quản lý nhánh làm cho các thao tác quản lý phiên bản liền mạch trong trình soạn thảo.",
+      "Marketplace mở rộng của VS Code cung cấp hàng nghìn tiện ích mở rộng. Những tiện ích này thêm hỗ trợ cho ngôn ngữ mới, framework, công cụ và theme, cho phép nhà phát triển tùy chỉnh môi trường phát triển theo nhu cầu cụ thể của họ.",
+      "Khả năng chạy terminal tích hợp và tác vụ của trình soạn thảo hợp lý hóa quy trình phát triển. Nhà phát triển có thể thực thi lệnh, chạy tác vụ xây dựng và quản lý máy chủ phát triển mà không cần rời khỏi môi trường lập trình."
+    ],
+    "url": "https://code.visualstudio.com",
+    "githubUrl": "https://github.com/microsoft/vscode",
+    "logo": "https://code.visualstudio.com/favicon.ico",
+    "isCommonTool": true
   }
 } 

@@ -14,11 +14,18 @@
     "logo": "https://angular.io/assets/images/logos/angular/angular.svg"
   },
   "ReactJS": {
-    "name": "React",
-    "description": "React is a JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called \"components\". React makes it painless to create interactive UIs.",
-    "url": "https://react.dev",
+    "name": "ReactJS",
+    "description": [
+      "ReactJS is a powerful JavaScript library for building user interfaces with a focus on component-based architecture. Its virtual DOM implementation and unidirectional data flow create efficient and predictable applications.",
+      "React's component-based architecture promotes reusability and maintainability. Components encapsulate UI and behavior, allowing developers to build complex interfaces from simple, isolated pieces that manage their own state.",
+      "The Virtual DOM implementation optimizes rendering performance. By maintaining a lightweight copy of the DOM in memory, React minimizes expensive DOM operations and efficiently updates only what's necessary.",
+      "JSX, React's syntax extension, enables writing HTML-like code in JavaScript. This approach provides full programming power while maintaining familiar HTML syntax, making component templates more intuitive and maintainable.",
+      "React's unidirectional data flow ensures predictable state management. Props and state provide a clear pattern for data handling, making applications easier to debug and maintain as they scale.",
+      "The extensive ecosystem includes powerful tools and libraries. From state management solutions like Redux to routing libraries and UI component libraries, the React ecosystem provides solutions for complex application needs."
+    ],
+    "url": "https://reactjs.org",
     "githubUrl": "https://github.com/facebook/react",
-    "logo": "https://react.dev/favicon.ico"
+    "logo": "https://reactjs.org/favicon.ico"
   },
   "TypeScript": {
     "name": "TypeScript",
@@ -49,10 +56,17 @@
   },
   "AngularJS": {
     "name": "AngularJS",
-    "description": "AngularJS (also known as Angular.js or Angular 1) is a JavaScript-based open-source front-end web framework for developing single-page applications. It was maintained by Google and a community of individuals and corporations before being discontinued.",
+    "description": [
+      "AngularJS (Angular 1.x) was a groundbreaking JavaScript framework that revolutionized web application development. It introduced powerful concepts like two-way data binding, dependency injection, and directives that influenced modern frontend development.",
+      "The framework's two-way data binding automatically synchronizes data between the model and view. This feature significantly reduced boilerplate code and made it easier to build dynamic user interfaces with real-time updates.",
+      "AngularJS's dependency injection system promotes modular and testable code. This architectural pattern allows for better code organization, reusability, and easier unit testing through service and factory patterns.",
+      "The framework's directive system enables creation of reusable UI components. Directives extend HTML vocabulary with custom elements and attributes, allowing developers to create complex UI components that encapsulate both markup and behavior.",
+      "Built-in services provide common functionality like HTTP communication and routing. These services abstract away complex operations and provide consistent APIs for common web application features.",
+      "AngularJS's expression language and filters enable powerful data manipulation in templates. These features allow for complex data transformations and formatting directly in the view layer, reducing controller complexity."
+    ],
     "url": "https://angularjs.org",
     "githubUrl": "https://github.com/angular/angular.js",
-    "logo": "https://angularjs.org/img/AngularJS-large.png"
+    "logo": "https://angularjs.org/favicon.ico"
   },
   "HTML5": {
     "name": "HTML5",
@@ -110,24 +124,45 @@
   },
   "D3.js": {
     "name": "D3.js",
-    "description": "D3.js is a JavaScript library for producing dynamic, interactive data visualizations in web browsers. It uses SVG, Canvas, and HTML to create powerful visualization components and implements data-driven DOM manipulation.",
+    "description": [
+      "D3.js (Data-Driven Documents) is a powerful JavaScript library for creating dynamic, interactive data visualizations in web browsers. It combines powerful visualization components with a data-driven approach to DOM manipulation, enabling unparalleled control over the final visual result.",
+      "The library's core strength lies in its data binding mechanism, which allows direct mapping of data to visual elements. This approach enables creation of complex visualizations that automatically update when data changes, making it ideal for real-time dashboards and interactive reports.",
+      "D3's modular architecture provides a comprehensive set of tools for data transformation and visualization. From basic charts to complex force-directed graphs, the library offers components for scales, axes, transitions, and various layout algorithms.",
+      "The library's animation and transition system enables smooth updates and transitions between states. This capability creates engaging user experiences and helps users track changes in data visualization over time.",
+      "D3's extensive selection and manipulation API provides fine-grained control over visual elements. This low-level control allows developers to create custom visualizations that aren't possible with higher-level charting libraries.",
+      "The library's support for SVG enables creation of resolution-independent graphics. Combined with its support for modern web standards, this ensures visualizations look crisp across different devices and screen sizes."
+    ],
     "url": "https://d3js.org",
     "githubUrl": "https://github.com/d3/d3",
-    "logo": "https://d3js.org/logo.svg"
+    "logo": "https://d3js.org/favicon.png"
   },
   "jQuery": {
     "name": "jQuery",
-    "description": "jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers.",
+    "description": [
+      "jQuery is a fast, lightweight, and feature-rich JavaScript library that has revolutionized web development. It simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development.",
+      "The library's powerful selector engine enables easy DOM manipulation using familiar CSS syntax. This capability, combined with its chainable methods, allows developers to write concise and readable code for complex DOM operations.",
+      "jQuery's event handling system provides a consistent interface across different browsers. This abstraction layer simplifies binding and handling of user interactions, making it easier to create interactive web applications.",
+      "The library's Ajax capabilities simplify asynchronous data exchange with servers. Its high-level interfaces for HTTP requests make it easy to load and send data without dealing with browser-specific implementations.",
+      "jQuery's animation system provides smooth visual transitions and effects. From simple fades to complex custom animations, the library makes it easy to add engaging visual feedback to user interactions.",
+      "The library's extensive plugin ecosystem extends its functionality to cover virtually any web development need. From form validation to image galleries, jQuery plugins provide ready-to-use solutions for common web development tasks."
+    ],
     "url": "https://jquery.com",
     "githubUrl": "https://github.com/jquery/jquery",
     "logo": "https://jquery.com/wp-content/themes/jquery/images/logo-jquery@2x.png"
   },
   "Chart.js": {
     "name": "Chart.js",
-    "description": "Chart.js is a free, open-source JavaScript library for data visualization, which supports eight chart types: bar, line, area, pie, bubble, radar, polar, and scatter. It creates beautiful, responsive, and interactive charts using HTML5 Canvas.",
+    "description": [
+      "Chart.js is a flexible and powerful JavaScript charting library that creates beautiful, responsive charts using HTML5 Canvas. It provides an elegant, object-oriented API for creating sophisticated visualizations with minimal code.",
+      "The library offers eight chart types out of the box, including line, bar, radar, and pie charts. Each chart type is highly customizable and can be mixed to create complex visualizations that effectively communicate data stories.",
+      "Chart.js features built-in animation capabilities that bring visualizations to life. Smooth transitions and animations help users understand data changes and make charts more engaging and interactive.",
+      "The library's responsive design ensures charts look great on any device. Charts automatically resize to fit their containers while maintaining proper aspect ratios and readability.",
+      "Advanced customization options allow fine-tuning of every aspect of the charts. From colors and fonts to tooltips and legends, developers have complete control over the visual presentation.",
+      "Chart.js includes robust plugin architecture for extending functionality. The plugin system enables addition of custom chart types, new interaction modes, and integration with other libraries."
+    ],
     "url": "https://www.chartjs.org",
     "githubUrl": "https://github.com/chartjs/Chart.js",
-    "logo": "https://www.chartjs.org/img/chartjs-logo.svg"
+    "logo": "https://www.chartjs.org/favicon.ico"
   },
   "Jest": {
     "name": "Jest",
@@ -277,17 +312,18 @@
   },
 
   "Chrome": {
-    "name": "Google Chrome",
+    "name": "Chrome",
     "description": [
-      "Google Chrome is a leading web browser that has significantly influenced modern web development through its powerful developer tools, rapid release cycle, and commitment to web standards. It provides a robust platform for both users and developers.",
-      "Chrome DevTools offers comprehensive debugging and performance analysis capabilities. Its features for inspecting DOM, debugging JavaScript, analyzing network requests, and profiling performance are essential for modern web development.",
-      "The V8 JavaScript engine, developed for Chrome, has set new standards for JavaScript performance. Its innovations in just-in-time compilation and garbage collection have influenced JavaScript engine development across the industry.",
-      "Chrome's support for Progressive Web Apps (PWAs) enables web applications to provide native-like experiences. Features like service workers, push notifications, and offline capabilities make web apps more powerful and engaging.",
-      "The browser's automatic update system ensures users always have the latest security patches and web standards support. This rapid update cycle has helped drive the adoption of modern web technologies.",
-      "Chrome's extension ecosystem allows developers to enhance browser functionality. The rich API for extension development enables creation of powerful tools that integrate seamlessly with the browser."
+      "Google Chrome is a leading web browser that combines a minimal design with sophisticated technology to make the web faster, safer, and easier to navigate. Its powerful V8 JavaScript engine and developer tools make it essential for web development.",
+      "Chrome DevTools provides comprehensive debugging and performance analysis capabilities. From DOM inspection and network monitoring to performance profiling and memory analysis, these tools are invaluable for modern web development.",
+      "The browser's task manager and process isolation enhance stability and security. Each tab runs in a separate process, preventing a single page from crashing the entire browser and isolating potential security threats.",
+      "Chrome's extensive extension ecosystem enables customization of the development environment. Extensions can add debugging tools, testing utilities, accessibility checkers, and various other development aids.",
+      "The browser's built-in security features include Safe Browsing, sandboxing, and automatic updates. These features protect developers and users from malware, phishing, and other web-based threats.",
+      "Chrome's cross-platform synchronization capabilities streamline development across devices. Bookmarks, extensions, and DevTools settings can be synchronized, maintaining a consistent development environment."
     ],
     "url": "https://www.google.com/chrome",
-    "isCommonTool": true
+    "isCommonTool": true,
+    "logo": "https://www.google.com/chrome/static/images/chrome-logo.svg"
   },
   "Firefox": {
     "name": "Firefox",
@@ -524,7 +560,7 @@
     ],
     "url": "https://www.chaijs.com",
     "githubUrl": "https://github.com/chaijs/chai",
-    "logo": "https://www.chaijs.com/img/chai-logo.png"
+    "logo": "https://www.chaijs.com/img/favicon.ico"
   },
   "Jira": {
     "name": "Jira",
