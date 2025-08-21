@@ -6,6 +6,9 @@
     "SKILLS": "Kỹ năng",
     "EXPORT_PDF": "Xuất PDF"
   },
+  "COMMON": {
+    "CLOSE": "Đóng"
+  },
   "FOOTER": {
     "COPYRIGHT": "Hồng Phụng Phát. Đã đăng ký bản quyền.",
     "MADE_WITH": "Được tạo bằng Angular & AI️"
@@ -71,7 +74,9 @@
     "DIALOG": {
       "VISIT_WEBSITE": "Truy cập trang chủ",
       "VISIT_GITHUB": "Xem trên GitHub",
-      "USED_IN": "Được sử dụng trong {{count}} dự án"
+      "USED_IN": "Được sử dụng trong {{count}} dự án",
+      "OVERVIEW": "Tổng quan",
+      "RESOURCES": "Tài nguyên"
     }
   }
 }

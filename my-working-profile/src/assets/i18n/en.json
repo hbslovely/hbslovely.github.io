@@ -6,6 +6,9 @@
     "SKILLS": "Skills",
     "EXPORT_PDF": "Export PDF"
   },
+  "COMMON": {
+    "CLOSE": "Close"
+  },
   "FOOTER": {
     "COPYRIGHT": "Hong Phung Phat. All rights reserved.",
     "MADE_WITH": "Made with Angular & AI️"
@@ -71,7 +74,9 @@
     "DIALOG": {
       "VISIT_WEBSITE": "Visit Official Website",
       "VISIT_GITHUB": "View on GitHub",
-      "USED_IN": "Used in {{count}} project(s)"
+      "USED_IN": "Used in {{count}} project(s)",
+      "OVERVIEW": "Overview",
+      "RESOURCES": "Resources"
     },
     "DETAILS": {
       "JEST": "Jest is a delightful JavaScript Testing Framework with a focus on simplicity. It works with projects using: Babel, TypeScript, Node, React, Angular, Vue and more.",

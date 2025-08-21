@@ -1,8 +1,8 @@
 <div [class]="config.className">
   <div class="container" [style.maxWidth.px]="config.maxWidth">
-    <app-section-header 
-      title="SECTIONS.TECHNICAL_SKILLS" 
-      icon="tool" 
+    <app-section-header
+      title="SECTIONS.TECHNICAL_SKILLS"
+      icon="tool"
       subtitle="A comprehensive collection of technical skills acquired through years of hands-on experience in web development, with a focus on modern frontend technologies and best practices.">
     </app-section-header>
 
@@ -48,6 +48,7 @@
 <ng-template #skillDetailDialog>
   <app-skill-detail
     [info]="selectedSkill!"
+    (close)="closeSkillDetailDialog()"
     [projectCount]="selectedSkillProjectCount">
   </app-skill-detail>
 </ng-template>

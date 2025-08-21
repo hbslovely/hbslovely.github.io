@@ -7,16 +7,7 @@ import { NzModalModule, NzModalService } from 'ng-zorro-antd/modal';
 import { CVService } from '../../services/cv.service';
 import { SectionHeaderComponent } from '../../components/section-header/section-header.component';
 import { SkillItemComponent } from '../../components/skill-item/skill-item.component';
-import { SkillDetailComponent } from '../../components/skill-detail/skill-detail.component';
-
-interface SkillInfo {
-  name: string;
-  description: string;
-  url: string;
-  githubUrl?: string;
-  logo?: string;
-  isCommonTool?: boolean;
-}
+import { SkillDetailComponent, SkillInfo } from '../../components/skill-detail/skill-detail.component';
 
 @Component({
   selector: 'app-skills',
@@ -36,7 +27,7 @@ interface SkillInfo {
 })
 export class SkillsComponent implements OnInit {
   @ViewChild('skillDetailDialog') skillDetailDialog!: TemplateRef<any>;
-  
+
   selectedSkill: SkillInfo | null = null;
   selectedSkillProjectCount = 0;
 
@@ -44,6 +35,7 @@ export class SkillsComponent implements OnInit {
   private readonly modalService = inject(NzModalService);
   private readonly translate = inject(TranslateService);
   cv = this.cvService.cv;
+  modalRef: any;
 
   config = {
     className: 'skills-page',
@@ -219,14 +211,19 @@ export class SkillsComponent implements OnInit {
     this.selectedSkill = info;
     this.selectedSkillProjectCount = this.getProjectCount(skill);
 
-    this.modalService.create({
+    this.modalRef = this.modalService.create({
       nzContent: this.skillDetailDialog,
       nzFooter: null,
-      nzWidth: 600,
-      nzClassName: 'skill-modal',
+      nzWidth: '800px',
+      nzClassName: 'skill-modal project-detail-dialog',
       nzCentered: true,
-      nzMaskClosable: true
+      nzMaskClosable: true,
+      nzBodyStyle: { padding: 0 } as any
     });
+  }
+
+  closeSkillDetailDialog(){
+    this.modalRef.close();
   }
 
   private calculateYearsOfExperience(startYear: number): string {
