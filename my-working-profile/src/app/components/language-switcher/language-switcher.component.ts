@@ -1,36 +1,44 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from '../../services/language.service';
-import { TranslateModule } from '@ngx-translate/core';
-import { LANGUAGES, type Language } from '../../models/language.models';
+
+interface LanguageOption {
+  code: string;
+  name: string;
+  flag: string;
+}
 
 @Component({
   selector: 'app-language-switcher',
   standalone: true,
-  imports: [
-    CommonModule,
-    NzButtonModule,
-    NzDropDownModule,
-    TranslateModule
-  ],
+  imports: [CommonModule],
   templateUrl: './language-switcher.component.html',
   styleUrls: ['./language-switcher.component.scss']
 })
 export class LanguageSwitcherComponent {
-  private readonly languageService = inject(LanguageService);
-  protected readonly languages = LANGUAGES;
+  languages: LanguageOption[] = [
+    {
+      code: 'en',
+      name: 'English',
+      flag: '🇺🇸'
+    },
+    {
+      code: 'vi',
+      name: 'Vietnamese',
+      flag: '🇻🇳'
+    }
+  ];
+
+  constructor(private translate: TranslateService,
+              private languageService: LanguageService) {}
 
   getCurrentLanguage(): string {
-    return this.languageService.getCurrentLanguage();
+    return this.translate.currentLang || this.translate.defaultLang;
   }
 
-  getCurrentLanguageFlag(): string {
-    return this.languages.find(lang => lang.code === this.getCurrentLanguage())?.flag || '🌐';
+  switchLanguage(langCode: string): void {
+    this.translate.use(langCode);
+    this.languageService.setLanguage(langCode);
   }
-
-  switchLanguage(lang: Language): void {
-    this.languageService.setLanguage(lang);
-  }
-} 
+}

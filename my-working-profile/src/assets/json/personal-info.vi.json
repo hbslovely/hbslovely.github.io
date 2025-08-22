@@ -17,11 +17,11 @@
   "languages": [
     {
       "name": "Tiếng Việt",
-      "level": "Bản ngữ"
+      "level": "NATIVE"
     },
     {
       "name": "Tiếng Anh",
-      "level": "Khả năng làm việc tốt"
+      "level": "WORKING_PROFICIENCY"
     }
   ],
   "summary": "Là một Kỹ sư phần mềm cao cấp với hơn 10 năm kinh nghiệm, tôi chuyên về việc tạo ra các ứng dụng web hiện đại và hiệu quả. Chuyên môn của tôi bao gồm làm việc với Angular và React để xây dựng giao diện thân thiện với người dùng, giải quyết các vấn đề kinh doanh thực tế. Trong suốt sự nghiệp, tôi đã thành công trong việc triển khai các dự án cho nhiều ngành công nghiệp, từ mạng xã hội đến hệ thống quản lý dữ liệu.\n\nTôi tự hào về việc viết mã sạch, dễ bảo trì và luôn cập nhật với các công nghệ web mới nhất. Trong vai trò hiện tại, tôi tập trung vào thiết kế các ứng dụng có khả năng mở rộng và giúp đỡ các lập trình viên junior phát triển kỹ năng của họ. Tôi đặc biệt quan tâm đến việc cải thiện hiệu suất ứng dụng và tạo ra trải nghiệm người dùng tốt hơn.\n\nHiện tại tôi đang tìm kiếm cơ hội để có thể sử dụng kỹ năng kỹ thuật và kinh nghiệm lãnh đạo của mình để tạo ra tác động đáng kể trong các dự án đầy thách thức.",
@@ -29,10 +29,10 @@
   "interests": [
     "AI",
     "FinTech",
-    "Hiệu suất"
+    "Performance"
   ],
   "availability": {
-    "workType": "Full-time",
-    "workLocation": "Remote"
+    "workType": "FULL_TIME",
+    "workLocation": "REMOTE"
   }
 }

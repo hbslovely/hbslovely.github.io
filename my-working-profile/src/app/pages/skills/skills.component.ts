@@ -1,42 +1,41 @@
-import { AfterViewInit, Component, ElementRef, inject, OnDestroy, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzTagModule } from 'ng-zorro-antd/tag';
-import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzModalModule, NzModalService } from 'ng-zorro-antd/modal';
 import { CVService } from '../../services/cv.service';
 import { SectionHeaderComponent } from '../../components/section-header/section-header.component';
-import cloud from 'd3-cloud';
-
-interface WordCloudItem {
-  text: string;
-  size: number;
-  color: string;
-  x?: number;
-  y?: number;
-  rotate?: number;
-}
+import { SkillItemComponent } from '../../components/skill-item/skill-item.component';
+import { SkillDetailComponent, SkillInfo } from '../../components/skill-detail/skill-detail.component';
 
 @Component({
   selector: 'app-skills',
   standalone: true,
   imports: [
     CommonModule,
+    RouterModule,
+    TranslateModule,
     NzIconModule,
-    NzTagModule,
-    NzDividerModule,
-    SectionHeaderComponent
+    NzModalModule,
+    SectionHeaderComponent,
+    SkillItemComponent,
+    SkillDetailComponent
   ],
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss']
 })
-export class SkillsComponent implements AfterViewInit, OnDestroy {
-  @ViewChild('wordCloud') wordCloudCanvas!: ElementRef<HTMLCanvasElement>;
-  @ViewChild('wordCloudContainer') container!: ElementRef<HTMLDivElement>;
+export class SkillsComponent implements OnInit {
+  @ViewChild('skillDetailDialog') skillDetailDialog!: TemplateRef<any>;
+
+  selectedSkill: SkillInfo | null = null;
+  selectedSkillProjectCount = 0;
 
   private readonly cvService = inject(CVService);
+  private readonly modalService = inject(NzModalService);
+  private readonly translate = inject(TranslateService);
   cv = this.cvService.cv;
-  private resizeObserver: ResizeObserver | null = null;
-  private wordCloudInitialized = false;
+  modalRef: any;
 
   config = {
     className: 'skills-page',
@@ -44,111 +43,22 @@ export class SkillsComponent implements AfterViewInit, OnDestroy {
   };
 
   protected readonly Object = Object;
+  private skillsInfo: { [key: string]: SkillInfo } = {};
 
-  // Calculate years of experience based on start date
-  private calculateYearsOfExperience(startYear: number): string {
-    const currentYear = new Date().getFullYear();
-    const years = currentYear - startYear;
-    return `${years}+ years`;
+  async ngOnInit() {
+    await this.loadSkillDetails();
+    this.translate.onLangChange.subscribe(() => {
+      this.loadSkillDetails();
+    });
   }
 
-  ngAfterViewInit() {
-    // Wait for the next tick to ensure ViewChild references are available
-    setTimeout(() => {
-      this.setupResizeObserver();
-      this.initWordCloud();
-    }, 0);
-  }
-
-  ngOnDestroy() {
-    if (this.resizeObserver) {
-      this.resizeObserver.disconnect();
+  private async loadSkillDetails() {
+    try {
+      const response = await fetch(`/assets/json/skill-detail.${this.translate.currentLang}.json`);
+      this.skillsInfo = await response.json();
+    } catch (error) {
+      console.error('Error loading skill details:', error);
     }
-  }
-
-  private setupResizeObserver() {
-    if (!this.container?.nativeElement) return;
-
-    this.resizeObserver = new ResizeObserver((entries) => {
-      // Only reinitialize if we've already initialized once
-      if (this.wordCloudInitialized) {
-        this.initWordCloud();
-      }
-    });
-    this.resizeObserver.observe(this.container.nativeElement);
-  }
-
-  private initWordCloud() {
-    if (!this.container?.nativeElement || !this.wordCloudCanvas?.nativeElement) return;
-
-    const containerWidth = this.container.nativeElement.offsetWidth;
-    const containerHeight = containerWidth; // Make it square
-
-    if (containerWidth === 0) return;
-
-    const words = this.getAllSkills().map(skill => ({
-      text: skill,
-      size: this.getSkillSize(skill),
-      color: this.getTagColor(skill)
-    }));
-
-    const layout = cloud()
-      .size([containerWidth, containerHeight])
-      .words(words)
-      .padding(5)
-      .rotate(() => 0)
-      .font('Arial')
-      .fontSize(d => d.size!)
-      .on('end', (words) => this.drawWordCloud(words as WordCloudItem[]));
-
-    layout.start();
-    this.wordCloudInitialized = true;
-  }
-
-  private drawWordCloud(words: WordCloudItem[]) {
-    const canvas = this.wordCloudCanvas.nativeElement;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    const containerWidth = this.container.nativeElement.offsetWidth;
-    const containerHeight = containerWidth; // Keep it square
-
-    // Set canvas size
-    canvas.width = containerWidth;
-    canvas.height = containerHeight;
-
-    // Clear canvas
-    ctx.clearRect(0, 0, containerWidth, containerHeight);
-
-    // Set text properties
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-
-    // Draw words
-    words.forEach(word => {
-      ctx.font = `${word.size}px Arial`;
-      ctx.fillStyle = word.color;
-      const x = (word.x || 0) + containerWidth / 2;
-      const y = (word.y || 0) + containerHeight / 2;
-      ctx.fillText(word.text, x, y);
-    });
-  }
-
-  private getAllSkills(): string[] {
-    const skills: string[] = [];
-    const technicalSkills = this.cv()?.skills?.technicalSkills || {};
-
-    Object.values(technicalSkills).forEach(categorySkills => {
-      skills.push(...(categorySkills as string[]));
-    });
-
-    return skills;
-  }
-
-  private getSkillSize(skill: string): number {
-    const experienceYears = parseInt(this.getSkillExperience(skill));
-    if (isNaN(experienceYears)) return 16;
-    return Math.max(16, Math.min(36, 16 + experienceYears * 4));
   }
 
   getTechnologyIcon(category: string): string {
@@ -160,9 +70,12 @@ export class SkillsComponent implements AfterViewInit, OnDestroy {
       tools: 'tool',
       languages: 'code',
       frameworks: 'cluster',
+      libraries: 'appstore',
       testing: 'bug',
       mobile: 'mobile',
       cloud: 'cloud',
+      methodologies: 'deployment-unit',
+      environments: 'desktop',
       other: 'appstore'
     };
     return iconMap[category] || 'code';
@@ -188,6 +101,37 @@ export class SkillsComponent implements AfterViewInit, OnDestroy {
     return colorMap[skill] || '#1890ff';
   }
 
+  getExperienceBackground(skill: string, darker = false): string {
+    const years = this.getExperienceYears(skill);
+    if (years === 0) return '#1e3c72';
+
+    // Base color: #1e3c72 (lighter) to #0c1f3d (darker)
+    const opacity = Math.min(1, years / 8); // Max intensity at 8 years
+    const baseColor = darker ? '#0c1f3d' : '#1e3c72';
+    const overlayColor = darker ? '#0a1a33' : '#162f5d';
+
+    return this.blendColors(baseColor, overlayColor, opacity);
+  }
+
+  private blendColors(color1: string, color2: string, ratio: number): string {
+    const hex1 = color1.substring(1);
+    const hex2 = color2.substring(1);
+
+    const r1 = parseInt(hex1.substring(0, 2), 16);
+    const g1 = parseInt(hex1.substring(2, 4), 16);
+    const b1 = parseInt(hex1.substring(4, 6), 16);
+
+    const r2 = parseInt(hex2.substring(0, 2), 16);
+    const g2 = parseInt(hex2.substring(2, 4), 16);
+    const b2 = parseInt(hex2.substring(4, 6), 16);
+
+    const r = Math.round(r1 * (1 - ratio) + r2 * ratio);
+    const g = Math.round(g1 * (1 - ratio) + g2 * ratio);
+    const b = Math.round(b1 * (1 - ratio) + b2 * ratio);
+
+    return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+  }
+
   formatCategory(category: string): string {
     return category
       .split(/(?=[A-Z])/)
@@ -206,8 +150,87 @@ export class SkillsComponent implements AfterViewInit, OnDestroy {
       'KendoUI': '1 year',
       'RxJS': '6+ years',
       'NgRx': '4+ years',
-      'TypeScript': this.calculateYearsOfExperience(2017)
+      'TypeScript': this.calculateYearsOfExperience(2017),
+      'jQuery': '1.5 years',
+      'Chart.js': '1 year'
     };
-    return experienceMap[skill] || '';
+
+    const yearsExp = experienceMap[skill];
+    if (yearsExp) return yearsExp;
+
+    // If no years experience, check projects count
+    const projectCount = this.getProjectCount(skill);
+    if (projectCount > 0) {
+      return `${projectCount} project${projectCount > 1 ? 's' : ''}`;
+    }
+
+    return '';
+  }
+
+  private getProjectCount(skill: string): number {
+    const info = this.skillsInfo[skill];
+    if (info?.isCommonTool) {
+      // For common tools/methodologies, assume used in all projects
+      return (this.cv()?.projects?.projects || []).length;
+    }
+
+    const projects = this.cv()?.projects?.projects || [];
+    return projects.filter(project =>
+      project.technologies.some(tech =>
+        tech.toLowerCase() === skill.toLowerCase()
+      ) ||
+      project.environment.some(tech =>
+        tech.toLowerCase() === skill.toLowerCase()
+      )
+    ).length;
+  }
+
+  private getExperienceYears(skill: string): number {
+    const experience = this.getSkillExperience(skill);
+    if (!experience) return 0;
+
+    if (experience.includes('project')) {
+      const projectCount = parseInt(experience);
+      return Math.min(projectCount / 2, 10); // 2 projects = 1 year equivalent, max 10 years
+    }
+
+    const years = parseFloat(experience);
+    return isNaN(years) ? 0 : years;
+  }
+
+  getExperiencePercentage(skill: string): number {
+    const years = this.getExperienceYears(skill);
+    if (years === 0) return 0;
+
+    // Calculate percentage (max 10 years = 100%)
+    return Math.min(100, (years / 10) * 100);
+  }
+
+  showSkillInfo(skill: string): void {
+    const info = this.skillsInfo[skill];
+    if (!info) return;
+
+    this.selectedSkill = info;
+    this.selectedSkillProjectCount = this.getProjectCount(skill);
+
+    this.modalRef = this.modalService.create({
+      nzContent: this.skillDetailDialog,
+      nzFooter: null,
+      nzWidth: '800px',
+      nzClassName: 'skill-modal project-detail-dialog',
+      nzCentered: true,
+      nzMaskClosable: true,
+      nzBodyStyle: { padding: 0 } as any
+    });
+  }
+
+  closeSkillDetailDialog(){
+    this.modalRef.close();
+  }
+
+  private calculateYearsOfExperience(startYear: number): string {
+    const currentYear = new Date().getFullYear();
+    const years = currentYear - startYear;
+    return `${years}+ years`;
   }
 }

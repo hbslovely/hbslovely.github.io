@@ -1,15 +1,14 @@
 import { inject, Injectable } from '@angular/core';
 import { jsPDF } from 'jspdf';
-import { CVService } from './cv.service';
 import { LanguageService } from './language.service';
 import { addCandaraFont } from "./jspdf-font";
 import { TranslateService } from '@ngx-translate/core';
+import { CV, Education, WorkExperience, Project } from '../models/cv.models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PdfService {
-  private readonly cvService = inject(CVService);
   private readonly languageService = inject(LanguageService);
   private readonly translateService = inject(TranslateService);
 
@@ -103,7 +102,8 @@ export class PdfService {
   }
 
   async generateBeautifulPdf(): Promise<void> {
-    const cv = this.cvService.cv();
+    // Get CV data from the window object where it's stored by CVService
+    const cv = (window as any).cvData as CV;
     if (!cv) {
       throw new Error('CV data not available');
     }
@@ -295,7 +295,7 @@ export class PdfService {
     yPos = this.addSectionHeader(pdf, 'Education', yPos, colors);
 
     if (cv.education?.education) {
-      cv.education.education.forEach((edu, index) => {
+      cv.education.education.forEach((edu: Education, index: number) => {
         // Duration left-aligned
         const duration = `${ edu.startDate } - ${ edu.endDate }`;
         pdf.setFont('Candara', 'normal');
@@ -333,7 +333,7 @@ export class PdfService {
     yPos = this.addSectionHeader(pdf, 'Experience', yPos, colors);
 
     // Add work experience entries
-    cv.experience.workExperience.forEach((exp, index) => {
+    cv.experience.workExperience.forEach((exp: WorkExperience, index: number) => {
       // Check if we need a new page for this experience entry
       yPos = this.checkPageBreak(pdf, yPos, 150); // Estimated minimum space needed for an experience entry
 
@@ -347,19 +347,19 @@ export class PdfService {
       // Company name in blue, larger font, indented after duration
       const durationWidth = pdf.getTextWidth(duration);
       pdf.setFont('Candara', 'bold');
-      pdf.setFontSize(17);
+      pdf.setFontSize(14); // Reduced from 17 to 14
       pdf.setTextColor(colors.primary);
       pdf.text(exp.company, this.MARGIN + durationWidth + 15, yPos);
 
       // Position right below company name
-      yPos += this.getLineHeight(17);
+      yPos += this.getLineHeight(14);
       pdf.setFont('Candara', 'normal');
-      pdf.setFontSize(14);
+      pdf.setFontSize(12); // Reduced from 14 to 12
       pdf.setTextColor(colors.text);
       pdf.text(exp.position, this.MARGIN + durationWidth + 15, yPos);
 
       // Add some space before responsibilities
-      yPos += this.getLineHeight(14) * 1.2;
+      yPos += this.getLineHeight(12) * 1.2;
 
       // Responsibilities with proper bullet points
       pdf.setFont('Candara', 'normal');
@@ -408,11 +408,11 @@ export class PdfService {
     let column3Y = yPos;
     let currentColumn = 0;
 
-    Object.entries(cv.skills.technicalSkills).forEach(([ category, skills ]) => {
-      let currentY: any;
-      let startX: any;
+    Object.entries(cv.skills.technicalSkills).forEach(([category, skills]) => {
+      let currentY: number;
+      let startX: number;
 
-      switch ( currentColumn ) {
+      switch (currentColumn) {
         case 0:
           currentY = column1Y;
           startX = this.MARGIN;
@@ -449,7 +449,7 @@ export class PdfService {
       pdf.setFontSize(11);
       pdf.setTextColor(colors.text);
 
-      const skillText = Array.isArray(skills) ? skills.join(', ') : skills;
+      const skillText = Array.isArray(skills) ? skills.join(', ') : String(skills);
       const skillLines = pdf.splitTextToSize(skillText, columnWidth - 10);
 
       skillLines.forEach((line: string, index: number) => {
@@ -458,7 +458,7 @@ export class PdfService {
 
       const heightUsed = (skillLines.length * this.getLineHeight(11)) + 30;
 
-      switch ( currentColumn ) {
+      switch (currentColumn) {
         case 0:
           column1Y += heightUsed;
           break;
@@ -481,9 +481,9 @@ export class PdfService {
 
     if (cv.projects?.projects) {
       // Filter out projects marked with excludeFromPdf
-      const includedProjects = cv.projects.projects.filter(project => !project.excludeFromPdf);
+      const includedProjects = cv.projects.projects.filter((project: Project) => !project.excludeFromPdf);
       
-      includedProjects.forEach((project, index) => {
+      includedProjects.forEach((project: Project, index: number) => {
         // Check if we need a new page for this project
         yPos = this.checkPageBreak(pdf, yPos, 150);
 

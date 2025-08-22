@@ -10,11 +10,16 @@ export const routes: Routes = [
     path: '',
     component: MainLayoutComponent,
     children: [
-      { path: '', component: AboutComponent },
+      {
+        path: 'about',
+        component: AboutComponent,
+        pathMatch: 'full'
+      },
       { path: 'experience', component: ExperiencePageComponent },
       { path: 'skills', component: SkillsComponent },
-      { path: 'projects', component: ProjectsPageComponent }
+      { path: 'projects', component: ProjectsPageComponent },
+      { path: '**', redirectTo: 'about' }
     ]
   },
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: 'about' }
 ];

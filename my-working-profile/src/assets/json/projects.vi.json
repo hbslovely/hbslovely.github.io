@@ -41,11 +41,12 @@
         "AG Grid"
       ],
       "environment": [
-        "VSC",
+        "Visual Studio Code",
         "Git",
         "Chrome",
         "Windows",
-        "Agile/Scrum"
+        "Agile/Scrum",
+        "WebStorm"
       ],
       "role": "Lập trình viên Front-end",
       "status": "completed"
@@ -204,7 +205,7 @@
         "jQuery",
         "Angular",
         "SignalR",
-        "d3Js",
+        "D3.js",
         "Dygraph",
         "ASP.NET"
       ],
@@ -370,7 +371,7 @@
       "technologies": [
         "HTML",
         "CSS",
-        "D3js",
+        "D3.js",
         "jQuery",
         "AngularJS",
         "Angular UI Bootstrap",
@@ -420,7 +421,7 @@
       "technologies": [
         "HTML",
         "CSS",
-        "D3js",
+        "D3.js",
         "jQuery",
         "AngularJS",
         "Angular UI Bootstrap",
@@ -460,7 +461,8 @@
         "Visual Studio",
         "Firefox",
         "SVN",
-        "Git"
+        "Git",
+        "WebStorm"
       ],
       "role": "Lập trình viên Full-stack",
       "status": "completed",

@@ -6,6 +6,10 @@
     "SKILLS": "Skills",
     "EXPORT_PDF": "Export PDF"
   },
+  "COMMON": {
+    "CLOSE": "Close",
+    "COPY": "Copy to clipboard"
+  },
   "FOOTER": {
     "COPYRIGHT": "Hong Phung Phat. All rights reserved.",
     "MADE_WITH": "Made with Angular & AI️"
@@ -14,10 +18,44 @@
     "EXPORT_PDF": "Export PDF"
   },
   "PERSONAL_INFO": {
+    "PROFILE_PICTURE": "Profile Picture",
+    "EXPERIENCE": "Experience",
+    "YEARS_EXPERIENCE": "10+ Years",
+    "PROJECTS": "Projects",
+    "PROJECTS_COUNT": "20+",
+    "POSITION": "Position",
+    "POSITION_LEVEL": "Senior",
+    "EMAIL": "Email",
+    "PHONE": "Phone",
+    "LINKEDIN": "LinkedIn",
+    "GITHUB": "GitHub",
     "PROFESSIONAL_SUMMARY": "Professional Summary",
     "LANGUAGES": "Languages",
+    "LANGUAGE_LEVELS": {
+      "NATIVE": "Native",
+      "WORKING_PROFICIENCY": "Working Proficiency"
+    },
     "AREAS_OF_INTEREST": "Areas of Interest",
-    "WORK_PREFERENCES": "Work Preferences"
+    "INTERESTS": {
+      "WEB_DEVELOPMENT": "Web Development",
+      "CLOUD_COMPUTING": "Cloud Computing",
+      "DEVOPS": "DevOps",
+      "FinTech": "FinTech",
+      "AI": "Artificial Intelligence",
+      "Performance": "Application Performance",
+      "BLOCKCHAIN": "Blockchain"
+    },
+    "WORK_PREFERENCES": "Work Preferences",
+    "WORK_TYPES": {
+      "FULL_TIME": "Full Time",
+      "CONTRACT": "Contract",
+      "FREELANCE": "Freelance"
+    },
+    "WORK_LOCATIONS": {
+      "REMOTE": "Remote",
+      "HYBRID": "Hybrid",
+      "ONSITE": "On-site"
+    }
   },
   "SECTIONS": {
     "WORK_EXPERIENCE": {
@@ -62,5 +100,33 @@
       "LIST": "List View"
     },
     "FILTER_BUTTON": "Filters"
+  },
+  "SKILLS": {
+    "SKILLS": "skill(s)",
+    "OVERVIEW": "Skills Overview",
+    "DESCRIPTION": "A comprehensive collection of technical skills acquired through years of hands-on experience in web development, with a focus on modern frontend technologies and best practices.",
+    "VIEW_PROJECTS": "View My Projects",
+    "PROJECTS_HINT": "Explore my portfolio to see these skills in action through real-world projects.",
+    "DIALOG": {
+      "VISIT_WEBSITE": "Visit Official Website",
+      "VISIT_GITHUB": "View on GitHub",
+      "USED_IN": "Used in {{count}} project(s)",
+      "OVERVIEW": "Overview",
+      "RESOURCES": "Resources"
+    },
+    "DETAILS": {
+      "JEST": "Jest is a delightful JavaScript Testing Framework with a focus on simplicity. It works with projects using: Babel, TypeScript, Node, React, Angular, Vue and more.",
+      "JASMINE": "Jasmine is a behavior-driven development framework for testing JavaScript code. It does not depend on any other JavaScript frameworks and does not require a DOM.",
+      "KARMA": "Karma is a test runner that can execute JavaScript code in multiple real browsers. It is primarily designed for Angular testing ecosystem.",
+      "GIT": "Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.",
+      "VS_CODE": "Visual Studio Code is a lightweight but powerful source code editor with built-in support for JavaScript, TypeScript and Node.js, and has a rich ecosystem of extensions.",
+      "DOCKER": "Docker is a platform for developing, shipping, and running applications in containers. It enables true independence between applications and infrastructure.",
+      "JENKINS": "Jenkins is a self-contained, open source automation server which can be used to automate all sorts of tasks related to building, testing, and delivering or deploying software.",
+      "AGILE": "Agile is an iterative approach to project management and software development that helps teams deliver value to their customers faster and with fewer headaches.",
+      "SCRUM": "Scrum is an agile framework for developing, delivering, and sustaining complex products, with an emphasis on empirical process control and iterative progress.",
+      "KANBAN": "Kanban is a workflow management method that helps organizations manage and improve work systems. It helps visualize work, limit work-in-progress, and continuously improve.",
+      "NODEJS": "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. It enables building fast and scalable network applications using an event-driven, non-blocking I/O model.",
+      "NPM": "npm is the world's largest software registry and the default package manager for Node.js. It consists of a command line client and an online database of public and paid-for private packages."
+    }
   }
 }
