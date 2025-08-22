@@ -179,6 +179,9 @@ export class SkillsComponent implements OnInit {
     return projects.filter(project =>
       project.technologies.some(tech =>
         tech.toLowerCase() === skill.toLowerCase()
+      ) ||
+      project.environment.some(tech =>
+        tech.toLowerCase() === skill.toLowerCase()
       )
     ).length;
   }

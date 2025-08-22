@@ -41,11 +41,12 @@
         "AG Grid"
       ],
       "environment": [
-        "VSC",
+        "Visual Studio Code",
         "Git",
         "Chrome",
         "Windows",
-        "Agile/Scrum"
+        "Agile/Scrum",
+        "WebStorm"
       ],
       "role": "Lập trình viên Front-end",
       "status": "completed"
@@ -460,7 +461,8 @@
         "Visual Studio",
         "Firefox",
         "SVN",
-        "Git"
+        "Git",
+        "WebStorm"
       ],
       "role": "Lập trình viên Full-stack",
       "status": "completed",

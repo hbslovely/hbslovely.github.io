@@ -3,7 +3,7 @@
     <app-section-header
       title="SECTIONS.TECHNICAL_SKILLS"
       icon="tool"
-      subtitle="A comprehensive collection of technical skills acquired through years of hands-on experience in web development, with a focus on modern frontend technologies and best practices.">
+      subtitle="{{ 'SKILLS.DESCRIPTION' | translate}}">
     </app-section-header>
 
     <div class="skills-content">
@@ -17,7 +17,7 @@
               </div>
               <div class="header-content">
                 <h3>{{ formatCategory(category) }}</h3>
-                <span class="skill-count">{{ cv()?.skills?.technicalSkills?.[category]?.length || 0 }} skills</span>
+                <span class="skill-count">{{ cv()?.skills?.technicalSkills?.[category]?.length || 0 }} {{ 'SKILLS.SKILLS' | translate }}</span>
               </div>
             </div>
             <div class="skill-tags">

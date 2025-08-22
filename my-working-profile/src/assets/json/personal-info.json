@@ -17,11 +17,11 @@
   "languages": [
     {
       "name": "Vietnamese",
-      "level": "Native"
+      "level": "NATIVE"
     },
     {
       "name": "English",
-      "level": "Working Proficiency"
+      "level": "WORKING_PROFICIENCY"
     }
   ],
   "summary": "As a Senior Web Developer with over 10 years of experience, I specialize in creating modern and efficient web applications. My expertise includes working with Angular and React to build user-friendly interfaces that solve real business problems. Throughout my career, I have successfully delivered projects for various industries, from social networks to data management systems.\n\nI take pride in writing clean, maintainable code and staying up-to-date with the latest web technologies. In my current role, I focus on designing scalable applications and helping junior developers grow their skills. I am particularly interested in improving application performance and creating better user experiences.\n\nI am now seeking opportunities where I can use my technical skills and leadership experience to make a significant impact on challenging projects.",
@@ -32,7 +32,7 @@
     "Performance"
   ],
   "availability": {
-    "workType": "Full-time",
-    "workLocation": "Remote"
+    "workType": "FULL_TIME",
+    "workLocation": "REMOTE"
   }
 }

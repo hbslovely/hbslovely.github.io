@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
+import { LanguageService } from '../../services/language.service';
 
 interface LanguageOption {
   code: string;
@@ -29,7 +30,8 @@ export class LanguageSwitcherComponent {
     }
   ];
 
-  constructor(private translate: TranslateService) {}
+  constructor(private translate: TranslateService,
+              private languageService: LanguageService) {}
 
   getCurrentLanguage(): string {
     return this.translate.currentLang || this.translate.defaultLang;
@@ -37,5 +39,6 @@ export class LanguageSwitcherComponent {
 
   switchLanguage(langCode: string): void {
     this.translate.use(langCode);
+    this.languageService.setLanguage(langCode);
   }
-} 
+}

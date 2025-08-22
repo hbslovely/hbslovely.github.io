@@ -34,8 +34,12 @@
        <span nz-icon nzType="info-circle" nzTheme="outline"></span>
        {{ 'SKILLS.DIALOG.OVERVIEW' | translate }}
      </h3>
-     @for (paragraph of info.description; track $index) {
-       <p>{{ paragraph }}</p>
+     @if (isDescriptionArray) {
+       @for (paragraph of info.description; track $index) {
+         <p>{{ paragraph }}</p>
+       }
+     } @else {
+       <p>{{ info.description }}</p>
      }
    </div>
 

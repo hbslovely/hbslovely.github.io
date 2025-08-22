@@ -7,7 +7,7 @@ import { WatermarkComponent } from '../watermark/watermark.component';
 
 export interface SkillInfo {
   name: string;
-  description: string[];
+  description: string[] | string;
   url: string;
   githubUrl?: string;
   logo?: string;
@@ -35,5 +35,9 @@ export class SkillDetailComponent {
   closeDialog(): void {
     // This will be handled by the parent component
     this.close.emit();
+  }
+
+  get isDescriptionArray(): boolean {
+    return Array.isArray(this.info?.description);
   }
 }

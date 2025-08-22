@@ -134,7 +134,7 @@
     ],
     "url": "https://d3js.org",
     "githubUrl": "https://github.com/d3/d3",
-    "logo": "https://d3js.org/favicon.png"
+    "logo": "https://d3js.org/logo.png"
   },
   "jQuery": {
     "name": "jQuery",
@@ -148,7 +148,7 @@
     ],
     "url": "https://jquery.com",
     "githubUrl": "https://github.com/jquery/jquery",
-    "logo": "https://jquery.com/wp-content/themes/jquery/images/logo-jquery@2x.png"
+    "logo": "https://jquery.com/wp-content/themes/jquery.com/i/favicon.ico"
   },
   "Chart.js": {
     "name": "Chart.js",
@@ -204,8 +204,7 @@
     "description": "Git là một hệ thống quản lý phiên bản phân tán mã nguồn mở và miễn phí được thiết kế để xử lý mọi thứ từ dự án nhỏ đến rất lớn với tốc độ và hiệu quả.",
     "url": "https://git-scm.com",
     "githubUrl": "https://github.com/git/git",
-    "logo": "https://git-scm.com/favicon.ico",
-    "isCommonTool": true
+    "logo": "https://git-scm.com/favicon.ico"
   },
   "VS Code": {
     "name": "Visual Studio Code",
@@ -267,7 +266,7 @@
     "logo": "https://www.npmjs.com/favicon.ico",
     "isCommonTool": true
   },
-  "macOS": {
+  "MacOS": {
     "name": "macOS",
     "description": [
       "macOS là hệ điều hành dựa trên Unix mạnh mẽ của Apple cung cấp môi trường phát triển thanh lịch và hiệu quả. Sự kết hợp giữa giao diện người dùng được đánh bóng với nền tảng Unix mạnh mẽ làm cho nó trở thành lựa chọn ưa thích của nhiều nhà phát triển.",
@@ -278,27 +277,14 @@
       "Tính năng bảo mật của hệ điều hành bao gồm Gatekeeper, FileVault và System Integrity Protection. Những tính năng này bảo vệ môi trường phát triển trong khi cho phép tính linh hoạt cần thiết cho các tác vụ phát triển."
     ],
     "url": "https://www.apple.com/macos",
-    "isCommonTool": true,
     "logo": "https://www.apple.com/favicon.ico"
-  },
-  "Linux": {
-    "name": "Linux",
-    "description": [
-      "Linux là hệ điều hành mã nguồn mở mạnh mẽ tạo nên xương sống của phát triển phần mềm và điện toán đám mây hiện đại. Tính linh hoạt, ổn định và công cụ mở rộng làm cho nó trở thành nền tảng thiết yếu cho nhà phát triển và quản trị hệ thống.",
-      "Kernel của hệ điều hành cung cấp quản lý tiến trình mạnh mẽ và kiểm soát tài nguyên hệ thống. Nền tảng này cho phép đa nhiệm hiệu quả, quản lý bộ nhớ và tương tác phần cứng, quan trọng cho môi trường phát triển.",
-      "Giao diện dòng lệnh của Linux cung cấp công cụ mạnh mẽ để thao tác tệp, quản lý tiến trình và quản trị hệ thống. Môi trường shell, kết hợp với khả năng scripting, cho phép tự động hóa tác vụ phức tạp và quản lý hệ thống hiệu quả.",
-      "Hệ thống quản lý gói như apt và yum đơn giản hóa việc cài đặt và cập nhật phần mềm. Các công cụ này xử lý phụ thuộc tự động và duy trì tính nhất quán hệ thống, giúp dễ dàng quản lý môi trường phát triển.",
-      "Tính năng bảo mật bao gồm cô lập tiến trình, quyền người dùng và SELinux cung cấp bảo vệ mạnh mẽ. Những khả năng này làm cho Linux lý tưởng cho cả máy trạm phát triển và máy chủ sản xuất.",
-      "Khả năng mạng và hỗ trợ container hóa của hệ thống làm cho nó hoàn hảo cho phát triển hiện đại. Các tính năng như SSH tích hợp sẵn, cấu hình tường lửa và hỗ trợ runtime container cho phép phát triển và triển khai phân tán hiệu quả."
-    ],
-    "url": "https://www.linux.org",
-    "isCommonTool": true
   },
   "Windows": {
     "name": "Windows",
     "description": "Windows là hệ điều hành của Microsoft cung cấp giao diện thân thiện với người dùng và các công cụ phát triển mở rộng thông qua Windows Subsystem for Linux (WSL) và tích hợp Visual Studio.",
     "url": "https://www.microsoft.com/windows",
-    "isCommonTool": true
+    "isCommonTool": true,
+    "logo": "https://uhf.microsoft.com/images/microsoft/RE1Mu3b.png"
   },
   "Chrome": {
     "name": "Chrome",
@@ -327,19 +313,6 @@
     "url": "https://www.mozilla.org/firefox",
     "isCommonTool": true
   },
-  "Safari": {
-    "name": "Safari",
-    "description": [
-      "Safari là trình duyệt web chủ lực của Apple, nổi tiếng với thiết kế thanh lịch, hiệu quả năng lượng và tích hợp chặt chẽ với hệ sinh thái Apple. Nó đóng vai trò quan trọng trong phát triển web bằng cách cung cấp khả năng kiểm thử thiết yếu cho các nền tảng Apple.",
-      "Web Inspector của trình duyệt cung cấp công cụ phát triển mạnh mẽ để gỡ lỗi và tối ưu hóa ứng dụng web. Các tính năng kiểm tra bố cục, gỡ lỗi JavaScript và phân tích hiệu suất đặc biệt có giá trị để đảm bảo tương thích với thiết bị Apple.",
-      "Triển khai tiêu chuẩn web của Safari tập trung vào hiệu suất và hiệu quả pin. Động cơ JavaScript và đường ống kết xuất được tối ưu hóa cho phần cứng Apple, mang lại hiệu suất xuất sắc trong khi duy trì hiệu quả năng lượng.",
-      "Trình duyệt bao gồm các tính năng bảo mật mạnh mẽ như Ngăn chặn Theo dõi Thông minh và Duyệt web Riêng tư. Các tính năng này bảo vệ quyền riêng tư người dùng trong khi cung cấp cho nhà phát triển cách thức đạo đức để triển khai theo dõi và phân tích cần thiết.",
-      "Hỗ trợ của Safari cho công nghệ web hiện đại bao gồm các tính năng như CSS Grid, WebGL và Web Components. Việc triển khai các công nghệ này thường nhấn mạnh hiệu suất và thời lượng pin mà không ảnh hưởng đến chức năng.",
-      "Tích hợp của trình duyệt với hệ sinh thái Apple cho phép các tính năng độc đáo như Handoff và đồng bộ hóa iCloud. Những khả năng này nâng cao trải nghiệm người dùng trong khi cung cấp cho nhà phát triển cơ hội tạo trải nghiệm liền mạch đa thiết bị."
-    ],
-    "url": "https://www.apple.com/safari",
-    "isCommonTool": true
-  },
   "WebStorm": {
     "name": "WebStorm",
     "description": [
@@ -351,46 +324,7 @@
       "IDE bao gồm các công cụ tích hợp sẵn cho kiểm thử, chạy tác vụ và triển khai. Tích hợp với các framework kiểm thử phổ biến, công cụ xây dựng và dịch vụ triển khai giúp dễ dàng duy trì chất lượng trong suốt vòng đời phát triển."
     ],
     "url": "https://www.jetbrains.com/webstorm",
-    "isCommonTool": true
-  },
-  "Sublime Text": {
-    "name": "Sublime Text",
-    "description": [
-      "Sublime Text là trình soạn thảo văn bản tinh vi được thiết kế cho mã, đánh dấu và văn bản. Nó kết hợp hiệu suất nhanh như chớp với các tính năng mạnh mẽ làm cho nó trở thành lựa chọn yêu thích của các nhà phát triển nhờ khả năng xử lý tệp lớn và dự án phức tạp hiệu quả.",
-      "Khả năng chọn nhiều và chỉnh sửa đồng thời của trình soạn thảo cách mạng hóa thao tác mã. Các tính năng này cho phép nhà phát triển thực hiện các thay đổi giống nhau trên nhiều vị trí cùng lúc, đáng kể tăng tốc các tác vụ chỉnh sửa lặp lại.",
-      "Chức năng tìm kiếm và thay thế mạnh mẽ của Sublime Text bao gồm hỗ trợ regex và hoạt động trên toàn dự án. Khả năng tìm kiếm tăng dần và chuyển đổi tệp nhanh làm cho việc điều hướng codebase lớn hiệu quả và trực quan.",
-      "Command palette cung cấp truy cập nhanh đến gần như mọi tính năng và lệnh. Giao diện này cho phép nhà phát triển giữ tay trên bàn phím, duy trì tập trung và năng suất trong khi làm việc.",
-      "Package control mở rộng chức năng của trình soạn thảo thông qua hệ sinh thái plugin rộng lớn. Các gói này thêm hỗ trợ cho ngôn ngữ, framework và công cụ bổ sung, cho phép tùy chỉnh cho nhu cầu phát triển cụ thể.",
-      "Chế độ không phân tâm và giao diện có thể tùy chỉnh của trình soạn thảo hỗ trợ phát triển tập trung. Các tính năng như minimap, bố cục nhiều và phím tắt có thể tùy chỉnh tạo môi trường lập trình cá nhân hóa và hiệu quả."
-    ],
-    "url": "https://www.sublimetext.com",
-    "isCommonTool": true
-  },
-  "AWS": {
-    "name": "Amazon Web Services",
-    "description": [
-      "Amazon Web Services (AWS) là nền tảng điện toán đám mây hàng đầu thế giới, cung cấp một loạt dịch vụ đa dạng cho phép phát triển ứng dụng và quản lý cơ sở hạ tầng hiện đại. Danh mục dịch vụ toàn diện cho phép các tổ chức xây dựng và mở rộng ứng dụng với tính linh hoạt chưa từng có.",
-      "Các dịch vụ tính toán của AWS, bao gồm EC2 và Lambda, cung cấp các tùy chọn linh hoạt để chạy ứng dụng. EC2 cung cấp máy chủ ảo truyền thống với quyền kiểm soát hoàn toàn, trong khi Lambda cho phép điện toán serverless cho các ứng dụng hướng sự kiện.",
-      "Các giải pháp lưu trữ của nền tảng phù hợp với mọi trường hợp sử dụng, từ S3 cho lưu trữ đối tượng đến RDS cho cơ sở dữ liệu được quản lý. Các dịch vụ này cung cấp độ bền, khả năng mở rộng và hiệu suất trong khi giảm thiểu chi phí vận hành.",
-      "Khả năng mạng của AWS cho phép kiến trúc ứng dụng an toàn và hiệu quả. Các dịch vụ như VPC, Route 53 và CloudFront cho phép tạo mạng riêng biệt, quản lý DNS và tối ưu hóa phân phối nội dung.",
-      "Bảo mật được tích hợp trong toàn bộ dịch vụ AWS với IAM cung cấp kiểm soát truy cập chi tiết. Các tính năng như KMS cho mã hóa, WAF cho bảo mật ứng dụng web và Shield cho bảo vệ DDoS tạo nên khung bảo mật toàn diện.",
-      "Nền tảng bao gồm các công cụ phát triển mạnh mẽ như CodePipeline, CodeBuild và CodeDeploy giúp hợp lý hóa quy trình CI/CD. Các công cụ này tích hợp liền mạch với quy trình phát triển phổ biến và công cụ bên thứ ba."
-    ],
-    "url": "https://aws.amazon.com",
-    "isCommonTool": true
-  },
-  "Azure": {
-    "name": "Microsoft Azure",
-    "description": [
-      "Microsoft Azure là nền tảng điện toán đám mây toàn diện kết hợp khả năng Infrastructure as a Service (IaaS), Platform as a Service (PaaS) và Software as a Service (SaaS). Nó cung cấp nền tảng mạnh mẽ để xây dựng, triển khai và quản lý ứng dụng và dịch vụ.",
-      "Các dịch vụ tính toán của Azure từ máy ảo đến hàm serverless, cung cấp tính linh hoạt trong lưu trữ ứng dụng. Các dịch vụ như App Service và Azure Functions cho phép triển khai nhanh các ứng dụng web và microservices.",
-      "Nền tảng xuất sắc trong dịch vụ dữ liệu, cung cấp SQL Database, Cosmos DB và các tùy chọn khác cho nhiều nhu cầu dữ liệu. Các dịch vụ này cung cấp tính khả dụng cao tích hợp sẵn, tự động mở rộng và tính năng bảo mật toàn diện.",
-      "Các dịch vụ AI và học máy của Azure làm cho các khả năng nâng cao dễ tiếp cận với nhà phát triển. Các dịch vụ như Cognitive Services và Machine Learning Studio cho phép tích hợp các tính năng thông minh vào ứng dụng.",
-      "Công cụ DevOps trong Azure, bao gồm Azure DevOps và tích hợp GitHub, cung cấp giải pháp end-to-end cho quản lý vòng đời ứng dụng. Các công cụ này hỗ trợ phương pháp phát triển hiện đại với khả năng CI/CD tích hợp sẵn.",
-      "Bảo mật và tuân thủ là khía cạnh cốt lõi của Azure, với các tính năng như Azure Active Directory, Key Vault và Security Center. Các dịch vụ này giúp tổ chức đáp ứng yêu cầu quy định trong khi duy trì tư thế bảo mật mạnh mẽ."
-    ],
-    "url": "https://azure.microsoft.com",
-    "isCommonTool": true
+    "logo": "https://www.jetbrains.com/favicon.ico"
   },
   "Slack": {
     "name": "Slack",
@@ -448,7 +382,7 @@
     ],
     "url": "https://www.protractortest.org",
     "githubUrl": "https://github.com/angular/protractor",
-    "logo": "https://raw.githubusercontent.com/angular/protractor/master/logo.png",
+    "logo": "https://www.protractortest.org/img/favicon.ico",
     "isCommonTool": true
   },
   "Sinon": {
@@ -498,8 +432,7 @@
     "description": "Apache Subversion (SVN) là một hệ thống quản lý phiên bản mã nguồn mở. Nó quản lý các tệp và thư mục theo thời gian, duy trì lịch sử thay đổi và hỗ trợ phát triển cộng tác thông qua các tính năng như branching, merging và giải quyết xung đột.",
     "url": "https://subversion.apache.org",
     "githubUrl": "https://github.com/apache/subversion",
-    "logo": "https://subversion.apache.org/images/svn-name-banner.svg",
-    "isCommonTool": true
+    "logo": "https://subversion.apache.org/images/svn-name-banner.svg"
   },
   "Webpack": {
     "name": "Webpack",
@@ -541,7 +474,7 @@
     ],
     "url": "https://cli.angular.io",
     "githubUrl": "https://github.com/angular/angular-cli",
-    "logo": "https://cli.angular.io/assets/images/angular-cli-logo.svg"
+    "logo": "https://angular.dev/assets/icons/favicon.ico"
   },
   "KendoUI": {
     "name": "Kendo UI",
@@ -595,7 +528,6 @@
     ],
     "url": "https://code.visualstudio.com",
     "githubUrl": "https://github.com/microsoft/vscode",
-    "logo": "https://code.visualstudio.com/favicon.ico",
-    "isCommonTool": true
+    "logo": "https://code.visualstudio.com/favicon.ico"
   }
-} 
+}

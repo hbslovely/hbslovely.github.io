@@ -7,20 +7,55 @@
     "EXPORT_PDF": "Xuất PDF"
   },
   "COMMON": {
-    "CLOSE": "Đóng"
+    "CLOSE": "Đóng",
+    "COPY": "Sao chép vào clipboard"
   },
   "FOOTER": {
-    "COPYRIGHT": "Hồng Phụng Phát. Đã đăng ký bản quyền.",
+    "COPYRIGHT": "Hong Phung Phat. Đã đăng ký bản quyền.",
     "MADE_WITH": "Được tạo bằng Angular & AI️"
   },
   "ACTIONS": {
     "EXPORT_PDF": "Xuất PDF"
   },
   "PERSONAL_INFO": {
+    "PROFILE_PICTURE": "Ảnh đại diện",
+    "EXPERIENCE": "Kinh nghiệm",
+    "YEARS_EXPERIENCE": "10+ Năm",
+    "PROJECTS": "Dự án",
+    "PROJECTS_COUNT": "20+",
+    "POSITION": "Vị trí",
+    "POSITION_LEVEL": "Chuyên viên cao cấp",
+    "EMAIL": "Email",
+    "PHONE": "Điện thoại",
+    "LINKEDIN": "LinkedIn",
+    "GITHUB": "GitHub",
     "PROFESSIONAL_SUMMARY": "Tóm tắt chuyên môn",
     "LANGUAGES": "Ngôn ngữ",
+    "LANGUAGE_LEVELS": {
+      "Native": "Bản ngữ",
+      "Working Proficiency": "khả năng sử dụng trong công việc"
+    },
     "AREAS_OF_INTEREST": "Lĩnh vực quan tâm",
-    "WORK_PREFERENCES": "Hình thức làm việc"
+    "INTERESTS": {
+      "WEB_DEVELOPMENT": "Phát triển Web",
+      "CLOUD_COMPUTING": "Điện toán đám mây",
+      "DEVOPS": "DevOps",
+      "FinTech": "Công nghệ tài chính",
+      "AI": "Trí tuệ nhân tạo",
+      "Performance": "Hiệu suất phần mềm",
+      "BLOCKCHAIN": "Blockchain"
+    },
+    "WORK_PREFERENCES": "Ưu tiên công việc",
+    "WORK_TYPES": {
+      "FULL_TIME": "Toàn thời gian",
+      "CONTRACT": "Hợp đồng",
+      "FREELANCE": "Tự do"
+    },
+    "WORK_LOCATIONS": {
+      "REMOTE": "Từ xa",
+      "HYBRID": "Kết hợp",
+      "ONSITE": "Tại văn phòng"
+    }
   },
   "SECTIONS": {
     "WORK_EXPERIENCE": {
@@ -67,6 +102,7 @@
     "FILTER_BUTTON": "Bộ Lọc"
   },
   "SKILLS": {
+    "SKILLS": "kỹ năng",
     "OVERVIEW": "Tổng quan kỹ năng",
     "DESCRIPTION": "Bộ sưu tập toàn diện các kỹ năng kỹ thuật được tích lũy qua nhiều năm kinh nghiệm thực tế trong phát triển web, tập trung vào các công nghệ frontend hiện đại và các phương pháp thực hành tốt nhất.",
     "VIEW_PROJECTS": "Xem dự án của tôi",

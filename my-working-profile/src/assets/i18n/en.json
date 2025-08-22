@@ -7,7 +7,8 @@
     "EXPORT_PDF": "Export PDF"
   },
   "COMMON": {
-    "CLOSE": "Close"
+    "CLOSE": "Close",
+    "COPY": "Copy to clipboard"
   },
   "FOOTER": {
     "COPYRIGHT": "Hong Phung Phat. All rights reserved.",
@@ -17,10 +18,44 @@
     "EXPORT_PDF": "Export PDF"
   },
   "PERSONAL_INFO": {
+    "PROFILE_PICTURE": "Profile Picture",
+    "EXPERIENCE": "Experience",
+    "YEARS_EXPERIENCE": "10+ Years",
+    "PROJECTS": "Projects",
+    "PROJECTS_COUNT": "20+",
+    "POSITION": "Position",
+    "POSITION_LEVEL": "Senior",
+    "EMAIL": "Email",
+    "PHONE": "Phone",
+    "LINKEDIN": "LinkedIn",
+    "GITHUB": "GitHub",
     "PROFESSIONAL_SUMMARY": "Professional Summary",
     "LANGUAGES": "Languages",
+    "LANGUAGE_LEVELS": {
+      "NATIVE": "Native",
+      "WORKING_PROFICIENCY": "Working Proficiency"
+    },
     "AREAS_OF_INTEREST": "Areas of Interest",
-    "WORK_PREFERENCES": "Work Preferences"
+    "INTERESTS": {
+      "WEB_DEVELOPMENT": "Web Development",
+      "CLOUD_COMPUTING": "Cloud Computing",
+      "DEVOPS": "DevOps",
+      "FinTech": "FinTech",
+      "AI": "Artificial Intelligence",
+      "Performance": "Application Performance",
+      "BLOCKCHAIN": "Blockchain"
+    },
+    "WORK_PREFERENCES": "Work Preferences",
+    "WORK_TYPES": {
+      "FULL_TIME": "Full Time",
+      "CONTRACT": "Contract",
+      "FREELANCE": "Freelance"
+    },
+    "WORK_LOCATIONS": {
+      "REMOTE": "Remote",
+      "HYBRID": "Hybrid",
+      "ONSITE": "On-site"
+    }
   },
   "SECTIONS": {
     "WORK_EXPERIENCE": {
@@ -67,6 +102,7 @@
     "FILTER_BUTTON": "Filters"
   },
   "SKILLS": {
+    "SKILLS": "skill(s)",
     "OVERVIEW": "Skills Overview",
     "DESCRIPTION": "A comprehensive collection of technical skills acquired through years of hands-on experience in web development, with a focus on modern frontend technologies and best practices.",
     "VIEW_PROJECTS": "View My Projects",

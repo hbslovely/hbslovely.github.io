@@ -134,7 +134,7 @@
     ],
     "url": "https://d3js.org",
     "githubUrl": "https://github.com/d3/d3",
-    "logo": "https://d3js.org/favicon.png"
+    "logo": "https://d3js.org/logo.png"
   },
   "jQuery": {
     "name": "jQuery",
@@ -148,7 +148,7 @@
     ],
     "url": "https://jquery.com",
     "githubUrl": "https://github.com/jquery/jquery",
-    "logo": "https://jquery.com/wp-content/themes/jquery/images/logo-jquery@2x.png"
+    "logo": "https://jquery.com/wp-content/themes/jquery.com/i/favicon.ico"
   },
   "Chart.js": {
     "name": "Chart.js",
@@ -218,11 +218,13 @@
     ],
     "url": "https://git-scm.com",
     "githubUrl": "https://github.com/git/git",
-    "logo": "https://git-scm.com/favicon.ico",
-    "isCommonTool": true
+    "logo": "https://git-scm.com/favicon.ico"
   },
-  "VS Code": {
+  "Visual Studio Code": {
     "name": "Visual Studio Code",
+    "url": "https://code.visualstudio.com",
+    "githubUrl": "https://github.com/microsoft/vscode",
+    "logo": "https://code.visualstudio.com/favicon.ico",
     "description": [
       "Visual Studio Code is a sophisticated, yet lightweight source code editor that has revolutionized the way developers write and debug code. Developed by Microsoft, it combines the simplicity of a text editor with the powerful features of an integrated development environment (IDE).",
       "At its core, VS Code features a highly customizable interface with support for multiple themes, keyboard shortcuts, and workspace layouts. The editor includes essential features like syntax highlighting, intelligent code completion, and integrated terminal support.",
@@ -231,10 +233,6 @@
       "VS Code's IntelliSense provides smart completions based on variable types, function definitions, and imported modules. This feature is particularly powerful when working with TypeScript and JavaScript.",
       "The debugging experience in VS Code is exceptional, with support for breakpoints, call stacks, and variable inspection. The editor also includes integrated task running and problem detection, helping developers catch and fix issues early in development."
     ],
-    "url": "https://code.visualstudio.com",
-    "githubUrl": "https://github.com/microsoft/vscode",
-    "logo": "https://code.visualstudio.com/assets/images/code-stable.png",
-    "isCommonTool": true
   },
   "Agile": {
     "name": "Agile",
@@ -284,31 +282,18 @@
     "logo": "https://www.npmjs.com/favicon.ico",
     "isCommonTool": true
   },
-  "macOS": {
+  "MacOS": {
     "name": "macOS",
     "description": "macOS is Apple's Unix-based operating system designed for Mac computers. It provides a powerful development environment with built-in Unix tools, excellent integration with development software, and a user-friendly interface that enhances productivity.",
     "url": "https://www.apple.com/macos",
-    "logo": "https://www.apple.com/v/macos/home/bn/images/overview/hero/macos_hero__dnwfb67q9goi_large.jpg",
-    "isCommonTool": true
-  },
-  "Linux": {
-    "name": "Linux",
-    "description": [
-      "Linux is a powerful, open-source operating system that forms the backbone of modern software development and cloud computing. Its flexibility, stability, and extensive tooling make it an essential platform for developers and system administrators.",
-      "The operating system's kernel provides robust process management and system resource control. This foundation enables efficient multitasking, memory management, and hardware interaction, crucial for development environments.",
-      "Linux's command-line interface offers powerful tools for file manipulation, process management, and system administration. The shell environment, combined with scripting capabilities, enables automation of complex tasks and efficient system management.",
-      "Package management systems like apt and yum simplify software installation and updates. These tools handle dependencies automatically and maintain system consistency, making it easier to manage development environments.",
-      "Security features including process isolation, user permissions, and SELinux provide robust protection. These capabilities make Linux ideal for both development workstations and production servers.",
-      "The system's networking capabilities and containerization support make it perfect for modern development. Features like built-in SSH, firewall configuration, and container runtime support enable efficient distributed development and deployment."
-    ],
-    "url": "https://www.linux.org",
-    "isCommonTool": true
+    "logo": "https://www.apple.com/v/macos/home/bn/images/overview/hero/macos_hero__dnwfb67q9goi_large.jpg"
   },
   "Windows": {
     "name": "Windows",
     "description": "Windows is Microsoft's operating system that provides a user-friendly interface and extensive development tools through Windows Subsystem for Linux (WSL) and Visual Studio integration.",
     "url": "https://www.microsoft.com/windows",
-    "isCommonTool": true
+    "isCommonTool": true,
+    "logo": "https://uhf.microsoft.com/images/microsoft/RE1Mu3b.png"
   },
 
   "Chrome": {
@@ -338,20 +323,6 @@
     "url": "https://www.mozilla.org/firefox",
     "isCommonTool": true
   },
-  "Safari": {
-    "name": "Safari",
-    "description": [
-      "Safari is Apple's flagship web browser, known for its elegant design, energy efficiency, and tight integration with the Apple ecosystem. It plays a crucial role in web development by providing essential testing capabilities for Apple platforms.",
-      "The browser's Web Inspector provides powerful development tools for debugging and optimizing web applications. Its features for inspecting layouts, debugging JavaScript, and analyzing performance are particularly valuable for ensuring compatibility with Apple devices.",
-      "Safari's implementation of web standards focuses on performance and battery efficiency. Its JavaScript engine and rendering pipeline are optimized for Apple hardware, delivering excellent performance while maintaining energy efficiency.",
-      "The browser includes robust privacy features like Intelligent Tracking Prevention and Private Browsing. These features protect user privacy while providing developers with ethical ways to implement necessary tracking and analytics.",
-      "Safari's support for modern web technologies includes features like CSS Grid, WebGL, and Web Components. Its implementation of these technologies often emphasizes performance and battery life without compromising functionality.",
-      "The browser's integration with the Apple ecosystem enables unique features like Handoff and iCloud syncing. These capabilities enhance the user experience while providing developers with opportunities to create seamless cross-device experiences."
-    ],
-    "url": "https://www.apple.com/safari",
-    "isCommonTool": true
-  },
-
   "WebStorm": {
     "name": "WebStorm",
     "description": [
@@ -363,62 +334,7 @@
       "The IDE includes built-in tools for testing, task running, and deployment. Integration with popular testing frameworks, build tools, and deployment services makes it easier to maintain quality throughout the development lifecycle."
     ],
     "url": "https://www.jetbrains.com/webstorm",
-    "isCommonTool": true
-  },
-  "Sublime Text": {
-    "name": "Sublime Text",
-    "description": [
-      "Sublime Text is a sophisticated text editor designed for code, markup, and prose. It combines lightning-fast performance with powerful features that make it a favorite among developers for its ability to handle large files and complex projects efficiently.",
-      "The editor's multiple selection and simultaneous editing capabilities revolutionize code manipulation. These features allow developers to make identical changes across multiple locations simultaneously, significantly speeding up repetitive editing tasks.",
-      "Sublime Text's powerful search and replace functionality includes regex support and project-wide operations. The incremental search and quick file switching capabilities make navigating large codebases efficient and intuitive.",
-      "The command palette provides quick access to nearly every feature and command. This interface allows developers to keep their hands on the keyboard, maintaining focus and productivity while working.",
-      "Package control extends the editor's functionality through a vast ecosystem of plugins. These packages add support for additional languages, frameworks, and tools, allowing customization for specific development needs.",
-      "The editor's distraction-free mode and customizable interface support focused development. Features like minimap, multiple layouts, and customizable key bindings create a personalized and efficient coding environment."
-    ],
-    "url": "https://www.sublimetext.com",
-    "isCommonTool": true
-  },
-
-  "AWS": {
-    "name": "Amazon Web Services",
-    "description": [
-      "Amazon Web Services (AWS) is the world's leading cloud computing platform, offering a vast array of services that enable modern application development and infrastructure management. Its comprehensive service portfolio allows organizations to build and scale applications with unprecedented flexibility.",
-      "AWS's compute services, including EC2 and Lambda, provide flexible options for running applications. EC2 offers traditional virtual servers with complete control, while Lambda enables serverless computing for event-driven applications.",
-      "The platform's storage solutions cover every use case, from S3 for object storage to RDS for managed databases. These services provide durability, scalability, and performance while minimizing operational overhead.",
-      "AWS's networking capabilities enable secure and efficient application architectures. Services like VPC, Route 53, and CloudFront allow creation of isolated networks, DNS management, and content delivery optimization.",
-      "Security is integrated throughout AWS services with IAM providing fine-grained access control. Features like KMS for encryption, WAF for web application security, and Shield for DDoS protection create a comprehensive security framework.",
-      "The platform includes powerful developer tools like CodePipeline, CodeBuild, and CodeDeploy that streamline the CI/CD process. These tools integrate seamlessly with popular development workflows and third-party tools."
-    ],
-    "url": "https://aws.amazon.com",
-    "isCommonTool": true
-  },
-  "Azure": {
-    "name": "Microsoft Azure",
-    "description": [
-      "Microsoft Azure is a comprehensive cloud computing platform that combines Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS) capabilities. It provides a robust foundation for building, deploying, and managing applications and services.",
-      "Azure's compute services range from virtual machines to serverless functions, offering flexibility in application hosting. Services like App Service and Azure Functions enable rapid deployment of web applications and microservices.",
-      "The platform excels in data services, providing SQL Database, Cosmos DB, and other options for various data needs. These services offer built-in high availability, automatic scaling, and comprehensive security features.",
-      "Azure's AI and machine learning services make advanced capabilities accessible to developers. Services like Cognitive Services and Machine Learning Studio enable integration of intelligent features into applications.",
-      "DevOps tools in Azure, including Azure DevOps and GitHub integration, provide end-to-end solutions for application lifecycle management. These tools support modern development practices with built-in CI/CD capabilities.",
-      "Security and compliance are core aspects of Azure, with features like Azure Active Directory, Key Vault, and Security Center. These services help organizations meet regulatory requirements while maintaining robust security posture."
-    ],
-    "url": "https://azure.microsoft.com",
-    "isCommonTool": true
-  },
-  "Docker": {
-    "name": "Docker",
-    "description": [
-      "Docker is a revolutionary containerization platform that has transformed application development and deployment. It enables developers to package applications with all their dependencies into standardized units called containers, ensuring consistency across different environments.",
-      "The platform's container runtime provides lightweight, isolated environments for applications. This isolation ensures applications run consistently regardless of the host environment, eliminating 'it works on my machine' problems.",
-      "Docker's image system allows for efficient application packaging and distribution. Images are built in layers, enabling cache utilization and reducing storage requirements while making updates and rollbacks straightforward.",
-      "The Docker ecosystem includes powerful tools for container orchestration and management. Docker Compose simplifies multi-container application deployment, while integration with Kubernetes enables scalable container orchestration.",
-      "Security features in Docker include container isolation, image scanning, and secure registries. These capabilities help organizations maintain security best practices while benefiting from containerization.",
-      "Docker's extensive plugin system and API enable integration with various development and deployment tools. This extensibility makes Docker a central part of modern DevOps practices and CI/CD pipelines."
-    ],
-    "url": "https://www.docker.com",
-    "githubUrl": "https://github.com/docker",
-    "logo": "https://www.docker.com/favicon.ico",
-    "isCommonTool": true
+    "logo": "https://www.jetbrains.com/favicon.ico"
   },
   "Jenkins": {
     "name": "Jenkins",
@@ -461,8 +377,7 @@
     ],
     "url": "https://subversion.apache.org",
     "githubUrl": "https://github.com/apache/subversion",
-    "logo": "https://subversion.apache.org/images/svn-name-banner.svg",
-    "isCommonTool": true
+    "logo": "https://subversion.apache.org/images/svn-name-banner.svg"
   },
   "Webpack": {
     "name": "Webpack",
@@ -504,7 +419,7 @@
     ],
     "url": "https://cli.angular.io",
     "githubUrl": "https://github.com/angular/angular-cli",
-    "logo": "https://cli.angular.io/assets/images/angular-cli-logo.svg"
+    "logo": "https://angular.dev/assets/icons/favicon.ico"
   },
   "KendoUI": {
     "name": "Kendo UI",
@@ -531,7 +446,7 @@
     ],
     "url": "https://www.protractortest.org",
     "githubUrl": "https://github.com/angular/protractor",
-    "logo": "https://raw.githubusercontent.com/angular/protractor/master/logo.png",
+    "logo": "https://www.protractortest.org/img/favicon.ico",
     "isCommonTool": true
   },
   "Sinon": {
