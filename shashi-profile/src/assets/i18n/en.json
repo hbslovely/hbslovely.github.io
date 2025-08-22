@@ -38,7 +38,6 @@
       "Tax_Accounting": "Tax Accounting",
       "General_Ledger": "General Ledger",
       "Cost_Accounting": "Cost Accounting",
-      "Financial_Analysis": "Financial Analysis",
       "Audit_Preparation": "Audit Preparation",
       "HR_Policies": "HR Policies & Procedures",
       "Recruitment": "Recruitment & Selection",
@@ -62,4 +61,4 @@
       "Time_Management": "Time Management"
     }
   }
-} 
+}
