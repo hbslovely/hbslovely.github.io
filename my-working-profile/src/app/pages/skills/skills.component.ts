@@ -151,7 +151,6 @@ export class SkillsComponent implements OnInit {
       'RxJS': '6+ years',
       'NgRx': '4+ years',
       'TypeScript': this.calculateYearsOfExperience(2017),
-      'D3.js': '1 year',
       'jQuery': '1.5 years',
       'Chart.js': '1 year'
     };
