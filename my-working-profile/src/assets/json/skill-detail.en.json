@@ -232,7 +232,7 @@
       "The integrated Git support makes version control seamless, allowing developers to perform common Git operations directly from the editor. This includes viewing diffs, resolving conflicts, and managing branches.",
       "VS Code's IntelliSense provides smart completions based on variable types, function definitions, and imported modules. This feature is particularly powerful when working with TypeScript and JavaScript.",
       "The debugging experience in VS Code is exceptional, with support for breakpoints, call stacks, and variable inspection. The editor also includes integrated task running and problem detection, helping developers catch and fix issues early in development."
-    ],
+    ]
   },
   "Agile": {
     "name": "Agile",
