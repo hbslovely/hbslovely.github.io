@@ -8,6 +8,7 @@ import { CVService } from '../../services/cv.service';
 import { SectionHeaderComponent } from '../../components/section-header/section-header.component';
 import { SkillItemComponent } from '../../components/skill-item/skill-item.component';
 import { SkillDetailComponent, SkillInfo } from '../../components/skill-detail/skill-detail.component';
+import { PageHeaderComponent } from '../../components/page-header/page-header.component';
 
 // Extended SkillInfo interface to include experience
 interface ExtendedSkillInfo extends SkillInfo {
@@ -25,7 +26,8 @@ interface ExtendedSkillInfo extends SkillInfo {
     NzModalModule,
     SectionHeaderComponent,
     SkillItemComponent,
-    SkillDetailComponent
+    SkillDetailComponent,
+    PageHeaderComponent
   ],
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss']

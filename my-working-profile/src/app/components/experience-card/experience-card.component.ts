@@ -1,11 +1,11 @@
-import { Component, Input, TemplateRef, ViewChild } from '@angular/core';
+import { Component, Input, ViewChild, TemplateRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { TranslateModule } from '@ngx-translate/core';
-import { NzModalModule, NzModalService } from 'ng-zorro-antd/modal';
 import { NzTagModule } from 'ng-zorro-antd/tag';
-import { WatermarkComponent } from '../watermark/watermark.component';
+import { NzModalModule, NzModalService } from 'ng-zorro-antd/modal';
 import { WorkExperience } from '../../models/cv.models';
+import { TranslateModule } from '@ngx-translate/core';
+import { WatermarkComponent } from '../watermark/watermark.component';
 
 @Component({
   selector: 'app-experience-card',
@@ -13,27 +13,26 @@ import { WorkExperience } from '../../models/cv.models';
   imports: [
     CommonModule,
     NzIconModule,
-    TranslateModule,
-    NzModalModule,
     NzTagModule,
+    NzModalModule,
+    TranslateModule,
     WatermarkComponent
   ],
   templateUrl: './experience-card.component.html',
-  styleUrls: [ './experience-card.component.scss' ]
+  styleUrls: ['./experience-card.component.scss']
 })
 export class ExperienceCardComponent {
   @Input() experience!: WorkExperience;
   @ViewChild('companyDetailDialog') companyDetailDialog!: TemplateRef<any>;
 
-  constructor(private modalService: NzModalService) {
-  }
+  constructor(private modalService: NzModalService) {}
 
   getCompanyLogo(company: string): string {
     // Convert company name to lowercase and replace spaces/special chars with hyphens
     const filename = company.toLowerCase()
       .replace(/[^a-z0-9]+/g, '-') // Replace any non-alphanumeric chars with hyphen
       .replace(/^-+|-+$/g, ''); // Remove leading/trailing hyphens
-    return `${ filename }.png`;
+    return `${filename}.png`;
   }
 
   openCompanyDialog(): void {
@@ -46,9 +45,10 @@ export class ExperienceCardComponent {
       nzCentered: true,
       nzMaskClosable: true,
       nzMask: true,
-      nzMaskStyle: { backgroundColor: 'rgba(0, 0, 0, 0.45)' },
-      nzBodyStyle: { padding: '20px' },
-      nzStyle: { top: '20px' }
+      nzMaskStyle: { backgroundColor: 'rgba(0, 0, 0, 0.65)' },
+      nzBodyStyle: { padding: '0' },
+      nzStyle: { top: '20px' },
+      nzWrapClassName: 'company-detail-modal-wrap'
     });
   }
 }

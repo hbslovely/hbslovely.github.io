@@ -1,11 +1,11 @@
 <div [class]="config.className">
+  <!-- Page Header -->
+  <app-page-header 
+    title="{{ 'SECTIONS.FEATURED_PROJECTS' | translate }}" 
+    subtitle="{{ 'SECTIONS.SUBTITLES.FEATURED_PROJECTS' | translate }}">
+  </app-page-header>
+  
   <div class="container" [style.maxWidth.px]="config.maxWidth">
-    <app-section-header 
-      title="SECTIONS.FEATURED_PROJECTS" 
-      icon="project"
-      subtitle="SECTIONS.SUBTITLES.FEATURED_PROJECTS">
-    </app-section-header>
-
     <div class="count-wrapper">
       <app-project-count
         [filteredCount]="filteredProjects().length"

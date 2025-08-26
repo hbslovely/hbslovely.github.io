@@ -1,12 +1,8 @@
 <div [class]="config.className">
+  <!-- Page Header -->
+  <app-page-header title="{{ 'SECTIONS.TECHNICAL_SKILLS' | translate }}" subtitle="{{ 'SKILLS.DESCRIPTION' | translate }}"></app-page-header>
+  
   <div class="container" [style.maxWidth.px]="config.maxWidth">
-    <!-- Skills Header -->
-    <div class="skills-header">
-      <h1 class="page-title">{{ 'SECTIONS.TECHNICAL_SKILLS' | translate }}</h1>
-      <p class="page-subtitle">{{ 'SKILLS.DESCRIPTION' | translate }}</p>
-      <div class="header-divider"></div>
-    </div>
-
     <div class="skills-content">
       <!-- Featured Skills -->
       <div class="featured-skills">

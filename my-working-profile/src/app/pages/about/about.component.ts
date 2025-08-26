@@ -1,6 +1,7 @@
 import { Component, inject, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PersonalInfoComponent } from '../../components/personal-info/personal-info.component';
+import { PageHeaderComponent } from '../../components/page-header/page-header.component';
 import { CVService } from '../../services/cv.service';
 import { AboutPageProps } from './about.types';
 import { ABOUT_PAGE_CONFIG, ABOUT_PAGE_SECTIONS } from './about.constants';
@@ -15,6 +16,7 @@ import { Project } from '../../models/cv.models';
   imports: [
     CommonModule,
     PersonalInfoComponent,
+    PageHeaderComponent,
     NzIconModule,
     RouterModule,
     NzModalModule

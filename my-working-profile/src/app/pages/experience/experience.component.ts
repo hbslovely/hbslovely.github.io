@@ -14,6 +14,14 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ExperienceCardComponent } from '../../components/experience-card/experience-card.component';
 import { EducationCardComponent } from '../../components/education-card/education-card.component';
 import { RouterModule } from '@angular/router';
+import { PageHeaderComponent } from '../../components/page-header/page-header.component';
+
+// Define a Skill interface since it's not in the models file
+interface Skill {
+  name: string;
+  category: string;
+  level?: string;
+}
 
 @Component({
   selector: 'app-experience-page',
@@ -26,7 +34,8 @@ import { RouterModule } from '@angular/router';
     TranslateModule,
     ExperienceCardComponent,
     EducationCardComponent,
-    RouterModule
+    RouterModule,
+    PageHeaderComponent
   ],
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.scss']
@@ -56,5 +65,72 @@ export class ExperiencePageComponent {
     if (linkedInUrl) {
       window.open(linkedInUrl, '_blank');
     }
+  }
+
+  getTotalYearsExperience(): number {
+    const workExperience = this.cv()?.experience?.workExperience;
+    if (!workExperience || workExperience.length === 0) return 0;
+
+    // Find the earliest start date
+    let earliestYear = new Date().getFullYear();
+    
+    workExperience.forEach(exp => {
+      const startYear = parseInt(exp.startDate.split(' ')[1]);
+      if (startYear < earliestYear) {
+        earliestYear = startYear;
+      }
+    });
+    
+    const currentYear = new Date().getFullYear();
+    return currentYear - earliestYear;
+  }
+
+  getTotalProjects(): number {
+    const projects = this.cv()?.projects?.projects;
+    return projects?.length || 0;
+  }
+
+  getTopSkillCategories(limit: number = 3): string[] {
+    // Assuming skills is an array of objects with a category property
+    const skillsData = this.getSkillsArray();
+    if (!skillsData.length) return [];
+    
+    // Get unique categories
+    const categories = [...new Set(skillsData.map(skill => skill.category))];
+    return categories.slice(0, limit);
+  }
+
+  getSkillsByCategory(category: string, limit: number = 5): string[] {
+    const skillsData = this.getSkillsArray();
+    if (!skillsData.length) return [];
+    
+    // Filter skills by category and get their names
+    const skillNames = skillsData
+      .filter(skill => skill.category === category)
+      .map(skill => skill.name);
+      
+    return skillNames.slice(0, limit);
+  }
+
+  // Helper method to convert skills object to array format we need
+  private getSkillsArray(): Skill[] {
+    const cvData = this.cv();
+    if (!cvData || !cvData.skills || !cvData.skills.technicalSkills) {
+      return [];
+    }
+
+    const result: Skill[] = [];
+    
+    // Convert the technicalSkills object to our Skill array format
+    Object.entries(cvData.skills.technicalSkills).forEach(([category, skills]) => {
+      skills.forEach((skillName: string) => {
+        result.push({
+          name: skillName,
+          category: category
+        });
+      });
+    });
+    
+    return result;
   }
 }

@@ -1,65 +1,52 @@
 <div [class]="config.className">
   <div class="about-section">
-    <!-- About Header with Animation -->
-    <div class="section-header animate-fade-in">
-      <h1 class="section-title">About Me</h1>
-      <div class="section-divider"></div>
-    </div>
-    
-    <!-- Hero Banner with Personal Info and Animation -->
-    <div class="hero-banner animate-slide-up">
-      <img 
-        src="assets/images/gallery/top-view-office-material-on-a-table.png" 
-        alt="Professional Workspace" 
-        class="banner-image"
-      />
-      
-      <div class="banner-overlay">
-        <div class="personal-info-overlay">
-          <div class="avatar-container animate-pop">
-            <div class="avatar" (click)="showFullscreenAvatar()">
-              <img src="assets/images/avatar.jpeg" alt="Profile Picture">
-              <div class="avatar-overlay">
-                <span nz-icon nzType="fullscreen" nzTheme="outline"></span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="info-content">
-            <h2 class="name animate-text">{{ cv()?.personalInfo?.prefix }} {{ cv()?.personalInfo?.name }}</h2>
-            <h3 class="role animate-text-delay">{{ cv()?.personalInfo?.title }}</h3>
-            <div class="location animate-text-delay-2">
-              <span nz-icon nzType="environment" nzTheme="outline"></span>
-              {{ cv()?.personalInfo?.location?.city }}, {{ cv()?.personalInfo?.location?.country }}
-            </div>
-            
-            <div class="contact-row animate-text-delay-3">
-              <a class="contact-item pulse-on-hover" [href]="'mailto:' + cv()?.personalInfo?.contact?.email">
-                <span nz-icon nzType="mail" nzTheme="outline"></span>
-                <span>{{ cv()?.personalInfo?.contact?.email }}</span>
-              </a>
-              
-              <a class="contact-item pulse-on-hover" [href]="'tel:' + cv()?.personalInfo?.contact?.phone">
-                <span nz-icon nzType="phone" nzTheme="outline"></span>
-                <span>{{ cv()?.personalInfo?.contact?.phone }}</span>
-              </a>
-            </div>
-            
-            <div class="social-row animate-text-delay-4">
-              <a class="social-item bounce-on-hover" [href]="cv()?.personalInfo?.contact?.github" target="_blank" rel="noopener noreferrer">
-                <span nz-icon nzType="github" nzTheme="outline"></span>
-                <span>GitHub</span>
-              </a>
-              
-              <a class="social-item bounce-on-hover" [href]="cv()?.personalInfo?.contact?.linkedin" target="_blank" rel="noopener noreferrer">
-                <span nz-icon nzType="linkedin" nzTheme="outline"></span>
-                <span>LinkedIn</span>
-              </a>
+    <!-- Page Header with Personal Info -->
+    <app-page-header [showCustomContent]="true">
+      <!-- Custom personal info content for About page -->
+      <div class="personal-info-overlay">
+        <div class="avatar-container animate-pop">
+          <div class="avatar" (click)="showFullscreenAvatar()">
+            <img src="assets/images/avatar.jpeg" alt="Profile Picture">
+            <div class="avatar-overlay">
+              <span nz-icon nzType="fullscreen" nzTheme="outline"></span>
             </div>
           </div>
         </div>
+        
+        <div class="info-content">
+          <h2 class="name animate-text">{{ cv()?.personalInfo?.prefix }} {{ cv()?.personalInfo?.name }}</h2>
+          <h3 class="role animate-text-delay">{{ cv()?.personalInfo?.title }}</h3>
+          <div class="location animate-text-delay-2">
+            <span nz-icon nzType="environment" nzTheme="outline"></span>
+            {{ cv()?.personalInfo?.location?.city }}, {{ cv()?.personalInfo?.location?.country }}
+          </div>
+          
+          <div class="contact-row animate-text-delay-3">
+            <a class="contact-item pulse-on-hover" [href]="'mailto:' + cv()?.personalInfo?.contact?.email">
+              <span nz-icon nzType="mail" nzTheme="outline"></span>
+              <span>{{ cv()?.personalInfo?.contact?.email }}</span>
+            </a>
+            
+            <a class="contact-item pulse-on-hover" [href]="'tel:' + cv()?.personalInfo?.contact?.phone">
+              <span nz-icon nzType="phone" nzTheme="outline"></span>
+              <span>{{ cv()?.personalInfo?.contact?.phone }}</span>
+            </a>
+          </div>
+          
+          <div class="social-row animate-text-delay-4">
+            <a class="social-item bounce-on-hover" [href]="cv()?.personalInfo?.contact?.github" target="_blank" rel="noopener noreferrer">
+              <span nz-icon nzType="github" nzTheme="outline"></span>
+              <span>GitHub</span>
+            </a>
+            
+            <a class="social-item bounce-on-hover" [href]="cv()?.personalInfo?.contact?.linkedin" target="_blank" rel="noopener noreferrer">
+              <span nz-icon nzType="linkedin" nzTheme="outline"></span>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
+    </app-page-header>
     
     <!-- Professional Summary with Animation -->
     <div class="summary-section animate-fade-in-up">
