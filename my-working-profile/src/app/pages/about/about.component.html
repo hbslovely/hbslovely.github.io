@@ -51,7 +51,7 @@
     <!-- Professional Summary with Animation -->
     <div class="summary-section animate-fade-in-up">
       <div class="summary-decoration"></div>
-      <h3 class="summary-title">Professional Summary</h3>
+      <h3 class="summary-title">{{ 'SECTIONS.PROFESSIONAL_SUMMARY' | translate }}</h3>
       <p>{{ cv()?.personalInfo?.summary }}</p>
       <div class="summary-background-pattern"></div>
     </div>
@@ -59,9 +59,9 @@
     <!-- Featured Projects with Animation -->
     <div class="featured-section animate-fade-in-up">
       <div class="featured-header">
-        <h3 class="featured-title">Featured Projects</h3>
+        <h3 class="featured-title">{{ 'SECTIONS.FEATURED_PROJECTS' | translate }}</h3>
         <a routerLink="/projects" class="view-all-link shine-on-hover">
-          View All Projects
+          {{ 'CTA.VIEW_ALL_PROJECTS' | translate }}
           <span nz-icon nzType="arrow-right" nzTheme="outline" class="arrow-animate"></span>
         </a>
       </div>
@@ -94,9 +94,9 @@
     <!-- Featured Skills with Animation -->
     <div class="featured-section animate-fade-in-up">
       <div class="featured-header">
-        <h3 class="featured-title">Key Skills</h3>
+        <h3 class="featured-title">{{ 'SECTIONS.KEY_SKILLS' | translate }}</h3>
         <a routerLink="/skills" class="view-all-link shine-on-hover">
-          View All Skills
+          {{ 'CTA.VIEW_ALL_SKILLS' | translate }}
           <span nz-icon nzType="arrow-right" nzTheme="outline" class="arrow-animate"></span>
         </a>
       </div>
@@ -119,12 +119,12 @@
     <!-- Call to Action Section -->
     <div class="cta-section animate-fade-in-up">
       <div class="cta-content">
-        <h3>Ready to collaborate?</h3>
-        <p>Let's discuss how we can work together on your next project</p>
+        <h3>{{ 'CTA.READY_TO_COLLABORATE' | translate }}</h3>
+        <p>{{ 'CTA.LETS_DISCUSS' | translate }}</p>
       </div>
       <a class="cta-button pulse-animation" [href]="cv()?.personalInfo?.contact?.linkedin" target="_blank" rel="noopener noreferrer">
         <span nz-icon nzType="linkedin" nzTheme="outline"></span>
-        Connect with me
+        {{ 'CTA.CONNECT_WITH_ME' | translate }}
       </a>
     </div>
   </div>

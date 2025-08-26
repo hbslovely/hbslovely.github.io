@@ -23,6 +23,16 @@
   "ACTIONS": {
     "EXPORT_PDF": "Xuất PDF"
   },
+  "CTA": {
+    "READY_TO_COLLABORATE": "Sẵn sàng hợp tác?",
+    "LETS_DISCUSS": "Hãy thảo luận về việc chúng ta có thể cùng nhau làm việc trong dự án tiếp theo của bạn",
+    "CONNECT_WITH_ME": "Kết nối với tôi",
+    "INTERESTED_IN_WORKING_TOGETHER": "Quan tâm đến việc làm việc cùng nhau?",
+    "REACH_OUT": "Đừng ngại liên hệ để thảo luận về các cơ hội tiềm năng",
+    "CONTACT_ME": "Liên hệ với tôi",
+    "VIEW_ALL_PROJECTS": "Xem tất cả dự án",
+    "VIEW_ALL_SKILLS": "Xem tất cả kỹ năng"
+  },
   "MY_PAGES": {
     "SUBTITLE": "Khám phá các dự án và trang web cá nhân của tôi",
     "ABOUT_PROJECT": "Về Dự Án Này",
@@ -81,6 +91,8 @@
     "EDUCATION": "Học vấn",
     "TECHNICAL_SKILLS": "Kỹ năng chuyên môn",
     "FEATURED_PROJECTS": "Dự án tiêu biểu",
+    "KEY_SKILLS": "Kỹ năng chính",
+    "PROFESSIONAL_SUMMARY": "Tóm tắt chuyên môn",
     "SUBTITLES": {
       "WORK_EXPERIENCE": "Hơn một thập kỷ kinh nghiệm trong phát triển web và lãnh đạo kỹ thuật",
       "EDUCATION": "Nền tảng học vấn vững chắc hỗ trợ cho sự xuất sắc về kỹ thuật",

@@ -4,12 +4,19 @@
 
 :root {
   --primary-color: #0066cc;
+  --primary-color-rgb: 0, 102, 204;
   --primary-light: #3399ff;
+  --primary-light-rgb: 51, 153, 255;
   --primary-lighter: #66b3ff;
+  --primary-lighter-rgb: 102, 179, 255;
   --primary-lightest: #e6f3ff;
-  --text-color: #1f2937;
-  --text-light: #4b5563;
+  --primary-lightest-rgb: 230, 243, 255;
+  --text-color: #4b5563; /* Made lighter from #1f2937 */
+  --text-light: #6b7280; /* Made lighter from #4b5563 */
   --background: #f8fafc;
+  --bg-gradient-1: #f8fafc;
+  --bg-gradient-2: #eef2f7;
+  --bg-gradient-3: #e2e8f0;
   --card-bg: rgba(255, 255, 255, 0.9);
   --border-radius: 12px;
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
@@ -30,13 +37,17 @@ html {
 
 body {
   margin: 0;
-  background-color: var(--background);
   position: relative;
   font-family: $primary-font;
   overflow-x: hidden;
   min-height: 100%;
   /* Add padding-right to prevent content from shifting when modal opens */
   padding-right: 0 !important;
+  /* Radial gradient background */
+  background: 
+    radial-gradient(circle at 30% 30%, var(--bg-gradient-1) 0%, transparent 70%),
+    radial-gradient(circle at 70% 70%, var(--bg-gradient-1) 0%, transparent 70%),
+    radial-gradient(ellipse at top center, var(--bg-gradient-1) 0%, var(--bg-gradient-2) 50%, var(--bg-gradient-3) 100%);
 }
 
 /* Fix for cdk-global-scrollblock hiding content */
@@ -64,10 +75,12 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image:
-    radial-gradient(circle at 10% 20%, rgba(0, 102, 204, 0.03) 0%, transparent 20%),
-    radial-gradient(circle at 90% 80%, rgba(0, 102, 204, 0.03) 0%, transparent 20%),
-    radial-gradient(circle at 50% 50%, rgba(0, 102, 204, 0.02) 0%, transparent 40%);
+  background: 
+    radial-gradient(circle at 15% 15%, rgba(var(--primary-light-rgb, 51, 153, 255), 0.06) 0%, transparent 35%),
+    radial-gradient(circle at 85% 85%, rgba(var(--primary-light-rgb, 51, 153, 255), 0.06) 0%, transparent 35%),
+    radial-gradient(circle at 50% 50%, rgba(var(--primary-color-rgb, 0, 102, 204), 0.03) 0%, transparent 60%),
+    radial-gradient(circle at 85% 15%, rgba(var(--primary-lighter-rgb, 102, 179, 255), 0.04) 0%, transparent 45%),
+    radial-gradient(circle at 15% 85%, rgba(var(--primary-lighter-rgb, 102, 179, 255), 0.04) 0%, transparent 45%);
   z-index: -2;
 }
 

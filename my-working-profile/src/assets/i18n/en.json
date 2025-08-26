@@ -23,6 +23,16 @@
   "ACTIONS": {
     "EXPORT_PDF": "Export PDF"
   },
+  "CTA": {
+    "READY_TO_COLLABORATE": "Ready to collaborate?",
+    "LETS_DISCUSS": "Let's discuss how we can work together on your next project",
+    "CONNECT_WITH_ME": "Connect with me",
+    "INTERESTED_IN_WORKING_TOGETHER": "Interested in working together?",
+    "REACH_OUT": "Feel free to reach out to discuss potential opportunities",
+    "CONTACT_ME": "Contact Me",
+    "VIEW_ALL_PROJECTS": "View All Projects",
+    "VIEW_ALL_SKILLS": "View All Skills"
+  },
   "MY_PAGES": {
     "SUBTITLE": "Explore my personal projects and websites",
     "ABOUT_PROJECT": "About This Project",
@@ -81,6 +91,8 @@
     "EDUCATION": "Education",
     "TECHNICAL_SKILLS": "Technical Skills",
     "FEATURED_PROJECTS": "Featured Projects",
+    "KEY_SKILLS": "Key Skills",
+    "PROFESSIONAL_SUMMARY": "Professional Summary",
     "SUBTITLES": {
       "WORK_EXPERIENCE": "Over a decade of proven expertise in web development and technical leadership",
       "EDUCATION": "Strong academic foundation supporting technical excellence",

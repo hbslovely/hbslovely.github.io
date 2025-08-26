@@ -13,6 +13,7 @@ import { en_US, provideNzI18n } from 'ng-zorro-antd/i18n';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { ScrollStrategy, ScrollStrategyOptions } from '@angular/cdk/overlay';
 import { CustomModalService } from './services/custom-modal.service';
+import { ScrollToTopService } from './services/scroll-to-top.service';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -55,6 +56,7 @@ export const appConfig: ApplicationConfig = {
     provideNzIcons(),
     FormsModule,
     NzModalService,
-    CustomModalService
+    CustomModalService,
+    ScrollToTopService
   ]
 };

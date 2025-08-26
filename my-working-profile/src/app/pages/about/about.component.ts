@@ -10,6 +10,7 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
 import { RouterModule } from '@angular/router';
 import { Project } from '../../models/cv.models';
 import { CustomModalService } from '../../services/custom-modal.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-about',
@@ -20,7 +21,8 @@ import { CustomModalService } from '../../services/custom-modal.service';
     PageHeaderComponent,
     NzIconModule,
     RouterModule,
-    NzModalModule
+    NzModalModule,
+    TranslateModule
   ],
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
