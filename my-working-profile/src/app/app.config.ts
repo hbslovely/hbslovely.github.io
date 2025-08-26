@@ -20,7 +20,12 @@ export function HttpLoaderFactory(http: HttpClient) {
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes,
-      withViewTransitions(),
+      withViewTransitions({
+        skipInitialTransition: false,
+        onViewTransitionCreated: () => {
+          console.log('View transition created');
+        }
+      }),
       withHashLocation(),
       withInMemoryScrolling({
         scrollPositionRestoration: 'top',

@@ -1,7 +1,7 @@
 .skill-detail {
   position: relative;
   overflow: hidden;
-  max-width: 800px;
+  width: 100%;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -10,16 +10,18 @@
   .dialog-watermark {
     position: absolute;
     top: 50%;
-    right: -100px;
+    right: 0;
     transform: translateY(-50%);
     z-index: 0;
     opacity: 0.03;
     pointer-events: none;
+    max-width: 100%;
+    overflow: hidden;
 
     ::ng-deep .watermark-container {
       position: relative;
-      width: 400px;
-      height: 400px;
+      width: 300px;
+      height: 300px;
       animation: none !important;
       transform: rotate(15deg);
     }
@@ -37,9 +39,9 @@
     flex-shrink: 0;
 
     .skill-logo-wrapper {
-      width: 100px;
-      height: 100px;
-      padding: 1rem;
+      width: 80px;
+      height: 80px;
+      padding: 0.75rem;
       background: white;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -211,8 +213,16 @@
   }
 
   .description-content {
-    max-height: calc(100vh - 320px);
+    max-height: calc(100vh - 300px);
     overflow: auto;
+    flex: 1;
+  }
+}
+
+// Override nz-modal styling
+:host ::ng-deep {
+  .ant-modal-body {
+    padding: 0 !important;
   }
 }
 

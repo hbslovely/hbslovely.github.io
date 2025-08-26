@@ -4,7 +4,8 @@
     "EXPERIENCE": "Experience",
     "PROJECTS": "Projects",
     "SKILLS": "Skills",
-    "EXPORT_PDF": "Export PDF"
+    "EXPORT_PDF": "Export PDF",
+    "MY_PAGES": "My Pages"
   },
   "COMMON": {
     "CLOSE": "Close",
@@ -21,6 +22,14 @@
   },
   "ACTIONS": {
     "EXPORT_PDF": "Export PDF"
+  },
+  "MY_PAGES": {
+    "SUBTITLE": "Explore my personal projects and websites",
+    "ABOUT_PROJECT": "About This Project",
+    "VISIT_SITE": "Visit Website",
+    "ABOUT_SECTION": "About My Pages",
+    "ABOUT_DESCRIPTION": "These are personal websites and projects I've developed. Feel free to explore them to learn more about my work and interests.",
+    "STATUS": "Status"
   },
   "PERSONAL_INFO": {
     "PROFILE_PICTURE": "Profile Picture",
@@ -81,7 +90,8 @@
   },
   "STATUS": {
     "ACTIVE": "Active",
-    "COMPLETED": "Completed"
+    "COMPLETED": "Completed",
+    "PLANNED": "Planned"
   },
   "PROJECTS": {
     "SEARCH_PLACEHOLDER": "Search projects...",
@@ -115,6 +125,23 @@
     "SEARCH_PLACEHOLDER": "Search skills...",
     "SKILLS": "skills",
     "VIEW_PROJECTS": "View Projects",
-    "PROJECTS_HINT": "Check out my portfolio to see these skills applied in real-world projects."
+    "PROJECTS_HINT": "Check out my portfolio to see these skills applied in real-world projects.",
+    "DIALOG": {
+      "USED_IN": "Used in {{count}} projects",
+      "OVERVIEW": "Overview",
+      "RESOURCES": "Resources",
+      "VISIT_WEBSITE": "Official Website",
+      "VISIT_GITHUB": "GitHub Repository",
+      "EXPERIENCE_LEVEL": {
+        "BEGINNER": "Beginner",
+        "INTERMEDIATE": "Intermediate",
+        "ADVANCED": "Advanced",
+        "EXPERT": "Expert"
+      },
+      "SKILL_TYPE": {
+        "TECHNOLOGY": "Technology",
+        "COMMON_TOOL": "Common Tool"
+      }
+    }
   }
 }

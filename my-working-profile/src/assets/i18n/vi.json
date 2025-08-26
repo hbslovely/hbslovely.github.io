@@ -4,7 +4,8 @@
     "EXPERIENCE": "Kinh nghiệm",
     "PROJECTS": "Dự án",
     "SKILLS": "Kỹ năng",
-    "EXPORT_PDF": "Xuất PDF"
+    "EXPORT_PDF": "Xuất PDF",
+    "MY_PAGES": "Trang của tôi"
   },
   "COMMON": {
     "CLOSE": "Đóng",
@@ -21,6 +22,14 @@
   },
   "ACTIONS": {
     "EXPORT_PDF": "Xuất PDF"
+  },
+  "MY_PAGES": {
+    "SUBTITLE": "Khám phá các dự án và trang web cá nhân của tôi",
+    "ABOUT_PROJECT": "Về Dự Án Này",
+    "VISIT_SITE": "Truy Cập Trang Web",
+    "ABOUT_SECTION": "Về Trang Của Tôi",
+    "ABOUT_DESCRIPTION": "Đây là những trang web và dự án cá nhân tôi đã phát triển. Hãy khám phá chúng để tìm hiểu thêm về công việc và sở thích của tôi.",
+    "STATUS": "Trạng thái"
   },
   "PERSONAL_INFO": {
     "PROFILE_PICTURE": "Ảnh đại diện",
@@ -81,7 +90,8 @@
   },
   "STATUS": {
     "ACTIVE": "Đang Thực Hiện",
-    "COMPLETED": "Đã Hoàn Thành"
+    "COMPLETED": "Đã Hoàn Thành",
+    "PLANNED": "Đã Lên Kế Hoạch"
   },
   "PROJECTS": {
     "SEARCH_PLACEHOLDER": "Tìm kiếm dự án...",
@@ -115,6 +125,23 @@
     "SEARCH_PLACEHOLDER": "Tìm kiếm kỹ năng...",
     "SKILLS": "kỹ năng",
     "VIEW_PROJECTS": "Xem dự án",
-    "PROJECTS_HINT": "Khám phá danh mục đầu tư của tôi để thấy những kỹ năng này được áp dụng trong các dự án thực tế."
+    "PROJECTS_HINT": "Khám phá danh mục đầu tư của tôi để thấy những kỹ năng này được áp dụng trong các dự án thực tế.",
+    "DIALOG": {
+      "USED_IN": "Được sử dụng trong {{count}} dự án",
+      "OVERVIEW": "Tổng quan",
+      "RESOURCES": "Tài nguyên",
+      "VISIT_WEBSITE": "Trang web chính thức",
+      "VISIT_GITHUB": "Kho lưu trữ GitHub",
+      "EXPERIENCE_LEVEL": {
+        "BEGINNER": "Sơ cấp",
+        "INTERMEDIATE": "Trung cấp",
+        "ADVANCED": "Nâng cao",
+        "EXPERT": "Chuyên gia"
+      },
+      "SKILL_TYPE": {
+        "TECHNOLOGY": "Công nghệ",
+        "COMMON_TOOL": "Công cụ phổ biến"
+      }
+    }
   }
 }

@@ -13,6 +13,7 @@ import { SectionHeaderComponent } from '../../components/section-header/section-
 import { TranslateModule } from '@ngx-translate/core';
 import { ExperienceCardComponent } from '../../components/experience-card/experience-card.component';
 import { EducationCardComponent } from '../../components/education-card/education-card.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-experience-page',
@@ -24,7 +25,8 @@ import { EducationCardComponent } from '../../components/education-card/educatio
     SectionHeaderComponent,
     TranslateModule,
     ExperienceCardComponent,
-    EducationCardComponent
+    EducationCardComponent,
+    RouterModule
   ],
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.scss']
@@ -47,5 +49,12 @@ export class ExperiencePageComponent {
       .replace(/[^a-z0-9]+/g, '-') // Replace any non-alphanumeric chars with hyphen
       .replace(/^-+|-+$/g, ''); // Remove leading/trailing hyphens
     return `${filename}.png`;
+  }
+  
+  openLinkedIn(): void {
+    const linkedInUrl = this.cv()?.personalInfo?.contact?.linkedin;
+    if (linkedInUrl) {
+      window.open(linkedInUrl, '_blank');
+    }
   }
 }

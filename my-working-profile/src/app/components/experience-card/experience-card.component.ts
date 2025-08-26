@@ -38,13 +38,17 @@ export class ExperienceCardComponent {
 
   openCompanyDialog(): void {
     this.modalService.create({
-      nzTitle: '',
+      nzTitle: undefined,
       nzContent: this.companyDetailDialog,
       nzFooter: null,
       nzWidth: 800,
       nzClassName: 'company-detail-modal',
       nzCentered: true,
-      nzMaskClosable: true
+      nzMaskClosable: true,
+      nzMask: true,
+      nzMaskStyle: { backgroundColor: 'rgba(0, 0, 0, 0.45)' },
+      nzBodyStyle: { padding: '20px' },
+      nzStyle: { top: '20px' }
     });
   }
 }

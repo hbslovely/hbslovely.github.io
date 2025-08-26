@@ -61,11 +61,28 @@ export class ProjectDetailComponent {
   getStatusTranslationKey(status: string): string {
     switch (status.toLowerCase()) {
       case 'active':
+      case 'in progress':
         return 'STATUS.ACTIVE';
       case 'completed':
         return 'STATUS.COMPLETED';
+      case 'planned':
+        return 'STATUS.PLANNED';
       default:
         return status;
+    }
+  }
+
+  getStatusIcon(status: string): string {
+    switch (status.toLowerCase()) {
+      case 'completed':
+        return 'check-circle';
+      case 'in progress':
+      case 'active':
+        return 'clock-circle';
+      case 'planned':
+        return 'calendar';
+      default:
+        return 'question-circle';
     }
   }
 
@@ -90,7 +107,11 @@ export class ProjectDetailComponent {
       nzWidth: 800,
       nzClassName: 'project-detail-modal',
       nzCentered: true,
-      nzMaskClosable: true
+      nzMaskClosable: true,
+      nzMask: true,
+      nzMaskStyle: { backgroundColor: 'rgba(0, 0, 0, 0.45)' },
+      nzBodyStyle: { padding: '0' },
+      nzStyle: { top: '20px' }
     });
   }
 }

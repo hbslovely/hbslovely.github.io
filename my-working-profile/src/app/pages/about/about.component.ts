@@ -71,8 +71,18 @@ export class AboutComponent {
       nzMaskClosable: true,
       nzCentered: true,
       nzClassName: 'avatar-modal',
-      nzContent: `<img src="assets/images/avatar.jpeg" alt="Profile Picture" style="width: 100%; border-radius: 4px;">`,
-      nzWidth: 500
+      nzContent: `
+        <div style="display: flex; justify-content: center; align-items: center; width: 100%; padding: 0;">
+          <img 
+            src="assets/images/avatar.jpeg" 
+            alt="Profile Picture" 
+            style="max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 4px;"
+          >
+        </div>
+      `,
+      nzWidth: 'auto',
+      nzBodyStyle: { padding: '0' },
+      nzStyle: { top: '50px' }
     });
   }
 }

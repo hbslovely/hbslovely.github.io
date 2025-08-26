@@ -1,13 +1,13 @@
 <div [class]="config.className">
   <div class="about-section">
-    <!-- About Header -->
-    <div class="section-header">
+    <!-- About Header with Animation -->
+    <div class="section-header animate-fade-in">
       <h1 class="section-title">About Me</h1>
       <div class="section-divider"></div>
     </div>
     
-    <!-- Hero Banner with Personal Info -->
-    <div class="hero-banner">
+    <!-- Hero Banner with Personal Info and Animation -->
+    <div class="hero-banner animate-slide-up">
       <img 
         src="assets/images/gallery/top-view-office-material-on-a-table.png" 
         alt="Professional Workspace" 
@@ -16,7 +16,7 @@
       
       <div class="banner-overlay">
         <div class="personal-info-overlay">
-          <div class="avatar-container">
+          <div class="avatar-container animate-pop">
             <div class="avatar" (click)="showFullscreenAvatar()">
               <img src="assets/images/avatar.jpeg" alt="Profile Picture">
               <div class="avatar-overlay">
@@ -26,32 +26,32 @@
           </div>
           
           <div class="info-content">
-            <h2 class="name">{{ cv()?.personalInfo?.prefix }} {{ cv()?.personalInfo?.name }}</h2>
-            <h3 class="role">{{ cv()?.personalInfo?.title }}</h3>
-            <div class="location">
+            <h2 class="name animate-text">{{ cv()?.personalInfo?.prefix }} {{ cv()?.personalInfo?.name }}</h2>
+            <h3 class="role animate-text-delay">{{ cv()?.personalInfo?.title }}</h3>
+            <div class="location animate-text-delay-2">
               <span nz-icon nzType="environment" nzTheme="outline"></span>
               {{ cv()?.personalInfo?.location?.city }}, {{ cv()?.personalInfo?.location?.country }}
             </div>
             
-            <div class="contact-row">
-              <a class="contact-item" [href]="'mailto:' + cv()?.personalInfo?.contact?.email">
+            <div class="contact-row animate-text-delay-3">
+              <a class="contact-item pulse-on-hover" [href]="'mailto:' + cv()?.personalInfo?.contact?.email">
                 <span nz-icon nzType="mail" nzTheme="outline"></span>
                 <span>{{ cv()?.personalInfo?.contact?.email }}</span>
               </a>
               
-              <a class="contact-item" [href]="'tel:' + cv()?.personalInfo?.contact?.phone">
+              <a class="contact-item pulse-on-hover" [href]="'tel:' + cv()?.personalInfo?.contact?.phone">
                 <span nz-icon nzType="phone" nzTheme="outline"></span>
                 <span>{{ cv()?.personalInfo?.contact?.phone }}</span>
               </a>
             </div>
             
-            <div class="social-row">
-              <a class="social-item" [href]="cv()?.personalInfo?.contact?.github" target="_blank" rel="noopener noreferrer">
+            <div class="social-row animate-text-delay-4">
+              <a class="social-item bounce-on-hover" [href]="cv()?.personalInfo?.contact?.github" target="_blank" rel="noopener noreferrer">
                 <span nz-icon nzType="github" nzTheme="outline"></span>
                 <span>GitHub</span>
               </a>
               
-              <a class="social-item" [href]="cv()?.personalInfo?.contact?.linkedin" target="_blank" rel="noopener noreferrer">
+              <a class="social-item bounce-on-hover" [href]="cv()?.personalInfo?.contact?.linkedin" target="_blank" rel="noopener noreferrer">
                 <span nz-icon nzType="linkedin" nzTheme="outline"></span>
                 <span>LinkedIn</span>
               </a>
@@ -61,25 +61,28 @@
       </div>
     </div>
     
-    <!-- Professional Summary -->
-    <div class="summary-section">
+    <!-- Professional Summary with Animation -->
+    <div class="summary-section animate-fade-in-up">
+      <div class="summary-decoration"></div>
       <h3 class="summary-title">Professional Summary</h3>
       <p>{{ cv()?.personalInfo?.summary }}</p>
+      <div class="summary-background-pattern"></div>
     </div>
     
-    <!-- Featured Projects -->
-    <div class="featured-section">
+    <!-- Featured Projects with Animation -->
+    <div class="featured-section animate-fade-in-up">
       <div class="featured-header">
         <h3 class="featured-title">Featured Projects</h3>
-        <a routerLink="/projects" class="view-all-link">
+        <a routerLink="/projects" class="view-all-link shine-on-hover">
           View All Projects
-          <span nz-icon nzType="arrow-right" nzTheme="outline"></span>
+          <span nz-icon nzType="arrow-right" nzTheme="outline" class="arrow-animate"></span>
         </a>
       </div>
       
       <div class="featured-projects">
         <ng-container *ngIf="featuredProjects().length">
-          <div class="project-card" *ngFor="let project of featuredProjects()">
+          <div class="project-card animate-card" *ngFor="let project of featuredProjects(); let i = index" [style.animation-delay]="i * 0.2 + 's'">
+            <div class="card-decoration"></div>
             <div class="project-header">
               <h4 class="project-name">{{ project.name }}</h4>
               <span class="project-duration">{{ project.duration }}</span>
@@ -93,7 +96,7 @@
             <p class="project-description">{{ project.description }}</p>
             
             <div class="project-tech">
-              <span class="tech-tag" *ngFor="let tech of project.technologies.slice(0, 4)">{{ tech }}</span>
+              <span class="tech-tag animate-tag" *ngFor="let tech of project.technologies.slice(0, 4); let j = index" [style.animation-delay]="(i * 0.1) + (j * 0.1) + 's'">{{ tech }}</span>
               <span class="tech-more" *ngIf="project.technologies.length > 4">+{{ project.technologies.length - 4 }}</span>
             </div>
           </div>
@@ -101,21 +104,21 @@
       </div>
     </div>
     
-    <!-- Featured Skills -->
-    <div class="featured-section">
+    <!-- Featured Skills with Animation -->
+    <div class="featured-section animate-fade-in-up">
       <div class="featured-header">
         <h3 class="featured-title">Key Skills</h3>
-        <a routerLink="/skills" class="view-all-link">
+        <a routerLink="/skills" class="view-all-link shine-on-hover">
           View All Skills
-          <span nz-icon nzType="arrow-right" nzTheme="outline"></span>
+          <span nz-icon nzType="arrow-right" nzTheme="outline" class="arrow-animate"></span>
         </a>
       </div>
       
       <div class="skills-container">
-        <div class="skill-category" *ngFor="let category of featuredSkillCategories()">
+        <div class="skill-category animate-slide-in" *ngFor="let category of featuredSkillCategories(); let i = index" [style.animation-delay]="i * 0.2 + 's'">
           <h4 class="category-title">{{ formatCategoryName(category) }}</h4>
           <div class="skill-tags">
-            <span class="skill-tag" *ngFor="let skill of getSkillsForCategory(category).slice(0, 6)">
+            <span class="skill-tag animate-tag" *ngFor="let skill of getSkillsForCategory(category).slice(0, 6); let j = index" [style.animation-delay]="(i * 0.1) + (j * 0.1) + 's'">
               {{ skill }}
             </span>
             <span class="skill-more" *ngIf="getSkillsForCategory(category).length > 6">
@@ -124,6 +127,18 @@
           </div>
         </div>
       </div>
+    </div>
+    
+    <!-- Call to Action Section -->
+    <div class="cta-section animate-fade-in-up">
+      <div class="cta-content">
+        <h3>Ready to collaborate?</h3>
+        <p>Let's discuss how we can work together on your next project</p>
+      </div>
+      <a class="cta-button pulse-animation" [href]="cv()?.personalInfo?.contact?.linkedin" target="_blank" rel="noopener noreferrer">
+        <span nz-icon nzType="linkedin" nzTheme="outline"></span>
+        Connect with me
+      </a>
     </div>
   </div>
 </div> 
