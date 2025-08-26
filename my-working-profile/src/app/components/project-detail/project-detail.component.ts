@@ -2,11 +2,12 @@ import { Component, EventEmitter, Input, Output, ViewChild, TemplateRef } from '
 import { CommonModule } from '@angular/common';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzTagModule } from 'ng-zorro-antd/tag';
-import { NzModalModule, NzModalService } from 'ng-zorro-antd/modal';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { Project } from '../../models/cv.models';
 import { TranslateModule } from '@ngx-translate/core';
 import { WatermarkComponent } from '../watermark/watermark.component';
+import { CustomModalService } from '../../services/custom-modal.service';
 
 @Component({
   selector: 'app-project-detail',
@@ -34,7 +35,7 @@ export class ProjectDetailComponent {
 
   @ViewChild('projectDetailDialog') projectDetailDialog!: TemplateRef<any>;
 
-  constructor(private modalService: NzModalService) {}
+  constructor(private modalService: CustomModalService) {}
 
   highlightText(text: string): string {
     if (!text || !this.highlightedText) return text;

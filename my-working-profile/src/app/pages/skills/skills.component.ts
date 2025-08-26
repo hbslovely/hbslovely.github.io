@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzModalModule, NzModalService } from 'ng-zorro-antd/modal';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 import { CVService } from '../../services/cv.service';
 import { SectionHeaderComponent } from '../../components/section-header/section-header.component';
 import { SkillItemComponent } from '../../components/skill-item/skill-item.component';
 import { SkillDetailComponent, SkillInfo } from '../../components/skill-detail/skill-detail.component';
 import { PageHeaderComponent } from '../../components/page-header/page-header.component';
+import { CustomModalService } from '../../services/custom-modal.service';
 
 // Extended SkillInfo interface to include experience
 interface ExtendedSkillInfo extends SkillInfo {
@@ -20,26 +21,25 @@ interface ExtendedSkillInfo extends SkillInfo {
   standalone: true,
   imports: [
     CommonModule,
-    RouterModule,
-    TranslateModule,
     NzIconModule,
     NzModalModule,
+    TranslateModule,
+    PageHeaderComponent,
     SectionHeaderComponent,
     SkillItemComponent,
-    SkillDetailComponent,
-    PageHeaderComponent
+    SkillDetailComponent
   ],
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss']
 })
 export class SkillsComponent implements OnInit {
   @ViewChild('skillDetailDialog') skillDetailDialog!: TemplateRef<any>;
-
+  
   selectedSkill: SkillInfo | null = null;
   selectedSkillProjectCount = 0;
 
   private readonly cvService = inject(CVService);
-  private readonly modalService = inject(NzModalService);
+  private readonly modalService = inject(CustomModalService);
   private readonly translate = inject(TranslateService);
   cv = this.cvService.cv;
   modalRef: any;
@@ -165,31 +165,30 @@ export class SkillsComponent implements OnInit {
     return Math.min(Math.round((years / 10) * 100), 100);
   }
 
-  showSkillInfo(skillName: string) {
-    if (this.skillsInfo[skillName]) {
-      this.selectedSkill = this.skillsInfo[skillName];
-
-      // Count projects that use this skill
-      const allProjects = this.cv()?.projects?.projects || [];
-      this.selectedSkillProjectCount = allProjects.filter(project =>
-        project.technologies.includes(skillName)
+  // View skill details
+  showSkillInfo(skill: string): void {
+    if (this.skillsInfo[skill]) {
+      this.selectedSkill = this.skillsInfo[skill];
+      this.selectedSkillProjectCount = (
+        this.cv()?.projects?.projects || []
+      ).filter(
+        project => 
+          project.technologies && 
+          project.technologies.includes(skill)
       ).length;
 
       this.modalRef = this.modalService.create({
         nzContent: this.skillDetailDialog,
         nzFooter: null,
         nzWidth: '600px',
-        nzBodyStyle: { padding: '0' },
-        nzStyle: { top: '20px' },
-        nzClassName: 'skill-modal',
+        nzClassName: 'skill-detail-modal',
         nzCentered: true,
-        nzClosable: true,
         nzMaskClosable: true
       });
     }
   }
 
-  closeSkillDetailDialog() {
+  closeSkillDetailDialog(): void {
     if (this.modalRef) {
       this.modalRef.close();
     }

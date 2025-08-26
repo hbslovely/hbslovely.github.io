@@ -4,6 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { RouterModule } from '@angular/router';
+import { PageHeaderComponent } from '../../components/page-header/page-header.component';
 
 interface MyPage {
   title: string;
@@ -23,7 +24,8 @@ interface MyPage {
     TranslateModule,
     NzIconModule,
     NzCardModule,
-    RouterModule
+    RouterModule,
+    PageHeaderComponent
   ],
   templateUrl: './my-pages.component.html',
   styleUrls: ['./my-pages.component.scss']
@@ -35,7 +37,7 @@ export class MyPagesComponent {
       description: 'A website dedicated to the love story between my wife and me.',
       url: 'https://hbslovely.vercel.app/#/chao-mung',
       image: 'assets/images/pages/love-story.png',
-      fallbackImage: 'assets/images/gallery/top-view-office-material-on-a-table.png',
+      fallbackImage: 'assets/images/gallery/projects.png',
       status: 'completed',
       technologies: ['Angular', 'PrimeNG', 'SCSS']
     },
@@ -44,7 +46,7 @@ export class MyPagesComponent {
       description: 'A travel guide introducing Ho Chi Minh City for visitors.',
       url: 'https://hello-hcmc.vercel.app/',
       image: 'assets/images/pages/hcmc-guide.png',
-      fallbackImage: 'assets/images/gallery/top-view-office-material-on-a-table.png',
+      fallbackImage: 'assets/images/gallery/projects.png',
       status: 'in-progress',
       technologies: ['Angular', 'PrimeNG', 'Font Awesome']
     }

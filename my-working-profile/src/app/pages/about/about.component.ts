@@ -6,9 +6,10 @@ import { CVService } from '../../services/cv.service';
 import { AboutPageProps } from './about.types';
 import { ABOUT_PAGE_CONFIG, ABOUT_PAGE_SECTIONS } from './about.constants';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzModalModule, NzModalService } from 'ng-zorro-antd/modal';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 import { RouterModule } from '@angular/router';
 import { Project } from '../../models/cv.models';
+import { CustomModalService } from '../../services/custom-modal.service';
 
 @Component({
   selector: 'app-about',
@@ -26,7 +27,7 @@ import { Project } from '../../models/cv.models';
 })
 export class AboutComponent {
   private readonly cvService = inject(CVService);
-  private readonly modalService = inject(NzModalService);
+  private readonly modalService = inject(CustomModalService);
 
   // Constants
   readonly config: AboutPageProps = ABOUT_PAGE_CONFIG;
@@ -59,21 +60,19 @@ export class AboutComponent {
   formatCategoryName(category: string): string {
     // Convert camelCase to Title Case with spaces
     return category
-      // Insert a space before all uppercase letters
       .replace(/([A-Z])/g, ' $1')
-      // Replace first character with uppercase
       .replace(/^./, str => str.toUpperCase());
   }
 
-  showFullscreenAvatar(): void {
-    this.modalService.create({
-      nzTitle: undefined,
-      nzFooter: null,
-      nzClosable: true,
-      nzMaskClosable: true,
-      nzCentered: true,
-      nzClassName: 'avatar-modal',
-      nzContent: `
+    showFullscreenAvatar(): void {
+        this.modalService.create({
+            nzTitle: undefined,
+            nzFooter: null,
+            nzClosable: true,
+            nzMaskClosable: true,
+            nzCentered: true,
+            nzClassName: 'avatar-modal',
+            nzContent: `
         <div style="display: flex; justify-content: center; align-items: center; width: 100%; padding: 0;">
           <img 
             src="assets/images/avatar.jpeg" 
@@ -82,9 +81,9 @@ export class AboutComponent {
           >
         </div>
       `,
-      nzWidth: 'auto',
-      nzBodyStyle: { padding: '0' },
-      nzStyle: { top: '50px' }
-    });
-  }
+            nzWidth: 'auto',
+            nzBodyStyle: { padding: '0' },
+            nzStyle: { top: '50px' }
+        });
+    }
 }

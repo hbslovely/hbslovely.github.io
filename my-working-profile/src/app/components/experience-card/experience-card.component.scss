@@ -211,6 +211,8 @@
   max-width: 800px;
   margin: 0 auto;
   border-radius: 16px;
+  background: white;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
   
   .dialog-background {
     position: absolute;
@@ -218,7 +220,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    background: white;
     z-index: -1;
   }
   
@@ -227,7 +229,7 @@
     top: 50%;
     right: -100px;
     transform: translateY(-50%);
-    opacity: 0.03;
+    opacity: 0.05;
     pointer-events: none;
     z-index: 0;
     
@@ -242,9 +244,8 @@
   
   .dialog-header {
     padding: 2.5rem 2rem 2rem;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 100%);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, var(--primary-lightest) 0%, rgba(230, 243, 255, 0.5) 100%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     
     .header-content {
       display: flex;
@@ -255,9 +256,9 @@
         width: 70px;
         height: 70px;
         padding: 0.75rem;
-        background: rgba(255, 255, 255, 0.1);
+        background: white;
         border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -267,7 +268,6 @@
           width: 100%;
           height: 100%;
           object-fit: contain;
-          filter: brightness(0) invert(1);
         }
       }
       
@@ -276,13 +276,13 @@
           margin: 0 0 0.5rem;
           font-size: 1.75rem;
           font-weight: 600;
-          color: white;
+          color: var(--text-color);
         }
         
         .position {
           font-size: 1.25rem;
-          color: rgba(255, 255, 255, 0.8);
-          font-weight: 400;
+          color: var(--primary-color);
+          font-weight: 500;
           margin: 0;
         }
       }
@@ -298,13 +298,13 @@
         align-items: center;
         gap: 0.5rem;
         padding: 0.5rem 1rem;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(0, 102, 204, 0.1);
         border-radius: 30px;
-        color: rgba(255, 255, 255, 0.8);
+        color: var(--text-color);
         font-size: 0.9rem;
         
         [nz-icon] {
-          color: var(--primary-lighter);
+          color: var(--primary-color);
         }
       }
     }
@@ -312,7 +312,7 @@
   
   .dialog-content {
     padding: 2rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-color);
     
     .dialog-section {
       margin-bottom: 2rem;
@@ -327,12 +327,12 @@
         gap: 0.75rem;
         font-size: 1.2rem;
         margin: 0 0 1.25rem;
-        color: white;
+        color: var(--text-color);
         padding-bottom: 0.75rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         
         [nz-icon] {
-          color: var(--primary-lighter);
+          color: var(--primary-color);
           font-size: 1.2rem;
         }
       }
@@ -341,7 +341,7 @@
         p {
           margin: 0 0 0.75rem;
           line-height: 1.6;
-          color: rgba(255, 255, 255, 0.8);
+          color: var(--text-light);
           position: relative;
           padding-left: 1.5rem;
           
@@ -353,7 +353,7 @@
             content: '•';
             position: absolute;
             left: 0.5rem;
-            color: var(--primary-lighter);
+            color: var(--primary-color);
           }
         }
       }
@@ -361,13 +361,14 @@
       .company-description {
         margin-bottom: 1.5rem;
         line-height: 1.6;
+        color: var(--text-light);
       }
       
       .company-contact-info {
         display: flex;
         flex-wrap: wrap;
         gap: 1rem;
-        background: rgba(255, 255, 255, 0.05);
+        background: var(--primary-lightest);
         padding: 1.25rem;
         border-radius: 12px;
         
@@ -376,19 +377,20 @@
           align-items: center;
           gap: 0.75rem;
           margin-right: 1rem;
+          color: var(--text-light);
           
           [nz-icon] {
-            color: var(--primary-lighter);
+            color: var(--primary-color);
           }
           
           a {
-            color: var(--primary-lighter);
+            color: var(--primary-color);
             text-decoration: none;
             transition: all 0.2s ease;
             
             &:hover {
               text-decoration: underline;
-              color: white;
+              color: var(--primary-light);
             }
           }
         }
@@ -405,7 +407,7 @@
       border-radius: 16px;
       overflow: hidden;
       background: transparent;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
     }
     
     .ant-modal-body {
@@ -422,12 +424,13 @@
         height: 36px;
         line-height: 36px;
         border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.1);
-        color: white;
+        background-color: rgba(0, 0, 0, 0.05);
+        color: var(--text-color);
         transition: all 0.2s ease;
         
         &:hover {
-          background-color: rgba(255, 255, 255, 0.2);
+          background-color: var(--primary-color);
+          color: white;
           transform: rotate(90deg);
         }
       }

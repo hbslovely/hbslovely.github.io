@@ -2,10 +2,11 @@ import { Component, Input, ViewChild, TemplateRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzTagModule } from 'ng-zorro-antd/tag';
-import { NzModalModule, NzModalService } from 'ng-zorro-antd/modal';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 import { WorkExperience } from '../../models/cv.models';
 import { TranslateModule } from '@ngx-translate/core';
 import { WatermarkComponent } from '../watermark/watermark.component';
+import { CustomModalService } from '../../services/custom-modal.service';
 
 @Component({
   selector: 'app-experience-card',
@@ -25,7 +26,7 @@ export class ExperienceCardComponent {
   @Input() experience!: WorkExperience;
   @ViewChild('companyDetailDialog') companyDetailDialog!: TemplateRef<any>;
 
-  constructor(private modalService: NzModalService) {}
+  constructor(private modalService: CustomModalService) {}
 
   getCompanyLogo(company: string): string {
     // Convert company name to lowercase and replace spaces/special chars with hyphens
@@ -47,8 +48,7 @@ export class ExperienceCardComponent {
       nzMask: true,
       nzMaskStyle: { backgroundColor: 'rgba(0, 0, 0, 0.65)' },
       nzBodyStyle: { padding: '0' },
-      nzStyle: { top: '20px' },
-      nzWrapClassName: 'company-detail-modal-wrap'
+      nzStyle: { top: '20px' }
     });
   }
 }

@@ -11,10 +11,17 @@ import { provideNzIcons } from './icons-provider';
 import { FormsModule } from '@angular/forms';
 import { en_US, provideNzI18n } from 'ng-zorro-antd/i18n';
 import { NzModalService } from 'ng-zorro-antd/modal';
+import { ScrollStrategy, ScrollStrategyOptions } from '@angular/cdk/overlay';
+import { CustomModalService } from './services/custom-modal.service';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+
+// Factory for modal scroll strategy
+export function noopScrollStrategyFactory(options: ScrollStrategyOptions): ScrollStrategy {
+  return options.noop();
 }
 
 export const appConfig: ApplicationConfig = {
@@ -47,6 +54,7 @@ export const appConfig: ApplicationConfig = {
     ),
     provideNzIcons(),
     FormsModule,
-    NzModalService
+    NzModalService,
+    CustomModalService
   ]
 };
