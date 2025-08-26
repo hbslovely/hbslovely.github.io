@@ -19,6 +19,7 @@
     height: 3px;
     width: 80px;
     background: linear-gradient(to right, var(--primary-color), var(--primary-lighter));
+    border-radius: 2px;
     margin: 0 auto;
   }
 }
@@ -136,6 +137,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
+      margin-bottom: 1rem;
       
       .contact-item {
         display: flex;
@@ -154,6 +156,39 @@
         
         span[nz-icon] {
           margin-right: 0.5rem;
+        }
+      }
+    }
+    
+    .social-row {
+      display: flex;
+      gap: 1rem;
+      
+      .social-item {
+        display: flex;
+        align-items: center;
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.2);
+        transition: all 0.2s ease;
+        
+        &:hover {
+          transform: translateY(-2px);
+          
+          &:nth-child(1) {
+            background-color: #333; // GitHub color
+          }
+          
+          &:nth-child(2) {
+            background-color: #0077B5; // LinkedIn color
+          }
+        }
+        
+        span[nz-icon] {
+          margin-right: 0.5rem;
+          font-size: 1.1rem;
         }
       }
     }
@@ -415,7 +450,8 @@
         justify-content: center;
       }
       
-      .contact-row {
+      .contact-row,
+      .social-row {
         justify-content: center;
       }
     }

@@ -44,6 +44,18 @@
                 <span>{{ cv()?.personalInfo?.contact?.phone }}</span>
               </a>
             </div>
+            
+            <div class="social-row">
+              <a class="social-item" [href]="cv()?.personalInfo?.contact?.github" target="_blank" rel="noopener noreferrer">
+                <span nz-icon nzType="github" nzTheme="outline"></span>
+                <span>GitHub</span>
+              </a>
+              
+              <a class="social-item" [href]="cv()?.personalInfo?.contact?.linkedin" target="_blank" rel="noopener noreferrer">
+                <span nz-icon nzType="linkedin" nzTheme="outline"></span>
+                <span>LinkedIn</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>

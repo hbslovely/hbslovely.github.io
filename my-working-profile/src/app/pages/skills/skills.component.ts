@@ -46,12 +46,12 @@ export class SkillsComponent implements OnInit {
     className: 'skills-page',
     maxWidth: 1200
   };
-  
+
   // Top skills to feature (add or modify as needed)
   private readonly featuredSkillsList = [
-    'Angular', 
-    'ReactJS', 
-    'TypeScript', 
+    'Angular',
+    'ReactJS',
+    'TypeScript',
     'JavaScript'
   ];
 
@@ -78,23 +78,23 @@ export class SkillsComponent implements OnInit {
   getFeaturedSkills(): string[] {
     return this.featuredSkillsList;
   }
-  
+
   // Get skill description for featured skills
   getSkillDescription(skill: string): string {
     const description = this.skillsInfo[skill]?.description;
-    
+
     if (!description) {
       return `${skill} is one of my core professional skills.`;
     }
-    
+
     return Array.isArray(description) ? description[0] : description;
   }
-  
+
   // Get CSS class for experience level badge
   getExperienceClass(skill: string): string {
     const experience = this.getSkillExperience(skill);
     if (!experience) return '';
-    
+
     const years = parseInt(experience.split(' ')[0]);
     if (years >= 5) return 'expert';
     if (years >= 3) return 'advanced';
@@ -156,7 +156,7 @@ export class SkillsComponent implements OnInit {
 
   getExperiencePercentage(skill: string): number {
     if (!this.getSkillExperience(skill)) return 0;
-    
+
     const expText = this.getSkillExperience(skill);
     const years = parseFloat(expText.split(' ')[0]);
     // Normalize to percentage (assuming 10 years is 100%)
@@ -166,17 +166,18 @@ export class SkillsComponent implements OnInit {
   showSkillInfo(skillName: string) {
     if (this.skillsInfo[skillName]) {
       this.selectedSkill = this.skillsInfo[skillName];
-      
+
       // Count projects that use this skill
       const allProjects = this.cv()?.projects?.projects || [];
-      this.selectedSkillProjectCount = allProjects.filter(project => 
+      this.selectedSkillProjectCount = allProjects.filter(project =>
         project.technologies.includes(skillName)
       ).length;
-      
+
       this.modalRef = this.modalService.create({
         nzContent: this.skillDetailDialog,
         nzFooter: null,
-        nzWidth: '80%',
+        nzWidth: '600px',
+        nzBodyStyle: { padding: '0' },
         nzStyle: { top: '20px' },
         nzClassName: 'skill-modal',
         nzCentered: true,
