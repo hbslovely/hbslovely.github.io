@@ -9,6 +9,11 @@ import { SectionHeaderComponent } from '../../components/section-header/section-
 import { SkillItemComponent } from '../../components/skill-item/skill-item.component';
 import { SkillDetailComponent, SkillInfo } from '../../components/skill-detail/skill-detail.component';
 
+// Extended SkillInfo interface to include experience
+interface ExtendedSkillInfo extends SkillInfo {
+  experience?: string;
+}
+
 @Component({
   selector: 'app-skills',
   standalone: true,
@@ -41,9 +46,17 @@ export class SkillsComponent implements OnInit {
     className: 'skills-page',
     maxWidth: 1200
   };
+  
+  // Top skills to feature (add or modify as needed)
+  private readonly featuredSkillsList = [
+    'Angular', 
+    'ReactJS', 
+    'TypeScript', 
+    'JavaScript'
+  ];
 
   protected readonly Object = Object;
-  private skillsInfo: { [key: string]: SkillInfo } = {};
+  private skillsInfo: { [key: string]: ExtendedSkillInfo } = {};
 
   async ngOnInit() {
     await this.loadSkillDetails();
@@ -61,21 +74,49 @@ export class SkillsComponent implements OnInit {
     }
   }
 
+  // Get featured skills to display prominently
+  getFeaturedSkills(): string[] {
+    return this.featuredSkillsList;
+  }
+  
+  // Get skill description for featured skills
+  getSkillDescription(skill: string): string {
+    const description = this.skillsInfo[skill]?.description;
+    
+    if (!description) {
+      return `${skill} is one of my core professional skills.`;
+    }
+    
+    return Array.isArray(description) ? description[0] : description;
+  }
+  
+  // Get CSS class for experience level badge
+  getExperienceClass(skill: string): string {
+    const experience = this.getSkillExperience(skill);
+    if (!experience) return '';
+    
+    const years = parseInt(experience.split(' ')[0]);
+    if (years >= 5) return 'expert';
+    if (years >= 3) return 'advanced';
+    if (years >= 1) return 'intermediate';
+    return 'beginner';
+  }
+
   getTechnologyIcon(category: string): string {
     const iconMap: { [key: string]: string } = {
+      programmingLanguages: 'code',
+      frameworks: 'cluster',
+      libraries: 'appstore',
+      testing: 'bug',
+      methodologies: 'deployment-unit',
+      tools: 'tool',
+      environments: 'desktop',
       frontEnd: 'layout',
       backEnd: 'api',
       database: 'database',
       devOps: 'cloud-server',
-      tools: 'tool',
-      languages: 'code',
-      frameworks: 'cluster',
-      libraries: 'appstore',
-      testing: 'bug',
       mobile: 'mobile',
       cloud: 'cloud',
-      methodologies: 'deployment-unit',
-      environments: 'desktop',
       other: 'appstore'
     };
     return iconMap[category] || 'code';
@@ -101,136 +142,53 @@ export class SkillsComponent implements OnInit {
     return colorMap[skill] || '#1890ff';
   }
 
-  getExperienceBackground(skill: string, darker = false): string {
-    const years = this.getExperienceYears(skill);
-    if (years === 0) return '#1e3c72';
-
-    // Base color: #1e3c72 (lighter) to #0c1f3d (darker)
-    const opacity = Math.min(1, years / 8); // Max intensity at 8 years
-    const baseColor = darker ? '#0c1f3d' : '#1e3c72';
-    const overlayColor = darker ? '#0a1a33' : '#162f5d';
-
-    return this.blendColors(baseColor, overlayColor, opacity);
-  }
-
-  private blendColors(color1: string, color2: string, ratio: number): string {
-    const hex1 = color1.substring(1);
-    const hex2 = color2.substring(1);
-
-    const r1 = parseInt(hex1.substring(0, 2), 16);
-    const g1 = parseInt(hex1.substring(2, 4), 16);
-    const b1 = parseInt(hex1.substring(4, 6), 16);
-
-    const r2 = parseInt(hex2.substring(0, 2), 16);
-    const g2 = parseInt(hex2.substring(2, 4), 16);
-    const b2 = parseInt(hex2.substring(4, 6), 16);
-
-    const r = Math.round(r1 * (1 - ratio) + r2 * ratio);
-    const g = Math.round(g1 * (1 - ratio) + g2 * ratio);
-    const b = Math.round(b1 * (1 - ratio) + b2 * ratio);
-
-    return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
-  }
-
   formatCategory(category: string): string {
+    // Convert camelCase to Title Case with spaces
     return category
-      .split(/(?=[A-Z])/)
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
+      .replace(/([A-Z])/g, ' $1')
+      .replace(/^./, str => str.toUpperCase());
   }
 
   getSkillExperience(skill: string): string {
-    const experienceMap: { [key: string]: string } = {
-      'HTML5': this.calculateYearsOfExperience(2015),
-      'CSS': this.calculateYearsOfExperience(2015),
-      'JavaScript': this.calculateYearsOfExperience(2015),
-      'Angular': this.calculateYearsOfExperience(2017),
-      'AngularJS': '2 years',
-      'ReactJS': '4+ years',
-      'KendoUI': '1 year',
-      'RxJS': '6+ years',
-      'NgRx': '4+ years',
-      'TypeScript': this.calculateYearsOfExperience(2017),
-      'jQuery': '1.5 years',
-      'Chart.js': '1 year'
-    };
-
-    const yearsExp = experienceMap[skill];
-    if (yearsExp) return yearsExp;
-
-    // If no years experience, check projects count
-    const projectCount = this.getProjectCount(skill);
-    if (projectCount > 0) {
-      return `${projectCount} project${projectCount > 1 ? 's' : ''}`;
-    }
-
-    return '';
-  }
-
-  private getProjectCount(skill: string): number {
-    const info = this.skillsInfo[skill];
-    if (info?.isCommonTool) {
-      // For common tools/methodologies, assume used in all projects
-      return (this.cv()?.projects?.projects || []).length;
-    }
-
-    const projects = this.cv()?.projects?.projects || [];
-    return projects.filter(project =>
-      project.technologies.some(tech =>
-        tech.toLowerCase() === skill.toLowerCase()
-      ) ||
-      project.environment.some(tech =>
-        tech.toLowerCase() === skill.toLowerCase()
-      )
-    ).length;
-  }
-
-  private getExperienceYears(skill: string): number {
-    const experience = this.getSkillExperience(skill);
-    if (!experience) return 0;
-
-    if (experience.includes('project')) {
-      const projectCount = parseInt(experience);
-      return Math.min(projectCount / 2, 10); // 2 projects = 1 year equivalent, max 10 years
-    }
-
-    const years = parseFloat(experience);
-    return isNaN(years) ? 0 : years;
+    if (!this.skillsInfo[skill]) return '';
+    return this.skillsInfo[skill].experience || '';
   }
 
   getExperiencePercentage(skill: string): number {
-    const years = this.getExperienceYears(skill);
-    if (years === 0) return 0;
-
-    // Calculate percentage (max 10 years = 100%)
-    return Math.min(100, (years / 10) * 100);
+    if (!this.getSkillExperience(skill)) return 0;
+    
+    const expText = this.getSkillExperience(skill);
+    const years = parseFloat(expText.split(' ')[0]);
+    // Normalize to percentage (assuming 10 years is 100%)
+    return Math.min(Math.round((years / 10) * 100), 100);
   }
 
-  showSkillInfo(skill: string): void {
-    const info = this.skillsInfo[skill];
-    if (!info) return;
-
-    this.selectedSkill = info;
-    this.selectedSkillProjectCount = this.getProjectCount(skill);
-
-    this.modalRef = this.modalService.create({
-      nzContent: this.skillDetailDialog,
-      nzFooter: null,
-      nzWidth: '800px',
-      nzClassName: 'skill-modal project-detail-dialog',
-      nzCentered: true,
-      nzMaskClosable: true,
-      nzBodyStyle: { padding: 0 } as any
-    });
+  showSkillInfo(skillName: string) {
+    if (this.skillsInfo[skillName]) {
+      this.selectedSkill = this.skillsInfo[skillName];
+      
+      // Count projects that use this skill
+      const allProjects = this.cv()?.projects?.projects || [];
+      this.selectedSkillProjectCount = allProjects.filter(project => 
+        project.technologies.includes(skillName)
+      ).length;
+      
+      this.modalRef = this.modalService.create({
+        nzContent: this.skillDetailDialog,
+        nzFooter: null,
+        nzWidth: '80%',
+        nzStyle: { top: '20px' },
+        nzClassName: 'skill-modal',
+        nzCentered: true,
+        nzClosable: true,
+        nzMaskClosable: true
+      });
+    }
   }
 
-  closeSkillDetailDialog(){
-    this.modalRef.close();
-  }
-
-  private calculateYearsOfExperience(startYear: number): string {
-    const currentYear = new Date().getFullYear();
-    const years = currentYear - startYear;
-    return `${years}+ years`;
+  closeSkillDetailDialog() {
+    if (this.modalRef) {
+      this.modalRef.close();
+    }
   }
 }

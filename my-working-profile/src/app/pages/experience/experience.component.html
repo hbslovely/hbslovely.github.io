@@ -1,27 +1,37 @@
 <div [class]="config.className">
   <div class="container" [style.maxWidth.px]="config.maxWidth">
-    <!-- Education Section -->
-    <section [id]="sections[0].id" class="section">
-      <app-section-header [title]="sections[0].title" [icon]="sections[0].icon">
-        <div class="section-subtitle">{{ 'SECTIONS.SUBTITLES.EDUCATION' | translate }}</div>
-      </app-section-header>
+    <!-- Work Experience Section -->
+    <section [id]="sections[1].id" class="section experience-section">
+      <div class="section-header">
+        <span nz-icon [nzType]="sections[1].icon" nzTheme="outline"></span>
+        <h2>{{ sections[1].title | translate }}</h2>
+      </div>
 
-      <div class="education-list">
-        @for (edu of cv()?.education?.education; track edu) {
-          <app-education-card [education]="edu"></app-education-card>
+      <div class="timeline">
+        @for (exp of cv()?.experience?.workExperience; track exp) {
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <app-experience-card [experience]="exp"></app-experience-card>
+            </div>
+          </div>
         }
+        <div class="timeline-line"></div>
       </div>
     </section>
 
-    <!-- Work Experience Section -->
-    <section [id]="sections[1].id" class="section">
-      <app-section-header [title]="sections[1].title" [icon]="sections[1].icon">
-        <div class="section-subtitle">{{ 'SECTIONS.SUBTITLES.WORK_EXPERIENCE' | translate }}</div>
-      </app-section-header>
+    <!-- Education Section -->
+    <section [id]="sections[0].id" class="section education-section">
+      <div class="section-header">
+        <span nz-icon [nzType]="sections[0].icon" nzTheme="outline"></span>
+        <h2>{{ sections[0].title | translate }}</h2>
+      </div>
 
-      <div class="experience-list">
-        @for (exp of cv()?.experience?.workExperience; track exp) {
-          <app-experience-card [experience]="exp"></app-experience-card>
+      <div class="education-list">
+        @for (edu of cv()?.education?.education; track edu) {
+          <div class="education-item">
+            <app-education-card [education]="edu"></app-education-card>
+          </div>
         }
       </div>
     </section>

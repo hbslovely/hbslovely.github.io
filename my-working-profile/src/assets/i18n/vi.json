@@ -12,7 +12,12 @@
   },
   "FOOTER": {
     "COPYRIGHT": "Hong Phung Phat. Đã đăng ký bản quyền.",
-    "MADE_WITH": "Được tạo bằng Angular & AI️"
+    "MADE_WITH": "Được tạo bằng Angular & AI️",
+    "ABOUT": "Về tôi",
+    "DESCRIPTION": "Lập trình viên Frontend cao cấp với hơn 10 năm kinh nghiệm chuyên về ứng dụng Angular và React.",
+    "QUICK_LINKS": "Liên kết nhanh",
+    "CONTACT": "Liên hệ",
+    "BUILT_WITH": "Được xây dựng với"
   },
   "ACTIONS": {
     "EXPORT_PDF": "Xuất PDF"
@@ -102,17 +107,14 @@
     "FILTER_BUTTON": "Bộ Lọc"
   },
   "SKILLS": {
+    "FEATURED_SKILLS": "Kỹ năng nổi bật",
+    "ALL_SKILLS": "Tất cả kỹ năng theo danh mục",
+    "VIEW_DETAILS": "Xem chi tiết",
+    "SEE_IN_ACTION": "Xem kỹ năng của tôi trong thực tế",
+    "DESCRIPTION": "Tổng quan toàn diện về chuyên môn kỹ thuật và khả năng chuyên môn của tôi.",
+    "SEARCH_PLACEHOLDER": "Tìm kiếm kỹ năng...",
     "SKILLS": "kỹ năng",
-    "OVERVIEW": "Tổng quan kỹ năng",
-    "DESCRIPTION": "Bộ sưu tập toàn diện các kỹ năng kỹ thuật được tích lũy qua nhiều năm kinh nghiệm thực tế trong phát triển web, tập trung vào các công nghệ frontend hiện đại và các phương pháp thực hành tốt nhất.",
-    "VIEW_PROJECTS": "Xem dự án của tôi",
-    "PROJECTS_HINT": "Khám phá portfolio của tôi để thấy các kỹ năng này được áp dụng trong các dự án thực tế.",
-    "DIALOG": {
-      "VISIT_WEBSITE": "Truy cập trang chủ",
-      "VISIT_GITHUB": "Xem trên GitHub",
-      "USED_IN": "Được sử dụng trong {{count}} dự án",
-      "OVERVIEW": "Tổng quan",
-      "RESOURCES": "Tài nguyên"
-    }
+    "VIEW_PROJECTS": "Xem dự án",
+    "PROJECTS_HINT": "Khám phá danh mục đầu tư của tôi để thấy những kỹ năng này được áp dụng trong các dự án thực tế."
   }
 }

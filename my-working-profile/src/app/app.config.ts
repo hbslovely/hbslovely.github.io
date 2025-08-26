@@ -10,6 +10,7 @@ import { withInMemoryScrolling } from '@angular/router';
 import { provideNzIcons } from './icons-provider';
 import { FormsModule } from '@angular/forms';
 import { en_US, provideNzI18n } from 'ng-zorro-antd/i18n';
+import { NzModalService } from 'ng-zorro-antd/modal';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -41,5 +42,6 @@ export const appConfig: ApplicationConfig = {
     ),
     provideNzIcons(),
     FormsModule,
+    NzModalService
   ]
 };

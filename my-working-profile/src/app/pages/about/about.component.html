@@ -1,6 +1,117 @@
 <div [class]="config.className">
-  <div class="about-container" [style.maxWidth.px]="config.maxWidth">
-    <!-- Personal Info Section -->
-    <app-personal-info [info]="cv()?.personalInfo"></app-personal-info>
+  <div class="about-section">
+    <!-- About Header -->
+    <div class="section-header">
+      <h1 class="section-title">About Me</h1>
+      <div class="section-divider"></div>
+    </div>
+    
+    <!-- Hero Banner with Personal Info -->
+    <div class="hero-banner">
+      <img 
+        src="assets/images/gallery/top-view-office-material-on-a-table.png" 
+        alt="Professional Workspace" 
+        class="banner-image"
+      />
+      
+      <div class="banner-overlay">
+        <div class="personal-info-overlay">
+          <div class="avatar-container">
+            <div class="avatar" (click)="showFullscreenAvatar()">
+              <img src="assets/images/avatar.jpeg" alt="Profile Picture">
+              <div class="avatar-overlay">
+                <span nz-icon nzType="fullscreen" nzTheme="outline"></span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="info-content">
+            <h2 class="name">{{ cv()?.personalInfo?.prefix }} {{ cv()?.personalInfo?.name }}</h2>
+            <h3 class="role">{{ cv()?.personalInfo?.title }}</h3>
+            <div class="location">
+              <span nz-icon nzType="environment" nzTheme="outline"></span>
+              {{ cv()?.personalInfo?.location?.city }}, {{ cv()?.personalInfo?.location?.country }}
+            </div>
+            
+            <div class="contact-row">
+              <a class="contact-item" [href]="'mailto:' + cv()?.personalInfo?.contact?.email">
+                <span nz-icon nzType="mail" nzTheme="outline"></span>
+                <span>{{ cv()?.personalInfo?.contact?.email }}</span>
+              </a>
+              
+              <a class="contact-item" [href]="'tel:' + cv()?.personalInfo?.contact?.phone">
+                <span nz-icon nzType="phone" nzTheme="outline"></span>
+                <span>{{ cv()?.personalInfo?.contact?.phone }}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Professional Summary -->
+    <div class="summary-section">
+      <h3 class="summary-title">Professional Summary</h3>
+      <p>{{ cv()?.personalInfo?.summary }}</p>
+    </div>
+    
+    <!-- Featured Projects -->
+    <div class="featured-section">
+      <div class="featured-header">
+        <h3 class="featured-title">Featured Projects</h3>
+        <a routerLink="/projects" class="view-all-link">
+          View All Projects
+          <span nz-icon nzType="arrow-right" nzTheme="outline"></span>
+        </a>
+      </div>
+      
+      <div class="featured-projects">
+        <ng-container *ngIf="featuredProjects().length">
+          <div class="project-card" *ngFor="let project of featuredProjects()">
+            <div class="project-header">
+              <h4 class="project-name">{{ project.name }}</h4>
+              <span class="project-duration">{{ project.duration }}</span>
+            </div>
+            
+            <div class="project-company" *ngIf="project.company">
+              <span nz-icon nzType="bank" nzTheme="outline"></span>
+              {{ project.company }}
+            </div>
+            
+            <p class="project-description">{{ project.description }}</p>
+            
+            <div class="project-tech">
+              <span class="tech-tag" *ngFor="let tech of project.technologies.slice(0, 4)">{{ tech }}</span>
+              <span class="tech-more" *ngIf="project.technologies.length > 4">+{{ project.technologies.length - 4 }}</span>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    
+    <!-- Featured Skills -->
+    <div class="featured-section">
+      <div class="featured-header">
+        <h3 class="featured-title">Key Skills</h3>
+        <a routerLink="/skills" class="view-all-link">
+          View All Skills
+          <span nz-icon nzType="arrow-right" nzTheme="outline"></span>
+        </a>
+      </div>
+      
+      <div class="skills-container">
+        <div class="skill-category" *ngFor="let category of featuredSkillCategories()">
+          <h4 class="category-title">{{ formatCategoryName(category) }}</h4>
+          <div class="skill-tags">
+            <span class="skill-tag" *ngFor="let skill of getSkillsForCategory(category).slice(0, 6)">
+              {{ skill }}
+            </span>
+            <span class="skill-more" *ngIf="getSkillsForCategory(category).length > 6">
+              +{{ getSkillsForCategory(category).length - 6 }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div> 
