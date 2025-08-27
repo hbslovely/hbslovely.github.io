@@ -10,7 +10,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { SkeletonModule } from 'primeng/skeleton';
 import { DividerModule } from 'primeng/divider';
 
-import { SearchService, SearchSuggestion } from '../../core/services/search.service';
+import { SearchService, SearchSuggestion } from '@core/services';
 import * as menuEn from '../../../../assets/i18n/menu/menu.en.json';
 import * as menuVi from '../../../../assets/i18n/menu/menu.vi.json';
 
@@ -82,7 +82,7 @@ export class NavbarComponent implements OnInit {
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent) {
     // Close menu if clicked outside
-    if (this.isMenuOpen && !(event.target as HTMLElement)?.closest('.nav-menu') && 
+    if (this.isMenuOpen && !(event.target as HTMLElement)?.closest('.nav-menu') &&
         !(event.target as HTMLElement)?.closest('.menu-button')) {
       this.isMenuOpen = false;
     }
@@ -119,7 +119,7 @@ export class NavbarComponent implements OnInit {
   onSearchInput() {
     if (this.searchTerm.trim()) {
       this.isSearching = true;
-      this.searchService.getSuggestions(this.searchTerm).subscribe(suggestions => {
+      this.searchService.getSuggestions(this.searchTerm).subscribe((suggestions: SearchSuggestion[]) => {
         this.suggestions = suggestions;
         this.isSearching = false;
       });
@@ -170,4 +170,4 @@ export class NavbarComponent implements OnInit {
   onDonate() {
     this.router.navigate(['/donate']);
   }
-} 
+}

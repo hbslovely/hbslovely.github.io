@@ -1,18 +1,20 @@
 export const environment = {
   production: false,
-  
+  paypal: {
+    sandbox: true, // Default to sandbox in development
+    sandboxClientId: 'Ab-tsOI3zdvzPwpt8PC-1qAKeCqB0FgV8hGZjPPUzm1XBiGOJhUaf9Ui-1CoL4JOGIZmaWDIeS7H-FdY',
+    productionClientId: 'AcapPnIPHS2Hf8CzlCfNVZsdYEgT3HH8udULBKY1KbDIDxTduXYJLxrJhAEnv63Q1qjJq5vhtZyzYhLn'
+  },
+
   // Booking.com Configuration
   bookingAffiliateId: 'YOUR_BOOKING_AFFILIATE_ID',
   bookingSearchUrl: 'https://www.booking.com/searchresults.html',
   bookingHotelUrl: 'https://www.booking.com/hotel',
-  
+
   // Agoda Configuration
   agodaPartnerId: 'YOUR_AGODA_PARTNER_ID',
   agodaSearchUrl: 'https://www.agoda.com/partners/partnersearch',
   agodaHotelUrl: 'https://www.agoda.com/partners/booking',
-
-  // PayPal Configuration
-  paypalClientId: 'YOUR_PAYPAL_CLIENT_ID',
 
   // Booking.com API Configuration (RapidAPI)
   bookingApiUrl: 'https://booking-com.p.rapidapi.com/v2',
@@ -27,4 +29,4 @@ export const environment = {
   // Mapbox Configuration
   mapboxToken: 'YOUR_MAPBOX_TOKEN',
   mapboxStyle: 'mapbox://styles/mapbox/streets-v11'
-}; 
+};

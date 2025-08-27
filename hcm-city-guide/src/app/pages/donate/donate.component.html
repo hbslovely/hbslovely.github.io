@@ -1,0 +1,111 @@
+<div class="donate-page">
+  <p-toast position="top-center"></p-toast>
+
+  <div class="container">
+    <h1>{{ 'DONATE.TITLE' | translate }}</h1>
+    <p class="description">{{ 'DONATE.DESCRIPTION' | translate }}</p>
+
+    <div class="donation-options">
+      <p-card>
+        <h2>{{ 'DONATE.OPTIONS.TITLE' | translate }}</h2>
+        <div class="donation-buttons">
+          <p-button
+            *ngFor="let amount of predefinedAmounts"
+            [label]="(amount | currency:'USD') ?? ''"
+            (click)="selectAmount(amount)"
+            [styleClass]="selectedAmount === amount ? 'p-button-raised p-button-primary' : 'p-button-raised p-button-secondary'"
+            [disabled]="isProcessing">
+          </p-button>
+          <p-button
+            [label]="'DONATE.CUSTOM_AMOUNT.TITLE' | translate"
+            (click)="showCustomAmountDialog()"
+            styleClass="p-button-outlined"
+            [disabled]="isProcessing">
+          </p-button>
+        </div>
+
+        <!-- PayPal Button Container -->
+        <div class="paypal-button-container" *ngIf="selectedAmount > 0">
+          <div class="selected-amount">
+            <strong>{{ 'DONATE.SELECTED_AMOUNT' | translate }}:</strong>
+            {{ (selectedAmount | currency:'USD') ?? '' }}
+          </div>
+          <div #paypalButtons [class.processing]="isProcessing"></div>
+        </div>
+      </p-card>
+    </div>
+  </div>
+
+  <!-- Custom Amount Dialog -->
+  <p-dialog
+    [(visible)]="showCustomDialog"
+    [header]="'DONATE.CUSTOM_AMOUNT.TITLE' | translate"
+    [modal]="true"
+    [style]="{width: '500px'}"
+    [closable]="!isProcessing"
+    [closeOnEscape]="!isProcessing"
+    styleClass="custom-amount-dialog">
+
+    <div class="dialog-content">
+      <p class="subtitle">{{ 'DONATE.CUSTOM_AMOUNT.SUBTITLE' | translate }}</p>
+      <p class="description">{{ 'DONATE.CUSTOM_AMOUNT.DESCRIPTION' | translate }}</p>
+
+      <div class="input-section">
+        <label>{{ 'DONATE.CUSTOM_AMOUNT.INPUT_LABEL' | translate }}</label>
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon">{{ 'COMMON.CURRENCY.USD' | translate }}</span>
+          <p-inputNumber
+            [(ngModel)]="customAmount"
+            [placeholder]="'DONATE.CUSTOM_AMOUNT.PLACEHOLDER' | translate"
+            [min]="minAmount"
+            [max]="maxAmount"
+            [disabled]="isProcessing"
+            mode="currency"
+            currency="USD"
+            (onInput)="validateAmount()"
+            [showButtons]="true"
+            buttonLayout="horizontal"
+            spinnerMode="horizontal"
+            incrementButtonIcon="pi pi-plus"
+            decrementButtonIcon="pi pi-minus"
+            class="w-full">
+          </p-inputNumber>
+        </div>
+        <small class="min-amount">{{ 'DONATE.CUSTOM_AMOUNT.MIN_AMOUNT' | translate }}</small>
+        <small class="error-message" *ngIf="validationError">
+          {{ validationError | translate }}
+        </small>
+      </div>
+
+      <div class="suggested-amounts">
+        <label>{{ 'DONATE.CUSTOM_AMOUNT.SUGGESTED' | translate }}</label>
+        <div class="chips">
+          <p-chip
+            *ngFor="let amount of suggestedAmounts"
+            [label]="formatCurrency(amount)"
+            (click)="selectSuggestedAmount(amount)"
+            [styleClass]="customAmount === amount ? 'active' : ''">
+          </p-chip>
+        </div>
+      </div>
+    </div>
+
+    <ng-template pTemplate="footer">
+      <div class="dialog-footer">
+        <p-button
+          [label]="'COMMON.BUTTONS.CANCEL' | translate"
+          (click)="showCustomDialog = false"
+          styleClass="p-button-text"
+          [disabled]="isProcessing">
+        </p-button>
+        <p-button
+          [label]="'COMMON.BUTTONS.CONFIRM' | translate"
+          (click)="confirmCustomAmount()"
+          [disabled]="!!(!customAmount || customAmount <= 0 || isProcessing || validationError)"
+          styleClass="p-button-primary">
+        </p-button>
+      </div>
+    </ng-template>
+  </p-dialog>
+</div>
+

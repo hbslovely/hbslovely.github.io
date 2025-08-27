@@ -1,0 +1,225 @@
+.donate-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 200px);
+}
+
+.container {
+  text-align: center;
+
+  h1 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+  }
+
+  .description {
+    font-size: 1.1rem;
+    color: var(--text-color-secondary);
+    max-width: 800px;
+    margin: 0 auto 2rem;
+  }
+}
+
+.donation-options {
+  max-width: 600px;
+  margin: 2rem auto;
+
+  h2 {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+  }
+}
+
+.donation-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1.5rem 0;
+
+  ::ng-deep .p-button {
+    min-width: 100px;
+    
+    &.p-button-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+
+    &.p-disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+}
+
+:host ::ng-deep .custom-amount-dialog {
+  .dialog-content {
+    padding: 1rem 0;
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--text-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .description {
+      color: var(--text-color-secondary);
+      margin-bottom: 2rem;
+    }
+
+    .input-section {
+      margin-bottom: 2rem;
+
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--text-color);
+        font-weight: 500;
+      }
+
+      .p-inputgroup {
+        margin-bottom: 0.5rem;
+
+        .p-inputgroup-addon {
+          background: var(--surface-ground);
+          border-color: var(--surface-border);
+          color: var(--text-color);
+          font-weight: 500;
+        }
+      }
+
+      .p-inputnumber {
+        width: 100%;
+
+        input {
+          text-align: left;
+          font-size: 1.1rem;
+        }
+
+        .p-inputnumber-button {
+          background: var(--surface-ground);
+          border-color: var(--surface-border);
+          color: var(--text-color);
+
+          &:hover {
+            background: var(--surface-hover);
+          }
+
+          &:focus {
+            box-shadow: none;
+          }
+        }
+      }
+
+      .min-amount {
+        display: block;
+        color: var(--text-color-secondary);
+        font-size: 0.875rem;
+      }
+
+      .error-message {
+        display: block;
+        color: var(--red-500);
+        font-size: 0.875rem;
+        margin-top: 0.5rem;
+      }
+    }
+
+    .suggested-amounts {
+      label {
+        display: block;
+        margin-bottom: 1rem;
+        color: var(--text-color);
+        font-weight: 500;
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+
+        .p-chip {
+          cursor: pointer;
+          transition: all 0.2s;
+          background: var(--surface-ground);
+
+          &:hover {
+            background: var(--surface-hover);
+          }
+
+          &.active {
+            background: var(--primary-color);
+            color: var(--primary-color-text);
+          }
+        }
+      }
+    }
+  }
+
+  .dialog-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--surface-border);
+  }
+}
+
+.paypal-button-container {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--surface-border);
+
+  .selected-amount {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: var(--text-color);
+  }
+
+  .processing {
+    opacity: 0.7;
+    pointer-events: none;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.5);
+      cursor: not-allowed;
+    }
+  }
+}
+
+// Responsive adjustments
+@media screen and (max-width: 768px) {
+  .donate-page {
+    padding: 1rem;
+  }
+
+  .donation-buttons {
+    gap: 0.5rem;
+
+    ::ng-deep .p-button {
+      min-width: 80px;
+      font-size: 0.9rem;
+    }
+  }
+
+  :host ::ng-deep .custom-amount-dialog {
+    .dialog-content {
+      .suggested-amounts .chips {
+        gap: 0.25rem;
+
+        .p-chip {
+          font-size: 0.875rem;
+        }
+      }
+    }
+  }
+} 

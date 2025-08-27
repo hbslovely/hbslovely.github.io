@@ -10,25 +10,25 @@
   --primary-dark: #1d4ed8;
   --primary-light: #60a5fa;
   --primary-gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-  
+
   /* Accent Colors */
   --accent-color: #f43f5e;
   --accent-dark: #e11d48;
   --accent-light: #fb7185;
   --accent-gradient: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-dark) 100%);
-  
+
   /* Neutral Colors */
   --text-color: #1e293b;
   --text-color-secondary: #64748b;
   --surface-ground: #f8fafc;
   --surface-card: #ffffff;
   --surface-border: #e2e8f0;
-  
+
   /* Shadows & Effects */
   --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
   --hover-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
   --focus-ring: 0 0 0 3px rgba(37, 99, 235, 0.2);
-  
+
   /* Transitions */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 200ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -86,38 +86,38 @@ p {
   transition: all var(--transition-normal);
   font-weight: 500;
   border-radius: 0.5rem;
-  
+
   &.primary-button {
     background: var(--primary-gradient);
     border: none;
-    
+
     &:hover {
       transform: translateY(-1px);
       box-shadow: var(--hover-shadow);
     }
-    
+
     &:focus {
       box-shadow: var(--focus-ring);
     }
   }
-  
+
   &.accent-button {
     background: var(--accent-gradient);
     border: none;
-    
+
     &:hover {
       transform: translateY(-1px);
       box-shadow: var(--hover-shadow);
     }
-    
+
     &:focus {
       box-shadow: var(--focus-ring);
     }
   }
-  
+
   &.p-button-text {
     color: var(--primary-color);
-    
+
     &:hover {
       background: rgba(37, 99, 235, 0.05);
     }
@@ -130,23 +130,23 @@ p {
   box-shadow: var(--card-shadow);
   transition: all var(--transition-normal);
   border: 1px solid var(--surface-border);
-  
+
   &:hover {
     box-shadow: var(--hover-shadow);
     transform: translateY(-2px);
   }
-  
+
   .p-card-title {
     font-size: 1.25rem;
     font-weight: 600;
     color: var(--text-color);
     margin-bottom: 0.75rem;
   }
-  
+
   .p-card-content {
     padding: 1.5rem;
   }
-  
+
   .p-card-footer {
     padding: 1rem 1.5rem;
     background: var(--surface-ground);
@@ -158,11 +158,11 @@ p {
 .p-inputtext {
   border-radius: 0.5rem;
   transition: all var(--transition-normal);
-  
+
   &:hover {
     border-color: var(--primary-color);
   }
-  
+
   &:focus {
     box-shadow: var(--focus-ring);
     border-color: var(--primary-color);
@@ -175,7 +175,7 @@ p {
     padding: 1rem;
     border-radius: 0.5rem;
     transition: background-color var(--transition-normal);
-    
+
     &:hover {
       background-color: rgba(37, 99, 235, 0.05);
     }
@@ -187,19 +187,19 @@ p {
   background: transparent;
   border: none;
   padding: 1rem 0;
-  
+
   .p-menubar-root-list {
     gap: 1rem;
   }
-  
+
   .p-menuitem-link {
     border-radius: 0.5rem;
     transition: all var(--transition-normal);
-    
+
     &:hover {
       background: rgba(37, 99, 235, 0.05);
     }
-    
+
     &.p-menuitem-link-active {
       color: var(--primary-color);
       font-weight: 500;
@@ -255,4 +255,10 @@ $breakpoints: (
 
 .fade-in {
   animation: fadeIn var(--transition-normal) ease-out;
+}
+
+.custom-amount-dialog {
+  .p-dialog-content {
+    border-radius: 0 !important;
+  }
 }

@@ -29,6 +29,7 @@ export interface SearchResult {
   location: string;
   route: string[];
   queryParams?: { [key: string]: string };
+  tags?: string[];
 }
 
 @Injectable({
@@ -186,7 +187,32 @@ export class SearchService {
     localStorage.removeItem('recentSearches');
   }
 
-  search(query: string): Observable<SearchResult[]> {
+  getTypeIcon(type: string): string {
+    const icons: { [key: string]: string } = {
+      place: 'pi pi-map-marker',
+      hotel: 'pi pi-home',
+      entertainment: 'pi pi-ticket',
+      food: 'pi pi-heart',
+      transport: 'pi pi-car'
+    };
+    return icons[type] || 'pi pi-circle';
+  }
+
+  getTypeLabel(type: string): string {
+    return this.translate.instant(`SEARCH.TYPES.${type.toUpperCase()}`);
+  }
+
+  getSearchTypes(): { id: string, label: string }[] {
+    return [
+      { id: 'place', label: 'SEARCH.TYPES.PLACE' },
+      { id: 'hotel', label: 'SEARCH.TYPES.HOTEL' },
+      { id: 'entertainment', label: 'SEARCH.TYPES.ENTERTAINMENT' },
+      { id: 'food', label: 'SEARCH.TYPES.FOOD' },
+      { id: 'transport', label: 'SEARCH.TYPES.TRANSPORT' }
+    ];
+  }
+
+  search(query: string, selectedTypes?: string[]): Observable<SearchResult[]> {
     // Add to recent searches
     this.addRecentSearch(query);
 
@@ -204,27 +230,19 @@ export class SearchService {
             image: 'assets/images/landmarks/ben-thanh-market.jpg',
             location: 'District 1, Ho Chi Minh City',
             route: ['/discover', 'attractions'],
-            queryParams: { id: 'ben-thanh' }
+            queryParams: { id: 'ben-thanh' },
+            tags: ['market', 'shopping', 'tourist-attraction']
           },
           // Add more mock results...
         ];
+
+        // Filter by selected types if any
+        if (selectedTypes && selectedTypes.length > 0) {
+          return results.filter(result => selectedTypes.includes(result.type));
+        }
+
         return results;
       })
     );
-  }
-
-  getTypeIcon(type: string): string {
-    const icons: { [key: string]: string } = {
-      place: 'pi pi-map-marker',
-      hotel: 'pi pi-home',
-      entertainment: 'pi pi-ticket',
-      food: 'pi pi-heart',
-      transport: 'pi pi-car'
-    };
-    return icons[type] || 'pi pi-circle';
-  }
-
-  getTypeLabel(type: string): string {
-    return this.translate.instant(`SEARCH.TYPES.${type.toUpperCase()}`);
   }
 }
