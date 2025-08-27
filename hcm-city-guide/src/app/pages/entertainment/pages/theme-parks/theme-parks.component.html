@@ -1,0 +1,104 @@
+<div class="theme-parks-container">
+      <!-- Featured Parks Carousel -->
+      <section class="featured-section">
+        <h2>{{ 'ENTERTAINMENT.THEME_PARKS.FEATURED' | translate }}</h2>
+        <p-carousel 
+          [value]="featuredParks" 
+          [numVisible]="1" 
+          [numScroll]="1" 
+          [circular]="true"
+          [autoplayInterval]="5000"
+          [showNavigators]="false">
+          <ng-template let-park pTemplate="item">
+            <div class="featured-park-card" [style.backgroundImage]="'url(' + park.images[0] + ')'">
+              <div class="park-info">
+                <div class="park-header">
+                  <h3>{{ park.name }}</h3>
+                  <div class="park-meta">
+                    <span class="price-range">{{ park.priceRange }}</span>
+                    <p-rating [ngModel]="park.rating" [readonly]="true" [stars]="5"></p-rating>
+                  </div>
+                </div>
+                <div class="park-details">
+                  <span class="park-district">{{ park.district }}</span>
+                  <div class="park-tags">
+                    <span *ngFor="let tag of park.tags.slice(0, 2)" class="tag">
+                      {{ tag }}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </p-carousel>
+      </section>
+
+      <!-- Parks List -->
+      <section class="parks-section">
+        <div class="parks-header">
+          <h2>{{ 'ENTERTAINMENT.THEME_PARKS.ALL_PARKS' | translate }}</h2>
+          <div class="view-options">
+            <p-tabView [(activeIndex)]="activeViewIndex">
+              <p-tabPanel header="Grid">
+                <ng-template pTemplate="header">
+                  <i class="pi pi-th-large"></i>
+                </ng-template>
+              </p-tabPanel>
+              <p-tabPanel header="Map">
+                <ng-template pTemplate="header">
+                  <i class="pi pi-map-marker"></i>
+                </ng-template>
+              </p-tabPanel>
+            </p-tabView>
+          </div>
+        </div>
+
+        <!-- Grid View -->
+        <div class="parks-grid" *ngIf="activeViewIndex === 0">
+          <div class="grid">
+            <div *ngFor="let park of parks" class="col-12 sm:col-6 lg:col-4 xl:col-3">
+              <div class="park-card">
+                <div class="park-image">
+                  <img [src]="park.images[0]" [alt]="park.name">
+                  <div class="park-badges">
+                    <p-tag 
+                      *ngFor="let tag of park.tags.slice(0, 2)" 
+                      [value]="tag"
+                      [severity]="getTagSeverity(tag)">
+                    </p-tag>
+                  </div>
+                </div>
+                <div class="park-content">
+                  <h3>{{ park.name }}</h3>
+                  <p class="park-description">{{ park.description }}</p>
+                  <div class="park-features">
+                    <span *ngFor="let feature of park.features" class="feature-item">
+                      <i [class]="getFeatureIcon(feature)"></i>
+                      {{ feature }}
+                    </span>
+                  </div>
+                  <div class="park-footer">
+                    <div class="park-info">
+                      <p-rating [ngModel]="park.rating" [readonly]="true" [stars]="5"></p-rating>
+                      <span class="price-range">{{ park.priceRange }}</span>
+                    </div>
+                    <button 
+                      pButton 
+                      type="button" 
+                      [label]="'ENTERTAINMENT.THEME_PARKS.VIEW_DETAILS' | translate"
+                      class="p-button-outlined"
+                      (click)="viewParkDetails(park)">
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map View -->
+        <div class="parks-map" *ngIf="activeViewIndex === 1">
+          <div #mapContainer class="map-container"></div>
+        </div>
+      </section>
+    </div>

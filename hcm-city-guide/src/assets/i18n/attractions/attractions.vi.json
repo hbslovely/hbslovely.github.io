@@ -1,17 +1,44 @@
 {
-  "TITLE": "Điểm Du Lịch",
-  "DESCRIPTION": "Khám phá những địa điểm thú vị nhất tại Thành phố Hồ Chí Minh",
-  "CATEGORIES": {
-    "HISTORICAL": "Di Tích Lịch Sử",
-    "CULTURAL": "Địa Điểm Văn Hóa",
-    "MODERN": "Điểm Du Lịch Hiện Đại",
-    "NATURAL": "Điểm Du Lịch Thiên Nhiên",
-    "RELIGIOUS": "Cơ Sở Tôn Giáo"
-  },
-  "FILTERS": {
-    "CATEGORY": "Danh Mục",
-    "DISTRICT": "Quận",
-    "PRICE_RANGE": "Khoảng Giá",
-    "RATING": "Đánh Giá"
+  "ATTRACTIONS": {
+    "LANDMARKS": {
+      "NOTRE_DAME": {
+        "NAME": "Nhà thờ Đức Bà",
+        "DESCRIPTION": "Nhà thờ lịch sử được xây dựng năm 1880, mang kiến trúc thuộc địa Pháp. Hiện được trang trí với 500km đèn LED trong các dịp đặc biệt. Dễ dàng tiếp cận qua ga metro Nhà hát Thành phố."
+      },
+      "LANDMARK_81": {
+        "NAME": "Landmark 81",
+        "DESCRIPTION": "Tòa nhà cao nhất Việt Nam với chiều cao 461,5 mét, cung cấp ẩm thực cao cấp, mua sắm và tầm nhìn ngoạn mục ra thành phố. Gần ga metro Tân Cảng.",
+        "HIGHLIGHTS": {
+          "BLANK_SKY": {
+            "NAME": "Blank Sky Lounge",
+            "DESCRIPTION": "Nằm trên tầng 75-76, mang đến tầm nhìn tuyệt đẹp ra sông Sài Gòn cùng đồ uống và bánh ngọt cao cấp"
+          },
+          "ORIENTAL_PEARL": {
+            "NAME": "Nhà hàng Oriental Pearl",
+            "DESCRIPTION": "Tọa lạc tại tầng 66, nổi tiếng với món phở bò wagyu đặc biệt"
+          }
+        }
+      },
+      "SAIGON_ZOO": {
+        "NAME": "Thảo Cầm Viên Sài Gòn",
+        "DESCRIPTION": "Thành lập năm 1864, một trong những vườn thú lâu đời nhất thế giới với hơn 1.300 động vật và 2.500 loài thực vật. Cách ga metro Ba Son một quãng đi bộ ngắn."
+      }
+    },
+    "DISTRICTS": {
+      "THAO_DIEN": {
+        "NAME": "Thảo Điền",
+        "DESCRIPTION": "Khu dân cư sôi động của người nước ngoài với nhiều lựa chọn ẩm thực, giải trí và không gian văn hóa. Trực tiếp tiếp cận qua ga metro Thảo Điền.",
+        "HIGHLIGHTS": {
+          "ALLEY_28": {
+            "NAME": "Hẻm 28",
+            "DESCRIPTION": "Không gian phong cách sống rộng 3 hecta được thành lập năm 2018, có quán cafe, nhà hàng, phòng tranh và trung tâm sức khỏe"
+          },
+          "NIGHT_MARKET": {
+            "NAME": "Chợ đêm Thảo Điền",
+            "DESCRIPTION": "Chợ đêm sôi động nằm giữa các đường Xuân Thủy, Quốc Hương và Nguyễn Văn Hưởng, cung cấp đồ ăn đường phố và thời trang"
+          }
+        }
+      }
+    }
   }
 } 

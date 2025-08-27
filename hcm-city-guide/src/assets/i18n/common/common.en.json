@@ -1,0 +1,18 @@
+{
+  "DONATE": {
+    "TITLE": "Support HCM City Guide",
+    "DESCRIPTION": "Help us keep this guide free and up-to-date by making a donation. Your support is greatly appreciated!",
+    "CUSTOM_AMOUNT": "Custom Amount",
+    "CUSTOM_AMOUNT_TITLE": "Enter Custom Amount",
+    "AMOUNT": "Amount (USD)",
+    "SUCCESS_TITLE": "Thank You!",
+    "SUCCESS_MESSAGE": "Your donation has been received. We appreciate your support!",
+    "ERROR_TITLE": "Error",
+    "ERROR_MESSAGE": "There was a problem processing your donation. Please try again.",
+    "PAYPAL_ERROR": "There was a problem with PayPal. Please try again later."
+  },
+  "COMMON": {
+    "CANCEL": "Cancel",
+    "CONFIRM": "Confirm"
+  }
+} 

@@ -1,0 +1,203 @@
+<div class="bike-rental">
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>{{ 'TRANSPORT.BIKE_RENTAL.TITLE' | translate }}</h1>
+      <p>{{ 'TRANSPORT.BIKE_RENTAL.DESCRIPTION' | translate }}</p>
+
+      <!-- Search Form -->
+      <form [formGroup]="searchForm" (ngSubmit)="search()" class="search-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>{{ 'TRANSPORT.BIKE_RENTAL.LOCATION' | translate }}</label>
+            <p-autoComplete
+              formControlName="location"
+              [suggestions]="locationSuggestions"
+              (completeMethod)="searchLocation($event)"
+              [placeholder]="'TRANSPORT.BIKE_RENTAL.LOCATION_PLACEHOLDER' | translate"
+              [minLength]="2">
+            </p-autoComplete>
+          </div>
+
+          <div class="form-group">
+            <label>{{ 'TRANSPORT.BIKE_RENTAL.DATE' | translate }}</label>
+            <p-calendar
+              formControlName="date"
+              [showIcon]="true"
+              [minDate]="minDate"
+              [placeholder]="'TRANSPORT.BIKE_RENTAL.DATE_PLACEHOLDER' | translate">
+            </p-calendar>
+          </div>
+
+          <div class="form-group">
+            <label>{{ 'TRANSPORT.BIKE_RENTAL.DURATION' | translate }}</label>
+            <p-dropdown
+              formControlName="duration"
+              [options]="durations"
+              [placeholder]="'TRANSPORT.BIKE_RENTAL.DURATION_PLACEHOLDER' | translate">
+            </p-dropdown>
+          </div>
+
+          <div class="form-group">
+            <label>{{ 'TRANSPORT.BIKE_RENTAL.TYPE' | translate }}</label>
+            <p-dropdown
+              formControlName="type"
+              [options]="bikeTypes"
+              [placeholder]="'TRANSPORT.BIKE_RENTAL.TYPE_PLACEHOLDER' | translate">
+            </p-dropdown>
+          </div>
+
+          <button 
+            pButton 
+            type="submit"
+            [label]="'TRANSPORT.BIKE_RENTAL.SEARCH' | translate"
+            [loading]="isLoading">
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Results Section -->
+  <section class="results-section" *ngIf="hasSearched">
+    <div class="container">
+      <div class="view-options">
+        <p-selectButton 
+          [(ngModel)]="viewMode" 
+          [options]="viewModes"
+          (onChange)="onViewModeChange()">
+          <ng-template let-item>
+            <i [class]="item.icon"></i>
+          </ng-template>
+        </p-selectButton>
+      </div>
+
+      <!-- Grid View -->
+      <div class="bikes-grid" *ngIf="viewMode === 'grid'">
+        <p-card *ngFor="let bike of bikes" class="bike-card">
+          <ng-template pTemplate="header">
+            <img [src]="bike.image" [alt]="bike.name">
+          </ng-template>
+
+          <div class="bike-content">
+            <div class="bike-header">
+              <h3>{{ bike.name }}</h3>
+              <p-tag [value]="bike.type" [severity]="getTypeSeverity(bike.type)"></p-tag>
+            </div>
+
+            <div class="bike-details">
+              <div class="detail-item">
+                <i class="pi pi-clock"></i>
+                <span>{{ bike.availability }}</span>
+              </div>
+              <div class="detail-item">
+                <i class="pi pi-map-marker"></i>
+                <span>{{ bike.location }}</span>
+              </div>
+            </div>
+
+            <div class="bike-features">
+              <span *ngFor="let feature of bike.features" class="feature-tag">
+                <i [class]="getFeatureIcon(feature)"></i>
+                {{ feature }}
+              </span>
+            </div>
+
+            <p-rating [ngModel]="bike.rating" [readonly]="true" [stars]="5"></p-rating>
+
+            <div class="bike-footer">
+              <div class="price">
+                <span class="amount">{{ bike.price | currency:'VND':'symbol':'1.0-0' }}</span>
+                <span class="per-hour">/hour</span>
+              </div>
+              <button 
+                pButton 
+                type="button"
+                [label]="'TRANSPORT.BIKE_RENTAL.BOOK_NOW' | translate"
+                (click)="bookBike(bike)">
+              </button>
+            </div>
+          </div>
+        </p-card>
+      </div>
+
+      <!-- Map View -->
+      <div class="map-view" *ngIf="viewMode === 'map'">
+        <div #mapContainer class="map-container"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Dialog -->
+  <p-dialog 
+    [(visible)]="showBookingDialog" 
+    [modal]="true"
+    [header]="'TRANSPORT.BIKE_RENTAL.BOOKING_TITLE' | translate"
+    [style]="{width: '90vw', maxWidth: '600px'}">
+    <div class="booking-form" *ngIf="selectedBike">
+      <div class="bike-summary">
+        <img [src]="selectedBike.image" [alt]="selectedBike.name">
+        <div class="summary-content">
+          <h3>{{ selectedBike.name }}</h3>
+          <p>{{ selectedBike.location }}</p>
+        </div>
+      </div>
+
+      <form [formGroup]="bookingForm" class="booking-details">
+        <div class="form-group">
+          <label>{{ 'TRANSPORT.BIKE_RENTAL.PICKUP_TIME' | translate }}</label>
+          <p-calendar 
+            formControlName="pickupTime"
+            [showTime]="true"
+            [minDate]="minDate"
+            [showIcon]="true">
+          </p-calendar>
+        </div>
+
+        <div class="form-group">
+          <label>{{ 'TRANSPORT.BIKE_RENTAL.DURATION' | translate }}</label>
+          <p-dropdown
+            formControlName="duration"
+            [options]="durations">
+          </p-dropdown>
+        </div>
+
+        <div class="form-group">
+          <label>{{ 'TRANSPORT.BIKE_RENTAL.EXTRAS' | translate }}</label>
+          <div class="extras-grid">
+            <div *ngFor="let extra of extras" class="extra-item">
+              <p-checkbox
+                [formControlName]="extra.id"
+                [label]="extra.name"
+                [binary]="true">
+              </p-checkbox>
+              <span class="extra-price">+{{ extra.price | currency:'VND':'symbol':'1.0-0' }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="price-summary">
+          <div class="summary-row">
+            <span>{{ 'TRANSPORT.BIKE_RENTAL.RENTAL_FEE' | translate }}</span>
+            <span>{{ calculateRentalFee() | currency:'VND':'symbol':'1.0-0' }}</span>
+          </div>
+          <div class="summary-row" *ngIf="hasExtras()">
+            <span>{{ 'TRANSPORT.BIKE_RENTAL.EXTRAS_FEE' | translate }}</span>
+            <span>{{ calculateExtrasFee() | currency:'VND':'symbol':'1.0-0' }}</span>
+          </div>
+          <div class="summary-row total">
+            <span>{{ 'TRANSPORT.BIKE_RENTAL.TOTAL' | translate }}</span>
+            <span>{{ calculateTotal() | currency:'VND':'symbol':'1.0-0' }}</span>
+          </div>
+        </div>
+
+        <button 
+          pButton 
+          type="submit"
+          [label]="'TRANSPORT.BIKE_RENTAL.CONFIRM_BOOKING' | translate"
+          [loading]="isBooking"
+          [disabled]="!bookingForm.valid">
+        </button>
+      </form>
+    </div>
+  </p-dialog>
+</div> 

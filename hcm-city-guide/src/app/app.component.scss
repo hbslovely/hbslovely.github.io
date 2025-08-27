@@ -2,14 +2,71 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: linear-gradient(180deg, 
+    var(--surface-ground) 0%,
+    rgba(248, 250, 252, 0.8) 100%
+  );
 }
 
 main {
   flex: 1;
   margin-top: 72px; // Height of header
-  padding: 1rem;
+  padding: 2rem 1.5rem;
+  
+  @media (min-width: 768px) {
+    padding: 3rem 2rem;
+  }
+  
+  // Add subtle grid background
+  background-image: 
+    linear-gradient(to right, rgba(37, 99, 235, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
 footer {
-  background-color: var(--surface-ground);
+  background: linear-gradient(
+    to bottom,
+    var(--surface-ground) 0%,
+    rgba(30, 41, 59, 0.05) 100%
+  );
+  border-top: 1px solid var(--surface-border);
+  padding: 4rem 0 2rem;
+  margin-top: 4rem;
+  
+  @media (min-width: 768px) {
+    padding: 6rem 0 3rem;
+    margin-top: 6rem;
+  }
+}
+
+// Add smooth scroll behavior
+:host {
+  scroll-behavior: smooth;
+  
+  ::ng-deep {
+    // Style scrollbar
+    ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: var(--surface-ground);
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: var(--surface-border);
+      border-radius: 5px;
+      
+      &:hover {
+        background: var(--text-color-secondary);
+      }
+    }
+    
+    // Add fade-in animation to route transitions
+    router-outlet + * {
+      animation: fadeIn var(--transition-normal) ease-out;
+    }
+  }
 }

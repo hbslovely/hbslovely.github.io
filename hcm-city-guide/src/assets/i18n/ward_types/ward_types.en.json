@@ -1,0 +1,68 @@
+{
+  "URBAN": {
+    "TITLE": "Urban Ward",
+    "DESCRIPTION": "A densely populated area with modern infrastructure, commercial centers, and urban amenities.",
+    "CHARACTERISTICS": [
+      "High population density",
+      "Modern infrastructure",
+      "Commercial and business centers",
+      "Public transportation hubs",
+      "Mixed-use developments"
+    ]
+  },
+  "SUBURBAN": {
+    "TITLE": "Suburban Ward",
+    "DESCRIPTION": "A residential area on the outskirts of the city, combining urban conveniences with more spacious living.",
+    "CHARACTERISTICS": [
+      "Medium population density",
+      "Residential neighborhoods",
+      "Local shopping centers",
+      "Parks and green spaces",
+      "Educational facilities"
+    ]
+  },
+  "RURAL": {
+    "TITLE": "Rural Ward",
+    "DESCRIPTION": "An area characterized by agricultural activities, traditional villages, and natural landscapes.",
+    "CHARACTERISTICS": [
+      "Low population density",
+      "Agricultural land",
+      "Traditional communities",
+      "Natural environments",
+      "Local markets"
+    ]
+  },
+  "SPECIAL": {
+    "TITLE": "Special Administrative Region",
+    "DESCRIPTION": "A unique administrative area with specific economic, historical, or strategic importance.",
+    "CHARACTERISTICS": [
+      "Special governance structure",
+      "Strategic importance",
+      "Unique development policies",
+      "Historical significance",
+      "Specialized facilities"
+    ]
+  },
+  "INDUSTRIAL": {
+    "TITLE": "Industrial Ward",
+    "DESCRIPTION": "An area focused on manufacturing, logistics, and industrial activities.",
+    "CHARACTERISTICS": [
+      "Industrial parks",
+      "Manufacturing facilities",
+      "Logistics centers",
+      "Worker housing",
+      "Transportation infrastructure"
+    ]
+  },
+  "MIXED": {
+    "TITLE": "Mixed Development Ward",
+    "DESCRIPTION": "A diverse area combining residential, commercial, and light industrial activities.",
+    "CHARACTERISTICS": [
+      "Mixed land use",
+      "Balanced development",
+      "Various amenities",
+      "Community facilities",
+      "Integrated planning"
+    ]
+  }
+}

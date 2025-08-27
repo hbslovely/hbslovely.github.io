@@ -1,0 +1,37 @@
+{
+  "sections": {
+    "personalSafety": {
+      "guidelines": [
+        "KEEP_BELONGINGS_CLOSE",
+        "USE_RELIABLE_TRANSPORT",
+        "MINIMAL_CASH",
+        "EMERGENCY_NUMBERS",
+        "STAY_AWARE",
+        "TRUST_INSTINCTS",
+        "DOCUMENT_COPIES"
+      ]
+    },
+    "trafficSafety": {
+      "guidelines": [
+        "LOOK_BOTH_WAYS",
+        "STEADY_CROSSING",
+        "USE_CROSSWALKS",
+        "WATCH_SIDEWALKS",
+        "HOLD_CHILDREN",
+        "AVOID_PHONE_WALKING",
+        "USE_PEDESTRIAN_BRIDGES"
+      ]
+    },
+    "healthSafety": {
+      "guidelines": [
+        "BOTTLED_WATER",
+        "POPULAR_RESTAURANTS",
+        "BASIC_MEDICINE",
+        "STAY_HYDRATED",
+        "USE_SUNSCREEN",
+        "KNOW_FACILITIES",
+        "INSURANCE_INFO"
+      ]
+    }
+  }
+} 

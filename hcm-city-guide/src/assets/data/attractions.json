@@ -1,0 +1,116 @@
+{
+  "sections": {
+    "landmarks": {
+      "items": [
+        {
+          "nameKey": "ATTRACTIONS.LANDMARKS.NOTRE_DAME.NAME",
+          "descriptionKey": "ATTRACTIONS.LANDMARKS.NOTRE_DAME.DESCRIPTION",
+          "address": "01 Công xã Paris, Bến Nghé, District 1",
+          "openingHours": "8:00 - 17:00",
+          "price": "0đ",
+          "images": [
+            "assets/images/religious-sites/nha-tho-Duc-Ba.png"
+          ],
+          "tags": ["religious", "historic", "architecture"],
+          "metroAccess": {
+            "station": "Saigon Opera House Station",
+            "distance": "550m"
+          }
+        },
+        {
+          "nameKey": "ATTRACTIONS.LANDMARKS.LANDMARK_81.NAME",
+          "descriptionKey": "ATTRACTIONS.LANDMARKS.LANDMARK_81.DESCRIPTION",
+          "address": "720A Điện Biên Phủ, Bình Thạnh District",
+          "openingHours": "24/7",
+          "price": "Varies by venue",
+          "images": [
+            "assets/images/landmarks/toa-nha-landmark-81.png"
+          ],
+          "tags": ["modern", "shopping", "dining", "viewpoint"],
+          "metroAccess": {
+            "station": "Tan Cang Station",
+            "distance": "300m"
+          },
+          "highlights": [
+            {
+              "nameKey": "ATTRACTIONS.LANDMARKS.LANDMARK_81.HIGHLIGHTS.BLANK_SKY.NAME",
+              "descriptionKey": "ATTRACTIONS.LANDMARKS.LANDMARK_81.HIGHLIGHTS.BLANK_SKY.DESCRIPTION",
+              "floor": "75-76",
+              "type": "lounge"
+            },
+            {
+              "nameKey": "ATTRACTIONS.LANDMARKS.LANDMARK_81.HIGHLIGHTS.ORIENTAL_PEARL.NAME",
+              "descriptionKey": "ATTRACTIONS.LANDMARKS.LANDMARK_81.HIGHLIGHTS.ORIENTAL_PEARL.DESCRIPTION",
+              "floor": "66",
+              "type": "restaurant"
+            }
+          ]
+        },
+        {
+          "nameKey": "ATTRACTIONS.LANDMARKS.SAIGON_ZOO.NAME",
+          "descriptionKey": "ATTRACTIONS.LANDMARKS.SAIGON_ZOO.DESCRIPTION",
+          "address": "2B Nguyễn Bỉnh Khiêm, District 1",
+          "openingHours": "7:00 - 18:30",
+          "price": "50,000đ",
+          "images": [
+            "assets/images/landmarks/saigon-zoo.jpg"
+          ],
+          "tags": ["nature", "family", "historic"],
+          "metroAccess": {
+            "station": "Ba Son Station",
+            "distance": "500m"
+          },
+          "stats": {
+            "established": 1864,
+            "animals": 1300,
+            "plants": 2500
+          }
+        }
+      ]
+    },
+    "districts": {
+      "items": [
+        {
+          "nameKey": "ATTRACTIONS.DISTRICTS.THAO_DIEN.NAME",
+          "descriptionKey": "ATTRACTIONS.DISTRICTS.THAO_DIEN.DESCRIPTION",
+          "highlights": [
+            {
+              "nameKey": "ATTRACTIONS.DISTRICTS.THAO_DIEN.HIGHLIGHTS.ALLEY_28.NAME",
+              "descriptionKey": "ATTRACTIONS.DISTRICTS.THAO_DIEN.HIGHLIGHTS.ALLEY_28.DESCRIPTION",
+              "type": "lifestyle",
+              "area": "3 hectares",
+              "established": 2018
+            },
+            {
+              "nameKey": "ATTRACTIONS.DISTRICTS.THAO_DIEN.HIGHLIGHTS.NIGHT_MARKET.NAME",
+              "descriptionKey": "ATTRACTIONS.DISTRICTS.THAO_DIEN.HIGHLIGHTS.NIGHT_MARKET.DESCRIPTION",
+              "type": "market",
+              "location": "Between Xuan Thuy, Quoc Huong and Nguyen Van Huong streets"
+            }
+          ],
+          "metroAccess": {
+            "station": "Thao Dien Station",
+            "distance": "0m"
+          }
+        }
+      ]
+    }
+  },
+  "tagColors": {
+    "shopping": "primary",
+    "food": "success",
+    "historic": "warning",
+    "religious": "info",
+    "architecture": "warning",
+    "museum": "info",
+    "educational": "success"
+  },
+  "facilityIcons": {
+    "parking": "fa-solid fa-parking",
+    "restroom": "fa-solid fa-restroom",
+    "atm": "fa-solid fa-money-bill-transfer",
+    "cafe": "fa-solid fa-mug-hot",
+    "gift-shop": "fa-solid fa-gift",
+    "guided-tour": "fa-solid fa-person-walking"
+  }
+} 

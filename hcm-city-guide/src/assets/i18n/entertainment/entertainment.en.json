@@ -1,0 +1,216 @@
+{
+  "NIGHTLIFE": {
+    "TITLE": "Nightlife in Ho Chi Minh City",
+    "DESCRIPTION": "Discover the vibrant nightlife scene of Saigon, from rooftop bars to underground clubs.",
+    "SEARCH_PLACEHOLDER": "Search for venues, features, or locations...",
+    
+    "TYPES": {
+      "CLUB": "Nightclubs",
+      "BAR": "Bars",
+      "LOUNGE": "Lounges",
+      "LIVE_MUSIC": "Live Music",
+      "KARAOKE": "Karaoke"
+    },
+
+    "FILTERS": {
+      "DISTRICT": "District",
+      "SELECT_DISTRICT": "Select district",
+      "PRICE": "Price Range",
+      "RATING": "Minimum Rating",
+      "FEATURES": "Features",
+      "OPEN_NOW": "Open Now"
+    },
+
+    "PRICE_RANGES": {
+      "BUDGET": "$",
+      "MODERATE": "$$",
+      "LUXURY": "$$$"
+    },
+
+    "FEATURES": {
+      "LIVE_MUSIC": "Live Music",
+      "DANCE_FLOOR": "Dance Floor",
+      "VIP_TABLES": "VIP Tables",
+      "ROOFTOP": "Rooftop",
+      "SPORTS_SCREENS": "Sports Screens",
+      "FOOD_SERVICE": "Food Service",
+      "SMOKING_AREA": "Smoking Area",
+      "VALET_PARKING": "Valet Parking"
+    },
+
+    "SORT": {
+      "POPULAR": "Most Popular",
+      "RATING": "Highest Rated",
+      "PRICE_LOW": "Price: Low to High",
+      "PRICE_HIGH": "Price: High to Low"
+    },
+
+    "VENUE_TYPES": {
+      "CLUB": "Nightclub",
+      "BAR": "Bar",
+      "LOUNGE": "Lounge",
+      "LIVE_MUSIC": "Live Music Venue",
+      "KARAOKE": "Karaoke"
+    },
+
+    "OPEN_NOW": "Open Now",
+    "CLOSED": "Closed",
+    "NO_RESULTS": "No venues found",
+    "TRY_DIFFERENT": "Try different filters or search terms",
+    "CLEAR_FILTERS": "Clear Filters",
+    "VENUE_MAP": "Venue Map",
+    "VIEW_DETAILS": "View Details",
+    "BOOK_NOW": "Book Now",
+    "SHARE": "Share",
+    "FAVORITE": "Add to Favorites",
+    "UNFAVORITE": "Remove from Favorites",
+    "GET_DIRECTIONS": "Get Directions"
+  },
+  "CINEMAS": {
+    "TITLE": "Movies & Theaters",
+    "DESCRIPTION": "Discover the latest movies and find the best cinemas in Ho Chi Minh City",
+    "NOW_PLAYING": "Now Playing",
+    "COMING_SOON": "Coming Soon",
+    "THEATERS": "Movie Theaters",
+    "SELECT_DISTRICT": "Select District",
+
+    "SORT": {
+      "POPULAR": "Most Popular",
+      "LATEST": "Latest Release",
+      "RATING": "Highest Rated"
+    },
+
+    "MOVIE": {
+      "DURATION": "Duration",
+      "MINUTES": "min",
+      "LANGUAGE": "Language",
+      "SUBTITLES": "Subtitles",
+      "RELEASE_DATE": "Release Date",
+      "SYNOPSIS": "Synopsis",
+      "CAST": "Cast",
+      "DIRECTOR": "Director",
+      "GENRE": "Genre",
+      "RATING": "Rating",
+      "WATCH_TRAILER": "Watch Trailer",
+      "BOOK_TICKETS": "Book Tickets"
+    },
+
+    "CINEMA": {
+      "FACILITIES": "Facilities",
+      "AMENITIES": "Amenities",
+      "SCREENS": "Screens",
+      "CONTACT": "Contact",
+      "VIEW_SHOWTIMES": "View Showtimes",
+      "GET_DIRECTIONS": "Get Directions"
+    },
+
+    "BOOKING": {
+      "SELECT_DATE": "Select Date",
+      "SELECT_TIME": "Select Time",
+      "SELECT_SEATS": "Select Seats",
+      "PRICE": "Price",
+      "AVAILABLE_SEATS": "Available Seats",
+      "SELECTED_SEATS": "Selected Seats",
+      "TOTAL": "Total",
+      "CONTINUE": "Continue",
+      "CONFIRM": "Confirm Booking",
+      "CANCEL": "Cancel"
+    },
+
+    "FORMATS": {
+      "STANDARD": "Standard",
+      "IMAX": "IMAX",
+      "4DX": "4DX",
+      "SCREENX": "ScreenX",
+      "GOLD_CLASS": "Gold Class"
+    },
+
+    "FACILITIES": {
+      "PARKING": "Parking",
+      "FOOD_COURT": "Food Court",
+      "VIP_LOUNGE": "VIP Lounge",
+      "WHEELCHAIR_ACCESS": "Wheelchair Access",
+      "BABY_ROOM": "Baby Room"
+    },
+
+    "MESSAGES": {
+      "NO_SHOWTIMES": "No showtimes available for this date",
+      "SELECT_SHOWTIME": "Please select a showtime",
+      "BOOKING_SUCCESS": "Booking successful!",
+      "BOOKING_FAILED": "Booking failed. Please try again."
+    }
+  },
+  "SPORTS": {
+    "TITLE": "Sports & Recreation",
+    "DESCRIPTION": "Find sports venues, fitness centers, and upcoming events in Ho Chi Minh City",
+    "VENUES": "Sports Venues",
+    "UPCOMING_EVENTS": "Upcoming Events",
+    "SELECT_DISTRICT": "Select District",
+    "SELECT_PRICE": "Select Price Range",
+    "FROM": "From",
+
+    "TYPES": {
+      "FOOTBALL": "Football",
+      "BASKETBALL": "Basketball",
+      "TENNIS": "Tennis",
+      "SWIMMING": "Swimming",
+      "BADMINTON": "Badminton",
+      "GYM": "Gym",
+      "YOGA": "Yoga",
+      "RUNNING": "Running"
+    },
+
+    "FACILITIES": {
+      "PARKING": "Parking",
+      "SHOWER": "Shower Rooms",
+      "LOCKER": "Lockers",
+      "EQUIPMENT": "Equipment Rental",
+      "CAFE": "Cafe",
+      "WIFI": "WiFi",
+      "PERSONAL_TRAINER": "Personal Trainer",
+      "SAUNA": "Sauna",
+      "SWIMMING_COACH": "Swimming Coach"
+    },
+
+    "BOOKING": {
+      "BOOK_VENUE": "Book Venue",
+      "SELECT_DATE": "Select Date",
+      "SELECT_TIME": "Select Time",
+      "DURATION": "Duration",
+      "HOURS": "hours",
+      "EQUIPMENT_RENTAL": "Equipment Rental",
+      "PRICE_PER_HOUR": "Price per Hour",
+      "TOTAL": "Total",
+      "BOOK_NOW": "Book Now",
+      "CONFIRM": "Confirm Booking",
+      "CANCEL": "Cancel"
+    },
+
+    "EVENTS": {
+      "GET_TICKETS": "Get Tickets",
+      "AVAILABLE_TICKETS": "Available Tickets",
+      "ORGANIZER": "Organizer",
+      "VENUE": "Venue",
+      "DATE": "Date",
+      "TIME": "Time",
+      "PRICE": "Price",
+      "BOOK_TICKETS": "Book Tickets"
+    },
+
+    "MESSAGES": {
+      "NO_VENUES": "No venues found",
+      "NO_EVENTS": "No upcoming events",
+      "BOOKING_SUCCESS": "Booking successful!",
+      "BOOKING_FAILED": "Booking failed. Please try again.",
+      "TICKET_SUCCESS": "Tickets booked successfully!",
+      "TICKET_FAILED": "Failed to book tickets. Please try again."
+    },
+
+    "VIEW_DETAILS": "View Details",
+    "BOOK_NOW": "Book Now",
+    "GET_DIRECTIONS": "Get Directions",
+    "SHARE": "Share",
+    "FAVORITE": "Add to Favorites",
+    "UNFAVORITE": "Remove from Favorites"
+  }
+} 

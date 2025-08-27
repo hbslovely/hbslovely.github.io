@@ -1,0 +1,193 @@
+<div class="booking-dialog">
+      <!-- Booking Steps -->
+      <p-steps 
+        [model]="steps" 
+        [activeIndex]="currentStep"
+        [readonly]="false">
+      </p-steps>
+
+      <!-- Guest Information Step -->
+      <div class="step-content" *ngIf="currentStep === 0">
+        <form [formGroup]="guestForm" class="guest-form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label>{{ 'HOTELS.BOOKING.FIRST_NAME' | translate }}</label>
+              <input 
+                type="text" 
+                pInputText 
+                formControlName="firstName"
+                [placeholder]="'HOTELS.BOOKING.FIRST_NAME_PLACEHOLDER' | translate">
+            </div>
+
+            <div class="form-group">
+              <label>{{ 'HOTELS.BOOKING.LAST_NAME' | translate }}</label>
+              <input 
+                type="text" 
+                pInputText 
+                formControlName="lastName"
+                [placeholder]="'HOTELS.BOOKING.LAST_NAME_PLACEHOLDER' | translate">
+            </div>
+
+            <div class="form-group">
+              <label>{{ 'HOTELS.BOOKING.EMAIL' | translate }}</label>
+              <input 
+                type="email" 
+                pInputText 
+                formControlName="email"
+                [placeholder]="'HOTELS.BOOKING.EMAIL_PLACEHOLDER' | translate">
+            </div>
+
+            <div class="form-group">
+              <label>{{ 'HOTELS.BOOKING.PHONE' | translate }}</label>
+              <input 
+                type="tel" 
+                pInputText 
+                formControlName="phone"
+                [placeholder]="'HOTELS.BOOKING.PHONE_PLACEHOLDER' | translate">
+            </div>
+
+            <div class="form-group">
+              <label>{{ 'HOTELS.BOOKING.COUNTRY' | translate }}</label>
+              <p-dropdown 
+                formControlName="country"
+                [options]="countries"
+                [placeholder]="'HOTELS.BOOKING.SELECT_COUNTRY' | translate"
+                [filter]="true">
+              </p-dropdown>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>{{ 'HOTELS.BOOKING.SPECIAL_REQUESTS' | translate }}</label>
+            <textarea 
+              pInputTextarea 
+              formControlName="specialRequests"
+              [rows]="3"
+              [placeholder]="'HOTELS.BOOKING.SPECIAL_REQUESTS_PLACEHOLDER' | translate">
+            </textarea>
+          </div>
+        </form>
+      </div>
+
+      <!-- Review & Payment Step -->
+      <div class="step-content" *ngIf="currentStep === 1">
+        <div class="booking-summary">
+          <p-card>
+            <ng-template pTemplate="header">
+              <h3>{{ 'HOTELS.BOOKING.SUMMARY' | translate }}</h3>
+            </ng-template>
+
+            <div class="summary-content">
+              <div class="summary-row">
+                <span class="label">{{ 'HOTELS.BOOKING.HOTEL' | translate }}</span>
+                <span class="value">{{ hotel.name }}</span>
+              </div>
+
+              <div class="summary-row">
+                <span class="label">{{ 'HOTELS.BOOKING.ROOM' | translate }}</span>
+                <span class="value">{{ selectedRoom.name }}</span>
+              </div>
+
+              <div class="summary-row">
+                <span class="label">{{ 'HOTELS.BOOKING.CHECK_IN' | translate }}</span>
+                <span class="value">{{ bookingDates.checkIn | date }}</span>
+              </div>
+
+              <div class="summary-row">
+                <span class="label">{{ 'HOTELS.BOOKING.CHECK_OUT' | translate }}</span>
+                <span class="value">{{ bookingDates.checkOut | date }}</span>
+              </div>
+
+              <div class="summary-row">
+                <span class="label">{{ 'HOTELS.BOOKING.GUESTS' | translate }}</span>
+                <span class="value">{{ bookingDates.guests }}</span>
+              </div>
+
+              <p-divider></p-divider>
+
+              <div class="price-summary">
+                <div class="summary-row">
+                  <span class="label">{{ 'HOTELS.BOOKING.ROOM_PRICE' | translate }}</span>
+                  <span class="value">{{ selectedRoom.price.amount | currency:selectedRoom.price.currency:'symbol':'1.0-0' }}</span>
+                </div>
+
+                <div class="summary-row" *ngIf="selectedRoom.price.discount">
+                  <span class="label">{{ 'HOTELS.BOOKING.DISCOUNT' | translate }}</span>
+                  <span class="value discount">-{{ selectedRoom.price.discount }}%</span>
+                </div>
+
+                <div class="summary-row total">
+                  <span class="label">{{ 'HOTELS.BOOKING.TOTAL' | translate }}</span>
+                  <span class="value">{{ calculateTotal() | currency:selectedRoom.price.currency:'symbol':'1.0-0' }}</span>
+                </div>
+
+                <p class="includes-taxes">{{ 'HOTELS.DETAILS.INCLUDES_TAXES' | translate }}</p>
+              </div>
+            </div>
+
+            <div class="terms-section">
+              <p-checkbox 
+                formControlName="acceptTerms"
+                [binary]="true"
+                [label]="'HOTELS.BOOKING.TERMS' | translate">
+              </p-checkbox>
+            </div>
+          </p-card>
+        </div>
+      </div>
+
+      <!-- Confirmation Step -->
+      <div class="step-content" *ngIf="currentStep === 2">
+        <div class="confirmation" [ngSwitch]="bookingStatus">
+          <div class="processing" *ngSwitchCase="'processing'">
+            <i class="pi pi-spin pi-spinner"></i>
+            <h3>{{ 'HOTELS.BOOKING.PROCESSING' | translate }}</h3>
+          </div>
+
+          <div class="success" *ngSwitchCase="'success'">
+            <i class="pi pi-check-circle"></i>
+            <h3>{{ 'HOTELS.BOOKING.SUCCESS' | translate }}</h3>
+            <p>{{ 'HOTELS.BOOKING.SUCCESS_MESSAGE' | translate }}</p>
+            <button 
+              pButton 
+              type="button" 
+              [label]="'HOTELS.BOOKING.VIEW_BOOKING' | translate"
+              (click)="viewBooking()">
+            </button>
+          </div>
+
+          <div class="error" *ngSwitchCase="'error'">
+            <i class="pi pi-times-circle"></i>
+            <h3>{{ 'HOTELS.BOOKING.ERROR' | translate }}</h3>
+            <p>{{ 'HOTELS.BOOKING.ERROR_MESSAGE' | translate }}</p>
+            <button 
+              pButton 
+              type="button" 
+              [label]="'HOTELS.BOOKING.TRY_AGAIN' | translate"
+              (click)="retryBooking()">
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dialog Footer -->
+      <div class="dialog-footer">
+        <button 
+          pButton 
+          type="button" 
+          [label]="'COMMON.BACK' | translate"
+          class="p-button-outlined"
+          (click)="previousStep()"
+          *ngIf="currentStep > 0 && bookingStatus !== 'success'">
+        </button>
+
+        <button 
+          pButton 
+          type="button" 
+          [label]="getNextButtonLabel()"
+          (click)="nextStep()"
+          [disabled]="!canProceed()"
+          *ngIf="currentStep < 2 || (currentStep === 2 && bookingStatus === 'error')">
+        </button>
+      </div>
+    </div>

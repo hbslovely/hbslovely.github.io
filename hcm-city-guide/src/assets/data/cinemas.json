@@ -1,0 +1,181 @@
+{
+  "cinemas": [
+    {
+      "id": "cgv-001",
+      "name": "CGV Landmark 81",
+      "address": "B1-01, Landmark 81, 208 Nguyen Huu Canh, Ward 22, Binh Thanh District",
+      "district": "binh-thanh",
+      "rating": 4.6,
+      "facilities": [
+        "IMAX",
+        "4DX",
+        "Gold Class",
+        "Parking",
+        "Food Court",
+        "VIP Lounge"
+      ],
+      "images": [
+        "assets/images/cinemas/cgv-landmark-1.jpg",
+        "assets/images/cinemas/cgv-landmark-2.jpg",
+        "assets/images/cinemas/cgv-landmark-3.jpg"
+      ],
+      "coordinates": {
+        "lat": 10.7952,
+        "lng": 106.7215
+      },
+      "screens": [
+        {
+          "name": "IMAX",
+          "capacity": 300,
+          "features": ["Laser Projection", "Dolby Atmos"]
+        },
+        {
+          "name": "4DX",
+          "capacity": 150,
+          "features": ["Motion Seats", "Environmental Effects"]
+        },
+        {
+          "name": "Gold Class",
+          "capacity": 50,
+          "features": ["Reclining Seats", "Butler Service"]
+        }
+      ],
+      "amenities": {
+        "parking": true,
+        "foodCourt": true,
+        "vipLounge": true,
+        "wheelchairAccess": true,
+        "babyRoom": true
+      },
+      "contact": {
+        "phone": "+84 28 3827 9999",
+        "email": "customer.service@cgv.vn",
+        "website": "https://www.cgv.vn"
+      }
+    },
+    {
+      "id": "cgv-002",
+      "name": "CGV Crescent Mall",
+      "address": "Level 5, Crescent Mall, 101 Ton Dat Tien, Tan Phu Ward, District 7",
+      "district": "district-7",
+      "rating": 4.5,
+      "facilities": [
+        "ScreenX",
+        "Premium Cinema",
+        "Parking",
+        "Food Court"
+      ],
+      "images": [
+        "assets/images/cinemas/cgv-crescent-1.jpg",
+        "assets/images/cinemas/cgv-crescent-2.jpg"
+      ],
+      "coordinates": {
+        "lat": 10.7287,
+        "lng": 106.7182
+      },
+      "screens": [
+        {
+          "name": "ScreenX",
+          "capacity": 250,
+          "features": ["270-degree Projection", "Dolby Sound"]
+        },
+        {
+          "name": "Premium",
+          "capacity": 120,
+          "features": ["Premium Seats", "Enhanced Sound"]
+        }
+      ],
+      "amenities": {
+        "parking": true,
+        "foodCourt": true,
+        "vipLounge": false,
+        "wheelchairAccess": true,
+        "babyRoom": true
+      },
+      "contact": {
+        "phone": "+84 28 3827 8888",
+        "email": "customer.service@cgv.vn",
+        "website": "https://www.cgv.vn"
+      }
+    },
+    {
+      "id": "galaxy-001",
+      "name": "Galaxy Nguyen Du",
+      "address": "116 Nguyen Du Street, Ben Thanh Ward, District 1",
+      "district": "district-1",
+      "rating": 4.3,
+      "facilities": [
+        "Digital Cinema",
+        "Dolby Sound",
+        "Food Court"
+      ],
+      "images": [
+        "assets/images/cinemas/galaxy-nguyendu-1.jpg",
+        "assets/images/cinemas/galaxy-nguyendu-2.jpg"
+      ],
+      "coordinates": {
+        "lat": 10.7721,
+        "lng": 106.6955
+      },
+      "screens": [
+        {
+          "name": "Digital",
+          "capacity": 200,
+          "features": ["Digital Projection", "Dolby Sound"]
+        }
+      ],
+      "amenities": {
+        "parking": false,
+        "foodCourt": true,
+        "vipLounge": false,
+        "wheelchairAccess": true,
+        "babyRoom": false
+      },
+      "contact": {
+        "phone": "+84 28 3824 1234",
+        "email": "info@galaxycine.vn",
+        "website": "https://www.galaxycine.vn"
+      }
+    },
+    {
+      "id": "lotte-001",
+      "name": "Lotte Cinema Diamond",
+      "address": "Level 13, Diamond Plaza, 34 Le Duan, District 1",
+      "district": "district-1",
+      "rating": 4.4,
+      "facilities": [
+        "Digital Cinema",
+        "Premium Seats",
+        "Food Court",
+        "Parking"
+      ],
+      "images": [
+        "assets/images/cinemas/lotte-diamond-1.jpg",
+        "assets/images/cinemas/lotte-diamond-2.jpg"
+      ],
+      "coordinates": {
+        "lat": 10.7838,
+        "lng": 106.7017
+      },
+      "screens": [
+        {
+          "name": "Premium",
+          "capacity": 180,
+          "features": ["Premium Seats", "Digital Sound"]
+        }
+      ],
+      "amenities": {
+        "parking": true,
+        "foodCourt": true,
+        "vipLounge": false,
+        "wheelchairAccess": true,
+        "babyRoom": true
+      },
+      "contact": {
+        "phone": "+84 28 3823 2323",
+        "email": "customer@lotte.vn",
+        "website": "https://www.lottecinemavn.com"
+      }
+    }
+  ]
+} 

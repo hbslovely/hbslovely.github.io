@@ -1,0 +1,99 @@
+{
+  "SEARCH": {
+    "TITLE": "Find Your Perfect Stay",
+    "DESCRIPTION": "Search hotels, resorts, and apartments in Ho Chi Minh City",
+    "CHECK_IN": "Check-in",
+    "CHECK_OUT": "Check-out",
+    "GUESTS": "Guests",
+    "ADULTS": "Adults",
+    "ROOMS": "Rooms",
+    "DISTRICT": "District",
+    "SELECT_DISTRICT": "Select District",
+    "PROPERTY_TYPE": "Property Type",
+    "PRICE_RANGE": "Price Range",
+    "RATING": "Rating",
+    "AMENITIES": "Amenities",
+    "SEARCH": "Search Hotels",
+    "RESULTS": "Search Results",
+    "FROM": "From",
+    "PER_NIGHT": "per night",
+    "VIEW_DETAILS": "View Details",
+    "NO_RESULTS": "No hotels found",
+    "TRY_AGAIN": "Try adjusting your search criteria"
+  },
+
+  "PROPERTY_TYPES": {
+    "HOTEL": "Hotel",
+    "RESORT": "Resort",
+    "APARTMENT": "Apartment"
+  },
+
+  "AMENITIES": {
+    "POOL": "Swimming Pool",
+    "SPA": "Spa & Wellness",
+    "GYM": "Fitness Center",
+    "RESTAURANT": "Restaurant",
+    "PARKING": "Parking",
+    "WIFI": "Free WiFi",
+    "AIRPORT_SHUTTLE": "Airport Shuttle",
+    "ROOM_SERVICE": "Room Service",
+    "BAR": "Bar/Lounge",
+    "BEACH_ACCESS": "Beach Access"
+  },
+
+  "DETAILS": {
+    "OVERVIEW": "Overview",
+    "DESCRIPTION": "Description",
+    "FACILITIES": "Facilities",
+    "ROOMS": "Rooms & Rates",
+    "LOCATION": "Location",
+    "POLICIES": "Policies",
+    "CHECK_IN_TIME": "Check-in Time",
+    "CHECK_OUT_TIME": "Check-out Time",
+    "CANCELLATION": "Cancellation Policy",
+    "PREPAYMENT": "Prepayment Policy",
+    "BOOK_NOW": "Book Now",
+    "CHECK_AVAILABILITY": "Check Availability",
+    "NOT_SPECIFIED": "Not specified"
+  },
+
+  "ROOM_TYPES": {
+    "SINGLE": "Single Room",
+    "DOUBLE": "Double Room",
+    "TWIN": "Twin Room",
+    "SUITE": "Suite",
+    "DELUXE": "Deluxe Room",
+    "EXECUTIVE": "Executive Room",
+    "FAMILY": "Family Room",
+    "APARTMENT": "Apartment"
+  },
+
+  "BOOKING": {
+    "FIRST_NAME": "First Name",
+    "LAST_NAME": "Last Name",
+    "EMAIL": "Email",
+    "PHONE": "Phone",
+    "COUNTRY": "Country",
+    "SPECIAL_REQUESTS": "Special Requests",
+    "TERMS": "I agree to the terms and conditions",
+    "BOOK": "Book Now",
+    "PROCESSING": "Processing your booking...",
+    "SUCCESS": "Booking Confirmed!",
+    "ERROR": "Booking Failed",
+    "TRY_AGAIN": "Please try again"
+  },
+
+  "FILTERS": {
+    "SORT_BY": "Sort by",
+    "PRICE_LOW_HIGH": "Price (Low to High)",
+    "PRICE_HIGH_LOW": "Price (High to Low)",
+    "RATING_HIGH_LOW": "Rating (High to Low)",
+    "DISTANCE": "Distance from center"
+  },
+
+  "MAP": {
+    "VIEW_ON_MAP": "View on Map",
+    "SHOW_NEARBY": "Show Nearby",
+    "GET_DIRECTIONS": "Get Directions"
+  }
+} 

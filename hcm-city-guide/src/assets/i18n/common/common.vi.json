@@ -1,0 +1,18 @@
+{
+  "DONATE": {
+    "TITLE": "Hỗ Trợ HCM City Guide",
+    "DESCRIPTION": "Giúp chúng tôi duy trì và cập nhật hướng dẫn này miễn phí bằng cách ủng hộ. Chúng tôi rất cảm kích sự hỗ trợ của bạn!",
+    "CUSTOM_AMOUNT": "Số Tiền Tùy Chọn",
+    "CUSTOM_AMOUNT_TITLE": "Nhập Số Tiền",
+    "AMOUNT": "Số Tiền (USD)",
+    "SUCCESS_TITLE": "Cảm Ơn Bạn!",
+    "SUCCESS_MESSAGE": "Chúng tôi đã nhận được sự ủng hộ của bạn. Cảm ơn bạn rất nhiều!",
+    "ERROR_TITLE": "Lỗi",
+    "ERROR_MESSAGE": "Đã xảy ra lỗi khi xử lý khoản ủng hộ. Vui lòng thử lại.",
+    "PAYPAL_ERROR": "Đã xảy ra lỗi với PayPal. Vui lòng thử lại sau."
+  },
+  "COMMON": {
+    "CANCEL": "Hủy",
+    "CONFIRM": "Xác Nhận"
+  }
+} 

@@ -1,0 +1,190 @@
+{
+  "venues": [
+    {
+      "id": "sports-001",
+      "name": "Thong Nhat Sports Complex",
+      "type": ["FOOTBALL", "BASKETBALL", "TENNIS"],
+      "description": "Multi-purpose sports complex featuring professional football field, basketball courts, and tennis courts.",
+      "address": "123 Nguyen Thi Minh Khai, District 1",
+      "district": "district-1",
+      "rating": 4.5,
+      "priceRange": "$$",
+      "openingHours": "06:00 - 22:00",
+      "facilities": [
+        "Parking",
+        "Shower",
+        "Locker",
+        "Equipment",
+        "Cafe",
+        "WiFi"
+      ],
+      "images": [
+        "assets/images/sports/thong-nhat-1.jpg",
+        "assets/images/sports/thong-nhat-2.jpg",
+        "assets/images/sports/thong-nhat-3.jpg"
+      ],
+      "coordinates": {
+        "lat": 10.7873,
+        "lng": 106.6989
+      },
+      "contact": {
+        "phone": "+84 28 3823 4567",
+        "email": "info@thongnhatsports.com",
+        "website": "https://thongnhatsports.com"
+      },
+      "bookingInfo": {
+        "minDuration": 1,
+        "maxDuration": 4,
+        "pricePerHour": 500000,
+        "equipment": {
+          "available": true,
+          "pricePerItem": 50000
+        }
+      }
+    },
+    {
+      "id": "sports-002",
+      "name": "Saigon Fitness Center",
+      "type": ["GYM", "YOGA"],
+      "description": "Modern fitness center with state-of-the-art equipment and professional trainers.",
+      "address": "456 Le Thanh Ton, District 1",
+      "district": "district-1",
+      "rating": 4.7,
+      "priceRange": "$$$",
+      "openingHours": "05:30 - 22:00",
+      "facilities": [
+        "Parking",
+        "Shower",
+        "Locker",
+        "Equipment",
+        "Cafe",
+        "WiFi",
+        "Personal Trainer",
+        "Sauna"
+      ],
+      "images": [
+        "assets/images/sports/saigon-fitness-1.jpg",
+        "assets/images/sports/saigon-fitness-2.jpg"
+      ],
+      "coordinates": {
+        "lat": 10.7789,
+        "lng": 106.7021
+      },
+      "contact": {
+        "phone": "+84 28 3823 8888",
+        "email": "info@saigonfitness.com",
+        "website": "https://saigonfitness.com"
+      },
+      "bookingInfo": {
+        "minDuration": 1,
+        "maxDuration": 3,
+        "pricePerHour": 200000,
+        "equipment": {
+          "available": true,
+          "pricePerItem": 100000
+        }
+      }
+    },
+    {
+      "id": "sports-003",
+      "name": "District 2 Swimming Complex",
+      "type": ["SWIMMING"],
+      "description": "Olympic-sized swimming pool with professional coaching and training facilities.",
+      "address": "789 Thao Dien, District 2",
+      "district": "district-2",
+      "rating": 4.4,
+      "priceRange": "$$",
+      "openingHours": "06:00 - 21:00",
+      "facilities": [
+        "Parking",
+        "Shower",
+        "Locker",
+        "Equipment",
+        "Cafe",
+        "WiFi",
+        "Swimming Coach"
+      ],
+      "images": [
+        "assets/images/sports/d2-swimming-1.jpg",
+        "assets/images/sports/d2-swimming-2.jpg"
+      ],
+      "coordinates": {
+        "lat": 10.8031,
+        "lng": 106.7408
+      },
+      "contact": {
+        "phone": "+84 28 3744 5678",
+        "email": "info@d2swimming.com",
+        "website": "https://d2swimming.com"
+      },
+      "bookingInfo": {
+        "minDuration": 1,
+        "maxDuration": 2,
+        "pricePerHour": 150000,
+        "equipment": {
+          "available": true,
+          "pricePerItem": 50000
+        }
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "event-001",
+      "title": "Saigon Marathon 2024",
+      "type": "RUNNING",
+      "description": "Annual marathon event through the streets of Ho Chi Minh City.",
+      "venue": "Thong Nhat Stadium",
+      "date": "2024-04-15",
+      "time": "05:00",
+      "price": {
+        "amount": 500000,
+        "currency": "VND"
+      },
+      "tickets": {
+        "available": 1000,
+        "total": 5000
+      },
+      "image": "assets/images/sports/marathon-2024.jpg",
+      "organizer": "HCMC Athletics Federation"
+    },
+    {
+      "id": "event-002",
+      "title": "Vietnam Basketball League Finals",
+      "type": "BASKETBALL",
+      "description": "Championship game of the Vietnam Basketball League 2024 season.",
+      "venue": "Phu Tho Indoor Stadium",
+      "date": "2024-03-30",
+      "time": "19:00",
+      "price": {
+        "amount": 200000,
+        "currency": "VND"
+      },
+      "tickets": {
+        "available": 500,
+        "total": 2000
+      },
+      "image": "assets/images/sports/vbl-finals.jpg",
+      "organizer": "Vietnam Basketball Federation"
+    },
+    {
+      "id": "event-003",
+      "title": "HCMC Yoga Festival",
+      "type": "YOGA",
+      "description": "A day of yoga classes, workshops, and wellness activities.",
+      "venue": "September 23 Park",
+      "date": "2024-04-01",
+      "time": "08:00",
+      "price": {
+        "amount": 300000,
+        "currency": "VND"
+      },
+      "tickets": {
+        "available": 200,
+        "total": 500
+      },
+      "image": "assets/images/sports/yoga-festival.jpg",
+      "organizer": "HCMC Yoga Association"
+    }
+  ]
+} 

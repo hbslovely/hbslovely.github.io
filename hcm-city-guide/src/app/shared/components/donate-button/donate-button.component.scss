@@ -1,0 +1,60 @@
+.donate-container {
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--surface-card);
+      border-radius: 1rem;
+      box-shadow: var(--card-shadow);
+
+      h3 {
+        color: var(--text-color);
+        font-size: 1.25rem;
+        margin: 0 0 0.5rem;
+      }
+
+      p {
+        color: var(--text-color-secondary);
+        margin: 0 0 1.5rem;
+        font-size: 0.875rem;
+      }
+
+      .donation-options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+
+        button {
+          min-width: 100px;
+
+          &.selected {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+          }
+        }
+      }
+    }
+
+    .custom-amount-form {
+      .p-field {
+        margin-bottom: 1rem;
+
+        label {
+          display: block;
+          margin-bottom: 0.5rem;
+          color: var(--text-color);
+        }
+
+        input {
+          width: 100%;
+        }
+      }
+    }
+
+    :host ::ng-deep {
+      .paypal-buttons {
+        max-width: 300px;
+        margin: 0 auto;
+      }
+    }

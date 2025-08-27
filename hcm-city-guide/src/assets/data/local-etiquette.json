@@ -1,0 +1,38 @@
+{
+  "sections": {
+    "templeVisits": {
+      "guidelines": [
+        "DRESS_CODE",
+        "REMOVE_SHOES",
+        "INCENSE_BURNING",
+        "FOOT_POINTING",
+        "PHOTO_PERMISSION",
+        "QUIET_PHONES",
+        "NO_TOUCHING",
+        "CLOCKWISE_DIRECTION"
+      ]
+    },
+    "dining": {
+      "guidelines": [
+        "ELDER_FIRST",
+        "TWO_HANDS",
+        "RICE_BOWL",
+        "CHOPSTICKS_POSITION",
+        "FAMILY_STYLE",
+        "THANK_HOST",
+        "GROUP_PAYMENT"
+      ]
+    },
+    "homeVisits": {
+      "guidelines": [
+        "SHOES_OFF",
+        "BRING_GIFT",
+        "GREET_ELDERS",
+        "ACCEPT_DRINKS",
+        "PHOTO_PERMISSION",
+        "COMPLIMENT_HOME",
+        "FOLLOW_SEATING"
+      ]
+    }
+  }
+} 

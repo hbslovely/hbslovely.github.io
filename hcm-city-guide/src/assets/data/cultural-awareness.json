@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "publicBehavior": {
+      "guidelines": [
+        "MODEST_DRESS",
+        "AVOID_PDA",
+        "MODERATE_VOICE",
+        "RESPECT_ELDERS",
+        "REMOVE_SHOES",
+        "PHOTO_PERMISSION"
+      ]
+    },
+    "communication": {
+      "guidelines": [
+        "BASIC_GREETINGS",
+        "SMILE_PATIENCE",
+        "TWO_HANDS",
+        "NO_POINTING",
+        "NO_HEAD_TOUCHING",
+        "ELDER_RESPECT"
+      ]
+    }
+  }
+} 

@@ -1,82 +1,124 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { InputTextModule } from 'primeng/inputtext';
+import { Router } from '@angular/router';
+import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
-import { SearchService } from '../../../core/services/search.service';
+import { InputTextModule } from 'primeng/inputtext';
+
+// Import translations
+import * as menuEn from '../../../../assets/i18n/menu/menu.en.json';
+import * as menuVi from '../../../../assets/i18n/menu/menu.vi.json';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
   imports: [
     CommonModule,
-    FormsModule,
     RouterModule,
+    FormsModule,
     TranslateModule,
-    InputTextModule,
-    ButtonModule
+    DialogModule,
+    ButtonModule,
+    InputTextModule
   ],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  currentLang: string = 'en';
-  isScrolled: boolean = false;
-  isMobileMenuOpen: boolean = false;
-  isSubmenuOpen: boolean = false;
-  searchTerm: string = '';
+  @ViewChild('searchInput') searchInput!: ElementRef;
+
+  isScrolled = false;
+  isMenuOpen = false;
+  showSearchDialog = false;
+  searchTerm = '';
+  activeSubmenu: string | null = null;
+  currentLanguage = 'en';
 
   constructor(
     private translate: TranslateService,
-    private router: Router,
-    private searchService: SearchService
-  ) {}
+    private router: Router
+  ) {
+    // Load menu translations
+    this.translate.setDefaultLang('en');
+    this.translate.use('en');
+    this.loadTranslations();
+  }
 
   ngOnInit() {
-    this.translate.onLangChange.subscribe(event => {
-      this.currentLang = event.lang;
-    });
-
-    // Initialize current language
-    this.currentLang = this.translate.currentLang;
-
-    // Listen for scroll events
-    window.addEventListener('scroll', () => {
-      this.isScrolled = window.scrollY > 0;
-    });
+    this.currentLanguage = this.translate.currentLang || 'en';
   }
 
-  toggleMobileMenu(): void {
-    this.isMobileMenuOpen = !this.isMobileMenuOpen;
-    if (!this.isMobileMenuOpen) {
-      this.isSubmenuOpen = false;
+  private loadTranslations() {
+    // Load menu translations for both languages
+    this.translate.setTranslation('en', menuEn);
+    this.translate.setTranslation('vi', menuVi);
+  }
+
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 50;
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    // Close menu if clicked outside
+    if (this.isMenuOpen && !(event.target as HTMLElement)?.closest('.nav-menu') && 
+        !(event.target as HTMLElement)?.closest('.menu-button')) {
+      this.isMenuOpen = false;
     }
   }
 
-  toggleSubmenu(): void {
-    this.isSubmenuOpen = !this.isSubmenuOpen;
+  @HostListener('window:keydown', ['$event'])
+  onKeyDown(event: KeyboardEvent) {
+    // Close search dialog on escape
+    if (event.key === 'Escape' && this.showSearchDialog) {
+      this.closeSearch();
+    }
   }
 
-  closeMobileMenu(): void {
-    this.isMobileMenuOpen = false;
-    this.isSubmenuOpen = false;
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+    if (!this.isMenuOpen) {
+      this.activeSubmenu = null;
+    }
   }
 
-  onSearch(): void {
+  openSearch() {
+    this.showSearchDialog = true;
+    this.searchTerm = '';
+    setTimeout(() => this.searchInput?.nativeElement.focus(), 100);
+  }
+
+  closeSearch() {
+    this.showSearchDialog = false;
+    this.searchTerm = '';
+  }
+
+  onSearch() {
     if (this.searchTerm.trim()) {
-      this.searchService.setSearchTerm(this.searchTerm);
-      this.router.navigate(['/search'], { 
-        queryParams: { q: this.searchTerm }
-      });
-      this.closeMobileMenu();
+      this.router.navigate(['/search'], { queryParams: { q: this.searchTerm } });
+      this.closeSearch();
     }
   }
 
-  switchLanguage(): void {
-    const newLang = this.currentLang === 'en' ? 'vi' : 'en';
+  toggleLanguage() {
+    const newLang = this.currentLanguage === 'en' ? 'vi' : 'en';
     this.translate.use(newLang);
+    this.currentLanguage = newLang;
+  }
+
+  showSubmenu(menu: string) {
+    this.activeSubmenu = menu;
+  }
+
+  hideSubmenu() {
+    this.activeSubmenu = null;
+  }
+
+  onDonate() {
+    this.router.navigate(['/donate']);
   }
 } 

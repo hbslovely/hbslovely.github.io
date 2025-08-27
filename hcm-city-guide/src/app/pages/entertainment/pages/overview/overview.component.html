@@ -1,0 +1,49 @@
+<div class="entertainment-overview">
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1>{{ 'ENTERTAINMENT.OVERVIEW.TITLE' | translate }}</h1>
+          <p>{{ 'ENTERTAINMENT.OVERVIEW.DESCRIPTION' | translate }}</p>
+        </div>
+      </section>
+
+      <section class="categories-section">
+        <div class="container">
+          <div class="categories-grid">
+            <!-- Shopping -->
+            <a [routerLink]="['/entertainment/shopping']" class="category-card">
+              <i class="pi pi-shopping-bag"></i>
+              <h3>{{ 'ENTERTAINMENT.OVERVIEW.SHOPPING' | translate }}</h3>
+              <p>{{ 'ENTERTAINMENT.OVERVIEW.SHOPPING_DESC' | translate }}</p>
+            </a>
+
+            <!-- Theme Parks -->
+            <a [routerLink]="['/entertainment/theme-parks']" class="category-card">
+              <i class="pi pi-ticket"></i>
+              <h3>{{ 'ENTERTAINMENT.OVERVIEW.THEME_PARKS' | translate }}</h3>
+              <p>{{ 'ENTERTAINMENT.OVERVIEW.THEME_PARKS_DESC' | translate }}</p>
+            </a>
+
+            <!-- Nightlife -->
+            <a [routerLink]="['/entertainment/nightlife']" class="category-card">
+              <i class="pi pi-moon"></i>
+              <h3>{{ 'ENTERTAINMENT.OVERVIEW.NIGHTLIFE' | translate }}</h3>
+              <p>{{ 'ENTERTAINMENT.OVERVIEW.NIGHTLIFE_DESC' | translate }}</p>
+            </a>
+
+            <!-- Cinemas -->
+            <a [routerLink]="['/entertainment/cinemas']" class="category-card">
+              <i class="pi pi-video"></i>
+              <h3>{{ 'ENTERTAINMENT.OVERVIEW.CINEMAS' | translate }}</h3>
+              <p>{{ 'ENTERTAINMENT.OVERVIEW.CINEMAS_DESC' | translate }}</p>
+            </a>
+
+            <!-- Sports -->
+            <a [routerLink]="['/entertainment/sports']" class="category-card">
+              <i class="pi pi-heart-fill"></i>
+              <h3>{{ 'ENTERTAINMENT.OVERVIEW.SPORTS' | translate }}</h3>
+              <p>{{ 'ENTERTAINMENT.OVERVIEW.SPORTS_DESC' | translate }}</p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>

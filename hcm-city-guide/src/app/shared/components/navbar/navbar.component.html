@@ -1,103 +1,167 @@
-<header class="header" [class.scrolled]="isScrolled">
-  <div class="header-content">
-    <div class="header-left">
-      <button class="mobile-menu-toggle" (click)="toggleMobileMenu()">
-        <i class="pi" [ngClass]="{'pi-bars': !isMobileMenuOpen, 'pi-times': isMobileMenuOpen}"></i>
-      </button>
-      <img src="assets/images/logo.png" height="40" class="logo" alt="HCM City Guide Logo"/>
-    </div>
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="container">
+    <!-- Logo -->
+    <a routerLink="/" class="logo">
+      <img src="assets/images/logo.png" alt="HCM City Guide">
+      <span>All in One HCM</span>
+    </a>
 
-    <nav class="header-nav">
+    <!-- Desktop Menu -->
+    <div class="nav-menu" [class.active]="isMenuOpen">
+      <!-- Main Navigation -->
       <ul class="nav-list">
         <li>
-          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-            {{ 'MENU.HOME' | translate }}
-          </a>
-        </li>
-        <li class="nav-item-with-submenu">
-          <a routerLink="/discover" routerLinkActive="active">
+          <a routerLink="/discover" routerLinkActive="active" class="nav-link" (mouseenter)="showSubmenu('discover')">
+            <i class="pi pi-compass"></i>
             {{ 'MENU.DISCOVER' | translate }}
-            <i class="pi pi-chevron-down"></i>
           </a>
-          <ul class="submenu">
-            <li><a routerLink="/discover/wards">{{ 'MENU.WARDS' | translate }}</a></li>
-            <li><a routerLink="/discover/food">{{ 'MENU.FOOD_DINING' | translate }}</a></li>
-            <li><a routerLink="/discover/culture">{{ 'MENU.CULTURE' | translate }}</a></li>
-          </ul>
+          <div class="submenu" *ngIf="activeSubmenu === 'discover'" (mouseleave)="hideSubmenu()">
+            <div class="submenu-content">
+              <div class="submenu-section">
+                <h4>{{ 'MENU.DISCOVER_PLACES' | translate }}</h4>
+                <ul>
+                  <li><a routerLink="/discover/attractions">{{ 'MENU.ATTRACTIONS' | translate }}</a></li>
+                  <li><a routerLink="/discover/culture">{{ 'MENU.CULTURE' | translate }}</a></li>
+                  <li><a routerLink="/discover/food">{{ 'MENU.FOOD' | translate }}</a></li>
+                  <li><a routerLink="/discover/wards">{{ 'MENU.WARDS' | translate }}</a></li>
+                </ul>
+              </div>
+              <div class="submenu-section">
+                <h4>{{ 'MENU.TIPS_GUIDES' | translate }}</h4>
+                <ul>
+                  <li><a routerLink="/discover/tips">{{ 'MENU.TRAVEL_TIPS' | translate }}</a></li>
+                  <li><a routerLink="/discover/safety">{{ 'MENU.SAFETY' | translate }}</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </li>
         <li>
-          <a routerLink="/travel-tips" routerLinkActive="active">
-            {{ 'MENU.TRAVEL_TIPS' | translate }}
+          <a routerLink="/entertainment" routerLinkActive="active" class="nav-link" (mouseenter)="showSubmenu('entertainment')">
+            <i class="pi pi-ticket"></i>
+            {{ 'MENU.ENTERTAINMENT' | translate }}
           </a>
+          <div class="submenu" *ngIf="activeSubmenu === 'entertainment'" (mouseleave)="hideSubmenu()">
+            <div class="submenu-content">
+              <div class="submenu-section">
+                <h4>{{ 'MENU.VENUES' | translate }}</h4>
+                <ul>
+                  <li><a routerLink="/entertainment/shopping">{{ 'MENU.SHOPPING' | translate }}</a></li>
+                  <li><a routerLink="/entertainment/theme-parks">{{ 'MENU.THEME_PARKS' | translate }}</a></li>
+                  <li><a routerLink="/entertainment/nightlife">{{ 'MENU.NIGHTLIFE' | translate }}</a></li>
+                </ul>
+              </div>
+              <div class="submenu-section">
+                <h4>{{ 'MENU.ACTIVITIES' | translate }}</h4>
+                <ul>
+                  <li><a routerLink="/entertainment/cinemas">{{ 'MENU.CINEMAS' | translate }}</a></li>
+                  <li><a routerLink="/entertainment/sports">{{ 'MENU.SPORTS' | translate }}</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </li>
         <li>
-          <a routerLink="/contact" routerLinkActive="active">
-            {{ 'MENU.CONTACT' | translate }}
+          <a routerLink="/hotels" routerLinkActive="active" class="nav-link" (mouseenter)="showSubmenu('hotels')">
+            <i class="pi pi-home"></i>
+            {{ 'MENU.HOTELS' | translate }}
           </a>
+          <div class="submenu" *ngIf="activeSubmenu === 'hotels'" (mouseleave)="hideSubmenu()">
+            <div class="submenu-content">
+              <div class="submenu-section">
+                <h4>{{ 'MENU.ACCOMMODATION' | translate }}</h4>
+                <ul>
+                  <li><a routerLink="/hotels/search">{{ 'MENU.SEARCH_HOTELS' | translate }}</a></li>
+                  <li><a routerLink="/hotels/hotels">{{ 'MENU.HOTELS_LIST' | translate }}</a></li>
+                  <li><a routerLink="/hotels/apartments">{{ 'MENU.APARTMENTS' | translate }}</a></li>
+                  <li><a routerLink="/hotels/resorts">{{ 'MENU.RESORTS' | translate }}</a></li>
+                </ul>
+              </div>
+              <div class="submenu-section">
+                <h4>{{ 'MENU.WELLNESS' | translate }}</h4>
+                <ul>
+                  <li><a routerLink="/hotels/spas">{{ 'MENU.SPAS' | translate }}</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a routerLink="/transport" routerLinkActive="active" class="nav-link" (mouseenter)="showSubmenu('transport')">
+            <i class="pi pi-car"></i>
+            {{ 'MENU.TRANSPORT' | translate }}
+          </a>
+          <div class="submenu" *ngIf="activeSubmenu === 'transport'" (mouseleave)="hideSubmenu()">
+            <div class="submenu-content">
+              <div class="submenu-section">
+                <h4>{{ 'MENU.GETTING_AROUND' | translate }}</h4>
+                <ul>
+                  <li><a routerLink="/transport/search">{{ 'MENU.PLAN_JOURNEY' | translate }}</a></li>
+                  <li><a routerLink="/transport/public-transport">{{ 'MENU.PUBLIC_TRANSPORT' | translate }}</a></li>
+                  <li><a routerLink="/transport/ride-hailing">{{ 'MENU.RIDE_HAILING' | translate }}</a></li>
+                </ul>
+              </div>
+              <div class="submenu-section">
+                <h4>{{ 'MENU.RENTALS' | translate }}</h4>
+                <ul>
+                  <li><a routerLink="/transport/bike-rental">{{ 'MENU.BIKE_RENTAL' | translate }}</a></li>
+                  <li><a routerLink="/transport/car-rental">{{ 'MENU.CAR_RENTAL' | translate }}</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </li>
       </ul>
-    </nav>
 
-    <div class="header-right">
-      <div class="search-box">
-        <span class="p-input-icon-left">
+      <!-- Language and Search -->
+      <div class="nav-actions">
+        <button class="search-button" (click)="openSearch()">
           <i class="pi pi-search"></i>
-          <input 
-            type="text" 
-            pInputText 
-            [(ngModel)]="searchTerm"
-            (keyup.enter)="onSearch()"
-            [placeholder]="'MENU.SEARCH' | translate" />
-        </span>
+        </button>
+        <button class="language-button" (click)="toggleLanguage()">
+          <i class="pi pi-globe"></i>
+          <span>{{ currentLanguage | uppercase }}</span>
+        </button>
+        <button class="donate-button" (click)="onDonate()">
+          <i class="pi pi-heart-fill"></i>
+          {{ 'MENU.DONATE' | translate }}
+        </button>
       </div>
-      <button class="button language-button" (click)="switchLanguage()">
-        {{ currentLang === 'en' ? 'VI' : 'EN' }}
-      </button>
     </div>
-  </div>
 
-  <!-- Mobile Menu Overlay -->
-  <div class="mobile-menu" [class.active]="isMobileMenuOpen">
-    <div class="mobile-search-box">
-      <span class="p-input-icon-left">
+    <!-- Mobile Menu Button -->
+    <button class="menu-button" (click)="toggleMenu()">
+      <span class="menu-icon" [class.active]="isMenuOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+  </div>
+</nav>
+
+<!-- Search Dialog -->
+<p-dialog 
+  [(visible)]="showSearchDialog"
+  [modal]="true"
+  [dismissableMask]="true"
+  [showHeader]="false"
+  [contentStyle]="{padding: '2rem'}"
+  [style]="{width: '90vw', maxWidth: '600px'}"
+  (onHide)="closeSearch()">
+  <div class="search-dialog">
+    <div class="search-input">
+      <span class="p-input-icon-left p-input-icon-right">
         <i class="pi pi-search"></i>
         <input 
+          #searchInput
           type="text" 
           pInputText 
           [(ngModel)]="searchTerm"
           (keyup.enter)="onSearch()"
-          [placeholder]="'MENU.SEARCH' | translate" />
+          [placeholder]="'MENU.SEARCH_PLACEHOLDER' | translate">
+        <i class="pi pi-times" (click)="closeSearch()" style="cursor: pointer"></i>
       </span>
     </div>
-    <nav class="mobile-nav">
-      <ul class="mobile-nav-list">
-        <li>
-          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMobileMenu()">
-            {{ 'MENU.HOME' | translate }}
-          </a>
-        </li>
-        <li class="mobile-nav-item-with-submenu" [class.open]="isSubmenuOpen">
-          <div class="submenu-trigger" (click)="toggleSubmenu()">
-            {{ 'MENU.DISCOVER' | translate }}
-            <i class="pi" [ngClass]="{'pi-chevron-down': !isSubmenuOpen, 'pi-chevron-up': isSubmenuOpen}"></i>
-          </div>
-          <ul class="mobile-submenu">
-            <li><a routerLink="/discover/wards" (click)="closeMobileMenu()">{{ 'MENU.WARDS' | translate }}</a></li>
-            <li><a routerLink="/discover/food" (click)="closeMobileMenu()">{{ 'MENU.FOOD_DINING' | translate }}</a></li>
-            <li><a routerLink="/discover/culture" (click)="closeMobileMenu()">{{ 'MENU.CULTURE' | translate }}</a></li>
-          </ul>
-        </li>
-        <li>
-          <a routerLink="/travel-tips" routerLinkActive="active" (click)="closeMobileMenu()">
-            {{ 'MENU.TRAVEL_TIPS' | translate }}
-          </a>
-        </li>
-        <li>
-          <a routerLink="/contact" routerLinkActive="active" (click)="closeMobileMenu()">
-            {{ 'MENU.CONTACT' | translate }}
-          </a>
-        </li>
-      </ul>
-    </nav>
   </div>
-</header> 
+</p-dialog> 

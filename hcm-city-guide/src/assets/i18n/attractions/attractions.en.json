@@ -1,17 +1,44 @@
 {
-  "TITLE": "Attractions",
-  "DESCRIPTION": "Discover the most interesting places in Ho Chi Minh City",
-  "CATEGORIES": {
-    "HISTORICAL": "Historical Sites",
-    "CULTURAL": "Cultural Venues",
-    "MODERN": "Modern Attractions",
-    "NATURAL": "Natural Attractions",
-    "RELIGIOUS": "Religious Sites"
-  },
-  "FILTERS": {
-    "CATEGORY": "Category",
-    "DISTRICT": "District",
-    "PRICE_RANGE": "Price Range",
-    "RATING": "Rating"
+  "ATTRACTIONS": {
+    "LANDMARKS": {
+      "NOTRE_DAME": {
+        "NAME": "Notre Dame Cathedral",
+        "DESCRIPTION": "A historic cathedral built in 1880, featuring French colonial architecture. Currently illuminated with 500km of LED lights for special occasions. Easily accessible via the Saigon Opera House metro station."
+      },
+      "LANDMARK_81": {
+        "NAME": "Landmark 81",
+        "DESCRIPTION": "Vietnam's tallest building at 461.5 meters, offering luxury dining, shopping, and spectacular city views. Located near Tan Cang metro station.",
+        "HIGHLIGHTS": {
+          "BLANK_SKY": {
+            "NAME": "Blank Sky Lounge",
+            "DESCRIPTION": "Located on floors 75-76, offering breathtaking views of the Saigon River with premium beverages and pastries"
+          },
+          "ORIENTAL_PEARL": {
+            "NAME": "Oriental Pearl Restaurant",
+            "DESCRIPTION": "Situated on the 66th floor, famous for its signature pho with wagyu beef"
+          }
+        }
+      },
+      "SAIGON_ZOO": {
+        "NAME": "Saigon Zoo and Botanical Gardens",
+        "DESCRIPTION": "Established in 1864, one of the world's oldest zoos featuring over 1,300 animals and 2,500 plant species. A short walk from Ba Son metro station."
+      }
+    },
+    "DISTRICTS": {
+      "THAO_DIEN": {
+        "NAME": "Thao Dien",
+        "DESCRIPTION": "A vibrant expat neighborhood with diverse dining options, entertainment venues, and cultural spaces. Directly accessible via Thao Dien metro station.",
+        "HIGHLIGHTS": {
+          "ALLEY_28": {
+            "NAME": "Alley 28",
+            "DESCRIPTION": "A 3-hectare lifestyle space established in 2018, featuring cafes, restaurants, art studios, and wellness centers"
+          },
+          "NIGHT_MARKET": {
+            "NAME": "Thao Dien Night Market",
+            "DESCRIPTION": "A lively evening market between Xuan Thuy, Quoc Huong and Nguyen Van Huong streets, offering street food and fashion items"
+          }
+        }
+      }
+    }
   }
 } 

@@ -1,0 +1,28 @@
+{
+  "DISCOVER": {
+    "ENTERTAINMENT": {
+      "TITLE": "Vui Chơi & Giải Trí",
+      "DESCRIPTION": "Khám phá Thành phố Hồ Chí Minh qua các tour du lịch và hoạt động thú vị",
+      "HOP_ON_BUS": {
+        "NAME": "Tour Xe Buýt 2 Tầng",
+        "DESCRIPTION": "Khám phá thành phố theo cách riêng của bạn với tour xe buýt 2 tầng. Thăm các điểm tham quan chính với các điểm dừng thuận tiện và hướng dẫn âm thanh bằng nhiều ngôn ngữ."
+      },
+      "SAIGON_RIVER_CRUISE": {
+        "NAME": "Tour Du Thuyền Sông Sài Gòn",
+        "DESCRIPTION": "Trải nghiệm vẻ đẹp của Thành phố Hồ Chí Minh từ sông nước với các chuyến du thuyền cảnh quan. Lựa chọn giữa tour ăn tối lãng mạn hoặc ngắm hoàng hôn thư giãn trên sông Sài Gòn."
+      },
+      "COOKING_CLASS": {
+        "NAME": "Lớp Học Nấu Ăn Việt Nam",
+        "DESCRIPTION": "Học nấu các món ăn Việt Nam truyền thống với các đầu bếp chuyên nghiệp. Bắt đầu với tour chợ địa phương, học kỹ thuật nấu ăn và thưởng thức thành phẩm trong không khí thân thiện."
+      },
+      "MEKONG_TOUR": {
+        "NAME": "Tour Một Ngày Đồng Bằng Sông Cửu Long",
+        "DESCRIPTION": "Khám phá văn hóa phong phú và vẻ đẹp tự nhiên của Đồng bằng sông Cửu Long. Thăm các làng địa phương, đi thuyền qua các kênh rạch, và trải nghiệm cuộc sống nông thôn Việt Nam truyền thống."
+      },
+      "CRAFT_VILLAGE_TOUR": {
+        "NAME": "Tour Làng Nghề Truyền Thống",
+        "DESCRIPTION": "Thăm các làng nghề lịch sử quanh Thành phố Hồ Chí Minh. Xem các nghệ nhân lành nghề làm việc, tìm hiểu về các nghề thủ công truyền thống và mua sắm các sản phẩm handmade độc đáo."
+      }
+    }
+  }
+} 

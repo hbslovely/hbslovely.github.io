@@ -1,0 +1,58 @@
+<div class="donate-container">
+      <h3>{{ 'DONATE.TITLE' | translate }}</h3>
+      <p>{{ 'DONATE.DESCRIPTION' | translate }}</p>
+      <div class="donation-options">
+        <button 
+          *ngFor="let amount of donationAmounts" 
+          pButton 
+          type="button"
+          [label]="amount + ' USD'"
+          class="p-button-outlined"
+          [class.selected]="selectedAmount === amount"
+          (click)="selectAmount(amount)">
+        </button>
+        <button 
+          pButton 
+          type="button"
+          [label]="'DONATE.CUSTOM_AMOUNT' | translate"
+          class="p-button-outlined"
+          [class.selected]="isCustomAmount"
+          (click)="showCustomAmountDialog()">
+        </button>
+      </div>
+      <div #paypalButtonContainer></div>
+    </div>
+
+    <!-- Custom Amount Dialog -->
+    <p-dialog 
+      [(visible)]="showCustomDialog"
+      [header]="'DONATE.CUSTOM_AMOUNT_TITLE' | translate"
+      [modal]="true"
+      [style]="{width: '300px'}">
+      <div class="custom-amount-form">
+        <div class="p-field">
+          <label for="amount">{{ 'DONATE.AMOUNT' | translate }}</label>
+          <input 
+            type="number" 
+            pInputText 
+            [(ngModel)]="customAmount"
+            min="1"
+            step="1">
+        </div>
+      </div>
+      <ng-template pTemplate="footer">
+        <button 
+          pButton 
+          type="button" 
+          [label]="'COMMON.CANCEL' | translate"
+          class="p-button-text" 
+          (click)="showCustomDialog = false">
+        </button>
+        <button 
+          pButton 
+          type="button" 
+          [label]="'COMMON.CONFIRM' | translate"
+          (click)="confirmCustomAmount()">
+        </button>
+      </ng-template>
+    </p-dialog>

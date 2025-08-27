@@ -1,0 +1,54 @@
+.public-transport {
+      min-height: 100vh;
+      background: var(--surface-ground);
+    }
+
+    .hero-section {
+      background: var(--primary-gradient);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      border-radius: 0 0 2rem 2rem;
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+    }
+
+    .transport-section {
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+    }
+
+    // Responsive Design
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 3rem 1.5rem;
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+      }
+
+      .transport-section {
+        .container {
+          padding: 0 1.5rem;
+        }
+      }
+    }
