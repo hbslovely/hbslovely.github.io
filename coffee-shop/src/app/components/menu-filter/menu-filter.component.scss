@@ -1,0 +1,79 @@
+.filter-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: var(--menu-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px var(--menu-shadow);
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .search-input {
+      flex: 1;
+      padding: 0.5rem;
+      border: 1px solid var(--menu-border);
+      border-radius: 0.25rem;
+      background-color: var(--menu-cream);
+      color: var(--menu-dark);
+    }
+
+    .clear-search {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--menu-primary);
+      font-size: 1rem;
+    }
+  }
+
+  .category-filters {
+    display: flex;
+    gap: 0.5rem;
+
+    .category-pill {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--menu-border);
+      border-radius: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+      background-color: var(--menu-secondary);
+      color: var(--menu-light);
+
+      &.active {
+        background-color: var(--menu-primary);
+        color: var(--menu-light);
+      }
+
+      &:hover {
+        background-color: var(--menu-accent);
+        color: var(--menu-dark);
+      }
+    }
+  }
+
+  .reset-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--menu-gold);
+    color: var(--menu-light);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    i {
+      font-size: 1rem; // Adjust icon size
+    }
+
+    &:hover {
+      background-color: var(--menu-accent);
+    }
+  }
+} 

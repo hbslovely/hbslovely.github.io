@@ -10,7 +10,8 @@ import { OrderService } from '../../services/order.service';
 import { MenuService } from '../../services/menu.service';
 import { CartAnimationService } from '../../services/cart-animation.service';
 import { MenuItem, Category, ViewMode, SortOption, GroupedMenuItem } from '../../models/menu.model';
-import { BehaviorSubject, combineLatest } from 'rxjs';
+import { BehaviorSubject, combineLatest, firstValueFrom } from 'rxjs';
+import { MenuFilterComponent } from '../menu-filter/menu-filter.component';
 
 @Component({
   selector: 'app-menu',
@@ -22,21 +23,21 @@ import { BehaviorSubject, combineLatest } from 'rxjs';
     ButtonModule,
     InputTextModule,
     DropdownModule,
-    MenuItemComponent
+    MenuItemComponent,
+    MenuFilterComponent // Add the new component here
   ],
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
   categories: Category[] = [];
-  selectedCategory = 'all';
   viewMode: ViewMode = 'grid';
-  searchTerm = '';
   sortOption: SortOption = 'default';
   filteredItems: MenuItem[] = [];
   groupedItems: GroupedMenuItem[] = [];
+  searchTerm = '';
+  selectedCategory = 'all';
 
-  private searchTermSubject = new BehaviorSubject<string>('');
   private sortOptionSubject = new BehaviorSubject<SortOption>('default');
   private viewModeSubject = new BehaviorSubject<ViewMode>('grid');
 
@@ -61,24 +62,13 @@ export class MenuComponent implements OnInit {
     // Combine all filter changes
     combineLatest([
       this.menuService.menuItems$,
-      this.searchTermSubject,
       this.sortOptionSubject,
       this.viewModeSubject
-    ]).subscribe(([items, search, sort, view]) => {
-      this.searchTerm = search;
+    ]).subscribe(([items, sort, view]) => {
       this.sortOption = sort;
       this.viewMode = view;
       this.updateFilteredItems(items);
     });
-  }
-
-  onSearch(event: Event): void {
-    const input = event.target as HTMLInputElement;
-    this.searchTermSubject.next(input.value);
-  }
-
-  clearSearch(): void {
-    this.searchTermSubject.next('');
   }
 
   get selectedSortLabel(): string {
@@ -91,16 +81,14 @@ export class MenuComponent implements OnInit {
   }
 
   selectCategory(categoryId: string): void {
-    this.selectedCategory = categoryId;
     this.menuService.getItemsByCategory(categoryId).subscribe(items => {
       this.updateFilteredItems(items);
     });
   }
 
   resetFilters(): void {
-    this.searchTermSubject.next('');
     this.sortOptionSubject.next('default');
-    this.selectedCategory = 'all';
+    this.viewMode = 'grid'; // Reset view mode
   }
 
   onAddToCart(event: { item: MenuItem, element: HTMLElement, quantity: number }): void {
@@ -122,6 +110,18 @@ export class MenuComponent implements OnInit {
         this.cartAnimationService.animateAddToCart(element);
       }
     }
+  }
+
+  async onSearchTermChange(searchTerm: string): Promise<void> {
+    this.searchTerm = searchTerm;
+    const items = await firstValueFrom(this.menuService.menuItems$);
+    this.updateFilteredItems(items);
+  }
+
+  async onCategoryChange(categoryId: string): Promise<void> {
+    this.selectedCategory = categoryId;
+    const items = await firstValueFrom(this.menuService.menuItems$);
+    this.updateFilteredItems(items);
   }
 
   private updateFilteredItems(items: MenuItem[]): void {
