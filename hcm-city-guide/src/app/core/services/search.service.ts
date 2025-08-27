@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of } from 'rxjs';
-import { map, delay } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject, Observable, forkJoin, of } from 'rxjs';
+import { map, delay, catchError } from 'rxjs/operators';
 import { EntertainmentService } from './entertainment.service';
 import { HotelsService } from './hotels.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -30,6 +31,14 @@ export interface SearchResult {
   route: string[];
   queryParams?: { [key: string]: string };
   tags?: string[];
+  source?: string;
+}
+
+interface DataFile {
+  path: string;
+  searchFields: string[];
+  type: string;
+  routePrefix: string[];
 }
 
 @Injectable({
@@ -46,16 +55,143 @@ export class SearchService {
     'Public Transport'
   ];
 
+  private readonly dataFiles: DataFile[] = [
+    {
+      path: 'assets/data/attractions.json',
+      searchFields: ['nameKey', 'descriptionKey', 'address'],
+      type: 'place',
+      routePrefix: ['/discover', 'attractions']
+    },
+    {
+      path: 'assets/data/cinemas.json',
+      searchFields: ['name', 'description', 'address'],
+      type: 'entertainment',
+      routePrefix: ['/entertainment', 'cinemas']
+    },
+    {
+      path: 'assets/data/entertainment.json',
+      searchFields: ['name', 'description', 'address'],
+      type: 'entertainment',
+      routePrefix: ['/entertainment']
+    },
+    {
+      path: 'assets/data/discover.json',
+      searchFields: ['nameKey', 'descriptionKey'],
+      type: 'place',
+      routePrefix: ['/discover']
+    }
+  ];
+
   constructor(
+    private http: HttpClient,
     private entertainmentService: EntertainmentService,
     private hotelsService: HotelsService,
     private translate: TranslateService
   ) {
-    // Load recent searches from localStorage
     const savedSearches = localStorage.getItem('recentSearches');
     if (savedSearches) {
       this.recentSearches.next(JSON.parse(savedSearches));
     }
+  }
+
+  private searchFile(file: DataFile, query: string): Observable<SearchResult[]> {
+    return this.http.get<any>(file.path).pipe(
+      map(data => this.extractSearchResults(data, query, file)),
+      catchError(() => of([]))
+    );
+  }
+
+  private extractSearchResults(data: any, query: string, file: DataFile): SearchResult[] {
+    const results: SearchResult[] = [];
+    const searchTerm = query.toLowerCase();
+
+    // Helper function to search recursively through objects
+    const searchObject = (obj: any, parentKey: string = ''): void => {
+      if (!obj) return;
+
+      if (Array.isArray(obj)) {
+        obj.forEach(item => searchObject(item, parentKey));
+        return;
+      }
+
+      if (typeof obj === 'object') {
+        // Check if this object is a searchable item
+        if (file.searchFields.some(field => field in obj)) {
+          const matchesSearch = file.searchFields.some(field => {
+            const value = obj[field];
+            if (typeof value === 'string') {
+              // For direct string values
+              return value.toLowerCase().includes(searchTerm);
+            } else if (field.endsWith('Key') && typeof value === 'string') {
+              // For translation keys
+              const translated = this.translate.instant(value);
+              return translated.toLowerCase().includes(searchTerm);
+            }
+            return false;
+          });
+
+          if (matchesSearch) {
+            results.push(this.mapToSearchResult(obj, file));
+          }
+        }
+
+        // Continue searching through all properties
+        Object.entries(obj).forEach(([key, value]) => {
+          searchObject(value, key);
+        });
+      }
+    };
+
+    searchObject(data);
+    return results;
+  }
+
+  private mapToSearchResult(item: any, file: DataFile): SearchResult {
+    const title = item.nameKey ? 
+      this.translate.instant(item.nameKey) : 
+      (item.title || item.name);
+
+    const description = item.descriptionKey ? 
+      this.translate.instant(item.descriptionKey) : 
+      item.description;
+
+    return {
+      id: item.id || `${file.type}-${Math.random().toString(36).substr(2, 9)}`,
+      type: file.type as any,
+      title,
+      description,
+      image: item.image || item.images?.[0],
+      rating: item.rating,
+      price: item.price ? {
+        amount: typeof item.price === 'string' ? 
+          parseFloat(item.price.replace(/[^0-9.]/g, '')) : 
+          item.price,
+        currency: 'VND'
+      } : undefined,
+      location: item.address || item.location || '',
+      route: [...file.routePrefix],
+      queryParams: item.id ? { id: item.id } : undefined,
+      tags: item.tags,
+      source: file.path.split('/').pop()?.replace('.json', '')
+    };
+  }
+
+  search(query: string, selectedTypes?: string[]): Observable<SearchResult[]> {
+    // Add to recent searches
+    this.addRecentSearch(query);
+
+    // Filter data files by selected types if any
+    const filesToSearch = selectedTypes?.length ? 
+      this.dataFiles.filter(file => selectedTypes.includes(file.type)) : 
+      this.dataFiles;
+
+    // Search all selected files
+    return forkJoin(
+      filesToSearch.map(file => this.searchFile(file, query))
+    ).pipe(
+      map(results => results.flat()),
+      delay(300) // Simulate API delay
+    );
   }
 
   getSuggestions(query: string): Observable<SearchSuggestion[]> {
@@ -88,83 +224,11 @@ export class SearchService {
       }
     );
 
-    // Add hotel suggestions
-    suggestions.push(
-      {
-        id: 'hotels-d1',
-        type: 'hotel',
-        title: 'Hotels in District 1',
-        subtitle: 'Luxury & Boutique Hotels',
-        route: ['/hotels', 'search'],
-        queryParams: { district: 'district-1' }
-      },
-      {
-        id: 'apartments',
-        type: 'hotel',
-        title: 'Serviced Apartments',
-        subtitle: 'Long-term Stay Options',
-        route: ['/hotels', 'apartments']
-      }
-    );
-
-    // Add entertainment suggestions
-    suggestions.push(
-      {
-        id: 'dam-sen',
-        type: 'entertainment',
-        title: 'Dam Sen Water Park',
-        subtitle: 'Theme Park & Water Park',
-        image: 'assets/images/entertainment/dam-sen-water-park.jpg',
-        route: ['/entertainment', 'theme-parks'],
-        queryParams: { id: 'dam-sen' }
-      },
-      {
-        id: 'shopping-malls',
-        type: 'entertainment',
-        title: 'Shopping Malls',
-        subtitle: 'Modern Shopping Centers',
-        route: ['/entertainment', 'shopping'],
-        queryParams: { type: 'mall' }
-      }
-    );
-
-    // Add food suggestions
-    suggestions.push(
-      {
-        id: 'vietnamese-food',
-        type: 'food',
-        title: 'Vietnamese Cuisine',
-        subtitle: 'Local Food Guide',
-        image: 'assets/images/food/mon-an-banh-mi-sai-gon.png',
-        route: ['/discover', 'food'],
-        queryParams: { cuisine: 'vietnamese' }
-      }
-    );
-
-    // Add transport suggestions
-    suggestions.push(
-      {
-        id: 'public-transport',
-        type: 'transport',
-        title: 'Public Transport Guide',
-        subtitle: 'Buses & Metro',
-        route: ['/transport', 'public-transport']
-      },
-      {
-        id: 'grab',
-        type: 'transport',
-        title: 'Grab Services',
-        subtitle: 'Ride Hailing',
-        route: ['/transport', 'ride-hailing'],
-        queryParams: { provider: 'grab' }
-      }
-    );
-
     // Filter suggestions based on search term
     return of(suggestions.filter(suggestion =>
       suggestion.title.toLowerCase().includes(searchTerm) ||
       suggestion.subtitle?.toLowerCase().includes(searchTerm)
-    )).pipe(delay(300)); // Add small delay to simulate API call
+    )).pipe(delay(300));
   }
 
   getRecentSearches(): Observable<string[]> {
@@ -210,39 +274,5 @@ export class SearchService {
       { id: 'food', label: 'SEARCH.TYPES.FOOD' },
       { id: 'transport', label: 'SEARCH.TYPES.TRANSPORT' }
     ];
-  }
-
-  search(query: string, selectedTypes?: string[]): Observable<SearchResult[]> {
-    // Add to recent searches
-    this.addRecentSearch(query);
-
-    // Implement actual search logic here
-    // This is a mock implementation
-    return of([]).pipe(
-      delay(500),
-      map(() => {
-        const results: SearchResult[] = [
-          {
-            id: 'ben-thanh',
-            type: 'place',
-            title: 'Ben Thanh Market',
-            description: 'Iconic market in the heart of Ho Chi Minh City',
-            image: 'assets/images/landmarks/ben-thanh-market.jpg',
-            location: 'District 1, Ho Chi Minh City',
-            route: ['/discover', 'attractions'],
-            queryParams: { id: 'ben-thanh' },
-            tags: ['market', 'shopping', 'tourist-attraction']
-          },
-          // Add more mock results...
-        ];
-
-        // Filter by selected types if any
-        if (selectedTypes && selectedTypes.length > 0) {
-          return results.filter(result => selectedTypes.includes(result.type));
-        }
-
-        return results;
-      })
-    );
   }
 }
