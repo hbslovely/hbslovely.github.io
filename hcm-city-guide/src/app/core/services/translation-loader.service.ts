@@ -8,29 +8,35 @@ import { map } from 'rxjs/operators';
 })
 export class TranslationLoaderService {
   private readonly sections: string[] = [
-    'HOME',
-    'MENU',
-    'SEARCH',
     'ATTRACTIONS',
-    'PRIVACY',
-    'TERMS',
-    'FOOTER',
+    'COMMON',
     'CONTACT',
-    'TIPS',
-    'WARD',
-    'PAGINATION',
-    'FEATURES',
-    'LANDMARKS',
     'CULTURES',
+    'DISCOVER',
+    'ENTERTAINMENT',
+    'FEATURES',
+    'FOOD',
+    'FOOTER',
+    'HOME',
+    'HOTELS',
+    'LANDMARKS',
+    'MENU',
+    'PAGINATION',
+    'PRIVACY',
+    'SEARCH',
     'STATS',
-    'WARD_TYPES',
-    'FOOD'
+    'TIPS',
+    'TERMS',
+    'WARD',
+    'WARDS',
+    'WARD_TYPES'
   ];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   private getTranslationFile(section: string, lang: string): Observable<any> {
-    return this.http.get<any>(`/assets/i18n/${section.toLowerCase()}/${section.toLowerCase()}.${lang}.json`);
+    return this.http.get<any>(`/assets/i18n/${ section.toLowerCase() }/${ section.toLowerCase() }.${ lang }.json`);
   }
 
   getTranslation(lang: string): Observable<any> {

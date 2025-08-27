@@ -146,11 +146,12 @@
   [modal]="true"
   [dismissableMask]="true"
   [showHeader]="false"
-  [contentStyle]="{padding: '2rem'}"
-  [style]="{width: '90vw', maxWidth: '600px'}"
+  [contentStyle]="{padding: '0'}"
+  [style]="{width: '90vw', maxWidth: '800px'}"
   (onHide)="closeSearch()">
   <div class="search-dialog">
-    <div class="search-input">
+    <!-- Search Input -->
+    <div class="search-header">
       <span class="p-input-icon-left p-input-icon-right">
         <i class="pi pi-search"></i>
         <input 
@@ -158,10 +159,96 @@
           type="text" 
           pInputText 
           [(ngModel)]="searchTerm"
+          (ngModelChange)="onSearchInput()"
           (keyup.enter)="onSearch()"
           [placeholder]="'MENU.SEARCH_PLACEHOLDER' | translate">
         <i class="pi pi-times" (click)="closeSearch()" style="cursor: pointer"></i>
       </span>
+    </div>
+
+    <!-- Search Content -->
+    <div class="search-content">
+      <!-- Loading State -->
+      <div class="search-loading" *ngIf="isSearching">
+        <div class="suggestion-skeleton" *ngFor="let i of [1,2,3]">
+          <p-skeleton width="40px" height="40px" styleClass="mr-2"></p-skeleton>
+          <div class="skeleton-content">
+            <p-skeleton width="200px" height="1rem" styleClass="mb-2"></p-skeleton>
+            <p-skeleton width="150px" height="0.875rem"></p-skeleton>
+          </div>
+        </div>
+      </div>
+
+      <!-- Suggestions -->
+      <div class="search-suggestions" *ngIf="suggestions.length > 0">
+        <div class="suggestion-group">
+          <h3>{{ 'SEARCH.SUGGESTIONS' | translate }}</h3>
+          <div class="suggestion-list">
+            <div 
+              *ngFor="let suggestion of suggestions" 
+              class="suggestion-item"
+              (click)="onSuggestionClick(suggestion)">
+              <div class="suggestion-icon">
+                <i [class]="getTypeIcon(suggestion.type)"></i>
+              </div>
+              <div class="suggestion-content">
+                <div class="suggestion-title">{{ suggestion.title }}</div>
+                <div class="suggestion-subtitle" *ngIf="suggestion.subtitle">{{ suggestion.subtitle }}</div>
+              </div>
+              <i class="pi pi-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent & Popular Searches -->
+      <div class="search-history" *ngIf="!searchTerm && !isSearching">
+        <!-- Recent Searches -->
+        <div class="history-group" *ngIf="recentSearches.length > 0">
+          <div class="group-header">
+            <h3>{{ 'SEARCH.RECENT' | translate }}</h3>
+            <button 
+              pButton 
+              type="button" 
+              class="p-button-text p-button-sm"
+              [label]="'SEARCH.CLEAR' | translate"
+              (click)="clearRecentSearches()">
+            </button>
+          </div>
+          <div class="history-list">
+            <div 
+              *ngFor="let term of recentSearches" 
+              class="history-item"
+              (click)="onRecentSearchClick(term)">
+              <i class="pi pi-clock"></i>
+              <span>{{ term }}</span>
+            </div>
+          </div>
+        </div>
+
+        <p-divider *ngIf="recentSearches.length > 0"></p-divider>
+
+        <!-- Popular Searches -->
+        <div class="history-group">
+          <h3>{{ 'SEARCH.POPULAR' | translate }}</h3>
+          <div class="history-list">
+            <div 
+              *ngFor="let term of popularSearches" 
+              class="history-item"
+              (click)="onRecentSearchClick(term)">
+              <i class="pi pi-star-fill"></i>
+              <span>{{ term }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- No Results -->
+      <div class="no-results" *ngIf="searchTerm && !isSearching && suggestions.length === 0">
+        <i class="pi pi-search"></i>
+        <h3>{{ 'SEARCH.NO_RESULTS' | translate }}</h3>
+        <p>{{ 'SEARCH.TRY_AGAIN' | translate }}</p>
+      </div>
     </div>
   </div>
 </p-dialog> 

@@ -100,5 +100,44 @@
     "SAVE": "Lưu Lại",
     "SHARE": "Chia Sẻ",
     "REPORT": "Báo Cáo Vấn Đề"
+  },
+
+  "ADVANCED_SEARCH": {
+    "TITLE": "Tìm Kiếm Nâng Cao",
+    "DATE_RANGE": "Khoảng Thời Gian",
+    "CUSTOM_FILTERS": "Bộ Lọc Tùy Chỉnh",
+    "SAVED_SEARCHES": "Tìm Kiếm Đã Lưu",
+    "SEARCH_HISTORY": "Lịch Sử Tìm Kiếm"
+  },
+
+  "SUGGESTIONS": {
+    "RECENT": "Tìm Kiếm Gần Đây",
+    "TRENDING": "Xu Hướng Tìm Kiếm",
+    "POPULAR_NEARBY": "Phổ Biến Gần Đây",
+    "DID_YOU_MEAN": "Ý bạn là:",
+    "RELATED_SEARCHES": "Tìm Kiếm Liên Quan"
+  },
+
+  "ADDITIONAL_FILTERS": {
+    "FEATURES": "Tính Năng",
+    "AMENITIES": "Tiện Nghi",
+    "CUISINE_TYPE": "Loại Ẩm Thực",
+    "ACCESSIBILITY": "Tùy Chọn Tiếp Cận",
+    "PAYMENT_OPTIONS": "Phương Thức Thanh Toán",
+    "LANGUAGES": "Ngôn Ngữ Sử Dụng"
+  },
+
+  "SEARCH_ANALYTICS": {
+    "POPULAR_THIS_WEEK": "Phổ Biến Tuần Này",
+    "TRENDING_NOW": "Xu Hướng Hiện Tại",
+    "SEASONAL_HIGHLIGHTS": "Điểm Nhấn Theo Mùa",
+    "SEARCH_INSIGHTS": "Thông Tin Chi Tiết Tìm Kiếm"
+  },
+
+  "FEEDBACK": {
+    "HELPFUL": "Kết quả này có hữu ích không?",
+    "SUGGEST_IMPROVEMENT": "Đề xuất cải thiện",
+    "REPORT_MISSING": "Báo cáo thông tin thiếu",
+    "ACCURACY": "Báo cáo vấn đề độ chính xác"
   }
 } 

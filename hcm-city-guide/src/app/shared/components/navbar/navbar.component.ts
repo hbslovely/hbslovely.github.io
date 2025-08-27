@@ -7,8 +7,10 @@ import { Router } from '@angular/router';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
+import { SkeletonModule } from 'primeng/skeleton';
+import { DividerModule } from 'primeng/divider';
 
-// Import translations
+import { SearchService, SearchSuggestion } from '../../core/services/search.service';
 import * as menuEn from '../../../../assets/i18n/menu/menu.en.json';
 import * as menuVi from '../../../../assets/i18n/menu/menu.vi.json';
 
@@ -22,7 +24,9 @@ import * as menuVi from '../../../../assets/i18n/menu/menu.vi.json';
     TranslateModule,
     DialogModule,
     ButtonModule,
-    InputTextModule
+    InputTextModule,
+    SkeletonModule,
+    DividerModule
   ],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
@@ -34,12 +38,17 @@ export class NavbarComponent implements OnInit {
   isMenuOpen = false;
   showSearchDialog = false;
   searchTerm = '';
+  isSearching = false;
+  suggestions: SearchSuggestion[] = [];
+  recentSearches: string[] = [];
+  popularSearches: string[] = [];
   activeSubmenu: string | null = null;
   currentLanguage = 'en';
 
   constructor(
     private translate: TranslateService,
-    private router: Router
+    private router: Router,
+    private searchService: SearchService
   ) {
     // Load menu translations
     this.translate.setDefaultLang('en');
@@ -49,12 +58,20 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.currentLanguage = this.translate.currentLang || 'en';
+    this.loadSearchData();
   }
 
   private loadTranslations() {
     // Load menu translations for both languages
     this.translate.setTranslation('en', menuEn);
     this.translate.setTranslation('vi', menuVi);
+  }
+
+  private loadSearchData() {
+    this.searchService.getRecentSearches().subscribe(searches => {
+      this.recentSearches = searches;
+    });
+    this.popularSearches = this.searchService.getPopularSearches();
   }
 
   @HostListener('window:scroll')
@@ -89,12 +106,26 @@ export class NavbarComponent implements OnInit {
   openSearch() {
     this.showSearchDialog = true;
     this.searchTerm = '';
+    this.suggestions = [];
     setTimeout(() => this.searchInput?.nativeElement.focus(), 100);
   }
 
   closeSearch() {
     this.showSearchDialog = false;
     this.searchTerm = '';
+    this.suggestions = [];
+  }
+
+  onSearchInput() {
+    if (this.searchTerm.trim()) {
+      this.isSearching = true;
+      this.searchService.getSuggestions(this.searchTerm).subscribe(suggestions => {
+        this.suggestions = suggestions;
+        this.isSearching = false;
+      });
+    } else {
+      this.suggestions = [];
+    }
   }
 
   onSearch() {
@@ -102,6 +133,24 @@ export class NavbarComponent implements OnInit {
       this.router.navigate(['/search'], { queryParams: { q: this.searchTerm } });
       this.closeSearch();
     }
+  }
+
+  onSuggestionClick(suggestion: SearchSuggestion) {
+    this.router.navigate(suggestion.route, { queryParams: suggestion.queryParams });
+    this.closeSearch();
+  }
+
+  onRecentSearchClick(term: string) {
+    this.searchTerm = term;
+    this.onSearch();
+  }
+
+  clearRecentSearches() {
+    this.searchService.clearRecentSearches();
+  }
+
+  getTypeIcon(type: string): string {
+    return this.searchService.getTypeIcon(type);
   }
 
   toggleLanguage() {

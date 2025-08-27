@@ -239,8 +239,9 @@
 // Search Dialog Styles
 ::ng-deep .p-dialog {
   .search-dialog {
-    .search-input {
-      width: 100%;
+    .search-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--surface-border);
 
       .p-input-icon-left, .p-input-icon-right {
         width: 100%;
@@ -259,6 +260,173 @@
           &.pi-times:hover {
             color: var(--primary-color);
           }
+        }
+      }
+    }
+
+    .search-content {
+      max-height: 70vh;
+      overflow-y: auto;
+
+      // Loading State
+      .search-loading {
+        padding: 1.5rem;
+
+        .suggestion-skeleton {
+          display: flex;
+          align-items: center;
+          padding: 0.75rem;
+          margin-bottom: 0.5rem;
+
+          .skeleton-content {
+            flex: 1;
+          }
+        }
+      }
+
+      // Suggestions
+      .search-suggestions {
+        padding: 1.5rem;
+
+        .suggestion-group {
+          h3 {
+            margin: 0 0 1rem;
+            color: var(--text-color-secondary);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+          }
+
+          .suggestion-list {
+            .suggestion-item {
+              display: flex;
+              align-items: center;
+              gap: 1rem;
+              padding: 0.75rem;
+              border-radius: 0.5rem;
+              cursor: pointer;
+              transition: all 0.2s ease;
+
+              &:hover {
+                background: var(--surface-hover);
+              }
+
+              .suggestion-icon {
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: var(--surface-ground);
+                border-radius: 0.5rem;
+                color: var(--primary-color);
+
+                i {
+                  font-size: 1.25rem;
+                }
+              }
+
+              .suggestion-content {
+                flex: 1;
+
+                .suggestion-title {
+                  color: var(--text-color);
+                  font-weight: 500;
+                  margin-bottom: 0.25rem;
+                }
+
+                .suggestion-subtitle {
+                  color: var(--text-color-secondary);
+                  font-size: 0.875rem;
+                }
+              }
+
+              .pi-arrow-right {
+                color: var(--text-color-secondary);
+                opacity: 0;
+                transition: all 0.2s ease;
+              }
+
+              &:hover .pi-arrow-right {
+                opacity: 1;
+                color: var(--primary-color);
+              }
+            }
+          }
+        }
+      }
+
+      // Recent & Popular Searches
+      .search-history {
+        padding: 1.5rem;
+
+        .history-group {
+          .group-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+
+            h3 {
+              margin: 0;
+              color: var(--text-color-secondary);
+              font-size: 0.875rem;
+              font-weight: 600;
+              text-transform: uppercase;
+            }
+          }
+
+          .history-list {
+            .history-item {
+              display: flex;
+              align-items: center;
+              gap: 0.75rem;
+              padding: 0.75rem;
+              border-radius: 0.5rem;
+              cursor: pointer;
+              transition: all 0.2s ease;
+
+              i {
+                color: var(--text-color-secondary);
+                font-size: 1rem;
+              }
+
+              span {
+                color: var(--text-color);
+              }
+
+              &:hover {
+                background: var(--surface-hover);
+
+                i, span {
+                  color: var(--primary-color);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // No Results
+      .no-results {
+        padding: 3rem 1.5rem;
+        text-align: center;
+        color: var(--text-color-secondary);
+
+        i {
+          font-size: 3rem;
+          margin-bottom: 1rem;
+        }
+
+        h3 {
+          margin: 0 0 0.5rem;
+          font-size: 1.25rem;
+          color: var(--text-color);
+        }
+
+        p {
+          margin: 0;
+          font-size: 0.875rem;
         }
       }
     }
