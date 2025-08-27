@@ -2,10 +2,10 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <h1>{{ 'HOME.WELCOME' | translate }}</h1>
-      <p class="hero-desc">{{ 'HOME.HERO_DESC' | translate }}</p>
+      <h1>{{ 'HOME.WELCOME.TITLE' | translate }}</h1>
+      <p class="hero-desc">{{ 'HOME.WELCOME.DESCRIPTION' | translate }}</p>
       <p-button
-        [label]="'HOME.EXPLORE_BTN' | translate"
+        [label]="'HOME.HERO.EXPLORE_BTN' | translate"
         styleClass="p-button-rounded p-button-lg primary-button"
         routerLink="/discover">
       </p-button>
@@ -35,14 +35,14 @@
             </p-image>
           </ng-template>
           <ng-template pTemplate="title">
-            {{ place.title }}
+            {{ place.title | translate }}
           </ng-template>
           <ng-template pTemplate="content">
-            <p>{{ place.description | translate }}</p>
+            <p>{{ place.descriptionKey | translate }}</p>
           </ng-template>
           <ng-template pTemplate="footer">
             <p-button
-              [label]="'HOME.LEARN_MORE' | translate"
+              [label]="'HOME.FEATURED_PLACES.ACTIONS.LEARN_MORE' | translate"
               styleClass="p-button-text"
               icon="pi pi-arrow-right"
               iconPos="right">
@@ -60,15 +60,10 @@
   <section class="quick-facts container">
     <h2>{{ 'HOME.QUICK_FACTS.TITLE' | translate }}</h2>
     <div class="facts-grid">
-      <p-card *ngFor="let fact of ['POPULATION', 'DISTRICTS', 'FOUNDED', 'CLIMATE']">
+      <p-card *ngFor="let fact of quickFacts">
         <div class="fact-content">
-          <i class="pi" [ngClass]="{
-            'pi-users': fact === 'POPULATION',
-            'pi-map': fact === 'DISTRICTS',
-            'pi-calendar': fact === 'FOUNDED',
-            'pi-cloud': fact === 'CLIMATE'
-          }"></i>
-          <p>{{ 'HOME.QUICK_FACTS.' + fact | translate }}</p>
+          <i class="pi" [ngClass]="fact.icon"></i>
+          <p>{{ 'HOME.QUICK_FACTS.ITEMS.' + fact.key + '.TITLE' | translate }}</p>
         </div>
       </p-card>
     </div>
@@ -85,14 +80,14 @@
           </div>
         </ng-template>
         <ng-template pTemplate="title">
-          {{ category.title | translate }}
+          {{ category.titleKey | translate }}
         </ng-template>
         <ng-template pTemplate="content">
-          <p>{{ category.description | translate }}</p>
+          <p>{{ category.descriptionKey | translate }}</p>
         </ng-template>
         <ng-template pTemplate="footer">
           <p-button
-            [label]="'HOME.EXPLORE' | translate"
+            [label]="'HOME.FEATURED_PLACES.ACTIONS.LEARN_MORE' | translate"
             styleClass="p-button-outlined"
             [routerLink]="category.route"
             pRipple>
@@ -106,9 +101,9 @@
   <section class="cta">
     <div class="cta-content container">
       <h2>{{ 'HOME.CTA.TITLE' | translate }}</h2>
-      <p>{{ 'HOME.CTA.DESC' | translate }}</p>
+      <p>{{ 'HOME.CTA.DESCRIPTION' | translate }}</p>
       <p-button
-        [label]="'HOME.CTA.BTN' | translate"
+        [label]="'HOME.CTA.BUTTON' | translate"
         styleClass="p-button-rounded p-button-lg accent-button"
         pRipple>
       </p-button>

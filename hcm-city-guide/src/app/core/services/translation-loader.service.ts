@@ -22,7 +22,9 @@ export class TranslationLoaderService {
     'FEATURES',
     'LANDMARKS',
     'CULTURES',
-    'STATS'
+    'STATS',
+    'WARD_TYPES',
+    'FOOD'
   ];
 
   constructor(private http: HttpClient) {}

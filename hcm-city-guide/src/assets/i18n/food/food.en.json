@@ -1,0 +1,233 @@
+{
+  "TITLE": "Vietnamese Cuisine in Ho Chi Minh City",
+  "DESCRIPTION": "Discover the rich flavors and culinary traditions of Ho Chi Minh City",
+
+  "CATEGORIES": {
+    "STREET_FOOD": {
+      "TITLE": "Street Food",
+      "DESCRIPTION": "Authentic street food experiences",
+      "NOODLES": {
+        "TITLE": "Noodle Dishes",
+        "PHO": "Phở - Vietnamese Noodle Soup",
+        "HU_TIEU": "Hủ Tiếu - Southern Rice Noodles",
+        "MI_QUANG": "Mì Quảng - Quang Style Noodles",
+        "BUN_BO_HUE": "Bún Bò Huế - Hue Beef Noodles",
+        "BUN_RIEU": "Bún Riêu - Crab Noodle Soup",
+        "BUN_THIT_NUONG": "Bún Thịt Nướng - Grilled Pork Noodles"
+      },
+      "BANH_MI": {
+        "TITLE": "Bánh Mì Varieties",
+        "THIT": "Bánh Mì Thịt - Mixed Meat",
+        "XA_XIU": "Bánh Mì Xá Xíu - Char Siu Pork",
+        "TRUNG": "Bánh Mì Trứng - Egg",
+        "CHAY": "Bánh Mì Chay - Vegetarian",
+        "CA_MONG": "Bánh Mì Cá Mòng - Fish Cake"
+      },
+      "RICE_DISHES": {
+        "TITLE": "Rice Specialties",
+        "COM_TAM": "Cơm Tấm - Broken Rice",
+        "COM_GA": "Cơm Gà - Chicken Rice",
+        "COM_CHIEN": "Cơm Chiên - Fried Rice",
+        "COM_SUON": "Cơm Sườn - Pork Chop Rice"
+      },
+      "SNACKS": {
+        "TITLE": "Street Snacks",
+        "BANH_TRANG_TRON": "Bánh Tráng Trộn - Mixed Rice Paper",
+        "BANH_XEO": "Bánh Xèo - Savory Pancake",
+        "GOI_CUON": "Gỏi Cuốn - Spring Rolls",
+        "CHA_GIO": "Chả Giò - Fried Spring Rolls",
+        "BOT_CHIEN": "Bột Chiên - Fried Rice Cake"
+      }
+    },
+    "RESTAURANTS": {
+      "TITLE": "Restaurants",
+      "DESCRIPTION": "From street-side eateries to fine dining",
+      "TRADITIONAL": {
+        "TITLE": "Traditional Restaurants",
+        "DESCRIPTION": "Authentic Vietnamese dining experiences",
+        "FAMILY_STYLE": "Family Style Dining",
+        "REGIONAL": "Regional Cuisine",
+        "COUNTRYSIDE": "Countryside Cuisine"
+      },
+      "MODERN": {
+        "TITLE": "Modern Vietnamese",
+        "DESCRIPTION": "Contemporary takes on Vietnamese cuisine",
+        "FUSION": "Fusion Restaurants",
+        "CONTEMPORARY": "Contemporary Vietnamese",
+        "INNOVATIVE": "Innovative Cuisine"
+      },
+      "SPECIALTY": {
+        "TITLE": "Specialty Restaurants",
+        "DESCRIPTION": "Focused on specific cuisines or dishes",
+        "SEAFOOD": "Seafood Restaurants",
+        "BBQ": "Vietnamese BBQ",
+        "VEGETARIAN": "Vegetarian Restaurants"
+      }
+    },
+    "DESSERTS": {
+      "TITLE": "Desserts & Sweets",
+      "DESCRIPTION": "Traditional Vietnamese desserts and sweet treats",
+      "CHE": {
+        "TITLE": "Chè Varieties",
+        "CHE_THAI": "Chè Thái - Thai-style Dessert",
+        "CHE_BA_MAU": "Chè Ba Màu - Three Color Dessert",
+        "CHE_CHUOI": "Chè Chuối - Banana Dessert"
+      },
+      "DRINKS": {
+        "TITLE": "Sweet Drinks",
+        "SINH_TO": "Sinh Tố - Smoothies",
+        "NUOC_MIA": "Nước Mía - Sugarcane Juice",
+        "TRA_SUA": "Trà Sữa - Milk Tea"
+      },
+      "PASTRIES": {
+        "TITLE": "Traditional Pastries",
+        "BANH_FLAN": "Bánh Flan - Caramel Custard",
+        "BANH_BO": "Bánh Bò - Pandan Cake",
+        "BANH_CAM": "Bánh Cam - Sesame Balls"
+      }
+    },
+    "BEVERAGES": {
+      "TITLE": "Beverages",
+      "DESCRIPTION": "Traditional and modern drinks",
+      "COFFEE": {
+        "TITLE": "Vietnamese Coffee",
+        "CA_PHE_SUA_DA": "Cà Phê Sữa Đá - Iced Milk Coffee",
+        "CA_PHE_DEN": "Cà Phê Đen - Black Coffee",
+        "BAC_XIEU": "Bạc Xỉu - White Coffee"
+      },
+      "TEA": {
+        "TITLE": "Traditional Tea",
+        "TRA_DA": "Trà Đá - Iced Tea",
+        "TRA_GUNG": "Trà Gừng - Ginger Tea",
+        "TRA_HOA": "Trà Hoa - Flower Tea"
+      },
+      "FRESH_JUICE": {
+        "TITLE": "Fresh Juices",
+        "NUOC_DUA": "Nước Dừa - Coconut Water",
+        "NUOC_CAM": "Nước Cam - Orange Juice",
+        "NUOC_EP": "Nước Ép - Fresh Pressed Juice"
+      }
+    },
+    "MARKETS": {
+      "TITLE": "Food Markets",
+      "DESCRIPTION": "Local markets and food courts",
+      "BEN_THANH": {
+        "TITLE": "Ben Thanh Market",
+        "STREET_FOOD": "Street Food Section",
+        "INGREDIENTS": "Fresh Ingredients",
+        "SPICES": "Spice Stalls"
+      },
+      "BINH_TAY": {
+        "TITLE": "Binh Tay Market",
+        "WHOLESALE": "Wholesale Section",
+        "RETAIL": "Retail Food Stalls",
+        "SPECIALTY": "Specialty Items"
+      }
+    }
+  },
+
+  "DISHES": {
+    "PHO": {
+      "NAME": "Phở",
+      "DESCRIPTION": "Traditional Vietnamese noodle soup with beef or chicken",
+      "INGREDIENTS": "Rice noodles, herbs, meat, broth",
+      "PRICE_RANGE": "40,000 - 80,000 VND",
+      "VARIATIONS": ["Phở Bò - Beef Pho", "Phở Gà - Chicken Pho", "Phở Chay - Vegetarian Pho"]
+    },
+    "BANH_MI": {
+      "NAME": "Bánh Mì",
+      "DESCRIPTION": "Vietnamese baguette sandwich with various fillings",
+      "INGREDIENTS": "Baguette, pate, meat, vegetables, sauce",
+      "PRICE_RANGE": "15,000 - 35,000 VND",
+      "VARIATIONS": ["Traditional", "Special", "Vegetarian"]
+    },
+    "COM_TAM": {
+      "NAME": "Cơm Tấm",
+      "DESCRIPTION": "Broken rice with grilled pork and accompaniments",
+      "INGREDIENTS": "Broken rice, grilled pork, egg, vegetables",
+      "PRICE_RANGE": "30,000 - 60,000 VND",
+      "VARIATIONS": ["Classic", "Special", "Vegetarian"]
+    },
+    "BANH_XEO": {
+      "NAME": "Bánh Xèo",
+      "DESCRIPTION": "Crispy Vietnamese savory pancake",
+      "INGREDIENTS": "Rice flour, turmeric, pork, shrimp, bean sprouts",
+      "PRICE_RANGE": "40,000 - 70,000 VND",
+      "VARIATIONS": ["Traditional", "Seafood", "Vegetarian"]
+    },
+    "HU_TIEU": {
+      "NAME": "Hủ Tiếu",
+      "DESCRIPTION": "Southern-style noodle soup",
+      "INGREDIENTS": "Rice noodles, pork, seafood, vegetables",
+      "PRICE_RANGE": "35,000 - 65,000 VND",
+      "VARIATIONS": ["Nam Vang", "Mỹ Tho", "Seafood"]
+    }
+  },
+
+  "FEATURES": {
+    "POPULAR": "Popular",
+    "SPICY": "Spicy",
+    "VEGETARIAN": "Vegetarian",
+    "VEGAN": "Vegan",
+    "GLUTEN_FREE": "Gluten-free",
+    "LOCAL_FAVORITE": "Local Favorite",
+    "MUST_TRY": "Must Try",
+    "SEASONAL": "Seasonal"
+  },
+
+  "LOCATIONS": {
+    "DISTRICT_1": "District 1",
+    "DISTRICT_3": "District 3",
+    "DISTRICT_5": "District 5",
+    "BEN_THANH": "Ben Thanh Market Area",
+    "CHINATOWN": "Chinatown (Cho Lon)"
+  },
+
+  "FILTERS": {
+    "PRICE": {
+      "TITLE": "Price Range",
+      "BUDGET": "Budget",
+      "MODERATE": "Moderate",
+      "EXPENSIVE": "Expensive"
+    },
+    "MEAL_TYPE": {
+      "TITLE": "Meal Type",
+      "BREAKFAST": "Breakfast",
+      "LUNCH": "Lunch",
+      "DINNER": "Dinner",
+      "SNACK": "Snack"
+    },
+    "DIETARY": {
+      "TITLE": "Dietary Preferences",
+      "VEGETARIAN": "Vegetarian",
+      "VEGAN": "Vegan",
+      "HALAL": "Halal",
+      "GLUTEN_FREE": "Gluten-free"
+    }
+  },
+
+  "TIPS": {
+    "EATING": "Tips for Eating",
+    "ORDERING": "How to Order",
+    "ETIQUETTE": "Dining Etiquette",
+    "PAYMENT": "Payment Methods",
+    "HYGIENE": "Food Safety"
+  },
+
+  "REVIEWS": {
+    "WRITE": "Write a Review",
+    "RATING": "Rating",
+    "TASTE": "Taste",
+    "SERVICE": "Service",
+    "AMBIANCE": "Ambiance",
+    "VALUE": "Value for Money"
+  },
+
+  "BUTTONS": {
+    "VIEW_MENU": "View Menu",
+    "FIND_LOCATION": "Find Location",
+    "BOOK_TABLE": "Book a Table",
+    "READ_REVIEWS": "Read Reviews",
+    "SHARE": "Share"
+  }
+} 

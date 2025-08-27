@@ -1,6 +1,102 @@
 {
-  "VIETNAMESE": "Vietnamese Culture",
-  "CHINESE": "Chinese Culture",
-  "FRENCH_COLONIAL": "French Colonial Heritage",
-  "MODERN": "Modern Urban Culture"
+  "TITLE": "Cultural Heritage",
+  "DESCRIPTION": "Discover the rich cultural heritage of Ho Chi Minh City",
+  
+  "CATEGORIES": {
+    "VIETNAMESE": {
+      "TITLE": "Vietnamese Culture",
+      "DESCRIPTION": "Traditional Vietnamese cultural elements and practices",
+      "FEATURES": [
+        "Traditional Festivals",
+        "Folk Arts",
+        "Local Customs",
+        "Traditional Music"
+      ]
+    },
+    "CHINESE": {
+      "TITLE": "Chinese Heritage",
+      "DESCRIPTION": "Influence of Chinese culture in Cho Lon and beyond",
+      "FEATURES": [
+        "Chinese Temples",
+        "Traditional Medicine",
+        "Cultural Festivals",
+        "Culinary Heritage"
+      ]
+    },
+    "FRENCH_COLONIAL": {
+      "TITLE": "French Colonial Heritage",
+      "DESCRIPTION": "Architectural and cultural legacy of the French colonial period",
+      "FEATURES": [
+        "Colonial Architecture",
+        "European Influence",
+        "Historical Buildings",
+        "Cultural Fusion"
+      ]
+    },
+    "MODERN": {
+      "TITLE": "Modern Urban Culture",
+      "DESCRIPTION": "Contemporary cultural expressions and urban lifestyle",
+      "FEATURES": [
+        "Street Art",
+        "Modern Entertainment",
+        "Urban Lifestyle",
+        "Contemporary Arts"
+      ]
+    }
+  },
+
+  "FEATURES": {
+    "TRADITIONAL": "Traditional",
+    "CONTEMPORARY": "Contemporary",
+    "HISTORICAL": "Historical",
+    "RELIGIOUS": "Religious",
+    "ARCHITECTURAL": "Architectural",
+    "ARTISTIC": "Artistic",
+    "CULINARY": "Culinary",
+    "FESTIVAL": "Festival"
+  },
+
+  "SECTIONS": {
+    "TRADITIONS": {
+      "TITLE": "Local Traditions",
+      "FESTIVALS": "Traditional Festivals",
+      "CUSTOMS": "Local Customs",
+      "ETIQUETTE": "Social Etiquette"
+    },
+    "ARTS": {
+      "TITLE": "Arts & Entertainment",
+      "MUSIC": "Traditional Music",
+      "THEATER": "Traditional Theater",
+      "CRAFTS": "Local Crafts",
+      "MODERN_ARTS": "Contemporary Arts"
+    },
+    "RELIGION": {
+      "TITLE": "Religious Heritage",
+      "TEMPLES": "Buddhist Temples",
+      "CHURCHES": "Churches",
+      "PAGODAS": "Pagodas",
+      "PRACTICES": "Religious Practices"
+    },
+    "ARCHITECTURE": {
+      "TITLE": "Architectural Heritage",
+      "COLONIAL": "Colonial Buildings",
+      "TRADITIONAL": "Traditional Architecture",
+      "MODERN": "Modern Architecture",
+      "LANDMARKS": "Historical Landmarks"
+    }
+  },
+
+  "FILTERS": {
+    "PERIOD": "Historical Period",
+    "TYPE": "Cultural Type",
+    "LOCATION": "Location",
+    "ACCESSIBILITY": "Accessibility"
+  },
+
+  "ACTIONS": {
+    "LEARN_MORE": "Learn More",
+    "VIEW_GALLERY": "View Gallery",
+    "BOOK_TOUR": "Book Cultural Tour",
+    "SHARE": "Share"
+  }
 } 

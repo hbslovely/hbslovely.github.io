@@ -4,7 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { WardCardComponent } from './components/ward-card/ward-card.component';
 import { WardListItemComponent } from './components/ward-list-item/ward-list-item.component';
 import { CommonModule } from '@angular/common';
-import { WardsService, Ward } from '../../../../core';
+import { WardsService, Ward } from '@core/services';
+import { DataService } from '@core/services';
 
 @Component({
   selector: 'app-wards',
@@ -27,51 +28,30 @@ export class WardsComponent implements OnInit {
   selectedFeatures: string[] = [];
   selectedType: string = '';
   selectedCultures: string[] = [];
-  
+
   // View type
   isGridView: boolean = true;
-  
+
   // Pagination
   currentPage: number = 1;
   itemsPerPage: number = 12;
   totalItems: number = 0;
   pageSizeOptions: number[] = [12, 24, 48];
 
-  features: string[] = [
-    'FEATURES.HISTORIC_SITE',
-    'FEATURES.CULTURAL_HERITAGE',
-    'FEATURES.COMMERCIAL_HUB',
-    'FEATURES.RESIDENTIAL_AREA',
-    'FEATURES.INDUSTRIAL_ZONE',
-    'FEATURES.TOURIST_ATTRACTION',
-    'FEATURES.WATERFRONT',
-    'FEATURES.GREEN_SPACE',
-    'FEATURES.EDUCATION_HUB',
-    'FEATURES.TRADITIONAL_MARKET'
-  ];
-
-  cultures: string[] = [
-    'VIETNAMESE',
-    'CHINESE',
-    'FRENCH_COLONIAL',
-    'MODERN'
-  ];
-
-  wardTypes: string[] = [
-    'WARD_TYPES.URBAN',
-    'WARD_TYPES.SUBURBAN',
-    'WARD_TYPES.RURAL',
-    'WARD_TYPES.SPECIAL'
-  ];
+  // Filter options
+  features: string[] = [];
+  cultures: string[] = [];
+  wardTypes: string[] = [];
 
   constructor(
     private wardsService: WardsService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private dataService: DataService
   ) {}
 
   ngOnInit() {
     this.loadWards();
-    this.setupFilters();
+    this.loadFilterOptions();
     this.translate.onLangChange.subscribe(() => {
       this.loadWards();
     });
@@ -83,6 +63,15 @@ export class WardsComponent implements OnInit {
         this.wards = wards;
         this.filterWards();
       });
+  }
+
+  private loadFilterOptions() {
+    this.dataService.getDiscoverData().subscribe(data => {
+      this.features = data.sections.wards.features;
+      this.cultures = data.sections.wards.cultures;
+      this.wardTypes = data.sections.wards.wardTypes;
+      this.setupFilters();
+    });
   }
 
   private setupFilters() {
@@ -119,7 +108,7 @@ export class WardsComponent implements OnInit {
 
       return matchesSearch && matchesFeatures && matchesType && matchesCulture;
     });
-    
+
     this.totalItems = this.filteredWards.length;
     this.updateDisplayedWards();
   }
@@ -204,7 +193,7 @@ export class WardsComponent implements OnInit {
   getPageNumbers(): (number | string)[] {
     const pages: (number | string)[] = [];
     const maxVisiblePages = 5;
-    
+
     if (this.totalPages <= maxVisiblePages) {
       // If total pages is less than max visible, show all pages
       for (let i = 1; i <= this.totalPages; i++) {
@@ -213,15 +202,15 @@ export class WardsComponent implements OnInit {
     } else {
       // Always show first page
       pages.push(1);
-      
+
       if (this.currentPage > 3) {
         pages.push('...');
       }
-      
+
       // Calculate start and end of middle section
       let start = Math.max(2, this.currentPage - 1);
       let end = Math.min(this.totalPages - 1, this.currentPage + 1);
-      
+
       // Adjust if at the start or end
       if (this.currentPage <= 3) {
         end = 4;
@@ -229,19 +218,19 @@ export class WardsComponent implements OnInit {
       if (this.currentPage >= this.totalPages - 2) {
         start = this.totalPages - 3;
       }
-      
+
       // Add middle pages
       for (let i = start; i <= end; i++) {
         pages.push(i);
       }
-      
+
       // Add ellipsis and last page if needed
       if (this.currentPage < this.totalPages - 2) {
         pages.push('...');
       }
       pages.push(this.totalPages);
     }
-    
+
     return pages;
   }
 }

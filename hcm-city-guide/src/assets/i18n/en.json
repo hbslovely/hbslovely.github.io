@@ -43,19 +43,19 @@
     "VIEW_GALLERY": "View Gallery",
     "BEN_THANH": {
       "NAME": "Ben Thanh Market",
-      "DESC": "An iconic Saigon market where you can find everything from souvenirs to local cuisine."
+      "DESC": "An iconic Saigon market where you can find everything from souvenirs to local cuisine, experience the vibrant atmosphere and rich history of the city."
     },
     "NOTRE_DAME": {
       "NAME": "Notre-Dame Cathedral",
-      "DESC": "A famous Gothic architecture built during the French colonial period, a symbol of the city."
+      "DESC": "A magnificent Gothic architecture built during the French colonial period, this iconic cathedral stands as a testament to the city's diverse cultural heritage."
     },
     "WAR_MUSEUM": {
       "NAME": "War Remnants Museum",
-      "DESC": "A museum displaying artifacts and images from the war, helping visitors better understand Vietnam's history."
+      "DESC": "A powerful museum displaying artifacts and images from the war, offering visitors a profound understanding of Vietnam's history and the impact of conflict."
     },
     "INDEPENDENCE_PALACE": {
       "NAME": "Independence Palace",
-      "DESC": "An important historical building, former residence and workplace of the President of South Vietnam."
+      "DESC": "A historic landmark that served as the residence and workplace of the President of South Vietnam, featuring impressive architecture and significant historical importance."
     },
     "FACILITIES": {
       "PARKING": "Parking",
@@ -85,8 +85,8 @@
     },
     "WEATHER": {
       "TITLE": "Weather Tips",
-      "RAINY": "Rainy Season",
-      "DRY": "Dry Season",
+      "RAINY": "Rainy Season (May-November)",
+      "DRY": "Dry Season (December-April)",
       "WHAT_TO_WEAR": "What to Wear",
       "BEST_TIME": "Best Time to Visit"
     }
@@ -130,9 +130,9 @@
     },
     "SPECIALTIES": {
       "TITLE": "Local Specialties",
-      "PHO": "Phở",
-      "BANH_MI": "Bánh Mì",
-      "COM_TAM": "Cơm Tấm"
+      "PHO": "Phở - Vietnamese Noodle Soup",
+      "BANH_MI": "Bánh Mì - Vietnamese Sandwich",
+      "COM_TAM": "Cơm Tấm - Broken Rice"
     }
   },
   "PRIVACY": {

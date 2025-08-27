@@ -1,12 +1,104 @@
 {
-  "PLACEHOLDER": "Tìm kiếm địa điểm, điểm tham quan, ẩm thực...",
-  "TOOLTIP": "Nhấn để tìm kiếm",
-  "NO_RESULTS": "Không tìm thấy kết quả",
-  "CATEGORIES": {
-    "ATTRACTIONS": "Điểm Du lịch",
-    "CULTURE": "Di tích Văn hóa",
-    "FOOD": "Ẩm thực",
+  "TITLE": "Tìm Kiếm TP.HCM",
+  "SUBTITLE": "Tìm địa điểm, điểm tham quan, ẩm thực và hơn thế nữa",
+  "DESCRIPTION": "Khám phá mọi điều thú vị tại Thành phố Hồ Chí Minh",
+  
+  "SEARCH_BAR": {
+    "PLACEHOLDER": "Tìm kiếm địa điểm, điểm tham quan, ẩm thực...",
+    "TOOLTIP": "Nhấn để tìm kiếm",
+    "VOICE_SEARCH": "Tìm kiếm bằng giọng nói",
+    "RECENT_SEARCHES": "Tìm kiếm gần đây",
+    "POPULAR_SEARCHES": "Tìm kiếm phổ biến",
+    "CLEAR_HISTORY": "Xóa lịch sử"
+  },
+
+  "FILTERS": {
+    "TITLE": "Bộ Lọc Tìm Kiếm",
+    "CATEGORIES": "Danh Mục",
     "DISTRICTS": "Quận/Huyện",
-    "NIGHTLIFE": "Giải trí Về đêm"
+    "PRICE_RANGE": "Khoảng Giá",
+    "RATING": "Đánh Giá",
+    "DISTANCE": "Khoảng Cách",
+    "OPEN_NOW": "Đang Mở Cửa",
+    "APPLY": "Áp Dụng Bộ Lọc",
+    "CLEAR": "Xóa Bộ Lọc",
+    "MORE": "Thêm Bộ Lọc"
+  },
+
+  "RESULTS": {
+    "TITLE": "Kết Quả Tìm Kiếm",
+    "COUNT": "Tìm thấy {{count}} kết quả",
+    "SORT": {
+      "TITLE": "Sắp xếp theo",
+      "RELEVANCE": "Độ Liên Quan",
+      "RATING": "Đánh Giá",
+      "DISTANCE": "Khoảng Cách",
+      "PRICE_LOW": "Giá: Thấp đến Cao",
+      "PRICE_HIGH": "Giá: Cao đến Thấp"
+    },
+    "VIEW": {
+      "GRID": "Xem dạng lưới",
+      "LIST": "Xem dạng danh sách",
+      "MAP": "Xem bản đồ"
+    }
+  },
+
+  "NO_RESULTS": {
+    "TITLE": "Không tìm thấy kết quả",
+    "MESSAGE": "Thử từ khóa khác hoặc bỏ bớt bộ lọc",
+    "SUGGESTIONS": [
+      "Kiểm tra chính tả",
+      "Sử dụng từ khóa chung hơn",
+      "Bỏ bớt bộ lọc",
+      "Thử danh mục khác"
+    ]
+  },
+
+  "CATEGORIES": {
+    "ATTRACTIONS": {
+      "TITLE": "Điểm Tham Quan",
+      "DESCRIPTION": "Địa danh và thắng cảnh nổi tiếng"
+    },
+    "CULTURE": {
+      "TITLE": "Di Tích Văn Hóa",
+      "DESCRIPTION": "Bảo tàng, chùa miếu và di tích lịch sử"
+    },
+    "FOOD": {
+      "TITLE": "Ẩm Thực",
+      "DESCRIPTION": "Nhà hàng, quán cà phê và ẩm thực đường phố"
+    },
+    "DISTRICTS": {
+      "TITLE": "Quận/Huyện",
+      "DESCRIPTION": "Các quận huyện và khu vực"
+    },
+    "NIGHTLIFE": {
+      "TITLE": "Giải Trí Về Đêm",
+      "DESCRIPTION": "Quán bar, vũ trường và giải trí"
+    },
+    "SHOPPING": {
+      "TITLE": "Mua Sắm",
+      "DESCRIPTION": "Chợ, trung tâm thương mại và cửa hàng"
+    },
+    "ACTIVITIES": {
+      "TITLE": "Hoạt Động",
+      "DESCRIPTION": "Các hoạt động và trải nghiệm"
+    }
+  },
+
+  "QUICK_FILTERS": {
+    "OPEN_NOW": "Đang Mở Cửa",
+    "NEAR_ME": "Gần Đây",
+    "TOP_RATED": "Đánh Giá Cao",
+    "BUDGET_FRIENDLY": "Giá Rẻ",
+    "FAMILY_FRIENDLY": "Thân Thiện Gia Đình",
+    "ACCESSIBLE": "Dễ Tiếp Cận"
+  },
+
+  "ACTIONS": {
+    "VIEW_DETAILS": "Xem Chi Tiết",
+    "GET_DIRECTIONS": "Chỉ Đường",
+    "SAVE": "Lưu Lại",
+    "SHARE": "Chia Sẻ",
+    "REPORT": "Báo Cáo Vấn Đề"
   }
 } 

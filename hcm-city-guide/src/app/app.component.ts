@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { animate, style, transition, trigger } from '@angular/animations';
@@ -27,7 +27,17 @@ import { animate, style, transition, trigger } from '@angular/animations';
     ])
   ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  constructor(private translate: TranslateService) {}
+
+  ngOnInit() {
+    // Set default language
+    this.translate.setDefaultLang('en');
+    // Use browser language if available, otherwise use default
+    const browserLang = this.translate.getBrowserLang();
+    this.translate.use(browserLang?.match(/en|vi/) ? browserLang : 'en');
+  }
+
   prepareRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData;
   }

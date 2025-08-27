@@ -1,6 +1,102 @@
 {
-  "VIETNAMESE": "Văn Hóa Việt Nam",
-  "CHINESE": "Văn Hóa Trung Hoa",
-  "FRENCH_COLONIAL": "Di Sản Thuộc Địa Pháp",
-  "MODERN": "Văn Hóa Đô Thị Hiện Đại"
+  "TITLE": "Di Sản Văn Hóa",
+  "DESCRIPTION": "Khám phá di sản văn hóa phong phú của Thành phố Hồ Chí Minh",
+  
+  "CATEGORIES": {
+    "VIETNAMESE": {
+      "TITLE": "Văn Hóa Việt Nam",
+      "DESCRIPTION": "Các yếu tố và thực hành văn hóa truyền thống Việt Nam",
+      "FEATURES": [
+        "Lễ Hội Truyền Thống",
+        "Nghệ Thuật Dân Gian",
+        "Phong Tục Địa Phương",
+        "Âm Nhạc Truyền Thống"
+      ]
+    },
+    "CHINESE": {
+      "TITLE": "Di Sản Trung Hoa",
+      "DESCRIPTION": "Ảnh hưởng của văn hóa Trung Hoa tại Chợ Lớn và các khu vực khác",
+      "FEATURES": [
+        "Chùa Miếu Trung Hoa",
+        "Y Học Cổ Truyền",
+        "Lễ Hội Văn Hóa",
+        "Di Sản Ẩm Thực"
+      ]
+    },
+    "FRENCH_COLONIAL": {
+      "TITLE": "Di Sản Thuộc Địa Pháp",
+      "DESCRIPTION": "Di sản kiến trúc và văn hóa từ thời Pháp thuộc",
+      "FEATURES": [
+        "Kiến Trúc Thuộc Địa",
+        "Ảnh Hưởng Châu Âu",
+        "Công Trình Lịch Sử",
+        "Giao Thoa Văn Hóa"
+      ]
+    },
+    "MODERN": {
+      "TITLE": "Văn Hóa Đô Thị Hiện Đại",
+      "DESCRIPTION": "Biểu hiện văn hóa đương đại và lối sống đô thị",
+      "FEATURES": [
+        "Nghệ Thuật Đường Phố",
+        "Giải Trí Hiện Đại",
+        "Lối Sống Đô Thị",
+        "Nghệ Thuật Đương Đại"
+      ]
+    }
+  },
+
+  "FEATURES": {
+    "TRADITIONAL": "Truyền Thống",
+    "CONTEMPORARY": "Đương Đại",
+    "HISTORICAL": "Lịch Sử",
+    "RELIGIOUS": "Tôn Giáo",
+    "ARCHITECTURAL": "Kiến Trúc",
+    "ARTISTIC": "Nghệ Thuật",
+    "CULINARY": "Ẩm Thực",
+    "FESTIVAL": "Lễ Hội"
+  },
+
+  "SECTIONS": {
+    "TRADITIONS": {
+      "TITLE": "Truyền Thống Địa Phương",
+      "FESTIVALS": "Lễ Hội Truyền Thống",
+      "CUSTOMS": "Phong Tục Địa Phương",
+      "ETIQUETTE": "Nghi Thức Xã Hội"
+    },
+    "ARTS": {
+      "TITLE": "Nghệ Thuật & Giải Trí",
+      "MUSIC": "Âm Nhạc Truyền Thống",
+      "THEATER": "Sân Khấu Truyền Thống",
+      "CRAFTS": "Nghề Thủ Công",
+      "MODERN_ARTS": "Nghệ Thuật Đương Đại"
+    },
+    "RELIGION": {
+      "TITLE": "Di Sản Tôn Giáo",
+      "TEMPLES": "Chùa Phật Giáo",
+      "CHURCHES": "Nhà Thờ",
+      "PAGODAS": "Chùa Miếu",
+      "PRACTICES": "Nghi Lễ Tôn Giáo"
+    },
+    "ARCHITECTURE": {
+      "TITLE": "Di Sản Kiến Trúc",
+      "COLONIAL": "Công Trình Thời Pháp",
+      "TRADITIONAL": "Kiến Trúc Truyền Thống",
+      "MODERN": "Kiến Trúc Hiện Đại",
+      "LANDMARKS": "Di Tích Lịch Sử"
+    }
+  },
+
+  "FILTERS": {
+    "PERIOD": "Thời Kỳ Lịch Sử",
+    "TYPE": "Loại Hình Văn Hóa",
+    "LOCATION": "Vị Trí",
+    "ACCESSIBILITY": "Khả Năng Tiếp Cận"
+  },
+
+  "ACTIONS": {
+    "LEARN_MORE": "Tìm Hiểu Thêm",
+    "VIEW_GALLERY": "Xem Thư Viện Ảnh",
+    "BOOK_TOUR": "Đặt Tour Văn Hóa",
+    "SHARE": "Chia Sẻ"
+  }
 } 

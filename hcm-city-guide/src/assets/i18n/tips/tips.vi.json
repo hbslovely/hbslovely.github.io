@@ -1,86 +1,118 @@
 {
-  "TITLE": "Hướng Dẫn Du Lịch Thành Phố Hồ Chí Minh",
-  "DESCRIPTION": "Thông tin cần thiết và những lời khuyên hữu ích để chuyến thăm Thành phố Hồ Chí Minh của bạn an toàn và thú vị.",
-  "ESSENTIALS": {
-    "TITLE": "Những Lời Khuyên Cần Thiết",
-    "VISA": {
-      "TITLE": "Yêu Cầu Visa",
-      "CONTENT": "Hầu hết du khách cần visa để vào Việt Nam. Kiểm tra yêu cầu và đăng ký trực tuyến qua cổng e-visa chính thức."
-    },
-    "MONEY": {
-      "TITLE": "Tiền Tệ & Thanh Toán",
-      "CONTENT": "Đồng Việt Nam (VND) là tiền tệ địa phương. ATM có sẵn rộng rãi, và nhiều nơi chấp nhận thẻ, nhưng nên giữ sẵn tiền mặt."
-    },
-    "PHONE": {
-      "TITLE": "Di Động & Internet",
-      "CONTENT": "SIM điện thoại địa phương giá rẻ và có phủ sóng tốt. Wi-Fi miễn phí có sẵn ở hầu hết quán cà phê và nhà hàng."
-    }
-  },
-  "TRANSPORTATION": {
-    "TITLE": "Di Chuyển",
-    "GRAB": {
-      "TITLE": "Dịch Vụ Grab",
-      "CONTENT": "Grab là ứng dụng gọi xe phổ biến cung cấp dịch vụ xe hơi, xe máy và giao đồ ăn. An toàn và giá cố định."
-    },
-    "BUS": {
-      "TITLE": "Xe Buýt Công Cộng",
-      "CONTENT": "Xe buýt là phương tiện di chuyển rẻ nhất. Lấy bản đồ xe buýt và nhớ tên điểm dừng bằng tiếng Việt."
-    },
-    "MOTORBIKE": {
-      "TITLE": "An Toàn Xe Máy",
-      "CONTENT": "Nếu thuê xe máy, luôn đội mũ bảo hiểm và mang theo giấy tờ hợp lệ. Giao thông có thể khó khăn cho người mới."
-    }
-  },
-  "SAFETY": {
-    "TITLE": "Lời Khuyên An Toàn",
-    "VALUABLES": {
-      "TITLE": "Bảo Vệ Tài Sản",
-      "CONTENT": "Giữ tài sản an toàn và chú ý xung quanh, đặc biệt ở nơi đông người."
-    },
-    "TRAFFIC": {
-      "TITLE": "An Toàn Giao Thông",
-      "CONTENT": "Nhìn cả hai bên và đi bộ đều đặn khi qua đường. Xe máy có thể đi trên vỉa hè."
-    },
-    "SCAMS": {
-      "TITLE": "Lừa Đảo Phổ Biến",
-      "CONTENT": "Cẩn thận với người lạ quá thân thiện và luôn thỏa thuận giá trước khi sử dụng dịch vụ."
-    }
-  },
-  "ETIQUETTE": {
+  "LOCAL_ETIQUETTE": {
     "TITLE": "Phép Tắc Địa Phương",
-    "TEMPLES": {
-      "TITLE": "Thăm Chùa",
-      "CONTENT": "Cởi giày trước khi vào chùa và ăn mặc kín đáo. Xin phép trước khi chụp ảnh."
-    },
-    "DRESS": {
-      "TITLE": "Quy Tắc Trang Phục",
-      "CONTENT": "Ăn mặc kín đáo, đặc biệt khi thăm các địa điểm tôn giáo. Nên mặc quần áo nhẹ, thoáng mát."
-    },
-    "BARGAINING": {
-      "TITLE": "Mẹo Mặc Cả",
-      "CONTENT": "Mặc cả phổ biến ở chợ. Bắt đầu từ 50% giá ban đầu và thương lượng một cách thân thiện."
+    "SECTIONS": {
+      "TEMPLE_VISITS": {
+        "TITLE": "Phép Tắc Khi Viếng Chùa",
+        "DESCRIPTION": "Cách ứng xử tôn trọng khi thăm chùa và đền",
+        "GUIDELINES": {
+          "DRESS_CODE": "Ăn mặc kín đáo - che vai và qua đầu gối",
+          "REMOVE_SHOES": "Cởi giày dép trước khi vào các tòa nhà trong chùa",
+          "INCENSE_BURNING": "Thắp ít nhang (1-3 cây) để tránh khói",
+          "FOOT_POINTING": "Không chỉ chân về phía tượng Phật",
+          "PHOTO_PERMISSION": "Xin phép trước khi chụp ảnh",
+          "QUIET_PHONES": "Nói chuyện nhỏ nhẹ và tắt chuông điện thoại",
+          "NO_TOUCHING": "Không chạm hoặc leo trèo lên đồ thờ cúng",
+          "CLOCKWISE_DIRECTION": "Đi vòng theo chiều kim đồng hồ quanh vật thiêng"
+        }
+      },
+      "DINING": {
+        "TITLE": "Phép Tắc Khi Ăn Uống",
+        "DESCRIPTION": "Cách ứng xử đúng mực khi dùng bữa tại Việt Nam",
+        "GUIDELINES": {
+          "ELDER_FIRST": "Đợi người lớn tuổi bắt đầu ăn trước",
+          "TWO_HANDS": "Dùng hai tay khi chuyền đồ",
+          "RICE_BOWL": "Bưng bát cơm gần miệng",
+          "CHOPSTICKS_POSITION": "Đặt đũa song song trên giá đỡ",
+          "FAMILY_STYLE": "Chia sẻ món ăn kiểu gia đình",
+          "THANK_HOST": "Cảm ơn chủ nhà sau bữa ăn",
+          "GROUP_PAYMENT": "Góp tiền nhóm trừ khi được mời"
+        }
+      },
+      "HOME_VISITS": {
+        "TITLE": "Phép Tắc Khi Thăm Nhà",
+        "DESCRIPTION": "Phong tục khi thăm nhà người Việt",
+        "GUIDELINES": {
+          "SHOES_OFF": "Cởi giày dép ở cửa",
+          "BRING_GIFT": "Mang quà nhỏ (trái cây, bánh kẹo)",
+          "GREET_ELDERS": "Chào người lớn tuổi trước",
+          "ACCEPT_DRINKS": "Nhận trà hoặc nước khi được mời",
+          "PHOTO_PERMISSION": "Xin phép trước khi chụp ảnh",
+          "COMPLIMENT_HOME": "Khen ngợi ngôi nhà",
+          "FOLLOW_SEATING": "Theo hướng dẫn của chủ nhà khi ngồi"
+        }
+      }
     }
   },
-  "WEATHER": {
-    "TITLE": "Hướng Dẫn Thời Tiết",
-    "RAINY": {
-      "TITLE": "Mùa Mưa",
-      "CONTENT": "Từ tháng 5 đến tháng 11 có mưa chiều. Mang theo áo mưa nhẹ hoặc ô."
-    },
-    "HEAT": {
-      "TITLE": "Bảo Vệ Khỏi Nắng Nóng",
-      "CONTENT": "Thành phố nóng quanh năm. Uống đủ nước và sử dụng kem chống nắng."
-    },
-    "BEST_TIME": {
-      "TITLE": "Thời Điểm Tốt Nhất Để Thăm",
-      "CONTENT": "Từ tháng 12 đến tháng 4 có thời tiết dễ chịu nhất với ít mưa và độ ẩm thấp hơn."
+  "SAFETY_TIPS": {
+    "TITLE": "Hướng Dẫn An Toàn",
+    "SECTIONS": {
+      "PERSONAL_SAFETY": {
+        "TITLE": "An Toàn Cá Nhân",
+        "DESCRIPTION": "Giữ an toàn khi khám phá thành phố",
+        "GUIDELINES": {
+          "KEEP_BELONGINGS_CLOSE": "Giữ đồ đạc gần người ở nơi đông đúc",
+          "USE_RELIABLE_TRANSPORT": "Sử dụng dịch vụ vận chuyển uy tín",
+          "MINIMAL_CASH": "Mang ít tiền mặt và đồ có giá trị",
+          "EMERGENCY_NUMBERS": "Lưu số điện thoại khẩn cấp",
+          "STAY_AWARE": "Luôn để ý xung quanh",
+          "TRUST_INSTINCTS": "Tin vào trực giác của bạn",
+          "DOCUMENT_COPIES": "Giữ bản sao giấy tờ quan trọng"
+        }
+      },
+      "TRAFFIC_SAFETY": {
+        "TITLE": "An Toàn Giao Thông",
+        "DESCRIPTION": "Di chuyển an toàn trong thành phố",
+        "GUIDELINES": {
+          "LOOK_BOTH_WAYS": "Nhìn hai bên nhiều lần",
+          "STEADY_CROSSING": "Đi bộ đều đặn khi qua đường",
+          "USE_CROSSWALKS": "Sử dụng vạch sang đường khi có thể",
+          "WATCH_SIDEWALKS": "Cẩn thận xe máy trên vỉa hè",
+          "HOLD_CHILDREN": "Nắm tay trẻ em khi qua đường",
+          "AVOID_PHONE_WALKING": "Tránh vừa đi vừa dùng điện thoại",
+          "USE_PEDESTRIAN_BRIDGES": "Sử dụng cầu vượt bộ hành khi có thể"
+        }
+      },
+      "HEALTH_SAFETY": {
+        "TITLE": "Sức Khỏe & An Toàn",
+        "DESCRIPTION": "Giữ sức khỏe trong thời gian thăm quan",
+        "GUIDELINES": {
+          "BOTTLED_WATER": "Uống nước đóng chai hoặc đã lọc",
+          "POPULAR_RESTAURANTS": "Chọn quán ăn đông khách",
+          "BASIC_MEDICINE": "Mang theo thuốc cơ bản",
+          "STAY_HYDRATED": "Uống đủ nước trong thời tiết nóng",
+          "USE_SUNSCREEN": "Sử dụng kem chống nắng",
+          "KNOW_FACILITIES": "Biết cơ sở y tế gần nhất",
+          "INSURANCE_INFO": "Chuẩn bị sẵn thông tin bảo hiểm du lịch"
+        }
+      }
     }
   },
-  "IMPORTANT": "Quan Trọng",
-  "DOWNLOAD": {
-    "TITLE": "Tải Hướng Dẫn Du Lịch",
-    "DESCRIPTION": "Tải hướng dẫn du lịch đầy đủ dưới dạng PDF để xem offline hoặc in ấn.",
-    "PDF": "Tải Hướng Dẫn PDF",
-    "PRINT": "In Hướng Dẫn"
+  "CULTURAL_AWARENESS": {
+    "TITLE": "Nhận Thức Văn Hóa",
+    "SECTIONS": {
+      "PUBLIC_BEHAVIOR": {
+        "TITLE": "Cách Ứng Xử Nơi Công Cộng",
+        "GUIDELINES": {
+          "MODEST_DRESS": "Ăn mặc kín đáo nơi công cộng",
+          "AVOID_PDA": "Tránh thể hiện tình cảm nơi công cộng",
+          "MODERATE_VOICE": "Giữ giọng nói vừa phải",
+          "RESPECT_ELDERS": "Tôn trọng người cao tuổi",
+          "REMOVE_SHOES": "Cởi giày dép khi được yêu cầu",
+          "PHOTO_PERMISSION": "Xin phép trước khi chụp ảnh người khác"
+        }
+      },
+      "COMMUNICATION": {
+        "TITLE": "Mẹo Giao Tiếp",
+        "GUIDELINES": {
+          "BASIC_GREETINGS": "Học các câu chào cơ bản tiếng Việt",
+          "SMILE_PATIENCE": "Mỉm cười và kiên nhẫn",
+          "TWO_HANDS": "Dùng hai tay khi đưa/nhận đồ",
+          "NO_POINTING": "Tránh chỉ tay vào người khác",
+          "NO_HEAD_TOUCHING": "Không chạm vào đầu người khác",
+          "ELDER_RESPECT": "Tôn trọng người lớn tuổi"
+        }
+      }
+    }
   }
 }

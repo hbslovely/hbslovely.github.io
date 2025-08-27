@@ -403,7 +403,7 @@
       }
     ],
     "features": [
-      "FEATURES.ADMINISTRATIVE_CENTER",
+      "LANDMARKS.ADMINISTRATIVE_CENTER",
       "FEATURES.DI_TICH_LICH_SU",
       "FEATURES.TRUNG_TAM_THUONG_MAI",
       "FEATURES.DI_SAN_VAN_HOA"
@@ -2239,7 +2239,7 @@
   "LAI_THIEU": {
     "id": "lai-thieu-ward",
     "name": "Phường Lái Thiêu",
-    "description": "Phường Lái Thiêu là khu vực phát triển năng động của tỉnh Bình Dương, kết hợp giữa các yếu tố đô thị hiện đại và giá trị văn hóa truyền thống. Với vị trí thuận lợi và cơ sở hạ tầng phát triển, phường đang không ngừng đổi mới trong khi vẫn giữ gìn bản sắc riêng.",
+    "description": "Phường Lái Thiêu là khu vực phát triển năng động của tỉnh Bình Dương, kết hợp giữa các yếu tố đô thị hiện đại và giá trị văn hóca truyền thống. Với vị trí thuận lợi và cơ sở hạ tầng phát triển, phường đang không ngừng đổi mới trong khi vẫn giữ gìn bản sắc riêng.",
     "area": "2.4 km²",
     "neighboring_wards": [
       {
@@ -2887,7 +2887,7 @@
   "PHU_THANH": {
     "id": "phu-thanh-ward",
     "name": "Phường Phú Thạnh",
-    "description": "Phường Phú Thạnh là khu vực phát triển năng động của TP. Hồ Chí Minh, kết hợp giữa các yếu tố đô thị hiện đại và giá trị văn hóa truyền thống. Với vị trí thuận lợi và cơ sở hạ tầng phát triển, phường đang không ngừng đổi mới trong khi vẫn giữ gìn bản sắc riêng.",
+    "description": "Phường Phú Thạnh là khu vực phát triển năng động của TP. Hồ Chí Minh, kết hợp giữa các yếu tố đô thị hiện đại và giá trị văn hóca truyền thống. Với vị trí thuận lợi và cơ sở hạ tầng phát triển, phường đang không ngừng đổi mới trong khi vẫn giữ gìn bản sắc riêng.",
     "area": "2.2 km²",
     "neighboring_wards": [
       {
@@ -2931,7 +2931,7 @@
   "PHU_THO": {
     "id": "phu-tho-ward",
     "name": "Phường Phú Thọ",
-    "description": "Phường Phú Thọ là khu vực phát triển năng động của TP. Hồ Chí Minh, kết hợp giữa các yếu tố đô thị hiện đại và giá trị văn hóa truyền thống. Với vị trí thuận lợi và cơ sở hạ tầng phát triển, phường đang không ngừng đổi mới trong khi vẫn giữ gìn bản sắc riêng.",
+    "description": "Phường Phú Thọ là khu vực phát triển năng động của TP. Hồ Chí Minh, kết hợp giữa các yếu tố đô thị hiện đại và giá trị văn hóca truyền thống. Với vị trí thuận lợi và cơ sở hạ tầng phát triển, phường đang không ngừng đổi mới trong khi vẫn giữ gìn bản sắc riêng.",
     "area": "2.0 km²",
     "neighboring_wards": [
       {
@@ -2975,7 +2975,7 @@
   "PHU_THO_HOA": {
     "id": "phu-tho-hoa-ward",
     "name": "Phường Phú Thọ Hòa",
-    "description": "Phường Phú Thọ Hòa là khu vực phát triển năng động của TP. Hồ Chí Minh, kết hợp giữa các yếu tố đô thị hiện đại và giá trị văn hóa truyền thống. Với vị trí thuận lợi và cơ sở hạ tầng phát triển, phường đang không ngừng đổi mới trong khi vẫn giữ gìn bản sắc riêng.",
+    "description": "Phường Phú Thọ Hòa là khu vực phát triển năng động của TP. Hồ Chí Minh, kết hợp giữa các yếu tố đô thị hiện đại và giá trị văn hóca truyền thống. Với vị trí thuận lợi và cơ sở hạ tầng phát triển, phường đang không ngừng đổi mới trong khi vẫn giữ gìn bản sắc riêng.",
     "area": "1.9 km²",
     "neighboring_wards": [
       {
@@ -3019,7 +3019,7 @@
   "PHU_THUAN": {
     "id": "phu-thuan-ward",
     "name": "Phường Phú Thuận",
-    "description": "Phường Phú Thuận là khu vực phát triển năng động của TP. Hồ Chí Minh, kết hợp giữa các yếu tố đô thị hiện đại và giá trị văn hóa truyền thống. Với vị trí thuận lợi và cơ sở hạ tầng phát triển, phường đang không ngừng đổi mới trong khi vẫn giữ gìn bản sắc riêng.",
+    "description": "Phường Phú Thuận là khu vực phát triển năng động của TP. Hồ Chí Minh, kết hợp giữa các yếu tố đô thị hiện đại và giá trị văn hóca truyền thống. Với vị trí thuận lợi và cơ sở hạ tầng phát triển, phường đang không ngừng đổi mới trong khi vẫn giữ gìn bản sắc riêng.",
     "area": "2.1 km²",
     "neighboring_wards": [
       {
@@ -3063,7 +3063,7 @@
   "PHUOC_LONG": {
     "id": "phuoc-long-ward",
     "name": "Phường Phước Long",
-    "description": "Phường Phước Long là khu vực phát triển năng động của TP. Hồ Chí Minh, kết hợp giữa các yếu tố đô thị hiện đại và giá trị văn hóa truyền thống. Với vị trí thuận lợi và cơ sở hạ tầng phát triển, phường đang không ngừng đổi mới trong khi vẫn giữ gìn bản sắc riêng.",
+    "description": "Phường Phước Long là khu vực phát triển năng động của TP. Hồ Chí Minh, kết hợp giữa các yếu tố đô thị hiện đại và giá trị văn hóca truyền thống. Với vị trí thuận lợi và cơ sở hạ tầng phát triển, phường đang không ngừng đổi mới trong khi vẫn giữ gìn bản sắc riêng.",
     "area": "2.3 km²",
     "neighboring_wards": [
       {
@@ -3107,7 +3107,7 @@
   "PHUOC_THANG": {
     "id": "phuoc-thang-ward",
     "name": "Phường Phước Thắng",
-    "description": "Phường Phước Thắng là khu vực phát triển năng động của tỉnh Bà Rịa - Vũng Tàu, kết hợp giữa các yếu tố đô thị hiện đại và giá trị văn hóa truyền thống. Với vị trí thuận lợi và cơ sở hạ tầng phát triển, phường đang không ngừng đổi mới trong khi vẫn giữ gìn bản sắc riêng.",
+    "description": "Phường Phước Thắng là khu vực phát triển năng động của tỉnh Bà Rịa - Vũng Tàu, kết hợp giữa các yếu tố đô thị hiện đại và giá trị văn hóca truyền thống. Với vị trí thuận lợi và cơ sở hạ tầng phát triển, phường đang không ngừng đổi mới trong khi vẫn giữ gìn bản sắc riêng.",
     "area": "1.8 km²",
     "neighboring_wards": [
       {
@@ -3151,7 +3151,7 @@
   "RACH_DUA": {
     "id": "rach-dua-ward",
     "name": "Phường Rạch Dừa",
-    "description": "Phường Rạch Dừa là khu vực phát triển năng động của tỉnh Bà Rịa - Vũng Tàu, kết hợp giữa các yếu tố đô thị hiện đại và giá trị văn hóa truyền thống. Với vị trí thuận lợi và cơ sở hạ tầng phát triển, phường đang không ngừng đổi mới trong khi vẫn giữ gìn bản sắc riêng.",
+    "description": "Phường Rạch Dừa là khu vực phát triển năng động của tỉnh Bà Rịa - Vũng Tàu, kết hợp giữa các yếu tố đô thị hiện đại và giá trị văn hóca truyền thống. Với vị trí thuận lợi và cơ sở hạ tầng phát triển, phường đang không ngừng đổi mới trong khi vẫn giữ gìn bản sắc riêng.",
     "area": "2.0 km²",
     "neighboring_wards": [
       {
@@ -3196,7 +3196,7 @@
     "id": "sai-gon-ward",
     "name": "Phường Sài Gòn",
     "province": "TP. Hồ Chí Minh",
-    "description": "Phường Sài Gòn là khu vực phát triển năng động của TP. Hồ Chí Minh, kết hợp giữa các yếu tố đô thị hiện đại và giá trị văn hóa truyền thống. Với vị trí thuận lợi và cơ sở hạ tầng phát triển, phường đang không ngừng đổi mới trong khi vẫn giữ gìn bản sắc riêng.",
+    "description": "Phường Sài Gòn là khu vực phát triển năng động của TP. Hồ Chí Minh, kết hợp giữa các yếu tố đô thị hiện đại và giá trị văn hóca truyền thống. Với vị trí thuận lợi và cơ sở hạ tầng phát triển, phường đang không ngừng đổi mới trong khi vẫn giữ gìn bản sắc riêng.",
     "area": "2.0 km²",
     "neighboring_wards": [],
     "interesting_facts": [
@@ -3230,7 +3230,7 @@
   "TAM_BINH": {
     "id": "tam-binh-ward",
     "name": "Phường Tam Bình",
-    "description": "Phường Tam Bình là khu vực phát triển năng động của TP. Hồ Chí Minh, kết hợp giữa các yếu tố đô thị hiện đại và giá trị văn hóa truyền thống. Với vị trí thuận lợi và cơ sở hạ tầng phát triển, phường đang không ngừng đổi mới trong khi vẫn giữ gìn bản sắc riêng.",
+    "description": "Phường Tam Bình là khu vực phát triển năng động của TP. Hồ Chí Minh, kết hợp giữa các yếu tố đô thị hiện đại và giá trị văn hóca truyền thống. Với vị trí thuận lợi và cơ sở hạ tầng phát triển, phường đang không ngừng đổi mới trong khi vẫn giữ gìn bản sắc riêng.",
     "area": "2.2 km²",
     "neighboring_wards": [
       {
@@ -3275,7 +3275,7 @@
     "id": "tam-long-ward",
     "name": "Phường Tam Long",
     "province": "tỉnh Bà Rịa - Vũng Tàu",
-    "description": "Phường Tam Long là khu vực phát triển năng động của tỉnh Bà Rịa - Vũng Tàu, kết hợp giữa các yếu tố đô thị hiện đại và giá trị văn hóa truyền thống. Với vị trí thuận lợi và cơ sở hạ tầng phát triển, phường đang không ngừng đổi mới trong khi vẫn giữ gìn bản sắc riêng.",
+    "description": "Phường Tam Long là khu vực phát triển năng động của tỉnh Bà Rịa - Vũng Tàu, kết hợp giữa các yếu tố đô thị hiện đại và giá trị văn hóca truyền thống. Với vị trí thuận lợi và cơ sở hạ tầng phát triển, phường đang không ngừng đổi mới trong khi vẫn giữ gìn bản sắc riêng.",
     "area": "2.1 km²",
     "neighboring_wards": [
       {
@@ -3319,7 +3319,7 @@
     "id": "tam-thang-ward",
     "name": "Phường Tam Thắng",
     "province": "tỉnh Bà Rịa - Vũng Tàu",
-    "description": "Phường Tam Thắng là khu vực phát triển năng động của tỉnh Bà Rịa - Vũng Tàu, kết hợp giữa các yếu tố đô thị hiện đại và giá trị văn hóa truyền thống. Với vị trí thuận lợi và cơ sở hạ tầng phát triển, phường đang không ngừng đổi mới trong khi vẫn giữ gìn bản sắc riêng.",
+    "description": "Phường Tam Thắng là khu vực phát triển năng động của tỉnh Bà Rịa - Vũng Tàu, kết hợp giữa các yếu tố đô thị hiện đại và giá trị văn hóca truyền thống. Với vị trí thuận lợi và cơ sở hạ tầng phát triển, phường đang không ngừng đổi mới trong khi vẫn giữ gìn bản sắc riêng.",
     "area": "2.3 km²",
     "neighboring_wards": [
       {
@@ -3363,7 +3363,7 @@
     "id": "tang-nhon-phu-ward",
     "name": "Phường Tăng Nhơn Phú",
     "province": "TP. Hồ Chí Minh",
-    "description": "Phường Tăng Nhơn Phú là khu vực phát triển năng động của TP. Hồ Chí Minh, kết hợp giữa các yếu tố đô thị hiện đại và giá trị văn hóa truyền thống. Với vị trí thuận lợi và cơ sở hạ tầng phát triển, phường đang không ngừng đổi mới trong khi vẫn giữ gìn bản sắc riêng.",
+    "description": "Phường Tăng Nhơn Phú là khu vực phát triển năng động của TP. Hồ Chí Minh, kết hợp giữa các yếu tố đô thị hiện đại và giá trị văn hóca truyền thống. Với vị trí thuận lợi và cơ sở hạ tầng phát triển, phường đang không ngừng đổi mới trong khi vẫn giữ gìn bản sắc riêng.",
     "area": "2.4 km²",
     "neighboring_wards": [
       {
