@@ -37,7 +37,7 @@ export class MyPagesComponent {
       description: 'A website dedicated to the love story between my wife and me.',
       url: 'https://hbslovely.vercel.app/#/chao-mung',
       image: 'assets/images/pages/love-story.png',
-      fallbackImage: 'assets/images/gallery/projects.png',
+      fallbackImage: 'assets/images/pages/love-story.png',
       status: 'completed',
       technologies: ['Angular', 'PrimeNG', 'SCSS']
     },
@@ -46,7 +46,7 @@ export class MyPagesComponent {
       description: 'A travel guide introducing Ho Chi Minh City for visitors.',
       url: 'https://hello-hcmc.vercel.app/',
       image: 'assets/images/pages/hcmc-guide.png',
-      fallbackImage: 'assets/images/gallery/projects.png',
+      fallbackImage: 'assets/images/pages/hcmc-guide.png',
       status: 'in-progress',
       technologies: ['Angular', 'PrimeNG', 'Font Awesome']
     }
