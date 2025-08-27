@@ -38,43 +38,47 @@ export class AboutComponent {
   // State
   readonly cv = this.cvService.cv;
 
-  // Featured projects - get the 2 most recent projects
+  // Featured projects - get the 3 most recent major projects
   readonly featuredProjects = computed(() => {
     const projects = this.cv()?.projects?.projects || [];
-    return projects.slice(0, 2);
+    return projects
+      .filter(project => !project.minor && !project.excludeFromPdf)
+      .slice(0, 3);
   });
 
-  // Featured skill categories - get the 3 most important categories
+  // Featured skill categories - get the 2 most important categories
   readonly featuredSkillCategories = computed(() => {
     const skills = this.cv()?.skills?.technicalSkills || {};
-    const priorityCategories = ['programmingLanguages', 'frameworks', 'libraries'];
+    // Prioritize frameworks and libraries as they're most relevant
+    const priorityCategories = ['frameworks', 'libraries'];
 
     return Object.keys(skills)
       .filter(category => priorityCategories.includes(category))
-      .slice(0, 3);
+      .slice(0, 2);
   });
 
   // Helper methods for skills
   getSkillsForCategory(category: string): string[] {
-    return this.cv()?.skills?.technicalSkills?.[category] || [];
+    const skills = this.cv()?.skills?.technicalSkills?.[category] || [];
+    // Return only the top 3 skills per category
+    return skills.slice(0, 3);
   }
 
   formatCategoryName(category: string): string {
-    // Convert camelCase to Title Case with spaces
     return category
       .replace(/([A-Z])/g, ' $1')
       .replace(/^./, str => str.toUpperCase());
   }
 
-    showFullscreenAvatar(): void {
-        this.modalService.create({
-            nzTitle: undefined,
-            nzFooter: null,
-            nzClosable: true,
-            nzMaskClosable: true,
-            nzCentered: true,
-            nzClassName: 'avatar-modal',
-            nzContent: `
+  showFullscreenAvatar(): void {
+    this.modalService.create({
+      nzTitle: undefined,
+      nzFooter: null,
+      nzClosable: true,
+      nzMaskClosable: true,
+      nzCentered: true,
+      nzClassName: 'avatar-modal',
+      nzContent: `
         <div style="display: flex; justify-content: center; align-items: center; width: 100%; padding: 0;">
           <img 
             src="assets/images/avatar.jpeg" 
@@ -83,9 +87,9 @@ export class AboutComponent {
           >
         </div>
       `,
-            nzWidth: 'auto',
-            nzBodyStyle: { padding: '0' },
-            nzStyle: { top: '50px' }
-        });
-    }
+      nzWidth: 'auto',
+      nzBodyStyle: { padding: '0' },
+      nzStyle: { top: '50px' }
+    });
+  }
 }

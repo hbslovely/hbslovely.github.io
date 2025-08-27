@@ -9,7 +9,11 @@
   },
   "COMMON": {
     "CLOSE": "Đóng",
-    "COPY": "Sao chép vào clipboard"
+    "COPY": "Sao chép vào clipboard",
+    "EMPLOYEES": "Nhân viên",
+    "OFFICES": "Văn phòng",
+    "FOUNDED": "Thành lập",
+    "PRESENT": "Hiện tại"
   },
   "FOOTER": {
     "COPYRIGHT": "Hong Phung Phat. Đã đăng ký bản quyền.",
@@ -86,9 +90,37 @@
       "TITLE": "Kinh nghiệm làm việc",
       "NOTABLE_ACHIEVEMENTS": "Thành tựu & Tác động nổi bật",
       "CORE_RESPONSIBILITIES": "Chuyên môn & Trách nhiệm chính",
-      "ABOUT_COMPANY": "Thông tin công ty"
+      "ABOUT_COMPANY": "Thông tin công ty",
+      "EXPERIENCE_DETAILS": "Chi tiết kinh nghiệm",
+      "COMPANY_INFO": "Thông tin công ty",
+      "COMPANY_STATS": {
+        "EMPLOYEES": "Nhân viên",
+        "OFFICES": "Văn phòng",
+        "FOUNDED": "Thành lập"
+      }
     },
-    "EDUCATION": "Học vấn",
+    "EDUCATION": {
+      "TITLE": "Học vấn",
+      "OVERVIEW": "Tổng quan",
+      "ACHIEVEMENTS": "Thành tích",
+      "KEY_SUBJECTS": "Môn học chính",
+      "ACADEMIC_PROJECTS": "Dự án học thuật",
+      "EDUCATION_DETAILS": "Chi tiết học vấn",
+      "INSTITUTION_INFO": "Thông tin trường",
+      "ABOUT_INSTITUTION": "Về trường",
+      "ESTABLISHED": "Thành lập",
+      "STUDENTS": "Sinh viên",
+      "FACULTY": "Giảng viên",
+      "PARTNERS": "Đối tác quốc tế",
+      "TYPE": "Loại hình",
+      "ACCREDITATION": "Kiểm định",
+      "RANKING": "Xếp hạng",
+      "RESEARCH_CENTERS": "Trung tâm nghiên cứu",
+      "THESIS": "Luận văn tốt nghiệp",
+      "SUPERVISOR": "Giáo viên hướng dẫn",
+      "GRADE": "Điểm số",
+      "TECHNOLOGIES": "Công nghệ sử dụng"
+    },
     "TECHNICAL_SKILLS": "Kỹ năng chuyên môn",
     "FEATURED_PROJECTS": "Dự án tiêu biểu",
     "KEY_SKILLS": "Kỹ năng chính",

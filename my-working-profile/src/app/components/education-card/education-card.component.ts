@@ -1,11 +1,56 @@
-import { Component, Input, ViewChild, TemplateRef, inject } from '@angular/core';
+import { Component, Input, TemplateRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzModalModule, NzModalService } from 'ng-zorro-antd/modal';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { TranslateModule } from '@ngx-translate/core';
-import { NzModalModule } from 'ng-zorro-antd/modal';
-import { NzTagModule } from 'ng-zorro-antd/tag';
 import { WatermarkComponent } from '../watermark/watermark.component';
-import { CustomModalService } from '../../services/custom-modal.service';
+
+interface Thesis {
+  title: string;
+  description: string;
+  technologies: string[];
+  supervisor: string;
+  grade: string;
+}
+
+interface CompanyInfo {
+  description: string;
+  address: string;
+  website: string;
+  contact?: string;
+  employeeCount?: string;
+  officeCount?: string;
+  foundedYear?: string;
+  established: string;
+  studentCount: string;
+  facultyCount: string;
+  internationalPartners: string;
+  type: string;
+  accreditation: string;
+  ranking: string;
+  researchCenters: string;
+}
+
+interface Education {
+  institution: string;
+  shortName: string;
+  degree: string;
+  field: string;
+  startDate: string;
+  endDate: string;
+  gpa?: string;
+  location: string;
+  description: string;
+  thesis?: Thesis;
+  achievements?: string[];
+  keySubjects?: string[];
+  projects?: Array<{
+    name: string;
+    description: string;
+  }>;
+  institutionInfo: CompanyInfo;
+}
 
 @Component({
   selector: 'app-education-card',
@@ -13,28 +58,27 @@ import { CustomModalService } from '../../services/custom-modal.service';
   imports: [
     CommonModule,
     NzIconModule,
-    TranslateModule,
     NzModalModule,
-    NzTagModule,
-    WatermarkComponent,
+    NzTabsModule,
+    TranslateModule,
+    WatermarkComponent
   ],
   templateUrl: './education-card.component.html',
   styleUrls: ['./education-card.component.scss']
 })
 export class EducationCardComponent {
-  @Input() education: any; // Replace 'any' with your education interface type
-  @ViewChild('educationDetailDialog', { static: true }) educationDetailDialog!: TemplateRef<any>;
+  @Input() education!: Education;
+  @ViewChild('educationDetailDialog') educationDetailDialog!: TemplateRef<any>;
 
-  private modalService = inject(CustomModalService);
+  constructor(private modalService: NzModalService) {}
 
   openEducationDialog(): void {
     this.modalService.create({
       nzContent: this.educationDetailDialog,
       nzFooter: null,
-      nzWidth: '800px',
+      nzWidth: 800,
       nzClassName: 'education-detail-modal',
-      nzCentered: true,
-      nzMaskClosable: true
+      nzCentered: true
     });
   }
 } 

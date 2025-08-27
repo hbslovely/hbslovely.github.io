@@ -9,7 +9,11 @@
   },
   "COMMON": {
     "CLOSE": "Close",
-    "COPY": "Copy to clipboard"
+    "COPY": "Copy to clipboard",
+    "EMPLOYEES": "Employees",
+    "OFFICES": "Offices",
+    "FOUNDED": "Founded",
+    "PRESENT": "Present"
   },
   "FOOTER": {
     "COPYRIGHT": "Hong Phung Phat. All rights reserved.",
@@ -86,9 +90,37 @@
       "TITLE": "Work Experience",
       "NOTABLE_ACHIEVEMENTS": "Notable Impact & Achievements",
       "CORE_RESPONSIBILITIES": "Core Expertise & Responsibilities",
-      "ABOUT_COMPANY": "About Company"
+      "ABOUT_COMPANY": "About Company",
+      "EXPERIENCE_DETAILS": "Experience Details",
+      "COMPANY_INFO": "Company Info",
+      "COMPANY_STATS": {
+        "EMPLOYEES": "Employees",
+        "OFFICES": "Offices",
+        "FOUNDED": "Founded"
+      }
     },
-    "EDUCATION": "Education",
+    "EDUCATION": {
+      "TITLE": "Education",
+      "OVERVIEW": "Overview",
+      "ACHIEVEMENTS": "Achievements",
+      "KEY_SUBJECTS": "Key Subjects",
+      "ACADEMIC_PROJECTS": "Academic Projects",
+      "EDUCATION_DETAILS": "Education Details",
+      "INSTITUTION_INFO": "Institution Info",
+      "ABOUT_INSTITUTION": "About Institution",
+      "ESTABLISHED": "Established",
+      "STUDENTS": "Students",
+      "FACULTY": "Faculty",
+      "PARTNERS": "International Partners",
+      "TYPE": "Institution Type",
+      "ACCREDITATION": "Accreditation",
+      "RANKING": "Ranking",
+      "RESEARCH_CENTERS": "Research Centers",
+      "THESIS": "Bachelor's Thesis",
+      "SUPERVISOR": "Supervisor",
+      "GRADE": "Grade",
+      "TECHNOLOGIES": "Technologies Used"
+    },
     "TECHNICAL_SKILLS": "Technical Skills",
     "FEATURED_PROJECTS": "Featured Projects",
     "KEY_SKILLS": "Key Skills",

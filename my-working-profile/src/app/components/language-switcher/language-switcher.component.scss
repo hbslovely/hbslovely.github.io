@@ -1,16 +1,38 @@
 .language-switcher {
   display: inline-block;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    background: linear-gradient(45deg, var(--primary-color), #3399ff);
+    border-radius: 32px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover::before {
+    opacity: 0.3;
+  }
 }
 
 .language-toggle {
   display: flex;
-  background: var(--primary-lightest);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15));
   padding: 3px;
   border-radius: 30px;
   position: relative;
-  min-width: 110px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  min-width: 120px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
   
   &.switching {
     .toggle-button {
@@ -26,11 +48,20 @@
     left: 3px;
     height: calc(100% - 6px);
     width: calc(50% - 3px);
-    background: white;
+    background: linear-gradient(135deg, var(--primary-color), #3399ff);
     border-radius: 20px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     z-index: 1;
     transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 1px;
+      background: white;
+      border-radius: inherit;
+      opacity: 0.9;
+    }
   }
 
   .toggle-button {
@@ -38,42 +69,53 @@
     align-items: center;
     justify-content: center;
     flex: 1;
-    padding: 6px 8px;
+    padding: 8px 12px;
     border: none;
     background: transparent;
     border-radius: 20px;
-    color: var(--text-light);
-    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     cursor: pointer;
     position: relative;
     z-index: 2;
 
     &.active {
       color: var(--primary-color);
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     }
 
     .button-content {
       display: flex;
       align-items: center;
-      gap: 6px;
-      transition: transform 0.3s ease;
+      gap: 8px;
+      transition: all 0.3s ease;
       
       .flag {
-        font-size: 1.1rem;
-        filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+        font-size: 1.2rem;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        transition: transform 0.3s ease;
       }
 
       .lang-code {
-        font-weight: 500;
+        font-weight: 600;
         letter-spacing: 0.5px;
         text-transform: uppercase;
+        transition: all 0.3s ease;
       }
     }
     
     &:hover:not(.active) .button-content {
       transform: translateY(-2px);
+      
+      .flag {
+        transform: scale(1.1) rotate(5deg);
+      }
+      
+      .lang-code {
+        letter-spacing: 1px;
+      }
     }
   }
 }
@@ -96,15 +138,17 @@
 // Dark theme adjustments
 :host-context(.dark-theme) {
   .language-toggle {
-    background: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1));
+    border-color: rgba(255, 255, 255, 0.1);
     
     .slider {
-      background: rgba(30, 30, 30, 0.9);
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+      &::before {
+        background: rgba(30, 30, 30, 0.95);
+      }
     }
 
     .toggle-button {
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(255, 255, 255, 0.6);
       
       &.active {
         color: white;
@@ -116,7 +160,7 @@
 // Mobile adjustments
 @media (max-width: 768px) {
   .language-toggle {
-    min-width: 100px;
+    min-width: 110px;
     padding: 2px;
     
     .slider {
@@ -126,15 +170,15 @@
     }
 
     .toggle-button {
-      padding: 4px 6px;
+      padding: 6px 8px;
       
       .button-content {
         .flag {
-          font-size: 1rem;
+          font-size: 1.1rem;
         }
         
         .lang-code {
-          font-size: 0.75rem;
+          font-size: 0.8rem;
         }
       }
     }

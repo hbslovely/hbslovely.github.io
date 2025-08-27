@@ -2,10 +2,51 @@
   "education": [
     {
       "institution": "Ho Chi Minh City University of Science",
-      "degree": "Bachelor Degree in Computer Science",
+      "shortName": "HCMUS",
+      "degree": "Bachelor of Science in Computer Science",
       "field": "Computer Vision and Robotics",
       "startDate": "2010",
-      "endDate": "2014"
+      "endDate": "2014",
+      "gpa": "8.1/10",
+      "location": "227 Nguyen Van Cu Street, District 5, Ho Chi Minh City",
+      "description": "Specialized in Computer Vision and Robotics with a focus on machine learning and artificial intelligence applications. Completed coursework in advanced algorithms, computer vision, robotics systems, and software engineering.",
+      "thesis": {
+        "title": "Content-Based Image Retrieval using MSER in Large-Scale Databases",
+        "description": "Research and implementation of semantic image retrieval algorithms in large databases using Maximally Stable Extremal Regions (MSER) for feature detection and matching.",
+        "technologies": [
+          "MATLAB",
+          "MSER",
+          "Image Processing",
+          "Feature Detection"
+        ],
+        "supervisor": "Dr. Ly Quoc Ngoc",
+        "grade": "9.0"
+      },
+      "achievements": [
+        "Graduated with Distinction",
+        "Member of the Robotics Club",
+        "Participated in multiple university-level programming competitions"
+      ],
+      "keySubjects": [
+        "Computer Vision",
+        "Machine Learning",
+        "Robotics Systems",
+        "Software Engineering",
+        "Advanced Algorithms",
+        "Artificial Intelligence"
+      ],
+      "institutionInfo": {
+        "description": "Ho Chi Minh City University of Science (HCMUS) is one of Vietnam's leading universities in scientific research and technology education. Founded in 1941, it is a member of the Vietnam National University, Ho Chi Minh City system. The university is renowned for its strong programs in natural sciences, computer science, and technology.",
+        "website": "https://www.hcmus.edu.vn",
+        "type": "Public University",
+        "established": "1941",
+        "accreditation": "Vietnam National University System",
+        "ranking": "Top 3 in Vietnam for Computer Science",
+        "facultyCount": "500+",
+        "studentCount": "25,000+",
+        "researchCenters": "15+",
+        "internationalPartners": "100+"
+      }
     }
   ]
 }

@@ -53,7 +53,7 @@
       <div class="education-grid">
         @for (edu of cv()?.education?.education; track edu; let i = $index) {
           <div class="education-item" [style.--item-index]="i + 1">
-            <app-education-card [education]="edu"></app-education-card>
+            <app-education-card [education]="$any(edu)"></app-education-card>
           </div>
         }
       </div>
