@@ -40,6 +40,13 @@
               {{ 'NAV.SKILLS' | translate }}
             </a>
           </li>
+          <li>
+            <a routerLink="/my-pages" 
+               routerLinkActive="active"
+               (click)="closeMobileMenu()">
+              {{ 'NAV.MY_PAGES' | translate }}
+            </a>
+          </li>
         </ul>
 
         <div class="nav-actions">

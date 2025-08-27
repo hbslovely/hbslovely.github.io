@@ -1,140 +1,204 @@
 .experience-card {
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
   overflow: hidden;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  border: 1px solid #edf0f2;
-
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  
+  // Decorative element
+  .card-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-lighter));
+    transform: scaleX(0.7);
+    transform-origin: left;
+    opacity: 0.8;
+    transition: all 0.4s ease;
+  }
+  
   &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-    background: #f0f7ff;
-    border-color: #1890ff;
-
-    .card-header {
-      background: rgba(24, 144, 255, 0.05);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    
+    .card-decoration {
+      transform: scaleX(1);
+      opacity: 1;
     }
-
-    .company-logo {
-      transform: scale(1.05);
-    }
-
-    .decorative-line {
-      background: #1890ff;
-      width: 100%;
+    
+    .card-footer .details-button {
+      background-color: var(--primary-color);
+      color: white;
+      
+      [nz-icon] {
+        transform: translateX(3px);
+      }
     }
   }
 
   .card-header {
-    padding: 1.5rem;
-    transition: background 0.3s ease;
-  }
-
-  .company-info {
+    padding: 1.75rem 1.5rem 1rem;
     display: flex;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
-
+    gap: 1.25rem;
+    
     .company-logo {
       width: 60px;
       height: 60px;
-      padding: 0.75rem;
+      padding: 0.5rem;
       background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s ease;
-
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+      
       img {
         width: 100%;
         height: 100%;
         object-fit: contain;
       }
     }
-
+    
     .position-company {
       h3 {
         margin: 0;
-        font-size: 1.1rem;
-        color: #1890ff;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--text-color);
+        line-height: 1.3;
       }
-
+      
       .company {
-        color: #666;
-        font-size: 0.95rem;
+        color: var(--primary-color);
+        font-size: 1rem;
+        font-weight: 500;
         margin-top: 0.25rem;
       }
     }
   }
-
-  .meta-info {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-
-    .meta-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: #666;
-      font-size: 0.9rem;
-
-      [nz-icon] {
-        color: #1890ff;
-        font-size: 1rem;
-      }
-    }
-  }
-
-  .decorative-line {
-    height: 2px;
-    width: 15%;
-    background: #edf0f2;
-    margin: 0 auto;
-    transition: all 0.3s ease;
-  }
-
+  
   .card-content {
-    padding: 1.5rem;
-
-    h4 {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin: 0 0 1rem;
-      color: #1890ff;
-      font-size: 1rem;
+    padding: 0 1.5rem;
+    flex: 1;
+    
+    .experience-description {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      // Limit to 3 lines
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
-
-    .achievements, .responsibilities {
-      &:not(:last-child) {
-        margin-bottom: 1.5rem;
+    
+    .meta-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+      
+      .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+        color: var(--text-light);
+        padding: 0.35rem 0.75rem;
+        background-color: rgba(0, 0, 0, 0.02);
+        border-radius: 30px;
+        white-space: nowrap;
+        
+        [nz-icon] {
+          color: var(--primary-color);
+          font-size: 0.9rem;
+        }
       }
-
-      ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-
-        li {
+    }
+    
+    .key-points {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      
+      .achievements, .responsibilities {
+        .key-points-header {
           display: flex;
-          align-items: flex-start;
-          gap: 0.75rem;
-          margin-bottom: 0.75rem;
-          padding-left: 0.5rem;
-
-          &:last-child {
-            margin-bottom: 0;
-          }
-
+          align-items: center;
+          gap: 0.5rem;
+          margin-bottom: 0.5rem;
+          font-size: 0.9rem;
+          font-weight: 500;
+          color: var(--text-color);
+          
           [nz-icon] {
-            color: #1890ff;
-            font-size: 1rem;
-            margin-top: 0.2rem;
+            color: var(--primary-color);
           }
         }
+        
+        .key-points-text {
+          p {
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--text-light);
+            padding-left: 1.5rem;
+            position: relative;
+            
+            &::before {
+              content: '•';
+              position: absolute;
+              left: 0.5rem;
+              color: var(--primary-color);
+            }
+            
+            .more-indicator {
+              display: inline-block;
+              margin-left: 0.5rem;
+              color: var(--primary-color);
+              font-size: 0.85rem;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .card-footer {
+    padding: 1.25rem 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.03);
+    margin-top: 1rem;
+    
+    .details-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 0.75rem;
+      background-color: rgba(0, 0, 0, 0.02);
+      color: var(--text-color);
+      border: none;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      
+      [nz-icon] {
+        transition: transform 0.3s ease;
       }
     }
   }
@@ -145,17 +209,30 @@
   position: relative;
   overflow: hidden;
   max-width: 800px;
-  padding: 0;
-
+  margin: 0 auto;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  
+  .dialog-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: -1;
+  }
+  
   .dialog-watermark {
     position: absolute;
     top: 50%;
     right: -100px;
     transform: translateY(-50%);
-    z-index: 0;
-    opacity: 0.03;
+    opacity: 0.05;
     pointer-events: none;
-
+    z-index: 0;
+    
     ::ng-deep .watermark-container {
       position: relative;
       width: 400px;
@@ -164,158 +241,248 @@
       transform: rotate(15deg);
     }
   }
-
+  
   .dialog-header {
-    display: flex;
-    align-items: flex-start;
-    gap: 2rem;
-    margin-bottom: 2rem;
-    padding: 2rem;
-    background: #1890ff;
-    color: white;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-
-    .company-logo {
-      width: 100px;
-      height: 100px;
-      padding: 1rem;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-      flex-shrink: 0;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
+    padding: 2.5rem 2rem 2rem;
+    background: linear-gradient(135deg, var(--primary-lightest) 0%, rgba(230, 243, 255, 0.5) 100%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    
+    .header-content {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+      
+      .company-logo {
+        width: 70px;
+        height: 70px;
+        padding: 0.75rem;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      
+      .company-info {
+        h2 {
+          margin: 0 0 0.5rem;
+          font-size: 1.75rem;
+          font-weight: 600;
+          color: var(--text-color);
+        }
+        
+        .position {
+          font-size: 1.25rem;
+          color: var(--primary-color);
+          font-weight: 500;
+          margin: 0;
+        }
       }
     }
-
-    .company-info {
-      flex: 1;
-
-      h2 {
-        margin: 0 0 0.5rem;
-        font-size: 1.75rem;
-        color: white;
-      }
-
-      .position {
-        margin: 0 0 1rem;
-        font-size: 1.25rem;
-        font-weight: normal;
-        color: rgba(255, 255, 255, 0.9);
-      }
-
-      .meta-info {
+    
+    .meta-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      
+      .meta-tag {
         display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-
-        .duration {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          color: rgba(255, 255, 255, 0.9);
-          font-size: 0.9rem;
-
-          [nz-icon] {
-            color: rgba(255, 255, 255, 0.9);
-          }
-        }
-
-        .meta-tags {
-          display: flex;
-          gap: 0.5rem;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: rgba(0, 102, 204, 0.1);
+        border-radius: 30px;
+        color: var(--text-color);
+        font-size: 0.9rem;
+        
+        [nz-icon] {
+          color: var(--primary-color);
         }
       }
     }
   }
-
-  .dialog-section {
-    padding: 1.5rem 2rem;
-    border-bottom: 1px solid #edf0f2;
-    background: white;
-
-    &:last-child {
-      border-bottom: none;
-    }
-
-    h3 {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-      color: #1890ff;
-      font-size: 1.1rem;
-
-      [nz-icon] {
-        font-size: 1.2rem;
+  
+  .dialog-content {
+    padding: 2rem;
+    color: var(--text-color);
+    
+    .dialog-section {
+      margin-bottom: 2rem;
+      
+      &:last-child {
+        margin-bottom: 0;
       }
-    }
-
-    &.company-details {
+      
+      h3 {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 1.2rem;
+        margin: 0 0 1.25rem;
+        color: var(--text-color);
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        
+        [nz-icon] {
+          color: var(--primary-color);
+          font-size: 1.2rem;
+        }
+      }
+      
+      .content-paragraph {
+        p {
+          margin: 0 0 0.75rem;
+          line-height: 1.6;
+          color: var(--text-light);
+          position: relative;
+          padding-left: 1.5rem;
+          
+          &:last-child {
+            margin-bottom: 0;
+          }
+          
+          &::before {
+            content: '•';
+            position: absolute;
+            left: 0.5rem;
+            color: var(--primary-color);
+          }
+        }
+      }
+      
       .company-description {
         margin-bottom: 1.5rem;
         line-height: 1.6;
-        color: #333;
+        color: var(--text-light);
       }
-
+      
       .company-contact-info {
         display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-
+        flex-wrap: wrap;
+        gap: 1rem;
+        background: var(--primary-lightest);
+        padding: 1.25rem;
+        border-radius: 12px;
+        
         .contact-item {
           display: flex;
           align-items: center;
           gap: 0.75rem;
-          color: #666;
-
+          margin-right: 1rem;
+          color: var(--text-light);
+          
           [nz-icon] {
-            color: #1890ff;
-            font-size: 1rem;
+            color: var(--primary-color);
           }
-
+          
           a {
-            color: #1890ff;
+            color: var(--primary-color);
             text-decoration: none;
-            transition: color 0.3s ease;
-
+            transition: all 0.2s ease;
+            
             &:hover {
-              color: #40a9ff;
               text-decoration: underline;
+              color: var(--primary-light);
             }
           }
         }
       }
     }
+  }
+}
 
-    ul {
-      list-style: none;
+// Global modal styles
+:host ::ng-deep {
+  .company-detail-modal {
+    .ant-modal-content {
       padding: 0;
-      margin: 0;
-
-      li {
-        margin-bottom: 0.5rem;
-        padding-left: 1.5rem;
-        position: relative;
-
-        &:last-child {
-          margin-bottom: 0;
-        }
-
-        &::before {
-          content: '';
-          position: absolute;
-          left: 0;
-          top: 0.5rem;
-          width: 6px;
-          height: 6px;
-          border-radius: 50%;
-          background: #1890ff;
+      border-radius: 16px;
+      overflow: hidden;
+      background: transparent;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    }
+    
+    .ant-modal-body {
+      padding: 0;
+    }
+    
+    .ant-modal-close {
+      top: 1rem;
+      right: 1rem;
+      z-index: 10;
+      
+      .ant-modal-close-x {
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.05);
+        color: var(--text-color);
+        transition: all 0.2s ease;
+        
+        &:hover {
+          background-color: var(--primary-color);
+          color: white;
+          transform: rotate(90deg);
         }
       }
+    }
+  }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .experience-card {
+    .card-header {
+      padding: 1.5rem 1.25rem 0.75rem;
+      
+      .company-logo {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .position-company {
+        h3 {
+          font-size: 1.1rem;
+        }
+      }
+    }
+    
+    .card-content {
+      padding: 0 1.25rem;
+    }
+    
+    .card-footer {
+      padding: 1rem 1.25rem;
+    }
+  }
+  
+  .company-detail-dialog {
+    .dialog-header {
+      padding: 2rem 1.5rem 1.5rem;
+      
+      .header-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+      }
+      
+      .meta-tags {
+        justify-content: center;
+      }
+    }
+    
+    .dialog-content {
+      padding: 1.5rem;
     }
   }
 } 

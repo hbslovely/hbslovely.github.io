@@ -2,11 +2,12 @@ import { Component, EventEmitter, Input, Output, ViewChild, TemplateRef } from '
 import { CommonModule } from '@angular/common';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzTagModule } from 'ng-zorro-antd/tag';
-import { NzModalModule, NzModalService } from 'ng-zorro-antd/modal';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { Project } from '../../models/cv.models';
 import { TranslateModule } from '@ngx-translate/core';
 import { WatermarkComponent } from '../watermark/watermark.component';
+import { CustomModalService } from '../../services/custom-modal.service';
 
 @Component({
   selector: 'app-project-detail',
@@ -34,7 +35,7 @@ export class ProjectDetailComponent {
 
   @ViewChild('projectDetailDialog') projectDetailDialog!: TemplateRef<any>;
 
-  constructor(private modalService: NzModalService) {}
+  constructor(private modalService: CustomModalService) {}
 
   highlightText(text: string): string {
     if (!text || !this.highlightedText) return text;
@@ -61,11 +62,28 @@ export class ProjectDetailComponent {
   getStatusTranslationKey(status: string): string {
     switch (status.toLowerCase()) {
       case 'active':
+      case 'in progress':
         return 'STATUS.ACTIVE';
       case 'completed':
         return 'STATUS.COMPLETED';
+      case 'planned':
+        return 'STATUS.PLANNED';
       default:
         return status;
+    }
+  }
+
+  getStatusIcon(status: string): string {
+    switch (status.toLowerCase()) {
+      case 'completed':
+        return 'check-circle';
+      case 'in progress':
+      case 'active':
+        return 'clock-circle';
+      case 'planned':
+        return 'calendar';
+      default:
+        return 'question-circle';
     }
   }
 
@@ -90,7 +108,11 @@ export class ProjectDetailComponent {
       nzWidth: 800,
       nzClassName: 'project-detail-modal',
       nzCentered: true,
-      nzMaskClosable: true
+      nzMaskClosable: true,
+      nzMask: true,
+      nzMaskStyle: { backgroundColor: 'rgba(0, 0, 0, 0.45)' },
+      nzBodyStyle: { padding: '0' },
+      nzStyle: { top: '20px' }
     });
   }
 }

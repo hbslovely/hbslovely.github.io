@@ -4,6 +4,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { ExperiencePageComponent } from './pages/experience/experience.component';
 import { SkillsComponent } from './pages/skills/skills.component';
 import { ProjectsPageComponent } from './pages/projects/projects.component';
+import { MyPagesComponent } from './pages/my-pages/my-pages.component';
 
 export const routes: Routes = [
   {
@@ -13,11 +14,29 @@ export const routes: Routes = [
       {
         path: 'about',
         component: AboutComponent,
-        pathMatch: 'full'
+        pathMatch: 'full',
+        data: { animation: 'AboutPage' }
       },
-      { path: 'experience', component: ExperiencePageComponent },
-      { path: 'skills', component: SkillsComponent },
-      { path: 'projects', component: ProjectsPageComponent },
+      { 
+        path: 'experience', 
+        component: ExperiencePageComponent,
+        data: { animation: 'ExperiencePage' }
+      },
+      { 
+        path: 'skills', 
+        component: SkillsComponent,
+        data: { animation: 'SkillsPage' }
+      },
+      { 
+        path: 'projects', 
+        component: ProjectsPageComponent,
+        data: { animation: 'ProjectsPage' }
+      },
+      {
+        path: 'my-pages',
+        component: MyPagesComponent,
+        data: { animation: 'MyPagesPage' }
+      },
       { path: '**', redirectTo: 'about' }
     ]
   },

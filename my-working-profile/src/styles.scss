@@ -4,31 +4,161 @@
 
 :root {
   --primary-color: #0066cc;
+  --primary-color-rgb: 0, 102, 204;
   --primary-light: #3399ff;
+  --primary-light-rgb: 51, 153, 255;
   --primary-lighter: #66b3ff;
+  --primary-lighter-rgb: 102, 179, 255;
   --primary-lightest: #e6f3ff;
-  --text-color: #1f2937;
-  --text-light: #4b5563;
-  --background: #f0f7ff;
+  --primary-lightest-rgb: 230, 243, 255;
+  --text-color: #4b5563; /* Made lighter from #1f2937 */
+  --text-light: #6b7280; /* Made lighter from #4b5563 */
+  --background: #f8fafc;
+  --bg-gradient-1: #f8fafc;
+  --bg-gradient-2: #eef2f7;
+  --bg-gradient-3: #e2e8f0;
   --card-bg: rgba(255, 255, 255, 0.9);
   --border-radius: 12px;
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --scrollbar-width: 17px; /* Default browser scrollbar width */
 }
 
+/* Prevent content shifting when dialogs open by always showing scrollbar */
 html {
   font-family: $primary-font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  overflow-y: scroll;
+  scrollbar-width: thin; /* For Firefox */
 }
 
 body {
   margin: 0;
-  background-color: #f0f7ff;
-  min-height: 100vh;
   position: relative;
   font-family: $primary-font;
+  overflow-x: hidden;
+  min-height: 100%;
+  /* Add padding-right to prevent content from shifting when modal opens */
+  padding-right: 0 !important;
+  /* Radial gradient background */
+  background: 
+    radial-gradient(circle at 30% 30%, var(--bg-gradient-1) 0%, transparent 70%),
+    radial-gradient(circle at 70% 70%, var(--bg-gradient-1) 0%, transparent 70%),
+    radial-gradient(ellipse at top center, var(--bg-gradient-1) 0%, var(--bg-gradient-2) 50%, var(--bg-gradient-3) 100%);
+}
+
+/* Fix for cdk-global-scrollblock hiding content */
+.cdk-global-scrollblock {
+  position: static !important;
+  overflow-y: hidden !important;
+  width: 100%;
+  margin-top: 0 !important;
+}
+
+/* Prevent content shifting */
+.ant-modal-wrap {
+  overflow: hidden !important;
+}
+
+.ant-modal-mask {
+  padding-right: var(--scrollbar-width);
+}
+
+/* Background with animated icons */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 15% 15%, rgba(var(--primary-light-rgb, 51, 153, 255), 0.06) 0%, transparent 35%),
+    radial-gradient(circle at 85% 85%, rgba(var(--primary-light-rgb, 51, 153, 255), 0.06) 0%, transparent 35%),
+    radial-gradient(circle at 50% 50%, rgba(var(--primary-color-rgb, 0, 102, 204), 0.03) 0%, transparent 60%),
+    radial-gradient(circle at 85% 15%, rgba(var(--primary-lighter-rgb, 102, 179, 255), 0.04) 0%, transparent 45%),
+    radial-gradient(circle at 15% 85%, rgba(var(--primary-lighter-rgb, 102, 179, 255), 0.04) 0%, transparent 45%);
+  z-index: -2;
+}
+
+// Animated floating icons
+.floating-icons {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.floating-icon {
+  position: absolute;
+  opacity: 0.05;
+  font-size: 24px;
+  color: var(--primary-color);
+  animation-name: float;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 20s;
+
+  &:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+  &:nth-child(2) { top: 20%; left: 80%; animation-delay: 2s; }
+  &:nth-child(3) { top: 30%; left: 30%; animation-delay: 4s; }
+  &:nth-child(4) { top: 70%; left: 60%; animation-delay: 6s; }
+  &:nth-child(5) { top: 80%; left: 20%; animation-delay: 8s; }
+  &:nth-child(6) { top: 40%; left: 90%; animation-delay: 10s; }
+  &:nth-child(7) { top: 90%; left: 40%; animation-delay: 12s; }
+  &:nth-child(8) { top: 50%; left: 50%; animation-delay: 14s; }
+  &:nth-child(9) { top: 15%; left: 60%; animation-delay: 16s; }
+  &:nth-child(10) { top: 60%; left: 10%; animation-delay: 18s; }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-20px) rotate(10deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
+
+// Page Transition Animations
+::view-transition-old(root) {
+  animation: 300ms cubic-bezier(0.4, 0, 0.2, 1) both fade-out;
+}
+
+::view-transition-new(root) {
+  animation: 500ms cubic-bezier(0.4, 0, 0.2, 1) both fade-in;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+// Custom page transitions
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
 }
 
 // Override Ant Design font-family
@@ -40,6 +170,17 @@ body {
 .ant-dropdown-menu,
 .ant-menu {
   font-family: $primary-font !important;
+}
+
+// Global modal styles
+.ant-modal-mask {
+  background-color: rgba(0, 0, 0, 0.45) !important;
+  backdrop-filter: blur(4px);
+}
+
+.ant-modal {
+  top: 20px;
+  padding-bottom: 20px;
 }
 
 // Global card styles
@@ -226,7 +367,7 @@ a {
     align-items: center;
     width: 100%;
     height: 100%;
-    
+
     img {
       max-width: 90vw;
       max-height: 90vh;
@@ -242,7 +383,7 @@ a {
     .ant-modal-content {
       margin: 0 16px;
     }
-    
+
     .fullscreen-avatar img {
       max-width: calc(100vw - 32px);
       max-height: 80vh;

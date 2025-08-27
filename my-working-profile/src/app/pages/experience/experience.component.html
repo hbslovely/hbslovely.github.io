@@ -1,29 +1,78 @@
 <div [class]="config.className">
-  <div class="container" [style.maxWidth.px]="config.maxWidth">
-    <!-- Education Section -->
-    <section [id]="sections[0].id" class="section">
-      <app-section-header [title]="sections[0].title" [icon]="sections[0].icon">
-        <div class="section-subtitle">{{ 'SECTIONS.SUBTITLES.EDUCATION' | translate }}</div>
-      </app-section-header>
+  <!-- Page Header -->
+  <app-page-header title="Professional Journey" subtitle="{{ 'SECTIONS.SUBTITLES.WORK_EXPERIENCE' | translate }}">
+  </app-page-header>
 
-      <div class="education-list">
-        @for (edu of cv()?.education?.education; track edu) {
-          <app-education-card [education]="edu"></app-education-card>
-        }
+  <div class="container" [style.maxWidth.px]="config.maxWidth">
+    <!-- Hero Stats Section -->
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span nz-icon nzType="calendar" nzTheme="outline" class="stat-icon"></span>
+        <div class="stat-value">{{ getTotalYearsExperience() }}+</div>
+        <div class="stat-label">Years Experience</div>
       </div>
-    </section>
+      <div class="stat-item">
+        <span nz-icon nzType="team" nzTheme="outline" class="stat-icon"></span>
+        <div class="stat-value">{{ cv()?.experience?.workExperience?.length || 0 }}</div>
+        <div class="stat-label">Companies</div>
+      </div>
+      <div class="stat-item">
+        <span nz-icon nzType="project" nzTheme="outline" class="stat-icon"></span>
+        <div class="stat-value">{{ getTotalProjects() }}+</div>
+        <div class="stat-label">Projects</div>
+      </div>
+    </div>
 
     <!-- Work Experience Section -->
-    <section [id]="sections[1].id" class="section">
-      <app-section-header [title]="sections[1].title" [icon]="sections[1].icon">
-        <div class="section-subtitle">{{ 'SECTIONS.SUBTITLES.WORK_EXPERIENCE' | translate }}</div>
-      </app-section-header>
+    <section [id]="sections[1].id" class="section experience-section">
+      <div class="section-header">
+        <div class="header-icon">
+          <span nz-icon [nzType]="sections[1].icon" nzTheme="outline"></span>
+        </div>
+        <h2>{{ sections[1].title | translate }}</h2>
+      </div>
 
-      <div class="experience-list">
-        @for (exp of cv()?.experience?.workExperience; track exp) {
-          <app-experience-card [experience]="exp"></app-experience-card>
+      <div class="experience-grid">
+        @for (exp of cv()?.experience?.workExperience; track exp; let i = $index) {
+          <div class="experience-item" [style.--item-index]="i + 1">
+            <app-experience-card [experience]="exp"></app-experience-card>
+          </div>
         }
       </div>
     </section>
+
+    <!-- Education Section -->
+    <section [id]="sections[0].id" class="section education-section">
+      <div class="section-header">
+        <div class="header-icon">
+          <span nz-icon [nzType]="sections[0].icon" nzTheme="outline"></span>
+        </div>
+        <h2>{{ sections[0].title | translate }}</h2>
+      </div>
+
+      <div class="education-grid">
+        @for (edu of cv()?.education?.education; track edu; let i = $index) {
+          <div class="education-item" [style.--item-index]="i + 1">
+            <app-education-card [education]="edu"></app-education-card>
+          </div>
+        }
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <div class="contact-cta">
+      <div class="cta-decoration">
+        <div class="decoration-circle"></div>
+        <div class="decoration-line"></div>
+      </div>
+      <div class="cta-content">
+        <h3>{{ 'CTA.INTERESTED_IN_WORKING_TOGETHER' | translate }}</h3>
+        <p>{{ 'CTA.REACH_OUT' | translate }}</p>
+      </div>
+      <a class="cta-button" (click)="openLinkedIn()" aria-label="Contact on LinkedIn">
+        <span nz-icon nzType="linkedin" nzTheme="outline"></span>
+        {{ 'CTA.CONTACT_ME' | translate }}
+      </a>
+    </div>
   </div>
 </div>

@@ -4,59 +4,110 @@
 
 .language-toggle {
   display: flex;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 4px;
-  border-radius: 8px;
-  gap: 4px;
+  background: var(--primary-lightest);
+  padding: 3px;
+  border-radius: 30px;
+  position: relative;
+  min-width: 110px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  
+  &.switching {
+    .toggle-button {
+      .button-content {
+        animation: textPulse 0.5s ease;
+      }
+    }
+  }
+  
+  .slider {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    height: calc(100% - 6px);
+    width: calc(50% - 3px);
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
 
   .toggle-button {
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 6px 10px;
+    justify-content: center;
+    flex: 1;
+    padding: 6px 8px;
     border: none;
     background: transparent;
-    border-radius: 6px;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.9rem;
-    transition: all 0.2s ease;
+    border-radius: 20px;
+    color: var(--text-light);
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
     cursor: pointer;
-
-    &:hover {
-      color: rgba(255, 255, 255, 0.9);
-      background: rgba(255, 255, 255, 0.1);
-    }
+    position: relative;
+    z-index: 2;
 
     &.active {
-      background: rgba(255, 255, 255, 0.2);
-      color: #ffffff;
+      color: var(--primary-color);
     }
 
-    .flag {
-      font-size: 1.1rem;
-      line-height: 1;
-    }
+    .button-content {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: transform 0.3s ease;
+      
+      .flag {
+        font-size: 1.1rem;
+        filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+      }
 
-    .lang-code {
-      font-weight: 500;
-      font-size: 0.85rem;
-      letter-spacing: 0.5px;
+      .lang-code {
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
     }
+    
+    &:hover:not(.active) .button-content {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+@keyframes textPulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
 // Dark theme adjustments
 :host-context(.dark-theme) {
   .language-toggle {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    
+    .slider {
+      background: rgba(30, 30, 30, 0.9);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    }
 
     .toggle-button {
-      &:hover {
-        background: rgba(255, 255, 255, 0.08);
-      }
-
+      color: rgba(255, 255, 255, 0.7);
+      
       &.active {
-        background: rgba(255, 255, 255, 0.15);
+        color: white;
       }
     }
   }
@@ -65,17 +116,26 @@
 // Mobile adjustments
 @media (max-width: 768px) {
   .language-toggle {
-    padding: 3px;
+    min-width: 100px;
+    padding: 2px;
+    
+    .slider {
+      top: 2px;
+      left: 2px;
+      height: calc(100% - 4px);
+    }
 
     .toggle-button {
-      padding: 5px 8px;
-
-      .flag {
-        font-size: 1rem;
-      }
-
-      .lang-code {
-        font-size: 0.8rem;
+      padding: 4px 6px;
+      
+      .button-content {
+        .flag {
+          font-size: 1rem;
+        }
+        
+        .lang-code {
+          font-size: 0.75rem;
+        }
       }
     }
   }

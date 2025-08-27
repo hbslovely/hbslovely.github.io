@@ -12,7 +12,10 @@
               <nz-tag class="scope-tag" [nzColor]="'blue'">{{ project.scope }}</nz-tag>
             }
             @if (project.status) {
-              <nz-tag class="status-tag" [nzColor]="getStatusColor(project.status)">{{ getStatusTranslationKey(project.status) | translate }}</nz-tag>
+              <div class="status-indicator" [class.completed]="project.status.toLowerCase() === 'completed'" [class.in-progress]="project.status.toLowerCase() === 'in progress' || project.status.toLowerCase() === 'active'">
+                <span class="status-dot"></span>
+                <span class="status-text">{{ getStatusTranslationKey(project.status) | translate }}</span>
+              </div>
             }
           </div>
         </div>
@@ -63,7 +66,15 @@
           <nz-tag [nzColor]="'blue'">{{ project.scope }}</nz-tag>
         }
         @if (project.status) {
-          <nz-tag [nzColor]="getStatusColor(project.status)">{{ getStatusTranslationKey(project.status) | translate }}</nz-tag>
+          <div class="status-display">
+            <div class="status-label">{{ 'MY_PAGES.STATUS' | translate }}:</div>
+            <div class="status-value" [class.completed]="project.status.toLowerCase() === 'completed'" [class.in-progress]="project.status.toLowerCase() === 'in progress' || project.status.toLowerCase() === 'active'">
+              <span class="status-icon">
+                <span nz-icon [nzType]="getStatusIcon(project.status)" nzTheme="outline"></span>
+              </span>
+              {{ getStatusTranslationKey(project.status) | translate }}
+            </div>
+          </div>
         }
       </div>
     </div>

@@ -4,7 +4,8 @@
     "EXPERIENCE": "Experience",
     "PROJECTS": "Projects",
     "SKILLS": "Skills",
-    "EXPORT_PDF": "Export PDF"
+    "EXPORT_PDF": "Export PDF",
+    "MY_PAGES": "My Pages"
   },
   "COMMON": {
     "CLOSE": "Close",
@@ -12,10 +13,33 @@
   },
   "FOOTER": {
     "COPYRIGHT": "Hong Phung Phat. All rights reserved.",
-    "MADE_WITH": "Made with Angular & AI️"
+    "MADE_WITH": "Made with Angular & AI️",
+    "ABOUT": "About Me",
+    "DESCRIPTION": "Senior Frontend Developer with over 10 years of experience specializing in Angular and React applications.",
+    "QUICK_LINKS": "Quick Links",
+    "CONTACT": "Contact",
+    "BUILT_WITH": "Built With"
   },
   "ACTIONS": {
     "EXPORT_PDF": "Export PDF"
+  },
+  "CTA": {
+    "READY_TO_COLLABORATE": "Ready to collaborate?",
+    "LETS_DISCUSS": "Let's discuss how we can work together on your next project",
+    "CONNECT_WITH_ME": "Connect with me",
+    "INTERESTED_IN_WORKING_TOGETHER": "Interested in working together?",
+    "REACH_OUT": "Feel free to reach out to discuss potential opportunities",
+    "CONTACT_ME": "Contact Me",
+    "VIEW_ALL_PROJECTS": "View All Projects",
+    "VIEW_ALL_SKILLS": "View All Skills"
+  },
+  "MY_PAGES": {
+    "SUBTITLE": "Explore my personal projects and websites",
+    "ABOUT_PROJECT": "About This Project",
+    "VISIT_SITE": "Visit Website",
+    "ABOUT_SECTION": "About My Pages",
+    "ABOUT_DESCRIPTION": "These are personal websites and projects I've developed. Feel free to explore them to learn more about my work and interests.",
+    "STATUS": "Status"
   },
   "PERSONAL_INFO": {
     "PROFILE_PICTURE": "Profile Picture",
@@ -67,6 +91,8 @@
     "EDUCATION": "Education",
     "TECHNICAL_SKILLS": "Technical Skills",
     "FEATURED_PROJECTS": "Featured Projects",
+    "KEY_SKILLS": "Key Skills",
+    "PROFESSIONAL_SUMMARY": "Professional Summary",
     "SUBTITLES": {
       "WORK_EXPERIENCE": "Over a decade of proven expertise in web development and technical leadership",
       "EDUCATION": "Strong academic foundation supporting technical excellence",
@@ -76,7 +102,8 @@
   },
   "STATUS": {
     "ACTIVE": "Active",
-    "COMPLETED": "Completed"
+    "COMPLETED": "Completed",
+    "PLANNED": "Planned"
   },
   "PROJECTS": {
     "SEARCH_PLACEHOLDER": "Search projects...",
@@ -102,31 +129,31 @@
     "FILTER_BUTTON": "Filters"
   },
   "SKILLS": {
-    "SKILLS": "skill(s)",
-    "OVERVIEW": "Skills Overview",
-    "DESCRIPTION": "A comprehensive collection of technical skills acquired through years of hands-on experience in web development, with a focus on modern frontend technologies and best practices.",
-    "VIEW_PROJECTS": "View My Projects",
-    "PROJECTS_HINT": "Explore my portfolio to see these skills in action through real-world projects.",
+    "FEATURED_SKILLS": "Featured Skills",
+    "ALL_SKILLS": "All Skills by Category",
+    "VIEW_DETAILS": "View Details",
+    "SEE_IN_ACTION": "See My Skills in Action",
+    "DESCRIPTION": "A comprehensive overview of my technical expertise and professional capabilities.",
+    "SEARCH_PLACEHOLDER": "Search skills...",
+    "SKILLS": "skills",
+    "VIEW_PROJECTS": "View Projects",
+    "PROJECTS_HINT": "Check out my portfolio to see these skills applied in real-world projects.",
     "DIALOG": {
-      "VISIT_WEBSITE": "Visit Official Website",
-      "VISIT_GITHUB": "View on GitHub",
-      "USED_IN": "Used in {{count}} project(s)",
+      "USED_IN": "Used in {{count}} projects",
       "OVERVIEW": "Overview",
-      "RESOURCES": "Resources"
-    },
-    "DETAILS": {
-      "JEST": "Jest is a delightful JavaScript Testing Framework with a focus on simplicity. It works with projects using: Babel, TypeScript, Node, React, Angular, Vue and more.",
-      "JASMINE": "Jasmine is a behavior-driven development framework for testing JavaScript code. It does not depend on any other JavaScript frameworks and does not require a DOM.",
-      "KARMA": "Karma is a test runner that can execute JavaScript code in multiple real browsers. It is primarily designed for Angular testing ecosystem.",
-      "GIT": "Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.",
-      "VS_CODE": "Visual Studio Code is a lightweight but powerful source code editor with built-in support for JavaScript, TypeScript and Node.js, and has a rich ecosystem of extensions.",
-      "DOCKER": "Docker is a platform for developing, shipping, and running applications in containers. It enables true independence between applications and infrastructure.",
-      "JENKINS": "Jenkins is a self-contained, open source automation server which can be used to automate all sorts of tasks related to building, testing, and delivering or deploying software.",
-      "AGILE": "Agile is an iterative approach to project management and software development that helps teams deliver value to their customers faster and with fewer headaches.",
-      "SCRUM": "Scrum is an agile framework for developing, delivering, and sustaining complex products, with an emphasis on empirical process control and iterative progress.",
-      "KANBAN": "Kanban is a workflow management method that helps organizations manage and improve work systems. It helps visualize work, limit work-in-progress, and continuously improve.",
-      "NODEJS": "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. It enables building fast and scalable network applications using an event-driven, non-blocking I/O model.",
-      "NPM": "npm is the world's largest software registry and the default package manager for Node.js. It consists of a command line client and an online database of public and paid-for private packages."
+      "RESOURCES": "Resources",
+      "VISIT_WEBSITE": "Official Website",
+      "VISIT_GITHUB": "GitHub Repository",
+      "EXPERIENCE_LEVEL": {
+        "BEGINNER": "Beginner",
+        "INTERMEDIATE": "Intermediate",
+        "ADVANCED": "Advanced",
+        "EXPERT": "Expert"
+      },
+      "SKILL_TYPE": {
+        "TECHNOLOGY": "Technology",
+        "COMMON_TOOL": "Common Tool"
+      }
     }
   }
 }
