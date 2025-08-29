@@ -1,96 +1,137 @@
 .ward-list-item {
-  display: flex;
-  gap: 1.5rem;
-  padding: 1.5rem;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  display: block;
+  text-decoration: none;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid #eaeaea;
+  margin-bottom: 1rem;
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border-color: #dcdcdc;
+
+    .ward-action {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .ward-content {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    gap: 1.5rem;
   }
 
   .ward-image {
-    flex: 0 0 200px;
-    height: 150px;
+    position: relative;
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+    border-radius: 8px;
     overflow: hidden;
-    border-radius: 4px;
 
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .ward-type {
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      background: rgba(0, 0, 0, 0.7);
+      color: #ffffff;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      backdrop-filter: blur(4px);
     }
   }
 
-  .ward-content {
+  .ward-info {
     flex: 1;
+    min-width: 0;
+  }
+
+  .ward-name {
+    margin: 0 0 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2c3e50;
+  }
+
+  .ward-features {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 0.5rem;
+  }
 
-    h3 {
+  .feature-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 4px 12px;
+    background: #f8f9fa;
+    border-radius: 16px;
+    font-size: 0.875rem;
+    color: #495057;
+    transition: background-color 0.2s ease;
+
+    i {
+      font-size: 1rem;
+    }
+
+    &:hover {
+      background: #e9ecef;
+    }
+  }
+
+  .more-features {
+    font-size: 0.875rem;
+    color: #6c757d;
+    padding: 4px 8px;
+  }
+
+  .ward-action {
+    display: flex;
+    align-items: center;
+    color: #6c757d;
+    transform: translateX(10px);
+    opacity: 0;
+    transition: all 0.3s ease;
+
+    i {
       font-size: 1.25rem;
-      color: #333;
-      margin: 0;
-    }
-
-    .description {
-      color: #666;
-      font-size: 0.9rem;
-      line-height: 1.5;
-      margin: 0;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .ward-details {
-      display: flex;
-      gap: 1rem;
-      font-size: 0.9rem;
-      color: #666;
-
-      .ward-type {
-        color: #007bff;
-      }
-    }
-
-    .ward-features {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.5rem;
-
-      .feature-tag {
-        padding: 0.25rem 0.75rem;
-        background: #f0f7ff;
-        color: #007bff;
-        border-radius: 20px;
-        font-size: 0.8rem;
-      }
-
-      .more-features {
-        color: #666;
-        font-size: 0.8rem;
-        padding: 0.25rem 0;
-      }
     }
   }
 }
 
+// Responsive adjustments
 @media (max-width: 768px) {
   .ward-list-item {
-    flex-direction: column;
-    gap: 1rem;
+    .ward-content {
+      padding: 0.75rem;
+      gap: 1rem;
+    }
 
     .ward-image {
-      flex: 0 0 auto;
-      height: 200px;
+      width: 80px;
+      height: 80px;
+    }
+
+    .ward-name {
+      font-size: 1.125rem;
+    }
+
+    .feature-tag {
+      padding: 2px 8px;
+      font-size: 0.75rem;
     }
   }
 } 

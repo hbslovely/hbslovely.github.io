@@ -1,0 +1,46 @@
+<div class="share-dialog">
+  <div class="share-header" [style.backgroundImage]="'url(' + data.image + ')'">
+    <h2>{{ data.title }}</h2>
+  </div>
+  
+  <div class="share-content">
+    <div class="url-section">
+      <div class="p-inputgroup">
+        <input pInputText [value]="data.url" readonly #urlInput>
+        <button pButton type="button" icon="pi pi-copy" (click)="copyUrl(urlInput)" 
+                [pTooltip]="'WARD.SHARE.COPY_LINK' | translate"
+                tooltipPosition="left"></button>
+      </div>
+    </div>
+
+    <div class="share-options">
+      <h3>{{ 'WARD.SHARE.SHARE_VIA' | translate }}</h3>
+      <div class="share-buttons">
+        <button pButton type="button" (click)="shareVia('facebook')" class="p-button-outlined">
+          <i class="pi pi-facebook"></i>
+          Facebook
+        </button>
+        <button pButton type="button" (click)="shareVia('twitter')" class="p-button-outlined">
+          <i class="pi pi-twitter"></i>
+          Twitter
+        </button>
+        <button pButton type="button" (click)="shareVia('whatsapp')" class="p-button-outlined">
+          <i class="pi pi-whatsapp"></i>
+          WhatsApp
+        </button>
+        <button pButton type="button" (click)="shareVia('telegram')" class="p-button-outlined">
+          <i class="pi pi-send"></i>
+          Telegram
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="dialog-actions">
+    <button pButton type="button" (click)="close()" 
+            [label]="'COMMON.CLOSE' | translate"
+            class="p-button-primary"></button>
+  </div>
+</div>
+
+<p-toast position="top-center"></p-toast> 

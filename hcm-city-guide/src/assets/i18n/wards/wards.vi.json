@@ -2,7 +2,7 @@
   "CON_DAO": {
     "id": "con-dao-special-region",
     "name": "Đặc khu Côn Đảo",
-    "type": "special-administrative-region",
+    "type": "REGION.TITLE",
     "province": "tỉnh Bà Rịa - Vũng Tàu",
     "description": "Quần đảo Côn Đảo là một quần đảo lịch sử với lịch sử phong phú và đau thương, nay đã trở thành điểm du lịch tuyệt đẹp. Nổi tiếng với các bãi biển nguyên sơ, đa dạng sinh học biển và các vườn quốc gia, nơi đây còn là di tích lịch sử quan trọng với các nhà tù được bảo tồn. Khu vực này đã thành công trong việc cân bằng giữa phát triển du lịch và bảo tồn môi trường.",
     "area": "75.7 km²",
@@ -29,10 +29,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_TICH_LICH_SU",
-      "FEATURES.VUON_QUOC_GIA",
-      "FEATURES.DIEM_DU_LICH",
-      "FEATURES.BAO_TON_BIEN"
+      "FEATURES.HISTORIC_SITE",
+      "FEATURES.NATIONAL_PARK",
+      "FEATURES.TOURIST_ATTRACTION",
+      "FEATURES.MARINE_CONSERVATION"
     ]
   },
   "AN_DONG": {
@@ -74,9 +74,9 @@
       }
     ],
     "features": [
-      "FEATURES.TRUNG_TAM_THUONG_MAI",
-      "FEATURES.CHO_TRUYEN_THONG",
-      "FEATURES.DI_SAN_VAN_HOA"
+      "FEATURES.COMMERCIAL_HUB",
+      "FEATURES.TRADITIONAL_MARKET",
+      "FEATURES.CULTURAL_HERITAGE"
     ]
   },
   "AN_HOI_DONG": {
@@ -120,10 +120,10 @@
       }
     ],
     "features": [
-      "FEATURES.CHO_TRUYEN_THONG",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.VEN_SONG",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.TRADITIONAL_MARKET",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.WATERFRONT",
+      "FEATURES.COMMUNITY_CENTER"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -165,10 +165,10 @@
       }
     ],
     "features": [
-      "FEATURES.CHO_TRUYEN_THONG",
-      "FEATURES.DI_SAN_VAN_HOA",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.TRADITIONAL_MARKET",
+      "FEATURES.CULTURAL_HERITAGE",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.COMMUNITY_CENTER"
     ]
   },
   "AN_KHANH": {
@@ -201,10 +201,10 @@
       }
     ],
     "features": [
-      "FEATURES.PHAT_TRIEN_HIEN_DAI",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_GIAO_DUC",
-      "FEATURES.KHONG_GIAN_XANH"
+      "FEATURES.MODERN_DEVELOPMENT",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.EDUCATION_HUB",
+      "FEATURES.GREEN_SPACE"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -249,10 +249,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_CONG_NGHIEP",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.INDUSTRIAL_ZONE",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.MODERN_DEVELOPMENT",
+      "FEATURES.COMMUNITY_CENTER"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -285,10 +285,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_CONG_DONG",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.COMMUNITY_CENTER",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.MODERN_DEVELOPMENT"
     ]
   },
   "AN_PHU": {
@@ -332,10 +332,10 @@
       }
     ],
     "features": [
-      "FEATURES.PHAT_TRIEN_HIEN_DAI",
-      "FEATURES.TRUNG_TAM_GIAO_DUC",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH"
+      "FEATURES.MODERN_DEVELOPMENT",
+      "FEATURES.EDUCATION_HUB",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE"
     ],
     "province": "tỉnh Bình Dương"
   },
@@ -369,10 +369,10 @@
       }
     ],
     "features": [
-      "FEATURES.VEN_SONG",
-      "FEATURES.KHU_DAN_CU",
+      "FEATURES.WATERFRONT",
+      "FEATURES.RESIDENTIAL_AREA",
       "FEATURES.TRADITIONAL_CRAFT",
-      "FEATURES.KHONG_GIAN_XANH"
+      "FEATURES.GREEN_SPACE"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -404,9 +404,9 @@
     ],
     "features": [
       "LANDMARKS.ADMINISTRATIVE_CENTER",
-      "FEATURES.DI_TICH_LICH_SU",
-      "FEATURES.TRUNG_TAM_THUONG_MAI",
-      "FEATURES.DI_SAN_VAN_HOA"
+      "FEATURES.HISTORIC_SITE",
+      "FEATURES.COMMERCIAL_HUB",
+      "FEATURES.CULTURAL_HERITAGE"
     ],
     "neighboring_wards": [],
     "province": "tỉnh Bà Rịa - Vũng Tàu"
@@ -452,10 +452,10 @@
       }
     ],
     "features": [
-      "FEATURES.CHO_TRUYEN_THONG",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.DI_SAN_VAN_HOA",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.TRADITIONAL_MARKET",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.CULTURAL_HERITAGE",
+      "FEATURES.COMMUNITY_CENTER"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -496,9 +496,9 @@
       }
     ],
     "features": [
-      "FEATURES.TRUNG_TAM_THUONG_MAI",
-      "FEATURES.CHO_TRUYEN_THONG",
-      "FEATURES.DI_SAN_VAN_HOA",
+      "FEATURES.COMMERCIAL_HUB",
+      "FEATURES.TRADITIONAL_MARKET",
+      "FEATURES.CULTURAL_HERITAGE",
       "FEATURES.EDUCATION_CENTER"
     ],
     "province": "TP. Hồ Chí Minh"
@@ -540,10 +540,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_CONG_NGHIEP",
-      "FEATURES.VEN_SONG",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH"
+      "FEATURES.INDUSTRIAL_ZONE",
+      "FEATURES.WATERFRONT",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE"
     ],
     "province": "tỉnh Bình Dương"
   },
@@ -594,7 +594,7 @@
       }
     ],
     "features": [
-      "FEATURES.DIEM_DU_LICH",
+      "FEATURES.TOURIST_ATTRACTION",
       "FEATURES.SHOPPING_DISTRICT",
       "FEATURES.ENTERTAINMENT_ZONE"
     ],
@@ -637,10 +637,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.DI_SAN_VAN_HOA",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.CULTURAL_HERITAGE",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.COMMUNITY_CENTER"
     ],
     "province": "tỉnh Bình Dương"
   },
@@ -681,10 +681,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_CONG_NGHIEP",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI",
-      "FEATURES.DI_SAN_VAN_HOA"
+      "FEATURES.INDUSTRIAL_ZONE",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.MODERN_DEVELOPMENT",
+      "FEATURES.CULTURAL_HERITAGE"
     ],
     "province": "tỉnh Bình Dương"
   },
@@ -729,9 +729,9 @@
       }
     ],
     "features": [
-      "FEATURES.VEN_SONG",
-      "FEATURES.CHO_TRUYEN_THONG",
-      "FEATURES.DI_SAN_VAN_HOA",
+      "FEATURES.WATERFRONT",
+      "FEATURES.TRADITIONAL_MARKET",
+      "FEATURES.CULTURAL_HERITAGE",
       "FEATURES.MARITIME_TRADE"
     ],
     "province": "TP. Hồ Chí Minh"
@@ -773,10 +773,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_GIAO_DUC",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.EDUCATION_HUB",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.COMMUNITY_CENTER"
     ],
     "province": "tỉnh Bình Dương"
   },
@@ -817,10 +817,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_CONG_NGHIEP",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.INDUSTRIAL_ZONE",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.MODERN_DEVELOPMENT",
+      "FEATURES.COMMUNITY_CENTER"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -861,9 +861,9 @@
       }
     ],
     "features": [
-      "FEATURES.VEN_SONG",
-      "FEATURES.DI_TICH_LICH_SU",
-      "FEATURES.KHU_DAN_CU",
+      "FEATURES.WATERFRONT",
+      "FEATURES.HISTORIC_SITE",
+      "FEATURES.RESIDENTIAL_AREA",
       "FEATURES.PARK_AND_RECREATION"
     ],
     "province": "TP. Hồ Chí Minh"
@@ -905,9 +905,9 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_GIAO_DUC",
-      "FEATURES.KHONG_GIAN_XANH",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.EDUCATION_HUB",
+      "FEATURES.GREEN_SPACE",
       "FEATURES.SPORTS_FACILITY"
     ],
     "province": "TP. Hồ Chí Minh"
@@ -949,9 +949,9 @@
       }
     ],
     "features": [
-      "FEATURES.DIEM_DU_LICH",
-      "FEATURES.VEN_SONG",
-      "FEATURES.DI_SAN_VAN_HOA",
+      "FEATURES.TOURIST_ATTRACTION",
+      "FEATURES.WATERFRONT",
+      "FEATURES.CULTURAL_HERITAGE",
       "FEATURES.PARK_AND_RECREATION"
     ],
     "province": "TP. Hồ Chí Minh"
@@ -993,10 +993,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_CONG_NGHIEP",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI",
-      "FEATURES.KHONG_GIAN_XANH"
+      "FEATURES.INDUSTRIAL_ZONE",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.MODERN_DEVELOPMENT",
+      "FEATURES.GREEN_SPACE"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -1041,10 +1041,10 @@
       }
     ],
     "features": [
-      "FEATURES.TRUNG_TAM_THUONG_MAI",
-      "FEATURES.DI_SAN_VAN_HOA",
-      "FEATURES.DI_TICH_LICH_SU",
-      "FEATURES.CHO_TRUYEN_THONG"
+      "FEATURES.COMMERCIAL_HUB",
+      "FEATURES.CULTURAL_HERITAGE",
+      "FEATURES.HISTORIC_SITE",
+      "FEATURES.TRADITIONAL_MARKET"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -1085,10 +1085,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_SAN_VAN_HOA",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_GIAO_DUC",
-      "FEATURES.DIEM_DU_LICH"
+      "FEATURES.CULTURAL_HERITAGE",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.EDUCATION_HUB",
+      "FEATURES.TOURIST_ATTRACTION"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -1129,10 +1129,10 @@
       }
     ],
     "features": [
-      "FEATURES.CHO_TRUYEN_THONG",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.DI_SAN_VAN_HOA",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.TRADITIONAL_MARKET",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.CULTURAL_HERITAGE",
+      "FEATURES.COMMUNITY_CENTER"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -1173,10 +1173,10 @@
       }
     ],
     "features": [
-      "FEATURES.TRUNG_TAM_THUONG_MAI",
-      "FEATURES.CHO_TRUYEN_THONG",
+      "FEATURES.COMMERCIAL_HUB",
+      "FEATURES.TRADITIONAL_MARKET",
       "FEATURES.LOGISTICS_CENTER",
-      "FEATURES.KHU_DAN_CU"
+      "FEATURES.RESIDENTIAL_AREA"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -1217,10 +1217,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_CONG_NGHIEP",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI"
+      "FEATURES.INDUSTRIAL_ZONE",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.MODERN_DEVELOPMENT"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -1265,9 +1265,9 @@
       }
     ],
     "features": [
-      "FEATURES.PHAT_TRIEN_HIEN_DAI",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.KHU_DAN_CU",
+      "FEATURES.MODERN_DEVELOPMENT",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.RESIDENTIAL_AREA",
       "FEATURES.MIXED_USE"
     ],
     "province": "TP. Hồ Chí Minh"
@@ -1313,10 +1313,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_CONG_NGHIEP",
+      "FEATURES.INDUSTRIAL_ZONE",
       "FEATURES.PORT_FACILITY",
       "FEATURES.LOGISTICS_HUB",
-      "FEATURES.VEN_SONG"
+      "FEATURES.WATERFRONT"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -1357,8 +1357,8 @@
       }
     ],
     "features": [
-      "FEATURES.DI_TICH_LICH_SU",
-      "FEATURES.DI_SAN_VAN_HOA",
+      "FEATURES.HISTORIC_SITE",
+      "FEATURES.CULTURAL_HERITAGE",
       "FEATURES.TRADITIONAL_CRAFT",
       "FEATURES.ARCHITECTURAL_SIGNIFICANCE"
     ],
@@ -1405,10 +1405,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_TICH_LICH_SU",
-      "FEATURES.VEN_SONG",
-      "FEATURES.CHO_TRUYEN_THONG",
-      "FEATURES.DI_SAN_VAN_HOA"
+      "FEATURES.HISTORIC_SITE",
+      "FEATURES.WATERFRONT",
+      "FEATURES.TRADITIONAL_MARKET",
+      "FEATURES.CULTURAL_HERITAGE"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -1449,10 +1449,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_GIAO_DUC",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.EDUCATION_HUB",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.COMMUNITY_CENTER"
     ],
     "province": "tỉnh Bình Dương"
   },
@@ -1493,9 +1493,9 @@
       }
     ],
     "features": [
-      "FEATURES.VEN_SONG",
-      "FEATURES.CHO_TRUYEN_THONG",
-      "FEATURES.DI_SAN_VAN_HOA",
+      "FEATURES.WATERFRONT",
+      "FEATURES.TRADITIONAL_MARKET",
+      "FEATURES.CULTURAL_HERITAGE",
       "FEATURES.RELIGIOUS_SITE"
     ],
     "province": "TP. Hồ Chí Minh"
@@ -1537,9 +1537,9 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_GIAO_DUC",
-      "FEATURES.KHONG_GIAN_XANH",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.EDUCATION_HUB",
+      "FEATURES.GREEN_SPACE",
       "FEATURES.SPORTS_FACILITY"
     ],
     "province": "tỉnh Bình Dương"
@@ -1586,9 +1586,9 @@
       }
     ],
     "features": [
-      "FEATURES.DI_SAN_VAN_HOA",
-      "FEATURES.DI_TICH_LICH_SU",
-      "FEATURES.TRUNG_TAM_THUONG_MAI",
+      "FEATURES.CULTURAL_HERITAGE",
+      "FEATURES.HISTORIC_SITE",
+      "FEATURES.COMMERCIAL_HUB",
       "FEATURES.RELIGIOUS_SITE"
     ],
     "province": "TP. Hồ Chí Minh"
@@ -1710,10 +1710,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_CONG_NGHIEP",
+      "FEATURES.INDUSTRIAL_ZONE",
       "FEATURES.TRANSPORT_HUB",
-      "FEATURES.TRUNG_TAM_GIAO_DUC",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI"
+      "FEATURES.EDUCATION_HUB",
+      "FEATURES.MODERN_DEVELOPMENT"
     ],
     "province": "tỉnh Bình Dương"
   },
@@ -1754,10 +1754,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_SAN_VAN_HOA",
-      "FEATURES.DI_TICH_LICH_SU",
-      "FEATURES.TRUNG_TAM_GIAO_DUC",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.CULTURAL_HERITAGE",
+      "FEATURES.HISTORIC_SITE",
+      "FEATURES.EDUCATION_HUB",
+      "FEATURES.COMMUNITY_CENTER"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -1798,10 +1798,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_CONG_NGHIEP",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.BAO_TON_MOI_TRUONG"
+      "FEATURES.INDUSTRIAL_ZONE",
+      "FEATURES.MODERN_DEVELOPMENT",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.ENVIRONMENTAL_CONSERVATION"
     ],
     "province": "tỉnh Bình Dương"
   },
@@ -1842,10 +1842,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_GIAO_DUC",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.EDUCATION_HUB",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.COMMUNITY_CENTER"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -1886,8 +1886,8 @@
       }
     ],
     "features": [
-      "FEATURES.DI_TICH_LICH_SU",
-      "FEATURES.DI_SAN_VAN_HOA",
+      "FEATURES.HISTORIC_SITE",
+      "FEATURES.CULTURAL_HERITAGE",
       "FEATURES.RELIGIOUS_SITE",
       "FEATURES.ARCHITECTURAL_SIGNIFICANCE"
     ],
@@ -1930,10 +1930,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_TICH_LICH_SU",
-      "FEATURES.DI_SAN_VAN_HOA",
-      "FEATURES.TRUNG_TAM_GIAO_DUC",
-      "FEATURES.CHO_TRUYEN_THONG"
+      "FEATURES.HISTORIC_SITE",
+      "FEATURES.CULTURAL_HERITAGE",
+      "FEATURES.EDUCATION_HUB",
+      "FEATURES.TRADITIONAL_MARKET"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -1974,10 +1974,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_GIAO_DUC",
-      "FEATURES.DI_SAN_VAN_HOA",
-      "FEATURES.TRUNG_TAM_THUONG_MAI"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.EDUCATION_HUB",
+      "FEATURES.CULTURAL_HERITAGE",
+      "FEATURES.COMMERCIAL_HUB"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -2018,9 +2018,9 @@
       }
     ],
     "features": [
-      "FEATURES.DI_SAN_VAN_HOA",
+      "FEATURES.CULTURAL_HERITAGE",
       "FEATURES.RELIGIOUS_SITE",
-      "FEATURES.TRUNG_TAM_CONG_DONG",
+      "FEATURES.COMMUNITY_CENTER",
       "FEATURES.TRADITIONAL_CRAFT"
     ],
     "province": "TP. Hồ Chí Minh"
@@ -2062,10 +2062,10 @@
       }
     ],
     "features": [
-      "FEATURES.VEN_SONG",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.BAO_TON_MOI_TRUONG"
+      "FEATURES.WATERFRONT",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.ENVIRONMENTAL_CONSERVATION"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -2106,10 +2106,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_GIAO_DUC",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.EDUCATION_HUB",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.COMMUNITY_CENTER"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -2150,10 +2150,10 @@
       }
     ],
     "features": [
-      "FEATURES.CHO_TRUYEN_THONG",
-      "FEATURES.DI_SAN_VAN_HOA",
+      "FEATURES.TRADITIONAL_MARKET",
+      "FEATURES.CULTURAL_HERITAGE",
       "FEATURES.RELIGIOUS_SITE",
-      "FEATURES.DI_TICH_LICH_SU"
+      "FEATURES.HISTORIC_SITE"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -2186,10 +2186,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_CONG_DONG",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.COMMUNITY_CENTER",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.MODERN_DEVELOPMENT"
     ]
   },
   "KHANH_HOI": {
@@ -2229,10 +2229,10 @@
       }
     ],
     "features": [
-      "FEATURES.VEN_SONG",
+      "FEATURES.WATERFRONT",
       "FEATURES.PORT_FACILITY",
-      "FEATURES.CHO_TRUYEN_THONG",
-      "FEATURES.DI_TICH_LICH_SU"
+      "FEATURES.TRADITIONAL_MARKET",
+      "FEATURES.HISTORIC_SITE"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -2274,9 +2274,9 @@
     ],
     "features": [
       "FEATURES.TRADITIONAL_CRAFT",
-      "FEATURES.DI_SAN_NONG_NGHIEP",
-      "FEATURES.DI_SAN_VAN_HOA",
-      "FEATURES.DIEM_DU_LICH"
+      "FEATURES.AGRICULTURAL_HERITAGE",
+      "FEATURES.CULTURAL_HERITAGE",
+      "FEATURES.TOURIST_ATTRACTION"
     ],
     "province": "tỉnh Bình Dương"
   },
@@ -2317,10 +2317,10 @@
       }
     ],
     "features": [
-      "FEATURES.TRUNG_TAM_GIAO_DUC",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI"
+      "FEATURES.EDUCATION_HUB",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.MODERN_DEVELOPMENT"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -2361,10 +2361,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_CONG_NGHIEP",
+      "FEATURES.INDUSTRIAL_ZONE",
       "FEATURES.TRANSPORT_HUB",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -2405,10 +2405,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_CONG_NGHIEP",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.INDUSTRIAL_ZONE",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.COMMUNITY_CENTER"
     ],
     "province": "tỉnh Bà Rịa - Vũng Tàu"
   },
@@ -2441,10 +2441,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_CONG_DONG",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.COMMUNITY_CENTER",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.MODERN_DEVELOPMENT"
     ]
   },
   "LONG_PHUOC": {
@@ -2484,10 +2484,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_SAN_NONG_NGHIEP",
+      "FEATURES.AGRICULTURAL_HERITAGE",
       "FEATURES.ECO_TOURISM",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.NONG_NGHIEP_TRUYEN_THONG"
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.TRADITIONAL_FARMING"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -2528,10 +2528,10 @@
       }
     ],
     "features": [
-      "FEATURES.PHAT_TRIEN_HIEN_DAI",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.BAO_TON_MOI_TRUONG"
+      "FEATURES.MODERN_DEVELOPMENT",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.ENVIRONMENTAL_CONSERVATION"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -2572,10 +2572,10 @@
       }
     ],
     "features": [
-      "FEATURES.CHO_TRUYEN_THONG",
-      "FEATURES.DI_SAN_VAN_HOA",
-      "FEATURES.DI_TICH_LICH_SU",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.TRADITIONAL_MARKET",
+      "FEATURES.CULTURAL_HERITAGE",
+      "FEATURES.HISTORIC_SITE",
+      "FEATURES.COMMUNITY_CENTER"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -2621,9 +2621,9 @@
       }
     ],
     "features": [
-      "FEATURES.VEN_SONG",
+      "FEATURES.WATERFRONT",
       "FEATURES.PARK_AND_RECREATION",
-      "FEATURES.KHU_DAN_CU",
+      "FEATURES.RESIDENTIAL_AREA",
       "FEATURES.URBAN_RENEWAL"
     ],
     "province": "TP. Hồ Chí Minh"
@@ -2665,10 +2665,10 @@
       }
     ],
     "features": [
-      "FEATURES.VEN_SONG",
+      "FEATURES.WATERFRONT",
       "FEATURES.PORT_FACILITY",
       "FEATURES.RELIGIOUS_SITE",
-      "FEATURES.DI_SAN_VAN_HOA"
+      "FEATURES.CULTURAL_HERITAGE"
     ],
     "province": "tỉnh Bình Dương"
   },
@@ -2709,10 +2709,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_CONG_NGHIEP",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.INDUSTRIAL_ZONE",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.COMMUNITY_CENTER"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -2753,10 +2753,10 @@
       }
     ],
     "features": [
-      "FEATURES.CHO_TRUYEN_THONG",
-      "FEATURES.DI_SAN_VAN_HOA",
+      "FEATURES.TRADITIONAL_MARKET",
+      "FEATURES.CULTURAL_HERITAGE",
       "FEATURES.RELIGIOUS_SITE",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.COMMUNITY_CENTER"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -2789,10 +2789,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_CONG_DONG",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.COMMUNITY_CENTER",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.MODERN_DEVELOPMENT"
     ]
   },
   "PHU_MY": {
@@ -2832,10 +2832,10 @@
       }
     ],
     "features": [
-      "FEATURES.PHAT_TRIEN_HIEN_DAI",
-      "FEATURES.TRUNG_TAM_THUONG_MAI",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH"
+      "FEATURES.MODERN_DEVELOPMENT",
+      "FEATURES.COMMERCIAL_HUB",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE"
     ],
     "province": "tỉnh Bà Rịa - Vũng Tàu"
   },
@@ -2877,8 +2877,8 @@
       }
     ],
     "features": [
-      "FEATURES.TRUNG_TAM_THUONG_MAI",
-      "FEATURES.DI_SAN_VAN_HOA",
+      "FEATURES.COMMERCIAL_HUB",
+      "FEATURES.CULTURAL_HERITAGE",
       "FEATURES.RELIGIOUS_SITE",
       "FEATURES.TRADITIONAL_CRAFT"
     ],
@@ -2921,10 +2921,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_GIAO_DUC",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.EDUCATION_HUB",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.COMMUNITY_CENTER"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -2966,9 +2966,9 @@
     ],
     "features": [
       "FEATURES.SPORTS_FACILITY",
-      "FEATURES.TRUNG_TAM_GIAO_DUC",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH"
+      "FEATURES.EDUCATION_HUB",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -3009,10 +3009,10 @@
       }
     ],
     "features": [
-      "FEATURES.TRUNG_TAM_THUONG_MAI",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.COMMERCIAL_HUB",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.COMMUNITY_CENTER"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -3053,10 +3053,10 @@
       }
     ],
     "features": [
-      "FEATURES.VEN_SONG",
+      "FEATURES.WATERFRONT",
       "FEATURES.PORT_FACILITY",
       "FEATURES.LOGISTICS_HUB",
-      "FEATURES.KHU_DAN_CU"
+      "FEATURES.RESIDENTIAL_AREA"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -3097,10 +3097,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.TRUNG_TAM_GIAO_DUC",
-      "FEATURES.BAO_TON_MOI_TRUONG"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.EDUCATION_HUB",
+      "FEATURES.ENVIRONMENTAL_CONSERVATION"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -3141,10 +3141,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_SAN_VAN_HOA",
+      "FEATURES.CULTURAL_HERITAGE",
       "FEATURES.TRADITIONAL_CRAFT",
-      "FEATURES.TRUNG_TAM_CONG_DONG",
-      "FEATURES.KHU_DAN_CU"
+      "FEATURES.COMMUNITY_CENTER",
+      "FEATURES.RESIDENTIAL_AREA"
     ],
     "province": "tỉnh Bà Rịa - Vũng Tàu"
   },
@@ -3185,9 +3185,9 @@
       }
     ],
     "features": [
-      "FEATURES.VEN_SONG",
+      "FEATURES.WATERFRONT",
       "FEATURES.PORT_FACILITY",
-      "FEATURES.NGANH_DANH_BAT",
+      "FEATURES.FISHING_INDUSTRY",
       "FEATURES.COASTAL_AREA"
     ],
     "province": "tỉnh Bà Rịa - Vũng Tàu"
@@ -3221,10 +3221,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_CONG_DONG",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.COMMUNITY_CENTER",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.MODERN_DEVELOPMENT"
     ]
   },
   "TAM_BINH": {
@@ -3264,10 +3264,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_GIAO_DUC",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.EDUCATION_HUB",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.COMMUNITY_CENTER"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -3309,10 +3309,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_GIAO_DUC",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.EDUCATION_HUB",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.COMMUNITY_CENTER"
     ]
   },
   "TAM_THANG": {
@@ -3354,9 +3354,9 @@
     ],
     "features": [
       "FEATURES.SPORTS_FACILITY",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.COMMUNITY_CENTER"
     ]
   },
   "TANG_NHON_PHU": {
@@ -3397,10 +3397,10 @@
       }
     ],
     "features": [
-      "FEATURES.PHAT_TRIEN_HIEN_DAI",
-      "FEATURES.TRUNG_TAM_THUONG_MAI",
+      "FEATURES.MODERN_DEVELOPMENT",
+      "FEATURES.COMMERCIAL_HUB",
       "FEATURES.TECH_ZONE",
-      "FEATURES.KHONG_GIAN_XANH"
+      "FEATURES.GREEN_SPACE"
     ]
   },
   "TAN_BINH": {
@@ -3440,10 +3440,10 @@
       }
     ],
     "features": [
-      "FEATURES.TRUNG_TAM_THUONG_MAI",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI"
+      "FEATURES.COMMERCIAL_HUB",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.MODERN_DEVELOPMENT"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -3484,10 +3484,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_TICH_LICH_SU",
+      "FEATURES.HISTORIC_SITE",
       "FEATURES.RELIGIOUS_SITE",
-      "FEATURES.CHO_TRUYEN_THONG",
-      "FEATURES.DI_SAN_VAN_HOA"
+      "FEATURES.TRADITIONAL_MARKET",
+      "FEATURES.CULTURAL_HERITAGE"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -3529,10 +3529,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_CONG_NGHIEP",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI",
-      "FEATURES.TRUNG_TAM_GIAO_DUC",
-      "FEATURES.KHONG_GIAN_XANH"
+      "FEATURES.INDUSTRIAL_ZONE",
+      "FEATURES.MODERN_DEVELOPMENT",
+      "FEATURES.EDUCATION_HUB",
+      "FEATURES.GREEN_SPACE"
     ]
   },
   "TAN_HAI": {
@@ -3573,8 +3573,8 @@
       }
     ],
     "features": [
-      "FEATURES.NGANH_DANH_BAT",
-      "FEATURES.DIEM_DU_LICH",
+      "FEATURES.FISHING_INDUSTRY",
+      "FEATURES.TOURIST_ATTRACTION",
       "FEATURES.COASTAL_AREA",
       "FEATURES.MARITIME_TRADE"
     ]
@@ -3617,10 +3617,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_CONG_NGHIEP",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI",
+      "FEATURES.INDUSTRIAL_ZONE",
+      "FEATURES.MODERN_DEVELOPMENT",
       "FEATURES.LOGISTICS_HUB",
-      "FEATURES.KHONG_GIAN_XANH"
+      "FEATURES.GREEN_SPACE"
     ]
   },
   "TAN_HOA": {
@@ -3661,10 +3661,10 @@
       }
     ],
     "features": [
-      "FEATURES.CHO_TRUYEN_THONG",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.TRADITIONAL_MARKET",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.COMMUNITY_CENTER"
     ]
   },
   "TAN_HUNG": {
@@ -3705,10 +3705,10 @@
       }
     ],
     "features": [
-      "FEATURES.PHAT_TRIEN_HIEN_DAI",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.TRUNG_TAM_GIAO_DUC"
+      "FEATURES.MODERN_DEVELOPMENT",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.EDUCATION_HUB"
     ]
   },
   "TAN_KHANH": {
@@ -3749,10 +3749,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_CONG_NGHIEP",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI",
-      "FEATURES.TRUNG_TAM_GIAO_DUC",
-      "FEATURES.KHONG_GIAN_XANH"
+      "FEATURES.INDUSTRIAL_ZONE",
+      "FEATURES.MODERN_DEVELOPMENT",
+      "FEATURES.EDUCATION_HUB",
+      "FEATURES.GREEN_SPACE"
     ]
   },
   "TAN_MY": {
@@ -3793,10 +3793,10 @@
       }
     ],
     "features": [
-      "FEATURES.CHO_TRUYEN_THONG",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.TRADITIONAL_MARKET",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.COMMUNITY_CENTER"
     ]
   },
   "TAN_PHU": {
@@ -3836,10 +3836,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_CONG_NGHIEP",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI"
+      "FEATURES.INDUSTRIAL_ZONE",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.MODERN_DEVELOPMENT"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -3881,10 +3881,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_CONG_NGHIEP",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.BAO_TON_MOI_TRUONG"
+      "FEATURES.INDUSTRIAL_ZONE",
+      "FEATURES.MODERN_DEVELOPMENT",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.ENVIRONMENTAL_CONSERVATION"
     ]
   },
   "TAN_SON": {
@@ -3925,9 +3925,9 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_GIAO_DUC",
-      "FEATURES.KHONG_GIAN_XANH",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.EDUCATION_HUB",
+      "FEATURES.GREEN_SPACE",
       "FEATURES.SPORTS_FACILITY"
     ]
   },
@@ -3970,8 +3970,8 @@
     ],
     "features": [
       "FEATURES.AVIATION_ZONE",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE",
       "FEATURES.TRANSPORT_HUB"
     ]
   },
@@ -4057,10 +4057,10 @@
       }
     ],
     "features": [
-      "FEATURES.CHO_TRUYEN_THONG",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.DI_SAN_VAN_HOA",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.TRADITIONAL_MARKET",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.CULTURAL_HERITAGE",
+      "FEATURES.COMMUNITY_CENTER"
     ]
   },
   "TAN_TAO": {
@@ -4101,10 +4101,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_CONG_NGHIEP",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI",
-      "FEATURES.BAO_TON_MOI_TRUONG",
-      "FEATURES.TRUNG_TAM_GIAO_DUC"
+      "FEATURES.INDUSTRIAL_ZONE",
+      "FEATURES.MODERN_DEVELOPMENT",
+      "FEATURES.ENVIRONMENTAL_CONSERVATION",
+      "FEATURES.EDUCATION_HUB"
     ]
   },
   "TAN_THANH": {
@@ -4136,10 +4136,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_CONG_DONG",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.COMMUNITY_CENTER",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.MODERN_DEVELOPMENT"
     ]
   },
   "TAN_THOI_HIEP": {
@@ -4181,8 +4181,8 @@
     ],
     "features": [
       "FEATURES.MIXED_USE",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE",
       "FEATURES.LIGHT_INDUSTRY"
     ]
   },
@@ -4225,8 +4225,8 @@
     "features": [
       "FEATURES.PORT_FACILITY",
       "FEATURES.LOGISTICS_HUB",
-      "FEATURES.KHU_CONG_NGHIEP",
-      "FEATURES.VEN_SONG"
+      "FEATURES.INDUSTRIAL_ZONE",
+      "FEATURES.WATERFRONT"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -4259,10 +4259,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_CONG_DONG",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.COMMUNITY_CENTER",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.MODERN_DEVELOPMENT"
     ]
   },
   "TAY_NAM": {
@@ -4294,10 +4294,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_CONG_DONG",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.COMMUNITY_CENTER",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.MODERN_DEVELOPMENT"
     ]
   },
   "TAY_THANH": {
@@ -4329,10 +4329,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_CONG_DONG",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.COMMUNITY_CENTER",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.MODERN_DEVELOPMENT"
     ]
   },
   "THANH_MY_TAY": {
@@ -4364,10 +4364,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_CONG_DONG",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.COMMUNITY_CENTER",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.MODERN_DEVELOPMENT"
     ]
   },
   "THONG_TAY_HOI": {
@@ -4399,10 +4399,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_CONG_DONG",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.COMMUNITY_CENTER",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.MODERN_DEVELOPMENT"
     ]
   },
   "THOI_AN": {
@@ -4442,10 +4442,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.TRUNG_TAM_CONG_DONG",
-      "FEATURES.BAO_TON_MOI_TRUONG"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.COMMUNITY_CENTER",
+      "FEATURES.ENVIRONMENTAL_CONSERVATION"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -4478,10 +4478,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_CONG_DONG",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.COMMUNITY_CENTER",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.MODERN_DEVELOPMENT"
     ]
   },
   "THU_DAU_MOT": {
@@ -4513,10 +4513,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_CONG_DONG",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.COMMUNITY_CENTER",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.MODERN_DEVELOPMENT"
     ]
   },
   "THU_DUC": {
@@ -4556,10 +4556,10 @@
       }
     ],
     "features": [
-      "FEATURES.TRUNG_TAM_GIAO_DUC",
+      "FEATURES.EDUCATION_HUB",
       "FEATURES.RESEARCH_CENTER",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -4600,10 +4600,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_CONG_NGHIEP",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.BAO_TON_MOI_TRUONG"
+      "FEATURES.INDUSTRIAL_ZONE",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.ENVIRONMENTAL_CONSERVATION"
     ],
     "province": "tỉnh Bình Dương"
   },
@@ -4644,10 +4644,10 @@
       }
     ],
     "features": [
-      "FEATURES.TRUNG_TAM_THUONG_MAI",
-      "FEATURES.TRUNG_TAM_GIAO_DUC",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH"
+      "FEATURES.COMMERCIAL_HUB",
+      "FEATURES.EDUCATION_HUB",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE"
     ],
     "province": "tỉnh Bình Dương"
   },
@@ -4680,10 +4680,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_CONG_DONG",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.COMMUNITY_CENTER",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.MODERN_DEVELOPMENT"
     ]
   },
   "VINH_HOI": {
@@ -4723,9 +4723,9 @@
       }
     ],
     "features": [
-      "FEATURES.VEN_SONG",
+      "FEATURES.WATERFRONT",
       "FEATURES.PORT_FACILITY",
-      "FEATURES.DI_SAN_VAN_HOA",
+      "FEATURES.CULTURAL_HERITAGE",
       "FEATURES.TRADITIONAL_CRAFT"
     ],
     "province": "TP. Hồ Chí Minh"
@@ -4759,10 +4759,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_CONG_DONG",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.COMMUNITY_CENTER",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.MODERN_DEVELOPMENT"
     ]
   },
   "VUNG_TAU": {
@@ -4802,10 +4802,10 @@
       }
     ],
     "features": [
-      "FEATURES.DIEM_DU_LICH",
+      "FEATURES.TOURIST_ATTRACTION",
       "FEATURES.COASTAL_AREA",
-      "FEATURES.DI_SAN_VAN_HOA",
-      "FEATURES.VEN_SONG"
+      "FEATURES.CULTURAL_HERITAGE",
+      "FEATURES.WATERFRONT"
     ],
     "province": "tỉnh Bà Rịa - Vũng Tàu"
   },
@@ -4838,10 +4838,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_CONG_DONG",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.COMMUNITY_CENTER",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.MODERN_DEVELOPMENT"
     ]
   },
   "XOM_CHIEU": {
@@ -4881,10 +4881,10 @@
       }
     ],
     "features": [
-      "FEATURES.CHO_TRUYEN_THONG",
-      "FEATURES.DI_SAN_VAN_HOA",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.TRADITIONAL_MARKET",
+      "FEATURES.CULTURAL_HERITAGE",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.COMMUNITY_CENTER"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -4929,9 +4929,9 @@
       }
     ],
     "features": [
-      "FEATURES.DI_SAN_VAN_HOA",
-      "FEATURES.TRUNG_TAM_GIAO_DUC",
-      "FEATURES.KHU_DAN_CU",
+      "FEATURES.CULTURAL_HERITAGE",
+      "FEATURES.EDUCATION_HUB",
+      "FEATURES.RESIDENTIAL_AREA",
       "FEATURES.COLONIAL_ARCHITECTURE"
     ],
     "province": "TP. Hồ Chí Minh"
@@ -4973,10 +4973,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_SAN_NONG_NGHIEP",
-      "FEATURES.NONG_NGHIEP_TRUYEN_THONG",
-      "FEATURES.CONG_DONG_NONG_THON",
-      "FEATURES.KHONG_GIAN_XANH"
+      "FEATURES.AGRICULTURAL_HERITAGE",
+      "FEATURES.TRADITIONAL_FARMING",
+      "FEATURES.RURAL_COMMUNITY",
+      "FEATURES.GREEN_SPACE"
     ],
     "province": "tỉnh Bình Dương"
   },
@@ -5017,10 +5017,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_SAN_NONG_NGHIEP",
-      "FEATURES.NONG_NGHIEP_TRUYEN_THONG",
-      "FEATURES.CONG_DONG_NONG_THON",
-      "FEATURES.KHONG_GIAN_XANH"
+      "FEATURES.AGRICULTURAL_HERITAGE",
+      "FEATURES.TRADITIONAL_FARMING",
+      "FEATURES.RURAL_COMMUNITY",
+      "FEATURES.GREEN_SPACE"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -5061,10 +5061,10 @@
       }
     ],
     "features": [
-      "FEATURES.NGANH_DANH_BAT",
-      "FEATURES.VEN_SONG",
-      "FEATURES.BAO_TON_MOI_TRUONG",
-      "FEATURES.CONG_DONG_NONG_THON"
+      "FEATURES.FISHING_INDUSTRY",
+      "FEATURES.WATERFRONT",
+      "FEATURES.ENVIRONMENTAL_CONSERVATION",
+      "FEATURES.RURAL_COMMUNITY"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -5105,10 +5105,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_SAN_NONG_NGHIEP",
-      "FEATURES.NONG_NGHIEP_TRUYEN_THONG",
-      "FEATURES.CONG_DONG_NONG_THON",
-      "FEATURES.KHONG_GIAN_XANH"
+      "FEATURES.AGRICULTURAL_HERITAGE",
+      "FEATURES.TRADITIONAL_FARMING",
+      "FEATURES.RURAL_COMMUNITY",
+      "FEATURES.GREEN_SPACE"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -5149,10 +5149,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_CONG_NGHIEP",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.BAO_TON_MOI_TRUONG"
+      "FEATURES.INDUSTRIAL_ZONE",
+      "FEATURES.MODERN_DEVELOPMENT",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.ENVIRONMENTAL_CONSERVATION"
     ],
     "province": "tỉnh Bình Dương"
   },
@@ -5193,10 +5193,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_SAN_NONG_NGHIEP",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.CONG_DONG_NONG_THON"
+      "FEATURES.AGRICULTURAL_HERITAGE",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.RURAL_COMMUNITY"
     ],
     "province": "tỉnh Bà Rịa - Vũng Tàu"
   },
@@ -5237,10 +5237,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_CONG_NGHIEP",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.BAO_TON_MOI_TRUONG"
+      "FEATURES.INDUSTRIAL_ZONE",
+      "FEATURES.MODERN_DEVELOPMENT",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.ENVIRONMENTAL_CONSERVATION"
     ],
     "province": "tỉnh Bình Dương"
   },
@@ -5281,10 +5281,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_SAN_NONG_NGHIEP",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.CONG_DONG_NONG_THON"
+      "FEATURES.AGRICULTURAL_HERITAGE",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.RURAL_COMMUNITY"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -5325,9 +5325,9 @@
       }
     ],
     "features": [
-      "FEATURES.DIEM_DU_LICH",
+      "FEATURES.TOURIST_ATTRACTION",
       "FEATURES.NATURAL_HERITAGE",
-      "FEATURES.NGANH_DANH_BAT",
+      "FEATURES.FISHING_INDUSTRY",
       "FEATURES.COASTAL_AREA"
     ],
     "province": "tỉnh Bà Rịa - Vũng Tàu"
@@ -5369,10 +5369,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_TICH_LICH_SU",
-      "FEATURES.DI_SAN_VAN_HOA",
+      "FEATURES.HISTORIC_SITE",
+      "FEATURES.CULTURAL_HERITAGE",
       "FEATURES.TRADITIONAL_CRAFT",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.COMMUNITY_CENTER"
     ],
     "province": "tỉnh Bà Rịa - Vũng Tàu"
   },
@@ -5413,10 +5413,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_CONG_NGHIEP",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI"
+      "FEATURES.INDUSTRIAL_ZONE",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.MODERN_DEVELOPMENT"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -5457,10 +5457,10 @@
       }
     ],
     "features": [
-      "FEATURES.VEN_SONG",
+      "FEATURES.WATERFRONT",
       "FEATURES.PORT_FACILITY",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.BAO_TON_MOI_TRUONG"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.ENVIRONMENTAL_CONSERVATION"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -5501,10 +5501,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_SAN_VAN_HOA",
-      "FEATURES.CHO_TRUYEN_THONG",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.DI_TICH_LICH_SU"
+      "FEATURES.CULTURAL_HERITAGE",
+      "FEATURES.TRADITIONAL_MARKET",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.HISTORIC_SITE"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -5545,10 +5545,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_SAN_NONG_NGHIEP",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.CONG_DONG_NONG_THON"
+      "FEATURES.AGRICULTURAL_HERITAGE",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.RURAL_COMMUNITY"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -5590,8 +5590,8 @@
     ],
     "features": [
       "FEATURES.NATURAL_HERITAGE",
-      "FEATURES.NGANH_DANH_BAT",
-      "FEATURES.BAO_TON_MOI_TRUONG",
+      "FEATURES.FISHING_INDUSTRY",
+      "FEATURES.ENVIRONMENTAL_CONSERVATION",
       "FEATURES.COASTAL_AREA"
     ],
     "province": "TP. Hồ Chí Minh"
@@ -5633,10 +5633,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_TICH_LICH_SU",
-      "FEATURES.DI_SAN_VAN_HOA",
+      "FEATURES.HISTORIC_SITE",
+      "FEATURES.CULTURAL_HERITAGE",
       "FEATURES.TRADITIONAL_CRAFT",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.COMMUNITY_CENTER"
     ],
     "province": "tỉnh Bà Rịa - Vũng Tàu"
   },
@@ -5677,10 +5677,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_CONG_NGHIEP",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.BAO_TON_MOI_TRUONG"
+      "FEATURES.INDUSTRIAL_ZONE",
+      "FEATURES.MODERN_DEVELOPMENT",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.ENVIRONMENTAL_CONSERVATION"
     ],
     "province": "tỉnh Bà Rịa - Vũng Tàu"
   },
@@ -5722,10 +5722,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_TICH_LICH_SU",
-      "FEATURES.DIEM_DU_LICH",
-      "FEATURES.DI_SAN_VAN_HOA",
-      "FEATURES.DI_SAN_NONG_NGHIEP"
+      "FEATURES.HISTORIC_SITE",
+      "FEATURES.TOURIST_ATTRACTION",
+      "FEATURES.CULTURAL_HERITAGE",
+      "FEATURES.AGRICULTURAL_HERITAGE"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -5767,9 +5767,9 @@
     ],
     "features": [
       "FEATURES.NATURAL_HERITAGE",
-      "FEATURES.DI_SAN_NONG_NGHIEP",
-      "FEATURES.BAO_TON_MOI_TRUONG",
-      "FEATURES.VEN_SONG"
+      "FEATURES.AGRICULTURAL_HERITAGE",
+      "FEATURES.ENVIRONMENTAL_CONSERVATION",
+      "FEATURES.WATERFRONT"
     ],
     "province": "tỉnh Bình Dương"
   },
@@ -5810,10 +5810,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_SAN_NONG_NGHIEP",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.CONG_DONG_NONG_THON"
+      "FEATURES.AGRICULTURAL_HERITAGE",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.RURAL_COMMUNITY"
     ],
     "province": "tỉnh Bà Rịa - Vũng Tàu"
   },
@@ -5846,10 +5846,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_SAN_NONG_NGHIEP",
-      "FEATURES.TRUNG_TAM_CONG_DONG",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.NONG_NGHIEP_TRUYEN_THONG"
+      "FEATURES.AGRICULTURAL_HERITAGE",
+      "FEATURES.COMMUNITY_CENTER",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.TRADITIONAL_FARMING"
     ]
   },
   "HIEP_PHUOC": {
@@ -5881,10 +5881,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_SAN_NONG_NGHIEP",
-      "FEATURES.TRUNG_TAM_CONG_DONG",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.NONG_NGHIEP_TRUYEN_THONG"
+      "FEATURES.AGRICULTURAL_HERITAGE",
+      "FEATURES.COMMUNITY_CENTER",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.TRADITIONAL_FARMING"
     ]
   },
   "HOA_HIEP": {
@@ -5924,10 +5924,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_SAN_NONG_NGHIEP",
-      "FEATURES.NONG_NGHIEP_TRUYEN_THONG",
-      "FEATURES.CONG_DONG_NONG_THON",
-      "FEATURES.KHONG_GIAN_XANH"
+      "FEATURES.AGRICULTURAL_HERITAGE",
+      "FEATURES.TRADITIONAL_FARMING",
+      "FEATURES.RURAL_COMMUNITY",
+      "FEATURES.GREEN_SPACE"
     ],
     "province": "tỉnh Bà Rịa - Vũng Tàu"
   },
@@ -5968,10 +5968,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_SAN_NONG_NGHIEP",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.CONG_DONG_NONG_THON"
+      "FEATURES.AGRICULTURAL_HERITAGE",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.RURAL_COMMUNITY"
     ],
     "province": "tỉnh Bà Rịa - Vũng Tàu"
   },
@@ -6012,10 +6012,10 @@
       }
     ],
     "features": [
-      "FEATURES.TRUNG_TAM_THUONG_MAI",
-      "FEATURES.DI_SAN_NONG_NGHIEP",
-      "FEATURES.DI_SAN_VAN_HOA",
-      "FEATURES.CHO_TRUYEN_THONG"
+      "FEATURES.COMMERCIAL_HUB",
+      "FEATURES.AGRICULTURAL_HERITAGE",
+      "FEATURES.CULTURAL_HERITAGE",
+      "FEATURES.TRADITIONAL_MARKET"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -6056,10 +6056,10 @@
       }
     ],
     "features": [
-      "FEATURES.DIEM_DU_LICH",
+      "FEATURES.TOURIST_ATTRACTION",
       "FEATURES.COASTAL_AREA",
       "FEATURES.NATURAL_HERITAGE",
-      "FEATURES.BAO_TON_MOI_TRUONG"
+      "FEATURES.ENVIRONMENTAL_CONSERVATION"
     ],
     "province": "tỉnh Bà Rịa - Vũng Tàu"
   },
@@ -6100,10 +6100,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_SAN_NONG_NGHIEP",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.CONG_DONG_NONG_THON"
+      "FEATURES.AGRICULTURAL_HERITAGE",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.RURAL_COMMUNITY"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -6144,10 +6144,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_TICH_LICH_SU",
-      "FEATURES.DI_SAN_VAN_HOA",
+      "FEATURES.HISTORIC_SITE",
+      "FEATURES.CULTURAL_HERITAGE",
       "FEATURES.TRADITIONAL_CRAFT",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.COMMUNITY_CENTER"
     ],
     "province": "tỉnh Bà Rịa - Vũng Tàu"
   },
@@ -6188,10 +6188,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_SAN_NONG_NGHIEP",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.CONG_DONG_NONG_THON"
+      "FEATURES.AGRICULTURAL_HERITAGE",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.RURAL_COMMUNITY"
     ],
     "province": "tỉnh Bà Rịa - Vũng Tàu"
   },
@@ -6232,10 +6232,10 @@
       }
     ],
     "features": [
-      "FEATURES.DIEM_DU_LICH",
-      "FEATURES.NGANH_DANH_BAT",
+      "FEATURES.TOURIST_ATTRACTION",
+      "FEATURES.FISHING_INDUSTRY",
       "FEATURES.COASTAL_AREA",
-      "FEATURES.DI_SAN_VAN_HOA"
+      "FEATURES.CULTURAL_HERITAGE"
     ],
     "province": "tỉnh Bà Rịa - Vũng Tàu"
   },
@@ -6276,10 +6276,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_SAN_NONG_NGHIEP",
-      "FEATURES.NONG_NGHIEP_TRUYEN_THONG",
-      "FEATURES.CONG_DONG_NONG_THON",
-      "FEATURES.KHONG_GIAN_XANH"
+      "FEATURES.AGRICULTURAL_HERITAGE",
+      "FEATURES.TRADITIONAL_FARMING",
+      "FEATURES.RURAL_COMMUNITY",
+      "FEATURES.GREEN_SPACE"
     ],
     "province": "tỉnh Bình Dương"
   },
@@ -6320,10 +6320,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_CONG_NGHIEP",
-      "FEATURES.NGANH_DANH_BAT",
+      "FEATURES.INDUSTRIAL_ZONE",
+      "FEATURES.FISHING_INDUSTRY",
       "FEATURES.NATURAL_HERITAGE",
-      "FEATURES.BAO_TON_MOI_TRUONG"
+      "FEATURES.ENVIRONMENTAL_CONSERVATION"
     ],
     "province": "tỉnh Bà Rịa - Vũng Tàu"
   },
@@ -6364,10 +6364,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_CONG_NGHIEP",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.BAO_TON_MOI_TRUONG"
+      "FEATURES.INDUSTRIAL_ZONE",
+      "FEATURES.MODERN_DEVELOPMENT",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.ENVIRONMENTAL_CONSERVATION"
     ],
     "province": "tỉnh Bình Dương"
   },
@@ -6409,9 +6409,9 @@
     ],
     "features": [
       "FEATURES.TRANSPORT_HUB",
-      "FEATURES.TRUNG_TAM_THUONG_MAI",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.COMMERCIAL_HUB",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.COMMUNITY_CENTER"
     ],
     "province": "tỉnh Bà Rịa - Vũng Tàu"
   },
@@ -6452,10 +6452,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_TICH_LICH_SU",
-      "FEATURES.DI_SAN_VAN_HOA",
+      "FEATURES.HISTORIC_SITE",
+      "FEATURES.CULTURAL_HERITAGE",
       "FEATURES.TRADITIONAL_CRAFT",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.COMMUNITY_CENTER"
     ],
     "province": "tỉnh Bà Rịa - Vũng Tàu"
   },
@@ -6498,8 +6498,8 @@
     "features": [
       "FEATURES.PORT_FACILITY",
       "FEATURES.LOGISTICS_HUB",
-      "FEATURES.VEN_SONG",
-      "FEATURES.KHU_CONG_NGHIEP"
+      "FEATURES.WATERFRONT",
+      "FEATURES.INDUSTRIAL_ZONE"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -6540,10 +6540,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_SAN_NONG_NGHIEP",
-      "FEATURES.NONG_NGHIEP_TRUYEN_THONG",
-      "FEATURES.CONG_DONG_NONG_THON",
-      "FEATURES.KHONG_GIAN_XANH"
+      "FEATURES.AGRICULTURAL_HERITAGE",
+      "FEATURES.TRADITIONAL_FARMING",
+      "FEATURES.RURAL_COMMUNITY",
+      "FEATURES.GREEN_SPACE"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -6584,10 +6584,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_CONG_NGHIEP",
-      "FEATURES.DI_SAN_NONG_NGHIEP",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.CONG_DONG_NONG_THON"
+      "FEATURES.INDUSTRIAL_ZONE",
+      "FEATURES.AGRICULTURAL_HERITAGE",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.RURAL_COMMUNITY"
     ],
     "province": "tỉnh Bình Dương"
   },
@@ -6628,10 +6628,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_SAN_NONG_NGHIEP",
-      "FEATURES.NONG_NGHIEP_TRUYEN_THONG",
-      "FEATURES.CONG_DONG_NONG_THON",
-      "FEATURES.KHONG_GIAN_XANH"
+      "FEATURES.AGRICULTURAL_HERITAGE",
+      "FEATURES.TRADITIONAL_FARMING",
+      "FEATURES.RURAL_COMMUNITY",
+      "FEATURES.GREEN_SPACE"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -6672,10 +6672,10 @@
       }
     ],
     "features": [
-      "FEATURES.NGANH_DANH_BAT",
+      "FEATURES.FISHING_INDUSTRY",
       "FEATURES.COASTAL_AREA",
-      "FEATURES.CHO_TRUYEN_THONG",
-      "FEATURES.DIEM_DU_LICH"
+      "FEATURES.TRADITIONAL_MARKET",
+      "FEATURES.TOURIST_ATTRACTION"
     ],
     "province": "tỉnh Bà Rịa - Vũng Tàu"
   },
@@ -6716,10 +6716,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_CONG_NGHIEP",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.BAO_TON_MOI_TRUONG"
+      "FEATURES.INDUSTRIAL_ZONE",
+      "FEATURES.MODERN_DEVELOPMENT",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.ENVIRONMENTAL_CONSERVATION"
     ],
     "province": "tỉnh Bình Dương"
   },
@@ -6760,10 +6760,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_CONG_NGHIEP",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.BAO_TON_MOI_TRUONG"
+      "FEATURES.INDUSTRIAL_ZONE",
+      "FEATURES.MODERN_DEVELOPMENT",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.ENVIRONMENTAL_CONSERVATION"
     ],
     "province": "tỉnh Bình Dương"
   },
@@ -6804,10 +6804,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_SAN_NONG_NGHIEP",
-      "FEATURES.NONG_NGHIEP_TRUYEN_THONG",
-      "FEATURES.CONG_DONG_NONG_THON",
-      "FEATURES.KHONG_GIAN_XANH"
+      "FEATURES.AGRICULTURAL_HERITAGE",
+      "FEATURES.TRADITIONAL_FARMING",
+      "FEATURES.RURAL_COMMUNITY",
+      "FEATURES.GREEN_SPACE"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -6848,10 +6848,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_SAN_NONG_NGHIEP",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.CONG_DONG_NONG_THON"
+      "FEATURES.AGRICULTURAL_HERITAGE",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.RURAL_COMMUNITY"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -6892,10 +6892,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_CONG_NGHIEP",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.BAO_TON_MOI_TRUONG"
+      "FEATURES.INDUSTRIAL_ZONE",
+      "FEATURES.MODERN_DEVELOPMENT",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.ENVIRONMENTAL_CONSERVATION"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -6936,10 +6936,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_SAN_NONG_NGHIEP",
-      "FEATURES.NONG_NGHIEP_TRUYEN_THONG",
-      "FEATURES.CONG_DONG_NONG_THON",
-      "FEATURES.KHONG_GIAN_XANH"
+      "FEATURES.AGRICULTURAL_HERITAGE",
+      "FEATURES.TRADITIONAL_FARMING",
+      "FEATURES.RURAL_COMMUNITY",
+      "FEATURES.GREEN_SPACE"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -6981,9 +6981,9 @@
     ],
     "features": [
       "FEATURES.NATURAL_HERITAGE",
-      "FEATURES.NGANH_DANH_BAT",
-      "FEATURES.BAO_TON_MOI_TRUONG",
-      "FEATURES.CONG_DONG_NONG_THON"
+      "FEATURES.FISHING_INDUSTRY",
+      "FEATURES.ENVIRONMENTAL_CONSERVATION",
+      "FEATURES.RURAL_COMMUNITY"
     ],
     "province": "tỉnh Bình Dương"
   },
@@ -7016,10 +7016,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.TRUNG_TAM_CONG_DONG",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI"
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.COMMUNITY_CENTER",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.MODERN_DEVELOPMENT"
     ]
   },
   "THUONG_TAN": {
@@ -7059,10 +7059,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_SAN_NONG_NGHIEP",
-      "FEATURES.KHU_DAN_CU",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.CONG_DONG_NONG_THON"
+      "FEATURES.AGRICULTURAL_HERITAGE",
+      "FEATURES.RESIDENTIAL_AREA",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.RURAL_COMMUNITY"
     ],
     "province": "tỉnh Bình Dương"
   },
@@ -7103,10 +7103,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_TICH_LICH_SU",
-      "FEATURES.DI_SAN_VAN_HOA",
+      "FEATURES.HISTORIC_SITE",
+      "FEATURES.CULTURAL_HERITAGE",
       "FEATURES.TRADITIONAL_CRAFT",
-      "FEATURES.TRUNG_TAM_CONG_DONG"
+      "FEATURES.COMMUNITY_CENTER"
     ],
     "province": "tỉnh Bình Dương"
   },
@@ -7147,10 +7147,10 @@
       }
     ],
     "features": [
-      "FEATURES.KHU_CONG_NGHIEP",
-      "FEATURES.PHAT_TRIEN_HIEN_DAI",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.BAO_TON_MOI_TRUONG"
+      "FEATURES.INDUSTRIAL_ZONE",
+      "FEATURES.MODERN_DEVELOPMENT",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.ENVIRONMENTAL_CONSERVATION"
     ],
     "province": "TP. Hồ Chí Minh"
   },
@@ -7183,10 +7183,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_SAN_NONG_NGHIEP",
-      "FEATURES.TRUNG_TAM_CONG_DONG",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.NONG_NGHIEP_TRUYEN_THONG"
+      "FEATURES.AGRICULTURAL_HERITAGE",
+      "FEATURES.COMMUNITY_CENTER",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.TRADITIONAL_FARMING"
     ]
   },
   "XUAN_THOI_SON": {
@@ -7218,10 +7218,10 @@
       }
     ],
     "features": [
-      "FEATURES.DI_SAN_NONG_NGHIEP",
-      "FEATURES.TRUNG_TAM_CONG_DONG",
-      "FEATURES.KHONG_GIAN_XANH",
-      "FEATURES.NONG_NGHIEP_TRUYEN_THONG"
+      "FEATURES.AGRICULTURAL_HERITAGE",
+      "FEATURES.COMMUNITY_CENTER",
+      "FEATURES.GREEN_SPACE",
+      "FEATURES.TRADITIONAL_FARMING"
     ]
   },
   "XUYEN_MOC": {
@@ -7261,8 +7261,8 @@
       }
     ],
     "features": [
-      "FEATURES.DIEM_DU_LICH",
-      "FEATURES.NGANH_DANH_BAT",
+      "FEATURES.TOURIST_ATTRACTION",
+      "FEATURES.FISHING_INDUSTRY",
       "FEATURES.COASTAL_AREA",
       "FEATURES.NATURAL_HERITAGE"
     ],

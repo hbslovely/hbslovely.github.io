@@ -1,216 +1,133 @@
 {
-  "NIGHTLIFE": {
-    "TITLE": "Cuộc Sống Về Đêm tại TP.HCM",
-    "DESCRIPTION": "Khám phá không gian giải trí về đêm sôi động của Sài Gòn, từ quán bar trên sân thượng đến các câu lạc bộ.",
-    "SEARCH_PLACEHOLDER": "Tìm kiếm địa điểm, tiện ích hoặc vị trí...",
-    
-    "TYPES": {
-      "CLUB": "Câu Lạc Bộ",
-      "BAR": "Quán Bar",
-      "LOUNGE": "Phòng Chờ",
-      "LIVE_MUSIC": "Nhạc Sống",
-      "KARAOKE": "Karaoke"
-    },
-
+  "TITLE": "Giải Trí tại TP.HCM",
+  "DESCRIPTION": "Khám phá các địa điểm và hoạt động giải trí tốt nhất tại Sài Gòn",
+  "TYPES": {
+    "CLUB": "Câu Lạc Bộ",
+    "BAR": "Quán Bar",
+    "LOUNGE": "Phòng Chờ",
+    "LIVE_MUSIC": "Địa Điểm Nhạc Sống",
+    "KARAOKE": "Karaoke",
+    "CINEMA": "Rạp Chiếu Phim",
+    "SPORTS": "Địa Điểm Thể Thao",
+    "THEME_PARK": "Công Viên Giải Trí",
+    "SHOPPING": "Trung Tâm Mua Sắm"
+  },
+  "FEATURES": {
+    "LIVE_MUSIC": "Nhạc Sống",
+    "DANCE_FLOOR": "Sàn Nhảy",
+    "VIP_TABLES": "Bàn VIP",
+    "ROOFTOP": "Sân Thượng",
+    "SPORTS_SCREENS": "Màn Hình Thể Thao",
+    "FOOD_SERVICE": "Phục Vụ Đồ Ăn",
+    "SMOKING_AREA": "Khu Vực Hút Thuốc",
+    "VALET_PARKING": "Giữ Xe",
+    "PARKING": "Bãi Đậu Xe",
+    "WIFI": "WiFi",
+    "FOOD_COURT": "Khu Ẩm Thực",
+    "CINEMA": "Rạp Chiếu Phim",
+    "ATM": "ATM",
+    "IMAX": "IMAX",
+    "4DX": "4DX",
+    "GOLD_CLASS": "Gold Class",
+    "SCREENX": "ScreenX",
+    "PREMIUM_CINEMA": "Rạp Cao Cấp"
+  },
+  "SHOPPING": {
+    "TITLE": "Mua Sắm tại TP.HCM",
+    "DESCRIPTION": "Khám phá các trung tâm thương mại hiện đại, chợ truyền thống và cửa hàng thời trang",
     "FILTERS": {
       "DISTRICT": "Quận",
-      "SELECT_DISTRICT": "Chọn quận",
       "PRICE": "Mức Giá",
-      "RATING": "Đánh Giá Tối Thiểu",
+      "RATING": "Đánh Giá",
+      "FEATURES": "Tiện Ích",
+      "TYPE": "Loại Hình Mua Sắm"
+    }
+  },
+  "THEME_PARKS": {
+    "TITLE": "Công Viên Giải Trí & Khu Vui Chơi",
+    "DESCRIPTION": "Khám phá các công viên giải trí và khu vui chơi hấp dẫn tại TP.HCM",
+    "FILTERS": {
+      "DISTRICT": "Quận",
+      "PRICE": "Mức Giá",
+      "RATING": "Đánh Giá",
+      "FEATURES": "Tiện Ích",
+      "AGE_GROUP": "Độ Tuổi"
+    },
+    "FEATURES": {
+      "WATER_RIDES": "Trò Chơi Nước",
+      "THRILL_RIDES": "Trò Chơi Mạo Hiểm",
+      "FAMILY_RIDES": "Trò Chơi Gia Đình",
+      "KIDS_AREA": "Khu Vực Trẻ Em",
+      "SHOWS": "Biểu Diễn",
+      "RESTAURANTS": "Nhà Hàng",
+      "GIFT_SHOPS": "Cửa Hàng Quà Tặng",
+      "LOCKERS": "Tủ Khóa",
+      "FIRST_AID": "Sơ Cứu"
+    },
+    "AGE_GROUPS": {
+      "TODDLERS": "Trẻ Nhỏ (0-3)",
+      "KIDS": "Thiếu Nhi (4-12)",
+      "TEENS": "Thiếu Niên (13-17)",
+      "ADULTS": "Người Lớn (18+)",
+      "ALL_AGES": "Mọi Lứa Tuổi"
+    }
+  },
+  "NIGHTLIFE": {
+    "TITLE": "Cuộc Sống Về Đêm tại TP.HCM",
+    "DESCRIPTION": "Khám phá không gian giải trí về đêm sôi động của Sài Gòn, từ quán bar trên sân thượng đến các câu lạc bộ",
+    "FILTERS": {
+      "DISTRICT": "Quận",
+      "PRICE": "Mức Giá",
+      "RATING": "Đánh Giá",
       "FEATURES": "Tiện Ích",
       "OPEN_NOW": "Đang Mở Cửa"
-    },
-
-    "PRICE_RANGES": {
-      "BUDGET": "$",
-      "MODERATE": "$$",
-      "LUXURY": "$$$"
-    },
-
-    "FEATURES": {
-      "LIVE_MUSIC": "Nhạc Sống",
-      "DANCE_FLOOR": "Sàn Nhảy",
-      "VIP_TABLES": "Bàn VIP",
-      "ROOFTOP": "Sân Thượng",
-      "SPORTS_SCREENS": "Màn Hình Thể Thao",
-      "FOOD_SERVICE": "Phục Vụ Đồ Ăn",
-      "SMOKING_AREA": "Khu Vực Hút Thuốc",
-      "VALET_PARKING": "Giữ Xe"
-    },
-
+    }
+  },
+  "CINEMAS": {
+    "TITLE": "Rạp Chiếu Phim",
+    "DESCRIPTION": "Khám phá các phim mới nhất và tìm rạp chiếu phim tốt nhất tại TP.HCM",
+    "FILTERS": {
+      "DISTRICT": "Quận",
+      "PRICE": "Mức Giá",
+      "RATING": "Đánh Giá",
+      "FEATURES": "Tiện Ích",
+      "NOW_PLAYING": "Đang Chiếu",
+      "COMING_SOON": "Sắp Chiếu"
+    }
+  },
+  "SPORTS": {
+    "TITLE": "Thể Thao & Giải Trí",
+    "DESCRIPTION": "Tìm địa điểm thể thao, trung tâm thể dục và sự kiện sắp diễn ra tại TP.HCM",
+    "FILTERS": {
+      "DISTRICT": "Quận",
+      "PRICE": "Mức Giá",
+      "RATING": "Đánh Giá",
+      "FEATURES": "Tiện Ích",
+      "SPORT_TYPE": "Loại Hình Thể Thao"
+    }
+  },
+  "COMMON": {
+    "OPEN_NOW": "Đang Mở Cửa",
+    "CLOSED": "Đã Đóng Cửa",
+    "VIEW_DETAILS": "Xem Chi Tiết",
+    "BOOK_NOW": "Đặt Ngay",
+    "GET_DIRECTIONS": "Chỉ Đường",
+    "SHARE": "Chia Sẻ",
+    "FAVORITE": "Thêm vào Yêu Thích",
+    "UNFAVORITE": "Xóa khỏi Yêu Thích",
+    "NO_RESULTS": "Không tìm thấy kết quả",
+    "TRY_DIFFERENT": "Thử tìm kiếm hoặc lọc khác",
+    "CLEAR_FILTERS": "Xóa Bộ Lọc",
     "SORT": {
       "POPULAR": "Phổ Biến Nhất",
       "RATING": "Đánh Giá Cao Nhất",
       "PRICE_LOW": "Giá: Thấp đến Cao",
       "PRICE_HIGH": "Giá: Cao đến Thấp"
     },
-
-    "VENUE_TYPES": {
-      "CLUB": "Câu Lạc Bộ",
-      "BAR": "Quán Bar",
-      "LOUNGE": "Phòng Chờ",
-      "LIVE_MUSIC": "Địa Điểm Nhạc Sống",
-      "KARAOKE": "Karaoke"
-    },
-
-    "OPEN_NOW": "Đang Mở Cửa",
-    "CLOSED": "Đã Đóng Cửa",
-    "NO_RESULTS": "Không tìm thấy địa điểm",
-    "TRY_DIFFERENT": "Thử tìm kiếm hoặc lọc khác",
-    "CLEAR_FILTERS": "Xóa Bộ Lọc",
-    "VENUE_MAP": "Bản Đồ Địa Điểm",
-    "VIEW_DETAILS": "Xem Chi Tiết",
-    "BOOK_NOW": "Đặt Ngay",
-    "SHARE": "Chia Sẻ",
-    "FAVORITE": "Thêm vào Yêu Thích",
-    "UNFAVORITE": "Xóa khỏi Yêu Thích",
-    "GET_DIRECTIONS": "Chỉ Đường"
-  },
-  "CINEMAS": {
-    "TITLE": "Rạp Chiếu Phim",
-    "DESCRIPTION": "Khám phá các phim mới nhất và tìm rạp chiếu phim tốt nhất tại TP.HCM",
-    "NOW_PLAYING": "Đang Chiếu",
-    "COMING_SOON": "Sắp Chiếu",
-    "THEATERS": "Rạp Chiếu Phim",
-    "SELECT_DISTRICT": "Chọn Quận",
-
-    "SORT": {
-      "POPULAR": "Phổ Biến Nhất",
-      "LATEST": "Mới Nhất",
-      "RATING": "Đánh Giá Cao Nhất"
-    },
-
-    "MOVIE": {
-      "DURATION": "Thời Lượng",
-      "MINUTES": "phút",
-      "LANGUAGE": "Ngôn Ngữ",
-      "SUBTITLES": "Phụ Đề",
-      "RELEASE_DATE": "Ngày Khởi Chiếu",
-      "SYNOPSIS": "Nội Dung",
-      "CAST": "Diễn Viên",
-      "DIRECTOR": "Đạo Diễn",
-      "GENRE": "Thể Loại",
-      "RATING": "Đánh Giá",
-      "WATCH_TRAILER": "Xem Trailer",
-      "BOOK_TICKETS": "Đặt Vé"
-    },
-
-    "CINEMA": {
-      "FACILITIES": "Tiện Ích",
-      "AMENITIES": "Dịch Vụ",
-      "SCREENS": "Phòng Chiếu",
-      "CONTACT": "Liên Hệ",
-      "VIEW_SHOWTIMES": "Xem Lịch Chiếu",
-      "GET_DIRECTIONS": "Chỉ Đường"
-    },
-
-    "BOOKING": {
-      "SELECT_DATE": "Chọn Ngày",
-      "SELECT_TIME": "Chọn Giờ",
-      "SELECT_SEATS": "Chọn Ghế",
-      "PRICE": "Giá Vé",
-      "AVAILABLE_SEATS": "Ghế Trống",
-      "SELECTED_SEATS": "Ghế Đã Chọn",
-      "TOTAL": "Tổng Cộng",
-      "CONTINUE": "Tiếp Tục",
-      "CONFIRM": "Xác Nhận Đặt Vé",
-      "CANCEL": "Hủy"
-    },
-
-    "FORMATS": {
-      "STANDARD": "Thường",
-      "IMAX": "IMAX",
-      "4DX": "4DX",
-      "SCREENX": "ScreenX",
-      "GOLD_CLASS": "Gold Class"
-    },
-
-    "FACILITIES": {
-      "PARKING": "Bãi Đậu Xe",
-      "FOOD_COURT": "Khu Ẩm Thực",
-      "VIP_LOUNGE": "Phòng Chờ VIP",
-      "WHEELCHAIR_ACCESS": "Lối Đi Xe Lăn",
-      "BABY_ROOM": "Phòng Em Bé"
-    },
-
-    "MESSAGES": {
-      "NO_SHOWTIMES": "Không có suất chiếu cho ngày này",
-      "SELECT_SHOWTIME": "Vui lòng chọn suất chiếu",
-      "BOOKING_SUCCESS": "Đặt vé thành công!",
-      "BOOKING_FAILED": "Đặt vé thất bại. Vui lòng thử lại."
+    "PRICE_RANGES": {
+      "BUDGET": "$",
+      "MODERATE": "$$",
+      "LUXURY": "$$$"
     }
-  },
-  "SPORTS": {
-    "TITLE": "Thể Thao & Giải Trí",
-    "DESCRIPTION": "Tìm địa điểm thể thao, trung tâm thể dục và sự kiện sắp diễn ra tại TP.HCM",
-    "VENUES": "Địa Điểm Thể Thao",
-    "UPCOMING_EVENTS": "Sự Kiện Sắp Diễn Ra",
-    "SELECT_DISTRICT": "Chọn Quận",
-    "SELECT_PRICE": "Chọn Mức Giá",
-    "FROM": "Từ",
-
-    "TYPES": {
-      "FOOTBALL": "Bóng Đá",
-      "BASKETBALL": "Bóng Rổ",
-      "TENNIS": "Quần Vợt",
-      "SWIMMING": "Bơi Lội",
-      "BADMINTON": "Cầu Lông",
-      "GYM": "Phòng Tập",
-      "YOGA": "Yoga",
-      "RUNNING": "Chạy Bộ"
-    },
-
-    "FACILITIES": {
-      "PARKING": "Bãi Đậu Xe",
-      "SHOWER": "Phòng Tắm",
-      "LOCKER": "Tủ Khóa",
-      "EQUIPMENT": "Cho Thuê Dụng Cụ",
-      "CAFE": "Quán Cafe",
-      "WIFI": "WiFi",
-      "PERSONAL_TRAINER": "Huấn Luyện Viên Cá Nhân",
-      "SAUNA": "Phòng Xông Hơi",
-      "SWIMMING_COACH": "Huấn Luyện Viên Bơi"
-    },
-
-    "BOOKING": {
-      "BOOK_VENUE": "Đặt Sân",
-      "SELECT_DATE": "Chọn Ngày",
-      "SELECT_TIME": "Chọn Giờ",
-      "DURATION": "Thời Lượng",
-      "HOURS": "giờ",
-      "EQUIPMENT_RENTAL": "Thuê Dụng Cụ",
-      "PRICE_PER_HOUR": "Giá Mỗi Giờ",
-      "TOTAL": "Tổng Cộng",
-      "BOOK_NOW": "Đặt Ngay",
-      "CONFIRM": "Xác Nhận Đặt Sân",
-      "CANCEL": "Hủy"
-    },
-
-    "EVENTS": {
-      "GET_TICKETS": "Mua Vé",
-      "AVAILABLE_TICKETS": "Số Vé Còn Lại",
-      "ORGANIZER": "Đơn Vị Tổ Chức",
-      "VENUE": "Địa Điểm",
-      "DATE": "Ngày",
-      "TIME": "Giờ",
-      "PRICE": "Giá Vé",
-      "BOOK_TICKETS": "Đặt Vé"
-    },
-
-    "MESSAGES": {
-      "NO_VENUES": "Không tìm thấy địa điểm",
-      "NO_EVENTS": "Không có sự kiện sắp diễn ra",
-      "BOOKING_SUCCESS": "Đặt sân thành công!",
-      "BOOKING_FAILED": "Đặt sân thất bại. Vui lòng thử lại.",
-      "TICKET_SUCCESS": "Đặt vé thành công!",
-      "TICKET_FAILED": "Đặt vé thất bại. Vui lòng thử lại."
-    },
-
-    "VIEW_DETAILS": "Xem Chi Tiết",
-    "BOOK_NOW": "Đặt Ngay",
-    "GET_DIRECTIONS": "Chỉ Đường",
-    "SHARE": "Chia Sẻ",
-    "FAVORITE": "Thêm vào Yêu Thích",
-    "UNFAVORITE": "Xóa khỏi Yêu Thích"
   }
 } 

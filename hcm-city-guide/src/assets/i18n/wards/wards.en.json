@@ -2,7 +2,7 @@
   "CON_DAO": {
     "id": "con-dao-special-region",
     "name": "Con Dao",
-    "type": "special-administrative-region",
+    "type": "REGION.TITLE",
     "province": "Ba Ria - Vung Tau",
     "description": "Con Dao Special Administrative Region is a historic archipelago with a rich but somber history, transformed into a stunning tourist destination. Known for its pristine beaches, diverse marine life, and national parks, it also serves as an important memorial site with its preserved prison complexes. The area has successfully balanced tourism development with environmental conservation.",
     "area": "75.7 km²",

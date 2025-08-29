@@ -30,6 +30,9 @@
       "GUIDED_TOUR": "Guided Tour"
     }
   },
+  "COMMON": {
+    "CLOSE": "Close"
+  },
   "TIPS": {
     "TITLE": "Travel Tips",
     "DESCRIPTION": "Essential tips for exploring Ho Chi Minh City",
@@ -177,5 +180,21 @@
     "CHINESE": "Chinese Culture",
     "FRENCH_COLONIAL": "French Colonial Heritage",
     "MODERN": "Modern Urban Culture"
+  },
+  "REGION": {
+    "TITLE": "Special Administrative Region",
+    "DESCRIPTION": "Ho Chi Minh City is a special-class city and special administrative region of Vietnam",
+    "STATUS": {
+      "TITLE": "Administrative Status",
+      "SPECIAL_CITY": "Special-Class City",
+      "SPECIAL_REGION": "Special Administrative Region",
+      "MUNICIPALITY": "Municipality"
+    },
+    "GOVERNANCE": {
+      "TITLE": "Governance",
+      "CITY_GOVERNMENT": "City Government",
+      "SPECIAL_POWERS": "Special Administrative Powers",
+      "AUTONOMY": "Regional Autonomy"
+    }
   }
 }

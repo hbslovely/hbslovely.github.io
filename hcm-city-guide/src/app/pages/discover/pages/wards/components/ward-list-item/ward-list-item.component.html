@@ -1,21 +1,31 @@
-<div class="ward-list-item" [routerLink]="['/discover/wards', ward.id]">
-  <div class="ward-image">
-    <img [src]="ward.image" [alt]="ward.name">
-  </div>
+<a [routerLink]="['/discover/wards', ward.id]" class="ward-list-item">
   <div class="ward-content">
-    <h3>{{ ward.name }}</h3>
-    <p class="description">{{ ward.description }}</p>
-    <div class="ward-details">
-      <span class="ward-type" *ngIf="ward.type">{{ ward.type | translate }}</span>
-      <span class="ward-area">{{ 'WARD.CARD.AREA' | translate }}: {{ ward.area }}</span>
+    <div class="ward-image">
+      <img [src]="ward.image || 'assets/images/wards/default.jpg'" 
+           [alt]="ward.name" 
+           (error)="getImageFallback($event)"
+           loading="lazy">
+      <div class="ward-type" *ngIf="ward.type">
+        {{ ward.type | translate }}
+      </div>
     </div>
-    <div class="ward-features">
-      <span *ngFor="let feature of ward.features.slice(0, 3)" class="feature-tag">
-        {{ feature | translate }}
-      </span>
-      <span *ngIf="ward.features.length > 3" class="more-features">
-        {{ 'WARD.CARD.MORE_FEATURES' | translate: { count: ward.features.length - 3 } }}
-      </span>
+    
+    <div class="ward-info">
+      <h3 class="ward-name">{{ ward.name }}</h3>
+      
+      <div class="ward-features" *ngIf="ward.features && ward.features.length > 0">
+        <span class="feature-tag" *ngFor="let feature of ward.features.slice(0, 3)">
+          <i class="fas" [class]="getFeatureIcon(feature)" [style.color]="getFeatureColor(feature)"></i>
+          {{ feature | translate }}
+        </span>
+        <span class="more-features" *ngIf="ward.features.length > 3">
+          +{{ ward.features.length - 3 }} {{ 'WARD.CARD.MORE_FEATURES' | translate:{ count: ward.features.length - 3 } }}
+        </span>
+      </div>
+    </div>
+
+    <div class="ward-action">
+      <i class="fas fa-chevron-right"></i>
     </div>
   </div>
-</div> 
+</a> 

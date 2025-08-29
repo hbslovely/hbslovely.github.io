@@ -39,6 +39,7 @@ interface DataFile {
   searchFields: string[];
   type: string;
   routePrefix: string[];
+  translationPrefix?: string;
 }
 
 @Injectable({
@@ -60,25 +61,29 @@ export class SearchService {
       path: 'assets/data/attractions.json',
       searchFields: ['nameKey', 'descriptionKey', 'address'],
       type: 'place',
-      routePrefix: ['/discover', 'attractions']
+      routePrefix: ['/discover', 'attractions'],
+      translationPrefix: 'ATTRACTIONS'
     },
     {
       path: 'assets/data/cinemas.json',
-      searchFields: ['name', 'description', 'address'],
+      searchFields: ['name', 'description', 'address', 'facilities'],
       type: 'entertainment',
-      routePrefix: ['/entertainment', 'cinemas']
+      routePrefix: ['/entertainment', 'cinemas'],
+      translationPrefix: 'ENTERTAINMENT.CINEMAS'
     },
     {
       path: 'assets/data/entertainment.json',
-      searchFields: ['name', 'description', 'address'],
+      searchFields: ['name', 'description', 'address', 'type', 'features'],
       type: 'entertainment',
-      routePrefix: ['/entertainment']
+      routePrefix: ['/entertainment'],
+      translationPrefix: 'ENTERTAINMENT'
     },
     {
       path: 'assets/data/discover.json',
       searchFields: ['nameKey', 'descriptionKey'],
       type: 'place',
-      routePrefix: ['/discover']
+      routePrefix: ['/discover'],
+      translationPrefix: 'DISCOVER'
     }
   ];
 
@@ -147,13 +152,45 @@ export class SearchService {
   }
 
   private mapToSearchResult(item: any, file: DataFile): SearchResult {
-    const title = item.nameKey ? 
-      this.translate.instant(item.nameKey) : 
-      (item.title || item.name);
+    let title = '';
+    let description = '';
 
-    const description = item.descriptionKey ? 
-      this.translate.instant(item.descriptionKey) : 
-      item.description;
+    // Handle different translation patterns
+    if (item.nameKey) {
+      title = this.translate.instant(item.nameKey);
+    } else if (item.title) {
+      const translationKey = `${file.translationPrefix}.${item.type?.toUpperCase()}.${item.title.toUpperCase()}`;
+      title = this.translate.instant(translationKey);
+    } else if (item.name) {
+      title = item.name;
+    }
+
+    if (item.descriptionKey) {
+      description = this.translate.instant(item.descriptionKey);
+    } else if (item.description) {
+      const translationKey = `${file.translationPrefix}.${item.type?.toUpperCase()}.DESCRIPTION`;
+      const translatedDesc = this.translate.instant(translationKey);
+      description = translatedDesc !== translationKey ? translatedDesc : item.description;
+    }
+
+    // Map features to translated labels
+    const tags: string[] = (item.tags as string[]) || [];
+    if (item.features) {
+      const translatedFeatures = item.features.map((feature: string) => {
+        const featureKey = `${file.translationPrefix}.FEATURES.${feature.toUpperCase()}`;
+        return this.translate.instant(featureKey);
+      });
+      tags.push(...translatedFeatures);
+    }
+
+    // Map type to translated label
+    if (item.type) {
+      const typeKey = `${file.translationPrefix}.TYPES.${item.type.toUpperCase()}`;
+      const translatedType = this.translate.instant(typeKey);
+      if (translatedType !== typeKey) {
+        tags.unshift(translatedType);
+      }
+    }
 
     return {
       id: item.id || `${file.type}-${Math.random().toString(36).substr(2, 9)}`,
@@ -171,7 +208,7 @@ export class SearchService {
       location: item.address || item.location || '',
       route: [...file.routePrefix],
       queryParams: item.id ? { id: item.id } : undefined,
-      tags: item.tags,
+      tags: [...new Set(tags)], // Remove duplicates
       source: file.path.split('/').pop()?.replace('.json', '')
     };
   }

@@ -18,6 +18,9 @@
     "RIGHTS": "Đã đăng ký bản quyền.",
     "SEARCH": "Tìm kiếm..."
   },
+  "COMMON": {
+    "CLOSE": "Đóng"
+  },
   "SEARCH": {
     "TITLE": "Tìm Kiếm Thành Phố Hồ Chí Minh",
     "PLACEHOLDER": "Nhập từ khóa để tìm kiếm...",
@@ -213,5 +216,21 @@
     "CHINESE": "Văn Hóa Trung Hoa",
     "FRENCH_COLONIAL": "Di Sản Thuộc Địa Pháp",
     "MODERN": "Văn Hóa Đô Thị Hiện Đại"
+  },
+  "REGION": {
+    "TITLE": "Đơn Vị Hành Chính Đặc Biệt",
+    "DESCRIPTION": "Thành phố Hồ Chí Minh là thành phố đặc biệt và đơn vị hành chính đặc biệt của Việt Nam",
+    "STATUS": {
+      "TITLE": "Tình Trạng Hành Chính",
+      "SPECIAL_CITY": "Thành Phố Đặc Biệt",
+      "SPECIAL_REGION": "Đơn Vị Hành Chính Đặc Biệt",
+      "MUNICIPALITY": "Đô Thị Trực Thuộc Trung Ương"
+    },
+    "GOVERNANCE": {
+      "TITLE": "Quản Lý Hành Chính",
+      "CITY_GOVERNMENT": "Chính Quyền Thành Phố",
+      "SPECIAL_POWERS": "Quyền Hạn Hành Chính Đặc Biệt",
+      "AUTONOMY": "Tự Chủ Khu Vực"
+    }
   }
 } 
