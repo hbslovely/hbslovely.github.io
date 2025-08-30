@@ -37,18 +37,23 @@ export class ExperienceCardComponent {
   }
 
   openCompanyDialog(): void {
+    const isMobile = window.innerWidth < 768;
+
     this.modalService.create({
       nzTitle: undefined,
       nzContent: this.companyDetailDialog,
       nzFooter: null,
-      nzWidth: 800,
+      nzWidth: isMobile ? '90%' : 800,
       nzClassName: 'company-detail-modal',
-      nzCentered: true,
+      nzCentered: !isMobile, // Center the dialog on web, custom positioning on mobile
       nzMaskClosable: true,
       nzMask: true,
       nzMaskStyle: { backgroundColor: 'rgba(0, 0, 0, 0.65)' },
-      nzBodyStyle: { padding: '0' },
-      nzStyle: { top: '20px' }
+      nzBodyStyle: { 
+        padding: '0', 
+        maxHeight: isMobile ? 'calc(100vh - 60px)' : '90vh' // Control max height for both mobile and desktop
+      },
+      nzStyle: isMobile ? { top: '50px' } : {} // Only set top position on mobile
     });
   }
 }

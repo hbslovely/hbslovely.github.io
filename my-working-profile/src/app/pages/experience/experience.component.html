@@ -9,17 +9,17 @@
       <div class="stat-item">
         <span nz-icon nzType="calendar" nzTheme="outline" class="stat-icon"></span>
         <div class="stat-value">{{ getTotalYearsExperience() }}+</div>
-        <div class="stat-label">Years Experience</div>
+        <div class="stat-label">{{ 'SECTIONS.STATS.YEARS_EXPERIENCE' | translate }}</div>
       </div>
       <div class="stat-item">
         <span nz-icon nzType="team" nzTheme="outline" class="stat-icon"></span>
         <div class="stat-value">{{ cv()?.experience?.workExperience?.length || 0 }}</div>
-        <div class="stat-label">Companies</div>
+        <div class="stat-label">{{ 'SECTIONS.STATS.COMPANIES' | translate }}</div>
       </div>
       <div class="stat-item">
         <span nz-icon nzType="project" nzTheme="outline" class="stat-icon"></span>
         <div class="stat-value">{{ getTotalProjects() }}+</div>
-        <div class="stat-label">Projects</div>
+        <div class="stat-label">{{ 'SECTIONS.STATS.PROJECTS' | translate }}</div>
       </div>
     </div>
 
@@ -60,19 +60,6 @@
     </section>
 
     <!-- Contact CTA -->
-    <div class="contact-cta">
-      <div class="cta-decoration">
-        <div class="decoration-circle"></div>
-        <div class="decoration-line"></div>
-      </div>
-      <div class="cta-content">
-        <h3>{{ 'CTA.INTERESTED_IN_WORKING_TOGETHER' | translate }}</h3>
-        <p>{{ 'CTA.REACH_OUT' | translate }}</p>
-      </div>
-      <a class="cta-button" (click)="openLinkedIn()" aria-label="Contact on LinkedIn">
-        <span nz-icon nzType="linkedin" nzTheme="outline"></span>
-        {{ 'CTA.CONTACT_ME' | translate }}
-      </a>
-    </div>
+    <app-contact-cta></app-contact-cta>
   </div>
 </div>

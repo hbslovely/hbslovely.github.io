@@ -9,7 +9,10 @@
   },
   "COMMON": {
     "CLOSE": "Đóng",
-    "COPY": "Sao chép vào clipboard"
+    "COPY": "Sao chép vào clipboard",
+    "MORE": "nữa",
+    "VIEW_DETAILS": "Xem chi tiết",
+    "PRESENT": "Hiện tại"
   },
   "FOOTER": {
     "COPYRIGHT": "Hong Phung Phat. Đã đăng ký bản quyền.",
@@ -34,12 +37,15 @@
     "VIEW_ALL_SKILLS": "Xem tất cả kỹ năng"
   },
   "MY_PAGES": {
-    "SUBTITLE": "Khám phá các dự án và trang web cá nhân của tôi",
+    "SUBTITLE": "Khám phá các dự án cá nhân và sáng kiến kỹ thuật số của tôi",
     "ABOUT_PROJECT": "Về Dự Án Này",
     "VISIT_SITE": "Truy Cập Trang Web",
-    "ABOUT_SECTION": "Về Trang Của Tôi",
-    "ABOUT_DESCRIPTION": "Đây là những trang web và dự án cá nhân tôi đã phát triển. Hãy khám phá chúng để tìm hiểu thêm về công việc và sở thích của tôi.",
-    "STATUS": "Trạng thái"
+    "ABOUT_SECTION": "Về Bộ Sưu Tập Cá Nhân",
+    "ABOUT_DESCRIPTION": "Những trang web và dự án cá nhân này thể hiện niềm đam mê của tôi đối với việc phát triển web ngoài công việc chuyên môn. Mỗi dự án đều được xây dựng với sự chú ý đến chi tiết, nguyên tắc thiết kế hiện đại và công nghệ tiên tiến. Chúng thể hiện sở thích, sự sáng tạo và khả năng phát triển các giải pháp hoàn chỉnh từ ý tưởng đến triển khai của tôi. Mời bạn khám phá để hiểu thêm về kỹ năng kỹ thuật, phương pháp thiết kế và sở thích cá nhân của tôi.",
+    "STATUS": "Trạng thái",
+    "TECH_STACK": "Công Nghệ Sử Dụng",
+    "CREATION_PROCESS": "Quy Trình Sáng Tạo",
+    "PROJECT_GOALS": "Mục Tiêu Dự Án"
   },
   "PERSONAL_INFO": {
     "PROFILE_PICTURE": "Ảnh đại diện",
@@ -88,67 +94,78 @@
       "CORE_RESPONSIBILITIES": "Chuyên môn & Trách nhiệm chính",
       "ABOUT_COMPANY": "Thông tin công ty"
     },
-    "EDUCATION": "Học vấn",
+    "EDUCATION": {
+      "TITLE": "Học vấn",
+      "ACHIEVEMENTS": "Thành tích học tập",
+      "DESCRIPTION": "Mô tả chương trình",
+      "ABOUT_INSTITUTION": "Thông tin trường học"
+    },
     "TECHNICAL_SKILLS": "Kỹ năng chuyên môn",
-    "FEATURED_PROJECTS": "Dự án tiêu biểu",
+    "FEATURED_PROJECTS": "Dự án nổi bật",
     "KEY_SKILLS": "Kỹ năng chính",
     "PROFESSIONAL_SUMMARY": "Tóm tắt chuyên môn",
     "SUBTITLES": {
-      "WORK_EXPERIENCE": "Hơn một thập kỷ kinh nghiệm trong phát triển web và lãnh đạo kỹ thuật",
-      "EDUCATION": "Nền tảng học vấn vững chắc hỗ trợ cho sự xuất sắc về kỹ thuật",
+      "WORK_EXPERIENCE": "Hơn một thập kỷ kinh nghiệm được chứng minh trong phát triển web và lãnh đạo kỹ thuật",
+      "EDUCATION": "Nền tảng học thuật vững chắc hỗ trợ sự xuất sắc trong kỹ thuật",
       "TECHNICAL_SKILLS": "Tổng quan toàn diện về chuyên môn kỹ thuật của tôi",
-      "FEATURED_PROJECTS": "Chuyên sâu về phát triển Angular với hơn 6 năm kinh nghiệm, và thành thạo React với hơn 4 năm kinh nghiệm thực tế"
+      "FEATURED_PROJECTS": "Chuyên về phát triển Angular với hơn 6 năm kinh nghiệm và thành thạo React với hơn 4 năm kinh nghiệm thực tế"
     },
     "TITLES": {
-      "PROFESSIONAL_JOURNEY": "Hành Trình Nghề Nghiệp"
+      "PROFESSIONAL_JOURNEY": "Hành trình chuyên nghiệp"
+    },
+    "STATS": {
+      "YEARS_EXPERIENCE": "Năm kinh nghiệm",
+      "COMPANIES": "Công ty",
+      "PROJECTS": "Dự án"
     }
   },
   "STATUS": {
-    "ACTIVE": "Đang Thực Hiện",
-    "COMPLETED": "Đã Hoàn Thành",
-    "PLANNED": "Đã Lên Kế Hoạch"
+    "ACTIVE": "Đang hoạt động",
+    "COMPLETED": "Đã hoàn thành",
+    "PLANNED": "Dự kiến"
   },
   "PROJECTS": {
     "SEARCH_PLACEHOLDER": "Tìm kiếm dự án...",
     "COUNT": {
-      "TOTAL": "Dự Án",
-      "FILTERED": "Dự Án Phù Hợp"
+      "TOTAL": "Dự án có sẵn",
+      "FILTERED": "Dự án phù hợp với tiêu chí"
     },
     "NO_RESULTS": {
-      "TITLE": "Không Tìm Thấy Dự Án",
-      "DESCRIPTION": "Hãy thử điều chỉnh tìm kiếm hoặc bộ lọc để tìm thấy những gì bạn đang tìm kiếm."
+      "TITLE": "Không tìm thấy dự án",
+      "DESCRIPTION": "Thử điều chỉnh tìm kiếm hoặc bộ lọc để tìm thấy những gì bạn đang tìm kiếm."
     },
     "FILTERS": {
-      "TITLE": "Lọc Dự Án",
-      "CLEAR_ALL": "Xóa Tất Cả",
-      "TECHNOLOGIES": "Công Nghệ",
-      "PROJECT_SCOPE": "Phạm Vi Dự Án",
-      "PROJECT_STATUS": "Trạng Thái Dự Án"
+      "TITLE": "Lọc dự án",
+      "CLEAR_ALL": "Xóa tất cả",
+      "TECHNOLOGIES": "Công nghệ",
+      "PROJECT_SCOPE": "Phạm vi dự án",
+      "PROJECT_STATUS": "Trạng thái dự án"
     },
     "VIEWS": {
-      "GRID": "Xem Dạng Lưới",
-      "LIST": "Xem Dạng Danh Sách"
+      "GRID": "Xem dạng lưới",
+      "LIST": "Xem dạng danh sách"
     },
-    "FILTER_BUTTON": "Bộ Lọc"
+    "FILTER_BUTTON": "Bộ lọc",
+    "VIEW_DETAILS": "Xem chi tiết"
   },
   "SKILLS": {
     "FEATURED_SKILLS": "Kỹ năng nổi bật",
     "ALL_SKILLS": "Tất cả kỹ năng theo danh mục",
     "VIEW_DETAILS": "Xem chi tiết",
-    "SEE_IN_ACTION": "Xem kỹ năng của tôi trong thực tế",
-    "DESCRIPTION": "Tổng quan toàn diện về chuyên môn kỹ thuật và khả năng chuyên môn của tôi.",
+    "SEE_IN_ACTION": "Xem kỹ năng của tôi qua thực tế",
+    "DESCRIPTION": "Tổng quan toàn diện về chuyên môn kỹ thuật và năng lực chuyên môn của tôi.",
     "SEARCH_PLACEHOLDER": "Tìm kiếm kỹ năng...",
     "SKILLS": "kỹ năng",
-    "VIEW_PROJECTS": "Xem dự án",
-    "PROJECTS_HINT": "Khám phá danh mục đầu tư của tôi để thấy những kỹ năng này được áp dụng trong các dự án thực tế.",
+    "VIEW_PROJECTS": "Xem các dự án",
+    "PROJECTS_HINT": "Hãy xem portfolio của tôi để thấy các kỹ năng này được áp dụng trong các dự án thực tế.",
     "DIALOG": {
-      "USED_IN": "Được sử dụng trong {{count}} dự án",
+      "USED_IN": "Đã sử dụng trong {{count}} dự án",
       "OVERVIEW": "Tổng quan",
       "RESOURCES": "Tài nguyên",
-      "VISIT_WEBSITE": "Trang web chính thức",
-      "VISIT_GITHUB": "Kho lưu trữ GitHub",
+      "VISIT_WEBSITE": "Trang chủ",
+      "VISIT_GITHUB": "GitHub",
       "EXPERIENCE_LEVEL": {
-        "BEGINNER": "Sơ cấp",
+        "BEGINNER": "Người mới",
         "INTERMEDIATE": "Trung cấp",
         "ADVANCED": "Nâng cao",
         "EXPERT": "Chuyên gia"

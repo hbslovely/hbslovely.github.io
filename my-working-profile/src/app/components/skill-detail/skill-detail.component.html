@@ -29,28 +29,25 @@
     </div>
   </div>
 
-<div class="description-content">
-  <!-- Description -->
-  <div class="dialog-section">
-    <h3>
-      <span nz-icon nzType="info-circle" nzTheme="outline"></span>
-      {{ 'SKILLS.DIALOG.OVERVIEW' | translate }}
-    </h3>
-    @if (isDescriptionArray) {
-      @for (paragraph of info.description; track $index) {
-        <p>{{ paragraph }}</p>
+  <div class="description-content">
+    <!-- Description -->
+    <div class="dialog-section">
+      <h3>
+        <span nz-icon nzType="info-circle" nzTheme="outline"></span>
+        {{ 'SKILLS.DIALOG.OVERVIEW' | translate }}
+      </h3>
+      @if (isDescriptionArray) {
+        @for (paragraph of info.description; track $index) {
+          <p>{{ paragraph }}</p>
+        }
+      } @else {
+        <p>{{ info.description }}</p>
       }
-    } @else {
-      <p>{{ info.description }}</p>
-    }
+    </div>
   </div>
-
-  <!-- Links -->
-  <div class="dialog-section links-section">
-    <h3>
-      <span nz-icon nzType="link" nzTheme="outline"></span>
-      {{ 'SKILLS.DIALOG.RESOURCES' | translate }}
-    </h3>
+  
+  <!-- Links - Now fixed at the bottom -->
+  <div class="fixed-links-section">
     <div class="skill-links">
       <a [href]="info.url" target="_blank" rel="noopener noreferrer" class="link-button">
         <span nz-icon nzType="link" nzTheme="outline"></span>
@@ -64,11 +61,4 @@
       }
     </div>
   </div>
-</div>
-
-  <!-- Close Button -->
-  <button class="close-button" (click)="closeDialog()">
-    <span nz-icon nzType="close" nzTheme="outline"></span>
-    <span>{{ 'COMMON.CLOSE' | translate }}</span>
-  </button>
 </div>

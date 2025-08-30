@@ -15,6 +15,7 @@ import { ExperienceCardComponent } from '../../components/experience-card/experi
 import { EducationCardComponent } from '../../components/education-card/education-card.component';
 import { RouterModule } from '@angular/router';
 import { PageHeaderComponent } from '../../components/page-header/page-header.component';
+import { ContactCtaComponent } from '../../components/contact-cta/contact-cta.component';
 
 // Define a Skill interface since it's not in the models file
 interface Skill {
@@ -35,7 +36,8 @@ interface Skill {
     ExperienceCardComponent,
     EducationCardComponent,
     RouterModule,
-    PageHeaderComponent
+    PageHeaderComponent,
+    ContactCtaComponent
   ],
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.scss']

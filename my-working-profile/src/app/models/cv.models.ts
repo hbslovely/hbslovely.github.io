@@ -89,6 +89,16 @@ export interface Education {
   startDate: string;
   endDate: string;
   description?: string;
+  achievements?: string[];
+  grade?: string;
+  institutionInfo?: InstitutionInfo;
+}
+
+export interface InstitutionInfo {
+  description: string;
+  address: string;
+  website: string;
+  contact?: string;
 }
 
 export interface Skills {

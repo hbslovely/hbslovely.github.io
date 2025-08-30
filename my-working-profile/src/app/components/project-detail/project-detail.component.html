@@ -1,21 +1,25 @@
 <!-- Project Card -->
 <div class="project-card" [class.list-view]="viewType === 'list'" (click)="openProjectDialog()">
+  <div class="card-gradient-overlay"></div>
   <app-watermark class="card-watermark" [customIcon]="'code-sandbox'"></app-watermark>
+  
   <!-- Project Header -->
   <div class="project-header">
     <div class="project-meta">
       <div class="project-title-row">
         <div class="project-title">
           <h3 [innerHTML]="highlightText(project.name)"></h3>
+          @if (project.status) {
+            <div class="status-dot-indicator" 
+                 [class.completed]="project.status.toLowerCase() === 'completed'" 
+                 [class.in-progress]="project.status.toLowerCase() === 'in progress' || project.status.toLowerCase() === 'active'"
+                 nz-tooltip
+                 [nzTooltipTitle]="getStatusTranslationKey(project.status) | translate">
+            </div>
+          }
           <div class="project-tags">
             @if (project.scope) {
               <nz-tag class="scope-tag" [nzColor]="'blue'">{{ project.scope }}</nz-tag>
-            }
-            @if (project.status) {
-              <div class="status-indicator" [class.completed]="project.status.toLowerCase() === 'completed'" [class.in-progress]="project.status.toLowerCase() === 'in progress' || project.status.toLowerCase() === 'active'">
-                <span class="status-dot"></span>
-                <span class="status-text">{{ getStatusTranslationKey(project.status) | translate }}</span>
-              </div>
             }
           </div>
         </div>
@@ -52,12 +56,16 @@
         }
       }
     </div>
+    <div class="card-action">
+      <span nz-icon nzType="right-circle" nzTheme="outline"></span>
+    </div>
   </div>
 </div>
 
 <!-- Project Detail Dialog -->
 <ng-template #projectDetailDialog>
   <div class="project-detail-dialog">
+    <div class="dialog-gradient-overlay"></div>
     <app-watermark class="dialog-watermark" [customIcon]="'deployment-unit'"></app-watermark>
     <div class="dialog-header">
       <h2>{{ project.name }}</h2>
@@ -66,14 +74,12 @@
           <nz-tag [nzColor]="'blue'">{{ project.scope }}</nz-tag>
         }
         @if (project.status) {
-          <div class="status-display">
-            <div class="status-label">{{ 'MY_PAGES.STATUS' | translate }}:</div>
-            <div class="status-value" [class.completed]="project.status.toLowerCase() === 'completed'" [class.in-progress]="project.status.toLowerCase() === 'in progress' || project.status.toLowerCase() === 'active'">
-              <span class="status-icon">
-                <span nz-icon [nzType]="getStatusIcon(project.status)" nzTheme="outline"></span>
-              </span>
-              {{ getStatusTranslationKey(project.status) | translate }}
+          <div class="dialog-status-badge">
+            <div class="status-dot-indicator" 
+                 [class.completed]="project.status.toLowerCase() === 'completed'" 
+                 [class.in-progress]="project.status.toLowerCase() === 'in progress' || project.status.toLowerCase() === 'active'">
             </div>
+            <span>{{ getStatusTranslationKey(project.status) | translate }}</span>
           </div>
         }
       </div>

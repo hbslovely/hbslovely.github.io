@@ -4,6 +4,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { Project } from '../../models/cv.models';
 import { TranslateModule } from '@ngx-translate/core';
 import { WatermarkComponent } from '../watermark/watermark.component';
@@ -20,6 +21,7 @@ import { CustomModalService } from '../../services/custom-modal.service';
     NzTagModule,
     NzModalModule,
     NzButtonModule,
+    NzToolTipModule,
     TranslateModule,
     WatermarkComponent
   ]
@@ -39,7 +41,7 @@ export class ProjectDetailComponent {
 
   highlightText(text: string): string {
     if (!text || !this.highlightedText) return text;
-    
+
     const searchRegex = new RegExp(this.highlightedText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
     return text.replace(searchRegex, match => `<mark>${match}</mark>`).trim();
   }
@@ -112,7 +114,7 @@ export class ProjectDetailComponent {
       nzMask: true,
       nzMaskStyle: { backgroundColor: 'rgba(0, 0, 0, 0.45)' },
       nzBodyStyle: { padding: '0' },
-      nzStyle: { top: '20px' }
+      nzStyle: { top: '10px' }
     });
   }
 }

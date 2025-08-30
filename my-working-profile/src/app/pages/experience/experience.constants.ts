@@ -8,7 +8,7 @@ export const EXPERIENCE_PAGE_CONFIG = {
 export const EXPERIENCE_SECTIONS: ExperienceSection[] = [
   {
     id: 'education',
-    title: 'SECTIONS.EDUCATION',
+    title: 'SECTIONS.EDUCATION.TITLE',
     icon: 'book'
   },
   {

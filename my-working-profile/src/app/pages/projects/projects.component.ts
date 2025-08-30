@@ -15,6 +15,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ProjectCountComponent } from '../../components/project-count/project-count.component';
 import { PageHeaderComponent } from '../../components/page-header/page-header.component';
 import { RouterModule } from '@angular/router';
+import { ContactCtaComponent } from '../../components/contact-cta/contact-cta.component';
 
 // Tag color mapping
 const TAG_COLORS = {
@@ -155,7 +156,8 @@ type ViewType = 'grid' | 'list';
     ProjectDetailComponent,
     TranslateModule,
     ProjectCountComponent,
-    PageHeaderComponent
+    PageHeaderComponent,
+    ContactCtaComponent
   ],
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']

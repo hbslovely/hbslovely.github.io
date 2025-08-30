@@ -98,7 +98,7 @@ export class AboutComponent implements OnInit {
       `,
       nzWidth: this.isMobileView ? '90%' : 'auto',
       nzBodyStyle: { padding: '0' },
-      nzStyle: { top: this.isMobileView ? '30px' : '50px' }
+      nzStyle: { top: this.isMobileView ? '20px' : '20px' }
     });
   }
 }
