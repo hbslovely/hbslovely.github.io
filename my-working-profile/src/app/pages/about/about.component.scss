@@ -2,6 +2,10 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
+  
+  @media (max-width: 480px) {
+    padding: 0.5rem;
+  }
 }
 
 /* Animation Classes */
@@ -344,6 +348,13 @@
   @media (max-width: 768px) {
     flex-direction: column;
     text-align: center;
+    gap: 1.5rem;
+    padding: 1rem 0.5rem;
+  }
+
+  @media (max-width: 480px) {
+    gap: 1rem;
+    padding: 0.5rem;
   }
 
   .avatar-container {
@@ -359,6 +370,17 @@
       position: relative;
       cursor: pointer;
       transition: transform 0.3s, box-shadow 0.3s;
+      
+      @media (max-width: 768px) {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+      }
+      
+      @media (max-width: 480px) {
+        width: 100px;
+        height: 100px;
+      }
 
       &:hover {
         transform: scale(1.03);
@@ -398,6 +420,10 @@
 
   .info-content {
     color: var(--text-color);
+    
+    @media (max-width: 480px) {
+      width: 100%;
+    }
 
     .name {
       font-size: 2.5rem;
@@ -406,7 +432,11 @@
       color: var(--primary-color);
 
       @media (max-width: 768px) {
-        font-size: 2rem;
+        font-size: 1.8rem;
+      }
+      
+      @media (max-width: 480px) {
+        font-size: 1.5rem;
       }
     }
 
@@ -446,6 +476,12 @@
       @media (max-width: 768px) {
         justify-content: center;
         flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+      
+      @media (max-width: 480px) {
+        flex-direction: column;
+        gap: 0.5rem;
       }
 
       a {
@@ -458,6 +494,17 @@
         border-radius: 4px;
         background-color: rgba(0, 102, 204, 0.1);
         transition: all 0.2s ease;
+        
+        @media (max-width: 768px) {
+          padding: 0.4rem 0.6rem;
+          font-size: 0.9rem;
+        }
+        
+        @media (max-width: 480px) {
+          width: 100%;
+          justify-content: center;
+          padding: 0.5rem;
+        }
 
         &:hover {
           background-color: rgba(0, 102, 204, 0.2);
@@ -547,6 +594,15 @@
   padding: 1.5rem;
   transition: transform 0.3s ease;
 
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
   &:hover {
     transform: translateY(-5px);
   }
@@ -604,8 +660,16 @@
 /* Projects */
 .featured-projects {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 1rem;
+  }
 }
 
 .project-card {
@@ -795,6 +859,28 @@
   margin-bottom: 1rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 1.25rem;
+    margin-top: 2rem;
+    
+    .cta-content {
+      h3 {
+        font-size: 1.3rem;
+      }
+      
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
   .cta-content {
     color: white;
 
@@ -848,27 +934,78 @@
     flex-direction: column;
     text-align: center;
     gap: 1.5rem;
+    padding: 1rem 0.5rem;
+
+    .avatar-container .avatar {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto;
+    }
 
     .info-content {
-      .location {
-        justify-content: center;
+      .name {
+        font-size: 1.8rem;
+      }
+
+      .role {
+        font-size: 1.2rem;
       }
 
       .contact-row,
       .social-row {
         justify-content: center;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+
+        a {
+          padding: 0.4rem 0.6rem;
+          font-size: 0.9rem;
+        }
       }
     }
+  }
+
+  .summary-section {
+    padding: 1.5rem;
+    
+    .summary-title {
+      font-size: 1.3rem;
+    }
+    
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  .featured-section {
+    padding: 1rem;
   }
 
   .featured-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
+    
+    .featured-title {
+      font-size: 1.3rem;
+    }
   }
 
   .featured-projects {
     grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    padding: 1.2rem;
+    
+    .project-header {
+      flex-direction: column;
+      gap: 0.5rem;
+      
+      .project-duration {
+        align-self: flex-start;
+      }
+    }
   }
 
   .skills-container {
@@ -879,10 +1016,106 @@
     flex-direction: column;
     text-align: center;
     gap: 1.5rem;
+    padding: 1.5rem;
 
     .cta-button {
       width: 100%;
       justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 0.5rem;
+  }
+  
+  .personal-info-overlay {
+    .info-content {
+      .name {
+        font-size: 1.5rem;
+        line-height: 1.3;
+      }
+      
+      .role {
+        font-size: 1.1rem;
+        margin: 0.25rem 0 0.75rem;
+      }
+      
+      .location {
+        font-size: 0.9rem;
+        margin-bottom: 0.75rem;
+      }
+      
+      .contact-row,
+      .social-row {
+        margin-bottom: 0.5rem;
+        
+        a {
+          width: 100%;
+          justify-content: center;
+          font-size: 0.85rem;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+  
+  .summary-section {
+    margin-top: 1rem;
+    
+    p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+  }
+  
+  .featured-section {
+    .featured-header {
+      margin-bottom: 1rem;
+      
+      .featured-title {
+        font-size: 1.2rem;
+      }
+      
+      .view-all-link {
+        font-size: 0.9rem;
+      }
+    }
+  }
+  
+  .project-card {
+    .project-header {
+      .project-name {
+        font-size: 1.1rem;
+      }
+    }
+    
+    .project-description {
+      font-size: 0.9rem;
+      -webkit-line-clamp: 4;
+    }
+    
+    .project-tech {
+      .tech-tag {
+        font-size: 0.8rem;
+        padding: 0.2rem 0.6rem;
+      }
+    }
+  }
+  
+  .skill-category {
+    .category-title {
+      font-size: 1rem;
+    }
+    
+    .skill-tags {
+      .skill-tag {
+        font-size: 0.8rem;
+        padding: 0.2rem 0.6rem;
+      }
     }
   }
 }

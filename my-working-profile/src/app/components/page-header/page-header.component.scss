@@ -8,7 +8,14 @@
   overflow: hidden;
   
   @media (max-width: 768px) {
-    height: 250px;
+    height: auto;
+    min-height: 250px;
+    padding: 2rem 0;
+  }
+  
+  @media (max-width: 480px) {
+    min-height: 220px;
+    padding: 1.5rem 0;
   }
 
   .header-overlay {

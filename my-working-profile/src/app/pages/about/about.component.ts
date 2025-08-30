@@ -1,4 +1,4 @@
-import { Component, inject, computed } from '@angular/core';
+import { Component, inject, computed, OnInit, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PersonalInfoComponent } from '../../components/personal-info/personal-info.component';
 import { PageHeaderComponent } from '../../components/page-header/page-header.component';
@@ -27,7 +27,7 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })
-export class AboutComponent {
+export class AboutComponent implements OnInit {
   private readonly cvService = inject(CVService);
   private readonly modalService = inject(CustomModalService);
 
@@ -37,6 +37,20 @@ export class AboutComponent {
 
   // State
   readonly cv = this.cvService.cv;
+  isMobileView = false;
+
+  ngOnInit() {
+    this.checkIfMobile();
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    this.checkIfMobile();
+  }
+
+  private checkIfMobile(): void {
+    this.isMobileView = window.innerWidth < 768;
+  }
 
   // Featured projects - get the 2 most recent projects
   readonly featuredProjects = computed(() => {
@@ -66,26 +80,25 @@ export class AboutComponent {
       .replace(/^./, str => str.toUpperCase());
   }
 
-    showFullscreenAvatar(): void {
-        this.modalService.create({
-            nzTitle: undefined,
-            nzFooter: null,
-            nzClosable: true,
-            nzMaskClosable: true,
-            nzCentered: true,
-            nzClassName: 'avatar-modal',
-            nzContent: `
-        <div style="display: flex; justify-content: center; align-items: center; width: 100%; padding: 0;">
+  showFullscreenAvatar(): void {
+    this.modalService.create({
+      nzTitle: undefined,
+      nzFooter: null,
+      nzClosable: true,
+      nzMaskClosable: true,
+      nzCentered: true,
+      nzClassName: 'avatar-modal',
+      nzContent: `
+        <div class="fullscreen-avatar">
           <img 
             src="assets/images/avatar.jpeg" 
-            alt="Profile Picture" 
-            style="max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 4px;"
+            alt="Profile Picture"
           >
         </div>
       `,
-            nzWidth: 'auto',
-            nzBodyStyle: { padding: '0' },
-            nzStyle: { top: '50px' }
-        });
-    }
+      nzWidth: this.isMobileView ? '90%' : 'auto',
+      nzBodyStyle: { padding: '0' },
+      nzStyle: { top: this.isMobileView ? '30px' : '50px' }
+    });
+  }
 }

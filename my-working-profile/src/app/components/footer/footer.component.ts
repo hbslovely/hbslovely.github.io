@@ -18,7 +18,7 @@ import { RouterModule } from '@angular/router';
 })
 export class FooterComponent {
   currentYear = new Date().getFullYear();
-  
+
   socialLinks = [
     {
       icon: 'github',
@@ -31,14 +31,9 @@ export class FooterComponent {
       label: 'LinkedIn'
     },
     {
-      icon: 'twitter',
-      url: 'https://twitter.com/',
-      label: 'Twitter'
-    },
-    {
-      icon: 'medium',
-      url: 'https://medium.com/',
-      label: 'Medium'
+      icon: 'youtube',
+      url: 'https://www.youtube.com/@hpphat1992',
+      label: 'Youtube'
     }
   ];
-} 
+}
