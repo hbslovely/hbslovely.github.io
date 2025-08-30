@@ -66,17 +66,6 @@ export interface CompanyInfo {
   address: string;
   website: string;
   contact?: string;
-  employeeCount?: string;
-  officeCount?: string;
-  foundedYear?: string;
-  established?: string;
-  studentCount?: string;
-  facultyCount?: string;
-  internationalPartners?: string;
-  type?: string;
-  accreditation?: string;
-  ranking?: string;
-  researchCenters?: string;
 }
 
 export interface WorkExperience {
@@ -93,32 +82,23 @@ export interface WorkExperience {
   companyInfo?: CompanyInfo;
 }
 
-export interface Thesis {
-  title: string;
-  description: string;
-  technologies: string[];
-  supervisor: string;
-  grade: string;
-}
-
 export interface Education {
   institution: string;
-  shortName: string;
   degree: string;
   field: string;
   startDate: string;
   endDate: string;
-  gpa?: string;
-  location: string;
-  description: string;
-  thesis?: Thesis;
+  description?: string;
   achievements?: string[];
-  keySubjects?: string[];
-  projects?: Array<{
-    name: string;
-    description: string;
-  }>;
-  institutionInfo: CompanyInfo;
+  grade?: string;
+  institutionInfo?: InstitutionInfo;
+}
+
+export interface InstitutionInfo {
+  description: string;
+  address: string;
+  website: string;
+  contact?: string;
 }
 
 export interface Skills {

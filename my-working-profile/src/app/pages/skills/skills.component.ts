@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, TemplateRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzModalModule } from 'ng-zorro-antd/modal';
@@ -19,22 +19,23 @@ interface ExtendedSkillInfo extends SkillInfo {
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [
-    CommonModule,
-    NzIconModule,
-    NzModalModule,
-    TranslateModule,
-    PageHeaderComponent,
-    SectionHeaderComponent,
-    SkillItemComponent,
-    SkillDetailComponent
-  ],
+    imports: [
+        CommonModule,
+        NzIconModule,
+        NzModalModule,
+        TranslateModule,
+        PageHeaderComponent,
+        SectionHeaderComponent,
+        SkillItemComponent,
+        SkillDetailComponent,
+        RouterLink
+    ],
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss']
 })
 export class SkillsComponent implements OnInit {
   @ViewChild('skillDetailDialog') skillDetailDialog!: TemplateRef<any>;
-  
+
   selectedSkill: SkillInfo | null = null;
   selectedSkillProjectCount = 0;
 
@@ -172,18 +173,27 @@ export class SkillsComponent implements OnInit {
       this.selectedSkillProjectCount = (
         this.cv()?.projects?.projects || []
       ).filter(
-        project => 
-          project.technologies && 
+        project =>
+          project.technologies &&
           project.technologies.includes(skill)
       ).length;
+
+      // Check if we're on mobile
+      const isMobile = window.innerWidth < 768;
+
+      // Calculate the navbar height for different screen sizes
+      const navbarHeight = isMobile ? 50 : 64; // 50px on mobile, 64px on desktop
+      const modalTopPosition = navbarHeight; // Add 10px margin from the navbar
 
       this.modalRef = this.modalService.create({
         nzContent: this.skillDetailDialog,
         nzFooter: null,
-        nzWidth: '600px',
+        nzWidth: isMobile ? '92%' : '600px',
         nzClassName: 'skill-detail-modal',
-        nzCentered: true,
-        nzMaskClosable: true
+        nzCentered: false, // Changed to false to allow custom positioning
+        nzMaskClosable: true,
+        nzBodyStyle: { padding: '0', maxHeight: `calc(100vh - ${modalTopPosition + 10}px)` },
+        nzStyle: { top: `${modalTopPosition}px` }
       });
     }
   }

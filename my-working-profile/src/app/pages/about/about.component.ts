@@ -1,4 +1,4 @@
-import { Component, inject, computed } from '@angular/core';
+import { Component, inject, computed, OnInit, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PersonalInfoComponent } from '../../components/personal-info/personal-info.component';
 import { PageHeaderComponent } from '../../components/page-header/page-header.component';
@@ -27,7 +27,7 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })
-export class AboutComponent {
+export class AboutComponent implements OnInit {
   private readonly cvService = inject(CVService);
   private readonly modalService = inject(CustomModalService);
 
@@ -37,34 +37,44 @@ export class AboutComponent {
 
   // State
   readonly cv = this.cvService.cv;
+  isMobileView = false;
 
-  // Featured projects - get the 3 most recent major projects
+  ngOnInit() {
+    this.checkIfMobile();
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    this.checkIfMobile();
+  }
+
+  private checkIfMobile(): void {
+    this.isMobileView = window.innerWidth < 768;
+  }
+
+  // Featured projects - get the 2 most recent projects
   readonly featuredProjects = computed(() => {
     const projects = this.cv()?.projects?.projects || [];
-    return projects
-      .filter(project => !project.minor && !project.excludeFromPdf)
-      .slice(0, 3);
+    return projects.slice(0, 2);
   });
 
-  // Featured skill categories - get the 2 most important categories
+  // Featured skill categories - get the 3 most important categories
   readonly featuredSkillCategories = computed(() => {
     const skills = this.cv()?.skills?.technicalSkills || {};
-    // Prioritize frameworks and libraries as they're most relevant
-    const priorityCategories = ['frameworks', 'libraries'];
+    const priorityCategories = ['programmingLanguages', 'frameworks', 'libraries'];
 
     return Object.keys(skills)
       .filter(category => priorityCategories.includes(category))
-      .slice(0, 2);
+      .slice(0, 3);
   });
 
   // Helper methods for skills
   getSkillsForCategory(category: string): string[] {
-    const skills = this.cv()?.skills?.technicalSkills?.[category] || [];
-    // Return only the top 3 skills per category
-    return skills.slice(0, 3);
+    return this.cv()?.skills?.technicalSkills?.[category] || [];
   }
 
   formatCategoryName(category: string): string {
+    // Convert camelCase to Title Case with spaces
     return category
       .replace(/([A-Z])/g, ' $1')
       .replace(/^./, str => str.toUpperCase());
@@ -79,17 +89,16 @@ export class AboutComponent {
       nzCentered: true,
       nzClassName: 'avatar-modal',
       nzContent: `
-        <div style="display: flex; justify-content: center; align-items: center; width: 100%; padding: 0;">
+        <div class="fullscreen-avatar">
           <img 
             src="assets/images/avatar.jpeg" 
-            alt="Profile Picture" 
-            style="max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 4px;"
+            alt="Profile Picture"
           >
         </div>
       `,
-      nzWidth: 'auto',
+      nzWidth: this.isMobileView ? '90%' : 'auto',
       nzBodyStyle: { padding: '0' },
-      nzStyle: { top: '50px' }
+      nzStyle: { top: this.isMobileView ? '20px' : '20px' }
     });
   }
 }

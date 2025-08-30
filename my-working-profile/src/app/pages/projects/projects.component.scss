@@ -508,12 +508,11 @@
         }
 
         .view-controls {
-          order: 2;
-          justify-content: center;
+          display: none; // Hide view toggle on mobile
         }
 
         .filter-toggle {
-          order: 3;
+          order: 2; // Move up in the order since view-controls is hidden
           justify-content: center;
         }
       }

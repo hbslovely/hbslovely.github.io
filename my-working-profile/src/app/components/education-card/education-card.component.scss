@@ -1,536 +1,426 @@
-:host {
-  display: block;
-}
-
 .education-card {
-  cursor: pointer;
-  padding: 1.5rem;
-  border-radius: 12px;
   background: white;
+  border-radius: 8px;
+  box-shadow: none;
+  overflow: hidden;
   transition: all 0.3s ease;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.08);
 
   &:hover {
-    transform: translateY(-2px);
+    transform: none;
+    box-shadow: none;
+    border-color: var(--primary-color);
+
+    .education-logo {
+      transform: none;
+    }
+
+    .details-button {
+      color: var(--primary-dark);
+      text-decoration: underline;
+
+      span[nz-icon] {
+        transform: translateX(3px);
+      }
+    }
   }
 
   .card-header {
-    margin-bottom: 1.5rem;
+    padding: 1.75rem 1.5rem 1rem;
+    display: flex;
+    gap: 1.25rem;
 
-    .education-info {
+    .education-logo {
+      width: 55px;
+      height: 55px;
+      background-color: var(--primary-lightest);
+      border-radius: 8px;
       display: flex;
-      gap: 1rem;
-      margin-bottom: 1rem;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
 
-      .degree-icon {
-        width: 48px;
-        height: 48px;
-        border-radius: 8px;
-        background: var(--primary-lightest);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        [nz-icon] {
-          font-size: 1.5rem;
-          color: var(--primary-color);
-          opacity: 0.8;
-        }
-      }
-
-      .degree-details {
-        flex: 1;
-
-        h3 {
-          font-size: 1.1rem;
-          font-weight: 600;
-          color: var(--text-dark);
-          margin-bottom: 0.25rem;
-        }
-
-        .field {
-          font-size: 0.9rem;
-          color: var(--text-light);
-          margin-bottom: 0.5rem;
-        }
-
-        .institution {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          font-size: 0.9rem;
-          color: var(--text-light);
-
-          [nz-icon] {
-            color: var(--primary-color);
-            opacity: 0.8;
-          }
-
-          .short-name {
-            color: var(--text-lighter);
-          }
-        }
+      span[nz-icon] {
+        font-size: 28px;
+        color: var(--primary-color);
       }
     }
 
-    .meta-info {
+    .position-institution {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
+      flex-direction: column;
+      gap: 0.25rem;
 
-      .meta-item {
+      h3 {
+        margin: 0;
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--text-color);
+        line-height: 1.3;
+      }
+
+      .institution {
+        color: var(--text-light);
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        font-size: 0.85rem;
-        color: var(--text-light);
+        font-size: 0.95rem;
 
-        [nz-icon] {
-          font-size: 0.9rem;
+        span[nz-icon] {
           color: var(--primary-color);
-          opacity: 0.8;
+          font-size: 0.9rem;
         }
       }
     }
-  }
-
-  .decorative-line {
-    height: 1px;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.05), transparent);
-    margin: 1rem 0;
   }
 
   .card-content {
+    padding: 0.5rem 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    .field-specialty {
+      font-size: 0.95rem;
+      color: var(--text-color);
+    }
+
+    .duration, .grade {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-light);
+      font-size: 0.9rem;
+
+      span[nz-icon] {
+        color: var(--primary-color);
+        font-size: 0.9rem;
+      }
+    }
+
     .description {
       font-size: 0.9rem;
       color: var(--text-light);
-      line-height: 1.5;
-      margin-bottom: 1rem;
+      margin: 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
+  }
 
-    .achievements {
-      h4 {
-        font-size: 0.9rem;
-        font-weight: 600;
-        color: var(--text-dark);
-        margin-bottom: 0.75rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
+  .card-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: flex-end;
+    margin-top: auto;
 
-        [nz-icon] {
-          color: var(--primary-color);
-          opacity: 0.8;
+    .details-button {
+      background: none;
+      border: none;
+      color: var(--primary-color);
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      &:hover {
+        color: var(--primary-dark);
+        text-decoration: underline;
+
+        span[nz-icon] {
+          transform: translateX(3px);
         }
       }
 
-      ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-
-        li {
-          display: flex;
-          align-items: flex-start;
-          gap: 0.5rem;
-          font-size: 0.85rem;
-          color: var(--text-light);
-          margin-bottom: 0.5rem;
-
-          &:last-child {
-            margin-bottom: 0;
-          }
-
-          &.more-indicator {
-            color: var(--primary-color);
-            font-style: italic;
-          }
-
-          [nz-icon] {
-            margin-top: 0.2rem;
-            color: var(--primary-color);
-            opacity: 0.8;
-          }
-        }
+      span[nz-icon] {
+        transition: transform 0.3s ease;
       }
     }
   }
 }
 
-// Dialog styles
-::ng-deep .education-detail-modal {
-  .ant-modal-content {
-    padding: 0;
-    border-radius: 16px;
-    background: transparent;
-    box-shadow: none;
-  }
-
-  .ant-modal-close {
-    top: 1rem;
-    right: 1rem;
-    color: var(--text-dark);
-  }
-}
-
+// Dialog Styles
 .education-detail-dialog {
   position: relative;
   overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 8px;
+  background: white;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(90vh);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  .dialog-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: -1;
+  }
 
   .dialog-watermark {
     position: absolute;
-    top: 0;
-    right: 0;
-    opacity: 0.03;
+    top: 50%;
+    right: -100px;
+    transform: translateY(-50%);
+    opacity: 0.05;
     pointer-events: none;
+    z-index: 0;
+
+    ::ng-deep .watermark-container {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      animation: none !important;
+      transform: rotate(15deg);
+    }
   }
 
   .dialog-header {
-    padding: 1.5rem;
+    padding: 2.5rem 2rem 2rem;
     background: var(--primary-lightest);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    flex-shrink: 0;
 
     .header-content {
       display: flex;
-      gap: 1rem;
-      align-items: flex-start;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
 
-      .degree-icon {
-        width: 64px;
-        height: 64px;
-        border-radius: 12px;
+      .institution-logo {
+        width: 70px;
+        height: 70px;
+        padding: 0.75rem;
         background: white;
+        border-radius: 8px;
+        box-shadow: none;
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-shrink: 0;
+        border: 1px solid rgba(0, 0, 0, 0.08);
 
-        [nz-icon] {
-          font-size: 2rem;
+        span[nz-icon] {
+          font-size: 32px;
           color: var(--primary-color);
-          opacity: 0.8;
         }
       }
 
       .education-info {
-        flex: 1;
-
         h2 {
-          font-size: 1.5rem;
+          margin: 0 0 0.5rem;
+          font-size: 1.75rem;
           font-weight: 600;
-          color: var(--text-dark);
-          margin-bottom: 0.25rem;
+          color: var(--text-color);
         }
 
-        h3.field {
-          font-size: 1.1rem;
-          color: var(--text-light);
-          margin-bottom: 0.75rem;
-          font-weight: normal;
+        .field {
+          font-size: 1.25rem;
+          color: var(--primary-color);
+          font-weight: 500;
+          margin: 0;
         }
+      }
+    }
 
-        .meta-info {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 1rem;
+    .meta-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
 
-          .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            color: var(--text-light);
+      .meta-tag {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: rgba(0, 102, 204, 0.08);
+        border-radius: 4px;
+        color: var(--text-color);
+        font-size: 0.9rem;
 
-            [nz-icon] {
-              font-size: 1rem;
-              color: var(--primary-color);
-              opacity: 0.8;
-            }
-          }
+        [nz-icon] {
+          color: var(--primary-color);
         }
       }
     }
   }
 
   .dialog-content {
-    background: #fafafa;
-    height: calc(85vh - 180px);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
     overflow: hidden;
+    position: relative;
+    color: var(--text-color);
 
-    ::ng-deep .ant-tabs {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
+    .scrollable-content {
+      flex: 1;
+      padding: 2rem 2rem 1rem;
+      overflow-y: auto;
+      scrollbar-width: thin;
 
-      .ant-tabs-nav {
-        margin: 0;
-        padding: 0 1rem;
-        background: white;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-
-        .ant-tabs-tab {
-          padding: 1rem 1.5rem;
-          margin: 0;
-          transition: all 0.3s ease;
-
-          &:hover {
-            color: var(--primary-color);
-          }
-
-          [nz-icon] {
-            margin-right: 0.5rem;
-          }
-        }
-
-        .ant-tabs-tab-active {
-          .ant-tabs-tab-btn {
-            color: var(--primary-color);
-          }
-        }
-
-        .ant-tabs-ink-bar {
-          background: var(--primary-color);
-        }
+      &::-webkit-scrollbar {
+        width: 6px;
       }
 
-      .ant-tabs-content-holder {
-        flex: 1;
-        overflow-y: auto;
-
-        &::-webkit-scrollbar {
-          width: 8px;
-        }
-
-        &::-webkit-scrollbar-track {
-          background: transparent;
-        }
-
-        &::-webkit-scrollbar-thumb {
-          background: rgba(0, 0, 0, 0.1);
-          border-radius: 4px;
-        }
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
       }
 
-      .ant-tabs-tabpane {
-        padding: 1.5rem;
-      }
-    }
-  }
-
-  .dialog-section {
-    margin-bottom: 2rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--text-dark);
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-
-      [nz-icon] {
-        color: var(--primary-color);
-        opacity: 0.8;
+      &::-webkit-scrollbar-track {
+        background-color: rgba(0, 0, 0, 0.05);
       }
     }
 
-    .description {
-      font-size: 0.95rem;
-      color: var(--text-light);
-      line-height: 1.6;
-    }
+    .institution-contact-footer {
+      flex-shrink: 0;
+      padding: 1rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      margin-top: 1rem;
+      background-color: white;
 
-    .thesis-content {
-      .thesis-title {
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: var(--text-dark);
-        margin-bottom: 0.75rem;
-      }
-
-      .thesis-description {
-        font-size: 0.95rem;
-        color: var(--text-light);
-        line-height: 1.6;
-        margin-bottom: 1rem;
-      }
-
-      .thesis-meta {
+      .institution-contact-info {
         display: flex;
         flex-wrap: wrap;
         gap: 1rem;
-        margin-bottom: 1rem;
+        background: var(--primary-lightest);
+        padding: 1.25rem;
+        border-radius: 4px;
 
-        .meta-item {
+        .contact-item {
           display: flex;
           align-items: center;
-          gap: 0.5rem;
-          font-size: 0.9rem;
+          gap: 0.75rem;
+          margin-right: 1rem;
           color: var(--text-light);
 
           [nz-icon] {
             color: var(--primary-color);
-            opacity: 0.8;
+          }
+
+          a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.2s ease;
+
+            &:hover {
+              text-decoration: underline;
+              color: var(--primary-light);
+            }
+          }
+        }
+      }
+    }
+
+    .dialog-section {
+      margin-bottom: 2rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      h3 {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 1.2rem;
+        margin: 0 0 1.25rem;
+        color: var(--text-color);
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+        [nz-icon] {
+          color: var(--primary-color);
+          font-size: 1.2rem;
+        }
+      }
+
+      .content-paragraph {
+        p {
+          margin: 0 0 0.75rem;
+          line-height: 1.6;
+          color: var(--text-light);
+          position: relative;
+          padding-left: 1.5rem;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          &::before {
+            content: '•';
+            position: absolute;
+            left: 0.5rem;
+            color: var(--primary-color);
           }
         }
       }
 
-      .thesis-tech {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-
-        .tech-tag {
-          padding: 0.25rem 0.75rem;
-          border-radius: 16px;
-          background: var(--primary-lightest);
-          color: var(--primary-color);
-          font-size: 0.85rem;
-        }
-      }
-    }
-
-    .subjects-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1rem;
-
-      .subject-item {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: 0.95rem;
+      .institution-description {
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
         color: var(--text-light);
-
-        [nz-icon] {
-          color: var(--primary-color);
-          opacity: 0.8;
-        }
-      }
-    }
-
-    .achievements-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-
-      li {
-        display: flex;
-        align-items: flex-start;
-        gap: 0.75rem;
-        font-size: 0.95rem;
-        color: var(--text-light);
-        margin-bottom: 0.75rem;
-        line-height: 1.5;
-
-        &:last-child {
-          margin-bottom: 0;
-        }
-
-        [nz-icon] {
-          margin-top: 0.25rem;
-          color: var(--primary-color);
-          opacity: 0.8;
-        }
-      }
-    }
-
-    .projects-list {
-      display: grid;
-      gap: 1rem;
-
-      .project-item {
-        h4 {
-          font-size: 1rem;
-          font-weight: 600;
-          color: var(--text-dark);
-          margin-bottom: 0.5rem;
-        }
-
-        p {
-          font-size: 0.95rem;
-          color: var(--text-light);
-          line-height: 1.5;
-        }
-      }
-    }
-
-    .stats-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1.5rem;
-
-      .stat-item {
-        text-align: center;
-        padding: 1rem;
-        border-radius: 12px;
-        background: var(--primary-lightest);
-        transition: all 0.3s ease;
-
-        &:hover {
-          transform: translateY(-2px);
-          background: white;
-        }
-
-        [nz-icon] {
-          font-size: 1.5rem;
-          color: var(--primary-color);
-          opacity: 0.8;
-          margin-bottom: 0.5rem;
-        }
-
-        .stat-value {
-          font-size: 1.1rem;
-          font-weight: 600;
-          color: var(--text-dark);
-          margin-bottom: 0.25rem;
-        }
-
-        .stat-label {
-          font-size: 0.85rem;
-          color: var(--text-light);
-        }
       }
     }
   }
+}
 
-  .dialog-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 1.5rem;
-    background: var(--primary-lightest);
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-
-    .contact-item {
+// Global modal styles
+:host ::ng-deep {
+  .education-detail-modal {
+    .ant-modal-content {
+      padding: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      background: transparent;
+      box-shadow: none;
       display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.9rem;
-      color: var(--text-light);
+      flex-direction: column;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+    }
 
-      [nz-icon] {
-        color: var(--primary-color);
-        opacity: 0.8;
-      }
+    .ant-modal-body {
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      max-height: 90vh;
+    }
 
-      .contact-text {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
+    .ant-modal-close {
+      top: 1rem;
+      right: 1rem;
+      z-index: 10;
 
-      a {
-        color: inherit;
-        text-decoration: none;
-        transition: color 0.3s ease;
+      .ant-modal-close-x {
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+        border-radius: 4px;
+        background-color: rgba(0, 0, 0, 0.03);
+        color: var(--text-color);
+        transition: all 0.2s ease;
 
         &:hover {
-          color: var(--primary-color);
+          background-color: var(--primary-color);
+          color: white;
+          transform: none;
         }
       }
     }
@@ -539,63 +429,103 @@
 
 // Responsive styles
 @media (max-width: 768px) {
+  .education-card {
+    .card-header {
+      padding: 1.5rem 1.25rem 0.75rem;
+      
+      .education-logo {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .position-institution {
+        h3 {
+          font-size: 1.1rem;
+        }
+      }
+    }
+    
+    .card-content {
+      padding: 0 1.25rem;
+      gap: 0.5rem;
+      
+      // Make meta info more compact
+      .field-specialty {
+        font-size: 0.9rem;
+        margin-bottom: 0.2rem;
+      }
+      
+      .duration, .grade {
+        font-size: 0.8rem;
+        gap: 0.3rem;
+        padding: 0.25rem 0.5rem;
+        background-color: rgba(0, 0, 0, 0.03);
+        border-radius: 4px;
+        display: inline-flex;
+        margin-right: 0.5rem;
+        margin-bottom: 0.3rem;
+        flex-shrink: 0;
+        
+        span[nz-icon] {
+          font-size: 0.8rem;
+        }
+      }
+      
+      .description {
+        font-size: 0.85rem;
+        margin-top: 0.3rem;
+      }
+    }
+    
+    .card-footer {
+      padding: 1rem 1.25rem;
+    }
+  }
+  
   .education-detail-dialog {
-    max-height: 90vh;
+    max-height: calc(100vh - 60px);
 
     .dialog-header {
-      padding: 1.5rem;
+      padding: 2rem 1.5rem 1.5rem;
 
       .header-content {
         flex-direction: column;
         align-items: center;
         text-align: center;
         gap: 1rem;
+      }
 
-        .degree-icon {
-          width: 50px;
-          height: 50px;
-
-          [nz-icon] {
-            font-size: 1.5rem;
-          }
-        }
-
-        .education-info {
-          h2 {
-            font-size: 1.5rem;
-          }
-
-          .field {
-            font-size: 1.1rem;
-          }
-
-          .meta-info {
-            justify-content: center;
-          }
-        }
+      .meta-tags {
+        justify-content: center;
       }
     }
 
     .dialog-content {
-      .tab-content {
-        padding: 1.5rem;
+      .scrollable-content {
+        padding: 1.5rem 1.5rem 1rem;
+        max-height: 40vh; // Limit height on mobile to ensure footer visibility
+      }
 
-        .dialog-section {
-          .subjects-list,
-          .stats-list {
-            grid-template-columns: 1fr;
+      .institution-contact-footer {
+        padding: 0.75rem 1.5rem 1.5rem;
+
+        .institution-contact-info {
+          flex-direction: column;
+          gap: 0.75rem;
+
+          .contact-item {
+            margin-right: 0;
           }
         }
       }
-    }
 
-    .dialog-footer {
-      flex-direction: column;
-      gap: 0.5rem;
-      padding: 1rem 1.5rem;
+      .dialog-section {
+        margin-bottom: 1.5rem;
 
-      .contact-item {
-        width: 100%;
+        h3 {
+          font-size: 1.1rem;
+          margin-bottom: 1rem;
+        }
       }
     }
   }

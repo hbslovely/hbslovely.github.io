@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, HostListener, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
@@ -20,14 +20,42 @@ import { ExportPdfComponent } from '../export-pdf/export-pdf.component';
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.scss']
 })
-export class NavBarComponent {
+export class NavBarComponent implements OnInit {
   isMobileMenuOpen = signal(false);
+  isMobileView = signal(false);
+  
+  ngOnInit(): void {
+    this.checkScreenSize();
+  }
+
+  @HostListener('window:resize')
+  onResize(): void {
+    this.checkScreenSize();
+    // Close mobile menu on resize to desktop
+    if (!this.isMobileView()) {
+      this.closeMobileMenu();
+    }
+  }
+  
+  checkScreenSize(): void {
+    this.isMobileView.set(window.innerWidth <= 768);
+  }
 
   toggleMobileMenu(): void {
     this.isMobileMenuOpen.set(!this.isMobileMenuOpen());
+    
+    // Prevent body scrolling when menu is open
+    if (this.isMobileMenuOpen()) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
   }
 
   closeMobileMenu(): void {
-    this.isMobileMenuOpen.set(false);
+    if (this.isMobileMenuOpen()) {
+      this.isMobileMenuOpen.set(false);
+      document.body.style.overflow = '';
+    }
   }
 }

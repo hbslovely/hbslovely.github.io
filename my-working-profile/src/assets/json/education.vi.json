@@ -1,51 +1,24 @@
 {
   "education": [
     {
-      "institution": "Đại học Khoa học Tự nhiên TP.HCM",
-      "shortName": "HCMUS",
-      "degree": "Cử nhân Khoa học Máy tính",
-      "field": "Thị giác Máy tính và Khoa học Rô-bốt",
+      "institution": "Đại học khoa học tự nhiên TP.HCM",
+      "degree": "Cử nhân khoa học máy tính",
+      "field": "Thị giác máy tính và khoa học rô-bốt",
       "startDate": "2010",
       "endDate": "2014",
-      "gpa": "8.1/10",
-      "location": "227 Nguyễn Văn Cừ, Quận 5, TP.HCM",
-      "description": "Chuyên ngành Thị giác Máy tính và Khoa học Rô-bốt với trọng tâm về ứng dụng học máy và trí tuệ nhân tạo. Hoàn thành các khóa học về giải thuật nâng cao, thị giác máy tính, hệ thống rô-bốt và kỹ thuật phần mềm.",
-      "thesis": {
-        "title": "Tìm hiểu về các thuật toán trong Truy vấn ảnh ngữ nghĩa trong kho dữ liệu lớn",
-        "description": "Nghiên cứu và triển khai các thuật toán truy vấn ảnh ngữ nghĩa trong cơ sở dữ liệu lớn sử dụng Maximally Stable Extremal Regions (MSER) cho việc phát hiện và so khớp đặc trưng.",
-        "technologies": [
-          "MATLAB",
-          "MSER",
-          "Xử lý ảnh",
-          "Phát hiện đặc trưng"
-        ],
-        "supervisor": "TS. Lý Quốc Ngọc",
-        "grade": "9.0"
-      },
+      "grade": "Xuất sắc",
+      "description": "Chuyên ngành Thị giác máy tính và khoa học rô-bốt, tập trung vào các thuật toán học máy cho hệ thống nhận dạng và phát hiện đối tượng.",
       "achievements": [
-        "Tốt nghiệp loại Giỏi",
-        "Thành viên Câu lạc bộ Rô-bốt",
-        "Tham gia nhiều cuộc thi lập trình cấp trường"
-      ],
-      "keySubjects": [
-        "Thị giác Máy tính",
-        "Học Máy",
-        "Hệ thống Rô-bốt",
-        "Kỹ thuật Phần mềm",
-        "Giải thuật Nâng cao",
-        "Trí tuệ Nhân tạo"
+        "Tốt nghiệp với bằng khen, đạt thứ hạng top 5% lớp",
+        "Hoàn thành luận văn về 'Nhận dạng đối tượng thời gian thực cho robot tự hành'",
+        "Nhận học bổng đại học cho thành tích học tập xuất sắc (2012-2014)",
+        "Tham gia cuộc thi robot quốc gia, đạt giải nhì"
       ],
       "institutionInfo": {
-        "description": "Trường Đại học Khoa học Tự nhiên (HCMUS) là một trong những trường đại học hàng đầu của Việt Nam về nghiên cứu khoa học và đào tạo công nghệ. Được thành lập năm 1941, trường là thành viên của hệ thống Đại học Quốc gia Thành phố Hồ Chí Minh. Trường nổi tiếng với các chương trình đào tạo mạnh về khoa học tự nhiên, khoa học máy tính và công nghệ.",
+        "description": "Đại học Khoa học Tự nhiên Thành phố Hồ Chí Minh (HCMUS) là một trong những tổ chức hàng đầu về nghiên cứu và giáo dục khoa học tại Việt Nam. Được thành lập vào năm 1941, trường đã đào tạo nhiều nhà khoa học và công nghệ đã đóng góp đáng kể vào sự phát triển của Việt Nam.",
+        "address": "227 Đường Nguyễn Văn Cừ, Quận 5, Thành phố Hồ Chí Minh, Việt Nam",
         "website": "https://www.hcmus.edu.vn",
-        "type": "Đại học Công lập",
-        "established": "1941",
-        "accreditation": "Hệ thống Đại học Quốc gia",
-        "ranking": "Top 3 Việt Nam về Khoa học Máy tính",
-        "facultyCount": "500+",
-        "studentCount": "25,000+",
-        "researchCenters": "15+",
-        "internationalPartners": "100+"
+        "contact": "+84 28 3835 2020"
       }
     }
   ]

@@ -11,21 +11,38 @@ export class ScrollToTopService {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
-      // Scroll to top with smooth behavior
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-      });
+      // First immediate scroll to top
+      this.scrollToTop('auto');
       
-      // Some browsers or situations may require a more forceful approach
-      // In case the smooth scroll doesn't trigger properly
+      // Then attempt a second scroll after a short delay to ensure view has updated
       setTimeout(() => {
-        const scrollingElement = document.scrollingElement || document.documentElement;
-        if (scrollingElement.scrollTop !== 0) {
-          scrollingElement.scrollTop = 0;
-        }
-      }, 100);
+        this.scrollToTop('auto');
+      }, 50);
     });
+  }
+  
+  /**
+   * Scroll to top of the page using multiple methods for maximum compatibility
+   * @param behavior - The scroll behavior ('auto' or 'smooth')
+   */
+  private scrollToTop(behavior: ScrollBehavior = 'auto'): void {
+    // Method 1: Using window.scrollTo with options
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: behavior
+    });
+    
+    // Method 2: Using document.scrollingElement
+    if (typeof document !== 'undefined') {
+      const scrollingElement = document.scrollingElement || document.documentElement;
+      if (scrollingElement && scrollingElement.scrollTop !== 0) {
+        scrollingElement.scrollTop = 0;
+      }
+    }
+    
+    // Method 3: Using document.body and document.documentElement directly
+    if (document.body) document.body.scrollTop = 0;
+    if (document.documentElement) document.documentElement.scrollTop = 0;
   }
 } 

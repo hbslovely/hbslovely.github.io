@@ -15,6 +15,7 @@ import { ExperienceCardComponent } from '../../components/experience-card/experi
 import { EducationCardComponent } from '../../components/education-card/education-card.component';
 import { RouterModule } from '@angular/router';
 import { PageHeaderComponent } from '../../components/page-header/page-header.component';
+import { ContactCtaComponent } from '../../components/contact-cta/contact-cta.component';
 
 // Define a Skill interface since it's not in the models file
 interface Skill {
@@ -35,7 +36,8 @@ interface Skill {
     ExperienceCardComponent,
     EducationCardComponent,
     RouterModule,
-    PageHeaderComponent
+    PageHeaderComponent,
+    ContactCtaComponent
   ],
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.scss']
@@ -59,7 +61,7 @@ export class ExperiencePageComponent {
       .replace(/^-+|-+$/g, ''); // Remove leading/trailing hyphens
     return `${filename}.png`;
   }
-  
+
   openLinkedIn(): void {
     const linkedInUrl = this.cv()?.personalInfo?.contact?.linkedin;
     if (linkedInUrl) {
@@ -68,21 +70,8 @@ export class ExperiencePageComponent {
   }
 
   getTotalYearsExperience(): number {
-    const workExperience = this.cv()?.experience?.workExperience;
-    if (!workExperience || workExperience.length === 0) return 0;
-
-    // Find the earliest start date
-    let earliestYear = new Date().getFullYear();
-    
-    workExperience.forEach(exp => {
-      const startYear = parseInt(exp.startDate.split(' ')[1]);
-      if (startYear < earliestYear) {
-        earliestYear = startYear;
-      }
-    });
-    
     const currentYear = new Date().getFullYear();
-    return currentYear - earliestYear;
+    return currentYear - 2014;
   }
 
   getTotalProjects(): number {
@@ -94,7 +83,7 @@ export class ExperiencePageComponent {
     // Assuming skills is an array of objects with a category property
     const skillsData = this.getSkillsArray();
     if (!skillsData.length) return [];
-    
+
     // Get unique categories
     const categories = [...new Set(skillsData.map(skill => skill.category))];
     return categories.slice(0, limit);
@@ -103,12 +92,12 @@ export class ExperiencePageComponent {
   getSkillsByCategory(category: string, limit: number = 5): string[] {
     const skillsData = this.getSkillsArray();
     if (!skillsData.length) return [];
-    
+
     // Filter skills by category and get their names
     const skillNames = skillsData
       .filter(skill => skill.category === category)
       .map(skill => skill.name);
-      
+
     return skillNames.slice(0, limit);
   }
 
@@ -120,7 +109,7 @@ export class ExperiencePageComponent {
     }
 
     const result: Skill[] = [];
-    
+
     // Convert the technicalSkills object to our Skill array format
     Object.entries(cvData.skills.technicalSkills).forEach(([category, skills]) => {
       skills.forEach((skillName: string) => {
@@ -130,7 +119,7 @@ export class ExperiencePageComponent {
         });
       });
     });
-    
+
     return result;
   }
 }

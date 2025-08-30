@@ -1,56 +1,12 @@
-import { Component, Input, TemplateRef, ViewChild } from '@angular/core';
+import { Component, Input, ViewChild, TemplateRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzModalModule, NzModalService } from 'ng-zorro-antd/modal';
-import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { TranslateModule } from '@ngx-translate/core';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzTagModule } from 'ng-zorro-antd/tag';
 import { WatermarkComponent } from '../watermark/watermark.component';
-
-interface Thesis {
-  title: string;
-  description: string;
-  technologies: string[];
-  supervisor: string;
-  grade: string;
-}
-
-interface CompanyInfo {
-  description: string;
-  address: string;
-  website: string;
-  contact?: string;
-  employeeCount?: string;
-  officeCount?: string;
-  foundedYear?: string;
-  established: string;
-  studentCount: string;
-  facultyCount: string;
-  internationalPartners: string;
-  type: string;
-  accreditation: string;
-  ranking: string;
-  researchCenters: string;
-}
-
-interface Education {
-  institution: string;
-  shortName: string;
-  degree: string;
-  field: string;
-  startDate: string;
-  endDate: string;
-  gpa?: string;
-  location: string;
-  description: string;
-  thesis?: Thesis;
-  achievements?: string[];
-  keySubjects?: string[];
-  projects?: Array<{
-    name: string;
-    description: string;
-  }>;
-  institutionInfo: CompanyInfo;
-}
+import { CustomModalService } from '../../services/custom-modal.service';
+import { Education } from '../../models/cv.models';
 
 @Component({
   selector: 'app-education-card',
@@ -58,10 +14,10 @@ interface Education {
   imports: [
     CommonModule,
     NzIconModule,
-    NzModalModule,
-    NzTabsModule,
     TranslateModule,
-    WatermarkComponent
+    NzModalModule,
+    NzTagModule,
+    WatermarkComponent,
   ],
   templateUrl: './education-card.component.html',
   styleUrls: ['./education-card.component.scss']
@@ -70,15 +26,34 @@ export class EducationCardComponent {
   @Input() education!: Education;
   @ViewChild('educationDetailDialog') educationDetailDialog!: TemplateRef<any>;
 
-  constructor(private modalService: NzModalService) {}
+  constructor(private modalService: CustomModalService) {}
+
+  getInstitutionLogo(institution: string): string {
+    // Convert institution name to lowercase and replace spaces/special chars with hyphens
+    const filename = institution.toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-') // Replace any non-alphanumeric chars with hyphen
+      .replace(/^-+|-+$/g, ''); // Remove leading/trailing hyphens
+    return `${filename}.png`;
+  }
 
   openEducationDialog(): void {
+    const isMobile = window.innerWidth < 768;
+
     this.modalService.create({
+      nzTitle: undefined,
       nzContent: this.educationDetailDialog,
       nzFooter: null,
-      nzWidth: 800,
+      nzWidth: isMobile ? '90%' : 800,
       nzClassName: 'education-detail-modal',
-      nzCentered: true
+      nzCentered: !isMobile, // Center the dialog on web, custom positioning on mobile
+      nzMaskClosable: true,
+      nzMask: true,
+      nzMaskStyle: { backgroundColor: 'rgba(0, 0, 0, 0.65)' },
+      nzBodyStyle: { 
+        padding: '0', 
+        maxHeight: isMobile ? 'calc(100vh - 60px)' : '90vh' // Control max height for both mobile and desktop
+      },
+      nzStyle: isMobile ? { top: '50px' } : {} // Only set top position on mobile
     });
   }
 } 

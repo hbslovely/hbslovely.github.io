@@ -10,9 +10,8 @@
   "COMMON": {
     "CLOSE": "Close",
     "COPY": "Copy to clipboard",
-    "EMPLOYEES": "Employees",
-    "OFFICES": "Offices",
-    "FOUNDED": "Founded",
+    "MORE": "more",
+    "VIEW_DETAILS": "View Details",
     "PRESENT": "Present"
   },
   "FOOTER": {
@@ -38,12 +37,15 @@
     "VIEW_ALL_SKILLS": "View All Skills"
   },
   "MY_PAGES": {
-    "SUBTITLE": "Explore my personal projects and websites",
+    "SUBTITLE": "Explore my personal projects and creative digital initiatives",
     "ABOUT_PROJECT": "About This Project",
     "VISIT_SITE": "Visit Website",
-    "ABOUT_SECTION": "About My Pages",
-    "ABOUT_DESCRIPTION": "These are personal websites and projects I've developed. Feel free to explore them to learn more about my work and interests.",
-    "STATUS": "Status"
+    "ABOUT_SECTION": "About My Personal Portfolio",
+    "ABOUT_DESCRIPTION": "These personal websites and projects represent my passion for web development beyond professional work. Each project is built with attention to detail, modern design principles, and cutting-edge technologies. They showcase my interests, creativity, and ability to develop complete solutions from concept to deployment. Feel free to explore them to gain insights into my technical skills, design approach, and personal interests.",
+    "STATUS": "Status",
+    "TECH_STACK": "Technology Stack",
+    "CREATION_PROCESS": "Creation Process",
+    "PROJECT_GOALS": "Project Goals"
   },
   "PERSONAL_INFO": {
     "PROFILE_PICTURE": "Profile Picture",
@@ -90,36 +92,13 @@
       "TITLE": "Work Experience",
       "NOTABLE_ACHIEVEMENTS": "Notable Impact & Achievements",
       "CORE_RESPONSIBILITIES": "Core Expertise & Responsibilities",
-      "ABOUT_COMPANY": "About Company",
-      "EXPERIENCE_DETAILS": "Experience Details",
-      "COMPANY_INFO": "Company Info",
-      "COMPANY_STATS": {
-        "EMPLOYEES": "Employees",
-        "OFFICES": "Offices",
-        "FOUNDED": "Founded"
-      }
+      "ABOUT_COMPANY": "About Company"
     },
     "EDUCATION": {
       "TITLE": "Education",
-      "OVERVIEW": "Overview",
-      "ACHIEVEMENTS": "Achievements",
-      "KEY_SUBJECTS": "Key Subjects",
-      "ACADEMIC_PROJECTS": "Academic Projects",
-      "EDUCATION_DETAILS": "Education Details",
-      "INSTITUTION_INFO": "Institution Info",
-      "ABOUT_INSTITUTION": "About Institution",
-      "ESTABLISHED": "Established",
-      "STUDENTS": "Students",
-      "FACULTY": "Faculty",
-      "PARTNERS": "International Partners",
-      "TYPE": "Institution Type",
-      "ACCREDITATION": "Accreditation",
-      "RANKING": "Ranking",
-      "RESEARCH_CENTERS": "Research Centers",
-      "THESIS": "Bachelor's Thesis",
-      "SUPERVISOR": "Supervisor",
-      "GRADE": "Grade",
-      "TECHNOLOGIES": "Technologies Used"
+      "ACHIEVEMENTS": "Academic Achievements",
+      "DESCRIPTION": "Program Description",
+      "ABOUT_INSTITUTION": "About Institution"
     },
     "TECHNICAL_SKILLS": "Technical Skills",
     "FEATURED_PROJECTS": "Featured Projects",
@@ -130,6 +109,14 @@
       "EDUCATION": "Strong academic foundation supporting technical excellence",
       "TECHNICAL_SKILLS": "A comprehensive overview of my technical expertise",
       "FEATURED_PROJECTS": "Specialized in Angular development with 6+ years of experience, and proficient in React with 4+ years of hands-on expertise"
+    },
+    "TITLES": {
+      "PROFESSIONAL_JOURNEY": "Professional Journey"
+    },
+    "STATS": {
+      "YEARS_EXPERIENCE": "Years Experience",
+      "COMPANIES": "Companies",
+      "PROJECTS": "Projects"
     }
   },
   "STATUS": {
@@ -158,7 +145,8 @@
       "GRID": "Grid View",
       "LIST": "List View"
     },
-    "FILTER_BUTTON": "Filters"
+    "FILTER_BUTTON": "Filters",
+    "VIEW_DETAILS": "View Details"
   },
   "SKILLS": {
     "FEATURED_SKILLS": "Featured Skills",
