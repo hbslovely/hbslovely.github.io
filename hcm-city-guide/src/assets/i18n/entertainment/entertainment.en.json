@@ -1,0 +1,158 @@
+{
+  "TITLE": "Entertainment in Ho Chi Minh City",
+  "DESCRIPTION": "Discover the best entertainment venues and activities in Saigon",
+  "TYPES": {
+    "CLUB": "Nightclub",
+    "BAR": "Bar",
+    "LOUNGE": "Lounge",
+    "LIVE_MUSIC": "Live Music Venue",
+    "KARAOKE": "Karaoke",
+    "CINEMA": "Cinema",
+    "SPORTS": "Sports Venue",
+    "THEME_PARK": "Theme Park",
+    "SHOPPING": "Shopping Mall"
+  },
+  "FEATURES": {
+    "LIVE_MUSIC": "Live Music",
+    "DANCE_FLOOR": "Dance Floor",
+    "VIP_TABLES": "VIP Tables",
+    "ROOFTOP": "Rooftop",
+    "SPORTS_SCREENS": "Sports Screens",
+    "FOOD_SERVICE": "Food Service",
+    "SMOKING_AREA": "Smoking Area",
+    "VALET_PARKING": "Valet Parking",
+    "PARKING": "Parking",
+    "WIFI": "WiFi",
+    "FOOD_COURT": "Food Court",
+    "CINEMA": "Cinema",
+    "ATM": "ATM",
+    "IMAX": "IMAX",
+    "4DX": "4DX",
+    "GOLD_CLASS": "Gold Class",
+    "SCREENX": "ScreenX",
+    "PREMIUM_CINEMA": "Premium Cinema"
+  },
+  "SHOPPING": {
+    "TITLE": "Shopping in Ho Chi Minh City",
+    "DESCRIPTION": "Explore modern shopping malls, traditional markets, and boutique stores",
+    "FILTERS": {
+      "DISTRICT": "District",
+      "PRICE": "Price Range",
+      "RATING": "Rating",
+      "FEATURES": "Features",
+      "TYPE": "Shopping Type"
+    }
+  },
+  "THEME_PARKS": {
+    "TITLE": "Theme Parks & Attractions",
+    "DESCRIPTION": "Discover exciting theme parks and family attractions in Ho Chi Minh City",
+    "FEATURED": "Featured Theme Parks",
+    "ALL_PARKS": "All Theme Parks",
+    "SECTIONS": {
+      "POPULAR": "Popular Attractions",
+      "NEW": "New Attractions",
+      "SEASONAL": "Seasonal Events",
+      "PROMOTIONS": "Special Offers"
+    },
+    "FILTERS": {
+      "DISTRICT": "District",
+      "PRICE": "Price Range",
+      "RATING": "Rating",
+      "FEATURES": "Features",
+      "AGE_GROUP": "Age Group"
+    },
+    "FEATURES": {
+      "WATER_RIDES": "Water Rides",
+      "THRILL_RIDES": "Thrill Rides",
+      "FAMILY_RIDES": "Family Rides",
+      "KIDS_AREA": "Kids Area",
+      "SHOWS": "Live Shows",
+      "RESTAURANTS": "Restaurants",
+      "GIFT_SHOPS": "Gift Shops",
+      "LOCKERS": "Lockers",
+      "FIRST_AID": "First Aid"
+    },
+    "AGE_GROUPS": {
+      "TODDLERS": "Toddlers (0-3)",
+      "KIDS": "Kids (4-12)",
+      "TEENS": "Teens (13-17)",
+      "ADULTS": "Adults (18+)",
+      "ALL_AGES": "All Ages"
+    }
+  },
+  "NIGHTLIFE": {
+    "TITLE": "Nightlife in Ho Chi Minh City",
+    "DESCRIPTION": "Discover the vibrant nightlife scene of Saigon, from rooftop bars to underground clubs",
+    "FILTERS": {
+      "DISTRICT": "District",
+      "PRICE": "Price Range",
+      "RATING": "Rating",
+      "FEATURES": "Features",
+      "OPEN_NOW": "Open Now"
+    }
+  },
+  "CINEMAS": {
+    "TITLE": "Movies & Theaters",
+    "DESCRIPTION": "Discover the latest movies and find the best cinemas in Ho Chi Minh City",
+    "NOW_PLAYING": "Now Playing",
+    "COMING_SOON": "Coming Soon",
+    "THEATERS": "Movie Theaters",
+    "SECTIONS": {
+      "POPULAR": "Popular Movies",
+      "NEW_RELEASES": "New Releases",
+      "IMAX_MOVIES": "IMAX Movies",
+      "SPECIAL_SCREENINGS": "Special Screenings"
+    },
+    "FILTERS": {
+      "DISTRICT": "District",
+      "PRICE": "Price Range",
+      "RATING": "Rating",
+      "FEATURES": "Features",
+      "NOW_PLAYING": "Now Playing",
+      "COMING_SOON": "Coming Soon"
+    }
+  },
+  "SPORTS": {
+    "TITLE": "Sports & Recreation",
+    "DESCRIPTION": "Find sports venues, fitness centers, and upcoming events in Ho Chi Minh City",
+    "VENUES": "Sports Venues",
+    "UPCOMING_EVENTS": "Upcoming Events",
+    "SECTIONS": {
+      "POPULAR_VENUES": "Popular Venues",
+      "FEATURED_EVENTS": "Featured Events",
+      "TOURNAMENTS": "Tournaments",
+      "CLASSES": "Sports Classes"
+    },
+    "FILTERS": {
+      "DISTRICT": "District",
+      "PRICE": "Price Range",
+      "RATING": "Rating",
+      "FEATURES": "Features",
+      "SPORT_TYPE": "Sport Type"
+    }
+  },
+  "COMMON": {
+    "OPEN_NOW": "Open Now",
+    "CLOSED": "Closed",
+    "VIEW_DETAILS": "View Details",
+    "BOOK_NOW": "Book Now",
+    "GET_DIRECTIONS": "Get Directions",
+    "SHARE": "Share",
+    "FAVORITE": "Add to Favorites",
+    "UNFAVORITE": "Remove from Favorites",
+    "NO_RESULTS": "No results found",
+    "TRY_DIFFERENT": "Try different filters or search terms",
+    "CLEAR_FILTERS": "Clear Filters",
+    "SORT": {
+      "POPULAR": "Most Popular",
+      "RATING": "Highest Rated",
+      "PRICE_LOW": "Price: Low to High",
+      "PRICE_HIGH": "Price: High to Low"
+    },
+    "PRICE_RANGES": {
+      "BUDGET": "$",
+      "MODERATE": "$$",
+      "LUXURY": "$$$"
+    }
+  }
+} 

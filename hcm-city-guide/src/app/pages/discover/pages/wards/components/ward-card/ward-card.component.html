@@ -1,42 +1,36 @@
-<div class="ward-card" 
-  [routerLink]="['/discover/wards', ward.id]"
-  [class.hovered]="isHovered"
-  role="article"
-  [attr.aria-label]="ward.name | translate">
+<div class="ward-card" [routerLink]="['/discover/wards', ward.id]">
   <div class="ward-image">
     <img [src]="ward.image || 'assets/images/wards/default.jpg'" 
-         [alt]="ward.name | translate"
+         [alt]="ward.name"
          (error)="getImageFallback($event)"
          loading="lazy">
     <div class="ward-overlay">
-      <button class="back-button" (click)="onBackClick($event)">
-        <i class="fas fa-arrow-left"></i>
-      </button>
-      
-      <div class="ward-info">
-        <h3 class="ward-name">{{ ward.name | translate }}</h3>
-        
-        <div class="ward-meta">
-          <span class="ward-type" *ngIf="ward.type">
-            <i class="fas fa-building"></i>
-            {{ ward.type | translate }}
-          </span>
-        </div>
-
-        <div class="ward-features" *ngIf="ward.features?.length">
-          <div class="features-grid">
-            <span class="feature" 
-                  *ngFor="let feature of ward.features | slice:0:4"
-                  [title]="feature | translate"
-                  [style.background-color]="getFeatureColor(feature)">
-              <i class="fas" [ngClass]="getFeatureIcon(feature)"></i>
-            </span>
-          </div>
-          <span class="more-features" *ngIf="ward.features.length > 4">
-            +{{ ward.features.length - 4 }}
-          </span>
-        </div>
+      <div class="ward-type" *ngIf="ward.type">
+        {{ ward.type | translate }}
       </div>
     </div>
+  </div>
+
+  <div class="ward-content">
+    <h3 class="ward-name">{{ ward.name }}</h3>
+    
+    <div class="ward-features" *ngIf="ward.features && ward.features.length > 0">
+      <div class="feature-tags">
+        <span class="feature-tag" *ngFor="let feature of ward.features.slice(0, 4)">
+          <i class="fas" [class]="getFeatureIcon(feature)" [style.color]="getFeatureColor(feature)"></i>
+          {{ feature | translate }}
+        </span>
+      </div>
+      <span class="more-features" *ngIf="ward.features.length > 4">
+        +{{ ward.features.length - 4 }} {{ 'WARD.CARD.MORE_FEATURES' | translate:{ count: ward.features.length - 4 } }}
+      </span>
+    </div>
+  </div>
+
+  <div class="ward-footer" [class.visible]="isHovered">
+    <button class="view-details">
+      {{ 'WARD.CARD.VIEW_DETAILS' | translate }}
+      <i class="fas fa-arrow-right"></i>
+    </button>
   </div>
 </div> 

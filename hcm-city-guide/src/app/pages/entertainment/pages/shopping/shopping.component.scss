@@ -1,0 +1,237 @@
+.shopping {
+  min-height: 100vh;
+  background: var(--surface-ground);
+
+  .hero-section {
+    background: var(--primary-gradient);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-radius: 0 0 2rem 2rem;
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+      }
+    }
+  }
+
+  .filters-section {
+    padding: 2rem;
+    margin-bottom: 2rem;
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .search-bar {
+      margin-bottom: 1.5rem;
+
+      .p-input-icon-left {
+        width: 100%;
+        max-width: 500px;
+
+        input {
+          width: 100%;
+        }
+      }
+    }
+
+    .filters {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+
+      ::ng-deep .p-dropdown {
+        min-width: 200px;
+      }
+    }
+  }
+
+  .venues-section {
+    padding: 2rem;
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .view-options {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 2rem;
+    }
+
+    .venues-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+
+      .venue-card {
+        ::ng-deep .p-card {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+
+          .p-card-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+          }
+        }
+
+        img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+        }
+
+        .venue-content {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+
+          .venue-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+
+            h3 {
+              margin: 0;
+              color: var(--text-color);
+              font-size: 1.25rem;
+            }
+          }
+
+          .venue-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            .detail-item {
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              color: var(--text-color-secondary);
+
+              i {
+                color: var(--primary-color);
+              }
+            }
+          }
+
+          .venue-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+
+            .feature-tag {
+              display: flex;
+              align-items: center;
+              gap: 0.25rem;
+              padding: 0.25rem 0.75rem;
+              background: var(--surface-ground);
+              border-radius: 1rem;
+              font-size: 0.875rem;
+              color: var(--text-color-secondary);
+
+              i {
+                color: var(--primary-color);
+                font-size: 1rem;
+              }
+            }
+          }
+
+          .venue-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid var(--surface-border);
+
+            .price-level {
+              .price-indicator {
+                padding: 0.25rem 0.75rem;
+                border-radius: 1rem;
+                font-size: 0.875rem;
+                font-weight: 500;
+
+                &.low {
+                  background: var(--green-100);
+                  color: var(--green-700);
+                }
+
+                &.medium {
+                  background: var(--yellow-100);
+                  color: var(--yellow-700);
+                }
+
+                &.high {
+                  background: var(--red-100);
+                  color: var(--red-700);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .map-view {
+      .map-container {
+        height: 600px;
+        border-radius: 1rem;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .shopping {
+    .hero-section {
+      padding: 3rem 1.5rem;
+
+      .hero-content {
+        h1 {
+          font-size: 2rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .filters-section {
+      padding: 1.5rem;
+
+      .filters {
+        flex-direction: column;
+
+        ::ng-deep .p-dropdown {
+          width: 100%;
+        }
+      }
+    }
+
+    .venues-section {
+      padding: 1.5rem;
+    }
+  }
+} 

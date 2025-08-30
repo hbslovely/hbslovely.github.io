@@ -1,0 +1,233 @@
+{
+  "TITLE": "Ẩm Thực Việt Nam tại TP.HCM",
+  "DESCRIPTION": "Khám phá hương vị phong phú và truyền thống ẩm thực của TP.HCM",
+
+  "CATEGORIES": {
+    "STREET_FOOD": {
+      "TITLE": "Ẩm Thực Đường Phố",
+      "DESCRIPTION": "Trải nghiệm ẩm thực đường phố đích thực",
+      "NOODLES": {
+        "TITLE": "Các Món Phở & Bún",
+        "PHO": "Phở - Phở Truyền Thống",
+        "HU_TIEU": "Hủ Tiếu - Mì Nam Bộ",
+        "MI_QUANG": "Mì Quảng",
+        "BUN_BO_HUE": "Bún Bò Huế",
+        "BUN_RIEU": "Bún Riêu Cua",
+        "BUN_THIT_NUONG": "Bún Thịt Nướng"
+      },
+      "BANH_MI": {
+        "TITLE": "Các Loại Bánh Mì",
+        "THIT": "Bánh Mì Thịt",
+        "XA_XIU": "Bánh Mì Xá Xíu",
+        "TRUNG": "Bánh Mì Trứng",
+        "CHAY": "Bánh Mì Chay",
+        "CA_MONG": "Bánh Mì Cá Mòng"
+      },
+      "RICE_DISHES": {
+        "TITLE": "Các Món Cơm",
+        "COM_TAM": "Cơm Tấm",
+        "COM_GA": "Cơm Gà",
+        "COM_CHIEN": "Cơm Chiên",
+        "COM_SUON": "Cơm Sườn"
+      },
+      "SNACKS": {
+        "TITLE": "Đồ Ăn Vặt",
+        "BANH_TRANG_TRON": "Bánh Tráng Trộn",
+        "BANH_XEO": "Bánh Xèo",
+        "GOI_CUON": "Gỏi Cuốn",
+        "CHA_GIO": "Chả Giò",
+        "BOT_CHIEN": "Bột Chiên"
+      }
+    },
+    "RESTAURANTS": {
+      "TITLE": "Nhà Hàng",
+      "DESCRIPTION": "Từ quán ăn vỉa hè đến nhà hàng cao cấp",
+      "TRADITIONAL": {
+        "TITLE": "Nhà Hàng Truyền Thống",
+        "DESCRIPTION": "Trải nghiệm ẩm thực Việt Nam đích thực",
+        "FAMILY_STYLE": "Ẩm Thực Gia Đình",
+        "REGIONAL": "Ẩm Thực Vùng Miền",
+        "COUNTRYSIDE": "Ẩm Thực Đồng Quê"
+      },
+      "MODERN": {
+        "TITLE": "Ẩm Thực Việt Hiện Đại",
+        "DESCRIPTION": "Phiên bản hiện đại của ẩm thực Việt",
+        "FUSION": "Nhà Hàng Fusion",
+        "CONTEMPORARY": "Ẩm Thực Đương Đại",
+        "INNOVATIVE": "Ẩm Thực Sáng Tạo"
+      },
+      "SPECIALTY": {
+        "TITLE": "Nhà Hàng Chuyên Biệt",
+        "DESCRIPTION": "Tập trung vào các món ăn đặc biệt",
+        "SEAFOOD": "Nhà Hàng Hải Sản",
+        "BBQ": "Nướng Việt Nam",
+        "VEGETARIAN": "Nhà Hàng Chay"
+      }
+    },
+    "DESSERTS": {
+      "TITLE": "Món Tráng Miệng",
+      "DESCRIPTION": "Các món tráng miệng và đồ ngọt truyền thống",
+      "CHE": {
+        "TITLE": "Các Loại Chè",
+        "CHE_THAI": "Chè Thái",
+        "CHE_BA_MAU": "Chè Ba Màu",
+        "CHE_CHUOI": "Chè Chuối"
+      },
+      "DRINKS": {
+        "TITLE": "Đồ Uống Ngọt",
+        "SINH_TO": "Sinh Tố",
+        "NUOC_MIA": "Nước Mía",
+        "TRA_SUA": "Trà Sữa"
+      },
+      "PASTRIES": {
+        "TITLE": "Bánh Ngọt Truyền Thống",
+        "BANH_FLAN": "Bánh Flan",
+        "BANH_BO": "Bánh Bò",
+        "BANH_CAM": "Bánh Cam"
+      }
+    },
+    "BEVERAGES": {
+      "TITLE": "Đồ Uống",
+      "DESCRIPTION": "Đồ uống truyền thống và hiện đại",
+      "COFFEE": {
+        "TITLE": "Cà Phê Việt Nam",
+        "CA_PHE_SUA_DA": "Cà Phê Sữa Đá",
+        "CA_PHE_DEN": "Cà Phê Đen",
+        "BAC_XIEU": "Bạc Xỉu"
+      },
+      "TEA": {
+        "TITLE": "Trà Truyền Thống",
+        "TRA_DA": "Trà Đá",
+        "TRA_GUNG": "Trà Gừng",
+        "TRA_HOA": "Trà Hoa"
+      },
+      "FRESH_JUICE": {
+        "TITLE": "Nước Ép Tươi",
+        "NUOC_DUA": "Nước Dừa",
+        "NUOC_CAM": "Nước Cam",
+        "NUOC_EP": "Nước Ép Trái Cây"
+      }
+    },
+    "MARKETS": {
+      "TITLE": "Chợ Ẩm Thực",
+      "DESCRIPTION": "Chợ địa phương và khu ẩm thực",
+      "BEN_THANH": {
+        "TITLE": "Chợ Bến Thành",
+        "STREET_FOOD": "Khu Ẩm Thực",
+        "INGREDIENTS": "Nguyên Liệu Tươi",
+        "SPICES": "Quầy Gia Vị"
+      },
+      "BINH_TAY": {
+        "TITLE": "Chợ Bình Tây",
+        "WHOLESALE": "Khu Bán Sỉ",
+        "RETAIL": "Quầy Ăn Uống",
+        "SPECIALTY": "Đặc Sản"
+      }
+    }
+  },
+
+  "DISHES": {
+    "PHO": {
+      "NAME": "Phở",
+      "DESCRIPTION": "Món phở truyền thống với thịt bò hoặc gà",
+      "INGREDIENTS": "Bánh phở, rau thơm, thịt, nước dùng",
+      "PRICE_RANGE": "40.000 - 80.000 VNĐ",
+      "VARIATIONS": ["Phở Bò", "Phở Gà", "Phở Chay"]
+    },
+    "BANH_MI": {
+      "NAME": "Bánh Mì",
+      "DESCRIPTION": "Bánh mì kẹp thịt với nhiều loại nhân",
+      "INGREDIENTS": "Bánh mì, pate, thịt, rau, sốt",
+      "PRICE_RANGE": "15.000 - 35.000 VNĐ",
+      "VARIATIONS": ["Truyền Thống", "Đặc Biệt", "Chay"]
+    },
+    "COM_TAM": {
+      "NAME": "Cơm Tấm",
+      "DESCRIPTION": "Cơm tấm với sườn nướng và các món ăn kèm",
+      "INGREDIENTS": "Cơm tấm, sườn nướng, trứng, rau",
+      "PRICE_RANGE": "30.000 - 60.000 VNĐ",
+      "VARIATIONS": ["Cơm Tấm Thường", "Cơm Tấm Đặc Biệt", "Cơm Tấm Chay"]
+    },
+    "BANH_XEO": {
+      "NAME": "Bánh Xèo",
+      "DESCRIPTION": "Bánh xèo giòn truyền thống",
+      "INGREDIENTS": "Bột gạo, nghệ, thịt, tôm, giá đỗ",
+      "PRICE_RANGE": "40.000 - 70.000 VNĐ",
+      "VARIATIONS": ["Truyền Thống", "Hải Sản", "Chay"]
+    },
+    "HU_TIEU": {
+      "NAME": "Hủ Tiếu",
+      "DESCRIPTION": "Hủ tiếu kiểu Nam Bộ",
+      "INGREDIENTS": "Hủ tiếu, thịt heo, hải sản, rau",
+      "PRICE_RANGE": "35.000 - 65.000 VNĐ",
+      "VARIATIONS": ["Hủ Tiếu Nam Vang", "Hủ Tiếu Mỹ Tho", "Hủ Tiếu Hải Sản"]
+    }
+  },
+
+  "FEATURES": {
+    "POPULAR": "Phổ Biến",
+    "SPICY": "Cay",
+    "VEGETARIAN": "Chay",
+    "VEGAN": "Thuần Chay",
+    "GLUTEN_FREE": "Không Gluten",
+    "LOCAL_FAVORITE": "Món Yêu Thích Địa Phương",
+    "MUST_TRY": "Phải Thử",
+    "SEASONAL": "Theo Mùa"
+  },
+
+  "LOCATIONS": {
+    "DISTRICT_1": "Quận 1",
+    "DISTRICT_3": "Quận 3",
+    "DISTRICT_5": "Quận 5",
+    "BEN_THANH": "Khu Vực Chợ Bến Thành",
+    "CHINATOWN": "Chợ Lớn"
+  },
+
+  "FILTERS": {
+    "PRICE": {
+      "TITLE": "Mức Giá",
+      "BUDGET": "Giá Rẻ",
+      "MODERATE": "Trung Bình",
+      "EXPENSIVE": "Cao Cấp"
+    },
+    "MEAL_TYPE": {
+      "TITLE": "Loại Bữa Ăn",
+      "BREAKFAST": "Bữa Sáng",
+      "LUNCH": "Bữa Trưa",
+      "DINNER": "Bữa Tối",
+      "SNACK": "Ăn Vặt"
+    },
+    "DIETARY": {
+      "TITLE": "Chế Độ Ăn",
+      "VEGETARIAN": "Chay",
+      "VEGAN": "Thuần Chay",
+      "HALAL": "Halal",
+      "GLUTEN_FREE": "Không Gluten"
+    }
+  },
+
+  "TIPS": {
+    "EATING": "Mẹo Ăn Uống",
+    "ORDERING": "Cách Đặt Món",
+    "ETIQUETTE": "Phép Tắc Khi Ăn",
+    "PAYMENT": "Phương Thức Thanh Toán",
+    "HYGIENE": "An Toàn Thực Phẩm"
+  },
+
+  "REVIEWS": {
+    "WRITE": "Viết Đánh Giá",
+    "RATING": "Xếp Hạng",
+    "TASTE": "Hương Vị",
+    "SERVICE": "Phục Vụ",
+    "AMBIANCE": "Không Gian",
+    "VALUE": "Đáng Giá Tiền"
+  },
+
+  "BUTTONS": {
+    "VIEW_MENU": "Xem Thực Đơn",
+    "FIND_LOCATION": "Tìm Địa Điểm",
+    "BOOK_TABLE": "Đặt Bàn",
+    "READ_REVIEWS": "Đọc Đánh Giá",
+    "SHARE": "Chia Sẻ"
+  }
+} 

@@ -19,7 +19,6 @@
     "VIEW_DETAILS": "Xem Chi tiết",
     "VIEW_MAP": "Xem Bản đồ"
   },
-
   "DETAIL": {
     "ABOUT": "Giới thiệu Phường",
     "KEY_FEATURES": "Đặc điểm Chính",
@@ -34,14 +33,13 @@
     "AREA": "Tổng Diện tích",
     "LANDMARKS": "địa điểm",
     "LANDMARKS_COUNT": "Số Địa điểm Nổi bật",
-    "VIEW_LANDMARK": "Xem Chi tiết"
-  },
+    "VIEW_LANDMARK": "Xem Chi tiết",
 
+  },
   "NO_RESULTS": {
     "TITLE": "Không Tìm Thấy Kết Quả",
     "MESSAGE": "Vui lòng điều chỉnh tiêu chí tìm kiếm hoặc bộ lọc"
   },
-
   "GENERAL": {
     "AREA": "Diện tích",
     "POPULATION": "Dân số",
@@ -51,7 +49,6 @@
     "FEATURES": "Đặc điểm chính",
     "NEIGHBORING_WARDS": "Các phường lân cận"
   },
-
   "FEATURES": {
     "HISTORIC_SITE": "Di tích lịch sử",
     "CULTURAL_HERITAGE": "Di sản văn hóa",
@@ -89,11 +86,55 @@
     "NATIONAL_PARK": "Vườn quốc gia",
     "MARINE_CONSERVATION": "Bảo tồn biển"
   },
-
+  "LANDMARKS": {
+    "AN_DONG_MARKET": "Chợ An Đông",
+    "BEN_THANH_MARKET": "Chợ Bến Thành",
+    "BINH_TAY_MARKET": "Chợ Bình Tây",
+    "NOTRE_DAME_CATHEDRAL": "Nhà thờ Đức Bà",
+    "INDEPENDENCE_PALACE": "Dinh Độc Lập",
+    "WAR_REMNANTS_MUSEUM": "Bảo tàng Chứng tích Chiến tranh",
+    "THIEN_HAU_TEMPLE": "Chùa Bà Thiên Hậu",
+    "JADE_EMPEROR_PAGODA": "Chùa Ngọc Hoàng",
+    "CENTRAL_POST_OFFICE": "Bưu điện Trung tâm",
+    "OPERA_HOUSE": "Nhà hát Thành phố",
+    "NGUYEN_HUE_WALKING_STREET": "Phố đi bộ Nguyễn Huệ",
+    "STARLIGHT_BRIDGE": "Cầu Ánh Sao",
+    "LANDMARK_81": "Landmark 81",
+    "BITEXCO_TOWER": "Tòa nhà Bitexco",
+    "SEPTEMBER_23_PARK": "Công viên 23 Tháng 9",
+    "TAO_DAN_PARK": "Công viên Tao Đàn",
+    "TURTLE_LAKE": "Hồ Con Rùa",
+    "DISTRICT_1_PARK": "Công viên Quận 1",
+    "SAIGON_RIVER": "Sông Sài Gòn",
+    "CAT_LAI_PORT": "Cảng Cát Lái",
+    "INDUSTRIAL_PARK": "Khu Công nghiệp",
+    "ECO_PARK": "Công viên Sinh thái",
+    "COMMUNITY_CENTER": "Trung tâm Cộng đồng",
+    "CULTURAL_CENTER": "Trung tâm Văn hóa",
+    "EDUCATION_CENTER": "Trung tâm Giáo dục",
+    "SPORTS_COMPLEX": "Khu Liên hợp Thể thao",
+    "RIVERSIDE_PARK": "Công viên Ven sông",
+    "HERITAGE_BUILDINGS": "Các Công trình Di sản",
+    "TRADITIONAL_MARKET": "Chợ Truyền thống",
+    "MODERN_PLAZA": "Trung tâm Thương mại Hiện đại",
+    "SHOPPING_COMPLEX": "Khu Phức hợp Mua sắm",
+    "LOGISTICS_CENTER": "Trung tâm Logistics"
+  },
   "WARD_TYPES": {
     "URBAN": "Phường đô thị",
     "SUBURBAN": "Phường ven đô",
     "RURAL": "Phường nông thôn",
     "SPECIAL": "Khu vực hành chính đặc biệt"
+  },
+  "VIEW_TYPES": {
+    "GRID": "Xem dạng lưới",
+    "LIST": "Xem dạng danh sách",
+    "TOGGLE_VIEW": "Đổi kiểu xem"
+  },
+  "SHARE": {
+    "TITLE": "Chia sẻ",
+    "SHARE_VIA": "Chia sẻ qua",
+    "COPY_LINK": "Sao chép liên kết",
+    "LINK_COPIED": "Đã sao chép liên kết"
   }
 }

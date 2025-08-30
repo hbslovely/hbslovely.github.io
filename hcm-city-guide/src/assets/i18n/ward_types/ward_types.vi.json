@@ -1,0 +1,70 @@
+{
+  "WARD_TYPES": {
+    "URBAN": {
+      "TITLE": "Phường Đô Thị",
+      "DESCRIPTION": "Khu vực có mật độ dân số cao với cơ sở hạ tầng hiện đại, trung tâm thương mại và tiện ích đô thị.",
+      "CHARACTERISTICS": [
+        "Mật độ dân số cao",
+        "Cơ sở hạ tầng hiện đại",
+        "Trung tâm thương mại và kinh doanh",
+        "Trung tâm giao thông công cộng",
+        "Khu phát triển đa chức năng"
+      ]
+    },
+    "SUBURBAN": {
+      "TITLE": "Phường Ven Đô",
+      "DESCRIPTION": "Khu dân cư ở vùng ngoại ô thành phố, kết hợp tiện nghi đô thị với không gian sống rộng rãi hơn.",
+      "CHARACTERISTICS": [
+        "Mật độ dân số trung bình",
+        "Khu dân cư",
+        "Trung tâm mua sắm địa phương",
+        "Công viên và không gian xanh",
+        "Cơ sở giáo dục"
+      ]
+    },
+    "RURAL": {
+      "TITLE": "Phường Nông Thôn",
+      "DESCRIPTION": "Khu vực đặc trưng bởi hoạt động nông nghiệp, làng xóm truyền thống và cảnh quan thiên nhiên.",
+      "CHARACTERISTICS": [
+        "Mật độ dân số thấp",
+        "Đất nông nghiệp",
+        "Cộng đồng truyền thống",
+        "Môi trường tự nhiên",
+        "Chợ địa phương"
+      ]
+    },
+    "SPECIAL": {
+      "TITLE": "Khu Vực Hành Chính Đặc Biệt",
+      "DESCRIPTION": "Khu vực hành chính đặc thù có tầm quan trọng về kinh tế, lịch sử hoặc chiến lược.",
+      "CHARACTERISTICS": [
+        "Cơ cấu quản lý đặc biệt",
+        "Tầm quan trọng chiến lược",
+        "Chính sách phát triển riêng biệt",
+        "Ý nghĩa lịch sử",
+        "Cơ sở chuyên biệt"
+      ]
+    },
+    "INDUSTRIAL": {
+      "TITLE": "Phường Công Nghiệp",
+      "DESCRIPTION": "Khu vực tập trung vào sản xuất, logistics và hoạt động công nghiệp.",
+      "CHARACTERISTICS": [
+        "Khu công nghiệp",
+        "Cơ sở sản xuất",
+        "Trung tâm logistics",
+        "Nhà ở công nhân",
+        "Cơ sở hạ tầng giao thông"
+      ]
+    },
+    "MIXED": {
+      "TITLE": "Phường Phát Triển Hỗn Hợp",
+      "DESCRIPTION": "Khu vực đa dạng kết hợp hoạt động dân cư, thương mại và công nghiệp nhẹ.",
+      "CHARACTERISTICS": [
+        "Sử dụng đất hỗn hợp",
+        "Phát triển cân bằng",
+        "Tiện ích đa dạng",
+        "Cơ sở cộng đồng",
+        "Quy hoạch tích hợp"
+      ]
+    }
+  }
+} 

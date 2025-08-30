@@ -1,12 +1,21 @@
 {
+  "TITLE": "Tìm Kiếm TP.HCM",
   "PLACEHOLDER": "Tìm kiếm địa điểm, điểm tham quan, ẩm thực...",
-  "TOOLTIP": "Nhấn để tìm kiếm",
-  "NO_RESULTS": "Không tìm thấy kết quả",
-  "CATEGORIES": {
-    "ATTRACTIONS": "Điểm Du lịch",
-    "CULTURE": "Di tích Văn hóa",
-    "FOOD": "Ẩm thực",
-    "DISTRICTS": "Quận/Huyện",
-    "NIGHTLIFE": "Giải trí Về đêm"
+  "RESULTS_COUNT": "Tìm thấy {{count}} kết quả",
+  "VIEW_DETAILS": "Xem Chi Tiết",
+  "NO_RESULTS": {
+    "TITLE": "Không tìm thấy kết quả",
+    "MESSAGE": "Thử từ khóa khác hoặc kiểm tra chính tả"
+  },
+  "SUGGESTIONS": "Gợi ý",
+  "RECENT": "Tìm Kiếm Gần Đây",
+  "POPULAR": "Tìm Kiếm Phổ Biến",
+  "CLEAR": "Xóa Tất Cả",
+  "TYPES": {
+    "PLACE": "Địa Điểm",
+    "HOTEL": "Khách Sạn",
+    "ENTERTAINMENT": "Giải Trí",
+    "FOOD": "Ẩm Thực",
+    "TRANSPORT": "Giao Thông"
   }
 } 

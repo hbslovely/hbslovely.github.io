@@ -1,0 +1,75 @@
+{
+  "TITLE": "Hỗ Trợ HCM City Guide",
+  "DESCRIPTION": "Giúp chúng tôi duy trì hướng dẫn này miễn phí và cập nhật cho mọi người. Sự đóng góp của bạn tạo nên sự khác biệt!",
+  "OPTIONS": {
+    "TITLE": "Chọn Mức Đóng Góp",
+    "PREDEFINED": "Số Tiền Gợi Ý",
+    "OR": "hoặc"
+  },
+  "CUSTOM_AMOUNT": {
+    "TITLE": "Số Tiền Tùy Chọn",
+    "SUBTITLE": "Nhập số tiền đóng góp bạn muốn",
+    "DESCRIPTION": "Chọn bất kỳ số tiền nào bạn muốn đóng góp. Mọi đóng góp đều có ý nghĩa!",
+    "INPUT_LABEL": "Số Tiền Đóng Góp",
+    "PLACEHOLDER": "Nhập số tiền",
+    "CURRENCY": "USD",
+    "MIN_AMOUNT": "Số tiền tối thiểu là $1",
+    "MAX_AMOUNT": "Số tiền tối đa là $10,000",
+    "SUGGESTED": "Chọn Nhanh",
+    "VALIDATION": {
+      "REQUIRED": "Vui lòng nhập số tiền",
+      "MIN": "Số tiền phải ít nhất $1",
+      "MAX": "Số tiền không được vượt quá $10,000",
+      "INVALID": "Vui lòng nhập số tiền hợp lệ"
+    }
+  },
+  "SELECTED_AMOUNT": "Số Tiền Đã Chọn",
+  "PROCESSING": {
+    "TITLE": "Đang Xử Lý Đóng Góp",
+    "MESSAGE": "Vui lòng đợi trong khi chúng tôi xử lý đóng góp của bạn..."
+  },
+  "DEFAULT_DONOR": "bạn",
+  "SUCCESS": {
+    "TITLE": "Cảm Ơn Sự Hỗ Trợ Của Bạn!",
+    "MESSAGE": "Cảm ơn {{donor}} đã đóng góp {{amount}}. Sự ủng hộ của bạn giúp chúng tôi duy trì và cải thiện HCM City Guide cho mọi người.",
+    "PROCESSING": "Đang xử lý đóng góp của bạn...",
+    "COMPLETE": "Đã Hoàn Thành Đóng Góp!"
+  },
+  "ERROR": {
+    "TITLE": "Lỗi Thanh Toán",
+    "MESSAGE": "Đã xảy ra lỗi khi xử lý đóng góp của bạn. Vui lòng thử lại hoặc liên hệ hỗ trợ.",
+    "NETWORK": "Lỗi kết nối. Vui lòng kiểm tra kết nối và thử lại.",
+    "INVALID_AMOUNT": "Số tiền không hợp lệ. Vui lòng thử lại.",
+    "PAYMENT_FAILED": "Thanh toán thất bại. Vui lòng thử lại hoặc sử dụng phương thức thanh toán khác."
+  },
+  "CANCELLED": {
+    "TITLE": "Đã Hủy Đóng Góp",
+    "MESSAGE": "Bạn đã hủy quá trình đóng góp. Hãy thử lại khi bạn sẵn sàng."
+  },
+  "THANK_YOU": {
+    "TITLE": "Cảm Ơn Sự Hỗ Trợ Của Bạn!",
+    "MESSAGE": "Kính gửi {{donor}}, cảm ơn bạn đã đóng góp {{amount}}. Sự ủng hộ của bạn sẽ giúp chúng tôi duy trì và cải thiện HCM City Guide cho mọi người.",
+    "REFERENCE": "Mã Giao Dịch: {{orderId}}",
+    "RECEIPT": "Biên nhận đã được gửi đến email của bạn",
+    "BACK_HOME": "Về Trang Chủ",
+    "DONATE_AGAIN": "Đóng Góp Thêm",
+    "SHARE": "Chia Sẻ Ủng Hộ",
+    "QUICK_LINKS": {
+      "TITLE": "Khám Phá Thêm",
+      "DESCRIPTION": "Khám phá những điều thú vị từ HCM City Guide",
+      "DISCOVER": "Khám Phá Thành Phố",
+      "DISCOVER_DESC": "Tìm hiểu điểm tham quan, văn hóa và đời sống địa phương",
+      "HOTELS": "Tìm Chỗ Ở",
+      "HOTELS_DESC": "Duyệt qua khách sạn, khu nghỉ dưỡng và căn hộ",
+      "ENTERTAINMENT": "Giải Trí",
+      "ENTERTAINMENT_DESC": "Tìm hoạt động vui chơi và điểm tham quan",
+      "FOOD": "Ẩm Thực Địa Phương",
+      "FOOD_DESC": "Khám phá ẩm thực Việt Nam và nhà hàng"
+    }
+  },
+  "PAYPAL": {
+    "BUTTON_LABEL": "Đóng Góp qua PayPal",
+    "PROCESSING": "Đang xử lý thanh toán PayPal...",
+    "ERROR": "Lỗi thanh toán PayPal. Vui lòng thử lại."
+  }
+} 

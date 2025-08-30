@@ -1,0 +1,168 @@
+<div class="venue-detail-container" *ngIf="venue">
+      <!-- Hero Section -->
+      <section class="venue-hero">
+        <p-galleria 
+          [value]="venue.images" 
+          [responsiveOptions]="galleriaResponsiveOptions"
+          [containerStyle]="{ 'max-width': '100%' }"
+          [numVisible]="5"
+          [showThumbnails]="false"
+          [showIndicators]="true"
+          [circular]="true"
+          [autoPlay]="true"
+          [transitionInterval]="5000">
+          <ng-template pTemplate="item" let-item>
+            <img [src]="item" [alt]="venue.name" style="width: 100%; height: 500px; object-fit: cover;">
+          </ng-template>
+        </p-galleria>
+
+        <div class="venue-hero-content">
+          <div class="venue-header">
+            <div class="venue-title">
+              <h1>{{ venue.name }}</h1>
+              <div class="venue-meta">
+                <p-rating [ngModel]="venue.rating" [readonly]="true" [stars]="5"></p-rating>
+                <span class="rating-count">({{ venue.reviews || 0 }} reviews)</span>
+                <p-tag [value]="venue.priceRange" [severity]="getPriceRangeSeverity(venue.priceRange)"></p-tag>
+              </div>
+            </div>
+            <div class="venue-actions">
+              <button 
+                pButton 
+                type="button" 
+                icon="pi pi-heart" 
+                class="p-button-rounded p-button-text"
+                [class.favorite]="isFavorite"
+                (click)="toggleFavorite()">
+              </button>
+              <button 
+                pButton 
+                type="button" 
+                icon="pi pi-share-alt" 
+                class="p-button-rounded p-button-text"
+                (click)="showShareDialog()">
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Content -->
+      <div class="venue-content">
+        <div class="venue-main">
+          <!-- Quick Info -->
+          <section class="quick-info">
+            <div class="info-card">
+              <i class="pi pi-clock"></i>
+              <div class="info-content">
+                <h4>{{ 'ENTERTAINMENT.VENUE.OPENING_HOURS' | translate }}</h4>
+                <p>{{ venue.openingHours }}</p>
+              </div>
+            </div>
+            <div class="info-card">
+              <i class="pi pi-map-marker"></i>
+              <div class="info-content">
+                <h4>{{ 'ENTERTAINMENT.VENUE.ADDRESS' | translate }}</h4>
+                <p>{{ venue.address }}</p>
+              </div>
+            </div>
+            <div class="info-card" *ngIf="venue.contact?.phone">
+              <i class="pi pi-phone"></i>
+              <div class="info-content">
+                <h4>{{ 'ENTERTAINMENT.VENUE.CONTACT' | translate }}</h4>
+                <p>{{ venue.contact.phone }}</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Tabs Content -->
+          <p-tabView>
+            <!-- Overview Tab -->
+            <p-tabPanel [header]="'ENTERTAINMENT.VENUE.OVERVIEW' | translate">
+              <div class="overview-content">
+                <h3>{{ 'ENTERTAINMENT.VENUE.ABOUT' | translate }}</h3>
+                <p>{{ venue.description }}</p>
+
+                <h3>{{ 'ENTERTAINMENT.VENUE.FEATURES' | translate }}</h3>
+                <div class="features-grid">
+                  <div *ngFor="let feature of venue.features" class="feature-item">
+                    <i [class]="getFeatureIcon(feature)"></i>
+                    <span>{{ feature }}</span>
+                  </div>
+                </div>
+              </div>
+            </p-tabPanel>
+
+            <!-- Location Tab -->
+            <p-tabPanel [header]="'ENTERTAINMENT.VENUE.LOCATION' | translate">
+              <div class="location-content">
+                <div #mapContainer class="venue-map"></div>
+                <div class="directions-panel">
+                  <h3>{{ 'ENTERTAINMENT.VENUE.GET_DIRECTIONS' | translate }}</h3>
+                  <div class="transport-options">
+                    <button 
+                      *ngFor="let option of transportOptions" 
+                      pButton 
+                      type="button"
+                      [icon]="option.icon"
+                      [label]="option.label | translate"
+                      class="p-button-outlined"
+                      [class.active]="selectedTransport === option.value"
+                      (click)="selectTransport(option.value)">
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </p-tabPanel>
+
+            <!-- Reviews Tab -->
+            <p-tabPanel [header]="'ENTERTAINMENT.VENUE.REVIEWS' | translate">
+              <div class="reviews-content">
+                <!-- Reviews will be implemented later -->
+                <p>Coming soon...</p>
+              </div>
+            </p-tabPanel>
+          </p-tabView>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="venue-sidebar">
+          <!-- Booking Widget -->
+          <div class="booking-widget">
+            <h3>{{ 'ENTERTAINMENT.VENUE.BOOK_VISIT' | translate }}</h3>
+            <!-- Booking form will be implemented later -->
+          </div>
+
+          <!-- Social Media -->
+          <div class="social-links" *ngIf="venue.socialMedia">
+            <h3>{{ 'ENTERTAINMENT.VENUE.SOCIAL_MEDIA' | translate }}</h3>
+            <div class="social-buttons">
+              <a *ngIf="venue.socialMedia.facebook" 
+                 [href]="'https://facebook.com/' + venue.socialMedia.facebook" 
+                 target="_blank"
+                 class="social-button facebook">
+                <i class="pi pi-facebook"></i>
+              </a>
+              <a *ngIf="venue.socialMedia.instagram" 
+                 [href]="'https://instagram.com/' + venue.socialMedia.instagram" 
+                 target="_blank"
+                 class="social-button instagram">
+                <i class="pi pi-instagram"></i>
+              </a>
+              <a *ngIf="venue.socialMedia.twitter" 
+                 [href]="'https://twitter.com/' + venue.socialMedia.twitter" 
+                 target="_blank"
+                 class="social-button twitter">
+                <i class="pi pi-twitter"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Nearby Venues -->
+          <div class="nearby-venues">
+            <h3>{{ 'ENTERTAINMENT.VENUE.NEARBY' | translate }}</h3>
+            <!-- Nearby venues will be implemented later -->
+          </div>
+        </div>
+      </div>
+    </div>

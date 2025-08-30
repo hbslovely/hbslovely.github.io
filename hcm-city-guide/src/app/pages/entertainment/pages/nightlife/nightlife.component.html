@@ -1,0 +1,171 @@
+<div class="nightlife-container">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1>{{ 'ENTERTAINMENT.NIGHTLIFE.TITLE' | translate }}</h1>
+          <p>{{ 'ENTERTAINMENT.NIGHTLIFE.DESCRIPTION' | translate }}</p>
+          
+          <!-- Quick Search -->
+          <div class="search-bar">
+            <span class="p-input-icon-left">
+              <i class="pi pi-search"></i>
+              <input 
+                type="text" 
+                pInputText 
+                [(ngModel)]="searchTerm"
+                (input)="onSearch()"
+                [placeholder]="'ENTERTAINMENT.NIGHTLIFE.SEARCH_PLACEHOLDER' | translate">
+            </span>
+          </div>
+
+          <!-- Quick Filters -->
+          <div class="quick-filters">
+            <p-selectButton 
+              [options]="venueTypes" 
+              [(ngModel)]="filters.type"
+              [multiple]="true"
+              (onChange)="applyFilters()">
+              <ng-template let-item>
+                <i [class]="getVenueTypeIcon(item)"></i>
+                <span>{{ 'ENTERTAINMENT.NIGHTLIFE.TYPES.' + item | translate }}</span>
+              </ng-template>
+            </p-selectButton>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Content -->
+      <div class="content-section">
+        <!-- Filters -->
+        <aside class="filters-sidebar">
+          <div class="filter-group">
+            <h3>{{ 'ENTERTAINMENT.NIGHTLIFE.FILTERS.DISTRICT' | translate }}</h3>
+            <p-dropdown 
+              [options]="districts" 
+              [(ngModel)]="filters.district"
+              (onChange)="applyFilters()"
+              [placeholder]="'ENTERTAINMENT.NIGHTLIFE.FILTERS.SELECT_DISTRICT' | translate">
+            </p-dropdown>
+          </div>
+
+          <div class="filter-group">
+            <h3>{{ 'ENTERTAINMENT.NIGHTLIFE.FILTERS.PRICE' | translate }}</h3>
+            <p-selectButton 
+              [options]="priceRanges" 
+              [(ngModel)]="filters.priceRange"
+              [multiple]="true"
+              (onChange)="applyFilters()">
+            </p-selectButton>
+          </div>
+
+          <div class="filter-group">
+            <h3>{{ 'ENTERTAINMENT.NIGHTLIFE.FILTERS.RATING' | translate }}</h3>
+            <p-slider 
+              [(ngModel)]="filters.rating" 
+              [min]="0" 
+              [max]="5" 
+              [step]="0.5"
+              (onSlideEnd)="applyFilters()">
+            </p-slider>
+            <div class="rating-labels">
+              <span>0</span>
+              <span>5 ⭐</span>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h3>{{ 'ENTERTAINMENT.NIGHTLIFE.FILTERS.FEATURES' | translate }}</h3>
+            <div class="feature-chips">
+              <button 
+                *ngFor="let feature of availableFeatures"
+                pButton
+                type="button"
+                [label]="feature"
+                [class.selected]="filters.features.includes(feature)"
+                class="p-button-outlined p-button-rounded feature-chip"
+                (click)="toggleFeature(feature)">
+                <i [class]="getFeatureIcon(feature)"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <p-checkbox 
+              [(ngModel)]="filters.openNow"
+              [binary]="true"
+              (onChange)="applyFilters()">
+            </p-checkbox>
+            <label>{{ 'ENTERTAINMENT.NIGHTLIFE.FILTERS.OPEN_NOW' | translate }}</label>
+          </div>
+        </aside>
+
+        <!-- Venues Grid -->
+        <div class="venues-grid">
+          <div class="grid">
+            <div *ngFor="let venue of filteredVenues" class="col-12 sm:col-6 lg:col-4">
+              <div class="venue-card" (click)="viewVenueDetails(venue)">
+                <div class="venue-image">
+                  <img [src]="venue.images[0]" [alt]="venue.name">
+                  <div class="venue-badges">
+                    <p-tag 
+                      *ngFor="let tag of venue.tags.slice(0, 2)" 
+                      [value]="tag"
+                      [severity]="getTagSeverity(tag)">
+                    </p-tag>
+                  </div>
+                  <div class="venue-status" *ngIf="isOpenNow(venue)">
+                    <span class="status-badge">
+                      <i class="pi pi-clock"></i>
+                      {{ 'ENTERTAINMENT.NIGHTLIFE.OPEN_NOW' | translate }}
+                    </span>
+                  </div>
+                </div>
+
+                <div class="venue-info">
+                  <div class="venue-header">
+                    <h3>{{ venue.name }}</h3>
+                    <div class="venue-meta">
+                      <span class="price-range">{{ venue.priceRange }}</span>
+                      <p-rating [ngModel]="venue.rating" [readonly]="true" [stars]="5"></p-rating>
+                    </div>
+                  </div>
+                  <div class="venue-details">
+                    <span class="venue-district">{{ venue.district }}</span>
+                    <div class="venue-tags">
+                      <span *ngFor="let tag of venue.tags.slice(0, 2)" class="tag">
+                        {{ tag }}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Empty State -->
+          <div *ngIf="filteredVenues.length === 0" class="empty-state">
+            <i class="pi pi-search"></i>
+            <h3>{{ 'ENTERTAINMENT.NIGHTLIFE.NO_RESULTS' | translate }}</h3>
+            <p>{{ 'ENTERTAINMENT.NIGHTLIFE.TRY_DIFFERENT' | translate }}</p>
+            <button 
+              pButton 
+              type="button" 
+              [label]="'ENTERTAINMENT.NIGHTLIFE.CLEAR_FILTERS' | translate"
+              class="p-button-outlined"
+              (click)="clearFilters()">
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map Dialog -->
+      <p-dialog 
+        [(visible)]="showMap" 
+        [modal]="true" 
+        [maximizable]="true"
+        [style]="{width: '90vw'}"
+        [contentStyle]="{height: '70vh'}"
+        [header]="'ENTERTAINMENT.NIGHTLIFE.VENUE_MAP' | translate">
+        <div #mapContainer class="venue-map"></div>
+      </p-dialog>
+    </div>

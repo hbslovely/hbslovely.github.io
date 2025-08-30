@@ -21,6 +21,8 @@
     "@angular/router": "^17.0.0",
     "@types/qrcode": "^1.5.5",
     "angular-crypto": "^0.0.3",
+    "base-x": "^5.0.1",
+    "base62": "^2.0.2",
     "crypto-browserify": "^3.12.1",
     "crypto-js": "^4.2.0",
     "primeicons": "^7.0.0",

@@ -136,5 +136,12 @@
     "GRID": "Grid View",
     "LIST": "List View",
     "TOGGLE_VIEW": "Toggle View"
+  },
+
+  "SHARE": {
+    "TITLE": "Share this",
+    "SHARE_VIA": "Share via",
+    "COPY_LINK": "Copy Link",
+    "LINK_COPIED": "Link copied to clipboard"
   }
 }

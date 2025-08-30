@@ -22,6 +22,10 @@ export const DISCOVER_ROUTES: Routes = [
         loadComponent: () => import('./pages/culture/culture.component').then(m => m.CultureComponent)
       },
       {
+        path: 'tips',
+        loadComponent: () => import('./pages/tips/tips.component').then(m => m.TipsComponent)
+      },
+      {
         path: '',
         redirectTo: 'wards',
         pathMatch: 'full'

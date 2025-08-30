@@ -67,17 +67,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Neighboring Wards -->
-    <section class="neighboring-section" *ngIf="ward?.neighboring_wards?.length">
-      <h2>{{ 'WARD.DETAIL.NEIGHBORING_WARDS' | translate }}</h2>
-      <div class="neighboring-grid">
-        <app-ward-card
-          *ngFor="let neighbor of ward?.neighboring_wards"
-          [ward]="$any(neighbor)">
-        </app-ward-card>
-      </div>
-    </section>
   </div>
 
   <!-- Map Section -->

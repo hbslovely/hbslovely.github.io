@@ -1,0 +1,97 @@
+<div class="transport-search">
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>{{ 'TRANSPORT.SEARCH.TITLE' | translate }}</h1>
+      <p>{{ 'TRANSPORT.SEARCH.DESCRIPTION' | translate }}</p>
+      
+      <div class="search-form">
+        <form [formGroup]="searchForm" (ngSubmit)="search()">
+          <div class="form-row">
+            <div class="form-group">
+              <label>{{ 'TRANSPORT.SEARCH.FROM' | translate }}</label>
+              <p-autoComplete
+                formControlName="from"
+                [suggestions]="fromSuggestions"
+                (completeMethod)="searchLocation($event)"
+                [placeholder]="'TRANSPORT.SEARCH.FROM_PLACEHOLDER' | translate"
+                [minLength]="2">
+              </p-autoComplete>
+            </div>
+
+            <div class="form-group">
+              <label>{{ 'TRANSPORT.SEARCH.TO' | translate }}</label>
+              <p-autoComplete
+                formControlName="to"
+                [suggestions]="toSuggestions"
+                (completeMethod)="searchLocation($event)"
+                [placeholder]="'TRANSPORT.SEARCH.TO_PLACEHOLDER' | translate"
+                [minLength]="2">
+              </p-autoComplete>
+            </div>
+
+            <div class="form-group">
+              <label>{{ 'TRANSPORT.SEARCH.TYPE' | translate }}</label>
+              <p-dropdown
+                formControlName="type"
+                [options]="transportTypes"
+                [placeholder]="'TRANSPORT.SEARCH.SELECT_TYPE' | translate">
+              </p-dropdown>
+            </div>
+
+            <button 
+              pButton 
+              type="submit"
+              [label]="'TRANSPORT.SEARCH.SEARCH' | translate"
+              [loading]="isLoading">
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="transport-options" *ngIf="hasSearched">
+    <div class="container">
+      <h2>{{ 'TRANSPORT.SEARCH.RESULTS' | translate }}</h2>
+      
+      <div class="options-grid">
+        <p-card *ngFor="let option of transportOptions">
+          <div class="transport-option">
+            <div class="option-header">
+              <img [src]="option.providerLogo" [alt]="option.providerName">
+              <span class="provider-name">{{ option.providerName }}</span>
+            </div>
+
+            <div class="option-details">
+              <div class="route">
+                <span class="from">{{ option.from }}</span>
+                <i class="pi pi-arrow-right"></i>
+                <span class="to">{{ option.to }}</span>
+              </div>
+
+              <div class="info">
+                <div class="info-item">
+                  <i class="pi pi-clock"></i>
+                  <span>{{ option.duration }}</span>
+                </div>
+                <div class="info-item">
+                  <i class="pi pi-dollar"></i>
+                  <span>{{ option.price | currency:'VND':'symbol':'1.0-0' }}</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="option-footer">
+              <button 
+                pButton 
+                type="button"
+                [label]="'TRANSPORT.SEARCH.BOOK_NOW' | translate"
+                (click)="bookTransport(option)">
+              </button>
+            </div>
+          </div>
+        </p-card>
+      </div>
+    </div>
+  </section>
+</div> 

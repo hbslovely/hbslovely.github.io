@@ -1,0 +1,229 @@
+<div class="cinemas-container">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1>{{ 'ENTERTAINMENT.CINEMAS.TITLE' | translate }}</h1>
+          <p>{{ 'ENTERTAINMENT.CINEMAS.DESCRIPTION' | translate }}</p>
+        </div>
+      </section>
+
+      <!-- Now Playing -->
+      <section class="now-playing-section">
+        <div class="section-header">
+          <h2>{{ 'ENTERTAINMENT.CINEMAS.NOW_PLAYING' | translate }}</h2>
+          <div class="view-options">
+            <p-dropdown 
+              [options]="sortOptions" 
+              [(ngModel)]="selectedSort"
+              (onChange)="sortMovies()">
+            </p-dropdown>
+          </div>
+        </div>
+
+        <div class="movies-grid">
+          <div class="grid">
+            <div *ngFor="let movie of movies" class="col-12 sm:col-6 lg:col-4 xl:col-3">
+              <div class="movie-card" (click)="showMovieDetails(movie)">
+                <div class="movie-poster">
+                  <img [src]="movie.poster" [alt]="movie.title">
+                  <div class="movie-badges">
+                    <p-chip 
+                      *ngFor="let genre of movie.genre.slice(0, 2)" 
+                      [label]="genre">
+                    </p-chip>
+                  </div>
+                </div>
+                <div class="movie-content">
+                  <h3>{{ movie.title }}</h3>
+                  <div class="movie-meta">
+                    <span class="duration">{{ movie.duration }} min</span>
+                    <span class="language">{{ movie.language }}</span>
+                  </div>
+                  <p-rating [ngModel]="movie.rating" [readonly]="true" [stars]="5"></p-rating>
+                  <button 
+                    pButton 
+                    type="button" 
+                    [label]="'ENTERTAINMENT.CINEMAS.BOOK_TICKETS' | translate"
+                    class="p-button-outlined"
+                    (click)="bookTickets(movie, $event)">
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cinemas List -->
+      <section class="cinemas-section">
+        <div class="section-header">
+          <h2>{{ 'ENTERTAINMENT.CINEMAS.THEATERS' | translate }}</h2>
+          <div class="filter-options">
+            <p-dropdown 
+              [options]="districts" 
+              [(ngModel)]="selectedDistrict"
+              (onChange)="filterCinemas()"
+              [placeholder]="'ENTERTAINMENT.CINEMAS.SELECT_DISTRICT' | translate">
+            </p-dropdown>
+          </div>
+        </div>
+
+        <div class="cinemas-grid">
+          <div class="grid">
+            <div *ngFor="let cinema of filteredCinemas" class="col-12 sm:col-6 lg:col-4">
+              <div class="cinema-card">
+                <p-carousel 
+                  [value]="cinema.images" 
+                  [numVisible]="1" 
+                  [circular]="true"
+                  [showNavigators]="false">
+                  <ng-template let-image pTemplate="item">
+                    <img [src]="image" [alt]="cinema.name">
+                  </ng-template>
+                </p-carousel>
+                <div class="cinema-content">
+                  <h3>{{ cinema.name }}</h3>
+                  <p class="cinema-address">{{ cinema.address }}</p>
+                  <div class="cinema-facilities">
+                    <span *ngFor="let facility of cinema.facilities" class="facility-tag">
+                      <i [class]="getFacilityIcon(facility)"></i>
+                      {{ facility }}
+                    </span>
+                  </div>
+                  <div class="cinema-footer">
+                    <p-rating [ngModel]="cinema.rating" [readonly]="true" [stars]="5"></p-rating>
+                    <button 
+                      pButton 
+                      type="button" 
+                      [label]="'ENTERTAINMENT.CINEMAS.VIEW_SHOWTIMES' | translate"
+                      class="p-button-outlined"
+                      (click)="viewShowtimes(cinema)">
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Movie Details Dialog -->
+      <p-dialog 
+        [(visible)]="showMovieDialog" 
+        [modal]="true"
+        [style]="{width: '90vw', maxWidth: '1200px'}"
+        [contentStyle]="{padding: 0}"
+        [showHeader]="false">
+        <div class="movie-details" *ngIf="selectedMovie">
+          <div class="movie-backdrop" [style.backgroundImage]="'url(' + selectedMovie.backdrop + ')'">
+            <div class="backdrop-content">
+              <h2>{{ selectedMovie.title }}</h2>
+              <p *ngIf="selectedMovie.originalTitle">({{ selectedMovie.originalTitle }})</p>
+              <div class="movie-info">
+                <span class="duration">{{ selectedMovie.duration }} min</span>
+                <span class="separator">•</span>
+                <span class="language">{{ selectedMovie.language }}</span>
+                <span class="separator">•</span>
+                <span class="release-date">{{ selectedMovie.releaseDate | date }}</span>
+              </div>
+              <div class="movie-genres">
+                <p-chip 
+                  *ngFor="let genre of selectedMovie.genre" 
+                  [label]="genre">
+                </p-chip>
+              </div>
+              <div class="movie-actions">
+                <button 
+                  pButton 
+                  type="button" 
+                  [label]="'ENTERTAINMENT.CINEMAS.WATCH_TRAILER' | translate"
+                  class="p-button-outlined p-button-light"
+                  (click)="watchTrailer(selectedMovie)">
+                  <i class="pi pi-play"></i>
+                </button>
+                <button 
+                  pButton 
+                  type="button" 
+                  [label]="'ENTERTAINMENT.CINEMAS.BOOK_TICKETS' | translate"
+                  (click)="bookTickets(selectedMovie)">
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="movie-details-content">
+            <div class="movie-synopsis">
+              <h3>{{ 'ENTERTAINMENT.CINEMAS.SYNOPSIS' | translate }}</h3>
+              <p>{{ selectedMovie.synopsis }}</p>
+            </div>
+            <div class="movie-cast">
+              <h3>{{ 'ENTERTAINMENT.CINEMAS.CAST' | translate }}</h3>
+              <div class="cast-list">
+                <span *ngFor="let actor of selectedMovie.cast">{{ actor }}</span>
+              </div>
+            </div>
+            <div class="movie-director">
+              <h3>{{ 'ENTERTAINMENT.CINEMAS.DIRECTOR' | translate }}</h3>
+              <p>{{ selectedMovie.director }}</p>
+            </div>
+          </div>
+        </div>
+      </p-dialog>
+
+      <!-- Booking Dialog -->
+      <p-dialog 
+        [(visible)]="showBookingDialog" 
+        [modal]="true"
+        [header]="'ENTERTAINMENT.CINEMAS.BOOK_TICKETS' | translate"
+        [style]="{width: '90vw', maxWidth: '800px'}">
+        <div class="booking-content" *ngIf="selectedMovie">
+          <div class="booking-header">
+            <h3>{{ selectedMovie.title }}</h3>
+            <p-calendar 
+              [(ngModel)]="selectedDate" 
+              [showIcon]="true"
+              [minDate]="minDate"
+              [maxDate]="maxDate"
+              (onSelect)="onDateSelect()">
+            </p-calendar>
+          </div>
+
+          <div class="showtimes-list">
+            <div *ngFor="let cinema of getCinemasWithShowtimes()" class="cinema-showtimes">
+              <div class="cinema-info">
+                <h4>{{ cinema.name }}</h4>
+                <p>{{ cinema.address }}</p>
+              </div>
+              <div class="format-groups">
+                <div *ngFor="let format of getFormats(cinema)" class="format-group">
+                  <h5>{{ format }}</h5>
+                  <div class="time-slots">
+                    <button 
+                      *ngFor="let time of getTimeSlots(cinema, format)"
+                      pButton 
+                      type="button"
+                      [label]="time"
+                      class="p-button-outlined time-slot"
+                      [class.selected]="isTimeSlotSelected(cinema, format, time)"
+                      (click)="selectTimeSlot(cinema, format, time)">
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="booking-footer" *ngIf="selectedShowtime">
+            <div class="price-info">
+              <span class="label">{{ 'ENTERTAINMENT.CINEMAS.PRICE' | translate }}</span>
+              <span class="price">{{ selectedShowtime.price | currency:'VND':'symbol':'1.0-0' }}</span>
+            </div>
+            <button 
+              pButton 
+              type="button" 
+              [label]="'ENTERTAINMENT.CINEMAS.CONTINUE' | translate"
+              (click)="continueBooking()">
+            </button>
+          </div>
+        </div>
+      </p-dialog>
+    </div>

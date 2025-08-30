@@ -1,0 +1,218 @@
+.theme-parks-container {
+      padding: 2rem;
+    }
+
+    .featured-section {
+      margin-bottom: 3rem;
+
+      h2 {
+        margin-bottom: 1.5rem;
+        color: var(--text-color);
+        font-size: 1.75rem;
+      }
+    }
+
+    .featured-park-card {
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 1rem;
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 70%;
+        background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      }
+
+      .park-info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 2rem;
+        color: white;
+
+        h3 {
+          font-size: 2rem;
+          margin-bottom: 1rem;
+        }
+
+        p {
+          font-size: 1.1rem;
+          margin-bottom: 1.5rem;
+          opacity: 0.9;
+        }
+
+        .park-meta {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+
+    .parks-section {
+      .parks-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        h2 {
+          color: var(--text-color);
+          font-size: 1.5rem;
+          margin: 0;
+        }
+      }
+    }
+
+    .park-card {
+      background: var(--surface-card);
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      transition: all var(--transition-normal);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--hover-shadow);
+      }
+
+      .park-image {
+        position: relative;
+        padding-top: 66.67%;
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .park-badges {
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          display: flex;
+          gap: 0.5rem;
+        }
+      }
+
+      .park-content {
+        padding: 1.5rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        h3 {
+          margin: 0;
+          font-size: 1.25rem;
+          color: var(--text-color);
+        }
+
+        .park-description {
+          color: var(--text-color-secondary);
+          margin: 0;
+          line-height: 1.5;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+      }
+
+      .park-features {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+
+        .feature-item {
+          display: flex;
+          align-items: center;
+          gap: 0.25rem;
+          color: var(--text-color-secondary);
+          font-size: 0.875rem;
+
+          i {
+            color: var(--primary-color);
+            font-size: 1rem;
+          }
+        }
+      }
+
+      .park-footer {
+        margin-top: auto;
+        padding-top: 1rem;
+        border-top: 1px solid var(--surface-border);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .park-info {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+
+          .price-range {
+            font-weight: 600;
+            color: var(--text-color);
+          }
+        }
+      }
+    }
+
+    .parks-map {
+      .map-container {
+        height: 600px;
+        border-radius: 1rem;
+        overflow: hidden;
+      }
+    }
+
+    // Responsive Design
+    @media (max-width: 768px) {
+      .theme-parks-container {
+        padding: 1rem;
+      }
+
+      .featured-park-card {
+        height: 300px;
+
+        .park-info {
+          padding: 1.5rem;
+
+          h3 {
+            font-size: 1.5rem;
+          }
+
+          p {
+            font-size: 1rem;
+          }
+        }
+      }
+
+      .parks-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+
+      .parks-map {
+        .map-container {
+          height: 400px;
+        }
+      }
+    }

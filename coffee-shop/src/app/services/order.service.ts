@@ -1,6 +1,36 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { CartItem, OrderInfo } from '../models/menu.model';
+import baseX from 'base-x';
+
+const BASE62 = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+const base62 = baseX(BASE62);
+
+const CUSTOM_CHARSET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+
+function customEncode(data: Uint8Array): string {
+  let encoded = '';
+  let hexString = Array.from(data).map(byte => byte.toString(16).padStart(2, '0')).join('');
+  let value = BigInt('0x' + hexString);
+  const base = BigInt(CUSTOM_CHARSET.length);
+  while (value > 0) {
+    const remainder = value % base;
+    encoded = CUSTOM_CHARSET[Number(remainder)] + encoded;
+    value = value / base;
+  }
+  return encoded;
+}
+
+function customDecode(encoded: string): Uint8Array {
+  let value = BigInt(0);
+  const base = BigInt(CUSTOM_CHARSET.length);
+  for (const char of encoded) {
+    value = value * base + BigInt(CUSTOM_CHARSET.indexOf(char));
+  }
+  let hex = value.toString(16);
+  if (hex.length % 2) hex = '0' + hex; // Ensure even length
+  return Uint8Array.from(hex.match(/.{1,2}/g)!.map(byte => parseInt(byte, 16)));
+}
 
 const CART_STORAGE_KEY = 'coffee_shop_cart';
 
@@ -200,7 +230,8 @@ export class OrderService {
   encodeOrder(order: OrderInfo): string {
     try {
       const orderString = JSON.stringify(order);
-      return btoa(encodeURIComponent(orderString));
+      const utf8Bytes = new TextEncoder().encode(orderString);
+      return customEncode(utf8Bytes);
     } catch (error) {
       console.error('Error encoding order:', error);
       throw new Error('Failed to encode order');
@@ -209,7 +240,8 @@ export class OrderService {
 
   decodeOrder(encodedOrder: string): OrderInfo {
     try {
-      const orderString = decodeURIComponent(atob(encodedOrder));
+      const utf8Bytes = customDecode(encodedOrder);
+      const orderString = new TextDecoder().decode(utf8Bytes);
       return JSON.parse(orderString);
     } catch (error) {
       console.error('Error decoding order:', error);

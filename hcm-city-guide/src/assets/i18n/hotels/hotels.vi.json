@@ -1,0 +1,106 @@
+{
+  "SEARCH": {
+    "TITLE": "Tìm Chỗ Nghỉ Lý Tưởng",
+    "DESCRIPTION": "Tìm kiếm khách sạn, khu nghỉ dưỡng và căn hộ tại TP.HCM",
+    "CHECK_IN": "Nhận phòng",
+    "CHECK_OUT": "Trả phòng",
+    "GUESTS": "Khách",
+    "ADULTS": "Người lớn",
+    "ROOMS": "Phòng",
+    "DISTRICT": "Quận",
+    "SELECT_DISTRICT": "Chọn Quận",
+    "PROPERTY_TYPE": "Loại Chỗ Nghỉ",
+    "PRICE_RANGE": "Khoảng Giá",
+    "RATING": "Đánh Giá",
+    "AMENITIES": "Tiện Nghi",
+    "SEARCH": "Tìm Kiếm",
+    "RESULTS": "Kết Quả Tìm Kiếm",
+    "FROM": "Từ",
+    "PER_NIGHT": "mỗi đêm",
+    "VIEW_DETAILS": "Xem Chi Tiết",
+    "NO_RESULTS": "Không tìm thấy kết quả",
+    "TRY_AGAIN": "Thử điều chỉnh tiêu chí tìm kiếm"
+  },
+
+  "PROPERTY_TYPES": {
+    "HOTEL": "Khách Sạn",
+    "RESORT": "Khu Nghỉ Dưỡng",
+    "APARTMENT": "Căn Hộ"
+  },
+
+  "AMENITIES": {
+    "POOL": "Hồ Bơi",
+    "SPA": "Spa & Massage",
+    "GYM": "Phòng Tập",
+    "RESTAURANT": "Nhà Hàng",
+    "PARKING": "Bãi Đậu Xe",
+    "WIFI": "WiFi Miễn Phí",
+    "AIRPORT_SHUTTLE": "Đưa Đón Sân Bay",
+    "ROOM_SERVICE": "Dịch Vụ Phòng",
+    "BAR": "Quầy Bar",
+    "BEACH_ACCESS": "Gần Biển"
+  },
+
+  "DETAILS": {
+    "OVERVIEW": "Tổng Quan",
+    "ROOMS": "Phòng & Giá",
+    "LOCATION": "Vị Trí",
+    "REVIEWS": "Đánh Giá",
+    "POLICIES": "Chính Sách",
+    "FACILITIES": "Tiện Nghi",
+    "CHECK_IN_TIME": "Giờ Nhận Phòng",
+    "CHECK_OUT_TIME": "Giờ Trả Phòng",
+    "CANCELLATION": "Chính Sách Hủy Phòng",
+    "PREPAYMENT": "Chính Sách Thanh Toán",
+    "CONTACT": "Thông Tin Liên Hệ",
+    "BOOK_NOW": "Đặt Ngay",
+    "SELECT_DATES": "Chọn Ngày",
+    "SELECT_ROOM": "Chọn Phòng",
+    "GUESTS_INFO": "Thông Tin Khách",
+    "PAYMENT": "Thanh Toán",
+    "CONFIRM_BOOKING": "Xác Nhận Đặt Phòng",
+    "TOTAL": "Tổng Cộng",
+    "INCLUDES_TAXES": "Đã bao gồm thuế và phí",
+    "NOT_SPECIFIED": "Chưa được xác định"
+  },
+
+  "ROOM_TYPES": {
+    "SINGLE": "Phòng Đơn",
+    "DOUBLE": "Phòng Đôi",
+    "TWIN": "Phòng Twin",
+    "SUITE": "Phòng Suite",
+    "DELUXE": "Phòng Deluxe",
+    "EXECUTIVE": "Phòng Executive",
+    "FAMILY": "Phòng Gia Đình",
+    "APARTMENT": "Căn Hộ"
+  },
+
+  "BOOKING": {
+    "FIRST_NAME": "Tên",
+    "LAST_NAME": "Họ",
+    "EMAIL": "Email",
+    "PHONE": "Số Điện Thoại",
+    "COUNTRY": "Quốc Gia",
+    "SPECIAL_REQUESTS": "Yêu Cầu Đặc Biệt",
+    "TERMS": "Tôi đồng ý với điều khoản và điều kiện",
+    "BOOK": "Đặt Ngay",
+    "PROCESSING": "Đang xử lý đặt phòng...",
+    "SUCCESS": "Đặt Phòng Thành Công!",
+    "ERROR": "Đặt Phòng Thất Bại",
+    "TRY_AGAIN": "Vui lòng thử lại"
+  },
+
+  "FILTERS": {
+    "SORT_BY": "Sắp xếp theo",
+    "PRICE_LOW_HIGH": "Giá (Thấp đến Cao)",
+    "PRICE_HIGH_LOW": "Giá (Cao đến Thấp)",
+    "RATING_HIGH_LOW": "Đánh giá (Cao đến Thấp)",
+    "DISTANCE": "Khoảng cách từ trung tâm"
+  },
+
+  "MAP": {
+    "VIEW_ON_MAP": "Xem Trên Bản Đồ",
+    "SHOW_NEARBY": "Hiển Thị Lân Cận",
+    "GET_DIRECTIONS": "Chỉ Đường"
+  }
+} 

@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { StatsSectionComponent } from '@shared/components/stats-section';
+import { DataService, HomeData } from '@core/services/data.service';
 
 // PrimeNG Imports
 import { ButtonModule } from 'primeng/button';
@@ -28,67 +29,26 @@ import { CarouselModule } from 'primeng/carousel';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
-  featuredPlaces = [
-    {
-      title: 'Ben Thanh Market',
-      image: 'assets/images/ben-thanh-market.jpg',
-      description: 'HOME.FEATURED_PLACES.BEN_THANH_MARKET'
-    },
-    {
-      title: 'Cu Chi Tunnels',
-      image: 'assets/images/cu-chi-tunnels.jpg',
-      description: 'HOME.FEATURED_PLACES.CU_CHI_TUNNELS'
-    },
-    {
-      title: 'District 1',
-      image: 'assets/images/district-1.jpg',
-      description: 'HOME.FEATURED_PLACES.DISTRICT_1'
-    }
-  ];
+export class HomeComponent implements OnInit {
+  homeData!: HomeData;
+  featuredPlaces: HomeData['featuredPlaces'] = [];
+  categories: HomeData['categories'] = [];
+  quickFacts: HomeData['quickFacts'] = [];
+  responsiveOptions: HomeData['carouselResponsiveOptions'] = [];
 
-  categories = [
-    {
-      title: 'HOME.CATEGORIES.CULTURE.TITLE',
-      description: 'HOME.CATEGORIES.CULTURE.DESC',
-      icon: 'pi pi-compass',
-      route: '/discover/culture'
-    },
-    {
-      title: 'HOME.CATEGORIES.FOOD.TITLE',
-      description: 'HOME.CATEGORIES.FOOD.DESC',
-      icon: 'pi pi-heart',
-      route: '/discover/food'
-    },
-    {
-      title: 'HOME.CATEGORIES.ATTRACTIONS.TITLE',
-      description: 'HOME.CATEGORIES.ATTRACTIONS.DESC',
-      icon: 'pi pi-map-marker',
-      route: '/discover/attractions'
-    },
-    {
-      title: 'HOME.CATEGORIES.SHOPPING.TITLE',
-      description: 'HOME.CATEGORIES.SHOPPING.DESC',
-      icon: 'pi pi-shopping-bag',
-      route: '/discover/shopping'
-    }
-  ];
+  constructor(private dataService: DataService) {}
 
-  responsiveOptions = [
-    {
-      breakpoint: '1199px',
-      numVisible: 3,
-      numScroll: 1
-    },
-    {
-      breakpoint: '991px',
-      numVisible: 2,
-      numScroll: 1
-    },
-    {
-      breakpoint: '767px',
-      numVisible: 1,
-      numScroll: 1
-    }
-  ];
+  ngOnInit() {
+    this.loadHomeData();
+  }
+
+  private loadHomeData() {
+    this.dataService.getHomeData().subscribe(data => {
+      this.homeData = data;
+      this.featuredPlaces = data.featuredPlaces;
+      this.categories = data.categories;
+      this.quickFacts = data.quickFacts;
+      this.responsiveOptions = data.carouselResponsiveOptions;
+    });
+  }
 }

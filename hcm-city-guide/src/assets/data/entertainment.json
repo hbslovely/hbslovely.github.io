@@ -1,0 +1,390 @@
+{
+  "venues": [
+    {
+      "id": "sc-001",
+      "name": "Saigon Centre",
+      "description": "Modern shopping mall featuring international brands, restaurants, and entertainment options in the heart of Ho Chi Minh City.",
+      "type": "mall",
+      "category": "shopping",
+      "district": "district-1",
+      "address": "65 Le Loi, Ben Nghe Ward, District 1",
+      "rating": 4.5,
+      "priceRange": "$$$",
+      "openingHours": "10:00 - 22:00",
+      "images": [
+        "assets/images/shopping/saigon-centre-1.jpg",
+        "assets/images/shopping/saigon-centre-2.jpg",
+        "assets/images/shopping/saigon-centre-3.jpg"
+      ],
+      "tags": ["Shopping Mall", "Luxury", "Food Court", "Entertainment"],
+      "features": ["Parking", "WiFi", "Food Court", "Cinema", "ATM"],
+      "coordinates": {
+        "lat": 10.7721,
+        "lng": 106.7030
+      },
+      "contact": {
+        "phone": "+84 28 3821 0123",
+        "email": "info@saigoncentre.com.vn",
+        "website": "https://saigoncentre.com.vn"
+      },
+      "socialMedia": {
+        "facebook": "saigoncentre",
+        "instagram": "saigoncentre"
+      }
+    },
+    {
+      "id": "vt-001",
+      "name": "Vincom Center Dong Khoi",
+      "description": "Premium shopping destination with high-end brands, entertainment facilities, and panoramic city views.",
+      "type": "mall",
+      "category": "shopping",
+      "district": "district-1",
+      "address": "72 Le Thanh Ton, Ben Nghe Ward, District 1",
+      "rating": 4.3,
+      "priceRange": "$$$",
+      "openingHours": "09:30 - 22:00",
+      "images": [
+        "assets/images/shopping/vincom-center-1.jpg",
+        "assets/images/shopping/vincom-center-2.jpg"
+      ],
+      "tags": ["Shopping Mall", "Luxury", "Food Court"],
+      "features": ["Parking", "WiFi", "Food Court", "Cinema", "Supermarket"],
+      "coordinates": {
+        "lat": 10.7789,
+        "lng": 106.7021
+      },
+      "contact": {
+        "phone": "+84 28 3936 9999",
+        "website": "https://vincom.com.vn"
+      }
+    },
+    {
+      "id": "bt-001",
+      "name": "Ben Thanh Market",
+      "description": "Historic market offering local goods, souvenirs, and traditional Vietnamese food.",
+      "type": "market",
+      "category": "shopping",
+      "district": "district-1",
+      "address": "Le Loi Street, Ben Thanh Ward, District 1",
+      "rating": 4.2,
+      "priceRange": "$",
+      "openingHours": "06:00 - 24:00",
+      "images": [
+        "assets/images/shopping/ben-thanh-1.jpg",
+        "assets/images/shopping/ben-thanh-2.jpg"
+      ],
+      "tags": ["Traditional Market", "Local Food", "Souvenirs"],
+      "features": ["Street Food", "Handicrafts", "Local Products"],
+      "coordinates": {
+        "lat": 10.7724,
+        "lng": 106.6980
+      }
+    },
+    {
+      "id": "dam-001",
+      "name": "Dam Sen Water Park",
+      "description": "Exciting water park with slides, pools, and entertainment facilities for the whole family.",
+      "type": "water-park",
+      "category": "theme-park",
+      "district": "district-11",
+      "address": "3 Hoa Binh, District 11",
+      "rating": 4.4,
+      "priceRange": "$$",
+      "openingHours": "09:00 - 18:00",
+      "images": [
+        "assets/images/entertainment/dam-sen-1.jpg",
+        "assets/images/entertainment/dam-sen-2.jpg"
+      ],
+      "tags": ["Water Park", "Family", "Entertainment"],
+      "features": ["Parking", "Food Court", "Lockers", "First Aid"],
+      "coordinates": {
+        "lat": 10.7646,
+        "lng": 106.6409
+      },
+      "contact": {
+        "phone": "+84 28 3963 3333",
+        "website": "https://damsenpark.vn"
+      }
+    },
+    {
+      "id": "lc-001",
+      "name": "Lotte Cinema Diamond",
+      "description": "Modern cinema complex showing latest international and Vietnamese films.",
+      "type": "cinema",
+      "category": "cinema",
+      "district": "district-1",
+      "address": "34 Le Duan, Ben Nghe Ward, District 1",
+      "rating": 4.6,
+      "priceRange": "$$",
+      "openingHours": "09:00 - 24:00",
+      "images": [
+        "assets/images/entertainment/lotte-cinema-1.jpg",
+        "assets/images/entertainment/lotte-cinema-2.jpg"
+      ],
+      "tags": ["Cinema", "Entertainment", "Movies"],
+      "features": ["IMAX", "4DX", "Food Court", "Parking"],
+      "coordinates": {
+        "lat": 10.7838,
+        "lng": 106.7017
+      },
+      "contact": {
+        "phone": "+84 28 3823 2323",
+        "website": "https://lottecinemavn.com"
+      }
+    },
+    {
+      "id": "ap-001",
+      "name": "Apocalypse Now Club",
+      "description": "Iconic nightclub with multiple dance floors and international DJs.",
+      "type": "nightclub",
+      "category": "nightlife",
+      "district": "district-1",
+      "address": "2C Thi Sach, Ben Nghe Ward, District 1",
+      "rating": 4.3,
+      "priceRange": "$$$",
+      "openingHours": "21:00 - 05:00",
+      "images": [
+        "assets/images/nightlife/apocalypse-1.jpg",
+        "assets/images/nightlife/apocalypse-2.jpg"
+      ],
+      "tags": ["Nightclub", "Music", "Dance"],
+      "features": ["VIP Tables", "Live DJ", "Security", "Bar"],
+      "coordinates": {
+        "lat": 10.7799,
+        "lng": 106.7042
+      },
+      "contact": {
+        "phone": "+84 28 3825 6124"
+      }
+    },
+    {
+      "id": "pv-001",
+      "name": "Phu Tho Sports Complex",
+      "description": "Multi-purpose sports facility hosting various sporting events and activities.",
+      "type": "sports-complex",
+      "category": "sports",
+      "district": "district-11",
+      "address": "219 Ly Thuong Kiet, District 11",
+      "rating": 4.1,
+      "priceRange": "$",
+      "openingHours": "06:00 - 22:00",
+      "images": [
+        "assets/images/sports/phu-tho-1.jpg",
+        "assets/images/sports/phu-tho-2.jpg"
+      ],
+      "tags": ["Sports", "Fitness", "Events"],
+      "features": ["Swimming Pool", "Gym", "Tennis Courts", "Parking"],
+      "coordinates": {
+        "lat": 10.7605,
+        "lng": 106.6547
+      },
+      "contact": {
+        "phone": "+84 28 3963 4027"
+      }
+    },
+    {
+      "id": "lush-001",
+      "name": "Lush Nightclub",
+      "description": "Premium nightclub featuring international DJs, state-of-the-art sound system, and VIP bottle service.",
+      "type": "CLUB",
+      "category": "nightlife",
+      "district": "district-1",
+      "address": "2 Dong Khoi Street, District 1",
+      "rating": 4.5,
+      "reviews": 328,
+      "priceRange": "$$$",
+      "openingHours": "22:00 - 05:00",
+      "images": [
+        "assets/images/nightlife/lush-1.jpg",
+        "assets/images/nightlife/lush-2.jpg"
+      ],
+      "tags": ["Club", "Dance", "VIP"],
+      "features": [
+        "Dance Floor",
+        "VIP Tables",
+        "Live DJ",
+        "Smoking Area",
+        "Valet Parking"
+      ],
+      "coordinates": {
+        "lat": 10.7766,
+        "lng": 106.7019
+      },
+      "contact": {
+        "phone": "+84 28 3823 1234",
+        "website": "https://lushsaigon.com"
+      },
+      "socialMedia": {
+        "facebook": "lushsaigon",
+        "instagram": "lushsaigon"
+      }
+    },
+    {
+      "id": "observatory-001",
+      "name": "The Observatory",
+      "description": "Underground music venue known for electronic music and experimental performances.",
+      "type": "CLUB",
+      "category": "nightlife",
+      "district": "district-1",
+      "address": "85 Cach Mang Thang 8, District 1",
+      "rating": 4.3,
+      "reviews": 245,
+      "priceRange": "$$",
+      "openingHours": "21:00 - 04:00",
+      "images": [
+        "assets/images/nightlife/observatory-1.jpg",
+        "assets/images/nightlife/observatory-2.jpg"
+      ],
+      "tags": ["Club", "Electronic", "Underground"],
+      "features": [
+        "Dance Floor",
+        "Live Music",
+        "Bar",
+        "Smoking Area"
+      ],
+      "coordinates": {
+        "lat": 10.7721,
+        "lng": 106.6892
+      },
+      "contact": {
+        "phone": "+84 28 3824 5678",
+        "website": "https://theobservatory.asia"
+      }
+    },
+    {
+      "id": "skybar-001",
+      "name": "Chill Skybar",
+      "description": "Rooftop bar offering panoramic city views, craft cocktails, and international cuisine.",
+      "type": "BAR",
+      "category": "nightlife",
+      "district": "district-1",
+      "address": "76A Le Lai, AB Tower, District 1",
+      "rating": 4.6,
+      "reviews": 512,
+      "priceRange": "$$$",
+      "openingHours": "17:30 - 02:00",
+      "images": [
+        "assets/images/nightlife/chill-1.jpg",
+        "assets/images/nightlife/chill-2.jpg"
+      ],
+      "tags": ["Bar", "Rooftop", "Cocktails"],
+      "features": [
+        "Rooftop",
+        "Food Service",
+        "VIP Tables",
+        "Valet Parking"
+      ],
+      "coordinates": {
+        "lat": 10.7685,
+        "lng": 106.6957
+      },
+      "contact": {
+        "phone": "+84 93 882 2838",
+        "website": "https://chillsaigon.com"
+      },
+      "socialMedia": {
+        "facebook": "chillskybar",
+        "instagram": "chillskybar"
+      }
+    },
+    {
+      "id": "acoustic-001",
+      "name": "Acoustic Bar",
+      "description": "Live music venue featuring local and international artists performing acoustic sets.",
+      "type": "LIVE_MUSIC",
+      "category": "nightlife",
+      "district": "district-3",
+      "address": "6E Ngo Thoi Nhiem, District 3",
+      "rating": 4.4,
+      "reviews": 187,
+      "priceRange": "$$",
+      "openingHours": "18:00 - 00:00",
+      "images": [
+        "assets/images/nightlife/acoustic-1.jpg",
+        "assets/images/nightlife/acoustic-2.jpg"
+      ],
+      "tags": ["Live Music", "Bar", "Acoustic"],
+      "features": [
+        "Live Music",
+        "Food Service",
+        "Bar",
+        "Smoking Area"
+      ],
+      "coordinates": {
+        "lat": 10.7814,
+        "lng": 106.7013
+      },
+      "contact": {
+        "phone": "+84 28 3933 1234"
+      }
+    },
+    {
+      "id": "karaoke-001",
+      "name": "Kingdom Karaoke",
+      "description": "High-end karaoke venue with private rooms and professional sound systems.",
+      "type": "KARAOKE",
+      "category": "nightlife",
+      "district": "district-1",
+      "address": "8 Thai Van Lung, District 1",
+      "rating": 4.2,
+      "reviews": 156,
+      "priceRange": "$$",
+      "openingHours": "12:00 - 02:00",
+      "images": [
+        "assets/images/nightlife/kingdom-1.jpg",
+        "assets/images/nightlife/kingdom-2.jpg"
+      ],
+      "tags": ["Karaoke", "Private Rooms"],
+      "features": [
+        "Private Rooms",
+        "Food Service",
+        "Bar",
+        "Valet Parking"
+      ],
+      "coordinates": {
+        "lat": 10.7778,
+        "lng": 106.7033
+      },
+      "contact": {
+        "phone": "+84 28 3822 9999",
+        "website": "https://kingdomkaraoke.vn"
+      }
+    },
+    {
+      "id": "lounge-001",
+      "name": "Saigon Lounge",
+      "description": "Sophisticated lounge bar with craft cocktails and live jazz performances.",
+      "type": "LOUNGE",
+      "category": "nightlife",
+      "district": "district-1",
+      "address": "12 Nguyen Hue, District 1",
+      "rating": 4.7,
+      "reviews": 289,
+      "priceRange": "$$$",
+      "openingHours": "17:00 - 02:00",
+      "images": [
+        "assets/images/nightlife/saigon-lounge-1.jpg",
+        "assets/images/nightlife/saigon-lounge-2.jpg"
+      ],
+      "tags": ["Lounge", "Jazz", "Cocktails"],
+      "features": [
+        "Live Music",
+        "VIP Tables",
+        "Food Service",
+        "Valet Parking"
+      ],
+      "coordinates": {
+        "lat": 10.7736,
+        "lng": 106.7029
+      },
+      "contact": {
+        "phone": "+84 28 3823 4567",
+        "website": "https://saigonlounge.com"
+      },
+      "socialMedia": {
+        "facebook": "saigonlounge",
+        "instagram": "saigonlounge"
+      }
+    }
+  ]
+} 

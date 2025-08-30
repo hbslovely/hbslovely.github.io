@@ -1,0 +1,116 @@
+{
+  "movies": [
+    {
+      "id": "movie-001",
+      "title": "The Last Journey",
+      "originalTitle": "Hành Trình Cuối Cùng",
+      "poster": "assets/images/movies/last-journey-poster.jpg",
+      "backdrop": "assets/images/movies/last-journey-backdrop.jpg",
+      "duration": 135,
+      "rating": 4.5,
+      "genre": ["Action", "Adventure", "Drama"],
+      "language": "Vietnamese",
+      "subtitles": ["English"],
+      "releaseDate": "2024-03-15",
+      "synopsis": "An epic adventure following a group of friends on their journey through Vietnam's most beautiful landscapes, discovering both the country and themselves.",
+      "trailer": "https://youtube.com/watch?v=abc123",
+      "cast": [
+        "Ngo Thanh Van",
+        "Tran Anh Hung",
+        "Le Van Kiet",
+        "Ninh Duong Lan Ngoc"
+      ],
+      "director": "Victor Vu",
+      "showTimes": [
+        {
+          "cinemaId": "cgv-001",
+          "date": "2024-03-15",
+          "times": ["10:30", "13:45", "17:00", "20:15"],
+          "format": "Standard",
+          "price": 120000,
+          "availableSeats": 45
+        },
+        {
+          "cinemaId": "cgv-001",
+          "date": "2024-03-15",
+          "times": ["11:30", "14:45", "18:00", "21:15"],
+          "format": "IMAX",
+          "price": 180000,
+          "availableSeats": 30
+        }
+      ]
+    },
+    {
+      "id": "movie-002",
+      "title": "Saigon Dreams",
+      "originalTitle": "Giấc Mơ Sài Gòn",
+      "poster": "assets/images/movies/saigon-dreams-poster.jpg",
+      "backdrop": "assets/images/movies/saigon-dreams-backdrop.jpg",
+      "duration": 120,
+      "rating": 4.3,
+      "genre": ["Romance", "Drama"],
+      "language": "Vietnamese",
+      "subtitles": ["English", "Korean"],
+      "releaseDate": "2024-03-10",
+      "synopsis": "A romantic drama set in modern-day Saigon, where traditional values meet contemporary life through the eyes of young lovers.",
+      "trailer": "https://youtube.com/watch?v=xyz789",
+      "cast": [
+        "Chi Pu",
+        "Gil Le",
+        "Thanh Hang",
+        "Thai Hoa"
+      ],
+      "director": "Phan Gia Nhat Linh",
+      "showTimes": [
+        {
+          "cinemaId": "cgv-002",
+          "date": "2024-03-15",
+          "times": ["11:00", "14:15", "17:30", "20:45"],
+          "format": "Standard",
+          "price": 120000,
+          "availableSeats": 50
+        }
+      ]
+    },
+    {
+      "id": "movie-003",
+      "title": "Street Food Warriors",
+      "originalTitle": "Chiến Binh Ẩm Thực Đường Phố",
+      "poster": "assets/images/movies/street-food-poster.jpg",
+      "backdrop": "assets/images/movies/street-food-backdrop.jpg",
+      "duration": 110,
+      "rating": 4.7,
+      "genre": ["Comedy", "Food", "Documentary"],
+      "language": "Vietnamese",
+      "subtitles": ["English", "Chinese"],
+      "releaseDate": "2024-03-08",
+      "synopsis": "A heartwarming comedy about street food vendors competing in a citywide culinary competition while dealing with modern challenges.",
+      "trailer": "https://youtube.com/watch?v=def456",
+      "cast": [
+        "Tran Thanh",
+        "Hari Won",
+        "Truong Giang",
+        "Jun Pham"
+      ],
+      "director": "Charlie Nguyen",
+      "showTimes": [
+        {
+          "cinemaId": "cgv-001",
+          "date": "2024-03-15",
+          "times": ["10:00", "13:15", "16:30", "19:45"],
+          "format": "Standard",
+          "price": 120000,
+          "availableSeats": 35
+        },
+        {
+          "cinemaId": "cgv-002",
+          "date": "2024-03-15",
+          "times": ["11:15", "14:30", "17:45", "21:00"],
+          "format": "4DX",
+          "price": 200000,
+          "availableSeats": 25
+        }
+      ]
+    }
+  ]
+} 

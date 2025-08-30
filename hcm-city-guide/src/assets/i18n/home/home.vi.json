@@ -1,80 +1,149 @@
 {
+  "TITLE": "Hướng Dẫn TP.HCM",
+  "DESCRIPTION": "Hướng dẫn toàn diện để khám phá thành phố Hồ Chí Minh sôi động",
+  "WELCOME": {
+    "TITLE": "Chào mừng đến Thành phố Hồ Chí Minh",
+    "SUBTITLE": "Cửa ngõ đến với kho báu Sài Gòn",
+    "DESCRIPTION": "Khám phá trái tim và tâm hồn của thành phố năng động nhất Việt Nam",
+    "GREETING": "Xin Chào! Chào mừng đến Sài Gòn",
+    "MESSAGE": "Hãy để chúng tôi dẫn bạn qua những con đường sôi động, văn hóa phong phú và những trải nghiệm khó quên của Thành phố Hồ Chí Minh"
+  },
+
   "HERO": {
-    "WELCOME": "Chào mừng đến Thành phố Hồ Chí Minh",
-    "DESCRIPTION": "Khám phá văn hóa sôi động, ẩm thực tuyệt vời và lịch sử phong phú của Sài Gòn",
+    "TITLE": "Chào mừng đến Thành phố Hồ Chí Minh",
+    "SUBTITLE": "Khám phá văn hóa sôi động, ẩm thực tuyệt vời và lịch sử phong phú của Sài Gòn",
+    "DESCRIPTION": "Trải nghiệm năng lượng năng động của thành phố lớn nhất Việt Nam",
     "EXPLORE_BTN": "Bắt đầu Khám phá",
-    "SEARCH_PLACEHOLDER": "Tìm kiếm địa điểm, ẩm thực, điểm tham quan..."
+    "SEARCH_PLACEHOLDER": "Tìm kiếm địa điểm, ẩm thực, điểm tham quan...",
+    "BACKGROUND_INFO": "Cảnh hoàng hôn trên thành phố Hồ Chí Minh từ trên cao",
+    "SCROLL_TEXT": "Cuộn xuống để khám phá",
+    "QUICK_LINKS": {
+      "TITLE": "Truy Cập Nhanh",
+      "ATTRACTIONS": "Địa Điểm Nổi Bật",
+      "FOOD": "Ẩm Thực Địa Phương",
+      "CULTURE": "Di Tích Văn Hóa",
+      "EVENTS": "Sự Kiện Sắp Diễn Ra"
+    }
   },
 
   "FEATURED_PLACES": {
     "TITLE": "Địa điểm Nổi bật",
     "SUBTITLE": "Những điểm đến không thể bỏ qua tại TP.HCM",
-    "BEN_THANH_MARKET": "Chợ Bến Thành biểu tượng, một biểu tượng của Sài Gòn từ năm 1914",
-    "CU_CHI_TUNNELS": "Khám phá địa đạo Củ Chi lịch sử, minh chứng cho sự sáng tạo thời chiến",
-    "DISTRICT_1": "Trải nghiệm nhịp sống sôi động của Quận 1",
-    "VIEW_MORE": "Xem thêm Địa điểm",
-    "LEARN_MORE": "Tìm hiểu thêm"
+    "DESCRIPTION": "Khám phá những địa danh biểu tượng và điểm đến thú vị của Sài Gòn",
+    "ITEMS": {
+      "BEN_THANH_MARKET": {
+        "TITLE": "Chợ Bến Thành",
+        "DESCRIPTION": "Chợ Bến Thành biểu tượng, một biểu tượng của Sài Gòn từ năm 1914"
+      },
+      "CU_CHI_TUNNELS": {
+        "TITLE": "Địa đạo Củ Chi",
+        "DESCRIPTION": "Khám phá địa đạo Củ Chi lịch sử, minh chứng cho sự sáng tạo thời chiến"
+      },
+      "DISTRICT_1": {
+        "TITLE": "Quận 1",
+        "DESCRIPTION": "Trải nghiệm nhịp sống sôi động của Quận 1"
+      }
+    },
+    "ACTIONS": {
+      "VIEW_MORE": "Xem thêm Địa điểm",
+      "LEARN_MORE": "Tìm hiểu thêm"
+    }
   },
 
   "CATEGORIES": {
     "TITLE": "Khám phá theo Danh mục",
     "SUBTITLE": "Tìm những điều bạn quan tâm nhất",
-    "CULTURE": {
-      "TITLE": "Văn hóa & Lịch sử",
-      "DESC": "Khám phá di sản văn hóa và các địa điểm lịch sử",
-      "FEATURES": [
-        "Di tích Lịch sử",
-        "Bảo tàng",
-        "Kiến trúc Truyền thống",
-        "Biểu diễn Văn hóa"
-      ]
-    },
-    "FOOD": {
-      "TITLE": "Ẩm thực",
-      "DESC": "Trải nghiệm ẩm thực đa dạng và đặc sản địa phương",
-      "FEATURES": [
-        "Ẩm thực Đường phố",
-        "Nhà hàng Địa phương",
-        "Lớp học Nấu ăn",
-        "Tour Ẩm thực"
-      ]
-    },
-    "ATTRACTIONS": {
-      "TITLE": "Điểm Du lịch",
-      "DESC": "Ghé thăm các điểm du lịch nổi tiếng và địa điểm thú vị",
-      "FEATURES": [
-        "Địa danh Nổi tiếng",
-        "Công viên & Vườn",
-        "Giải trí",
-        "Khu Mua sắm"
-      ]
-    },
-    "SHOPPING": {
-      "TITLE": "Mua sắm",
-      "DESC": "Từ trung tâm thương mại hiện đại đến chợ truyền thống",
-      "FEATURES": [
-        "Chợ Truyền thống",
-        "Trung tâm Thương mại",
-        "Cửa hàng Thời trang",
-        "Cửa hàng Quà lưu niệm"
-      ]
+    "DESCRIPTION": "Khám phá các khía cạnh khác nhau của TP.HCM",
+    "ITEMS": {
+      "CULTURE": {
+        "TITLE": "Văn hóa & Lịch sử",
+        "DESCRIPTION": "Khám phá di sản văn hóa và các địa điểm lịch sử",
+        "FEATURES": [
+          "Di tích Lịch sử",
+          "Bảo tàng",
+          "Kiến trúc Truyền thống",
+          "Biểu diễn Văn hóa"
+        ]
+      },
+      "FOOD": {
+        "TITLE": "Ẩm thực",
+        "DESCRIPTION": "Trải nghiệm ẩm thực đa dạng và đặc sản địa phương",
+        "FEATURES": [
+          "Ẩm thực Đường phố",
+          "Nhà hàng Địa phương",
+          "Lớp học Nấu ăn",
+          "Tour Ẩm thực"
+        ]
+      },
+      "ATTRACTIONS": {
+        "TITLE": "Điểm Du lịch",
+        "DESCRIPTION": "Ghé thăm các điểm du lịch nổi tiếng và địa điểm thú vị",
+        "FEATURES": [
+          "Địa danh Nổi tiếng",
+          "Công viên & Vườn",
+          "Giải trí",
+          "Khu Mua sắm"
+        ]
+      },
+      "SHOPPING": {
+        "TITLE": "Mua sắm",
+        "DESCRIPTION": "Từ trung tâm thương mại hiện đại đến chợ truyền thống",
+        "FEATURES": [
+          "Chợ Truyền thống",
+          "Trung tâm Thương mại",
+          "Cửa hàng Thời trang",
+          "Cửa hàng Quà lưu niệm"
+        ]
+      }
     }
   },
 
   "QUICK_FACTS": {
     "TITLE": "Thông tin Nhanh",
     "SUBTITLE": "Thông tin cơ bản về TP.HCM",
-    "POPULATION": "Dân số: 9+ triệu",
-    "DISTRICTS": "24 Quận/Huyện",
-    "FOUNDED": "Thành lập: 1698",
-    "CLIMATE": "Khí hậu Nhiệt đới",
-    "LEARN_MORE": "Tìm hiểu thêm về TP.HCM"
+    "DESCRIPTION": "Các số liệu và thông tin chính về thành phố",
+    "ITEMS": {
+      "POPULATION": {
+        "TITLE": "Dân số",
+        "VALUE": "9+ triệu",
+        "DESCRIPTION": "Tính đến 2024",
+        "TREND": "Tăng trưởng nhanh",
+        "DETAILS": "Một trong những thành phố phát triển nhanh nhất Việt Nam"
+      },
+      "DISTRICTS": {
+        "TITLE": "Quận/Huyện",
+        "VALUE": "24",
+        "DESCRIPTION": "Đơn vị hành chính",
+        "BREAKDOWN": "16 quận nội thành, 5 huyện ngoại thành, 3 quận ven đô",
+        "DETAILS": "Mỗi quận/huyện có đặc trưng riêng"
+      },
+      "FOUNDED": {
+        "TITLE": "Thành lập",
+        "VALUE": "1698",
+        "DESCRIPTION": "Năm thành lập",
+        "HISTORY": "Ban đầu có tên là Prey Nokor",
+        "DETAILS": "Hơn 300 năm lịch sử phong phú"
+      },
+      "CLIMATE": {
+        "TITLE": "Khí hậu",
+        "VALUE": "Nhiệt đới",
+        "DESCRIPTION": "Thời tiết ấm quanh năm",
+        "SEASONS": "Mùa mưa (5-11) và Mùa khô (12-4)",
+        "DETAILS": "Nhiệt độ trung bình 28°C"
+      }
+    },
+    "ACTIONS": {
+      "LEARN_MORE": "Tìm hiểu thêm về TP.HCM",
+      "VIEW_WEATHER": "Xem Thời tiết",
+      "SEE_STATISTICS": "Xem Tất cả Thống kê"
+    }
   },
 
   "CTA": {
     "TITLE": "Lên kế hoạch Tham quan",
-    "DESC": "Tận hưởng tối đa chuyến đi của bạn tại TP.HCM",
-    "BTN": "Bắt đầu Lập kế hoạch",
+    "SUBTITLE": "Tận hưởng tối đa chuyến đi",
+    "DESCRIPTION": "Tận hưởng tối đa chuyến đi của bạn tại TP.HCM",
+    "BUTTON": "Bắt đầu Lập kế hoạch",
     "FEATURES": [
       "Lịch trình Tùy chỉnh",
       "Lời khuyên từ Người địa phương",
@@ -85,10 +154,13 @@
 
   "NEWSLETTER": {
     "TITLE": "Cập nhật Thông tin",
-    "DESC": "Đăng ký nhận bản tin để cập nhật tin tức mới nhất và lời khuyên du lịch",
-    "PLACEHOLDER": "Nhập email của bạn",
-    "SUBSCRIBE": "Đăng ký",
-    "SUCCESS": "Cảm ơn bạn đã đăng ký!",
-    "ERROR": "Đã xảy ra lỗi. Vui lòng thử lại."
+    "SUBTITLE": "Nhận thông tin mới nhất",
+    "DESCRIPTION": "Đăng ký nhận bản tin để cập nhật tin tức mới nhất và lời khuyên du lịch",
+    "FORM": {
+      "PLACEHOLDER": "Nhập email của bạn",
+      "BUTTON": "Đăng ký",
+      "SUCCESS": "Cảm ơn bạn đã đăng ký!",
+      "ERROR": "Đã xảy ra lỗi. Vui lòng thử lại."
+    }
   }
-} 
+}

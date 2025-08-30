@@ -3,11 +3,23 @@
     "HOME": "Trang Chủ",
     "DISCOVER": "Khám Phá",
     "WARDS": "Phường",
+    "ATTRACTIONS": "Điểm Tham Quan",
     "FOOD_DINING": "Ẩm Thực",
     "CULTURE": "Văn Hóa",
+    "HISTORY": "Lịch Sử",
+    "LOCAL_LIFE": "Đời Sống Địa Phương",
+    "EVENTS": "Sự Kiện",
     "TRAVEL_TIPS": "Hướng Dẫn Du Lịch",
     "CONTACT": "Liên Hệ",
+    "ABOUT": "Về HCM City Guide",
+    "ABOUT_DESC": "Cẩm nang toàn diện để khám phá thành phố Hồ Chí Minh sôi động.",
+    "QUICK_LINKS": "Liên Kết Nhanh",
+    "CONNECT": "Kết Nối Với Chúng Tôi",
+    "RIGHTS": "Đã đăng ký bản quyền.",
     "SEARCH": "Tìm kiếm..."
+  },
+  "COMMON": {
+    "CLOSE": "Đóng"
   },
   "SEARCH": {
     "TITLE": "Tìm Kiếm Thành Phố Hồ Chí Minh",
@@ -55,6 +67,75 @@
       "CAFE": "Quán cà phê",
       "GIFT_SHOP": "Cửa hàng quà tặng",
       "GUIDED_TOUR": "Hướng dẫn viên"
+    }
+  },
+  "TIPS": {
+    "TITLE": "Hướng Dẫn Du Lịch",
+    "DESCRIPTION": "Những lời khuyên thiết yếu khi khám phá Thành phố Hồ Chí Minh",
+    "TRANSPORTATION": {
+      "TITLE": "Phương Tiện Di Chuyển",
+      "TAXI": "Dịch Vụ Taxi",
+      "BUS": "Xe Buýt Công Cộng",
+      "MOTORBIKE": "Thuê Xe Máy",
+      "GRAB": "Ứng Dụng Gọi Xe"
+    },
+    "SAFETY": {
+      "TITLE": "Lời Khuyên An Toàn",
+      "VALUABLES": "Bảo quản đồ có giá trị",
+      "TRAFFIC": "Cẩn thận khi tham gia giao thông",
+      "DOCUMENTS": "Giữ an toàn giấy tờ quan trọng",
+      "EMERGENCY": "Số điện thoại khẩn cấp"
+    },
+    "WEATHER": {
+      "TITLE": "Thời Tiết",
+      "RAINY": "Mùa Mưa",
+      "DRY": "Mùa Khô",
+      "WHAT_TO_WEAR": "Trang Phục Phù Hợp",
+      "BEST_TIME": "Thời Điểm Lý Tưởng Để Tham Quan"
+    }
+  },
+  "CULTURE": {
+    "TITLE": "Văn Hóa Địa Phương",
+    "DESCRIPTION": "Khám phá nền văn hóa phong phú của Thành phố Hồ Chí Minh",
+    "TRADITIONS": {
+      "TITLE": "Truyền Thống Địa Phương",
+      "FESTIVALS": "Lễ Hội Truyền Thống",
+      "CUSTOMS": "Phong Tục Tập Quán",
+      "ETIQUETTE": "Nghi Thức Xã Hội"
+    },
+    "ARTS": {
+      "TITLE": "Nghệ Thuật & Giải Trí",
+      "MUSIC": "Âm Nhạc Truyền Thống",
+      "THEATER": "Sân Khấu Truyền Thống",
+      "CRAFTS": "Nghề Thủ Công"
+    },
+    "RELIGION": {
+      "TITLE": "Công Trình Tôn Giáo",
+      "TEMPLES": "Chùa Phật Giáo",
+      "CHURCHES": "Nhà Thờ",
+      "PAGODAS": "Chùa Miếu"
+    }
+  },
+  "FOOD": {
+    "TITLE": "Ẩm Thực",
+    "DESCRIPTION": "Khám phá nền ẩm thực đa dạng",
+    "STREET_FOOD": {
+      "TITLE": "Ẩm Thực Đường Phố",
+      "POPULAR": "Món Ăn Phổ Biến",
+      "LOCATIONS": "Địa Điểm Nổi Tiếng",
+      "SAFETY": "Lời Khuyên An Toàn Thực Phẩm"
+    },
+    "RESTAURANTS": {
+      "TITLE": "Nhà Hàng",
+      "LOCAL": "Ẩm Thực Việt Nam",
+      "INTERNATIONAL": "Ẩm Thực Quốc Tế",
+      "FINE_DINING": "Nhà Hàng Cao Cấp"
+    },
+    "SPECIALTIES": {
+      "TITLE": "Đặc Sản Địa Phương",
+      "PHO": "Phở",
+      "BANH_MI": "Bánh Mì",
+      "COM_TAM": "Cơm Tấm"
     }
   },
   "PRIVACY": {
@@ -115,6 +196,19 @@
       "CONTENT": "Nếu bạn có bất kỳ câu hỏi nào về điều khoản sử dụng, vui lòng liên hệ:",
       "ADDRESS": "Địa chỉ",
       "PHONE": "Điện thoại"
+    },
+    "INTELLECTUAL_PROPERTY": {
+      "TITLE": "Quyền Sở Hữu Trí Tuệ",
+      "CONTENT": "Tất cả nội dung trên trang web này được bảo vệ bởi luật bản quyền",
+      "OWNERSHIP": "Quyền Sở Hữu Nội Dung",
+      "USAGE": "Sử Dụng Được Phép",
+      "VIOLATIONS": "Vi Phạm Bản Quyền"
+    },
+    "LIMITATIONS": {
+      "TITLE": "Giới Hạn Trách Nhiệm",
+      "CONTENT": "Chúng tôi không chịu trách nhiệm về bất kỳ thiệt hại nào phát sinh từ việc sử dụng dịch vụ",
+      "SCOPE": "Phạm Vi Giới Hạn",
+      "EXCEPTIONS": "Ngoại Lệ"
     }
   },
   "CULTURES": {
@@ -122,5 +216,21 @@
     "CHINESE": "Văn Hóa Trung Hoa",
     "FRENCH_COLONIAL": "Di Sản Thuộc Địa Pháp",
     "MODERN": "Văn Hóa Đô Thị Hiện Đại"
+  },
+  "REGION": {
+    "TITLE": "Đơn Vị Hành Chính Đặc Biệt",
+    "DESCRIPTION": "Thành phố Hồ Chí Minh là thành phố đặc biệt và đơn vị hành chính đặc biệt của Việt Nam",
+    "STATUS": {
+      "TITLE": "Tình Trạng Hành Chính",
+      "SPECIAL_CITY": "Thành Phố Đặc Biệt",
+      "SPECIAL_REGION": "Đơn Vị Hành Chính Đặc Biệt",
+      "MUNICIPALITY": "Đô Thị Trực Thuộc Trung Ương"
+    },
+    "GOVERNANCE": {
+      "TITLE": "Quản Lý Hành Chính",
+      "CITY_GOVERNMENT": "Chính Quyền Thành Phố",
+      "SPECIAL_POWERS": "Quyền Hạn Hành Chính Đặc Biệt",
+      "AUTONOMY": "Tự Chủ Khu Vực"
+    }
   }
 } 

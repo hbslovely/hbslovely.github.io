@@ -1,0 +1,75 @@
+{
+  "TITLE": "Support HCM City Guide",
+  "DESCRIPTION": "Help us keep this guide free and up-to-date for everyone. Your contribution makes a difference!",
+  "OPTIONS": {
+    "TITLE": "Choose Your Contribution",
+    "PREDEFINED": "Suggested Amounts",
+    "OR": "or"
+  },
+  "CUSTOM_AMOUNT": {
+    "TITLE": "Custom Amount",
+    "SUBTITLE": "Enter your preferred donation amount",
+    "DESCRIPTION": "Choose any amount you'd like to contribute. Every donation helps!",
+    "INPUT_LABEL": "Donation Amount",
+    "PLACEHOLDER": "Enter amount",
+    "CURRENCY": "USD",
+    "MIN_AMOUNT": "Minimum amount is $1",
+    "MAX_AMOUNT": "Maximum amount is $10,000",
+    "SUGGESTED": "Quick Select",
+    "VALIDATION": {
+      "REQUIRED": "Please enter an amount",
+      "MIN": "Amount must be at least $1",
+      "MAX": "Amount cannot exceed $10,000",
+      "INVALID": "Please enter a valid amount"
+    }
+  },
+  "SELECTED_AMOUNT": "Selected Amount",
+  "PROCESSING": {
+    "TITLE": "Processing Donation",
+    "MESSAGE": "Please wait while we process your donation..."
+  },
+  "DEFAULT_DONOR": "visitor",
+  "SUCCESS": {
+    "TITLE": "Thank You for Your Support!",
+    "MESSAGE": "Thank you {{donor}} for your generous donation of {{amount}}. Your support helps us maintain and improve HCM City Guide for everyone.",
+    "PROCESSING": "Processing your donation...",
+    "COMPLETE": "Donation Complete!"
+  },
+  "ERROR": {
+    "TITLE": "Payment Error",
+    "MESSAGE": "There was an error processing your donation. Please try again or contact support.",
+    "NETWORK": "Network error. Please check your connection and try again.",
+    "INVALID_AMOUNT": "Invalid donation amount. Please try again.",
+    "PAYMENT_FAILED": "Payment failed. Please try again or use a different payment method."
+  },
+  "CANCELLED": {
+    "TITLE": "Donation Cancelled",
+    "MESSAGE": "You have cancelled the donation process. Feel free to try again when you're ready."
+  },
+  "THANK_YOU": {
+    "TITLE": "Thank You for Your Support!",
+    "MESSAGE": "Dear {{donor}}, thank you for your generous donation of {{amount}}. Your support will help us maintain and improve HCM City Guide for everyone.",
+    "REFERENCE": "Transaction Reference: {{orderId}}",
+    "RECEIPT": "A receipt has been sent to your email",
+    "BACK_HOME": "Back to Home",
+    "DONATE_AGAIN": "Make Another Donation",
+    "SHARE": "Share Your Support",
+    "QUICK_LINKS": {
+      "TITLE": "Explore More",
+      "DESCRIPTION": "Discover what HCM City Guide has to offer",
+      "DISCOVER": "Discover the City",
+      "DISCOVER_DESC": "Explore attractions, culture, and local life",
+      "HOTELS": "Find Accommodation",
+      "HOTELS_DESC": "Browse hotels, resorts, and apartments",
+      "ENTERTAINMENT": "Entertainment",
+      "ENTERTAINMENT_DESC": "Find fun activities and attractions",
+      "FOOD": "Local Cuisine",
+      "FOOD_DESC": "Explore Vietnamese food and restaurants"
+    }
+  },
+  "PAYPAL": {
+    "BUTTON_LABEL": "Donate with PayPal",
+    "PROCESSING": "Processing PayPal payment...",
+    "ERROR": "PayPal payment error. Please try again."
+  }
+} 

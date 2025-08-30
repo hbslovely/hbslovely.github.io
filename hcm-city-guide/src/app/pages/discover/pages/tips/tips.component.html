@@ -1,89 +1,66 @@
 <div class="tips-container">
-  <div class="tips-header">
-    <h1>{{ 'TIPS.TITLE' | translate }}</h1>
-    <p class="description">{{ 'TIPS.DESCRIPTION' | translate }}</p>
-  </div>
-
-  <!-- Emergency Contacts -->
-  <section class="emergency-section">
-    <div class="emergency-contacts">
-      <div class="emergency-card" *ngFor="let contact of emergencyContacts">
-        <i [class]="contact.icon"></i>
-        <h3>{{ contact.name }}</h3>
-        <div class="emergency-number">{{ contact.number }}</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Essential Information -->
-  <section class="essentials-section">
-    <h2>{{ 'TIPS.ESSENTIALS.TITLE' | translate }}</h2>
-    <div class="essentials-grid">
-      <div class="essential-card" *ngFor="let essential of essentials">
-        <div class="essential-icon">
-          <i [class]="essential.icon"></i>
-        </div>
-        <div class="essential-content">
-          <h3>{{ essential.titleKey | translate }}</h3>
-          <p>{{ essential.contentKey | translate }}</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Travel Tips Categories -->
-  <section class="tips-categories">
-    <div class="category" *ngFor="let category of travelTips">
-      <div class="category-header">
-        <i [class]="category.icon"></i>
-        <h2>{{ category.categoryKey | translate }}</h2>
-      </div>
-
-      <p-accordion [multiple]="true" [expandIcon]="'pi pi-chevron-right'" [collapseIcon]="'pi pi-chevron-down'">
-        <p-accordionTab *ngFor="let tip of category.tips" [selected]="!!tip.important">
-          <ng-template pTemplate="header">
-            <div class="tip-header">
-              <i [class]="tip.icon || 'pi pi-info-circle'" class="tip-icon"></i>
-              <span class="tip-title">{{ tip.titleKey | translate }}</span>
-              <span class="important-tag" *ngIf="tip.important">
-                <i class="pi pi-exclamation-triangle"></i>
-                {{ 'TIPS.IMPORTANT' | translate }}
-              </span>
+  <ng-container *ngIf="tipsData$ && (tipsData$ | async)">
+    @let tipsData = tipsData$ | async;
+    @if (tipsData) {
+      <!-- Local Etiquette Section -->
+      <section class="tips-section" *ngIf="tipsData.localEtiquette as etiquette">
+        <h2 class="section-title">{{ etiquette.title }}</h2>
+        <div class="tips-grid">
+          <div class="tip-card" *ngFor="let sectionKey of getSectionKeys(etiquette)">
+            <div class="card-content">
+              <h3 class="card-title">{{ etiquette.sections[sectionKey].title }}</h3>
+              <p class="card-description" *ngIf="etiquette.sections[sectionKey].description">
+                {{ etiquette.sections[sectionKey].description }}
+              </p>
+              <ul class="guidelines-list">
+                <li *ngFor="let guidelineKey of getGuidelineKeys(etiquette.sections[sectionKey])">
+                  {{ etiquette.sections[sectionKey].guidelines[guidelineKey] }}
+                </li>
+              </ul>
             </div>
-          </ng-template>
-          <ng-template pTemplate="content">
-            <div class="tip-content">
-              <p>{{ tip.contentKey | translate }}</p>
-              <div class="tip-actions" *ngIf="tip.actions">
-                <button pButton *ngFor="let action of tip.actions"
-                  [label]="action.label | translate"
-                  [icon]="action.icon"
-                  [class]="action.class || 'p-button-text'"
-                  (click)="onTipAction(action)">
-                </button>
-              </div>
-            </div>
-          </ng-template>
-        </p-accordionTab>
-      </p-accordion>
-    </div>
-  </section>
+          </div>
+        </div>
+      </section>
 
-  <!-- Download Section -->
-  <section class="download-section">
-    <div class="download-card">
-      <h2>{{ 'TIPS.DOWNLOAD.TITLE' | translate }}</h2>
-      <p>{{ 'TIPS.DOWNLOAD.DESCRIPTION' | translate }}</p>
-      <div class="download-buttons">
-        <button class="button primary">
-          <i class="fas fa-download"></i>
-          {{ 'TIPS.DOWNLOAD.PDF' | translate }}
-        </button>
-        <button class="button outline">
-          <i class="fas fa-print"></i>
-          {{ 'TIPS.DOWNLOAD.PRINT' | translate }}
-        </button>
-      </div>
-    </div>
-  </section>
+      <!-- Safety Tips Section -->
+      <section class="tips-section" *ngIf="tipsData.safetyTips as safety">
+        <h2 class="section-title">{{ safety.title }}</h2>
+        <div class="tips-grid">
+          <div class="tip-card" *ngFor="let sectionKey of getSectionKeys(safety)">
+            <div class="card-content">
+              <h3 class="card-title">{{ safety.sections[sectionKey].title }}</h3>
+              <p class="card-description" *ngIf="safety.sections[sectionKey].description">
+                {{ safety.sections[sectionKey].description }}
+              </p>
+              <ul class="guidelines-list">
+                <li *ngFor="let guidelineKey of getGuidelineKeys(safety.sections[sectionKey])">
+                  {{ safety.sections[sectionKey].guidelines[guidelineKey] }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cultural Awareness Section -->
+      <section class="tips-section" *ngIf="tipsData.culturalAwareness as cultural">
+        <h2 class="section-title">{{ cultural.title }}</h2>
+        <div class="tips-grid">
+          <div class="tip-card" *ngFor="let sectionKey of getSectionKeys(cultural)">
+            <div class="card-content">
+              <h3 class="card-title">{{ cultural.sections[sectionKey].title }}</h3>
+              <p class="card-description" *ngIf="cultural.sections[sectionKey].description">
+                {{ cultural.sections[sectionKey].description }}
+              </p>
+              <ul class="guidelines-list">
+                <li *ngFor="let guidelineKey of getGuidelineKeys(cultural.sections[sectionKey])">
+                  {{ cultural.sections[sectionKey].guidelines[guidelineKey] }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    }
+  </ng-container>
 </div>

@@ -1,0 +1,28 @@
+{
+  "DISCOVER": {
+    "ENTERTAINMENT": {
+      "TITLE": "Entertainment & Activities",
+      "DESCRIPTION": "Explore Ho Chi Minh City through exciting tours and activities",
+      "HOP_ON_BUS": {
+        "NAME": "Hop-on Hop-off Bus Tour",
+        "DESCRIPTION": "Explore the city at your own pace with our double-decker bus tour. Visit major attractions with convenient hop-on hop-off stops and informative audio guides in multiple languages."
+      },
+      "SAIGON_RIVER_CRUISE": {
+        "NAME": "Saigon River Cruise",
+        "DESCRIPTION": "Experience the charm of Ho Chi Minh City from the water with our scenic river cruises. Choose between romantic dinner cruises or relaxing sunset tours along the Saigon River."
+      },
+      "COOKING_CLASS": {
+        "NAME": "Vietnamese Cooking Class",
+        "DESCRIPTION": "Learn to cook authentic Vietnamese dishes with our expert chefs. Start with a local market tour, learn cooking techniques, and enjoy your creations in a friendly atmosphere."
+      },
+      "MEKONG_TOUR": {
+        "NAME": "Mekong Delta Day Tour",
+        "DESCRIPTION": "Discover the rich culture and natural beauty of the Mekong Delta. Visit local villages, cruise through narrow canals, and experience traditional Vietnamese countryside life."
+      },
+      "CRAFT_VILLAGE_TOUR": {
+        "NAME": "Traditional Craft Village Tour",
+        "DESCRIPTION": "Visit historic craft villages around Ho Chi Minh City. Watch skilled artisans at work, learn about traditional crafts, and take home unique handmade souvenirs."
+      }
+    }
+  }
+} 

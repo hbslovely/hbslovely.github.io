@@ -1,40 +1,4 @@
 {
-  "MENU": {
-    "HOME": "Home",
-    "DISCOVER": "Discover",
-    "WARDS": "Wards",
-    "ATTRACTIONS": "Attractions",
-    "FOOD_DINING": "Food & Dining",
-    "CULTURE": "Culture",
-    "HISTORY": "History",
-    "LOCAL_LIFE": "Local Life",
-    "EVENTS": "Events",
-    "TRAVEL_TIPS": "Travel Tips",
-    "CONTACT": "Contact",
-    "ABOUT": "About HCM City Guide",
-    "ABOUT_DESC": "Your comprehensive guide to exploring the vibrant city of Ho Chi Minh, Vietnam.",
-    "QUICK_LINKS": "Quick Links",
-    "CONNECT": "Connect With Us",
-    "RIGHTS": "All rights reserved.",
-    "SEARCH": "Search..."
-  },
-  "SEARCH": {
-    "TITLE": "Search Ho Chi Minh City",
-    "PLACEHOLDER": "Enter keywords to search...",
-    "RESULTS_COUNT": "{{count}} results found",
-    "VIEW_DETAILS": "View Details",
-    "NO_RESULTS": {
-      "TITLE": "No results found",
-      "MESSAGE": "Try different keywords or remove some filters"
-    },
-    "TYPES": {
-      "WARDS": "Wards",
-      "LANDMARKS": "Landmarks",
-      "FOOD": "Food & Dining",
-      "CULTURE": "Culture & History",
-      "TIPS": "Travel Tips"
-    }
-  },
   "ATTRACTIONS": {
     "TITLE": "Tourist Attractions",
     "DESCRIPTION": "Discover the famous and fascinating attractions in Ho Chi Minh City.",
@@ -43,19 +7,19 @@
     "VIEW_GALLERY": "View Gallery",
     "BEN_THANH": {
       "NAME": "Ben Thanh Market",
-      "DESC": "An iconic Saigon market where you can find everything from souvenirs to local cuisine."
+      "DESC": "An iconic Saigon market where you can find everything from souvenirs to local cuisine, experience the vibrant atmosphere and rich history of the city."
     },
     "NOTRE_DAME": {
       "NAME": "Notre-Dame Cathedral",
-      "DESC": "A famous Gothic architecture built during the French colonial period, a symbol of the city."
+      "DESC": "A magnificent Gothic architecture built during the French colonial period, this iconic cathedral stands as a testament to the city's diverse cultural heritage."
     },
     "WAR_MUSEUM": {
       "NAME": "War Remnants Museum",
-      "DESC": "A museum displaying artifacts and images from the war, helping visitors better understand Vietnam's history."
+      "DESC": "A powerful museum displaying artifacts and images from the war, offering visitors a profound understanding of Vietnam's history and the impact of conflict."
     },
     "INDEPENDENCE_PALACE": {
       "NAME": "Independence Palace",
-      "DESC": "An important historical building, former residence and workplace of the President of South Vietnam."
+      "DESC": "A historic landmark that served as the residence and workplace of the President of South Vietnam, featuring impressive architecture and significant historical importance."
     },
     "FACILITIES": {
       "PARKING": "Parking",
@@ -65,6 +29,9 @@
       "GIFT_SHOP": "Gift Shop",
       "GUIDED_TOUR": "Guided Tour"
     }
+  },
+  "COMMON": {
+    "CLOSE": "Close"
   },
   "TIPS": {
     "TITLE": "Travel Tips",
@@ -85,8 +52,8 @@
     },
     "WEATHER": {
       "TITLE": "Weather Tips",
-      "RAINY": "Rainy Season",
-      "DRY": "Dry Season",
+      "RAINY": "Rainy Season (May-November)",
+      "DRY": "Dry Season (December-April)",
       "WHAT_TO_WEAR": "What to Wear",
       "BEST_TIME": "Best Time to Visit"
     }
@@ -130,9 +97,9 @@
     },
     "SPECIALTIES": {
       "TITLE": "Local Specialties",
-      "PHO": "Phở",
-      "BANH_MI": "Bánh Mì",
-      "COM_TAM": "Cơm Tấm"
+      "PHO": "Phở - Vietnamese Noodle Soup",
+      "BANH_MI": "Bánh Mì - Vietnamese Sandwich",
+      "COM_TAM": "Cơm Tấm - Broken Rice"
     }
   },
   "PRIVACY": {
@@ -213,5 +180,21 @@
     "CHINESE": "Chinese Culture",
     "FRENCH_COLONIAL": "French Colonial Heritage",
     "MODERN": "Modern Urban Culture"
+  },
+  "REGION": {
+    "TITLE": "Special Administrative Region",
+    "DESCRIPTION": "Ho Chi Minh City is a special-class city and special administrative region of Vietnam",
+    "STATUS": {
+      "TITLE": "Administrative Status",
+      "SPECIAL_CITY": "Special-Class City",
+      "SPECIAL_REGION": "Special Administrative Region",
+      "MUNICIPALITY": "Municipality"
+    },
+    "GOVERNANCE": {
+      "TITLE": "Governance",
+      "CITY_GOVERNMENT": "City Government",
+      "SPECIAL_POWERS": "Special Administrative Powers",
+      "AUTONOMY": "Regional Autonomy"
+    }
   }
-} 
+}

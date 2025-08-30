@@ -1,0 +1,43 @@
+{
+  "TITLE": "Phép Tắc Địa Phương",
+  "TEMPLE_VISITS": {
+    "TITLE": "Phép Tắc Khi Viếng Chùa",
+    "DESCRIPTION": "Cách ứng xử tôn trọng khi thăm chùa và đền",
+    "GUIDELINES": [
+      "Ăn mặc kín đáo - che vai và qua đầu gối",
+      "Cởi giày dép trước khi vào các tòa nhà trong chùa",
+      "Thắp ít nhang (1-3 cây) để tránh khói",
+      "Không chỉ chân về phía tượng Phật",
+      "Xin phép trước khi chụp ảnh",
+      "Nói chuyện nhỏ nhẹ và tắt chuông điện thoại",
+      "Không chạm hoặc leo trèo lên đồ thờ cúng",
+      "Đi vòng theo chiều kim đồng hồ quanh vật thiêng"
+    ]
+  },
+  "DINING": {
+    "TITLE": "Phép Tắc Khi Ăn Uống",
+    "DESCRIPTION": "Cách ứng xử đúng mực khi dùng bữa tại Việt Nam",
+    "GUIDELINES": [
+      "Đợi người lớn tuổi bắt đầu ăn trước",
+      "Dùng hai tay khi chuyền đồ",
+      "Bưng bát cơm gần miệng",
+      "Đặt đũa song song trên giá đỡ",
+      "Chia sẻ món ăn kiểu gia đình",
+      "Cảm ơn chủ nhà sau bữa ăn",
+      "Góp tiền nhóm trừ khi được mời"
+    ]
+  },
+  "HOME_VISITS": {
+    "TITLE": "Phép Tắc Khi Thăm Nhà",
+    "DESCRIPTION": "Phong tục khi thăm nhà người Việt",
+    "GUIDELINES": [
+      "Cởi giày dép ở cửa",
+      "Mang quà nhỏ (trái cây, bánh kẹo)",
+      "Chào người lớn tuổi trước",
+      "Nhận trà hoặc nước khi được mời",
+      "Xin phép trước khi chụp ảnh",
+      "Khen ngợi ngôi nhà",
+      "Theo hướng dẫn của chủ nhà khi ngồi"
+    ]
+  }
+} 

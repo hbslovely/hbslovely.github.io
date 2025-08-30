@@ -1,0 +1,133 @@
+{
+  "TITLE": "Giải Trí tại TP.HCM",
+  "DESCRIPTION": "Khám phá các địa điểm và hoạt động giải trí tốt nhất tại Sài Gòn",
+  "TYPES": {
+    "CLUB": "Câu Lạc Bộ",
+    "BAR": "Quán Bar",
+    "LOUNGE": "Phòng Chờ",
+    "LIVE_MUSIC": "Địa Điểm Nhạc Sống",
+    "KARAOKE": "Karaoke",
+    "CINEMA": "Rạp Chiếu Phim",
+    "SPORTS": "Địa Điểm Thể Thao",
+    "THEME_PARK": "Công Viên Giải Trí",
+    "SHOPPING": "Trung Tâm Mua Sắm"
+  },
+  "FEATURES": {
+    "LIVE_MUSIC": "Nhạc Sống",
+    "DANCE_FLOOR": "Sàn Nhảy",
+    "VIP_TABLES": "Bàn VIP",
+    "ROOFTOP": "Sân Thượng",
+    "SPORTS_SCREENS": "Màn Hình Thể Thao",
+    "FOOD_SERVICE": "Phục Vụ Đồ Ăn",
+    "SMOKING_AREA": "Khu Vực Hút Thuốc",
+    "VALET_PARKING": "Giữ Xe",
+    "PARKING": "Bãi Đậu Xe",
+    "WIFI": "WiFi",
+    "FOOD_COURT": "Khu Ẩm Thực",
+    "CINEMA": "Rạp Chiếu Phim",
+    "ATM": "ATM",
+    "IMAX": "IMAX",
+    "4DX": "4DX",
+    "GOLD_CLASS": "Gold Class",
+    "SCREENX": "ScreenX",
+    "PREMIUM_CINEMA": "Rạp Cao Cấp"
+  },
+  "SHOPPING": {
+    "TITLE": "Mua Sắm tại TP.HCM",
+    "DESCRIPTION": "Khám phá các trung tâm thương mại hiện đại, chợ truyền thống và cửa hàng thời trang",
+    "FILTERS": {
+      "DISTRICT": "Quận",
+      "PRICE": "Mức Giá",
+      "RATING": "Đánh Giá",
+      "FEATURES": "Tiện Ích",
+      "TYPE": "Loại Hình Mua Sắm"
+    }
+  },
+  "THEME_PARKS": {
+    "TITLE": "Công Viên Giải Trí & Khu Vui Chơi",
+    "DESCRIPTION": "Khám phá các công viên giải trí và khu vui chơi hấp dẫn tại TP.HCM",
+    "FILTERS": {
+      "DISTRICT": "Quận",
+      "PRICE": "Mức Giá",
+      "RATING": "Đánh Giá",
+      "FEATURES": "Tiện Ích",
+      "AGE_GROUP": "Độ Tuổi"
+    },
+    "FEATURES": {
+      "WATER_RIDES": "Trò Chơi Nước",
+      "THRILL_RIDES": "Trò Chơi Mạo Hiểm",
+      "FAMILY_RIDES": "Trò Chơi Gia Đình",
+      "KIDS_AREA": "Khu Vực Trẻ Em",
+      "SHOWS": "Biểu Diễn",
+      "RESTAURANTS": "Nhà Hàng",
+      "GIFT_SHOPS": "Cửa Hàng Quà Tặng",
+      "LOCKERS": "Tủ Khóa",
+      "FIRST_AID": "Sơ Cứu"
+    },
+    "AGE_GROUPS": {
+      "TODDLERS": "Trẻ Nhỏ (0-3)",
+      "KIDS": "Thiếu Nhi (4-12)",
+      "TEENS": "Thiếu Niên (13-17)",
+      "ADULTS": "Người Lớn (18+)",
+      "ALL_AGES": "Mọi Lứa Tuổi"
+    }
+  },
+  "NIGHTLIFE": {
+    "TITLE": "Cuộc Sống Về Đêm tại TP.HCM",
+    "DESCRIPTION": "Khám phá không gian giải trí về đêm sôi động của Sài Gòn, từ quán bar trên sân thượng đến các câu lạc bộ",
+    "FILTERS": {
+      "DISTRICT": "Quận",
+      "PRICE": "Mức Giá",
+      "RATING": "Đánh Giá",
+      "FEATURES": "Tiện Ích",
+      "OPEN_NOW": "Đang Mở Cửa"
+    }
+  },
+  "CINEMAS": {
+    "TITLE": "Rạp Chiếu Phim",
+    "DESCRIPTION": "Khám phá các phim mới nhất và tìm rạp chiếu phim tốt nhất tại TP.HCM",
+    "FILTERS": {
+      "DISTRICT": "Quận",
+      "PRICE": "Mức Giá",
+      "RATING": "Đánh Giá",
+      "FEATURES": "Tiện Ích",
+      "NOW_PLAYING": "Đang Chiếu",
+      "COMING_SOON": "Sắp Chiếu"
+    }
+  },
+  "SPORTS": {
+    "TITLE": "Thể Thao & Giải Trí",
+    "DESCRIPTION": "Tìm địa điểm thể thao, trung tâm thể dục và sự kiện sắp diễn ra tại TP.HCM",
+    "FILTERS": {
+      "DISTRICT": "Quận",
+      "PRICE": "Mức Giá",
+      "RATING": "Đánh Giá",
+      "FEATURES": "Tiện Ích",
+      "SPORT_TYPE": "Loại Hình Thể Thao"
+    }
+  },
+  "COMMON": {
+    "OPEN_NOW": "Đang Mở Cửa",
+    "CLOSED": "Đã Đóng Cửa",
+    "VIEW_DETAILS": "Xem Chi Tiết",
+    "BOOK_NOW": "Đặt Ngay",
+    "GET_DIRECTIONS": "Chỉ Đường",
+    "SHARE": "Chia Sẻ",
+    "FAVORITE": "Thêm vào Yêu Thích",
+    "UNFAVORITE": "Xóa khỏi Yêu Thích",
+    "NO_RESULTS": "Không tìm thấy kết quả",
+    "TRY_DIFFERENT": "Thử tìm kiếm hoặc lọc khác",
+    "CLEAR_FILTERS": "Xóa Bộ Lọc",
+    "SORT": {
+      "POPULAR": "Phổ Biến Nhất",
+      "RATING": "Đánh Giá Cao Nhất",
+      "PRICE_LOW": "Giá: Thấp đến Cao",
+      "PRICE_HIGH": "Giá: Cao đến Thấp"
+    },
+    "PRICE_RANGES": {
+      "BUDGET": "$",
+      "MODERATE": "$$",
+      "LUXURY": "$$$"
+    }
+  }
+} 

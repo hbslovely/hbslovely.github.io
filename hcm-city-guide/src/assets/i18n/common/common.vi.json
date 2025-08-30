@@ -1,0 +1,30 @@
+{
+  "BUTTONS": {
+    "CONFIRM": "Xác nhận",
+    "CANCEL": "Hủy",
+    "SAVE": "Lưu",
+    "CLOSE": "Đóng",
+    "BACK": "Quay lại",
+    "NEXT": "Tiếp tục",
+    "SUBMIT": "Gửi"
+  },
+  "VALIDATION": {
+    "REQUIRED": "Vui lòng nhập thông tin này",
+    "MIN": "Giá trị phải ít nhất {{min}}",
+    "MAX": "Giá trị không được vượt quá {{max}}",
+    "INVALID": "Giá trị không hợp lệ",
+    "PROCESSING": "Đang xử lý..."
+  },
+  "CURRENCY": {
+    "USD": "$",
+    "VND": "₫",
+    "LABELS": {
+      "USD": "Đô la Mỹ",
+      "VND": "Đồng Việt Nam"
+    },
+    "SYMBOLS": {
+      "USD": "$",
+      "VND": "₫"
+    }
+  }
+} 

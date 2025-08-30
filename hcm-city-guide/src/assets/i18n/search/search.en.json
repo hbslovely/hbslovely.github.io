@@ -1,12 +1,21 @@
 {
-  "PLACEHOLDER": "Search for places, attractions, food...",
-  "TOOLTIP": "Click to search",
-  "NO_RESULTS": "No results found",
-  "CATEGORIES": {
-    "ATTRACTIONS": "Tourist Attraction",
-    "CULTURE": "Cultural Site",
+  "TITLE": "Search Ho Chi Minh City",
+  "PLACEHOLDER": "Search for places, attractions, food and more...",
+  "RESULTS_COUNT": "Found {{count}} results",
+  "VIEW_DETAILS": "View Details",
+  "NO_RESULTS": {
+    "TITLE": "No Results Found",
+    "MESSAGE": "Try different keywords or check your spelling"
+  },
+  "SUGGESTIONS": "Suggestions",
+  "RECENT": "Recent Searches",
+  "POPULAR": "Popular Searches",
+  "CLEAR": "Clear All",
+  "TYPES": {
+    "PLACE": "Place",
+    "HOTEL": "Hotel",
+    "ENTERTAINMENT": "Entertainment",
     "FOOD": "Food & Dining",
-    "DISTRICTS": "District",
-    "NIGHTLIFE": "Nightlife"
+    "TRANSPORT": "Transport"
   }
 } 

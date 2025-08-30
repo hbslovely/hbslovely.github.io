@@ -76,8 +76,9 @@ export class CartComponent implements OnInit {
     }
   }
 
-  updateNote(itemId: string, note: string) {
-    this.orderService.updateNote(itemId, note);
+  updateNote(itemId: string, note: string): void {
+    const trimmedNote = note.trimStart();
+    this.orderService.updateNote(itemId, trimmedNote);
   }
 
   async removeItem(itemId: string) {

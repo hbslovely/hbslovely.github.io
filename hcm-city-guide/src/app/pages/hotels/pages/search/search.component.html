@@ -1,0 +1,216 @@
+<div class="hotel-search">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1>{{ 'HOTELS.SEARCH.TITLE' | translate }}</h1>
+          <p>{{ 'HOTELS.SEARCH.DESCRIPTION' | translate }}</p>
+
+          <!-- Search Form -->
+          <form [formGroup]="searchForm" (ngSubmit)="search()" class="search-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label>{{ 'HOTELS.SEARCH.CHECK_IN' | translate }}</label>
+                <p-calendar 
+                  formControlName="checkIn"
+                  [minDate]="minDate"
+                  [showIcon]="true">
+                </p-calendar>
+              </div>
+
+              <div class="form-group">
+                <label>{{ 'HOTELS.SEARCH.CHECK_OUT' | translate }}</label>
+                <p-calendar 
+                  formControlName="checkOut"
+                  [minDate]="searchForm.get('checkIn')?.value || minDate"
+                  [showIcon]="true">
+                </p-calendar>
+              </div>
+
+              <div class="form-group">
+                <label>{{ 'HOTELS.SEARCH.GUESTS' | translate }}</label>
+                <div class="guests-input">
+                  <p-inputNumber 
+                    formControlName="adults"
+                    [min]="1" 
+                    [max]="10"
+                    [showButtons]="true">
+                  </p-inputNumber>
+                  <span>{{ 'HOTELS.SEARCH.ADULTS' | translate }}</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>{{ 'HOTELS.SEARCH.ROOMS' | translate }}</label>
+                <p-inputNumber 
+                  formControlName="rooms"
+                  [min]="1" 
+                  [max]="5"
+                  [showButtons]="true">
+                </p-inputNumber>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>{{ 'HOTELS.SEARCH.DISTRICT' | translate }}</label>
+                <p-dropdown 
+                  formControlName="district"
+                  [options]="districts"
+                  [placeholder]="'HOTELS.SEARCH.SELECT_DISTRICT' | translate">
+                </p-dropdown>
+              </div>
+
+              <div class="form-group">
+                <label>{{ 'HOTELS.SEARCH.PROPERTY_TYPE' | translate }}</label>
+                <p-selectButton 
+                  formControlName="propertyType"
+                  [options]="propertyTypes"
+                  [multiple]="true">
+                </p-selectButton>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group price-range">
+                <label>
+                  {{ 'HOTELS.SEARCH.PRICE_RANGE' | translate }}
+                  <span class="price-values">
+                    {{ searchForm.get('priceMin')?.value | currency:'VND':'symbol':'1.0-0' }} -
+                    {{ searchForm.get('priceMax')?.value | currency:'VND':'symbol':'1.0-0' }}
+                  </span>
+                </label>
+                <p-slider 
+                  formControlName="priceRange"
+                  [range]="true"
+                  [min]="0"
+                  [max]="10000000"
+                  [step]="100000"
+                  (onSlideEnd)="onPriceRangeChange($event)">
+                </p-slider>
+              </div>
+
+              <div class="form-group">
+                <label>{{ 'HOTELS.SEARCH.RATING' | translate }}</label>
+                <p-rating 
+                  formControlName="rating"
+                  [stars]="5"
+                  [cancel]="false">
+                </p-rating>
+              </div>
+            </div>
+
+            <div class="amenities-section">
+              <h3>{{ 'HOTELS.SEARCH.AMENITIES' | translate }}</h3>
+              <div class="amenities-grid">
+                <p-selectButton
+                  [options]="amenities"
+                  [(ngModel)]="selectedAmenities"
+                  [multiple]="true"
+                  optionLabel="label"
+                  optionValue="value">
+                  <ng-template let-item>
+                    <i [class]="getAmenityIcon(item.value)"></i>
+                    <span>{{ item.label }}</span>
+                  </ng-template>
+                </p-selectButton>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button 
+                pButton 
+                type="submit" 
+                [label]="'HOTELS.SEARCH.SEARCH' | translate"
+                [loading]="isLoading">
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Results Section -->
+      <section class="results-section" *ngIf="searchResults.length > 0">
+        <div class="results-header">
+          <h2>{{ 'HOTELS.SEARCH.RESULTS' | translate }}</h2>
+          <div class="view-options">
+            <p-selectButton 
+              [(ngModel)]="viewMode" 
+              [options]="viewModes"
+              (onChange)="onViewModeChange()">
+              <ng-template let-item>
+                <i [class]="getViewModeIcon(item)"></i>
+              </ng-template>
+            </p-selectButton>
+          </div>
+        </div>
+
+        <!-- Grid View -->
+        <div class="results-grid" *ngIf="viewMode === 'grid'">
+          <div class="grid">
+            <div *ngFor="let hotel of searchResults" class="col-12 sm:col-6 lg:col-4">
+              <div class="hotel-card">
+                <p-carousel 
+                  [value]="hotel.images" 
+                  [numVisible]="1" 
+                  [circular]="true"
+                  [showNavigators]="false">
+                  <ng-template let-image pTemplate="item">
+                    <img [src]="image" [alt]="hotel.name">
+                  </ng-template>
+                </p-carousel>
+
+                <div class="hotel-content">
+                  <div class="hotel-header">
+                    <h3>{{ hotel.name }}</h3>
+                    <p-chip [label]="hotel.source | uppercase"></p-chip>
+                  </div>
+
+                  <div class="hotel-meta">
+                    <p-rating [ngModel]="hotel.rating" [readonly]="true" [stars]="5"></p-rating>
+                    <span class="review-count">({{ hotel.reviewCount }})</span>
+                    <span class="district">{{ hotel.district }}</span>
+                  </div>
+
+                  <p class="hotel-description">{{ hotel.description }}</p>
+
+                  <div class="hotel-amenities">
+                    <span *ngFor="let amenity of hotel.amenities.slice(0, 3)" class="amenity-tag">
+                      <i [class]="getAmenityIcon(amenity)"></i>
+                      {{ 'HOTELS.AMENITIES.' + amenity | translate }}
+                    </span>
+                  </div>
+
+                  <div class="hotel-footer">
+                    <div class="price-info">
+                      <span class="label">{{ 'HOTELS.SEARCH.FROM' | translate }}</span>
+                      <span class="price">{{ hotel.price.amount | currency:hotel.price.currency:'symbol':'1.0-0' }}</span>
+                      <span class="per-night">{{ 'HOTELS.SEARCH.PER_NIGHT' | translate }}</span>
+                    </div>
+                    <button 
+                      pButton 
+                      type="button" 
+                      [label]="'HOTELS.SEARCH.VIEW_DETAILS' | translate"
+                      (click)="viewHotelDetails(hotel)">
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map View -->
+        <div class="results-map" *ngIf="viewMode === 'map'">
+          <div #mapContainer class="map-container"></div>
+        </div>
+      </section>
+
+      <!-- No Results -->
+      <section class="no-results" *ngIf="searchResults.length === 0 && !isLoading && hasSearched">
+        <div class="no-results-content">
+          <i class="pi pi-search"></i>
+          <h3>{{ 'HOTELS.SEARCH.NO_RESULTS' | translate }}</h3>
+          <p>{{ 'HOTELS.SEARCH.TRY_AGAIN' | translate }}</p>
+        </div>
+      </section>
+    </div>

@@ -4,11 +4,19 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { CommonModule, Location, NgClass } from '@angular/common';
 import { WardsService, Ward } from '../../../../../core';
 import { WardCardComponent } from '../components/ward-card/ward-card.component';
+import { DialogService } from 'primeng/dynamicdialog';
+import { ShareDialogComponent } from '../components/share-dialog/share-dialog.component';
 
 @Component({
   selector: 'app-ward-detail',
   standalone: true,
-  imports: [ CommonModule, TranslateModule, NgClass, WardCardComponent ],
+  imports: [ 
+    CommonModule, 
+    TranslateModule, 
+    NgClass, 
+    WardCardComponent
+  ],
+  providers: [DialogService],
   templateUrl: './ward-detail.component.html',
   styleUrls: ['./ward-detail.component.scss']
 })
@@ -42,7 +50,8 @@ export class WardDetailComponent implements OnInit {
     private router: Router,
     private location: Location,
     private translateService: TranslateService,
-    private wardsService: WardsService
+    private wardsService: WardsService,
+    private dialogService: DialogService
   ) {}
 
   ngOnInit() {
@@ -95,18 +104,19 @@ export class WardDetailComponent implements OnInit {
   }
 
   shareWard() {
-    if (navigator.share) {
-      navigator.share({
-        title: this.translateService.instant(this.ward?.name || ''),
-        text: this.translateService.instant(this.ward?.description || ''),
-        url: window.location.href
-      }).catch(console.error);
-    } else {
-      // Fallback for browsers that don't support Web Share API
-      const url = window.location.href;
-      navigator.clipboard.writeText(url).then(() => {
-        // TODO: Show toast notification
-        console.log('URL copied to clipboard');
+    if (this.ward) {
+      this.dialogService.open(ShareDialogComponent, {
+        header: this.translateService.instant('WARD.SHARE.TITLE'),
+        width: '500px',
+        modal: true,
+        dismissableMask: true,
+        styleClass: 'share-dialog-modal',
+        data: {
+          title: this.translateService.instant(this.ward.name || ''),
+          description: this.translateService.instant(this.ward.description || ''),
+          image: this.ward.image || 'assets/images/wards/default.jpg',
+          url: window.location.href
+        }
       });
     }
   }

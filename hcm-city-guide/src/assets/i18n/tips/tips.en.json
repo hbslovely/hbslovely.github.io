@@ -1,86 +1,118 @@
 {
-  "TITLE": "Travel Tips for Ho Chi Minh City",
-  "DESCRIPTION": "Essential information and helpful tips to make your visit to Ho Chi Minh City safe and enjoyable.",
-  "ESSENTIALS": {
-    "TITLE": "Essential Travel Tips",
-    "VISA": {
-      "TITLE": "Visa Requirements",
-      "CONTENT": "Most visitors need a visa to enter Vietnam. Check requirements and apply online through the official e-visa portal."
-    },
-    "MONEY": {
-      "TITLE": "Currency & Payments",
-      "CONTENT": "Vietnamese Dong (VND) is the local currency. ATMs are widely available, and many places accept cards, but keep some cash handy."
-    },
-    "PHONE": {
-      "TITLE": "Mobile & Internet",
-      "CONTENT": "Local SIM cards are affordable and provide good coverage. Free Wi-Fi is available in most cafes and restaurants."
+  "local_etiquette": {
+    "title": "Local Etiquette",
+    "sections": {
+      "temple_visits": {
+        "title": "Temple Visit Etiquette",
+        "description": "Respectful behavior when visiting temples and pagodas",
+        "guidelines": {
+          "dress_code": "Dress modestly - cover shoulders and knees",
+          "remove_shoes": "Remove shoes before entering temple buildings",
+          "incense_burning": "Light few incense sticks (1-3) to avoid smoke",
+          "foot_pointing": "Don't point feet towards Buddha statues",
+          "photo_permission": "Ask permission before taking photos",
+          "quiet_phones": "Keep voices low and phones silent",
+          "no_touching": "Don't touch or climb on sacred objects",
+          "clockwise_direction": "Walk clockwise around sacred objects"
+        }
+      },
+      "dining": {
+        "title": "Dining Etiquette",
+        "description": "Proper conduct when dining in Vietnam",
+        "guidelines": {
+          "elder_first": "Wait for elders to begin eating",
+          "two_hands": "Use both hands when passing items",
+          "rice_bowl": "Hold rice bowl close to mouth",
+          "chopsticks_position": "Place chopsticks parallel on rest",
+          "family_style": "Share dishes family-style",
+          "thank_host": "Thank the host after meal",
+          "group_payment": "Split bill unless invited"
+        }
+      },
+      "home_visits": {
+        "title": "Home Visit Etiquette",
+        "description": "Customs when visiting Vietnamese homes",
+        "guidelines": {
+          "shoes_off": "Remove shoes at the door",
+          "bring_gift": "Bring small gift (fruit, sweets)",
+          "greet_elders": "Greet elders first",
+          "accept_drinks": "Accept offered tea or water",
+          "photo_permission": "Ask before taking photos",
+          "compliment_home": "Compliment the home",
+          "follow_seating": "Follow host's seating guidance"
+        }
+      }
     }
   },
-  "TRANSPORTATION": {
-    "TITLE": "Getting Around",
-    "GRAB": {
-      "TITLE": "Grab Services",
-      "CONTENT": "Grab is a popular ride-hailing app offering car, bike, and food delivery services. It's safe and prices are fixed."
-    },
-    "BUS": {
-      "TITLE": "Public Buses",
-      "CONTENT": "Buses are the cheapest way to travel. Get a bus map and remember your stop's name in Vietnamese."
-    },
-    "MOTORBIKE": {
-      "TITLE": "Motorbike Safety",
-      "CONTENT": "If renting a motorbike, always wear a helmet and carry proper documentation. Traffic can be challenging for newcomers."
+  "safety_tips": {
+    "title": "Safety Guidelines",
+    "sections": {
+      "personal_safety": {
+        "title": "Personal Safety",
+        "description": "Stay safe while exploring the city",
+        "guidelines": {
+          "keep_belongings_close": "Keep belongings close in crowded areas",
+          "use_reliable_transport": "Use reputable transportation services",
+          "minimal_cash": "Carry minimal cash and valuables",
+          "emergency_numbers": "Save emergency contact numbers",
+          "stay_aware": "Stay aware of surroundings",
+          "trust_instincts": "Trust your instincts",
+          "document_copies": "Keep copies of important documents"
+        }
+      },
+      "traffic_safety": {
+        "title": "Traffic Safety",
+        "description": "Navigate city traffic safely",
+        "guidelines": {
+          "look_both_ways": "Look both ways multiple times",
+          "steady_crossing": "Walk steadily when crossing",
+          "use_crosswalks": "Use crosswalks when available",
+          "watch_sidewalks": "Watch for motorbikes on sidewalks",
+          "hold_children": "Hold children's hands when crossing",
+          "avoid_phone_walking": "Avoid phone use while walking",
+          "use_pedestrian_bridges": "Use pedestrian bridges when available"
+        }
+      },
+      "health_safety": {
+        "title": "Health & Safety",
+        "description": "Stay healthy during your visit",
+        "guidelines": {
+          "bottled_water": "Drink bottled or filtered water",
+          "popular_restaurants": "Choose busy restaurants",
+          "basic_medicine": "Carry basic medicines",
+          "stay_hydrated": "Stay hydrated in hot weather",
+          "use_sunscreen": "Use sunscreen",
+          "know_facilities": "Know nearest medical facilities",
+          "insurance_info": "Keep travel insurance information handy"
+        }
+      }
     }
   },
-  "SAFETY": {
-    "TITLE": "Safety Tips",
-    "VALUABLES": {
-      "TITLE": "Protecting Valuables",
-      "CONTENT": "Keep valuables secure and be aware of your surroundings, especially in crowded areas."
-    },
-    "TRAFFIC": {
-      "TITLE": "Traffic Safety",
-      "CONTENT": "Look both ways and walk steadily when crossing streets. Motorbikes may drive on sidewalks."
-    },
-    "SCAMS": {
-      "TITLE": "Common Scams",
-      "CONTENT": "Be cautious of unusually friendly strangers and always agree on prices before services."
+  "cultural_awareness": {
+    "title": "Cultural Awareness",
+    "sections": {
+      "public_behavior": {
+        "title": "Public Behavior",
+        "guidelines": {
+          "modest_dress": "Dress modestly in public",
+          "avoid_pda": "Avoid public displays of affection",
+          "moderate_voice": "Keep voice moderate",
+          "respect_elders": "Show respect to elderly",
+          "remove_shoes": "Remove shoes when asked",
+          "photo_permission": "Ask before photographing others"
+        }
+      },
+      "communication": {
+        "title": "Communication Tips",
+        "guidelines": {
+          "basic_greetings": "Learn basic Vietnamese greetings",
+          "smile_patience": "Smile and be patient",
+          "two_hands": "Use both hands when giving/receiving",
+          "no_pointing": "Avoid pointing at others",
+          "no_head_touching": "Don't touch others' heads",
+          "elder_respect": "Show respect to elders"
+        }
+      }
     }
-  },
-  "ETIQUETTE": {
-    "TITLE": "Local Etiquette",
-    "TEMPLES": {
-      "TITLE": "Temple Visits",
-      "CONTENT": "Remove shoes before entering temples and dress modestly. Ask permission before taking photos."
-    },
-    "DRESS": {
-      "TITLE": "Dress Code",
-      "CONTENT": "Dress modestly, especially when visiting religious sites. Light, breathable clothing is recommended."
-    },
-    "BARGAINING": {
-      "TITLE": "Bargaining Tips",
-      "CONTENT": "Bargaining is common in markets. Start at 50% of the initial price and negotiate friendly."
-    }
-  },
-  "WEATHER": {
-    "TITLE": "Weather Guide",
-    "RAINY": {
-      "TITLE": "Rainy Season",
-      "CONTENT": "May to November brings afternoon showers. Carry a light raincoat or umbrella."
-    },
-    "HEAT": {
-      "TITLE": "Heat Protection",
-      "CONTENT": "The city is hot year-round. Stay hydrated and use sun protection."
-    },
-    "BEST_TIME": {
-      "TITLE": "Best Time to Visit",
-      "CONTENT": "December to April offers the most pleasant weather with less rain and lower humidity."
-    }
-  },
-  "IMPORTANT": "Important",
-  "DOWNLOAD": {
-    "TITLE": "Download Travel Guide",
-    "DESCRIPTION": "Get our comprehensive travel guide in PDF format for offline access or printing.",
-    "PDF": "Download PDF Guide",
-    "PRINT": "Print Guide"
   }
 }

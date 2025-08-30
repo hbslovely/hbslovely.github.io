@@ -1,0 +1,326 @@
+.nightlife-container {
+      min-height: 100vh;
+      background: var(--surface-ground);
+    }
+
+    .hero-section {
+      background: var(--primary-gradient);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      border-radius: 0 0 2rem 2rem;
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        max-width: 600px;
+        margin: 0 auto 2rem;
+      }
+
+      .search-bar {
+        max-width: 500px;
+        margin: 0 auto 1.5rem;
+
+        input {
+          width: 100%;
+          padding: 1rem 1rem 1rem 3rem;
+          border-radius: 2rem;
+          border: none;
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          color: white;
+
+          &::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+          }
+        }
+
+        i {
+          color: rgba(255, 255, 255, 0.7);
+        }
+      }
+
+      .quick-filters {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+
+        ::ng-deep .p-selectbutton {
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 1rem;
+          padding: 0.25rem;
+
+          .p-button {
+            color: white;
+            border: none;
+            background: transparent;
+            border-radius: 0.75rem;
+            padding: 0.75rem 1.25rem;
+
+            &:not(.p-highlight):hover {
+              background: rgba(255, 255, 255, 0.1);
+            }
+
+            &.p-highlight {
+              background: white;
+              color: var(--primary-color);
+            }
+
+            i {
+              margin-right: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+
+    .content-section {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 2rem;
+    }
+
+    .filters-sidebar {
+      .filter-group {
+        margin-bottom: 2rem;
+
+        h3 {
+          color: var(--text-color);
+          font-size: 1.1rem;
+          margin-bottom: 1rem;
+        }
+
+        .rating-labels {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 0.5rem;
+          color: var(--text-color-secondary);
+        }
+
+        .feature-chips {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+
+          .feature-chip {
+            font-size: 0.875rem;
+            padding: 0.5rem 1rem;
+            transition: all var(--transition-normal);
+
+            i {
+              margin-right: 0.5rem;
+            }
+
+            &.selected {
+              background: var(--primary-color);
+              color: white;
+              border-color: var(--primary-color);
+            }
+
+            &:not(.selected):hover {
+              border-color: var(--primary-color);
+              color: var(--primary-color);
+            }
+          }
+        }
+      }
+    }
+
+    .venue-card {
+      background: var(--surface-card);
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      transition: all var(--transition-normal);
+      cursor: pointer;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--hover-shadow);
+      }
+
+      .venue-image {
+        position: relative;
+        padding-top: 66.67%;
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .venue-badges {
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          display: flex;
+          gap: 0.5rem;
+        }
+
+        .venue-status {
+          position: absolute;
+          bottom: 1rem;
+          left: 1rem;
+
+          .status-badge {
+            background: rgba(39, 174, 96, 0.9);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+
+            i {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+
+      .venue-content {
+        padding: 1.5rem;
+
+        h3 {
+          margin: 0 0 0.5rem;
+          color: var(--text-color);
+          font-size: 1.25rem;
+        }
+
+        .venue-description {
+          color: var(--text-color-secondary);
+          margin: 0 0 1rem;
+          line-height: 1.5;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        .venue-meta {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 1rem;
+
+          .rating-price {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            .price-range {
+              font-weight: 600;
+              color: var(--text-color);
+            }
+          }
+
+          .venue-district {
+            color: var(--text-color-secondary);
+            font-size: 0.875rem;
+          }
+        }
+
+        .venue-features {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.75rem;
+
+          .feature-tag {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            background: var(--surface-ground);
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            color: var(--text-color-secondary);
+
+            i {
+              color: var(--primary-color);
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--text-color-secondary);
+
+      i {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      h3 {
+        color: var(--text-color);
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    .venue-map {
+      height: 100%;
+      border-radius: 0.5rem;
+      overflow: hidden;
+    }
+
+    // Responsive Design
+    @media (max-width: 1024px) {
+      .content-section {
+        grid-template-columns: 1fr;
+      }
+
+      .filters-sidebar {
+        background: var(--surface-card);
+        padding: 1.5rem;
+        border-radius: 1rem;
+        box-shadow: var(--card-shadow);
+        margin-bottom: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 3rem 1.5rem;
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+      }
+
+      .content-section {
+        padding: 0 1rem;
+      }
+
+      .quick-filters {
+        ::ng-deep .p-selectbutton {
+          .p-button {
+            padding: 0.5rem 1rem;
+          }
+        }
+      }
+    }

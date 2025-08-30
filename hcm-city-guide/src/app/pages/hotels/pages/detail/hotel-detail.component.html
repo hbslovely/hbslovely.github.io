@@ -1,0 +1,184 @@
+<div class="hotel-detail" *ngIf="hotel">
+      <!-- Gallery Section -->
+      <section class="gallery-section">
+        <p-galleria 
+          [value]="hotel.images" 
+          [responsiveOptions]="galleryResponsiveOptions"
+          [numVisible]="5"
+          [showThumbnails]="true"
+          [showItemNavigators]="true"
+          [circular]="true"
+          [containerStyle]="{ 'max-width': '100%' }">
+          <ng-template pTemplate="item" let-item>
+            <img [src]="item" [alt]="hotel.name" style="width: 100%; height: 500px; object-fit: cover;">
+          </ng-template>
+          <ng-template pTemplate="thumbnail" let-item>
+            <img [src]="item" [alt]="hotel.name" style="width: 100px; height: 67px; object-fit: cover;">
+          </ng-template>
+        </p-galleria>
+      </section>
+
+      <!-- Hotel Info Section -->
+      <section class="hotel-info">
+        <div class="container">
+          <div class="header">
+            <div class="title">
+              <h1>{{ hotel.name }}</h1>
+              <p-chip [label]="hotel.source | uppercase"></p-chip>
+            </div>
+            <div class="rating">
+              <p-rating [ngModel]="hotel.rating" [readonly]="true" [stars]="5"></p-rating>
+              <span class="review-count">({{ hotel.reviewCount }})</span>
+            </div>
+          </div>
+
+          <div class="address">
+            <i class="pi pi-map-marker"></i>
+            <span>{{ hotel.address }}</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Content -->
+      <section class="main-content">
+        <div class="container">
+          <div class="content-grid">
+            <!-- Left Column -->
+            <div class="left-column">
+              <p-tabView>
+                <!-- Overview Tab -->
+                <p-tabPanel [header]="'HOTELS.DETAILS.OVERVIEW' | translate">
+                  <div class="overview">
+                    <h3>{{ 'HOTELS.DETAILS.DESCRIPTION' | translate }}</h3>
+                    <p>{{ hotel.description }}</p>
+
+                    <h3>{{ 'HOTELS.DETAILS.FACILITIES' | translate }}</h3>
+                    <div class="facilities">
+                      <div *ngFor="let amenity of hotel.amenities" class="facility">
+                        <i [class]="getAmenityIcon(amenity)"></i>
+                        <span>{{ 'HOTELS.AMENITIES.' + amenity | translate }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </p-tabPanel>
+
+                <!-- Rooms Tab -->
+                <p-tabPanel [header]="'HOTELS.DETAILS.ROOMS' | translate">
+                  <div class="rooms">
+                    <div *ngFor="let room of hotel.rooms" class="room-card">
+                      <div class="room-info">
+                        <h3>{{ room.name }}</h3>
+                        <p>{{ room.description }}</p>
+                        <div class="room-amenities">
+                          <span *ngFor="let amenity of room.amenities.slice(0, 3)" class="amenity-tag">
+                            <i [class]="getAmenityIcon(amenity)"></i>
+                            {{ 'HOTELS.AMENITIES.' + amenity | translate }}
+                          </span>
+                        </div>
+                      </div>
+                      <div class="room-booking">
+                        <div class="price">
+                          <span class="amount">{{ room.price.amount | currency:room.price.currency:'symbol':'1.0-0' }}</span>
+                          <span class="per-night">{{ 'HOTELS.SEARCH.PER_NIGHT' | translate }}</span>
+                        </div>
+                        <button 
+                          pButton 
+                          type="button" 
+                          [label]="'HOTELS.DETAILS.BOOK_NOW' | translate"
+                          (click)="bookRoom(room)">
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </p-tabPanel>
+
+                <!-- Location Tab -->
+                <p-tabPanel [header]="'HOTELS.DETAILS.LOCATION' | translate">
+                  <div class="location">
+                    <div #mapContainer class="map-container"></div>
+                  </div>
+                </p-tabPanel>
+
+                <!-- Policies Tab -->
+                <p-tabPanel [header]="'HOTELS.DETAILS.POLICIES' | translate">
+                  <div class="policies">
+                    <div class="policy-item">
+                      <h3>{{ 'HOTELS.DETAILS.CHECK_IN_TIME' | translate }}</h3>
+                      <p>{{ hotel.checkIn || ('HOTELS.DETAILS.NOT_SPECIFIED' | translate) }}</p>
+                    </div>
+                    <div class="policy-item">
+                      <h3>{{ 'HOTELS.DETAILS.CHECK_OUT_TIME' | translate }}</h3>
+                      <p>{{ hotel.checkOut || ('HOTELS.DETAILS.NOT_SPECIFIED' | translate) }}</p>
+                    </div>
+                    <ng-container *ngIf="hotel.policies">
+                      <div class="policy-item" *ngIf="hotel.policies.cancellation">
+                        <h3>{{ 'HOTELS.DETAILS.CANCELLATION' | translate }}</h3>
+                        <p>{{ hotel.policies.cancellation }}</p>
+                      </div>
+                      <div class="policy-item" *ngIf="hotel.policies.prepayment">
+                        <h3>{{ 'HOTELS.DETAILS.PREPAYMENT' | translate }}</h3>
+                        <p>{{ hotel.policies.prepayment }}</p>
+                      </div>
+                    </ng-container>
+                  </div>
+                </p-tabPanel>
+              </p-tabView>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column">
+              <div class="booking-widget">
+                <h3>{{ 'HOTELS.DETAILS.BOOK_NOW' | translate }}</h3>
+                <form [formGroup]="bookingForm" (ngSubmit)="submitBooking()">
+                  <div class="form-group">
+                    <label>{{ 'HOTELS.SEARCH.CHECK_IN' | translate }}</label>
+                    <p-calendar 
+                      formControlName="checkIn"
+                      [minDate]="minDate"
+                      [showIcon]="true">
+                    </p-calendar>
+                  </div>
+
+                  <div class="form-group">
+                    <label>{{ 'HOTELS.SEARCH.CHECK_OUT' | translate }}</label>
+                    <p-calendar 
+                      formControlName="checkOut"
+                      [minDate]="bookingForm.get('checkIn')?.value || minDate"
+                      [showIcon]="true">
+                    </p-calendar>
+                  </div>
+
+                  <div class="form-group">
+                    <label>{{ 'HOTELS.SEARCH.GUESTS' | translate }}</label>
+                    <p-inputNumber 
+                      formControlName="guests"
+                      [min]="1" 
+                      [max]="10"
+                      [showButtons]="true">
+                    </p-inputNumber>
+                  </div>
+
+                  <button 
+                    pButton 
+                    type="submit" 
+                    [label]="'HOTELS.DETAILS.CHECK_AVAILABILITY' | translate"
+                    [disabled]="!bookingForm.valid">
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Booking Dialog -->
+      <p-dialog 
+        [(visible)]="showBookingDialog" 
+        [modal]="true"
+        [header]="'HOTELS.BOOKING.TITLE' | translate"
+        [style]="{width: '90vw', maxWidth: '800px'}">
+        <div class="booking-form" *ngIf="selectedRoom">
+          <!-- Booking form content -->
+        </div>
+      </p-dialog>
+    </div>

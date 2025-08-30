@@ -127,8 +127,8 @@ export class OrderViewComponent implements OnInit {
 
   copyOrderId() {
     if (!this.orderId) return;
-
-    navigator.clipboard.writeText(this.orderId).then(() => {
+    const shortOrderId = this.orderId.slice(-8);
+    navigator.clipboard.writeText(shortOrderId).then(() => {
       this.messageService.add({
         severity: 'success',
         summary: 'Thành công',

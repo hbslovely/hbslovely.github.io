@@ -1,0 +1,80 @@
+{
+  "featuredPlaces": [
+    {
+      "title": "HOME.FEATURED_PLACES.ITEMS.BEN_THANH_MARKET.TITLE",
+      "image": "assets/images/landmarks/ben-thanh-market.jpg",
+      "descriptionKey": "HOME.FEATURED_PLACES.ITEMS.BEN_THANH_MARKET.DESCRIPTION"
+    },
+    {
+      "title": "HOME.FEATURED_PLACES.ITEMS.CU_CHI_TUNNELS.TITLE",
+      "image": "assets/images/landmarks/cu-chi-tunnels.jpg",
+      "descriptionKey": "HOME.FEATURED_PLACES.ITEMS.CU_CHI_TUNNELS.DESCRIPTION"
+    },
+    {
+      "title": "HOME.FEATURED_PLACES.ITEMS.DISTRICT_1.TITLE",
+      "image": "assets/images/landmarks/district-1.jpg",
+      "descriptionKey": "HOME.FEATURED_PLACES.ITEMS.DISTRICT_1.DESCRIPTION"
+    }
+  ],
+  "categories": [
+    {
+      "titleKey": "HOME.CATEGORIES.ITEMS.CULTURE.TITLE",
+      "descriptionKey": "HOME.CATEGORIES.ITEMS.CULTURE.DESCRIPTION",
+      "icon": "pi pi-compass",
+      "route": "/discover/culture"
+    },
+    {
+      "titleKey": "HOME.CATEGORIES.ITEMS.FOOD.TITLE",
+      "descriptionKey": "HOME.CATEGORIES.ITEMS.FOOD.DESCRIPTION",
+      "icon": "pi pi-heart",
+      "route": "/discover/food"
+    },
+    {
+      "titleKey": "HOME.CATEGORIES.ITEMS.ATTRACTIONS.TITLE",
+      "descriptionKey": "HOME.CATEGORIES.ITEMS.ATTRACTIONS.DESCRIPTION",
+      "icon": "pi pi-map-marker",
+      "route": "/discover/attractions"
+    },
+    {
+      "titleKey": "HOME.CATEGORIES.ITEMS.SHOPPING.TITLE",
+      "descriptionKey": "HOME.CATEGORIES.ITEMS.SHOPPING.DESCRIPTION",
+      "icon": "pi pi-shopping-bag",
+      "route": "/discover/shopping"
+    }
+  ],
+  "quickFacts": [
+    {
+      "key": "POPULATION",
+      "icon": "pi-users"
+    },
+    {
+      "key": "DISTRICTS",
+      "icon": "pi-map"
+    },
+    {
+      "key": "FOUNDED",
+      "icon": "pi-calendar"
+    },
+    {
+      "key": "CLIMATE",
+      "icon": "pi-cloud"
+    }
+  ],
+  "carouselResponsiveOptions": [
+    {
+      "breakpoint": "1199px",
+      "numVisible": 3,
+      "numScroll": 1
+    },
+    {
+      "breakpoint": "991px",
+      "numVisible": 2,
+      "numScroll": 1
+    },
+    {
+      "breakpoint": "767px",
+      "numVisible": 1,
+      "numScroll": 1
+    }
+  ]
+}
