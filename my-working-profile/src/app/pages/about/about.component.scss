@@ -2,7 +2,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
-  
+
   @media (max-width: 480px) {
     padding: 0.5rem;
   }
@@ -344,21 +344,26 @@
   align-items: center;
   gap: 2rem;
   width: 100%;
+  position: relative;
+  padding: 0.5rem;
 
   @media (max-width: 768px) {
     flex-direction: column;
     text-align: center;
     gap: 1.5rem;
     padding: 1rem 0.5rem;
+    margin-top: 1rem;
   }
 
   @media (max-width: 480px) {
     gap: 1rem;
     padding: 0.5rem;
+    margin-top: 0.5rem;
   }
 
   .avatar-container {
     flex-shrink: 0;
+    z-index: 2;
 
     .avatar {
       width: 150px;
@@ -370,13 +375,14 @@
       position: relative;
       cursor: pointer;
       transition: transform 0.3s, box-shadow 0.3s;
-      
+      display: block;
+
       @media (max-width: 768px) {
         width: 120px;
         height: 120px;
         margin: 0 auto;
       }
-      
+
       @media (max-width: 480px) {
         width: 100px;
         height: 100px;
@@ -420,7 +426,7 @@
 
   .info-content {
     color: var(--text-color);
-    
+
     @media (max-width: 480px) {
       width: 100%;
     }
@@ -434,7 +440,7 @@
       @media (max-width: 768px) {
         font-size: 1.8rem;
       }
-      
+
       @media (max-width: 480px) {
         font-size: 1.5rem;
       }
@@ -478,7 +484,7 @@
         flex-wrap: wrap;
         gap: 0.75rem;
       }
-      
+
       @media (max-width: 480px) {
         flex-direction: column;
         gap: 0.5rem;
@@ -494,12 +500,12 @@
         border-radius: 4px;
         background-color: rgba(0, 102, 204, 0.1);
         transition: all 0.2s ease;
-        
+
         @media (max-width: 768px) {
           padding: 0.4rem 0.6rem;
           font-size: 0.9rem;
         }
-        
+
         @media (max-width: 480px) {
           width: 100%;
           justify-content: center;
@@ -662,11 +668,11 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
-  
+
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
-  
+
   @media (max-width: 480px) {
     gap: 1rem;
   }
@@ -865,16 +871,16 @@
     gap: 1.5rem;
     padding: 1.5rem;
   }
-  
+
   @media (max-width: 480px) {
     padding: 1.25rem;
     margin-top: 2rem;
-    
+
     .cta-content {
       h3 {
         font-size: 1.3rem;
       }
-      
+
       p {
         font-size: 0.9rem;
       }
@@ -967,11 +973,11 @@
 
   .summary-section {
     padding: 1.5rem;
-    
+
     .summary-title {
       font-size: 1.3rem;
     }
-    
+
     p {
       font-size: 1rem;
     }
@@ -985,7 +991,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
-    
+
     .featured-title {
       font-size: 1.3rem;
     }
@@ -997,11 +1003,11 @@
 
   .project-card {
     padding: 1.2rem;
-    
+
     .project-header {
       flex-direction: column;
       gap: 0.5rem;
-      
+
       .project-duration {
         align-self: flex-start;
       }
@@ -1029,28 +1035,28 @@
   .about-section {
     padding: 0.5rem;
   }
-  
+
   .personal-info-overlay {
     .info-content {
       .name {
         font-size: 1.5rem;
         line-height: 1.3;
       }
-      
+
       .role {
         font-size: 1.1rem;
         margin: 0.25rem 0 0.75rem;
       }
-      
+
       .location {
         font-size: 0.9rem;
         margin-bottom: 0.75rem;
       }
-      
+
       .contact-row,
       .social-row {
         margin-bottom: 0.5rem;
-        
+
         a {
           width: 100%;
           justify-content: center;
@@ -1062,42 +1068,42 @@
       }
     }
   }
-  
+
   .summary-section {
     margin-top: 1rem;
-    
+
     p {
       font-size: 0.9rem;
       line-height: 1.6;
     }
   }
-  
+
   .featured-section {
     .featured-header {
       margin-bottom: 1rem;
-      
+
       .featured-title {
         font-size: 1.2rem;
       }
-      
+
       .view-all-link {
         font-size: 0.9rem;
       }
     }
   }
-  
+
   .project-card {
     .project-header {
       .project-name {
         font-size: 1.1rem;
       }
     }
-    
+
     .project-description {
       font-size: 0.9rem;
       -webkit-line-clamp: 4;
     }
-    
+
     .project-tech {
       .tech-tag {
         font-size: 0.8rem;
@@ -1105,12 +1111,12 @@
       }
     }
   }
-  
+
   .skill-category {
     .category-title {
       font-size: 1rem;
     }
-    
+
     .skill-tags {
       .skill-tag {
         font-size: 0.8rem;

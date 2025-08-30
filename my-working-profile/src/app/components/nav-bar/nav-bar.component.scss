@@ -110,6 +110,10 @@ nav {
 
 // Mobile styles
 @media (max-width: 768px) {
+  .navbar {
+    z-index: 1050; // Increase z-index to ensure it's above other elements
+  }
+
   .navbar-content {
     height: 56px;
   }
@@ -121,7 +125,7 @@ nav {
   .mobile-menu-button {
     display: block;
     transition: all 0.2s ease;
-    
+
     &:active {
       transform: scale(0.95);
     }
@@ -133,6 +137,7 @@ nav {
     left: 0;
     right: 0;
     bottom: 0;
+    height: calc(100vh - 56px);
     background: linear-gradient(135deg, rgba(30, 60, 114, 0.97) 0%, rgba(42, 82, 152, 0.97) 100%);
     backdrop-filter: blur(8px);
     flex-direction: column;
@@ -142,11 +147,13 @@ nav {
     transform: translateX(100%);
     transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
     overflow-y: auto;
-    z-index: 999;
+    z-index: 1049;
+    visibility: hidden; // Hide when closed for accessibility
 
     &.open {
       transform: translateX(0);
       box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+      visibility: visible;
     }
 
     .nav-links {
@@ -212,14 +219,19 @@ nav {
 }
 
 @media (max-width: 480px) {
+  .navbar {
+    z-index: 1050;
+  }
+
   .navbar-content {
     height: 50px;
   }
-  
+
   nav {
     top: 50px;
+    height: calc(100vh - 50px);
     padding: 0.75rem;
-    
+
     .nav-links li a {
       padding: 0.65rem 0.85rem;
       font-size: 1rem;
