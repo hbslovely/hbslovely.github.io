@@ -11,39 +11,45 @@
 
       <nav [class.open]="isMobileMenuOpen()">
         <ul class="nav-links">
+          <div class="nav-indicator" #navIndicator [ngStyle]="indicatorStyles"></div>
           <li>
             <a routerLink="/about"
                routerLinkActive="active"
                [routerLinkActiveOptions]="{exact: true}"
-               (click)="closeMobileMenu()">
+               (click)="closeMobileMenu()"
+               #navItem>
               {{ 'NAV.ABOUT' | translate }}
             </a>
           </li>
           <li>
             <a routerLink="/experience"
                routerLinkActive="active"
-               (click)="closeMobileMenu()">
+               (click)="closeMobileMenu()"
+               #navItem>
               {{ 'NAV.EXPERIENCE' | translate }}
             </a>
           </li>
           <li>
             <a routerLink="/projects"
                routerLinkActive="active"
-               (click)="closeMobileMenu()">
+               (click)="closeMobileMenu()"
+               #navItem>
               {{ 'NAV.PROJECTS' | translate }}
             </a>
           </li>
           <li>
             <a routerLink="/skills"
                routerLinkActive="active"
-               (click)="closeMobileMenu()">
+               (click)="closeMobileMenu()"
+               #navItem>
               {{ 'NAV.SKILLS' | translate }}
             </a>
           </li>
           <li>
             <a routerLink="/my-pages"
                routerLinkActive="active"
-               (click)="closeMobileMenu()">
+               (click)="closeMobileMenu()"
+               #navItem>
               {{ 'NAV.MY_PAGES' | translate }}
             </a>
           </li>
