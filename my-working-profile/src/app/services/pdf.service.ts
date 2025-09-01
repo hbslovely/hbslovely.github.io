@@ -4,6 +4,8 @@ import { LanguageService } from './language.service';
 import { addCandaraFont } from "./jspdf-font";
 import { TranslateService } from '@ngx-translate/core';
 import { CV, Education, WorkExperience, Project } from '../models/cv.models';
+import { HttpClient } from '@angular/common/http';
+import { firstValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +13,7 @@ import { CV, Education, WorkExperience, Project } from '../models/cv.models';
 export class PdfService {
   private readonly languageService = inject(LanguageService);
   private readonly translateService = inject(TranslateService);
+  private readonly http = inject(HttpClient);
 
   // A4 dimensions in points (72 points per inch)
   private readonly A4_WIDTH = 595.28;  // 8.27 × 72
@@ -25,13 +28,13 @@ export class PdfService {
   private readonly LABEL_WIDTH = 85; // Width for labels like "Technologies:", "Environment:", etc.
   private readonly PROJECT_LINE_HEIGHT = 1; // Add this new constant for project descriptions
 
-  private setupPdfFonts(pdf: jsPDF): void {
+  private async setupPdfFonts(pdf: jsPDF): Promise<void> {
     try {
       const currentLang = this.languageService.getCurrentLanguage();
 
       if (currentLang === 'vi') {
         // Setup Vietnamese font
-        this.defineVietnameseFont(pdf);
+        await this.defineVietnameseFont(pdf);
         pdf.setFont('VNFont');
 
         // Enable Unicode encoding for Vietnamese characters
@@ -57,10 +60,23 @@ export class PdfService {
     }
   }
 
-  private defineVietnameseFont(pdf: jsPDF): void {
-    // Add Vietnamese font definition
-    pdf.addFileToVFS('VNFont.ttf', 'VN_TOKEN');
-    pdf.addFont('VNFont.ttf', 'VNFont', 'normal');
+  private async defineVietnameseFont(pdf: jsPDF): Promise<void> {
+    try {
+      // Load Vietnamese font token from JSON file
+      const fontData = await firstValueFrom(
+        this.http.get<{ vnToken: string }>('assets/json/fonts/vietnamese-font.json')
+      );
+
+      // Add Vietnamese font definition using the token from JSON
+      if (fontData && fontData.vnToken) {
+        pdf.addFileToVFS('VNFont.ttf', fontData.vnToken);
+        pdf.addFont('VNFont.ttf', 'VNFont', 'normal');
+      } else {
+        console.error('Vietnamese font token not found in JSON');
+      }
+    } catch (error) {
+      console.error('Error loading Vietnamese font token:', error);
+    }
   }
 
   private getLineHeight(fontSize: number, isProjectContent: boolean = false): number {
@@ -119,8 +135,8 @@ export class PdfService {
 
     addCandaraFont(pdf);
 
-    // Setup fonts
-    this.setupPdfFonts(pdf);
+    // Setup fonts - Note: this is now async
+    await this.setupPdfFonts(pdf);
 
     // Define colors - using light blue theme to match web interface
     const colors = {
@@ -482,7 +498,7 @@ export class PdfService {
     if (cv.projects?.projects) {
       // Filter out projects marked with excludeFromPdf
       const includedProjects = cv.projects.projects.filter((project: Project) => !project.excludeFromPdf);
-      
+
       includedProjects.forEach((project: Project, index: number) => {
         // Check if we need a new page for this project
         yPos = this.checkPageBreak(pdf, yPos, 150);
@@ -506,18 +522,15 @@ export class PdfService {
           yPos += this.getLineHeight(12, true) + 4; // Use project line height
           yPos = this.checkPageBreak(pdf, yPos, 50);
 
-          // Add bullet point with proper bullet character
-          pdf.text('•', this.MARGIN + 5, yPos);
-
           pdf.setFont('Candara', 'normal');
           pdf.setFontSize(11);
           pdf.setTextColor(colors.text);
           const descLines = pdf.splitTextToSize(project.description, this.CONTENT_WIDTH - 10);
           descLines.forEach((line: string, lineIndex: number) => {
-            yPos = this.checkPageBreak(pdf, yPos + (lineIndex * this.getLineHeight(11, true)), this.getLineHeight(1));
-            pdf.text(line, this.MARGIN + 15, yPos + (lineIndex * this.getLineHeight(2))); // Use project line height
+            yPos = this.checkPageBreak(pdf, yPos + this.getLineHeight(1.5, true), this.getLineHeight(1));
+            pdf.text(line, lineIndex !== 0 ? this.MARGIN: this.MARGIN + 15, yPos +  lineIndex * this.getLineHeight(11)); // Use project line height
           });
-          yPos += 20;
+          yPos += (descLines.length) * this.getLineHeight(12);
         }
 
         // Project details with consistent styling
