@@ -131,12 +131,7 @@
         "Angular",
         "ReactJS",
         "Nativescript",
-        "SignalR",
-        "ASP.NET",
-        "Facebook API",
-        "Google Place API",
-        "Angular Material",
-        "Nodejs"
+        "SignalR"
       ],
       "environment": [
         "Webstorm",

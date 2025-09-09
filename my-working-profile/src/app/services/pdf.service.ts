@@ -3,7 +3,7 @@ import { jsPDF } from 'jspdf';
 import { LanguageService } from './language.service';
 import { addCandaraFont } from "./jspdf-font";
 import { TranslateService } from '@ngx-translate/core';
-import { CV, Education, WorkExperience, Project } from '../models/cv.models';
+import { CV, Education, Project, WorkExperience } from '../models/cv.models';
 
 @Injectable({
   providedIn: 'root'
@@ -408,11 +408,11 @@ export class PdfService {
     let column3Y = yPos;
     let currentColumn = 0;
 
-    Object.entries(cv.skills.technicalSkills).forEach(([category, skills]) => {
+    Object.entries(cv.skills.technicalSkills).forEach(([ category, skills ]) => {
       let currentY: number;
       let startX: number;
 
-      switch (currentColumn) {
+      switch ( currentColumn ) {
         case 0:
           currentY = column1Y;
           startX = this.MARGIN;
@@ -458,7 +458,7 @@ export class PdfService {
 
       const heightUsed = (skillLines.length * this.getLineHeight(11)) + 30;
 
-      switch (currentColumn) {
+      switch ( currentColumn ) {
         case 0:
           column1Y += heightUsed;
           break;
@@ -482,7 +482,7 @@ export class PdfService {
     if (cv.projects?.projects) {
       // Filter out projects marked with excludeFromPdf
       const includedProjects = cv.projects.projects.filter((project: Project) => !project.excludeFromPdf);
-      
+
       includedProjects.forEach((project: Project, index: number) => {
         // Check if we need a new page for this project
         yPos = this.checkPageBreak(pdf, yPos, 150);
@@ -505,7 +505,7 @@ export class PdfService {
         if (project.description) {
           yPos += this.getLineHeight(12, true) + 4; // Use project line height
           yPos = this.checkPageBreak(pdf, yPos, 50);
-
+          console.log('.', yPos);
           // Add bullet point with proper bullet character
           pdf.text('•', this.MARGIN + 5, yPos);
 
@@ -514,10 +514,12 @@ export class PdfService {
           pdf.setTextColor(colors.text);
           const descLines = pdf.splitTextToSize(project.description, this.CONTENT_WIDTH - 10);
           descLines.forEach((line: string, lineIndex: number) => {
-            yPos = this.checkPageBreak(pdf, yPos + (lineIndex * this.getLineHeight(11, true)), this.getLineHeight(1));
-            pdf.text(line, this.MARGIN + 15, yPos + (lineIndex * this.getLineHeight(2))); // Use project line height
+            if (lineIndex > 0) {
+              yPos = this.checkPageBreak(pdf, yPos + (this.getLineHeight(11, true)), this.getLineHeight(1));
+            }
+            pdf.text(line, this.MARGIN + 15, yPos + (lineIndex > 0 ? this.getLineHeight(1.5) : 0)); // Use project line height
           });
-          yPos += 20;
+          yPos += 15;
         }
 
         // Project details with consistent styling
@@ -540,8 +542,8 @@ export class PdfService {
           const techText = project.technologies.join(', ');
           const techLines = pdf.splitTextToSize(techText, this.CONTENT_WIDTH - this.LABEL_WIDTH - 30);
           techLines.forEach((line: string, lineIndex: number) => {
-            yPos = this.checkPageBreak(pdf, yPos + (lineIndex * this.getLineHeight(11, true)), this.getLineHeight(11, true));
-            pdf.text(line, techStartX, yPos + (lineIndex * this.getLineHeight(1)));
+            yPos = this.checkPageBreak(pdf, yPos + lineIndex * this.getLineHeight(11), this.getLineHeight(11, true));
+            pdf.text(line, techStartX, yPos + lineIndex * this.getLineHeight(11));
           });
           yPos += 10;
         }
