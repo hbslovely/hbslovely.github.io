@@ -23,7 +23,7 @@ export class PdfService {
   private readonly SECTION_HEADER_HEIGHT = 32;
   private readonly HEADER_SPACING = this.SECTION_HEADER_HEIGHT + 12; // Space after section headers
   private readonly LABEL_WIDTH = 85; // Width for labels like "Technologies:", "Environment:", etc.
-  private readonly PROJECT_LINE_HEIGHT = 1; // Add this new constant for project descriptions
+  private readonly PROJECT_LINE_HEIGHT = 1.5; // Consistent line height for all content
 
   private setupPdfFonts(pdf: jsPDF): void {
     try {
@@ -63,8 +63,9 @@ export class PdfService {
     pdf.addFont('VNFont.ttf', 'VNFont', 'normal');
   }
 
-  private getLineHeight(fontSize: number, isProjectContent: boolean = false): number {
-    return fontSize * (isProjectContent ? this.PROJECT_LINE_HEIGHT : 1.1);
+  private getLineHeight(fontSize: number, _isProjectContent: boolean = false): number {
+    // Consistent 1.5 line height for all content
+    return fontSize * this.PROJECT_LINE_HEIGHT;
   }
 
   private formatLocation(location: any): string {
@@ -161,7 +162,7 @@ export class PdfService {
     pdf.text(name, this.MARGIN + prefixWidth, yPos);
 
     // Add title with reduced spacing
-    yPos += this.getLineHeight(24) * 0.7; // Adjusted line height to match new font size
+    yPos += this.getLineHeight(24) * 0.6;
     pdf.setFont('Candara', 'medium');
     pdf.setFontSize(16); // Smaller font for position
     pdf.setTextColor(colors.titleGrey);
@@ -191,12 +192,12 @@ export class PdfService {
       console.error('Error adding avatar:', error);
     }
 
-    // Add contact info in single row layout with increased spacing
-    yPos += this.getLineHeight(16) * 0.8; // Reduced space after position
+    // Add contact info in single row layout with consistent spacing
+    yPos += this.getLineHeight(16);
     const contactStartY = yPos;
     let contactY = contactStartY;
 
-    const lineSpacing = this.getLineHeight(11) * 1.5; // Increased line spacing
+    const lineSpacing = this.getLineHeight(11); // Consistent line spacing
 
     // DOB
     pdf.setFont('Candara', 'bold');
@@ -255,7 +256,7 @@ export class PdfService {
     contactY += 10;
 
     // Add summary content directly without header
-    yPos = Math.max(contactY + this.getLineHeight(11) * 1.2, this.MARGIN + this.AVATAR_SIZE + this.SECTION_SPACING);
+    yPos = Math.max(contactY + this.getLineHeight(11), this.MARGIN + this.AVATAR_SIZE + this.SECTION_SPACING);
 
     yPos += 15;
 
@@ -273,18 +274,13 @@ export class PdfService {
     //   yPos += shortSummaryLines.length * this.getLineHeight(12) + this.getLineHeight(12);
     // }
 
-    // Second paragraph - first part of detailed summary
+    // Complete summary
     if (cv.personalInfo.summary) {
       const summaryText = cv.personalInfo.summary;
-      // Split the summary into sentences
-      const sentences = summaryText.match(/[^.!?]+[.!?]+/g) || [];
-      // Take roughly half of the sentences for the second paragraph
-      const halfLength = Math.ceil(sentences.length / 2);
-      const secondParagraph = sentences.slice(0, halfLength).join(' ').trim();
-
-      const summaryLines = pdf.splitTextToSize(secondParagraph, this.CONTENT_WIDTH);
+      
+      const summaryLines = pdf.splitTextToSize(summaryText, this.CONTENT_WIDTH);
       summaryLines.forEach((line: string, index: number) => {
-        pdf.text(line, this.MARGIN, yPos + (index * this.getLineHeight(14)));
+        pdf.text(line, this.MARGIN, yPos + (index * this.getLineHeight(12)));
       });
       yPos += (summaryLines.length - 1) * this.getLineHeight(12);
     }
@@ -296,26 +292,27 @@ export class PdfService {
 
     if (cv.education?.education) {
       cv.education.education.forEach((edu: Education, index: number) => {
-        // Duration left-aligned
-        const duration = `${ edu.startDate } - ${ edu.endDate }`;
-        pdf.setFont('Candara', 'normal');
-        pdf.setFontSize(14);
-        pdf.setTextColor(colors.subtext);
-        pdf.text(duration, this.MARGIN, yPos);
-
-        // School/University name in blue, indented after duration
-        const durationWidth = pdf.getTextWidth(duration);
+        // School/University name in blue, larger font
         pdf.setFont('Candara', 'bold');
         pdf.setFontSize(14);
         pdf.setTextColor(colors.primary);
-        pdf.text(edu.institution, this.MARGIN + durationWidth + 15, yPos);
+        pdf.text(edu.institution, this.MARGIN, yPos);
 
-        // Degree and Field
+        // Degree and duration on the same line
         yPos += this.getLineHeight(14);
         pdf.setFont('Candara', 'normal');
         pdf.setFontSize(12);
-        pdf.setTextColor(colors.titleGrey);
-        pdf.text(`${ edu.degree } in ${ edu.field }`, this.MARGIN + 15, yPos);
+        pdf.setTextColor(colors.text);
+        const degreeText = `${ edu.degree } in ${ edu.field }`;
+        pdf.text(degreeText, this.MARGIN, yPos);
+        
+        // Duration after degree with dash separator
+        const degreeWidth = pdf.getTextWidth(degreeText);
+        const duration = `${ edu.startDate } - ${ edu.endDate }`;
+        pdf.setFont('Candara', 'normal');
+        pdf.setFontSize(12);
+        pdf.setTextColor(colors.subtext);
+        pdf.text(` - ${ duration }`, this.MARGIN + degreeWidth, yPos);
 
         // Add spacing between education items
         yPos += this.SUB_SECTION_SPACING;
@@ -337,29 +334,29 @@ export class PdfService {
       // Check if we need a new page for this experience entry
       yPos = this.checkPageBreak(pdf, yPos, 150); // Estimated minimum space needed for an experience entry
 
-      // Duration left-aligned
-      const duration = `${ exp.startDate } - ${ exp.endDate || 'Present' }`;
-      pdf.setFont('Candara', 'normal');
-      pdf.setFontSize(12);
-      pdf.setTextColor(colors.subtext);
-      pdf.text(duration, this.MARGIN, yPos);
-
-      // Company name in blue, larger font, indented after duration
-      const durationWidth = pdf.getTextWidth(duration);
+      // Company name in blue, larger font
       pdf.setFont('Candara', 'bold');
       pdf.setFontSize(14); // Reduced from 17 to 14
       pdf.setTextColor(colors.primary);
-      pdf.text(exp.company, this.MARGIN + durationWidth + 15, yPos);
+      pdf.text(exp.company, this.MARGIN, yPos);
 
-      // Position right below company name
+      // Position and duration on the same line
       yPos += this.getLineHeight(14);
-      pdf.setFont('Candara', 'normal');
+      pdf.setFont('Candara', 'bold');
       pdf.setFontSize(12); // Reduced from 14 to 12
       pdf.setTextColor(colors.text);
-      pdf.text(exp.position, this.MARGIN + durationWidth + 15, yPos);
+      pdf.text(exp.position, this.MARGIN, yPos);
+      
+      // Duration after position with dash separator
+      const positionWidth = pdf.getTextWidth(exp.position);
+      const duration = `${ exp.startDate } - ${ exp.endDate || 'Now' }`;
+      pdf.setFont('Candara', 'normal');
+      pdf.setFontSize(12);
+      pdf.setTextColor(colors.subtext);
+      pdf.text(` - ${ duration }`, this.MARGIN + positionWidth, yPos);
 
-      // Add some space before responsibilities
-      yPos += this.getLineHeight(12) * 1.2;
+      // Add consistent line break before responsibilities
+      yPos += this.getLineHeight(12);
 
       // Responsibilities with proper bullet points
       pdf.setFont('Candara', 'normal');
@@ -376,9 +373,13 @@ export class PdfService {
         // Add responsibility text with proper wrapping
         const lines = pdf.splitTextToSize(resp, this.CONTENT_WIDTH - 25);
         lines.forEach((line: string, lineIndex: number) => {
-          // Check if we need a new page for the next line
-          yPos = this.checkPageBreak(pdf, yPos + (lineIndex * this.getLineHeight(12)), this.getLineHeight(1));
-          pdf.text(line, this.MARGIN + 15, yPos + (lineIndex * this.getLineHeight(1.5)));
+          if (lineIndex === 0) {
+            pdf.text(line, this.MARGIN + 15, yPos);
+          } else {
+            yPos += this.getLineHeight(12);
+            yPos = this.checkPageBreak(pdf, yPos, this.getLineHeight(12));
+            pdf.text(line, this.MARGIN + 15, yPos);
+          }
         });
 
         yPos += 20;
@@ -396,6 +397,180 @@ export class PdfService {
         yPos += 25;
       }
     });
+
+    // Add Projects Section with page break check
+    yPos = this.checkPageBreak(pdf, yPos, 300);
+    yPos = this.addSectionHeader(pdf, 'Projects', yPos, colors);
+
+    if (cv.projects?.projects) {
+      const includedProjects = cv.projects.projects.filter((project: Project) => !project.excludeFromPdf);
+
+      includedProjects.forEach((project: Project, index: number) => {
+        // Check if we need a new page for this project
+        yPos = this.checkPageBreak(pdf, yPos, 150);
+
+        // Project name and duration on same line with dash separator
+        const nameText = project.name || '';
+        pdf.setFont('Candara', 'bold');
+        pdf.setFontSize(14);
+        pdf.setTextColor(colors.primary);
+        pdf.text(nameText, this.MARGIN, yPos);
+
+        const nameWidth = pdf.getTextWidth(nameText);
+        const duration = project.duration || '';
+        if (duration) {
+          pdf.setFont('Candara', 'normal');
+          pdf.setFontSize(12);
+          pdf.setTextColor(colors.subtext);
+          pdf.text(` - ${ duration }`, this.MARGIN + nameWidth, yPos);
+        }
+
+        // Description - match Experience section line height behavior
+        if (project.description) {
+          yPos += this.getLineHeight(12);
+          yPos = this.checkPageBreak(pdf, yPos, 50);
+
+          // Bullet
+          pdf.text('•', this.MARGIN + 5, yPos);
+
+          // Description lines with the same spacing logic as Experience responsibilities
+          pdf.setFont('Candara', 'normal');
+          pdf.setFontSize(11);
+          pdf.setTextColor(colors.text);
+
+          const lines = pdf.splitTextToSize(project.description, this.CONTENT_WIDTH - 25);
+          lines.forEach((line: string, lineIndex: number) => {
+            if (lineIndex === 0) {
+              pdf.text(line, this.MARGIN + 15, yPos);
+            } else {
+              yPos += this.getLineHeight(11);
+              yPos = this.checkPageBreak(pdf, yPos, this.getLineHeight(11));
+              pdf.text(line, this.MARGIN + 15, yPos);
+            }
+          });
+
+          // Add a little space after the paragraph (mirroring responsibilities)
+          yPos += 20;
+        }
+
+        // Project details with minimal spacing
+        const detailSpacer = this.getLineHeight(11) * 0.2;
+
+        // Technologies
+        if (project.technologies?.length) {
+          yPos += detailSpacer;
+          yPos = this.checkPageBreak(pdf, yPos, 50);
+
+          pdf.setFont('Candara', 'bold');
+          pdf.setFontSize(11);
+          pdf.setTextColor(colors.primary);
+          const techLabel = this.translateService.instant('Technologies') + ':';
+          pdf.text(techLabel, this.MARGIN, yPos);
+
+          const techStartX = this.MARGIN + this.LABEL_WIDTH;
+
+          pdf.setFont('Candara', 'normal');
+          pdf.setTextColor(colors.text);
+          const techText = project.technologies.join(', ');
+          const techLines = pdf.splitTextToSize(techText, this.CONTENT_WIDTH - this.LABEL_WIDTH - 30);
+          const techLineHeight = this.getLineHeight(11);
+
+          let techY = yPos;
+          techLines.forEach((line: string, idx: number) => {
+            if (idx === 0) {
+              pdf.text(line, techStartX, techY);
+              techY += techLineHeight;
+            } else {
+              techY = this.checkPageBreak(pdf, techY, techLineHeight);
+              pdf.text(line, techStartX, techY);
+              techY += techLineHeight;
+            }
+          });
+
+          yPos = techY;
+        }
+
+        // Environment
+        if (project.environment?.length) {
+          yPos += detailSpacer;
+          yPos = this.checkPageBreak(pdf, yPos, 50);
+
+          pdf.setFont('Candara', 'bold');
+          pdf.setFontSize(11);
+          pdf.setTextColor(colors.primary);
+          const envLabel = this.translateService.instant('Environment') + ':';
+          pdf.text(envLabel, this.MARGIN, yPos);
+
+          const envStartX = this.MARGIN + this.LABEL_WIDTH;
+
+          pdf.setFont('Candara', 'normal');
+          pdf.setTextColor(colors.text);
+          const envText = project.environment.join(', ');
+          const envLines = pdf.splitTextToSize(envText, this.CONTENT_WIDTH - this.LABEL_WIDTH - 30);
+          const envLineHeight = this.getLineHeight(11);
+
+          let envY = yPos;
+          envLines.forEach((line: string, idx: number) => {
+            if (idx === 0) {
+              pdf.text(line, envStartX, envY);
+              envY += envLineHeight;
+            } else {
+              envY = this.checkPageBreak(pdf, envY, envLineHeight);
+              pdf.text(line, envStartX, envY);
+              envY += envLineHeight;
+            }
+          });
+
+          yPos = envY;
+        }
+
+        // Role
+        if (project.role) {
+          yPos += detailSpacer;
+          yPos = this.checkPageBreak(pdf, yPos, 50);
+
+          pdf.setFont('Candara', 'bold');
+          pdf.setFontSize(11);
+          pdf.setTextColor(colors.primary);
+          const roleLabel = this.translateService.instant('Role') + ':';
+          pdf.text(roleLabel, this.MARGIN, yPos);
+
+          const roleStartX = this.MARGIN + this.LABEL_WIDTH;
+
+          pdf.setFont('Candara', 'normal');
+          pdf.setTextColor(colors.text);
+          const roleLines = pdf.splitTextToSize(project.role, this.CONTENT_WIDTH - this.LABEL_WIDTH - 30);
+          const roleLineHeight = this.getLineHeight(11);
+
+          let roleY = yPos;
+          roleLines.forEach((line: string, idx: number) => {
+            if (idx === 0) {
+              pdf.text(line, roleStartX, roleY);
+              roleY += roleLineHeight;
+            } else {
+              roleY = this.checkPageBreak(pdf, roleY, roleLineHeight);
+              pdf.text(line, roleStartX, roleY);
+              roleY += roleLineHeight;
+            }
+          });
+
+          yPos = roleY;
+        }
+
+        // Increased spacing between projects
+        yPos += this.SUB_SECTION_SPACING;
+      });
+    }
+
+    // Add centered text about additional projects
+    yPos += 20;
+    pdf.setFont('Candara', 'normal');
+    pdf.setFontSize(11);
+    pdf.setTextColor(colors.subtext);
+    const additionalProjectsText = 'There are additional projects not shown here.';
+    const textWidth = pdf.getTextWidth(additionalProjectsText);
+    pdf.text(additionalProjectsText, (this.A4_WIDTH - textWidth) / 2, yPos);
+    yPos += 25;
 
     // Add Skills section with page break check
     yPos = this.checkPageBreak(pdf, yPos, 150);
@@ -474,147 +649,6 @@ export class PdfService {
     });
 
     yPos = Math.max(column1Y, column2Y, column3Y);
-
-    // Add Projects Section with page break check
-    yPos = this.checkPageBreak(pdf, yPos, 300);
-    yPos = this.addSectionHeader(pdf, 'Projects', yPos, colors);
-
-    if (cv.projects?.projects) {
-      // Filter out projects marked with excludeFromPdf
-      const includedProjects = cv.projects.projects.filter((project: Project) => !project.excludeFromPdf);
-
-      includedProjects.forEach((project: Project, index: number) => {
-        // Check if we need a new page for this project
-        yPos = this.checkPageBreak(pdf, yPos, 150);
-
-        // Duration left-aligned
-        const duration = project.duration || '';
-        pdf.setFont('Candara', 'normal');
-        pdf.setFontSize(11);
-        pdf.setTextColor(colors.subtext);
-        pdf.text(duration, this.MARGIN, yPos);
-
-        // Project name in blue, indented after duration
-        const durationWidth = pdf.getTextWidth(duration);
-        pdf.setFont('Candara', 'bold');
-        pdf.setFontSize(14);
-        pdf.setTextColor(colors.primary);
-        pdf.text(project.name, this.MARGIN + durationWidth + 15, yPos);
-
-        // Description
-        if (project.description) {
-          yPos += this.getLineHeight(12, true) + 4; // Use project line height
-          yPos = this.checkPageBreak(pdf, yPos, 50);
-          console.log('.', yPos);
-          // Add bullet point with proper bullet character
-          pdf.text('•', this.MARGIN + 5, yPos);
-
-          pdf.setFont('Candara', 'normal');
-          pdf.setFontSize(11);
-          pdf.setTextColor(colors.text);
-          const descLines = pdf.splitTextToSize(project.description, this.CONTENT_WIDTH - 10);
-          descLines.forEach((line: string, lineIndex: number) => {
-            if (lineIndex > 0) {
-              yPos = this.checkPageBreak(pdf, yPos + (this.getLineHeight(11, true)), this.getLineHeight(1));
-            }
-            pdf.text(line, this.MARGIN + 15, yPos + (lineIndex > 0 ? this.getLineHeight(1.5) : 0)); // Use project line height
-          });
-          yPos += 15;
-        }
-
-        // Project details with consistent styling
-        const detailSpacing = this.getLineHeight(6, true);
-        // Technologies
-        if (project.technologies?.length) {
-          yPos += detailSpacing;
-          yPos = this.checkPageBreak(pdf, yPos, 50);
-          pdf.setFont('Candara', 'bold');
-          pdf.setTextColor(colors.primary);
-          const techLabel = this.translateService.instant('Technologies') + ':';
-          pdf.text(techLabel, this.MARGIN, yPos); // Aligned with project name
-
-          // Calculate where to start the technologies text
-          const labelWidth = pdf.getTextWidth(techLabel);
-          const techStartX = this.MARGIN + this.LABEL_WIDTH;
-
-          pdf.setFont('Candara', 'normal');
-          pdf.setTextColor(colors.text);
-          const techText = project.technologies.join(', ');
-          const techLines = pdf.splitTextToSize(techText, this.CONTENT_WIDTH - this.LABEL_WIDTH - 30);
-          techLines.forEach((line: string, lineIndex: number) => {
-            yPos = this.checkPageBreak(pdf, yPos + lineIndex * this.getLineHeight(11), this.getLineHeight(11, true));
-            pdf.text(line, techStartX, yPos + lineIndex * this.getLineHeight(11));
-          });
-          yPos += 10;
-        }
-
-        // Environment
-        if (project.environment?.length) {
-          yPos += detailSpacing;
-          yPos = this.checkPageBreak(pdf, yPos, 50);
-          pdf.setFont('Candara', 'bold');
-          pdf.setTextColor(colors.primary);
-          const envLabel = this.translateService.instant('Environment') + ':';
-          pdf.text(envLabel, this.MARGIN, yPos);
-
-          const envStartX = this.MARGIN + this.LABEL_WIDTH;
-
-          pdf.setFont('Candara', 'normal');
-          pdf.setTextColor(colors.text);
-          const envText = project.environment.join(', ');
-          const envLines = pdf.splitTextToSize(envText, this.CONTENT_WIDTH - this.LABEL_WIDTH - 30);
-          envLines.forEach((line: string, lineIndex: number) => {
-            yPos = this.checkPageBreak(pdf, yPos + (lineIndex * this.getLineHeight(11, true)), this.getLineHeight(11, true));
-            pdf.text(line, envStartX, yPos + (lineIndex * this.getLineHeight(1)));
-          });
-          yPos += 10;
-        }
-
-        // Role
-        if (project.role) {
-          yPos += detailSpacing;
-          yPos = this.checkPageBreak(pdf, yPos, 50);
-          pdf.setFont('Candara', 'bold');
-          pdf.setTextColor(colors.primary);
-          const roleLabel = this.translateService.instant('Role') + ':';
-          pdf.text(roleLabel, this.MARGIN, yPos);
-
-          const roleStartX = this.MARGIN + this.LABEL_WIDTH;
-
-          pdf.setFont('Candara', 'normal');
-          pdf.setTextColor(colors.text);
-          const roleLines = pdf.splitTextToSize(project.role, this.CONTENT_WIDTH - this.LABEL_WIDTH - 30);
-          roleLines.forEach((line: string, lineIndex: number) => {
-            yPos = this.checkPageBreak(pdf, yPos + (lineIndex * this.getLineHeight(11, true)), this.getLineHeight(11, true));
-            pdf.text(line, roleStartX, yPos + (lineIndex * this.getLineHeight(1)));
-          });
-          yPos += 10;
-
-        }
-
-        // Add spacing between projects
-        yPos += 0;
-
-        // Add a subtle separator line between projects (except for the last one)
-        if (index < includedProjects.length - 1) {
-          yPos += 5;
-          pdf.setDrawColor(colors.accent);
-          pdf.setLineWidth(1);
-          pdf.line(this.MARGIN, yPos, this.A4_WIDTH - this.MARGIN, yPos);
-          yPos += 20;
-        }
-      });
-    }
-
-    // Add centered text about additional projects
-    yPos += 20;
-    pdf.setFont('Candara', 'normal');
-    pdf.setFontSize(11);
-    pdf.setTextColor(colors.subtext);
-    const additionalProjectsText = 'There are additional projects not shown here.';
-    const textWidth = pdf.getTextWidth(additionalProjectsText);
-    pdf.text(additionalProjectsText, (this.A4_WIDTH - textWidth) / 2, yPos);
-    yPos += 25;
 
     // Add footer with page numbers
     const totalPages = pdf.getNumberOfPages();

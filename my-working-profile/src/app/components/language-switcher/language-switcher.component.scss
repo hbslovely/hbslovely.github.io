@@ -4,33 +4,38 @@
 
 .language-toggle {
   display: flex;
-  background: var(--primary-lightest);
-  padding: 2px;
-  border-radius: 24px;
+  background: #f1f5f9;
+  padding: 3px;
+  border-radius: 8px;
   position: relative;
-  min-width: 80px; /* Reduced from 110px */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
+  min-width: 70px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    border-color: #cbd5e1;
+    background: #f8fafc;
+  }
   
   &.switching {
     .toggle-button {
       .button-content {
-        animation: textPulse 0.5s ease;
+        animation: textPulse 0.3s ease;
       }
     }
   }
   
   .slider {
     position: absolute;
-    top: 2px;
-    left: 2px;
-    height: calc(100% - 4px);
-    width: calc(50% - 2px);
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    top: 3px;
+    left: 3px;
+    height: calc(100% - 6px);
+    width: calc(50% - 3px);
+    background: #006aca;
+    border-radius: 5px;
     z-index: 1;
-    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.25s ease;
+    box-shadow: 0 1px 3px rgba(0, 106, 202, 0.2);
   }
 
   .toggle-button {
@@ -38,42 +43,44 @@
     align-items: center;
     justify-content: center;
     flex: 1;
-    padding: 4px 6px; /* Reduced from 6px 8px */
+    padding: 6px 8px;
     border: none;
     background: transparent;
-    border-radius: 20px;
-    color: var(--text-light);
-    font-size: 0.75rem; /* Reduced from 0.85rem */
-    font-weight: 500;
-    transition: color 0.3s ease;
+    border-radius: 5px;
+    color: #64748b;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
     cursor: pointer;
     position: relative;
     z-index: 2;
+    min-height: 28px;
 
     &.active {
-      color: var(--primary-color);
+      color: white;
     }
 
     .button-content {
       display: flex;
       align-items: center;
-      gap: 4px; /* Reduced from 6px */
-      transition: transform 0.3s ease;
+      gap: 3px;
+      transition: transform 0.2s ease;
       
       .flag {
-        font-size: 1rem; /* Reduced from 1.1rem */
-        filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+        font-size: 0.9rem;
+        line-height: 1;
       }
 
       .lang-code {
-        font-weight: 500;
-        letter-spacing: 0.5px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
         text-transform: uppercase;
+        font-size: 0.7rem;
       }
     }
     
-    &:hover:not(.active) .button-content {
-      transform: translateY(-1px); /* Reduced from -2px */
+    &:hover:not(.active) {
+      color: #475569;
     }
   }
 }
@@ -96,18 +103,28 @@
 // Dark theme adjustments
 :host-context(.dark-theme) {
   .language-toggle {
-    background: rgba(255, 255, 255, 0.1);
+    background: #1e293b;
+    border-color: #334155;
+    
+    &:hover {
+      background: #334155;
+      border-color: #475569;
+    }
     
     .slider {
-      background: rgba(30, 30, 30, 0.9);
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+      background: #006aca;
+      box-shadow: 0 1px 3px rgba(0, 106, 202, 0.3);
     }
 
     .toggle-button {
-      color: rgba(255, 255, 255, 0.7);
+      color: #94a3b8;
       
       &.active {
         color: white;
+      }
+      
+      &:hover:not(.active) {
+        color: #cbd5e1;
       }
     }
   }
@@ -116,25 +133,29 @@
 // Mobile adjustments
 @media (max-width: 768px) {
   .language-toggle {
-    min-width: 70px; /* Further reduced for mobile */
+    min-width: 65px;
     padding: 2px;
     
     .slider {
       top: 2px;
       left: 2px;
       height: calc(100% - 4px);
+      width: calc(50% - 2px);
     }
 
     .toggle-button {
-      padding: 3px 4px; /* Further reduced for mobile */
+      padding: 5px 6px;
+      min-height: 26px;
       
       .button-content {
+        gap: 2px;
+        
         .flag {
-          font-size: 0.9rem; /* Reduced from 1rem */
+          font-size: 0.8rem;
         }
         
         .lang-code {
-          font-size: 0.7rem; /* Reduced from 0.75rem */
+          font-size: 0.65rem;
         }
       }
     }

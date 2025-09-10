@@ -237,12 +237,12 @@ export class ProjectsPageComponent {
         (project.status && this.selectedStatuses().includes(project.status.toLowerCase()));
 
       const matchesSearch = !searchTerm ||
-        project.name.toLowerCase().includes(searchTerm) ||
-        project.description.toLowerCase().includes(searchTerm) ||
-        project.technologies.some(tech => tech.toLowerCase().includes(searchTerm)) ||
-        (project.scope && project.scope.toLowerCase().includes(searchTerm)) ||
-        (project.status && project.status.toLowerCase().includes(searchTerm)) ||
-        (project.responsibilities && project.responsibilities.some(resp => resp.toLowerCase().includes(searchTerm)));
+        this.fuzzyMatch(project.name, searchTerm) ||
+        this.fuzzyMatch(project.description, searchTerm) ||
+        project.technologies.some(tech => this.fuzzyMatch(tech, searchTerm)) ||
+        (project.scope && this.fuzzyMatch(project.scope, searchTerm)) ||
+        (project.status && this.fuzzyMatch(project.status, searchTerm)) ||
+        (project.responsibilities && project.responsibilities.some(resp => this.fuzzyMatch(resp, searchTerm)));
 
       return matchesTech && matchesScope && matchesStatus && matchesSearch;
     });
@@ -286,6 +286,39 @@ export class ProjectsPageComponent {
   clearAllFilters(): void {
     this.clearFilters();
     this.searchText.set('');
+  }
+
+  // Enhanced search functionality
+  performSearch(): void {
+    // This method can be used for additional search logic if needed
+    // Currently, search is reactive through computed signals
+    if (this.searchText().trim()) {
+      console.log('Searching for:', this.searchText());
+    }
+  }
+
+  clearSearch(): void {
+    this.searchText.set('');
+  }
+
+  // Enhanced search that includes fuzzy matching
+  private fuzzyMatch(text: string, searchTerm: string): boolean {
+    const normalizeText = (str: string) => str.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const normalizedText = normalizeText(text);
+    const normalizedSearch = normalizeText(searchTerm);
+    
+    if (normalizedText.includes(normalizedSearch)) {
+      return true;
+    }
+    
+    // Simple fuzzy matching - check if characters appear in order
+    let searchIndex = 0;
+    for (let i = 0; i < normalizedText.length && searchIndex < normalizedSearch.length; i++) {
+      if (normalizedText[i] === normalizedSearch[searchIndex]) {
+        searchIndex++;
+      }
+    }
+    return searchIndex === normalizedSearch.length;
   }
 
   // Helper methods to check if a filter is selected

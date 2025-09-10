@@ -1,10 +1,10 @@
 <div [class]="config.className">
   <!-- Page Header -->
-  <app-page-header 
-    title="{{ 'SECTIONS.FEATURED_PROJECTS' | translate }}" 
+  <app-page-header
+    title="{{ 'SECTIONS.FEATURED_PROJECTS' | translate }}"
     subtitle="{{ 'SECTIONS.SUBTITLES.FEATURED_PROJECTS' | translate }}">
   </app-page-header>
-  
+
   <div class="container" [style.maxWidth.px]="config.maxWidth">
     <div class="count-wrapper">
       <app-project-count
@@ -16,47 +16,49 @@
     <!-- Toolbar Section -->
     <div class="toolbar-section">
       <div class="search-box">
-        <span nz-icon nzType="search" nzTheme="outline"></span>
-        <input 
-          type="text" 
-          [ngModel]="searchText()" 
+        <span nz-icon nzType="search" class="search-icon" nzTheme="outline"></span>
+        <input
+          type="text"
+          [ngModel]="searchText()"
           [placeholder]="'PROJECTS.SEARCH_PLACEHOLDER' | translate"
           (ngModelChange)="searchText.set($event)"
+          (keyup.enter)="performSearch()"
+          #searchInput
         >
         @if (searchText()) {
-          <button class="clear-search" (click)="searchText.set('')">
-            <span nz-icon nzType="close-circle" nzTheme="outline"></span>
+          <button class="clear-search" (click)="clearSearch()" title="Clear search">
+            <span nz-icon nzType="close" nzTheme="outline"></span>
           </button>
         }
       </div>
       <div class="view-controls">
-        <button 
-          class="view-toggle" 
+        <button
+          class="view-toggle"
           [class.active]="viewType() === 'grid'"
-          (click)="setViewType('grid')" 
+          (click)="setViewType('grid')"
           [title]="'PROJECTS.VIEWS.GRID' | translate"
         >
           <span nz-icon nzType="appstore" nzTheme="outline"></span>
         </button>
-        <button 
-          class="view-toggle" 
+        <button
+          class="view-toggle"
           [class.active]="viewType() === 'list'"
-          (click)="setViewType('list')" 
+          (click)="setViewType('list')"
           [title]="'PROJECTS.VIEWS.LIST' | translate"
         >
           <span nz-icon nzType="unordered-list" nzTheme="outline"></span>
         </button>
       </div>
-      <button 
-        class="filter-toggle" 
+      <button
+        class="filter-toggle"
         [class.active]="isFilterVisible()"
-        (click)="toggleFilters()" 
+        (click)="toggleFilters()"
         [title]="'PROJECTS.FILTERS.TITLE' | translate"
       >
         <span nz-icon nzType="filter" nzTheme="outline"></span>
         {{ 'PROJECTS.FILTER_BUTTON' | translate }}
         @if (selectedTechnologies().length || selectedScopes().length || selectedStatuses().length) {
-          <span class="filter-badge">{{ getTotalFiltersCount() }}</span>
+          <span class="filter-badge" [class.active-badge]="isFilterVisible()">{{ getTotalFiltersCount() }}</span>
         }
       </button>
     </div>
@@ -162,12 +164,12 @@
         </div>
       }
     </div>
-    
+
     <!-- Contact CTA Section -->
-    <app-contact-cta 
-      title="CTA.INTERESTED_IN_WORKING_TOGETHER" 
+    <app-contact-cta
+      title="CTA.INTERESTED_IN_WORKING_TOGETHER"
       description="CTA.REACH_OUT"
-      buttonText="CTA.CONTACT_ME" 
+      buttonText="CTA.CONTACT_ME"
       buttonIcon="linkedin">
     </app-contact-cta>
   </div>

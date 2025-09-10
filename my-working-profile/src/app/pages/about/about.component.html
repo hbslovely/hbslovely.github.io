@@ -12,7 +12,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="info-content">
           <h2 class="name animate-text">{{ cv()?.personalInfo?.prefix }} {{ cv()?.personalInfo?.name }}</h2>
           <h3 class="role animate-text-delay">{{ cv()?.personalInfo?.title }}</h3>
@@ -20,25 +20,25 @@
             <span nz-icon nzType="environment" nzTheme="outline"></span>
             {{ cv()?.personalInfo?.location?.city }}, {{ cv()?.personalInfo?.location?.country }}
           </div>
-          
+
           <div class="contact-row animate-text-delay-3">
             <a class="contact-item pulse-on-hover" [href]="'mailto:' + cv()?.personalInfo?.contact?.email">
               <span nz-icon nzType="mail" nzTheme="outline"></span>
               <span>{{ cv()?.personalInfo?.contact?.email }}</span>
             </a>
-            
+
             <a class="contact-item pulse-on-hover" [href]="'tel:' + cv()?.personalInfo?.contact?.phone">
               <span nz-icon nzType="phone" nzTheme="outline"></span>
               <span>{{ cv()?.personalInfo?.contact?.phone }}</span>
             </a>
           </div>
-          
+
           <div class="social-row animate-text-delay-4">
             <a class="social-item bounce-on-hover" [href]="cv()?.personalInfo?.contact?.github" target="_blank" rel="noopener noreferrer">
               <span nz-icon nzType="github" nzTheme="outline"></span>
               <span>GitHub</span>
             </a>
-            
+
             <a class="social-item bounce-on-hover" [href]="cv()?.personalInfo?.contact?.linkedin" target="_blank" rel="noopener noreferrer">
               <span nz-icon nzType="linkedin" nzTheme="outline"></span>
               <span>LinkedIn</span>
@@ -47,15 +47,15 @@
         </div>
       </div>
     </app-page-header>
-    
+
     <!-- Professional Summary with Animation -->
     <div class="summary-section animate-fade-in-up">
       <div class="summary-decoration"></div>
       <h3 class="summary-title">{{ 'SECTIONS.PROFESSIONAL_SUMMARY' | translate }}</h3>
-      <p>{{ cv()?.personalInfo?.summary }}</p>
+      <p class="summary-description">{{ cv()?.personalInfo?.summary }}</p>
       <div class="summary-background-pattern"></div>
     </div>
-    
+
     <!-- Featured Projects with Animation -->
     <div class="featured-section animate-fade-in-up">
       <div class="featured-header">
@@ -65,7 +65,7 @@
           <span nz-icon nzType="arrow-right" nzTheme="outline" class="arrow-animate"></span>
         </a>
       </div>
-      
+
       <div class="featured-projects">
         <ng-container *ngIf="featuredProjects().length">
           <div class="project-card animate-card" *ngFor="let project of featuredProjects(); let i = index" [style.animation-delay]="i * 0.2 + 's'">
@@ -74,14 +74,14 @@
               <h4 class="project-name">{{ project.name }}</h4>
               <span class="project-duration">{{ project.duration }}</span>
             </div>
-            
+
             <div class="project-company" *ngIf="project.company">
               <span nz-icon nzType="bank" nzTheme="outline"></span>
               {{ project.company }}
             </div>
-            
+
             <p class="project-description">{{ project.description }}</p>
-            
+
             <div class="project-tech">
               <span class="tech-tag animate-tag" *ngFor="let tech of project.technologies.slice(0, 4); let j = index" [style.animation-delay]="(i * 0.1) + (j * 0.1) + 's'">{{ tech }}</span>
               <span class="tech-more" *ngIf="project.technologies.length > 4">+{{ project.technologies.length - 4 }}</span>
@@ -90,7 +90,7 @@
         </ng-container>
       </div>
     </div>
-    
+
     <!-- Featured Skills with Animation -->
     <div class="featured-section animate-fade-in-up">
       <div class="featured-header">
@@ -100,7 +100,7 @@
           <span nz-icon nzType="arrow-right" nzTheme="outline" class="arrow-animate"></span>
         </a>
       </div>
-      
+
       <div class="skills-container">
         <div class="skill-category animate-slide-in" *ngFor="let category of featuredSkillCategories(); let i = index" [style.animation-delay]="i * 0.2 + 's'">
           <h4 class="category-title">{{ formatCategoryName(category) }}</h4>
@@ -115,7 +115,7 @@
         </div>
       </div>
     </div>
-    
+
     <!-- Call to Action Section -->
     <div class="cta-section animate-fade-in-up">
       <div class="cta-content">
@@ -128,4 +128,4 @@
       </a>
     </div>
   </div>
-</div> 
+</div>

@@ -14,7 +14,9 @@
   overflow: hidden;
   position: relative;
   
-  // Subtle glow animation instead of pulse
+  // Pulse animation to attract clicks
+  animation: pulse-scale 2s ease-in-out infinite;
+  
   &::after {
     content: '';
     position: absolute;
@@ -22,16 +24,18 @@
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
     border-radius: 8px;
     z-index: -1;
     opacity: 0;
-    animation: subtle-glow 3s ease-in-out infinite;
+    animation: pulse-glow 2s ease-in-out infinite;
   }
 
   &:hover {
     background: rgba(255, 255, 255, 0.15);
     border-color: rgba(255, 255, 255, 0.3);
+    animation: none;
+    transform: scale(1.02);
     
     &::after {
       animation: none;
@@ -41,6 +45,7 @@
   &:disabled {
     opacity: 0.7;
     cursor: not-allowed;
+    animation: none;
     
     &::after {
       animation: none;
@@ -156,7 +161,19 @@
 }
 
 // Animations
-@keyframes subtle-glow {
+@keyframes pulse-scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-glow {
   0% {
     opacity: 0;
   }
