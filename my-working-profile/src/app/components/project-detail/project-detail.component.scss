@@ -40,12 +40,12 @@
 
     .project-footer {
       background: rgba(24, 144, 255, 0.02);
-      
+
       .card-action {
         .view-details {
           color: #1890ff;
         }
-        
+
         [nz-icon] {
           transform: translateX(3px);
           color: #1890ff;
@@ -106,7 +106,6 @@
             line-height: 1.4;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
           }
 
           // Status dot indicator style
@@ -117,7 +116,7 @@
             position: relative;
             display: inline-block;
             margin-left: 8px;
-            
+
             &::after {
               content: '';
               position: absolute;
@@ -129,18 +128,18 @@
               opacity: 0;
               z-index: -1;
             }
-            
+
             &.completed {
               background-color: #10b981;
-              
+
               &::after {
                 background-color: rgba(16, 185, 129, 0.3);
               }
             }
-            
+
             &.in-progress {
               background-color: #f59e0b;
-              
+
               &::after {
                 background-color: rgba(245, 158, 11, 0.3);
                 animation: pulse-ring 1.5s infinite;
@@ -153,7 +152,7 @@
             gap: 0.5rem;
             flex-wrap: wrap;
             align-items: center;
-            
+
             // Keep existing status indicator styles for backwards compatibility
             .status-indicator {
               display: flex;
@@ -164,36 +163,36 @@
               box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
               font-size: 0.8rem;
               font-weight: 500;
-              
+
               &.completed {
                 background-color: rgba(16, 185, 129, 0.15);
                 border: 1px solid rgba(16, 185, 129, 0.3);
                 color: #065f46;
-                .status-dot { 
-                  background-color: #10b981; 
-                  animation: pulse 2s infinite; 
+                .status-dot {
+                  background-color: #10b981;
+                  animation: pulse 2s infinite;
                 }
               }
-              
+
               &.in-progress {
                 background-color: rgba(245, 158, 11, 0.15);
                 border: 1px solid rgba(245, 158, 11, 0.3);
                 color: #92400e;
-                .status-dot { 
-                  background-color: #f59e0b; 
-                  animation: blink 1.5s infinite; 
+                .status-dot {
+                  background-color: #f59e0b;
+                  animation: blink 1.5s infinite;
                 }
               }
-              
-              .status-dot { 
-                width: 8px; 
-                height: 8px; 
-                border-radius: 50%; 
-                margin-right: 0.5rem; 
+
+              .status-dot {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                margin-right: 0.5rem;
               }
-              
-              .status-text { 
-                letter-spacing: 0.02em; 
+
+              .status-text {
+                letter-spacing: 0.02em;
               }
             }
           }
@@ -252,14 +251,14 @@
         display: inline-block;
       }
     }
-    
+
     .card-action {
       display: flex;
       align-items: center;
       justify-content: center;
       color: #718096;
       transition: all 0.3s ease;
-      
+
       [nz-icon] {
         font-size: 1.25rem;
         transition: all 0.3s ease;
@@ -275,7 +274,7 @@
 
       .project-meta {
         flex: 1;
-        
+
         .project-brief {
           -webkit-line-clamp: initial; // Remove line limit for list view
         }
@@ -296,7 +295,7 @@
   overflow: hidden;
   max-width: 800px;
   padding: 0;
-  
+
   .dialog-gradient-overlay {
     position: absolute;
     top: 0;
@@ -349,7 +348,7 @@
       gap: 0.5rem;
       flex-wrap: wrap;
       align-items: center;
-      
+
       // New status badge with dot and text
       .dialog-status-badge {
         display: flex;
@@ -359,67 +358,67 @@
         border-radius: 20px;
         background-color: rgba(255, 255, 255, 0.15);
         backdrop-filter: blur(4px);
-        
+
         .status-dot-indicator {
           width: 10px;
           height: 10px;
           border-radius: 50%;
           position: relative;
-          
+
           &.completed {
             background-color: #10b981;
           }
-          
+
           &.in-progress {
             background-color: #f59e0b;
             animation: blink 1.5s infinite;
           }
         }
-        
+
         span {
           font-size: 0.9rem;
           font-weight: 500;
           color: white;
         }
       }
-      
+
       // Keep existing status display styles for backwards compatibility
       .status-display {
         display: flex;
         align-items: center;
         margin-left: 0.5rem;
-        
+
         .status-label {
           font-weight: 500;
           margin-right: 0.5rem;
           color: rgba(255, 255, 255, 0.9);
         }
-        
+
         .status-value {
           display: flex;
           align-items: center;
           font-weight: 600;
           padding: 0.25rem 0.75rem;
           border-radius: 20px;
-          
+
           &.completed {
             background-color: rgba(16, 185, 129, 0.3);
             color: #ecfdf5;
-            
+
             .status-icon {
               color: #34d399;
             }
           }
-          
+
           &.in-progress {
             background-color: rgba(245, 158, 11, 0.3);
             color: #fffbeb;
-            
+
             .status-icon {
               color: #fbbf24;
             }
           }
-          
+
           .status-icon {
             margin-right: 0.5rem;
             display: flex;
@@ -449,7 +448,7 @@
     border-bottom: 1px solid #edf0f2;
     position: relative;
     z-index: 1;
-    
+
     &:nth-child(odd) {
       background-color: rgba(248, 250, 252, 0.6);
     }
@@ -594,12 +593,12 @@
             h3 {
               font-size: 1.1rem;
             }
-            
+
             .project-tags {
               .status-dot-indicator {
                 width: 10px;
                 height: 10px;
-                
+
                 &::after {
                   top: -3px;
                   left: -3px;
@@ -622,7 +621,7 @@
       flex-direction: row; // Keep as row to prevent wrapping
       justify-content: space-between;
       align-items: center;
-      
+
       .card-action {
         width: auto; // Reset width to auto
         padding-top: 0;
@@ -634,10 +633,10 @@
         flex-direction: column;
         gap: 1rem;
       }
-      
+
       .project-footer {
         flex-direction: row;
-        
+
         .card-action {
           width: auto;
           padding-top: 0;
@@ -653,25 +652,25 @@
       h2 {
         font-size: 1.5rem;
       }
-      
+
       .dialog-tags {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.75rem;
-        
+
         .dialog-status-badge {
           padding: 0.25rem 0.65rem;
-          
+
           .status-dot-indicator {
             width: 8px;
             height: 8px;
           }
-          
+
           span {
             font-size: 0.85rem;
           }
         }
-        
+
         // Existing status display
         .status-display {
           margin-left: 0;

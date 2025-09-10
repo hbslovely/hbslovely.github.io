@@ -306,19 +306,12 @@ export class ProjectsPageComponent {
     const normalizeText = (str: string) => str.toLowerCase().replace(/[^a-z0-9]/g, '');
     const normalizedText = normalizeText(text);
     const normalizedSearch = normalizeText(searchTerm);
-    
+
     if (normalizedText.includes(normalizedSearch)) {
       return true;
     }
-    
-    // Simple fuzzy matching - check if characters appear in order
-    let searchIndex = 0;
-    for (let i = 0; i < normalizedText.length && searchIndex < normalizedSearch.length; i++) {
-      if (normalizedText[i] === normalizedSearch[searchIndex]) {
-        searchIndex++;
-      }
-    }
-    return searchIndex === normalizedSearch.length;
+
+    return normalizedText.includes(normalizedSearch)
   }
 
   // Helper methods to check if a filter is selected
