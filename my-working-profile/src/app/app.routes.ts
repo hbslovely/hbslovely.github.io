@@ -5,6 +5,7 @@ import { ExperiencePageComponent } from './pages/experience/experience.component
 import { SkillsComponent } from './pages/skills/skills.component';
 import { ProjectsPageComponent } from './pages/projects/projects.component';
 import { MyPagesComponent } from './pages/my-pages/my-pages.component';
+import { SettingsComponent } from './pages/settings/settings.component';
 
 export const routes: Routes = [
   {
@@ -36,6 +37,11 @@ export const routes: Routes = [
         path: 'my-pages',
         component: MyPagesComponent,
         data: { animation: 'MyPagesPage' }
+      },
+      {
+        path: 'settings',
+        component: SettingsComponent,
+        data: { animation: 'SettingsPage' }
       },
       { path: '**', redirectTo: 'about' }
     ]

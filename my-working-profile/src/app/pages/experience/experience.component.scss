@@ -687,3 +687,162 @@
     grid-template-columns: 1fr;
   }
 }
+
+// Dark theme adjustments
+:host-context(.dark-theme) {
+  .experience-page {
+    color: var(--text-color);
+
+    .experience-hero {
+      background: linear-gradient(135deg, var(--bg-gradient-1) 0%, var(--bg-gradient-2) 100%);
+      color: var(--text-color);
+
+      .hero-content {
+        h1 {
+          color: var(--heading-color);
+        }
+
+        p {
+          color: var(--text-light);
+        }
+
+        .hero-stats {
+          .stat-item {
+            background: var(--card-bg);
+            border-color: var(--border-color);
+
+            .stat-value {
+              color: var(--primary-color);
+            }
+
+            .stat-label {
+              color: var(--text-light);
+            }
+          }
+        }
+      }
+    }
+
+    .section {
+      .section-header {
+        .header-icon {
+          background: var(--hover-bg);
+          color: var(--primary-color);
+        }
+
+        h2 {
+          color: var(--heading-color);
+        }
+
+        p {
+          color: var(--text-light);
+        }
+      }
+    }
+
+    .experience-section {
+      .experience-grid {
+        app-experience-card {
+          ::ng-deep .experience-card {
+            background: var(--card-bg);
+            border-color: var(--border-color);
+            color: var(--text-color);
+
+            &:hover {
+              background: var(--hover-bg);
+              border-color: var(--primary-color);
+            }
+          }
+        }
+      }
+    }
+
+    .education-section {
+      .education-grid {
+        app-education-card {
+          ::ng-deep .education-card {
+            background: var(--card-bg);
+            border-color: var(--border-color);
+            color: var(--text-color);
+
+            &:hover {
+              background: var(--hover-bg);
+              border-color: var(--primary-color);
+            }
+          }
+        }
+      }
+    }
+
+    .skills-overview-section {
+      .skills-categories {
+        .skill-category {
+          background: var(--card-bg);
+          border-color: var(--border-color);
+          color: var(--text-color);
+
+          &:hover {
+            background: var(--hover-bg);
+            border-color: var(--primary-color);
+          }
+
+          .category-icon {
+            color: var(--primary-color);
+            background: var(--hover-bg);
+          }
+
+          .category-name {
+            color: var(--heading-color);
+          }
+
+          .skill-item {
+            background: var(--hover-bg);
+            color: var(--text-color);
+
+            &:hover {
+              background: var(--primary-color);
+              color: white;
+            }
+          }
+        }
+      }
+
+      .view-all-skills {
+        .view-all-button {
+          background: var(--card-bg);
+          color: var(--primary-color);
+          border-color: var(--border-color);
+
+          &:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+          }
+        }
+      }
+    }
+
+    .contact-cta {
+      background: var(--primary-color);
+
+      .cta-content {
+        h3 {
+          color: white;
+        }
+
+        p {
+          color: rgba(255, 255, 255, 0.9);
+        }
+      }
+
+      .cta-button {
+        background: white;
+        color: var(--primary-color);
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.9);
+        }
+      }
+    }
+  }
+}

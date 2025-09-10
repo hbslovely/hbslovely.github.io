@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { LanguageSwitcherComponent } from '../language-switcher/language-switcher.component';
 import { ExportPdfComponent } from '../export-pdf/export-pdf.component';
 
 @Component({
@@ -14,7 +13,6 @@ import { ExportPdfComponent } from '../export-pdf/export-pdf.component';
     RouterModule,
     TranslateModule,
     NzIconModule,
-    LanguageSwitcherComponent,
     ExportPdfComponent
   ],
   templateUrl: './nav-bar.component.html',

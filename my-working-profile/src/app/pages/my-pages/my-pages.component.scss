@@ -28,6 +28,84 @@
   }
 }
 
+// Dark theme adjustments
+:host-context(.dark-theme) {
+  .my-pages-container {
+    color: var(--text-color);
+  }
+
+  .page-card {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+
+    &:hover {
+      background: var(--hover-bg);
+      border-color: var(--primary-color);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-content {
+      .page-title {
+        color: var(--heading-color);
+      }
+
+      .page-description {
+        color: var(--text-light);
+      }
+
+      .goals-section {
+        h4 {
+          color: var(--heading-color);
+        }
+
+        .goals-text {
+          color: var(--text-light);
+        }
+      }
+    }
+
+    .tech-section {
+      background: var(--hover-bg);
+      border-top-color: var(--border-color);
+
+      h4 {
+        color: var(--heading-color);
+      }
+
+      .tech-tags {
+        .tech-tag {
+          background: var(--card-bg);
+          color: var(--text-color);
+          border-color: var(--border-color);
+
+          &:hover {
+            background: var(--primary-color);
+            color: white;
+          }
+        }
+      }
+    }
+
+    .card-fixed-footer {
+      background: var(--primary-color);
+
+      .creation-year {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .visit-button {
+        background: white;
+        color: var(--primary-color);
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.95);
+        }
+      }
+    }
+  }
+}
+
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -40,6 +118,84 @@
   100% {
     transform: scale(1);
     box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+// Dark theme adjustments
+:host-context(.dark-theme) {
+  .my-pages-container {
+    color: var(--text-color);
+  }
+
+  .page-card {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+
+    &:hover {
+      background: var(--hover-bg);
+      border-color: var(--primary-color);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-content {
+      .page-title {
+        color: var(--heading-color);
+      }
+
+      .page-description {
+        color: var(--text-light);
+      }
+
+      .goals-section {
+        h4 {
+          color: var(--heading-color);
+        }
+
+        .goals-text {
+          color: var(--text-light);
+        }
+      }
+    }
+
+    .tech-section {
+      background: var(--hover-bg);
+      border-top-color: var(--border-color);
+
+      h4 {
+        color: var(--heading-color);
+      }
+
+      .tech-tags {
+        .tech-tag {
+          background: var(--card-bg);
+          color: var(--text-color);
+          border-color: var(--border-color);
+
+          &:hover {
+            background: var(--primary-color);
+            color: white;
+          }
+        }
+      }
+    }
+
+    .card-fixed-footer {
+      background: var(--primary-color);
+
+      .creation-year {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .visit-button {
+        background: white;
+        color: var(--primary-color);
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.95);
+        }
+      }
+    }
   }
 }
 
@@ -58,6 +214,84 @@
     transform: scale(1);
     opacity: 0.6;
     box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+  }
+}
+
+// Dark theme adjustments
+:host-context(.dark-theme) {
+  .my-pages-container {
+    color: var(--text-color);
+  }
+
+  .page-card {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+
+    &:hover {
+      background: var(--hover-bg);
+      border-color: var(--primary-color);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-content {
+      .page-title {
+        color: var(--heading-color);
+      }
+
+      .page-description {
+        color: var(--text-light);
+      }
+
+      .goals-section {
+        h4 {
+          color: var(--heading-color);
+        }
+
+        .goals-text {
+          color: var(--text-light);
+        }
+      }
+    }
+
+    .tech-section {
+      background: var(--hover-bg);
+      border-top-color: var(--border-color);
+
+      h4 {
+        color: var(--heading-color);
+      }
+
+      .tech-tags {
+        .tech-tag {
+          background: var(--card-bg);
+          color: var(--text-color);
+          border-color: var(--border-color);
+
+          &:hover {
+            background: var(--primary-color);
+            color: white;
+          }
+        }
+      }
+    }
+
+    .card-fixed-footer {
+      background: var(--primary-color);
+
+      .creation-year {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .visit-button {
+        background: white;
+        color: var(--primary-color);
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.95);
+        }
+      }
+    }
   }
 }
 
@@ -323,6 +557,84 @@
   }
 }
 
+// Dark theme adjustments
+:host-context(.dark-theme) {
+  .my-pages-container {
+    color: var(--text-color);
+  }
+
+  .page-card {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+
+    &:hover {
+      background: var(--hover-bg);
+      border-color: var(--primary-color);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-content {
+      .page-title {
+        color: var(--heading-color);
+      }
+
+      .page-description {
+        color: var(--text-light);
+      }
+
+      .goals-section {
+        h4 {
+          color: var(--heading-color);
+        }
+
+        .goals-text {
+          color: var(--text-light);
+        }
+      }
+    }
+
+    .tech-section {
+      background: var(--hover-bg);
+      border-top-color: var(--border-color);
+
+      h4 {
+        color: var(--heading-color);
+      }
+
+      .tech-tags {
+        .tech-tag {
+          background: var(--card-bg);
+          color: var(--text-color);
+          border-color: var(--border-color);
+
+          &:hover {
+            background: var(--primary-color);
+            color: white;
+          }
+        }
+      }
+    }
+
+    .card-fixed-footer {
+      background: var(--primary-color);
+
+      .creation-year {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .visit-button {
+        background: white;
+        color: var(--primary-color);
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.95);
+        }
+      }
+    }
+  }
+}
+
 // Info Section
 .info-section {
   margin: 3rem 0;
@@ -364,6 +676,84 @@
         color: var(--text-light);
         line-height: 1.6;
         margin: 0;
+      }
+    }
+  }
+}
+
+// Dark theme adjustments
+:host-context(.dark-theme) {
+  .my-pages-container {
+    color: var(--text-color);
+  }
+
+  .page-card {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+
+    &:hover {
+      background: var(--hover-bg);
+      border-color: var(--primary-color);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-content {
+      .page-title {
+        color: var(--heading-color);
+      }
+
+      .page-description {
+        color: var(--text-light);
+      }
+
+      .goals-section {
+        h4 {
+          color: var(--heading-color);
+        }
+
+        .goals-text {
+          color: var(--text-light);
+        }
+      }
+    }
+
+    .tech-section {
+      background: var(--hover-bg);
+      border-top-color: var(--border-color);
+
+      h4 {
+        color: var(--heading-color);
+      }
+
+      .tech-tags {
+        .tech-tag {
+          background: var(--card-bg);
+          color: var(--text-color);
+          border-color: var(--border-color);
+
+          &:hover {
+            background: var(--primary-color);
+            color: white;
+          }
+        }
+      }
+    }
+
+    .card-fixed-footer {
+      background: var(--primary-color);
+
+      .creation-year {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .visit-button {
+        background: white;
+        color: var(--primary-color);
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.95);
+        }
       }
     }
   }
@@ -464,3 +854,109 @@
     }
   }
 }
+
+// Dark theme adjustments
+:host-context(.dark-theme) {
+  .my-pages-container {
+    color: var(--text-color);
+  }
+
+  .page-card {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+
+    &:hover {
+      background: var(--hover-bg);
+      border-color: var(--primary-color);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-content {
+      .page-title {
+        color: var(--heading-color);
+      }
+
+      .page-description {
+        color: var(--text-light);
+      }
+
+      .goals-section {
+        h4 {
+          color: var(--heading-color);
+        }
+
+        .goals-text {
+          color: var(--text-light);
+        }
+      }
+    }
+
+    .tech-section {
+      background: var(--hover-bg);
+      border-top-color: var(--border-color);
+
+      h4 {
+        color: var(--heading-color);
+      }
+
+      .tech-tags {
+        .tech-tag {
+          background: var(--card-bg);
+          color: var(--text-color);
+          border-color: var(--border-color);
+
+          &:hover {
+            background: var(--primary-color);
+            color: white;
+          }
+        }
+      }
+    }
+
+    .card-fixed-footer {
+      background: var(--primary-color);
+
+      .creation-year {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .visit-button {
+        background: white;
+        color: var(--primary-color);
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.95);
+        }
+      }
+    }
+  }
+}
+
+
+  // Fix info-section (About My Personal Portfolio) dark theme
+  .info-section {
+    .info-card {
+      background: var(--card-bg);
+      color: var(--text-color);
+      border: 1px solid var(--border-color);
+
+      .info-icon {
+        background: var(--hover-bg);
+
+        span[nz-icon] {
+          color: var(--primary-color);
+        }
+      }
+
+      .info-content {
+        h3 {
+          color: var(--heading-color);
+        }
+
+        p {
+          color: var(--text-light);
+        }
+      }
+    }
+  }

@@ -510,3 +510,156 @@
     }
   }
 }
+
+// Dark theme adjustments
+:host-context(.dark-theme) {
+  .skills-page {
+    color: var(--text-color);
+
+    .skills-container {
+      color: var(--text-color);
+    }
+
+    .featured-skills {
+      .featured-grid {
+        .featured-skill {
+          background: var(--card-bg);
+          border-color: var(--border-color);
+          color: var(--text-color);
+
+          &:hover {
+            background: var(--hover-bg);
+            border-color: var(--primary-color);
+          }
+
+          .skill-icon {
+            color: var(--primary-color);
+            background: var(--hover-bg);
+          }
+
+          .skill-name {
+            color: var(--heading-color);
+          }
+
+          .skill-description {
+            color: var(--text-light);
+          }
+
+          .skill-level {
+            color: var(--text-light);
+          }
+
+          .experience-years {
+            background: var(--hover-bg);
+            color: var(--text-color);
+          }
+        }
+      }
+    }
+
+    .all-skills {
+      .skills-header {
+        h2 {
+          color: var(--heading-color);
+        }
+
+        p {
+          color: var(--text-light);
+        }
+      }
+
+      .category-grid {
+        .skill-category {
+          background: var(--card-bg);
+          border-color: var(--border-color);
+          color: var(--text-color);
+
+          .category-header {
+            border-bottom-color: var(--border-color);
+
+            span[nz-icon] {
+              color: var(--primary-color);
+              background: var(--hover-bg);
+            }
+
+            h3 {
+              color: var(--heading-color);
+            }
+
+            .skill-count {
+              background: var(--hover-bg);
+              color: var(--text-light);
+            }
+          }
+
+          .skill-list {
+            .skill-item {
+              background: var(--hover-bg);
+              color: var(--text-color);
+              border-color: var(--border-color);
+
+              &:hover {
+                background: var(--primary-color);
+                color: white;
+                border-color: var(--primary-color);
+              }
+
+              .skill-info {
+                .skill-name {
+                  color: var(--text-color);
+                }
+
+                .skill-level {
+                  color: var(--text-light);
+                }
+              }
+
+              .years-badge {
+                background: var(--border-color);
+                color: var(--text-light);
+              }
+
+              &:hover {
+                .skill-info .skill-name,
+                .skill-info .skill-level,
+                .years-badge {
+                  color: white;
+                }
+
+                .years-badge {
+                  background: rgba(255, 255, 255, 0.2);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .portfolio-cta {
+      background: var(--card-bg);
+      border-color: var(--border-color);
+
+      .cta-content {
+        h2 {
+          color: var(--heading-color);
+        }
+
+        p {
+          color: var(--text-light);
+        }
+
+        .cta-button {
+          background: var(--primary-color);
+          color: white;
+          border-color: var(--primary-color);
+
+          &:hover {
+            background: var(--primary-light);
+            border-color: var(--primary-light);
+          }
+        }
+      }
+    }
+  }
+}

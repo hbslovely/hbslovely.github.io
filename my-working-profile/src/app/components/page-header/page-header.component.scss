@@ -87,3 +87,27 @@
     }
   }
 }
+
+// Dark theme adjustments
+:host-context(.dark-theme) {
+  .page-header {
+    .header-overlay {
+      background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(30, 41, 59, 0.85));
+    }
+
+    .header-content {
+      color: var(--text-color);
+
+      .default-header {
+        .page-title {
+          color: var(--primary-color);
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .page-subtitle {
+          color: var(--text-light);
+        }
+      }
+    }
+  }
+}

@@ -432,29 +432,29 @@
   .education-card {
     .card-header {
       padding: 1.5rem 1.25rem 0.75rem;
-      
+
       .education-logo {
         width: 50px;
         height: 50px;
       }
-      
+
       .position-institution {
         h3 {
           font-size: 1.1rem;
         }
       }
     }
-    
+
     .card-content {
       padding: 0 1.25rem;
       gap: 0.5rem;
-      
+
       // Make meta info more compact
       .field-specialty {
         font-size: 0.9rem;
         margin-bottom: 0.2rem;
       }
-      
+
       .duration, .grade {
         font-size: 0.8rem;
         gap: 0.3rem;
@@ -465,23 +465,23 @@
         margin-right: 0.5rem;
         margin-bottom: 0.3rem;
         flex-shrink: 0;
-        
+
         span[nz-icon] {
           font-size: 0.8rem;
         }
       }
-      
+
       .description {
         font-size: 0.85rem;
         margin-top: 0.3rem;
       }
     }
-    
+
     .card-footer {
       padding: 1rem 1.25rem;
     }
   }
-  
+
   .education-detail-dialog {
     max-height: calc(100vh - 60px);
 
@@ -525,6 +525,37 @@
         h3 {
           font-size: 1.1rem;
           margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.education-detail-dialog {
+  .dialog-content {
+    background: var(--card-bg);
+
+    .scrollable-content {
+      background: var(--card-bg) !important;
+      color: var(--text-color);
+    }
+  }
+
+  .institution-contact-footer {
+    background: var(--hover-bg) !important;
+    border-top-color: var(--border-color) !important;
+    color: var(--text-color);
+
+    .institution-contact-info {
+      .contact-item {
+        color: var(--text-light);
+
+        [nz-icon] {
+          color: var(--primary-color);
+        }
+
+        strong {
+          color: var(--heading-color);
         }
       }
     }

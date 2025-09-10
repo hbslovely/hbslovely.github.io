@@ -242,13 +242,14 @@
 
       .more-count {
         font-size: 0.85rem;
-        color: #666;
-        background: #e6e8eb;
+        color: var(--text-light);
+        background: var(--hover-bg);
         padding: 0 8px;
         border-radius: 4px;
         height: 24px;
         line-height: 24px;
         display: inline-block;
+        border: 1px solid var(--border-color);
       }
     }
 
@@ -439,7 +440,6 @@
     p {
       margin: 0;
       line-height: 1.8;
-      color: #4a5568;
     }
   }
 
@@ -692,5 +692,357 @@
         }
       }
     }
+  }
+}
+
+// Dark theme adjustments
+:host-context(.dark-theme) {
+  .project-card {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+
+    &:hover {
+      border-color: var(--primary-color);
+    }
+
+    .project-header .project-title h3 {
+      color: var(--heading-color);
+    }
+
+    .project-footer .tech-preview .tech-tag {
+      background: var(--hover-bg);
+      color: var(--text-color);
+      border-color: var(--border-color);
+
+      &:hover {
+        background: var(--primary-color);
+        color: white;
+      }
+    }
+  }
+
+  .project-detail-dialog {
+    background: var(--card-bg);
+    color: var(--text-color);
+
+    .dialog-header {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+
+      h2 {
+        color: white;
+      }
+    }
+
+    .dialog-content .dialog-section {
+      h3 {
+        color: var(--heading-color);
+      }
+
+      p, li {
+        color: var(--text-light);
+      }
+    }
+  }
+
+  :host ::ng-deep .project-detail-modal .ant-modal-content {
+    background: var(--card-bg);
+  }
+}
+
+// Enhanced project card dark theme with dark blue background
+:host-context(.dark-theme) {
+  .project-card {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    border-color: var(--border-color);
+    color: var(--text-color);
+
+    &:hover {
+      border-color: var(--primary-color);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+      background: linear-gradient(135deg, #334155 0%, #475569 100%);
+    }
+
+    .card-gradient-overlay {
+      background: linear-gradient(135deg, rgba(var(--primary-color-rgb), 0.1) 0%, transparent 100%);
+    }
+
+    .project-header {
+      .project-meta {
+        .project-title h3 {
+          color: #e2e8f0;
+        }
+
+        .project-brief {
+          color: #cbd5e1;
+        }
+
+        .status-dot-indicator {
+          &.completed {
+            background: #10b981;
+          }
+
+          &.in-progress {
+            background: #f59e0b;
+          }
+        }
+      }
+    }
+
+    .project-footer {
+      background: rgba(var(--primary-color-rgb), 0.6);
+
+      &:hover {
+        background: rgba(var(--primary-color-rgb), 0.8);
+      }
+
+      .tech-preview {
+        .tech-tag {
+          background: rgba(255, 255, 255, 0.1);
+          color: #e2e8f0;
+          border-color: rgba(255, 255, 255, 0.2);
+
+          &:hover {
+            background: var(--primary-color);
+            color: white;
+          }
+        }
+
+        .more-count {
+          color: #cbd5e1;
+        }
+      }
+
+      .card-action [nz-icon] {
+        color: #e2e8f0;
+      }
+    }
+  }
+}
+
+// Enhanced project dialog dark theme
+:host-context(.dark-theme) {
+  .project-detail-dialog {
+    background: var(--card-bg);
+    color: var(--text-color);
+
+    .dialog-gradient-overlay {
+      background: linear-gradient(135deg, rgba(var(--primary-color-rgb), 0.1) 0%, transparent 100%);
+    }
+
+    .dialog-header {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+
+      h2 {
+        color: white;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .dialog-tags {
+        .dialog-status-badge {
+          background: rgba(255, 255, 255, 0.2);
+          color: white;
+
+          .status-dot-indicator {
+            &.completed {
+              background: #10b981;
+            }
+
+            &.in-progress {
+              background: #f59e0b;
+            }
+          }
+        }
+      }
+    }
+
+    .dialog-content {
+      background: var(--card-bg);
+
+      .dialog-description p {
+        color: var(--text-light);
+      }
+
+      .dialog-section {
+        border-bottom-color: var(--border-color);
+
+        h3 {
+          color: var(--heading-color);
+
+          [nz-icon] {
+            color: var(--primary-color);
+          }
+        }
+
+        .tech-tags {
+          nz-tag {
+            background: var(--hover-bg);
+            color: var(--text-color);
+            border-color: var(--border-color);
+
+            &:hover {
+              background: var(--primary-color);
+              color: white;
+            }
+          }
+        }
+
+        .environments-list {
+          nz-tag {
+            background: var(--hover-bg);
+            color: var(--text-color);
+            border-color: var(--border-color);
+          }
+        }
+
+        ul li {
+          color: var(--text-light);
+
+          &::before {
+            color: var(--primary-color);
+          }
+        }
+
+        .link-list a {
+          background: var(--hover-bg);
+          color: var(--text-color);
+          border-color: var(--border-color);
+
+          &:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+          }
+
+          [nz-icon] {
+            color: var(--primary-color);
+          }
+
+          &:hover [nz-icon] {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  :host ::ng-deep {
+    .project-detail-modal {
+      .ant-modal-content {
+        background: var(--card-bg) !important;
+        border: 1px solid var(--border-color) !important;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+      }
+
+      .ant-modal-close {
+        .ant-modal-close-x {
+          background: var(--hover-bg) !important;
+          color: var(--text-color) !important;
+          border-radius: 6px;
+
+          &:hover {
+            background: var(--primary-color) !important;
+            color: white !important;
+          }
+        }
+      }
+
+      .ant-modal-body {
+        background: var(--card-bg) !important;
+      }
+    }
+  }
+}
+
+// Fix company detail and additional project dialog elements
+:host-context(.dark-theme) {
+  // Company section in project details
+  .company-section {
+    background: var(--hover-bg);
+    border-color: var(--border-color);
+
+    .company-logo {
+      background: var(--card-bg);
+      border-color: var(--border-color);
+    }
+
+    .company-name {
+      color: var(--heading-color);
+    }
+
+    .company-description {
+      color: var(--text-light);
+    }
+
+    .company-website {
+      color: var(--primary-color);
+
+      &:hover {
+        color: var(--primary-light);
+      }
+    }
+  }
+
+  // Project duration and status
+  .project-meta {
+    .project-duration {
+      background: var(--hover-bg);
+      color: var(--text-color);
+      border: 1px solid var(--border-color);
+    }
+
+    .project-status {
+      background: var(--hover-bg);
+      color: var(--text-color);
+      border: 1px solid var(--border-color);
+
+      &.completed {
+        background: rgba(16, 185, 129, 0.1);
+        color: #10b981;
+        border-color: rgba(16, 185, 129, 0.3);
+      }
+
+      &.in-progress {
+        background: rgba(245, 158, 11, 0.1);
+        color: #f59e0b;
+        border-color: rgba(245, 158, 11, 0.3);
+      }
+    }
+  }
+
+  // Project achievements and features
+  .achievement-list {
+    li {
+      color: var(--text-light);
+
+      &::before {
+        color: var(--primary-color);
+      }
+    }
+  }
+
+  .feature-list {
+    .feature-item {
+      background: var(--hover-bg);
+      border-color: var(--border-color);
+      color: var(--text-color);
+
+      .feature-title {
+        color: var(--heading-color);
+      }
+
+      .feature-description {
+        color: var(--text-light);
+      }
+    }
+  }
+}
+
+.project-detail-dialog {
+  background: var(--card-bg) !important;
+  color: var(--text-color);
+
+  .dialog-section {
+    background: var(--card-bg) !important;
   }
 }

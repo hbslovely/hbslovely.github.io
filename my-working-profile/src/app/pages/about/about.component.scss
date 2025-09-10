@@ -790,10 +790,11 @@
 
     .tech-more {
       padding: 0.25rem 0.75rem;
-      background-color: rgba(0, 0, 0, 0.05);
+      background-color: var(--hover-bg);
       color: var(--text-light);
       border-radius: 20px;
       font-size: 0.85rem;
+      border: 1px solid var(--border-color);
     }
   }
 }
@@ -1129,3 +1130,296 @@
     }
   }
 }
+
+// Dark theme adjustments
+:host-context(.dark-theme) {
+  .about-section {
+    color: var(--text-color);
+
+    .personal-info-card,
+    .intro-section,
+    .projects-section,
+    .skills-section {
+      background: var(--card-bg);
+      color: var(--text-color);
+      border-color: var(--border-color);
+
+      h2, h3 {
+        color: var(--heading-color);
+      }
+
+      p, .intro-text {
+        color: var(--text-light);
+      }
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border-color: var(--border-color);
+      color: var(--text-color);
+
+      &:hover {
+        background: var(--hover-bg);
+        border-color: var(--primary-color);
+      }
+
+      .project-name {
+        color: var(--heading-color);
+      }
+
+      .project-description {
+        color: var(--text-light);
+      }
+
+      .tech-tag {
+        background: var(--hover-bg);
+        color: var(--text-color);
+        border-color: var(--border-color);
+
+        &:hover {
+          background: var(--primary-color);
+          color: white;
+        }
+      }
+    }
+
+    .skill-category {
+      .category-title {
+        color: var(--heading-color);
+      }
+
+      .skill-tag {
+        background: var(--hover-bg);
+        color: var(--text-color);
+        border-color: var(--border-color);
+
+        &:hover {
+          background: var(--primary-color);
+          color: white;
+        }
+      }
+    }
+
+    .contact-buttons {
+      .contact-btn {
+        background: var(--card-bg);
+        color: var(--text-color);
+        border-color: var(--border-color);
+
+        &:hover {
+          background: var(--primary-color);
+          color: white;
+          border-color: var(--primary-color);
+        }
+
+        &.primary {
+          background: var(--primary-color);
+          color: white;
+
+          &:hover {
+            background: var(--primary-light);
+          }
+        }
+      }
+    }
+  }
+}
+
+  // Additional dark theme fixes for missing sections
+  .summary-section {
+    background: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--border-color);
+
+    .summary-title {
+      color: var(--heading-color);
+    }
+
+    p {
+      color: var(--text-light);
+    }
+
+    .summary-decoration {
+      background: linear-gradient(to bottom, var(--primary-color), var(--primary-light));
+    }
+  }
+
+  .featured-section {
+    background: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--border-color);
+
+    .featured-title {
+      color: var(--heading-color);
+    }
+
+    .view-all-link {
+      color: var(--primary-color);
+
+      &:hover {
+        color: var(--primary-light);
+      }
+    }
+  }
+
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+
+      h3 {
+        color: white;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      p {
+        color: rgba(255, 255, 255, 0.95);
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    .cta-button {
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--primary-color);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+      position: relative;
+      z-index: 2;
+      font-weight: 600;
+
+      &:hover {
+        background: white;
+        color: var(--primary-color);
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+
+      span[nz-icon] {
+        color: var(--primary-color);
+        transition: transform 0.3s ease;
+      }
+
+      &:hover span[nz-icon] {
+        transform: translateX(2px);
+      }
+    }
+  }
+
+  .personal-info-overlay {
+    .info-content {
+      .name {
+        color: var(--primary-color);
+      }
+
+      .role {
+        color: var(--text-light);
+      }
+
+      .location {
+        color: var(--text-light);
+
+        [nz-icon] {
+          color: var(--primary-color);
+        }
+      }
+
+      .contact-row, .social-row {
+        a {
+          background-color: var(--hover-bg);
+          color: var(--text-color);
+          border: 1px solid var(--border-color);
+
+          &:hover {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+          }
+
+          [nz-icon] {
+            color: var(--primary-color);
+          }
+
+          &:hover [nz-icon] {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  // Fix project-card dark theme - dark blue background with light text
+  .project-card {
+    background: #1e3a8a !important; // Dark blue background
+    color: white;
+    border-left-color: var(--primary-color);
+
+    &:hover {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%) !important;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-decoration {
+      background: radial-gradient(circle, rgba(var(--primary-color-rgb), 0.3) 0%, transparent 70%);
+    }
+
+    .project-header {
+      .project-name {
+        color: white;
+      }
+
+      .project-duration {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.9);
+      }
+    }
+
+    .project-company {
+      color: rgba(255, 255, 255, 0.8);
+
+      span[nz-icon] {
+        color: var(--primary-color);
+      }
+    }
+
+    .project-description {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .project-tech {
+      .tech-tag {
+        background-color: rgba(255, 255, 255, 0.15);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+
+        &:hover {
+          background-color: var(--primary-color);
+          color: white;
+          transform: translateY(-2px);
+          border-color: var(--primary-color);
+        }
+      }
+
+      .tech-more {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+  }

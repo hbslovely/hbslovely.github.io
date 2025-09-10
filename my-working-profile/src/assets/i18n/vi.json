@@ -5,7 +5,8 @@
     "PROJECTS": "Dự án",
     "SKILLS": "Kỹ năng",
     "EXPORT_PDF": "Xuất PDF",
-    "MY_PAGES": "Trang của tôi"
+    "MY_PAGES": "Trang của tôi",
+    "SETTINGS": "Cài đặt"
   },
   "COMMON": {
     "CLOSE": "Đóng",
@@ -34,7 +35,9 @@
     "REACH_OUT": "Đừng ngại liên hệ để thảo luận về các cơ hội tiềm năng",
     "CONTACT_ME": "Liên hệ với tôi",
     "VIEW_ALL_PROJECTS": "Xem tất cả dự án",
-    "VIEW_ALL_SKILLS": "Xem tất cả kỹ năng"
+    "VIEW_ALL_SKILLS": "Xem tất cả kỹ năng",
+    "SETTINGS_FEEDBACK": "Có phản hồi về các cài đặt này?",
+    "SETTINGS_FEEDBACK_DESC": "Tôi rất muốn nghe ý kiến của bạn về cách cải thiện trải nghiệm người dùng"
   },
   "MY_PAGES": {
     "SUBTITLE": "Khám phá các dự án cá nhân và sáng kiến kỹ thuật số của tôi",
@@ -174,6 +177,39 @@
         "TECHNOLOGY": "Công nghệ",
         "COMMON_TOOL": "Công cụ phổ biến"
       }
+    }
+  },
+  "SETTINGS": {
+    "TITLE": "Cài đặt",
+    "SUBTITLE": "Tùy chỉnh trải nghiệm và sở thích của bạn",
+    "THEME": {
+      "TITLE": "Giao diện",
+      "DESCRIPTION": "Chọn chủ đề và cài đặt hiển thị ưa thích",
+      "LIGHT": "Chế độ sáng",
+      "LIGHT_DESC": "Giao diện sáng và rõ ràng cho việc sử dụng ban ngày",
+      "DARK": "Chế độ tối",
+      "DARK_DESC": "Dễ chịu cho mắt trong môi trường ánh sáng yếu",
+      "AUTO": "Chế độ tự động",
+      "AUTO_DESC": "Tự động chuyển đổi dựa trên cài đặt hệ thống",
+      "PREVIEW": "Xem trước",
+      "PREVIEW_TITLE": "Nội dung mẫu",
+      "PREVIEW_BUTTON": "Hành động",
+      "PREVIEW_TEXT": "Đây là cách nội dung của bạn sẽ hiển thị trong chủ đề đã chọn."
+    },
+    "LANGUAGE": {
+      "TITLE": "Ngôn ngữ & Khu vực",
+      "DESCRIPTION": "Chọn ngôn ngữ ưa thích cho giao diện",
+      "EN_DESC": "Hiển thị giao diện bằng tiếng Anh",
+      "VI_DESC": "Hiển thị giao diện bằng tiếng Việt",
+      "INFO": "Thay đổi ngôn ngữ sẽ được áp dụng ngay lập tức trên tất cả các trang"
+    },
+    "PREFERENCES": {
+      "TITLE": "Tùy chọn bổ sung",
+      "DESCRIPTION": "Cấu hình các cài đặt và hành vi bổ sung",
+      "AUTO_SAVE": "Tự động lưu tùy chọn",
+      "AUTO_SAVE_DESC": "Tự động lưu các thay đổi cài đặt của bạn",
+      "ANIMATIONS": "Bật hiệu ứng động",
+      "ANIMATIONS_DESC": "Hiển thị chuyển tiếp mượt mà và hiệu ứng động"
     }
   }
 }

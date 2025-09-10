@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from './services/language.service';
 import { ScrollToTopService } from './services/scroll-to-top.service';
+import { ThemeService } from './services/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +13,8 @@ import { ScrollToTopService } from './services/scroll-to-top.service';
 })
 export class AppComponent implements OnInit {
   private readonly languageService = inject(LanguageService);
-  // Inject the ScrollToTopService to ensure it's initialized
   private readonly scrollToTopService = inject(ScrollToTopService);
+  private readonly themeService = inject(ThemeService);
 
   ngOnInit() {
     // Subscribe to language changes
@@ -21,5 +22,7 @@ export class AppComponent implements OnInit {
       // Set the lang attribute on the root element
       document.documentElement.setAttribute('lang', lang);
     });
+    
+    // Theme service is automatically initialized when injected
   }
 }

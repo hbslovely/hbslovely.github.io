@@ -50,7 +50,13 @@
         </ul>
 
         <div class="nav-actions">
-          <app-language-switcher></app-language-switcher>
+          <a routerLink="/settings" 
+             class="settings-link"
+             routerLinkActive="active"
+             (click)="closeMobileMenu()"
+             [title]="'NAV.SETTINGS' | translate">
+            <span nz-icon nzType="setting" nzTheme="outline"></span>
+          </a>
           <app-export-pdf></app-export-pdf>
         </div>
       </nav>

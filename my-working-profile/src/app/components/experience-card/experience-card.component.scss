@@ -502,8 +502,8 @@
       padding: 0;
       border-radius: 8px;
       overflow: hidden;
-      background: transparent;
-      box-shadow: none;
+      background: white;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
       display: flex;
       flex-direction: column;
       border: 1px solid rgba(0, 0, 0, 0.08);
@@ -566,7 +566,7 @@
         gap: 0.5rem;
         margin-bottom: 0.75rem;
         flex-wrap: wrap;
-        
+
         .meta-item {
           padding: 0.25rem 0.5rem;
           font-size: 0.8rem;
@@ -576,7 +576,7 @@
           max-width: calc(50% - 0.25rem);
           box-sizing: border-box;
           justify-content: center;
-          
+
           [nz-icon] {
             font-size: 0.8rem;
           }
@@ -632,6 +632,136 @@
         h3 {
           font-size: 1.1rem;
           margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}
+
+// Dark theme adjustments
+:host-context(.dark-theme) {
+  .experience-card {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+
+    &:hover {
+      background: var(--hover-bg);
+      border-color: var(--primary-color);
+    }
+
+    .card-header {
+      .header-left {
+        .company-name {
+          color: var(--heading-color);
+        }
+
+        .job-title {
+          color: var(--primary-color);
+        }
+
+        .duration {
+          color: var(--text-light);
+        }
+      }
+    }
+
+    .card-content {
+      .description {
+        color: var(--text-light);
+      }
+
+      .meta-tags {
+        .meta-tag {
+          background: var(--hover-bg);
+          color: var(--text-color);
+          border-color: var(--border-color);
+
+          &:hover {
+            background: var(--primary-color);
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+// Fix scrollable-content in dark theme
+.company-detail-dialog {
+  .dialog-content {
+    background: var(--card-bg);
+
+    .scrollable-content {
+      background: var(--card-bg) !important;
+      color: var(--text-color);
+
+      .dialog-section {
+        h3 {
+          color: var(--heading-color);
+
+          [nz-icon] {
+            color: var(--primary-color);
+          }
+        }
+
+        p, li {
+          color: var(--text-light);
+        }
+
+        ul li::before {
+          color: var(--primary-color);
+        }
+
+        .achievement-item {
+          background: var(--hover-bg);
+          border-color: var(--border-color);
+          color: var(--text-color);
+
+          .achievement-title {
+            color: var(--heading-color);
+          }
+
+          .achievement-description {
+            color: var(--text-light);
+          }
+        }
+
+        .tech-tags {
+          .tech-tag {
+            background: var(--hover-bg);
+            color: var(--text-color);
+            border-color: var(--border-color);
+
+            &:hover {
+              background: var(--primary-color);
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  .company-contact-footer {
+    background: var(--hover-bg) !important;
+    border-top-color: var(--border-color) !important;
+    color: var(--text-color);
+
+    .company-contact-info {
+      .contact-item {
+        color: var(--text-light);
+
+        [nz-icon] {
+          color: var(--primary-color);
+        }
+
+        strong {
+          color: var(--heading-color);
         }
       }
     }

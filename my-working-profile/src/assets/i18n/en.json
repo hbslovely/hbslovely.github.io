@@ -5,7 +5,8 @@
     "PROJECTS": "Projects",
     "SKILLS": "Skills",
     "EXPORT_PDF": "Export PDF",
-    "MY_PAGES": "My Pages"
+    "MY_PAGES": "My Pages",
+    "SETTINGS": "Settings"
   },
   "COMMON": {
     "CLOSE": "Close",
@@ -34,7 +35,9 @@
     "REACH_OUT": "Feel free to reach out to discuss potential opportunities",
     "CONTACT_ME": "Contact Me",
     "VIEW_ALL_PROJECTS": "View All Projects",
-    "VIEW_ALL_SKILLS": "View All Skills"
+    "VIEW_ALL_SKILLS": "View All Skills",
+    "SETTINGS_FEEDBACK": "Have feedback about these settings?",
+    "SETTINGS_FEEDBACK_DESC": "I'd love to hear your thoughts on how to improve the user experience"
   },
   "MY_PAGES": {
     "SUBTITLE": "Explore my personal projects and creative digital initiatives",
@@ -174,6 +177,39 @@
         "TECHNOLOGY": "Technology",
         "COMMON_TOOL": "Common Tool"
       }
+    }
+  },
+  "SETTINGS": {
+    "TITLE": "Settings",
+    "SUBTITLE": "Customize your experience and preferences",
+    "THEME": {
+      "TITLE": "Appearance",
+      "DESCRIPTION": "Choose your preferred theme and visual settings",
+      "LIGHT": "Light Mode",
+      "LIGHT_DESC": "Clean and bright interface for daytime use",
+      "DARK": "Dark Mode", 
+      "DARK_DESC": "Easy on the eyes for low-light environments",
+      "AUTO": "Auto Mode",
+      "AUTO_DESC": "Automatically switches based on your system preference",
+      "PREVIEW": "Preview",
+      "PREVIEW_TITLE": "Sample Content",
+      "PREVIEW_BUTTON": "Action",
+      "PREVIEW_TEXT": "This is how your content will look in the selected theme."
+    },
+    "LANGUAGE": {
+      "TITLE": "Language & Region",
+      "DESCRIPTION": "Select your preferred language for the interface",
+      "EN_DESC": "Display interface in English",
+      "VI_DESC": "Hiển thị giao diện bằng tiếng Việt",
+      "INFO": "Language changes will be applied immediately across all pages"
+    },
+    "PREFERENCES": {
+      "TITLE": "Additional Preferences",
+      "DESCRIPTION": "Configure additional settings and behaviors",
+      "AUTO_SAVE": "Auto-save preferences",
+      "AUTO_SAVE_DESC": "Automatically save your settings changes",
+      "ANIMATIONS": "Enable animations",
+      "ANIMATIONS_DESC": "Show smooth transitions and animations"
     }
   }
 }

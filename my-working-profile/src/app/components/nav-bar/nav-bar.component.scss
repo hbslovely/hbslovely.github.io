@@ -105,6 +105,35 @@ nav {
     display: flex;
     align-items: center;
     gap: 1rem;
+    
+    .settings-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-1px);
+      }
+
+      &.active {
+        background: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+
+      [nz-icon] {
+        font-size: 16px;
+      }
+    }
   }
 }
 
@@ -203,7 +232,6 @@ nav {
       transform: translateY(10px);
       transition: opacity 0.3s ease 0.3s, transform 0.3s ease 0.3s;
 
-      app-language-switcher,
       app-export-pdf {
         width: auto;
         display: flex;
@@ -235,6 +263,90 @@ nav {
     .nav-links li a {
       padding: 0.65rem 0.85rem;
       font-size: 1rem;
+    }
+  }
+}
+
+// Dark theme adjustments
+:host-context(.dark-theme) {
+  .navbar {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    border-bottom-color: rgba(51, 65, 85, 0.3);
+  }
+
+  .navbar-brand {
+    .logo {
+      background: rgba(59, 130, 246, 0.2);
+      color: #e2e8f0;
+
+      &:hover {
+        background: rgba(59, 130, 246, 0.3);
+      }
+    }
+  }
+
+  nav {
+    .nav-links {
+      li a {
+        color: #e2e8f0;
+
+        &:hover {
+          color: #60a5fa;
+          background: rgba(51, 65, 85, 0.3);
+        }
+
+        &.active {
+          color: #60a5fa;
+          background: rgba(59, 130, 246, 0.2);
+        }
+      }
+    }
+
+    .nav-actions {
+      gap: 0.75rem;
+      
+      .settings-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #e2e8f0;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.2);
+          color: #f1f5f9;
+          border-color: rgba(255, 255, 255, 0.2);
+          transform: translateY(-1px);
+        }
+
+        &.active {
+          background: rgba(59, 130, 246, 0.3);
+          color: #60a5fa;
+          border-color: rgba(59, 130, 246, 0.5);
+        }
+
+        [nz-icon] {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .mobile-menu-button {
+    color: #e2e8f0;
+    background: rgba(51, 65, 85, 0.3);
+    border-color: rgba(51, 65, 85, 0.5);
+
+    &:hover {
+      color: #f1f5f9;
+      background: rgba(51, 65, 85, 0.5);
+      border-color: rgba(71, 85, 105, 0.7);
     }
   }
 }
