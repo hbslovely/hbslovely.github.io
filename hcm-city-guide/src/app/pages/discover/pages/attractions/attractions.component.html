@@ -32,26 +32,65 @@
         <p class="description">{{ attraction.descriptionKey | translate }}</p>
 
         <div class="info-grid">
-          <div class="info-item">
+          <div class="info-item" *ngIf="attraction.address">
             <i class="fas fa-location-dot"></i>
             <span>{{ attraction.address }}</span>
           </div>
-          <div class="info-item">
+          <div class="info-item" *ngIf="attraction.openingHours">
             <i class="fas fa-clock"></i>
             <span>{{ attraction.openingHours }}</span>
           </div>
-          <div class="info-item">
+          <div class="info-item" *ngIf="attraction.price">
             <i class="fas fa-ticket"></i>
             <span>{{ attraction.price }}</span>
           </div>
+          <div class="info-item" *ngIf="attraction.metroAccess">
+            <i class="fas fa-train"></i>
+            <span>{{ attraction.metroAccess.station }} ({{ attraction.metroAccess.distance }})</span>
+          </div>
         </div>
 
-        <div class="facilities">
+        <div class="facilities" *ngIf="attraction.facilities && attraction.facilities.length > 0">
           <h3>{{ 'ATTRACTIONS.FACILITIES' | translate }}</h3>
           <div class="facility-icons">
             <div class="facility" *ngFor="let facility of attraction.facilities">
               <i [class]="getFacilityIcon(facility)"></i>
               <span>{{ 'ATTRACTIONS.FACILITIES.' + facility.toUpperCase() | translate }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="highlights" *ngIf="attraction.highlights && attraction.highlights.length > 0">
+          <h4>{{ 'ATTRACTIONS.HIGHLIGHTS' | translate }}</h4>
+          <div class="highlight-list">
+            <div class="highlight-item" *ngFor="let highlight of attraction.highlights">
+              <h5>{{ highlight.nameKey | translate }}</h5>
+              <p>{{ highlight.descriptionKey | translate }}</p>
+              <div class="highlight-details" *ngIf="highlight.floor || highlight.type || highlight.area || highlight.established">
+                <span *ngIf="highlight.floor">{{ 'ATTRACTIONS.FLOOR' | translate }}: {{ highlight.floor }}</span>
+                <span *ngIf="highlight.type">{{ 'ATTRACTIONS.TYPE' | translate }}: {{ highlight.type }}</span>
+                <span *ngIf="highlight.area">{{ 'ATTRACTIONS.AREA' | translate }}: {{ highlight.area }}</span>
+                <span *ngIf="highlight.established">{{ 'ATTRACTIONS.ESTABLISHED' | translate }}: {{ highlight.established }}</span>
+                <span *ngIf="highlight.location">{{ 'ATTRACTIONS.LOCATION' | translate }}: {{ highlight.location }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats" *ngIf="attraction.stats">
+          <h4>{{ 'ATTRACTIONS.STATS' | translate }}</h4>
+          <div class="stats-grid">
+            <div class="stat-item" *ngIf="attraction.stats.established">
+              <span class="stat-value">{{ attraction.stats.established }}</span>
+              <span class="stat-label">{{ 'ATTRACTIONS.ESTABLISHED' | translate }}</span>
+            </div>
+            <div class="stat-item" *ngIf="attraction.stats.animals">
+              <span class="stat-value">{{ attraction.stats.animals }}</span>
+              <span class="stat-label">{{ 'ATTRACTIONS.ANIMALS' | translate }}</span>
+            </div>
+            <div class="stat-item" *ngIf="attraction.stats.plants">
+              <span class="stat-value">{{ attraction.stats.plants }}</span>
+              <span class="stat-label">{{ 'ATTRACTIONS.PLANTS' | translate }}</span>
             </div>
           </div>
         </div>

@@ -44,6 +44,10 @@ export const routes: Routes = [
   {
     path: 'donate/thank-you',
     loadComponent: () => import('./pages/donate/thank-you/thank-you.component').then(m => m.ThankYouComponent)
+  },
+  {
+    path: 'planning',
+    loadComponent: () => import('./pages/planning/planning.component').then(m => m.PlanningComponent)
   }
 ];
 

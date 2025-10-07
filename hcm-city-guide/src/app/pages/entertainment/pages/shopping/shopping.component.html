@@ -1,4 +1,5 @@
 <div class="shopping">
+  <!-- Hero Section -->
   <section class="hero-section">
     <div class="hero-content">
       <h1>{{ 'ENTERTAINMENT.SHOPPING.TITLE' | translate }}</h1>
@@ -6,15 +7,236 @@
     </div>
   </section>
 
-  <section class="search-section">
+  <!-- Filters Section -->
+  <section class="filters-section">
     <div class="container">
-      <!-- Search form will be added here -->
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input 
+            type="text" 
+            pInputText 
+            [(ngModel)]="searchTerm"
+            (input)="onSearch()"
+            [placeholder]="'ENTERTAINMENT.SHOPPING.SEARCH_PLACEHOLDER' | translate">
+        </span>
+      </div>
+
+      <!-- Filters -->
+      <div class="filters">
+        <p-dropdown 
+          [options]="districts" 
+          [(ngModel)]="selectedDistrict"
+          (onChange)="onFilterChange()"
+          [placeholder]="'ENTERTAINMENT.SHOPPING.FILTERS.DISTRICT' | translate"
+          [showClear]="true">
+        </p-dropdown>
+
+        <p-dropdown 
+          [options]="categories" 
+          [(ngModel)]="selectedCategory"
+          (onChange)="onFilterChange()"
+          [placeholder]="'ENTERTAINMENT.SHOPPING.FILTERS.TYPE' | translate"
+          [showClear]="true">
+        </p-dropdown>
+
+        <p-dropdown 
+          [options]="priceRanges" 
+          [(ngModel)]="selectedPriceRange"
+          (onChange)="onFilterChange()"
+          [placeholder]="'ENTERTAINMENT.SHOPPING.FILTERS.PRICE' | translate"
+          [showClear]="true">
+        </p-dropdown>
+
+        <p-selectButton 
+          [options]="viewModes" 
+          [(ngModel)]="viewMode"
+          (onChange)="onViewModeChange()">
+        </p-selectButton>
+      </div>
     </div>
   </section>
 
-  <section class="results-section">
+  <!-- Venues Section -->
+  <section class="venues-section">
     <div class="container">
-      <!-- Results will be added here -->
+      <!-- View Options -->
+      <div class="view-options">
+        <p-selectButton 
+          [options]="viewModes" 
+          [(ngModel)]="viewMode"
+          (onChange)="onViewModeChange()">
+        </p-selectButton>
+      </div>
+
+      <!-- Grid View -->
+      <div class="venues-grid" *ngIf="viewMode === 'grid'">
+        <div *ngFor="let venue of filteredVenues" class="venue-card">
+          <p-card>
+            <ng-template pTemplate="header">
+              <img [src]="venue.images[0]" [alt]="venue.name" class="venue-image">
+              <div class="venue-badges">
+                <p-tag 
+                  [value]="venue.type" 
+                  [severity]="getCategorySeverity(venue.type)">
+                </p-tag>
+              </div>
+            </ng-template>
+
+            <div class="venue-content">
+              <div class="venue-header">
+                <h3>{{ venue.name }}</h3>
+                <div class="venue-meta">
+                  <p-rating [ngModel]="venue.rating" [readonly]="true" [stars]="5"></p-rating>
+                  <span class="price-range">{{ venue.priceRange }}</span>
+                </div>
+              </div>
+
+              <div class="venue-details">
+                <div class="detail-item">
+                  <i class="pi pi-map-marker"></i>
+                  <span>{{ venue.district }}</span>
+                </div>
+                <div class="detail-item">
+                  <i class="pi pi-clock"></i>
+                  <span>{{ venue.openingHours }}</span>
+                </div>
+                <div class="detail-item">
+                  <i class="pi pi-phone"></i>
+                  <span>{{ venue.contact?.phone || 'N/A' }}</span>
+                </div>
+              </div>
+
+              <div class="venue-features">
+                <span *ngFor="let feature of venue.features.slice(0, 4)" class="feature-tag">
+                  <i [class]="getFeatureIcon(feature)"></i>
+                  {{ feature }}
+                </span>
+              </div>
+
+              <div class="venue-footer">
+                <div class="price-level">
+                  <span class="price-indicator" [class]="getPriceLevelText(venue.priceRange).toLowerCase()">
+                    {{ getPriceLevelText(venue.priceRange) }}
+                  </span>
+                </div>
+                <button 
+                  pButton 
+                  type="button" 
+                  [label]="'ENTERTAINMENT.COMMON.VIEW_DETAILS' | translate"
+                  class="p-button-outlined"
+                  (click)="viewDetails(venue)">
+                </button>
+              </div>
+            </div>
+          </p-card>
+        </div>
+
+        <!-- Empty State -->
+        <div *ngIf="filteredVenues.length === 0" class="empty-state">
+          <i class="pi pi-search"></i>
+          <h3>{{ 'ENTERTAINMENT.COMMON.NO_RESULTS' | translate }}</h3>
+          <p>{{ 'ENTERTAINMENT.COMMON.TRY_DIFFERENT' | translate }}</p>
+        </div>
+      </div>
+
+      <!-- Map View -->
+      <div class="map-view" *ngIf="viewMode === 'map'">
+        <div #mapContainer class="map-container"></div>
+      </div>
     </div>
   </section>
+
+  <!-- Venue Details Dialog -->
+  <p-dialog 
+    [(visible)]="showDetailsDialog" 
+    [modal]="true" 
+    [maximizable]="true"
+    [style]="{width: '90vw'}"
+    [contentStyle]="{height: '80vh'}"
+    [header]="selectedVenue?.name">
+    
+    <div *ngIf="selectedVenue" class="venue-details-dialog">
+      <div class="venue-gallery">
+        <p-carousel 
+          [value]="selectedVenue.images" 
+          [numVisible]="1" 
+          [numScroll]="1" 
+          [circular]="true"
+          [autoplayInterval]="3000">
+          <ng-template let-image pTemplate="item">
+            <img [src]="image" [alt]="selectedVenue.name" class="gallery-image">
+          </ng-template>
+        </p-carousel>
+      </div>
+
+      <div class="venue-info">
+        <div class="venue-header">
+          <h2>{{ selectedVenue.name }}</h2>
+          <div class="venue-meta">
+            <p-rating [ngModel]="selectedVenue.rating" [readonly]="true" [stars]="5"></p-rating>
+            <span class="price-range">{{ selectedVenue.priceRange }}</span>
+          </div>
+        </div>
+
+        <p class="venue-description">{{ selectedVenue.description }}</p>
+
+        <div class="venue-details-grid">
+          <div class="detail-item">
+            <i class="pi pi-map-marker"></i>
+            <div>
+              <strong>{{ 'ENTERTAINMENT.COMMON.ADDRESS' | translate }}</strong>
+              <p>{{ selectedVenue.address }}</p>
+            </div>
+          </div>
+
+          <div class="detail-item">
+            <i class="pi pi-clock"></i>
+            <div>
+              <strong>{{ 'ENTERTAINMENT.COMMON.OPENING_HOURS' | translate }}</strong>
+              <p>{{ selectedVenue.openingHours }}</p>
+            </div>
+          </div>
+
+          <div class="detail-item" *ngIf="selectedVenue.contact?.phone">
+            <i class="pi pi-phone"></i>
+            <div>
+              <strong>{{ 'ENTERTAINMENT.COMMON.PHONE' | translate }}</strong>
+              <p>{{ selectedVenue.contact?.phone }}</p>
+            </div>
+          </div>
+
+          <div class="detail-item" *ngIf="selectedVenue.contact?.website">
+            <i class="pi pi-globe"></i>
+            <div>
+              <strong>{{ 'ENTERTAINMENT.COMMON.WEBSITE' | translate }}</strong>
+              <p><a [href]="selectedVenue.contact?.website" target="_blank">{{ selectedVenue.contact?.website }}</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="venue-features">
+          <h3>{{ 'ENTERTAINMENT.SHOPPING.FILTERS.FEATURES' | translate }}</h3>
+          <div class="features-grid">
+            <span *ngFor="let feature of selectedVenue.features" class="feature-tag">
+              <i [class]="getFeatureIcon(feature)"></i>
+              {{ feature }}
+            </span>
+          </div>
+        </div>
+
+        <div class="venue-tags">
+          <h3>{{ 'ENTERTAINMENT.COMMON.TAGS' | translate }}</h3>
+          <div class="tags-grid">
+            <p-tag 
+              *ngFor="let tag of selectedVenue.tags" 
+              [value]="tag"
+              [severity]="getCategorySeverity(selectedVenue.type)">
+            </p-tag>
+          </div>
+        </div>
+      </div>
+    </div>
+  </p-dialog>
 </div> 

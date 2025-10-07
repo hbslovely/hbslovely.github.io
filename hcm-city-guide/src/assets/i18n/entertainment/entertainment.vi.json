@@ -35,6 +35,7 @@
   "SHOPPING": {
     "TITLE": "Mua Sắm tại TP.HCM",
     "DESCRIPTION": "Khám phá các trung tâm thương mại hiện đại, chợ truyền thống và cửa hàng thời trang",
+    "SEARCH_PLACEHOLDER": "Tìm kiếm địa điểm mua sắm...",
     "FILTERS": {
       "DISTRICT": "Quận",
       "PRICE": "Mức Giá",
@@ -75,17 +76,40 @@
   "NIGHTLIFE": {
     "TITLE": "Cuộc Sống Về Đêm tại TP.HCM",
     "DESCRIPTION": "Khám phá không gian giải trí về đêm sôi động của Sài Gòn, từ quán bar trên sân thượng đến các câu lạc bộ",
+    "SEARCH_PLACEHOLDER": "Tìm kiếm địa điểm giải trí...",
+    "OPEN_NOW": "Đang Mở Cửa",
+    "VENUE_MAP": "Bản Đồ Địa Điểm",
     "FILTERS": {
       "DISTRICT": "Quận",
       "PRICE": "Mức Giá",
       "RATING": "Đánh Giá",
       "FEATURES": "Tiện Ích",
-      "OPEN_NOW": "Đang Mở Cửa"
+      "OPEN_NOW": "Đang Mở Cửa",
+      "SELECT_DISTRICT": "Chọn Quận"
+    },
+    "TYPES": {
+      "CLUB": "Câu Lạc Bộ",
+      "BAR": "Quán Bar",
+      "LOUNGE": "Phòng Chờ",
+      "LIVE_MUSIC": "Nhạc Sống",
+      "KARAOKE": "Karaoke"
     }
   },
   "CINEMAS": {
     "TITLE": "Rạp Chiếu Phim",
     "DESCRIPTION": "Khám phá các phim mới nhất và tìm rạp chiếu phim tốt nhất tại TP.HCM",
+    "NOW_PLAYING": "Đang Chiếu",
+    "COMING_SOON": "Sắp Chiếu",
+    "THEATERS": "Rạp Chiếu Phim",
+    "BOOK_TICKETS": "Đặt Vé",
+    "WATCH_TRAILER": "Xem Trailer",
+    "VIEW_SHOWTIMES": "Xem Lịch Chiếu",
+    "SYNOPSIS": "Tóm Tắt",
+    "CAST": "Diễn Viên",
+    "DIRECTOR": "Đạo Diễn",
+    "PRICE": "Giá",
+    "CONTINUE": "Tiếp Tục",
+    "SELECT_DISTRICT": "Chọn Quận",
     "FILTERS": {
       "DISTRICT": "Quận",
       "PRICE": "Mức Giá",
@@ -98,12 +122,30 @@
   "SPORTS": {
     "TITLE": "Thể Thao & Giải Trí",
     "DESCRIPTION": "Tìm địa điểm thể thao, trung tâm thể dục và sự kiện sắp diễn ra tại TP.HCM",
+    "VENUES": "Địa Điểm Thể Thao",
+    "UPCOMING_EVENTS": "Sự Kiện Sắp Diễn Ra",
+    "VIEW_DETAILS": "Xem Chi Tiết",
+    "BOOK_NOW": "Đặt Ngay",
+    "GET_TICKETS": "Mua Vé",
+    "BOOK_VENUE": "Đặt Địa Điểm",
+    "FROM": "Từ",
+    "SELECT_DISTRICT": "Chọn Quận",
+    "SELECT_PRICE": "Chọn Mức Giá",
     "FILTERS": {
       "DISTRICT": "Quận",
       "PRICE": "Mức Giá",
       "RATING": "Đánh Giá",
       "FEATURES": "Tiện Ích",
       "SPORT_TYPE": "Loại Hình Thể Thao"
+    },
+    "TYPES": {
+      "FOOTBALL": "Bóng Đá",
+      "BASKETBALL": "Bóng Rổ",
+      "TENNIS": "Quần Vợt",
+      "SWIMMING": "Bơi Lội",
+      "BADMINTON": "Cầu Lông",
+      "GYM": "Phòng Gym",
+      "YOGA": "Yoga"
     }
   },
   "COMMON": {
@@ -118,6 +160,11 @@
     "NO_RESULTS": "Không tìm thấy kết quả",
     "TRY_DIFFERENT": "Thử tìm kiếm hoặc lọc khác",
     "CLEAR_FILTERS": "Xóa Bộ Lọc",
+    "ADDRESS": "Địa Chỉ",
+    "OPENING_HOURS": "Giờ Mở Cửa",
+    "PHONE": "Điện Thoại",
+    "WEBSITE": "Trang Web",
+    "TAGS": "Thẻ",
     "SORT": {
       "POPULAR": "Phổ Biến Nhất",
       "RATING": "Đánh Giá Cao Nhất",

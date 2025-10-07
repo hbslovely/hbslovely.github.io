@@ -35,6 +35,7 @@
   "SHOPPING": {
     "TITLE": "Shopping in Ho Chi Minh City",
     "DESCRIPTION": "Explore modern shopping malls, traditional markets, and boutique stores",
+    "SEARCH_PLACEHOLDER": "Search shopping venues...",
     "FILTERS": {
       "DISTRICT": "District",
       "PRICE": "Price Range",
@@ -83,12 +84,23 @@
   "NIGHTLIFE": {
     "TITLE": "Nightlife in Ho Chi Minh City",
     "DESCRIPTION": "Discover the vibrant nightlife scene of Saigon, from rooftop bars to underground clubs",
+    "SEARCH_PLACEHOLDER": "Search nightlife venues...",
+    "OPEN_NOW": "Open Now",
+    "VENUE_MAP": "Venue Map",
     "FILTERS": {
       "DISTRICT": "District",
       "PRICE": "Price Range",
       "RATING": "Rating",
       "FEATURES": "Features",
-      "OPEN_NOW": "Open Now"
+      "OPEN_NOW": "Open Now",
+      "SELECT_DISTRICT": "Select District"
+    },
+    "TYPES": {
+      "CLUB": "Club",
+      "BAR": "Bar",
+      "LOUNGE": "Lounge",
+      "LIVE_MUSIC": "Live Music",
+      "KARAOKE": "Karaoke"
     }
   },
   "CINEMAS": {
@@ -97,6 +109,15 @@
     "NOW_PLAYING": "Now Playing",
     "COMING_SOON": "Coming Soon",
     "THEATERS": "Movie Theaters",
+    "BOOK_TICKETS": "Book Tickets",
+    "WATCH_TRAILER": "Watch Trailer",
+    "VIEW_SHOWTIMES": "View Showtimes",
+    "SYNOPSIS": "Synopsis",
+    "CAST": "Cast",
+    "DIRECTOR": "Director",
+    "PRICE": "Price",
+    "CONTINUE": "Continue",
+    "SELECT_DISTRICT": "Select District",
     "SECTIONS": {
       "POPULAR": "Popular Movies",
       "NEW_RELEASES": "New Releases",
@@ -117,6 +138,13 @@
     "DESCRIPTION": "Find sports venues, fitness centers, and upcoming events in Ho Chi Minh City",
     "VENUES": "Sports Venues",
     "UPCOMING_EVENTS": "Upcoming Events",
+    "VIEW_DETAILS": "View Details",
+    "BOOK_NOW": "Book Now",
+    "GET_TICKETS": "Get Tickets",
+    "BOOK_VENUE": "Book Venue",
+    "FROM": "From",
+    "SELECT_DISTRICT": "Select District",
+    "SELECT_PRICE": "Select Price Range",
     "SECTIONS": {
       "POPULAR_VENUES": "Popular Venues",
       "FEATURED_EVENTS": "Featured Events",
@@ -129,6 +157,15 @@
       "RATING": "Rating",
       "FEATURES": "Features",
       "SPORT_TYPE": "Sport Type"
+    },
+    "TYPES": {
+      "FOOTBALL": "Football",
+      "BASKETBALL": "Basketball",
+      "TENNIS": "Tennis",
+      "SWIMMING": "Swimming",
+      "BADMINTON": "Badminton",
+      "GYM": "Gym",
+      "YOGA": "Yoga"
     }
   },
   "COMMON": {
@@ -143,6 +180,11 @@
     "NO_RESULTS": "No results found",
     "TRY_DIFFERENT": "Try different filters or search terms",
     "CLEAR_FILTERS": "Clear Filters",
+    "ADDRESS": "Address",
+    "OPENING_HOURS": "Opening Hours",
+    "PHONE": "Phone",
+    "WEBSITE": "Website",
+    "TAGS": "Tags",
     "SORT": {
       "POPULAR": "Most Popular",
       "RATING": "Highest Rated",

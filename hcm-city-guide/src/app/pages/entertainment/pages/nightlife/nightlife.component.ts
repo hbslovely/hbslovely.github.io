@@ -110,10 +110,16 @@ export class NightlifeComponent implements OnInit {
   }
 
   loadVenues() {
-    this.entertainmentService.getVenuesByCategory('nightlife').subscribe(venues => {
-      this.venues = venues;
-      this.applyFilters();
-    });
+    // Load venues from entertainment data
+    fetch('/assets/data/entertainment.json')
+      .then(response => response.json())
+      .then(data => {
+        this.venues = data.venues.filter((venue: any) => venue.category === 'nightlife');
+        this.applyFilters();
+      })
+      .catch(error => {
+        console.error('Error loading nightlife venues:', error);
+      });
   }
 
   onSearch() {

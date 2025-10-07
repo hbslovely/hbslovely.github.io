@@ -1,5 +1,27 @@
 {
   "ATTRACTIONS": {
+    "TITLE": "Attractions",
+    "DESCRIPTION": "Discover the most popular attractions and landmarks in Ho Chi Minh City",
+    "VIEW_MAP": "View on Map",
+    "VIEW_GALLERY": "View Gallery",
+    "FACILITIES": "Facilities",
+    "HIGHLIGHTS": "Highlights",
+    "STATS": "Statistics",
+    "FLOOR": "Floor",
+    "TYPE": "Type",
+    "AREA": "Area",
+    "ESTABLISHED": "Established",
+    "LOCATION": "Location",
+    "ANIMALS": "Animals",
+    "PLANTS": "Plants",
+    "FACILITIES": {
+      "PARKING": "Parking",
+      "RESTROOM": "Restroom",
+      "ATM": "ATM",
+      "CAFE": "Cafe",
+      "GIFT-SHOP": "Gift Shop",
+      "GUIDED-TOUR": "Guided Tour"
+    },
     "LANDMARKS": {
       "NOTRE_DAME": {
         "NAME": "Notre Dame Cathedral",

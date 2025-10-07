@@ -8,23 +8,47 @@ import { TagModule } from 'primeng/tag';
 import { DataService } from '@core/services';
 
 interface Attraction {
-  id: string;
   nameKey: string;
   descriptionKey: string;
-  address: string;
-  openingHours: string;
-  price: string;
+  address?: string;
+  openingHours?: string;
+  price?: string;
   images: string[];
   tags: string[];
-  coordinates: {
+  coordinates?: {
     lat: number;
     lng: number;
   };
-  facilities: string[];
+  facilities?: string[];
+  metroAccess?: {
+    station: string;
+    distance: string;
+  };
+  highlights?: Array<{
+    nameKey: string;
+    descriptionKey: string;
+    floor?: string;
+    type?: string;
+    area?: string;
+    established?: number;
+    location?: string;
+  }>;
+  stats?: {
+    established?: number;
+    animals?: number;
+    plants?: number;
+  };
 }
 
 interface AttractionsData {
-  attractions: Attraction[];
+  sections: {
+    landmarks: {
+      items: Attraction[];
+    };
+    districts: {
+      items: Attraction[];
+    };
+  };
   tagColors: { [key: string]: string };
   facilityIcons: { [key: string]: string };
 }
@@ -57,7 +81,11 @@ export class AttractionsComponent implements OnInit {
   private loadAttractionsData() {
     this.dataService.get<AttractionsData>('assets/data/attractions.json')
       .subscribe(data => {
-        this.attractions = data.attractions;
+        // Flatten the nested structure
+        this.attractions = [
+          ...data.sections.landmarks.items,
+          ...data.sections.districts.items
+        ];
         this.tagColors = data.tagColors;
         this.facilityIcons = data.facilityIcons;
       });

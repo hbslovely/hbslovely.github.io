@@ -78,6 +78,44 @@
       "TEMPLES": "Buddhist Temples",
       "CHURCHES": "Churches",
       "PAGODAS": "Pagodas"
+    },
+    "EVENTS": {
+      "LANTERN": {
+        "NAME": "Mid-Autumn Lantern Festival",
+        "DATE": "September 15th (Lunar Calendar)",
+        "DESCRIPTION": "Traditional festival celebrating the harvest moon with colorful lanterns, mooncakes, and cultural performances",
+        "LOCATION": "Throughout Ho Chi Minh City"
+      },
+      "TET": {
+        "NAME": "Tet Nguyen Dan (Lunar New Year)",
+        "DATE": "January/February (Lunar Calendar)",
+        "DESCRIPTION": "Vietnam's most important festival with traditional customs, family gatherings, and cultural celebrations",
+        "LOCATION": "Throughout Vietnam"
+      },
+      "DRAGON_BOAT": {
+        "NAME": "Dragon Boat Festival",
+        "DATE": "May 5th (Lunar Calendar)",
+        "DESCRIPTION": "Festival featuring dragon boat races, traditional food, and cultural activities",
+        "LOCATION": "Saigon River and surrounding areas"
+      },
+      "FLOWER_FESTIVAL": {
+        "NAME": "Spring Flower Festival",
+        "DATE": "January - February",
+        "DESCRIPTION": "Annual flower festival showcasing beautiful blooms, traditional decorations, and cultural performances",
+        "LOCATION": "Tao Dan Park and Nguyen Hue Walking Street"
+      },
+      "FOOD_FESTIVAL": {
+        "NAME": "Vietnamese Food Festival",
+        "DATE": "March - April",
+        "DESCRIPTION": "Celebration of Vietnamese cuisine with street food, cooking demonstrations, and cultural activities",
+        "LOCATION": "Various locations across the city"
+      },
+      "MUSIC_FESTIVAL": {
+        "NAME": "Traditional Music Festival",
+        "DATE": "October",
+        "DESCRIPTION": "Showcase of traditional Vietnamese music, instruments, and cultural performances",
+        "LOCATION": "Ho Chi Minh City Opera House and cultural centers"
+      }
     }
   },
   "FOOD": {
@@ -189,6 +227,90 @@
       "CITY_GOVERNMENT": "City Government",
       "SPECIAL_POWERS": "Special Administrative Powers",
       "AUTONOMY": "Regional Autonomy"
+    }
+  },
+  "PLANNING": {
+    "TITLE": "Plan Your Perfect Trip",
+    "DESCRIPTION": "Answer a few questions and we'll create a personalized itinerary for your Ho Chi Minh City adventure",
+    "PROGRESS": "Step {{current}} of {{total}}",
+    "QUESTIONS": {
+      "GROUP_SIZE": {
+        "QUESTION": "How many people are traveling?",
+        "PLACEHOLDER": "Enter number of travelers"
+      },
+      "DURATION": {
+        "QUESTION": "How long will you be staying?",
+        "OPTIONS": {
+          "1_3": "1-3 days",
+          "4_7": "4-7 days",
+          "8_14": "8-14 days",
+          "15_PLUS": "15+ days"
+        }
+      },
+      "INTERESTS": {
+        "QUESTION": "What are you most interested in? (Select all that apply)",
+        "OPTIONS": {
+          "CULTURE": "Culture & History",
+          "FOOD": "Food & Dining",
+          "SHOPPING": "Shopping",
+          "NIGHTLIFE": "Nightlife",
+          "NATURE": "Nature & Parks",
+          "HISTORY": "Historical Sites",
+          "ADVENTURE": "Adventure & Activities",
+          "RELAXATION": "Relaxation & Wellness"
+        }
+      },
+      "BUDGET": {
+        "QUESTION": "What's your budget range?",
+        "OPTIONS": {
+          "BUDGET": "Budget-friendly",
+          "MODERATE": "Moderate",
+          "LUXURY": "Luxury"
+        }
+      },
+      "ACCOMMODATION": {
+        "QUESTION": "What type of accommodation do you prefer?",
+        "OPTIONS": {
+          "HOTEL": "Hotel",
+          "HOSTEL": "Hostel",
+          "APARTMENT": "Apartment",
+          "HOMESTAY": "Homestay"
+        }
+      },
+      "TRANSPORTATION": {
+        "QUESTION": "How do you prefer to get around?",
+        "OPTIONS": {
+          "WALKING": "Walking",
+          "PUBLIC": "Public Transport",
+          "TAXI": "Taxi/Ride-hailing",
+          "MOTORBIKE": "Motorbike"
+        }
+      },
+      "AREAS": {
+        "QUESTION": "Which areas interest you most? (Optional)",
+        "OPTIONS": {
+          "DISTRICT_1": "District 1 (Downtown)",
+          "DISTRICT_3": "District 3 (Cultural)",
+          "DISTRICT_5": "District 5 (Chinatown)",
+          "DISTRICT_7": "District 7 (Modern)",
+          "BINH_THANH": "Binh Thanh",
+          "PHU_NHUAN": "Phu Nhuan"
+        }
+      },
+      "SPECIAL_NEEDS": {
+        "QUESTION": "Any special requirements or preferences?",
+        "PLACEHOLDER": "Tell us about dietary restrictions, accessibility needs, or other preferences..."
+      }
+    },
+    "ACTIONS": {
+      "PREVIOUS": "Previous",
+      "NEXT": "Next",
+      "GENERATE_PLAN": "Generate My Plan",
+      "RESET": "Start Over"
+    },
+    "HELP": {
+      "TITLE": "Need Help?",
+      "DESCRIPTION": "Our AI-powered planner will create a personalized itinerary based on your preferences. You can always modify the suggestions later!"
     }
   }
 }

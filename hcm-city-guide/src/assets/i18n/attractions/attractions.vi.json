@@ -1,5 +1,27 @@
 {
   "ATTRACTIONS": {
+    "TITLE": "Điểm tham quan",
+    "DESCRIPTION": "Khám phá những điểm tham quan và địa danh nổi tiếng nhất tại Thành phố Hồ Chí Minh",
+    "VIEW_MAP": "Xem trên bản đồ",
+    "VIEW_GALLERY": "Xem thư viện ảnh",
+    "FACILITIES": "Tiện ích",
+    "HIGHLIGHTS": "Điểm nổi bật",
+    "STATS": "Thống kê",
+    "FLOOR": "Tầng",
+    "TYPE": "Loại",
+    "AREA": "Diện tích",
+    "ESTABLISHED": "Thành lập",
+    "LOCATION": "Vị trí",
+    "ANIMALS": "Động vật",
+    "PLANTS": "Thực vật",
+    "FACILITIES": {
+      "PARKING": "Bãi đỗ xe",
+      "RESTROOM": "Nhà vệ sinh",
+      "ATM": "ATM",
+      "CAFE": "Quán cà phê",
+      "GIFT-SHOP": "Cửa hàng quà tặng",
+      "GUIDED-TOUR": "Tour có hướng dẫn"
+    },
     "LANDMARKS": {
       "NOTRE_DAME": {
         "NAME": "Nhà thờ Đức Bà",

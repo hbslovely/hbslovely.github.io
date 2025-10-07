@@ -26,6 +26,10 @@ export const DISCOVER_ROUTES: Routes = [
         loadComponent: () => import('./pages/tips/tips.component').then(m => m.TipsComponent)
       },
       {
+        path: 'attractions',
+        loadComponent: () => import('./pages/attractions/attractions.component').then(m => m.AttractionsComponent)
+      },
+      {
         path: '',
         redirectTo: 'wards',
         pathMatch: 'full'

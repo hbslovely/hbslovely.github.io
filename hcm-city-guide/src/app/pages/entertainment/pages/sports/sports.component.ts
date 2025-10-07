@@ -132,12 +132,31 @@ export class SportsComponent implements OnInit {
   }
 
   loadVenues() {
-    // Implement API call to load venues
-    this.filterVenues();
+    // Load venues from sports data
+    fetch('/assets/data/sports.json')
+      .then(response => response.json())
+      .then(data => {
+        this.venues = data.venues;
+        this.filterVenues();
+      })
+      .catch(error => {
+        console.error('Error loading sports venues:', error);
+      });
   }
 
   loadEvents() {
-    // Implement API call to load events
+    // Load events from sports data
+    fetch('/assets/data/sports.json')
+      .then(response => response.json())
+      .then(data => {
+        this.upcomingEvents = data.events.map((event: any) => ({
+          ...event,
+          date: new Date(event.date)
+        }));
+      })
+      .catch(error => {
+        console.error('Error loading sports events:', error);
+      });
   }
 
   filterVenues() {

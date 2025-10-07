@@ -114,6 +114,44 @@
       "TEMPLES": "Chùa Phật Giáo",
       "CHURCHES": "Nhà Thờ",
       "PAGODAS": "Chùa Miếu"
+    },
+    "EVENTS": {
+      "LANTERN": {
+        "NAME": "Lễ Hội Trung Thu",
+        "DATE": "15 tháng 8 (Âm lịch)",
+        "DESCRIPTION": "Lễ hội truyền thống kỷ niệm trăng thu với đèn lồng đầy màu sắc, bánh trung thu và các tiết mục văn hóa",
+        "LOCATION": "Khắp Thành phố Hồ Chí Minh"
+      },
+      "TET": {
+        "NAME": "Tết Nguyên Đán",
+        "DATE": "Tháng 1/2 (Âm lịch)",
+        "DESCRIPTION": "Lễ hội quan trọng nhất của Việt Nam với phong tục truyền thống, sum họp gia đình và các hoạt động văn hóa",
+        "LOCATION": "Khắp Việt Nam"
+      },
+      "DRAGON_BOAT": {
+        "NAME": "Lễ Hội Đua Thuyền Rồng",
+        "DATE": "5 tháng 5 (Âm lịch)",
+        "DESCRIPTION": "Lễ hội với các cuộc đua thuyền rồng, ẩm thực truyền thống và các hoạt động văn hóa",
+        "LOCATION": "Sông Sài Gòn và các khu vực xung quanh"
+      },
+      "FLOWER_FESTIVAL": {
+        "NAME": "Lễ Hội Hoa Xuân",
+        "DATE": "Tháng 1 - 2",
+        "DESCRIPTION": "Lễ hội hoa hàng năm trưng bày những bông hoa đẹp, trang trí truyền thống và các tiết mục văn hóa",
+        "LOCATION": "Công viên Tao Đàn và Phố đi bộ Nguyễn Huệ"
+      },
+      "FOOD_FESTIVAL": {
+        "NAME": "Lễ Hội Ẩm Thực Việt Nam",
+        "DATE": "Tháng 3 - 4",
+        "DESCRIPTION": "Lễ hội tôn vinh ẩm thực Việt Nam với thức ăn đường phố, trình diễn nấu ăn và các hoạt động văn hóa",
+        "LOCATION": "Nhiều địa điểm khác nhau trong thành phố"
+      },
+      "MUSIC_FESTIVAL": {
+        "NAME": "Lễ Hội Âm Nhạc Truyền Thống",
+        "DATE": "Tháng 10",
+        "DESCRIPTION": "Trưng bày âm nhạc truyền thống Việt Nam, nhạc cụ và các tiết mục văn hóa",
+        "LOCATION": "Nhà hát Thành phố Hồ Chí Minh và các trung tâm văn hóa"
+      }
     }
   },
   "FOOD": {
@@ -225,6 +263,90 @@
       "CITY_GOVERNMENT": "Chính Quyền Thành Phố",
       "SPECIAL_POWERS": "Quyền Hạn Hành Chính Đặc Biệt",
       "AUTONOMY": "Tự Chủ Khu Vực"
+    }
+  },
+  "PLANNING": {
+    "TITLE": "Lên Kế Hoạch Chuyến Đi Hoàn Hảo",
+    "DESCRIPTION": "Trả lời một vài câu hỏi và chúng tôi sẽ tạo một lịch trình cá nhân hóa cho chuyến phiêu lưu tại Thành phố Hồ Chí Minh của bạn",
+    "PROGRESS": "Bước {{current}} / {{total}}",
+    "QUESTIONS": {
+      "GROUP_SIZE": {
+        "QUESTION": "Có bao nhiêu người đi du lịch?",
+        "PLACEHOLDER": "Nhập số lượng người đi du lịch"
+      },
+      "DURATION": {
+        "QUESTION": "Bạn sẽ ở lại bao lâu?",
+        "OPTIONS": {
+          "1_3": "1-3 ngày",
+          "4_7": "4-7 ngày",
+          "8_14": "8-14 ngày",
+          "15_PLUS": "15+ ngày"
+        }
+      },
+      "INTERESTS": {
+        "QUESTION": "Bạn quan tâm đến điều gì nhất? (Chọn tất cả những gì phù hợp)",
+        "OPTIONS": {
+          "CULTURE": "Văn Hóa & Lịch Sử",
+          "FOOD": "Ẩm Thực & Nhà Hàng",
+          "SHOPPING": "Mua Sắm",
+          "NIGHTLIFE": "Cuộc Sống Về Đêm",
+          "NATURE": "Thiên Nhiên & Công Viên",
+          "HISTORY": "Di Tích Lịch Sử",
+          "ADVENTURE": "Phiêu Lưu & Hoạt Động",
+          "RELAXATION": "Thư Giãn & Sức Khỏe"
+        }
+      },
+      "BUDGET": {
+        "QUESTION": "Ngân sách của bạn là bao nhiêu?",
+        "OPTIONS": {
+          "BUDGET": "Tiết Kiệm",
+          "MODERATE": "Trung Bình",
+          "LUXURY": "Cao Cấp"
+        }
+      },
+      "ACCOMMODATION": {
+        "QUESTION": "Bạn thích loại chỗ ở nào?",
+        "OPTIONS": {
+          "HOTEL": "Khách Sạn",
+          "HOSTEL": "Nhà Trọ",
+          "APARTMENT": "Căn Hộ",
+          "HOMESTAY": "Homestay"
+        }
+      },
+      "TRANSPORTATION": {
+        "QUESTION": "Bạn thích di chuyển bằng cách nào?",
+        "OPTIONS": {
+          "WALKING": "Đi Bộ",
+          "PUBLIC": "Phương Tiện Công Cộng",
+          "TAXI": "Taxi/Gọi Xe",
+          "MOTORBIKE": "Xe Máy"
+        }
+      },
+      "AREAS": {
+        "QUESTION": "Khu vực nào bạn quan tâm nhất? (Tùy chọn)",
+        "OPTIONS": {
+          "DISTRICT_1": "Quận 1 (Trung Tâm)",
+          "DISTRICT_3": "Quận 3 (Văn Hóa)",
+          "DISTRICT_5": "Quận 5 (Chợ Lớn)",
+          "DISTRICT_7": "Quận 7 (Hiện Đại)",
+          "BINH_THANH": "Bình Thạnh",
+          "PHU_NHUAN": "Phú Nhuận"
+        }
+      },
+      "SPECIAL_NEEDS": {
+        "QUESTION": "Có yêu cầu đặc biệt nào không?",
+        "PLACEHOLDER": "Cho chúng tôi biết về hạn chế ăn uống, nhu cầu tiếp cận, hoặc sở thích khác..."
+      }
+    },
+    "ACTIONS": {
+      "PREVIOUS": "Trước",
+      "NEXT": "Tiếp",
+      "GENERATE_PLAN": "Tạo Kế Hoạch",
+      "RESET": "Bắt Đầu Lại"
+    },
+    "HELP": {
+      "TITLE": "Cần Trợ Giúp?",
+      "DESCRIPTION": "Trình lập kế hoạch AI của chúng tôi sẽ tạo một lịch trình cá nhân hóa dựa trên sở thích của bạn. Bạn luôn có thể chỉnh sửa các gợi ý sau này!"
     }
   }
 }

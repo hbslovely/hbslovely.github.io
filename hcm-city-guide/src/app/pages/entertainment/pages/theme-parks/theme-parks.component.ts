@@ -45,14 +45,20 @@ export class ThemeParksComponent implements OnInit {
   }
 
   loadParks() {
-    this.entertainmentService.getVenuesByCategory('theme-park').subscribe(parks => {
-      this.parks = parks;
-      this.featuredParks = parks.filter(park => park.rating >= 4.3);
-      
-      if (this.activeViewIndex === 1) {
-        this.initializeMap();
-      }
-    });
+    // Load parks from entertainment data
+    fetch('/assets/data/entertainment.json')
+      .then(response => response.json())
+      .then(data => {
+        this.parks = data.venues.filter((venue: any) => venue.category === 'theme-park');
+        this.featuredParks = this.parks.filter(park => park.rating >= 4.3);
+        
+        if (this.activeViewIndex === 1) {
+          this.initializeMap();
+        }
+      })
+      .catch(error => {
+        console.error('Error loading theme parks:', error);
+      });
   }
 
   initializeMap() {

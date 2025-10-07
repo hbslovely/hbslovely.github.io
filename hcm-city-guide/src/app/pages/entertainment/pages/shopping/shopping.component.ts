@@ -7,6 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
 // PrimeNG Imports
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import { CarouselModule } from 'primeng/carousel';
 import { DialogModule } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
@@ -27,6 +28,7 @@ import { MapService } from '../../../../core/services/map.service';
     TranslateModule,
     ButtonModule,
     CardModule,
+    CarouselModule,
     DialogModule,
     DropdownModule,
     InputTextModule,
@@ -144,15 +146,40 @@ export class ShoppingComponent implements OnInit {
   }
 
   private applyFilters() {
-    this.entertainmentService.filterVenues({
-      category: this.selectedCategory,
-      district: this.selectedDistrict,
-      priceLevel: this.selectedPriceRange as 'low' | 'medium' | 'high'
-    });
+    this.entertainmentService.getVenuesByCategory('shopping').subscribe(venues => {
+      let filtered = [...venues];
 
-    if (this.viewMode === 'map') {
-      this.updateMap();
-    }
+      // Apply search filter
+      if (this.searchTerm) {
+        const term = this.searchTerm.toLowerCase();
+        filtered = filtered.filter(venue => 
+          venue.name.toLowerCase().includes(term) ||
+          venue.description.toLowerCase().includes(term) ||
+          venue.tags.some(tag => tag.toLowerCase().includes(term))
+        );
+      }
+
+      // Apply district filter
+      if (this.selectedDistrict) {
+        filtered = filtered.filter(venue => venue.district === this.selectedDistrict);
+      }
+
+      // Apply category filter
+      if (this.selectedCategory) {
+        filtered = filtered.filter(venue => venue.type === this.selectedCategory);
+      }
+
+      // Apply price range filter
+      if (this.selectedPriceRange) {
+        filtered = filtered.filter(venue => venue.priceRange === this.selectedPriceRange);
+      }
+
+      this.filteredVenues = filtered;
+
+      if (this.viewMode === 'map') {
+        this.updateMap();
+      }
+    });
   }
 
   private initializeMap() {

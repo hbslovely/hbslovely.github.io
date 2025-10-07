@@ -116,12 +116,35 @@ export class CinemasComponent implements OnInit {
   }
 
   loadMovies() {
-    // Implement API call to load movies
+    // Load movies from movies data
+    fetch('/assets/data/movies.json')
+      .then(response => response.json())
+      .then(data => {
+        this.movies = data.movies.map((movie: any) => ({
+          ...movie,
+          releaseDate: new Date(movie.releaseDate),
+          showTimes: movie.showTimes.map((showTime: any) => ({
+            ...showTime,
+            date: new Date(showTime.date)
+          }))
+        }));
+      })
+      .catch(error => {
+        console.error('Error loading movies:', error);
+      });
   }
 
   loadCinemas() {
-    // Implement API call to load cinemas
-    this.filterCinemas();
+    // Load cinemas from entertainment data
+    fetch('/assets/data/entertainment.json')
+      .then(response => response.json())
+      .then(data => {
+        this.cinemas = data.venues.filter((venue: any) => venue.category === 'cinema');
+        this.filterCinemas();
+      })
+      .catch(error => {
+        console.error('Error loading cinemas:', error);
+      });
   }
 
   sortMovies() {
