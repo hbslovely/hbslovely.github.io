@@ -65,7 +65,7 @@ export class TranslationLoaderService {
     return forkJoin([...sectionRequests, rootRequest]).pipe(
       map(responses => {
         const result = {} as any;
-        
+
         // Process section responses
         responses.slice(0, -1).forEach((response, index) => {
           const section = this.sections[index];
@@ -76,6 +76,7 @@ export class TranslationLoaderService {
         const rootTranslation = responses[responses.length - 1];
         Object.assign(result, rootTranslation);
 
+        console.log(result);
         return result;
       })
     );

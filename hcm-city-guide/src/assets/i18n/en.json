@@ -175,12 +175,6 @@
       "EXCEPTIONS": "Exceptions"
     }
   },
-  "CULTURES": {
-    "VIETNAMESE": "Vietnamese Culture",
-    "CHINESE": "Chinese Culture",
-    "FRENCH_COLONIAL": "French Colonial Heritage",
-    "MODERN": "Modern Urban Culture"
-  },
   "REGION": {
     "TITLE": "Special Administrative Region",
     "DESCRIPTION": "Ho Chi Minh City is a special-class city and special administrative region of Vietnam",

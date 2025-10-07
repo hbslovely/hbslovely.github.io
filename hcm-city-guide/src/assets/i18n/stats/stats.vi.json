@@ -54,5 +54,9 @@
       "VALUE": "Nhiệt đới",
       "DESC": "Thời tiết ấm quanh năm"
     }
-  }
+  },
+  "DISTRICTS": "Quận/Huyện",
+  "RESTAURANTS": "Nhà hàng",
+  "HOTELS": "Khách sạn",
+  "ATTRACTIONS": "Điểm tham quan"
 } 

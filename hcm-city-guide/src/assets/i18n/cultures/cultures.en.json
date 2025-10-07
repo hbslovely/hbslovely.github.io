@@ -1,7 +1,6 @@
 {
   "TITLE": "Cultural Heritage",
   "DESCRIPTION": "Discover the rich cultural heritage of Ho Chi Minh City",
-  
   "CATEGORIES": {
     "VIETNAMESE": {
       "TITLE": "Vietnamese Culture",
@@ -44,7 +43,6 @@
       ]
     }
   },
-
   "FEATURES": {
     "TRADITIONAL": "Traditional",
     "CONTEMPORARY": "Contemporary",
@@ -55,13 +53,59 @@
     "CULINARY": "Culinary",
     "FESTIVAL": "Festival"
   },
-
+  "SEASONS": {
+    "ALL_YEAR": "All Year",
+    "MORNING": "Morning",
+    "EVENING": "Evening",
+    "SPRING": "Spring",
+    "SUMMER": "Summer",
+    "AUTUMN": "Autumn",
+    "WINTER": "Winter"
+  },
+  "FILTERS": {
+    "PERIOD": "Historical Period",
+    "TYPE": "Cultural Type",
+    "LOCATION": "Location",
+    "ACCESSIBILITY": "Accessibility"
+  },
+  "ACTIONS": {
+    "LEARN_MORE": "Learn More",
+    "VIEW_GALLERY": "View Gallery",
+    "BOOK_TOUR": "Book Cultural Tour",
+    "SHARE": "Share",
+    "EXPLORE": "Explore",
+    "VISIT": "Visit",
+    "READ_MORE": "Read More",
+    "EXPLORE_MAP": "Explore Map"
+  },
+  "STATS": {
+    "HERITAGE_SITES": "150+",
+    "SITES_LABEL": "Heritage Sites",
+    "CULTURAL_EVENTS": "50+",
+    "EVENTS_LABEL": "Annual Events",
+    "TRADITIONS": "25+",
+    "TRADITIONS_LABEL": "Local Traditions"
+  },
   "SECTIONS": {
+    "CATEGORIES": {
+      "TITLE": "Cultural Categories",
+      "DESCRIPTION": "Explore the diverse cultural heritage of Ho Chi Minh City"
+    },
+    "EVENTS": {
+      "TITLE": "Cultural Events",
+      "DESCRIPTION": "Discover upcoming cultural events and festivals"
+    },
+    "HERITAGE": {
+      "TITLE": "Heritage Sites",
+      "DESCRIPTION": "Visit historical and cultural landmarks"
+    },
     "TRADITIONS": {
       "TITLE": "Local Traditions",
-      "FESTIVALS": "Traditional Festivals",
-      "CUSTOMS": "Local Customs",
-      "ETIQUETTE": "Social Etiquette"
+      "DESCRIPTION": "Learn about traditional customs and practices"
+    },
+    "MAP": {
+      "TITLE": "Cultural Map",
+      "DESCRIPTION": "Explore cultural sites on an interactive map"
     },
     "ARTS": {
       "TITLE": "Arts & Entertainment",
@@ -85,18 +129,25 @@
       "LANDMARKS": "Historical Landmarks"
     }
   },
-
-  "FILTERS": {
-    "PERIOD": "Historical Period",
-    "TYPE": "Cultural Type",
-    "LOCATION": "Location",
-    "ACCESSIBILITY": "Accessibility"
+  "EVENTS": {
+    "UPCOMING": "Upcoming"
   },
-
-  "ACTIONS": {
-    "LEARN_MORE": "Learn More",
-    "VIEW_GALLERY": "View Gallery",
-    "BOOK_TOUR": "Book Cultural Tour",
-    "SHARE": "Share"
+  "MAP": {
+    "PLACEHOLDER_TITLE": "Interactive Cultural Map",
+    "PLACEHOLDER_DESCRIPTION": "Discover cultural sites and heritage locations across the city"
+  },
+  "TRADITIONS": {
+    "AO_DAI": {
+      "NAME": "Ao Dai - Traditional Vietnamese Dress",
+      "DESC": "The elegant and graceful traditional Vietnamese dress, symbolizing Vietnamese culture and femininity"
+    },
+    "COFFEE": {
+      "NAME": "Vietnamese Coffee Culture",
+      "DESC": "Experience the unique coffee culture with traditional brewing methods and local coffee shops"
+    },
+    "MARKET": {
+      "NAME": "Traditional Markets",
+      "DESC": "Vibrant local markets showcasing traditional Vietnamese commerce and daily life"
+    }
   }
-} 
+}

@@ -1,7 +1,6 @@
 {
   "TITLE": "Di Sản Văn Hóa",
   "DESCRIPTION": "Khám phá di sản văn hóa phong phú của Thành phố Hồ Chí Minh",
-  
   "CATEGORIES": {
     "VIETNAMESE": {
       "TITLE": "Văn Hóa Việt Nam",
@@ -44,7 +43,6 @@
       ]
     }
   },
-
   "FEATURES": {
     "TRADITIONAL": "Truyền Thống",
     "CONTEMPORARY": "Đương Đại",
@@ -55,13 +53,59 @@
     "CULINARY": "Ẩm Thực",
     "FESTIVAL": "Lễ Hội"
   },
-
+  "SEASONS": {
+    "ALL_YEAR": "Quanh Năm",
+    "MORNING": "Buổi Sáng",
+    "EVENING": "Buổi Tối",
+    "SPRING": "Mùa Xuân",
+    "SUMMER": "Mùa Hè",
+    "AUTUMN": "Mùa Thu",
+    "WINTER": "Mùa Đông"
+  },
+  "FILTERS": {
+    "PERIOD": "Thời Kỳ Lịch Sử",
+    "TYPE": "Loại Hình Văn Hóa",
+    "LOCATION": "Vị Trí",
+    "ACCESSIBILITY": "Khả Năng Tiếp Cận"
+  },
+  "ACTIONS": {
+    "LEARN_MORE": "Tìm Hiểu Thêm",
+    "VIEW_GALLERY": "Xem Thư Viện Ảnh",
+    "BOOK_TOUR": "Đặt Tour Văn Hóa",
+    "SHARE": "Chia Sẻ",
+    "EXPLORE": "Khám Phá",
+    "VISIT": "Tham Quan",
+    "READ_MORE": "Đọc Thêm",
+    "EXPLORE_MAP": "Khám Phá Bản Đồ"
+  },
+  "STATS": {
+    "HERITAGE_SITES": "150+",
+    "SITES_LABEL": "Di Tích Văn Hóa",
+    "CULTURAL_EVENTS": "50+",
+    "EVENTS_LABEL": "Sự Kiện Hàng Năm",
+    "TRADITIONS": "25+",
+    "TRADITIONS_LABEL": "Truyền Thống Địa Phương"
+  },
   "SECTIONS": {
+    "CATEGORIES": {
+      "TITLE": "Danh Mục Văn Hóa",
+      "DESCRIPTION": "Khám phá di sản văn hóa đa dạng của Thành phố Hồ Chí Minh"
+    },
+    "EVENTS": {
+      "TITLE": "Sự Kiện Văn Hóa",
+      "DESCRIPTION": "Khám phá các sự kiện và lễ hội văn hóa sắp tới"
+    },
+    "HERITAGE": {
+      "TITLE": "Di Tích Văn Hóa",
+      "DESCRIPTION": "Tham quan các địa danh lịch sử và văn hóa"
+    },
     "TRADITIONS": {
       "TITLE": "Truyền Thống Địa Phương",
-      "FESTIVALS": "Lễ Hội Truyền Thống",
-      "CUSTOMS": "Phong Tục Địa Phương",
-      "ETIQUETTE": "Nghi Thức Xã Hội"
+      "DESCRIPTION": "Tìm hiểu về phong tục và thực hành truyền thống"
+    },
+    "MAP": {
+      "TITLE": "Bản Đồ Văn Hóa",
+      "DESCRIPTION": "Khám phá các địa điểm văn hóa trên bản đồ tương tác"
     },
     "ARTS": {
       "TITLE": "Nghệ Thuật & Giải Trí",
@@ -85,18 +129,25 @@
       "LANDMARKS": "Di Tích Lịch Sử"
     }
   },
-
-  "FILTERS": {
-    "PERIOD": "Thời Kỳ Lịch Sử",
-    "TYPE": "Loại Hình Văn Hóa",
-    "LOCATION": "Vị Trí",
-    "ACCESSIBILITY": "Khả Năng Tiếp Cận"
+  "EVENTS": {
+    "UPCOMING": "Sắp Diễn Ra"
   },
-
-  "ACTIONS": {
-    "LEARN_MORE": "Tìm Hiểu Thêm",
-    "VIEW_GALLERY": "Xem Thư Viện Ảnh",
-    "BOOK_TOUR": "Đặt Tour Văn Hóa",
-    "SHARE": "Chia Sẻ"
+  "MAP": {
+    "PLACEHOLDER_TITLE": "Bản Đồ Văn Hóa Tương Tác",
+    "PLACEHOLDER_DESCRIPTION": "Khám phá các địa điểm văn hóa và di tích trên toàn thành phố"
+  },
+  "TRADITIONS": {
+    "AO_DAI": {
+      "NAME": "Áo Dài - Trang Phục Truyền Thống Việt Nam",
+      "DESC": "Trang phục truyền thống thanh lịch và duyên dáng của Việt Nam, tượng trưng cho văn hóa và nữ tính Việt Nam"
+    },
+    "COFFEE": {
+      "NAME": "Văn Hóa Cà Phê Việt Nam",
+      "DESC": "Trải nghiệm văn hóa cà phê độc đáo với phương pháp pha chế truyền thống và các quán cà phê địa phương"
+    },
+    "MARKET": {
+      "NAME": "Chợ Truyền Thống",
+      "DESC": "Các chợ địa phương sôi động thể hiện thương mại và cuộc sống hàng ngày truyền thống của Việt Nam"
+    }
   }
-} 
+}

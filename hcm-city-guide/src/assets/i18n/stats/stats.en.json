@@ -54,5 +54,9 @@
       "VALUE": "Tropical",
       "DESC": "Year-round warm weather"
     }
-  }
+  },
+  "DISTRICTS": "Districts",
+  "RESTAURANTS": "Restaurants",
+  "HOTELS": "Hotels",
+  "ATTRACTIONS": "Attractions"
 } 
