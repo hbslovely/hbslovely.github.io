@@ -179,11 +179,11 @@ export class PlanningComponent implements OnInit {
     return value !== '' && value !== null && value !== undefined;
   }
 
-  private getPlanningValue(key: string): any {
+  getPlanningValue(key: string): any {
     return (this.planningData as any)[key];
   }
 
-  private setPlanningValue(key: string, value: any): void {
+  setPlanningValue(key: string, value: any): void {
     (this.planningData as any)[key] = value;
   }
 
