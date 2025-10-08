@@ -40,6 +40,138 @@ footer {
   }
 }
 
+// Global Iframe Widgets Styles
+.global-widget {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background: var(--surface-card);
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: hidden;
+  animation: widgetSlideIn 0.3s ease-out;
+
+  .widget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    border-bottom: 1px solid var(--surface-border);
+
+    h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .close-btn {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      padding: 0.25rem;
+      border-radius: 0.25rem;
+      transition: background-color var(--transition-normal);
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+
+  &.analytics-widget {
+    width: 800px;
+  }
+
+  &.social-widget {
+    width: 400px;
+  }
+
+  &.weather-widget {
+    width: 350px;
+  }
+}
+
+.widget-controls {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 999;
+
+  .widget-toggle-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all var(--transition-normal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}
+
+// Widget animations
+@keyframes widgetSlideIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .global-widget {
+    width: 95vw !important;
+    max-height: 80vh;
+
+    &.analytics-widget,
+    &.social-widget,
+    &.weather-widget {
+      width: 95vw !important;
+    }
+  }
+
+  .widget-controls {
+    bottom: 1rem;
+    right: 1rem;
+    flex-direction: row;
+
+    .widget-toggle-btn {
+      width: 45px;
+      height: 45px;
+      font-size: 1rem;
+    }
+  }
+}
+
 // Add smooth scroll behavior
 :host {
   scroll-behavior: smooth;

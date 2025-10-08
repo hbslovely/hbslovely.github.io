@@ -348,5 +348,57 @@
       "TITLE": "Cần Trợ Giúp?",
       "DESCRIPTION": "Trình lập kế hoạch AI của chúng tôi sẽ tạo một lịch trình cá nhân hóa dựa trên sở thích của bạn. Bạn luôn có thể chỉnh sửa các gợi ý sau này!"
     }
+  },
+  "PLANNING_RESULTS": {
+    "LOADING": {
+      "TITLE": "Đang Tạo Kế Hoạch Hoàn Hảo",
+      "DESCRIPTION": "AI của chúng tôi đang tạo một lịch trình cá nhân hóa dành riêng cho bạn..."
+    },
+    "ERROR": {
+      "TITLE": "Ôi! Có gì đó không đúng"
+    },
+    "STATS": {
+      "DAYS": "Ngày",
+      "COST": "Chi Phí Ước Tính",
+      "ACTIVITIES": "Hoạt Động"
+    },
+    "TIMELINE": {
+      "TITLE": "Lịch Trình Của Bạn",
+      "DESCRIPTION": "Đây là kế hoạch từng ngày được cá nhân hóa cho bạn"
+    },
+    "RECOMMENDATIONS": {
+      "TITLE": "Khuyến Nghị",
+      "DESCRIPTION": "Mẹo để làm cho chuyến đi của bạn tốt hơn"
+    },
+    "TIPS": {
+      "TITLE": "Mẹo Du Lịch",
+      "DESCRIPTION": "Thông tin quan trọng cho hành trình của bạn"
+    },
+    "ACTIONS": {
+      "SHARE": "Chia Sẻ Kế Hoạch",
+      "DOWNLOAD": "Tải Xuống",
+      "START_OVER": "Bắt Đầu Lại"
+    }
+  },
+  "CHAT": {
+    "TITLE": "Trợ Lý HCM City Guide",
+    "BUTTON_LABEL": "Mở trợ lý chat",
+    "STATUS": {
+      "ONLINE": "Trực tuyến"
+    },
+    "WELCOME": {
+      "TITLE": "Chào mừng đến với HCM City Guide!",
+      "DESCRIPTION": "Tôi ở đây để giúp bạn khám phá những điều tốt nhất của Thành phố Hồ Chí Minh. Hỏi tôi về các điểm tham quan, ẩm thực, giao thông hoặc bất cứ điều gì khác!"
+    },
+    "SUGGESTIONS": {
+      "TITLE": "Câu Hỏi Nhanh"
+    },
+    "INPUT": {
+      "PLACEHOLDER": "Hỏi tôi bất cứ điều gì về Thành phố Hồ Chí Minh..."
+    },
+    "ACTIONS": {
+      "SEND": "Gửi tin nhắn",
+      "CLEAR": "Xóa cuộc trò chuyện"
+    }
   }
 }

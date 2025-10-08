@@ -12,6 +12,7 @@ import { ShareModule } from 'primeng/share';
 import { FormsModule } from '@angular/forms';
 import { EntertainmentService, EntertainmentVenue } from '../../../../core/services/entertainment.service';
 import { MapService } from '../../../../core/services/map.service';
+import { IframeEmbedComponent } from '../../../../shared/components/iframe-embed/iframe-embed.component';
 
 @Component({
   selector: 'app-venue-detail',
@@ -27,7 +28,8 @@ import { MapService } from '../../../../core/services/map.service';
     TagModule,
     AccordionModule,
     ShareModule,
-    FormsModule
+    FormsModule,
+    IframeEmbedComponent
   ],
   templateUrl: './venue-detail.component.html',
   styleUrls: ['./venue-detail.component.scss']
@@ -36,6 +38,10 @@ export class VenueDetailComponent implements OnInit {
   venue: EntertainmentVenue | null = null;
   isFavorite: boolean = false;
   selectedTransport: string = 'driving';
+  
+  // Properties for iframe handling (fixes the reload issue)
+  bookingWidgetUrl: string = '';
+  virtualTourUrl: string = '';
 
   galleriaResponsiveOptions = [
     {
@@ -76,8 +82,21 @@ export class VenueDetailComponent implements OnInit {
       if (venue) {
         this.venue = venue;
         this.initializeMap();
+        this.setIframeUrls();
       }
     });
+  }
+
+  private setIframeUrls() {
+    if (this.venue) {
+      // Set booking widget URL (example)
+      this.bookingWidgetUrl = `https://booking.com/widget/venue/${this.venue.id}`;
+      
+      // Set virtual tour URL if available (example)
+      if (this.venue.virtualTourUrl) {
+        this.virtualTourUrl = this.venue.virtualTourUrl;
+      }
+    }
   }
 
   initializeMap() {

@@ -1,0 +1,123 @@
+<!-- Chat Widget -->
+<div class="chat-widget">
+  <!-- Chat Button -->
+  <button 
+    class="chat-button"
+    (click)="toggleChat()"
+    [class.open]="isOpen"
+    [attr.aria-label]="'CHAT.BUTTON_LABEL' | translate"
+  >
+    <i class="fas fa-comments" *ngIf="!isOpen"></i>
+    <i class="fas fa-times" *ngIf="isOpen"></i>
+  </button>
+
+  <!-- Chat Window -->
+  <div class="chat-window" [class.open]="isOpen">
+    <!-- Chat Header -->
+    <div class="chat-header">
+      <div class="header-info">
+        <div class="avatar">
+          <i class="fas fa-robot"></i>
+        </div>
+        <div class="header-text">
+          <h3>{{ 'CHAT.TITLE' | translate }}</h3>
+          <p class="status">{{ 'CHAT.STATUS.ONLINE' | translate }}</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button 
+          class="btn-icon"
+          (click)="clearChat()"
+          [title]="'CHAT.ACTIONS.CLEAR' | translate"
+        >
+          <i class="fas fa-trash"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Messages Container -->
+    <div class="messages-container" #messageContainer>
+      <!-- Welcome Message -->
+      <div *ngIf="messages.length === 0" class="welcome-message">
+        <div class="welcome-content">
+          <div class="welcome-icon">
+            <i class="fas fa-hand-wave"></i>
+          </div>
+          <h4>{{ 'CHAT.WELCOME.TITLE' | translate }}</h4>
+          <p>{{ 'CHAT.WELCOME.DESCRIPTION' | translate }}</p>
+        </div>
+      </div>
+
+      <!-- Messages -->
+      <div class="message" *ngFor="let message of messages" [class.user]="message.role === 'user'">
+        <div class="message-content">
+          <div class="message-avatar" *ngIf="message.role === 'assistant'">
+            <i class="fas fa-robot"></i>
+          </div>
+          <div class="message-bubble">
+            <div class="message-text" [innerHTML]="formatMessage(message.content)"></div>
+            <div class="message-time">{{ getMessageTime(message.timestamp) }}</div>
+          </div>
+          <div class="message-avatar user" *ngIf="message.role === 'user'">
+            <i class="fas fa-user"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Typing Indicator -->
+      <div class="message typing" *ngIf="isTyping">
+        <div class="message-content">
+          <div class="message-avatar">
+            <i class="fas fa-robot"></i>
+          </div>
+          <div class="message-bubble">
+            <div class="typing-indicator">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Suggestions -->
+    <div class="quick-suggestions" *ngIf="messages.length === 0">
+      <div class="suggestions-header">
+        <span>{{ 'CHAT.SUGGESTIONS.TITLE' | translate }}</span>
+      </div>
+      <div class="suggestions-grid">
+        <button 
+          *ngFor="let suggestion of quickSuggestions"
+          class="suggestion-chip"
+          (click)="sendQuickSuggestion(suggestion)"
+        >
+          {{ suggestion }}
+        </button>
+      </div>
+    </div>
+
+    <!-- Input Area -->
+    <div class="input-area">
+      <div class="input-container">
+        <textarea
+          #messageInput
+          [(ngModel)]="newMessage"
+          (keypress)="onKeyPress($event)"
+          [placeholder]="'CHAT.INPUT.PLACEHOLDER' | translate"
+          class="message-input"
+          rows="1"
+          [disabled]="isTyping"
+        ></textarea>
+        <button 
+          class="send-button"
+          (click)="sendMessage()"
+          [disabled]="!newMessage.trim() || isTyping"
+          [title]="'CHAT.ACTIONS.SEND' | translate"
+        >
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

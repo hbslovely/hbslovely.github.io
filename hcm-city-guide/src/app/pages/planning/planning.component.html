@@ -1,0 +1,135 @@
+<div class="planning-container">
+  <!-- Header -->
+  <div class="planning-header">
+    <div class="header-content">
+      <h1>{{ 'PLANNING.TITLE' | translate }}</h1>
+      <p class="header-description">{{ 'PLANNING.DESCRIPTION' | translate }}</p>
+      
+      <!-- Progress Bar -->
+      <div class="progress-container">
+        <div class="progress-bar">
+          <div class="progress-fill" [style.width.%]="progress"></div>
+        </div>
+        <div class="progress-text">
+          {{ 'PLANNING.PROGRESS' | translate: { current: currentStep + 1, total: questions.length } }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question Section -->
+  <div class="question-section">
+    <div class="question-container">
+      <!-- Question Header -->
+      <div class="question-header">
+        <h2>{{ currentQuestion.question | translate }}</h2>
+        <div class="question-number">
+          {{ currentStep + 1 }} / {{ questions.length }}
+        </div>
+      </div>
+
+      <!-- Question Content -->
+      <div class="question-content">
+        <!-- Number Input -->
+        <div *ngIf="currentQuestion.type === 'number'" class="input-group">
+          <input 
+            type="number" 
+            [placeholder]="currentQuestion.placeholder | translate"
+            [ngModel]="getPlanningValue(currentQuestion.id)"
+            (ngModelChange)="setPlanningValue(currentQuestion.id, $event)"
+            class="number-input"
+            min="1"
+            max="20"
+          />
+        </div>
+
+        <!-- Text Input -->
+        <div *ngIf="currentQuestion.type === 'text'" class="input-group">
+          <textarea 
+            [placeholder]="currentQuestion.placeholder | translate"
+            [ngModel]="getPlanningValue(currentQuestion.id)"
+            (ngModelChange)="setPlanningValue(currentQuestion.id, $event)"
+            class="text-input"
+            rows="4"
+          ></textarea>
+        </div>
+
+        <!-- Single/Multiple Choice Options -->
+        <div *ngIf="currentQuestion.type === 'single' || currentQuestion.type === 'multiple'" class="options-grid">
+          <div 
+            *ngFor="let option of currentQuestion.options" 
+            class="option-card"
+            [class.selected]="isSelected(option.value)"
+            [class.multiple]="currentQuestion.type === 'multiple'"
+            (click)="selectOption(option.value)"
+          >
+            <div class="option-icon" *ngIf="option.icon">
+              <i [class]="option.icon"></i>
+            </div>
+            <div class="option-content">
+              <span class="option-label">{{ option.label | translate }}</span>
+            </div>
+            <div class="option-check" *ngIf="isSelected(option.value)">
+              <i class="fas fa-check"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div class="navigation-buttons">
+        <button 
+          class="btn btn-secondary" 
+          (click)="previousStep()"
+          [disabled]="currentStep === 0"
+        >
+          <i class="fas fa-arrow-left"></i>
+          {{ 'PLANNING.ACTIONS.PREVIOUS' | translate }}
+        </button>
+
+        <div class="nav-spacer"></div>
+
+        <button 
+          *ngIf="currentStep < questions.length - 1"
+          class="btn btn-primary" 
+          (click)="nextStep()"
+          [disabled]="!canProceed"
+        >
+          {{ 'PLANNING.ACTIONS.NEXT' | translate }}
+          <i class="fas fa-arrow-right"></i>
+        </button>
+
+        <button 
+          *ngIf="currentStep === questions.length - 1"
+          class="btn btn-primary btn-generate" 
+          (click)="generatePlan()"
+          [disabled]="!canProceed"
+        >
+          <i class="fas fa-magic"></i>
+          {{ 'PLANNING.ACTIONS.GENERATE_PLAN' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Actions -->
+  <div class="quick-actions">
+    <button class="btn btn-outline" (click)="resetPlan()">
+      <i class="fas fa-refresh"></i>
+      {{ 'PLANNING.ACTIONS.RESET' | translate }}
+    </button>
+  </div>
+
+  <!-- Help Section -->
+  <div class="help-section">
+    <div class="help-card">
+      <div class="help-icon">
+        <i class="fas fa-lightbulb"></i>
+      </div>
+      <div class="help-content">
+        <h3>{{ 'PLANNING.HELP.TITLE' | translate }}</h3>
+        <p>{{ 'PLANNING.HELP.DESCRIPTION' | translate }}</p>
+      </div>
+    </div>
+  </div>
+</div>

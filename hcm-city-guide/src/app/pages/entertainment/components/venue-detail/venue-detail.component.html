@@ -130,7 +130,13 @@
           <!-- Booking Widget -->
           <div class="booking-widget">
             <h3>{{ 'ENTERTAINMENT.VENUE.BOOK_VISIT' | translate }}</h3>
-            <!-- Booking form will be implemented later -->
+            <!-- Using the iframe component with proper URL binding -->
+            <app-iframe-embed 
+              *ngIf="bookingWidgetUrl"
+              [url]="bookingWidgetUrl"
+              [height]="'300px'"
+              [title]="'Booking Widget'">
+            </app-iframe-embed>
           </div>
 
           <!-- Social Media -->

@@ -1,0 +1,24 @@
+<div class="iframe-embed-container" *ngIf="safeUrl">
+  <iframe
+    [src]="safeUrl"
+    [width]="width"
+    [height]="height"
+    [title]="title"
+    [loading]="loading"
+    frameborder="0"
+    allowfullscreen
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+  </iframe>
+</div>
+
+<div class="iframe-error" *ngIf="!safeUrl && url">
+  <div class="error-content">
+    <i class="pi pi-exclamation-triangle"></i>
+    <h3>Unable to load embedded content</h3>
+    <p>The provided URL cannot be embedded safely.</p>
+    <a [href]="url" target="_blank" class="external-link">
+      Open in new tab
+      <i class="pi pi-external-link"></i>
+    </a>
+  </div>
+</div>

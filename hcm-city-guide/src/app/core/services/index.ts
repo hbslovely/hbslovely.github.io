@@ -4,4 +4,6 @@ export * from './search.service';
 export * from './translation-loader.service';
 export * from './wards.service';
 export * from './tips.service';
-export * from './data.service'; 
+export * from './data.service';
+export * from './planning.service';
+export * from './chat.service'; 

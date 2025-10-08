@@ -312,5 +312,57 @@
       "TITLE": "Need Help?",
       "DESCRIPTION": "Our AI-powered planner will create a personalized itinerary based on your preferences. You can always modify the suggestions later!"
     }
+  },
+  "PLANNING_RESULTS": {
+    "LOADING": {
+      "TITLE": "Generating Your Perfect Plan",
+      "DESCRIPTION": "Our AI is creating a personalized itinerary just for you..."
+    },
+    "ERROR": {
+      "TITLE": "Oops! Something went wrong"
+    },
+    "STATS": {
+      "DAYS": "Days",
+      "COST": "Estimated Cost",
+      "ACTIVITIES": "Activities"
+    },
+    "TIMELINE": {
+      "TITLE": "Your Itinerary",
+      "DESCRIPTION": "Here's your personalized day-by-day plan"
+    },
+    "RECOMMENDATIONS": {
+      "TITLE": "Recommendations",
+      "DESCRIPTION": "Tips to make your trip even better"
+    },
+    "TIPS": {
+      "TITLE": "Travel Tips",
+      "DESCRIPTION": "Important information for your journey"
+    },
+    "ACTIONS": {
+      "SHARE": "Share Plan",
+      "DOWNLOAD": "Download",
+      "START_OVER": "Start Over"
+    }
+  },
+  "CHAT": {
+    "TITLE": "HCM City Guide Assistant",
+    "BUTTON_LABEL": "Open chat assistant",
+    "STATUS": {
+      "ONLINE": "Online"
+    },
+    "WELCOME": {
+      "TITLE": "Welcome to HCM City Guide!",
+      "DESCRIPTION": "I'm here to help you discover the best of Ho Chi Minh City. Ask me about attractions, food, transportation, or anything else!"
+    },
+    "SUGGESTIONS": {
+      "TITLE": "Quick Questions"
+    },
+    "INPUT": {
+      "PLACEHOLDER": "Ask me anything about Ho Chi Minh City..."
+    },
+    "ACTIONS": {
+      "SEND": "Send message",
+      "CLEAR": "Clear conversation"
+    }
   }
 }

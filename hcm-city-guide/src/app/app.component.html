@@ -8,4 +8,77 @@
   </main>
 
   <app-footer></app-footer>
+  
+  <!-- Chat Widget -->
+  <app-chat-widget></app-chat-widget>
+
+  <!-- Global Iframe Widgets (Example Usage) -->
+  <!-- These demonstrate the proper iframe implementation without reload issues -->
+  
+  <!-- Analytics Widget -->
+  <div class="global-widget analytics-widget" *ngIf="showAnalyticsWidget">
+    <div class="widget-header">
+      <h3>Analytics Dashboard</h3>
+      <button class="close-btn" (click)="toggleIframeVisibility('analytics')">
+        <i class="pi pi-times"></i>
+      </button>
+    </div>
+    <app-iframe-embed 
+      [url]="analyticsWidgetUrl"
+      [height]="'400px'"
+      [title]="'Analytics Dashboard'">
+    </app-iframe-embed>
+  </div>
+
+  <!-- Social Media Widget -->
+  <div class="global-widget social-widget" *ngIf="showSocialMediaWidget">
+    <div class="widget-header">
+      <h3>Social Media Feed</h3>
+      <button class="close-btn" (click)="toggleIframeVisibility('social')">
+        <i class="pi pi-times"></i>
+      </button>
+    </div>
+    <app-iframe-embed 
+      [url]="socialMediaWidgetUrl"
+      [height]="'300px'"
+      [title]="'Social Media Feed'">
+    </app-iframe-embed>
+  </div>
+
+  <!-- Weather Widget -->
+  <div class="global-widget weather-widget" *ngIf="showWeatherWidget">
+    <div class="widget-header">
+      <h3>Weather Information</h3>
+      <button class="close-btn" (click)="toggleIframeVisibility('weather')">
+        <i class="pi pi-times"></i>
+      </button>
+    </div>
+    <app-iframe-embed 
+      [url]="weatherWidgetUrl"
+      [height]="'250px'"
+      [title]="'Weather Widget'">
+    </app-iframe-embed>
+  </div>
+
+  <!-- Widget Toggle Buttons (for demonstration) -->
+  <div class="widget-controls" *ngIf="!showAnalyticsWidget && !showSocialMediaWidget && !showWeatherWidget">
+    <button 
+      class="widget-toggle-btn"
+      (click)="toggleIframeVisibility('analytics')"
+      title="Show Analytics Widget">
+      <i class="pi pi-chart-bar"></i>
+    </button>
+    <button 
+      class="widget-toggle-btn"
+      (click)="toggleIframeVisibility('social')"
+      title="Show Social Media Widget">
+      <i class="pi pi-facebook"></i>
+    </button>
+    <button 
+      class="widget-toggle-btn"
+      (click)="toggleIframeVisibility('weather')"
+      title="Show Weather Widget">
+      <i class="pi pi-sun"></i>
+    </button>
+  </div>
 </div>

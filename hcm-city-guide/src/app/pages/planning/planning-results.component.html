@@ -1,0 +1,177 @@
+<div class="results-container">
+  <!-- Loading State -->
+  <div *ngIf="loading" class="loading-state">
+    <div class="loading-content">
+      <div class="loading-spinner"></div>
+      <h2>{{ 'PLANNING_RESULTS.LOADING.TITLE' | translate }}</h2>
+      <p>{{ 'PLANNING_RESULTS.LOADING.DESCRIPTION' | translate }}</p>
+    </div>
+  </div>
+
+  <!-- Error State -->
+  <div *ngIf="error" class="error-state">
+    <div class="error-content">
+      <div class="error-icon">
+        <i class="fas fa-exclamation-triangle"></i>
+      </div>
+      <h2>{{ 'PLANNING_RESULTS.ERROR.TITLE' | translate }}</h2>
+      <p>{{ error }}</p>
+      <button class="btn btn-primary" (click)="startOver()">
+        <i class="fas fa-redo"></i>
+        {{ 'PLANNING_RESULTS.ACTIONS.START_OVER' | translate }}
+      </button>
+    </div>
+  </div>
+
+  <!-- Results Content -->
+  <div *ngIf="plan && !loading" class="results-content">
+    <!-- Header -->
+    <div class="results-header">
+      <div class="header-content">
+        <div class="success-icon">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <h1>{{ plan.title }}</h1>
+        <p class="plan-summary">{{ plan.summary }}</p>
+        
+        <!-- Plan Stats -->
+        <div class="plan-stats">
+          <div class="stat-item">
+            <div class="stat-icon">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <div class="stat-content">
+              <span class="stat-value">{{ plan.totalDays }}</span>
+              <span class="stat-label">{{ 'PLANNING_RESULTS.STATS.DAYS' | translate }}</span>
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon">
+              <i class="fas fa-dollar-sign"></i>
+            </div>
+            <div class="stat-content">
+              <span class="stat-value">{{ plan.totalCost }}</span>
+              <span class="stat-label">{{ 'PLANNING_RESULTS.STATS.COST' | translate }}</span>
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon">
+              <i class="fas fa-map-marked-alt"></i>
+            </div>
+            <div class="stat-content">
+              <span class="stat-value">{{ plan.days.length * 4 }}</span>
+              <span class="stat-label">{{ 'PLANNING_RESULTS.STATS.ACTIVITIES' | translate }}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="header-actions">
+          <button class="btn btn-outline" (click)="sharePlan()">
+            <i class="fas fa-share-alt"></i>
+            {{ 'PLANNING_RESULTS.ACTIONS.SHARE' | translate }}
+          </button>
+          <button class="btn btn-outline" (click)="downloadPlan()">
+            <i class="fas fa-download"></i>
+            {{ 'PLANNING_RESULTS.ACTIONS.DOWNLOAD' | translate }}
+          </button>
+          <button class="btn btn-secondary" (click)="startOver()">
+            <i class="fas fa-redo"></i>
+            {{ 'PLANNING_RESULTS.ACTIONS.START_OVER' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Days Timeline -->
+    <div class="days-timeline">
+      <div class="timeline-header">
+        <h2>{{ 'PLANNING_RESULTS.TIMELINE.TITLE' | translate }}</h2>
+        <p>{{ 'PLANNING_RESULTS.TIMELINE.DESCRIPTION' | translate }}</p>
+      </div>
+
+      <div class="timeline-container">
+        <div *ngFor="let day of plan.days; let i = index" class="day-card">
+          <div class="day-header">
+            <div class="day-number">{{ day.day }}</div>
+            <div class="day-info">
+              <h3>{{ day.title }}</h3>
+              <p class="day-date">{{ day.date }}</p>
+            </div>
+            <div class="day-stats">
+              <span class="day-cost">{{ day.totalCost }}</span>
+              <span class="day-duration">{{ day.totalDuration }}</span>
+            </div>
+          </div>
+
+          <div class="day-items">
+            <div *ngFor="let item of day.items" class="item-card">
+              <div class="item-time">{{ item.time }}</div>
+              <div class="item-content">
+                <div class="item-header">
+                  <div class="item-icon" [style.background-color]="getCategoryColor(item.category)">
+                    <i [class]="getItemIcon(item.type)"></i>
+                  </div>
+                  <div class="item-info">
+                    <h4>{{ item.title }}</h4>
+                    <p class="item-description">{{ item.description }}</p>
+                  </div>
+                  <div class="item-rating" *ngIf="item.rating">
+                    <i class="fas fa-star"></i>
+                    <span>{{ item.rating }}</span>
+                  </div>
+                </div>
+                <div class="item-details">
+                  <div class="detail-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>{{ item.location }}</span>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-clock"></i>
+                    <span>{{ item.duration }}</span>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-dollar-sign"></i>
+                    <span>{{ item.cost }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recommendations -->
+    <div class="recommendations-section">
+      <div class="section-header">
+        <h2>{{ 'PLANNING_RESULTS.RECOMMENDATIONS.TITLE' | translate }}</h2>
+        <p>{{ 'PLANNING_RESULTS.RECOMMENDATIONS.DESCRIPTION' | translate }}</p>
+      </div>
+      <div class="recommendations-grid">
+        <div *ngFor="let rec of plan.recommendations" class="recommendation-card">
+          <div class="rec-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <p>{{ rec }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tips -->
+    <div class="tips-section">
+      <div class="section-header">
+        <h2>{{ 'PLANNING_RESULTS.TIPS.TITLE' | translate }}</h2>
+        <p>{{ 'PLANNING_RESULTS.TIPS.DESCRIPTION' | translate }}</p>
+      </div>
+      <div class="tips-grid">
+        <div *ngFor="let tip of plan.tips" class="tip-card">
+          <div class="tip-icon">
+            <i class="fas fa-info-circle"></i>
+          </div>
+          <p>{{ tip }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

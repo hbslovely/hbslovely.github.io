@@ -1,0 +1,31 @@
+<!-- Example usage of the IframeEmbedComponent -->
+
+<!-- Basic usage -->
+<app-iframe-embed 
+  [url]="'https://www.youtube.com/watch?v=dQw4w9WgXcQ'"
+  [height]="'315px'"
+  [title]="'YouTube Video'">
+</app-iframe-embed>
+
+<!-- With all options -->
+<app-iframe-embed 
+  [url]="bookingWidgetUrl"
+  [width]="'100%'"
+  [height]="'400px'"
+  [title]="'Booking Widget'"
+  [loading]="'lazy'">
+</app-iframe-embed>
+
+<!-- For Google Maps -->
+<app-iframe-embed 
+  [url]="'https://www.google.com/maps/@10.7769,106.7009,15z'"
+  [height]="'300px'"
+  [title]="'Location Map'">
+</app-iframe-embed>
+
+<!-- For Vimeo videos -->
+<app-iframe-embed 
+  [url]="'https://vimeo.com/123456789'"
+  [height]="'315px'"
+  [title]="'Virtual Tour'">
+</app-iframe-embed>

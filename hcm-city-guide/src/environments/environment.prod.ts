@@ -28,5 +28,8 @@ export const environment = {
 
   // Mapbox Configuration
   mapboxToken: 'pk.eyJ1IjoidGFsaGFraHdqYTA2IiwiYSI6ImNsdTd60HptdTBhczgybGxsbWdmcjN6ZWwifQ.RBnwQKZHLwgUhnIh0LeP_g',
-  mapboxStyle: 'mapbox://styles/mapbox/streets-v11'
+  mapboxStyle: 'mapbox://styles/mapbox/streets-v11',
+
+  // OpenAI Configuration
+  openaiApiKey: 'YOUR_OPENAI_API_KEY'
 };
